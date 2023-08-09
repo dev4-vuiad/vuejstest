@@ -3,6 +3,7 @@
 @import url("~/assets/css/style2.css");
 @import url("~/assets/css/style3.css");
 </style>
+
 <template>
     <body class="home page-template-default page page-id-7782 wp-custom-logo wp-embed-responsive masvideos-js  full-width">
         <div id="page" class="hfeed site">
