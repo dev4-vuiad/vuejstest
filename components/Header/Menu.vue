@@ -2,27 +2,27 @@
     <div class="site_header__primary-nav">
         <ul id="menu-main-menu-1" class="nav yamm">
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092">
-                <NuxtLink title="영화" to="/movie">영화</NuxtLink>
+                <a title="영화" href="/movie">영화</a>
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-161947">
-                <NuxtLink to="/tv-shows/">TV</NuxtLink>
+                <a href="/tv-shows/">TV</a>
                 <ul class="sub-menu">
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093">
-                        <NuxtLink title="드라마" to="/k-drama/">드라마</NuxtLink>
+                        <a title="드라마" href="/k-drama/">드라마</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094">
-                        <NuxtLink title="예능" to="/k-show/">예능</NuxtLink>
+                        <a title="예능" href="/k-show/">예능</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095">
-                        <NuxtLink title="시사다큐" to="/k-sisa/">시사</NuxtLink>
+                        <a title="시사다큐" href="/k-sisa/">시사</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282">
-                <NuxtLink to="/u-drama/">미드</NuxtLink>
+                <a href="/u-drama/">미드</a>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098">
-                <NuxtLink title="OTT/Web" to="/ott-web/">OTT</NuxtLink>
+                <a title="OTT/Web" href="/ott-web/">OTT</a>
             </li>
         </ul>
     </div>

@@ -29,7 +29,7 @@
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-8092"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                                    <a title="영화" href="https://kokoatv.net/movie/"
+                                                                    <a title="영화" href="/movie/"
                                                                         class="nav-link show">영화</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
@@ -44,20 +44,20 @@
                                                                             id="menu-item-8093"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="https://kokoatv.net/k-drama/"
+                                                                                href="/k-drama/"
                                                                                 class="dropdown-item show">드라마</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             id="menu-item-8094"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                                            <a title="예능" href="https://kokoatv.net/k-show/"
+                                                                            <a title="예능" href="/k-show/"
                                                                                 class="dropdown-item show">예능</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             id="menu-item-8095"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="https://kokoatv.net/k-sisa/"
+                                                                                href="/k-sisa/"
                                                                                 class="dropdown-item show">시사</a></li>
                                                                     </ul>
                                                                 </li>
@@ -65,13 +65,13 @@
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-118282"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                                                    <a title="미드" href="https://kokoatv.net/u-drama/"
+                                                                    <a title="미드" href="/u-drama/"
                                                                         class="nav-link show">미드</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-8098"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                                                    <a title="OTT/Web" href="https://kokoatv.net/ott-web/"
+                                                                    <a title="OTT/Web" href="/ott-web/"
                                                                         class="nav-link show">OTT</a></li>
                                                             </ul>
                                                         </div>
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="site-header__logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                            <div class="site-header__logo"><a href="/" class="custom-logo-link"
                                     rel="home"><img width="653" height="152"
                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
@@ -100,27 +100,27 @@
                             <div class="site_header__primary-nav">
                                 <ul id="menu-main-menu-1" class="nav yamm">
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a
-                                            title="영화" href="https://kokoatv.net/movie/">영화</a></li>
+                                            title="영화" href="/movie/">영화</a></li>
                                     <li
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-161947">
                                         <a href="/tv-shows/">TV</a>
                                         <ul class="sub-menu">
                                             <li
                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093">
-                                                <a title="드라마" href="https://kokoatv.net/k-drama/">드라마</a></li>
+                                                <a title="드라마" href="/k-drama/">드라마</a></li>
                                             <li
                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094">
-                                                <a title="예능" href="https://kokoatv.net/k-show/">예능</a></li>
+                                                <a title="예능" href="/k-show/">예능</a></li>
                                             <li
                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095">
-                                                <a title="시사다큐" href="https://kokoatv.net/k-sisa/">시사</a></li>
+                                                <a title="시사다큐" href="/k-sisa/">시사</a></li>
                                         </ul>
                                     </li>
                                     <li
                                         class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282">
-                                        <a href="https://kokoatv.net/u-drama/">미드</a></li>
+                                        <a href="/u-drama/">미드</a></li>
                                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098">
-                                        <a title="OTT/Web" href="https://kokoatv.net/ott-web/">OTT</a></li>
+                                        <a title="OTT/Web" href="/ott-web/">OTT</a></li>
                                 </ul>
                             </div>
                         </div><!-- /.site-header__right -->
@@ -128,7 +128,7 @@
                             <div class="site-header__search">
                                 <form role="search" method="get"
                                     class="search-form masvideos-search masvideos-search-tv_show"
-                                    action="https://kokoatv.net/">
+                                    action="/">
                                     <label class="screen-reader-text" for="masvideos-search-field-0">Search for:</label>
                                     <input type="search" id="masvideos-search-field-0"
                                         class="search-field ui-autocomplete-input" placeholder="검색 ..." value="" name="s"
@@ -143,7 +143,7 @@
                                 </form>
                             </div>
                             <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
+                                <a href="/my-account/" class="site-header__user-account--link"
                                     data-toggle="dropdown">
                                     <svg width="32px" height="32px">
                                         <image x="0px" y="0px" width="32px" height="32px"
@@ -151,9 +151,9 @@
                                         </image>
                                     </svg> </a>
                                 <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">회원가입</a></li>
                                 </ul>
                             </div>
@@ -187,7 +187,7 @@
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                                    <a title="영화" href="https://kokoatv.net/movie/"
+                                                                    <a title="영화" href="/movie/"
                                                                         class="nav-link show">영화</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
@@ -200,30 +200,30 @@
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="https://kokoatv.net/k-drama/"
+                                                                                href="/k-drama/"
                                                                                 class="dropdown-item show">드라마</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                                            <a title="예능" href="https://kokoatv.net/k-show/"
+                                                                            <a title="예능" href="/k-show/"
                                                                                 class="dropdown-item show">예능</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="https://kokoatv.net/k-sisa/"
+                                                                                href="/k-sisa/"
                                                                                 class="dropdown-item show">시사</a></li>
                                                                     </ul>
                                                                 </li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                                                    <a title="미드" href="https://kokoatv.net/u-drama/"
+                                                                    <a title="미드" href="/u-drama/"
                                                                         class="nav-link show">미드</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                                                    <a title="OTT/Web" href="https://kokoatv.net/ott-web/"
+                                                                    <a title="OTT/Web" href="/ott-web/"
                                                                         class="nav-link show">OTT</a></li>
                                                             </ul>
                                                         </div>
@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="site-header__logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                            <div class="site-header__logo"><a href="/" class="custom-logo-link"
                                     rel="home"><img width="653" height="152"
                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
@@ -263,7 +263,7 @@
                                         <li>
                                             <form role="search" method="get"
                                                 class="search-form masvideos-search masvideos-search-tv_show"
-                                                action="https://kokoatv.net/">
+                                                action="/">
                                                 <label class="screen-reader-text" for="masvideos-search-field-1">Search
                                                     for:</label>
                                                 <input type="search" id="masvideos-search-field-1"
@@ -282,7 +282,7 @@
                                 </div>
                             </div>
                             <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
+                                <a href="/my-account/" class="site-header__user-account--link"
                                     data-toggle="dropdown">
                                     <svg width="32px" height="32px">
                                         <image x="0px" y="0px" width="32px" height="32px"
@@ -290,9 +290,9 @@
                                         </image>
                                     </svg> </a>
                                 <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">회원가입</a></li>
                                 </ul>
                             </div>
@@ -311,19 +311,19 @@
                                                 d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
                                             </path>
                                         </svg></span><a
-                                        href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/">드라마</a><span
+                                        href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/">드라마</a><span
                                         class="delimiter"><svg width="4px" height="7px">
                                             <path fill-rule="evenodd"
                                                 d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
                                             </path>
                                         </svg></span><a
-                                        href="https://kokoatv.net/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/">하이재킹</a><span
+                                        href="/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/">하이재킹</a><span
                                         class="delimiter"><svg width="4px" height="7px">
                                             <path fill-rule="evenodd"
                                                 d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
                                             </path>
                                         </svg></span><a
-                                        href="https://kokoatv.net/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/?season-position=0">시즌
+                                        href="/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/?season-position=0">시즌
                                         1</a><span class="delimiter"><svg width="4px" height="7px">
                                             <path fill-rule="evenodd"
                                                 d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
@@ -340,7 +340,7 @@
                                                     <div class="box-tv-channel"><img
                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/appletv.png"
                                                             alt="" width="60" height="31" class="tv-channel"></div><a
-                                                        href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-7%ed%99%94/"
+                                                        href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-7%ed%99%94/"
                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                             style="display:none" class="span_sea_ep_title">7화</span><img
                                                             width="300" height="450"
@@ -354,14 +354,14 @@
                                                     <div class="tv-show__info">
                                                         <div class="tv-show__info--head"><span
                                                                 class="tv-show__meta--genre"><a
-                                                                    href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                    href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                     rel="tag">드라마</a></span>
                                                             <div class="episode__meta">
                                                                 <span class="episode__meta--release-date">등록:
                                                                     04.08.2023</span>
                                                                 <div class="vodi-views-likes"></div>
                                                             </div><a
-                                                                href="https://kokoatv.net/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/"
+                                                                href="/tv-show/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9/"
                                                                 class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                                                 <h1 class="episode_title entry-title">하이재킹 7화</h1>
                                                             </a> <!-- Original title single tv show start -->
@@ -405,7 +405,7 @@
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
                                                 <div class="episode__player--prev-episode"><a
-                                                        href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-6%ed%99%94/"
+                                                        href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-6%ed%99%94/"
                                                         class="episode__player--prev-episode__link"><span
                                                             class="episode__player--prev-episode__label">
                                                             이전 화</span></a></div>
@@ -445,7 +445,7 @@
                                                                             id="cancel-comment-reply-link"
                                                                             href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-7%ed%99%94/#respond"
                                                                             style="display:none;">응답 취소</a></small></span>
-                                                                <form action="https://kokoatv.net/wp-comments-post.php"
+                                                                <form action="/wp-comments-post.php"
                                                                     method="post" id="commentform" class="comment-form"
                                                                     novalidate="">
                                                                     <p class="comment-notes"><span id="email-notes">이메일 주소는
@@ -520,7 +520,7 @@
                                                         <div class="episodes__inner">
                                                             <div
                                                                 class="post-201913 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-7%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-7%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-08-04</span>
                                                                     <h3
@@ -533,7 +533,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-201912 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-6%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-6%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-08-04</span>
                                                                     <h3
@@ -546,7 +546,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-201047 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-5%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-5%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-07-27</span>
                                                                     <h3
@@ -559,7 +559,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-199911 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-4%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-4%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-07-14</span>
                                                                     <h3
@@ -572,7 +572,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-199040 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-3%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-3%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-07-06</span>
                                                                     <h3
@@ -585,7 +585,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-198528 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-2%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-2%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-06-30</span>
                                                                     <h3
@@ -598,7 +598,7 @@
                                                             </div>
                                                             <div
                                                                 class="post-198527 episode type-episode status-publish hentry">
-                                                                <a href="https://kokoatv.net/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-1%ed%99%94/"
+                                                                <a href="/episode/%ed%95%98%ec%9d%b4%ec%9e%ac%ed%82%b9-1%ed%99%94/"
                                                                     class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link"><span
                                                                         class="masvideos-loop-episode__number episode__number">2023-06-30</span>
                                                                     <h3
@@ -631,7 +631,7 @@
         <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
             <div class="container">
                 <div class="footer-v4-bar">
-                    <div class="site-footer__logo footer-logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                    <div class="site-footer__logo footer-logo"><a href="/" class="custom-logo-link"
                             rel="home"><img width="653" height="152"
                                 src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                 class="custom-logo" alt="코코아티비 :: KOKOA.TV"
@@ -754,7 +754,7 @@
                                             </p>
                                             <p class="masvideos-LostPassword lost_password">
                                                 <a
-                                                    href="https://kokoatv.net/wp-login.php?action=lostpassword">비밀번호찾기</a>
+                                                    href="/wp-login.php?action=lostpassword">비밀번호찾기</a>
                                             </p>
                                         </form>
                                     </div>

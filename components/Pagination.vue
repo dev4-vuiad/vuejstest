@@ -17,6 +17,7 @@
                     <a :class="'page-numbers'+ (pageNumber == 1 ? ' current' : '')" :href="'/' + category ">1</a>
                 </li>
                 <li><a :class="'page-numbers'+ (pageNumber == 2 ? ' current' : '')" :href="'/' + category + '/page/2/'">2</a></li>
+                <li><a :class="'page-numbers'+ (pageNumber == 3 ? ' current' : '')" :href="'/' + category + '/page/3/'">3</a></li>
                 <li><span class="page-numbers dots">…</span></li>
                 <li><a class="page-numbers" :href="'/' + category + '/page/43/'">43</a></li>
                 <li><a class="page-numbers" :href="'/' + category + '/page/44/'">44</a></li>

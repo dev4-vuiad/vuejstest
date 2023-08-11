@@ -1,8 +1,8 @@
 <script setup>
     const route = useRoute();
     let page = route.params.num * 1
-    import popularItems from "/sampledata/popularitems_2.js"
-    import items from "/sampledata/items.js"
+    import popularItems from "/sampledata/popularitems.js"
+    import items from "/sampledata/items_u_drama.js"
 
     const pagedItems = items[page - 1]
 </script>

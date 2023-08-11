@@ -16,7 +16,7 @@
 <template>
     <ul class="masvideos-widget-movies-layered-nav-list">
         <li v-for="(name, index) in types" :key="index" :class="'masvideos-widget-movies-layered-nav-list__item masvideos-layered-nav-term ' + (chosen.includes(name) ? 'masvideos-widget-movies-layered-nav-list__item--chosen chosen' : '')">
-            <NuxtLink rel="nofollow" :to="{path: 'movie', query: { filter_genre: chosen.concat(name).join(','),  query_type_genre: 'or'}}">{{ name }}</NuxtLink>
+            <a rel="nofollow" :href="'/movie?query_type_genre=or&filter_genre=' + chosen.concat(name).join(',')">{{ name }}</a>
         </li>
     </ul>
 </template>
