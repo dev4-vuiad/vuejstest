@@ -1,8 +1,10 @@
 <script setup>
-    import popularItems from "/sampledata/popularitems.js"
+    const route = useRoute();
+    let page = route.params.num * 1
+    import popularItems from "/sampledata/popularitems_2.js"
     import items from "/sampledata/items.js"
 
-    const pagedItems = items[0]
+    const pagedItems = items[page - 1]
 </script>
 
 <template>
@@ -292,10 +294,10 @@
                                 <header class="page-header" style="margin-bottom:15px;">
                                     <h1 class="page-title">실시간 영화 인기컨텐츠</h1>
                                 </header>
-                                <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
-                                    <div class="movies columns-6">
-                                        <div class="movies__inner">
-                                            <MoviePopularItem v-for="(item, index) in popularItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :genres="item.genres" :thumbnail="item.thumbnail" />
+                                <div class="masvideos masvideos-tv-shows ">
+                                    <div class="tv-shows columns-5">
+                                        <div class="tv-shows__inner">
+                                            <PopularItems v-for="(item, index) in popularItems" :key="index" :id="item.id" :date="item.date" :title="item.title" :totalEp="item.totalEp" :thumbnail="item.thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -380,26 +382,12 @@
                                     </div>
                             </div>
                         </div>
-                        <Pagination category="movie" pageNumber="1" numPerPage="30" />
+                        <Pagination category="u-drama" :pageNumber="page" numPerPage="30" />
                         <center></center>
                     </div><!-- /.content-area -->
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                         role="complementary">
-                        <div class="widget-area-inner">
-                            <div id="text-4" class="widget widget_text">
-                                <div class="textwidget">
-                                </div>
-                            </div>
-                            <MoviePopularContents />
-                            <div class="widget widget_vodi_movies_filter">
-                                <div id="masvideos_movies_filter_widget-1"
-                                    class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
-                                    <div class="widget-header"><span class="widget-title">장르</span></div>
-                                    <MovieType />
-                                </div>
-                                <MovieListYear />
-                            </div>
-                        </div><!-- /.widget-area-inner -->
+                        <UDramaPopularContents />
                     </div><!-- #secondary -->
                 </div><!-- /.site-content-inner -->
             </div><!-- /.container -->

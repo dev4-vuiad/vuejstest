@@ -4587,8 +4587,8 @@ order: 2; }
 @media (min-width: 1200px) {
 .sidebar-right .sidebar-area.blog-sidebar .widget-area-inner {
 margin-left: 40px; } }
-.full-width .sidebar-area {
-display: none; }
+/* .full-width .sidebar-area {
+display: none; } Danh remove to fixing hide sidebar widget */
 .article__attachment--gallery {
 height: 100%; }
 .article__attachment--gallery .gallery-caption {

@@ -1,10 +1,10 @@
 <script setup>
 
-    const props = defineProps(['id', 'year', 'title', 'types', 'thumbnail'])
+    const props = defineProps(['id', 'year', 'title', 'genre', 'thumbnail'])
     const id = props.id
     const year = props.year
     const title = props.title
-    const types = props.types
+    const genres = props.genre
     const thumbnail = props.thumbnail
 </script>
 
@@ -20,9 +20,9 @@
                 <h3 class="masvideos-loop-movie__title movie__title">{{ title }}</h3>
             </NuxtLink>
             <span class="movie__meta--genre">
-                <template v-for="(name, index) in types" :key="index">
+                <template v-for="(genre, index) in genres" :key="index">
                     <span v-if="index > 0">, </span>
-                    <NuxtLink :to="{path: 'movie-genre/' + name}" rel="tag">{{ name }}</NuxtLink>
+                    <NuxtLink :to="{path: 'movie-genre/' + genre}" rel="tag">{{ genre }}</NuxtLink>
                 </template>
             </span>
         </div>

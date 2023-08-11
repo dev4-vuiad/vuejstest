@@ -1,9 +1,3 @@
-<style>
-@import url("~/assets/css/style1.css");
-@import url("~/assets/css/style2.css");
-@import url("~/assets/css/style3.css");
-</style>
-
 <template>
     <body
         class="movie-template-default single single-movie postid-202135 wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-single masvideos-js single-movie-v2 full-width dark ">

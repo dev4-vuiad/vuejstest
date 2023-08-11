@@ -1,9 +1,3 @@
-<style>
-@import url("~/assets/css/style1.css");
-@import url("~/assets/css/style2.css");
-@import url("~/assets/css/style3.css");
-</style>
-
 <template>
     <body class="home page-template-default page page-id-7782 wp-custom-logo wp-embed-responsive masvideos-js  full-width">
         <div id="page" class="hfeed site">
@@ -34,7 +28,7 @@
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-8092"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                                    <a title="영화" href="https://kokoatv.net/movie/"
+                                                                    <a title="영화" href="/movie/"
                                                                         class="nav-link show">영화</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
@@ -49,20 +43,20 @@
                                                                             id="menu-item-8093"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="https://kokoatv.net/k-drama/"
+                                                                                href="/k-drama/"
                                                                                 class="dropdown-item show">드라마</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             id="menu-item-8094"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                                            <a title="예능" href="https://kokoatv.net/k-show/"
+                                                                            <a title="예능" href="/k-show/"
                                                                                 class="dropdown-item show">예능</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             id="menu-item-8095"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="https://kokoatv.net/k-sisa/"
+                                                                                href="/k-sisa/"
                                                                                 class="dropdown-item show">시사</a></li>
                                                                     </ul>
                                                                 </li>
@@ -70,13 +64,13 @@
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-118282"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                                                    <a title="미드" href="https://kokoatv.net/u-drama/"
+                                                                    <a title="미드" href="/u-drama/"
                                                                         class="nav-link show">미드</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     id="menu-item-8098"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                                                    <a title="OTT/Web" href="https://kokoatv.net/ott-web/"
+                                                                    <a title="OTT/Web" href="/ott-web/"
                                                                         class="nav-link show">OTT</a></li>
                                                             </ul>
                                                         </div>
@@ -102,7 +96,7 @@
                             <div class="site-header__search">
                                 <form role="search" method="get"
                                     class="search-form masvideos-search masvideos-search-tv_show"
-                                    action="https://kokoatv.net/">
+                                    action="/">
                                     <label class="screen-reader-text" for="masvideos-search-field-0">Search for:</label>
                                     <input type="search" id="masvideos-search-field-0"
                                         class="search-field ui-autocomplete-input" placeholder="검색 ..." value="" name="s"
@@ -117,7 +111,7 @@
                                 </form>
                             </div>
                             <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
+                                <a href="/my-account/" class="site-header__user-account--link"
                                     data-toggle="dropdown">
                                     <svg width="32px" height="32px">
                                         <image x="0px" y="0px" width="32px" height="32px"
@@ -125,9 +119,9 @@
                                         </image>
                                     </svg> </a>
                                 <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">회원가입</a></li>
                                 </ul>
                             </div>
@@ -161,7 +155,7 @@
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                                    <a title="영화" href="https://kokoatv.net/movie/"
+                                                                    <a title="영화" href="/movie/"
                                                                         class="nav-link show">영화</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
@@ -174,30 +168,30 @@
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="https://kokoatv.net/k-drama/"
+                                                                                href="/k-drama/"
                                                                                 class="dropdown-item show">드라마</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                                            <a title="예능" href="https://kokoatv.net/k-show/"
+                                                                            <a title="예능" href="/k-show/"
                                                                                 class="dropdown-item show">예능</a></li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="https://kokoatv.net/k-sisa/"
+                                                                                href="/k-sisa/"
                                                                                 class="dropdown-item show">시사</a></li>
                                                                     </ul>
                                                                 </li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                                                    <a title="미드" href="https://kokoatv.net/u-drama/"
+                                                                    <a title="미드" href="/u-drama/"
                                                                         class="nav-link show">미드</a></li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                                                    <a title="OTT/Web" href="https://kokoatv.net/ott-web/"
+                                                                    <a title="OTT/Web" href="/ott-web/"
                                                                         class="nav-link show">OTT</a></li>
                                                             </ul>
                                                         </div>
@@ -217,7 +211,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="site-header__logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                            <div class="site-header__logo"><a href="/" class="custom-logo-link"
                                     rel="home" aria-current="page"><img width="653" height="152"
                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
@@ -237,7 +231,7 @@
                                         <li>
                                             <form role="search" method="get"
                                                 class="search-form masvideos-search masvideos-search-tv_show"
-                                                action="https://kokoatv.net/">
+                                                action="/">
                                                 <label class="screen-reader-text" for="masvideos-search-field-1">Search
                                                     for:</label>
                                                 <input type="search" id="masvideos-search-field-1"
@@ -256,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
+                                <a href="/my-account/" class="site-header__user-account--link"
                                     data-toggle="dropdown">
                                     <svg width="32px" height="32px">
                                         <image x="0px" y="0px" width="32px" height="32px"
@@ -264,9 +258,9 @@
                                         </image>
                                     </svg> </a>
                                 <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">회원가입</a></li>
                                 </ul>
                             </div>
@@ -296,7 +290,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/">
+                                                                    href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/zG9TYiHt0fdaJiWuNEhFrfKzwoi-scaled.jpg"
                                                                         style="width: 218px;">
@@ -304,7 +298,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/">
+                                                                    href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/">
                                                                     <h2 class="title_1">스파이더맨: 어크로스 더 유니버스 </h2>
                                                                 </a>
                                                             </div>
@@ -312,7 +306,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
+                                                                    href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2021/01/c6Sk9oUhUIFqarwohdjP6h_4fMcGFhHZsS33CpIFhg_Ky70phfHPRvm3iBHdL-g0ZjoEnGxkLzlQMLuOPIQkr-iCJLqSI35om-2_BvxZKAYxt8TxDkb-_VpfOq7Hb6vw0NUpYMzLiLJ4WRztwl7dfw.webp"
                                                                         style="width: 218px;">
@@ -320,7 +314,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
+                                                                    href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
                                                                     <span class="s_e_title_1">4화</span>
                                                                     <h2 class="title_1">경이로운 소문 시즌 2</h2>
                                                                 </a>
@@ -329,7 +323,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/">
+                                                                    href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/common.jpg"
                                                                         style="width: 218px;">
@@ -337,7 +331,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/">
+                                                                    href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/">
                                                                     <span class="s_e_title_1">2화</span>
                                                                     <h2 class="title_1">소방서 옆 경찰서 시즌 2</h2>
                                                                 </a>
@@ -346,14 +340,14 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/">
+                                                                    href="/movie/%eb%9d%bc%eb%b0%a9/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/hvjR3E9K9iRlVTsTSEByPflZjQ0.jpg"
                                                                         style="width: 218px;">
                                                                 </a>
                                                             </div>
                                                             <div class="box_meta">
-                                                                <a href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/">
+                                                                <a href="/movie/%eb%9d%bc%eb%b0%a9/">
                                                                     <h2 class="title_1">라방 </h2>
                                                                 </a>
                                                             </div>
@@ -361,7 +355,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
+                                                                    href="/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/DP_2-mp1.jpeg"
                                                                         style="width: 218px;">
@@ -369,7 +363,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
+                                                                    href="/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
                                                                     <span class="s_e_title_1">6화</span>
                                                                     <h2 class="title_1">D.P. 시즌 2</h2>
                                                                 </a>
@@ -378,7 +372,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ea%b7%80%ea%b3%b5%ec%9e%90/">
+                                                                    href="/movie/%ea%b7%80%ea%b3%b5%ec%9e%90/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/nMyM7CpWoebu03mAI3JtKTwh5zm.jpg"
                                                                         style="width: 218px;">
@@ -386,7 +380,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ea%b7%80%ea%b3%b5%ec%9e%90/">
+                                                                    href="/movie/%ea%b7%80%ea%b3%b5%ec%9e%90/">
                                                                     <h2 class="title_1">귀공자 </h2>
                                                                 </a>
                                                             </div>
@@ -394,7 +388,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ed%88%ac-%ed%95%ab-%ec%8b%9c%ec%a6%8c-5-10%ed%99%94/">
+                                                                    href="/episode/%ed%88%ac-%ed%95%ab-%ec%8b%9c%ec%a6%8c-5-10%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/MV5BYzNkMmY0MWQtMzY1Mi00MTFlLWIxMTgtNGI5NTA3OGY0ZTc3XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg"
                                                                         style="width: 218px;">
@@ -402,7 +396,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ed%88%ac-%ed%95%ab-%ec%8b%9c%ec%a6%8c-5-10%ed%99%94/">
+                                                                    href="/episode/%ed%88%ac-%ed%95%ab-%ec%8b%9c%ec%a6%8c-5-10%ed%99%94/">
                                                                     <span class="s_e_title_1">10화</span>
                                                                     <h2 class="title_1">투 핫! 시즌 5</h2>
                                                                 </a>
@@ -411,7 +405,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ea%b0%80%eb%94%94%ec%96%b8%ec%a6%88-%ec%98%a4%eb%b8%8c-%ea%b0%a4%eb%9f%ad%ec%8b%9c-volume-3/">
+                                                                    href="/movie/%ea%b0%80%eb%94%94%ec%96%b8%ec%a6%88-%ec%98%a4%eb%b8%8c-%ea%b0%a4%eb%9f%ad%ec%8b%9c-volume-3/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/b7epV2cQZVIR4u5VZraDwD0AgiE.jpg"
                                                                         style="width: 218px;">
@@ -419,7 +413,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ea%b0%80%eb%94%94%ec%96%b8%ec%a6%88-%ec%98%a4%eb%b8%8c-%ea%b0%a4%eb%9f%ad%ec%8b%9c-volume-3/">
+                                                                    href="/movie/%ea%b0%80%eb%94%94%ec%96%b8%ec%a6%88-%ec%98%a4%eb%b8%8c-%ea%b0%a4%eb%9f%ad%ec%8b%9c-volume-3/">
                                                                     <h2 class="title_1">가디언즈 오브 갤럭시 Volume 3 </h2>
                                                                 </a>
                                                             </div>
@@ -427,7 +421,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/">
+                                                                    href="/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/jbremGnsRR4XZMDj97YHt20isRP.jpg"
                                                                         style="width: 218px;">
@@ -435,7 +429,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/">
+                                                                    href="/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/">
                                                                     <h2 class="title_1">범죄도시 3 </h2>
                                                                 </a>
                                                             </div>
@@ -443,7 +437,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/2%ec%96%b59%ec%b2%9c-%ea%b2%b0%ed%98%bc%ec%a0%84%ec%9f%81-6%ed%99%94/">
+                                                                    href="/episode/2%ec%96%b59%ec%b2%9c-%ea%b2%b0%ed%98%bc%ec%a0%84%ec%9f%81-6%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/7TDiFPY1fhWTRqP1kp_cyYWKbz7P6BapxweFO8jsTosgeMsACmP4yERMfzIqCxXJuPRmXHryPSMHbNcaVy9Cdf5yzp3px7GCua8lI13y-Mfvy7IEICYvDIfA7LM4LVjduODzkdDRF4sFDzJe5neUHw.webp"
                                                                         style="width: 218px;">
@@ -451,7 +445,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/2%ec%96%b59%ec%b2%9c-%ea%b2%b0%ed%98%bc%ec%a0%84%ec%9f%81-6%ed%99%94/">
+                                                                    href="/episode/2%ec%96%b59%ec%b2%9c-%ea%b2%b0%ed%98%bc%ec%a0%84%ec%9f%81-6%ed%99%94/">
                                                                     <span class="s_e_title_1">6화</span>
                                                                     <h2 class="title_1">2억9천: 결혼전쟁 </h2>
                                                                 </a>
@@ -460,7 +454,7 @@
                                                         <div class="embla__slide">
                                                             <div class="embla__slide__inner">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ec%9c%84%ec%b3%90-%ec%8b%9c%ec%a6%8c-3-8%ed%99%94/">
+                                                                    href="/episode/%ec%9c%84%ec%b3%90-%ec%8b%9c%ec%a6%8c-3-8%ed%99%94/">
                                                                     <img class="embla__slide__img"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/06/y2Jt64ky9cflLbK8ZNIWLtLZy7G4SITjnxVwxlsuzAEkIKkYgsNerMUQYbsMckDueLt7hTEYiyvXdC3TNGB6gzopT-T1-zEoTFqiJ4BiQ3eAnw0RIFZ8fGrv6B3Vp5h21QlvEmlimPUtSguqkJNIJA.webp"
                                                                         style="width: 218px;">
@@ -468,7 +462,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ec%9c%84%ec%b3%90-%ec%8b%9c%ec%a6%8c-3-8%ed%99%94/">
+                                                                    href="/episode/%ec%9c%84%ec%b3%90-%ec%8b%9c%ec%a6%8c-3-8%ed%99%94/">
                                                                     <span class="s_e_title_1">8화</span>
                                                                     <h2 class="title_1">위쳐 시즌 3</h2>
                                                                 </a>
@@ -505,19 +499,19 @@
                                             <div class="bg_opacity"></div>
                                             <div class="ott_logo">
                                                 <div class="ott_netflix">
-                                                    <a href="https://kokoatv.net/ott-web/netflix/">
+                                                    <a href="/ott-web/netflix/">
                                                         <img
                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/netflix.png">
                                                     </a>
                                                 </div>
                                                 <div class="ott_disney">
-                                                    <a href="https://kokoatv.net/ott-web/disney/">
+                                                    <a href="/ott-web/disney/">
                                                         <img
                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/disney_plus.png">
                                                     </a>
                                                 </div>
                                                 <div class="ott_appletv">
-                                                    <a href="https://kokoatv.net/ott-web/apple-tv/">
+                                                    <a href="/ott-web/apple-tv/">
                                                         <img
                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/appletv.png">
                                                     </a>
@@ -539,7 +533,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
+                                                                    href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/IMG_2989.jpg"
                                                                         style="width: 218px;">
@@ -548,7 +542,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
+                                                                    href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/">
                                                                     <span class="s_e_title_1">시즌 2 – 4화</span><br>
                                                                     <h2 class="title_1">경이로운 소문</h2>
                                                                 </a>
@@ -559,7 +553,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%eb%93%9c%eb%a6%bc/">
+                                                                    href="/movie/%eb%93%9c%eb%a6%bc/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/06/dream-movie-review-01.jpg"
                                                                         style="width: 218px;">
@@ -567,7 +561,7 @@
                                                                 <div class="slide-box-number">2</div>
                                                             </div>
                                                             <div class="box_meta">
-                                                                <a href="https://kokoatv.net/movie/%eb%93%9c%eb%a6%bc/">
+                                                                <a href="/movie/%eb%93%9c%eb%a6%bc/">
                                                                     <br>
                                                                     <h2 class="title_1">드림</h2>
                                                                 </a>
@@ -578,7 +572,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
+                                                                    href="/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/1687234812_649128fc44b1c_VYHrC6iVV92WFDuXrxSm.webp"
                                                                         style="width: 218px;">
@@ -587,7 +581,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
+                                                                    href="/episode/d-p-%ec%8b%9c%ec%a6%8c-2-6%ed%99%94/">
                                                                     <span class="s_e_title_1">시즌 2 – 6화</span><br>
                                                                     <h2 class="title_1">D.P.</h2>
                                                                 </a>
@@ -598,7 +592,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ed%8c%a8%eb%9f%ac%eb%8b%a4%ec%9d%b4%ec%8a%a4/">
+                                                                    href="/movie/%ed%8c%a8%eb%9f%ac%eb%8b%a4%ec%9d%b4%ec%8a%a4/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/download-6.jpg"
                                                                         style="width: 218px;">
@@ -607,7 +601,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ed%8c%a8%eb%9f%ac%eb%8b%a4%ec%9d%b4%ec%8a%a4/">
+                                                                    href="/movie/%ed%8c%a8%eb%9f%ac%eb%8b%a4%ec%9d%b4%ec%8a%a4/">
                                                                     <br>
                                                                     <h2 class="title_1">패러다이스</h2>
                                                                 </a>
@@ -618,7 +612,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/">
+                                                                    href="/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/2V555dJ1wv2gnMfvdSjeK3sM1iJ.jpg"
                                                                         style="width: 218px;">
@@ -627,7 +621,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/">
+                                                                    href="/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/">
                                                                     <span class="s_e_title_1">16화</span><br>
                                                                     <h2 class="title_1">킹더랜드</h2>
                                                                 </a>
@@ -638,7 +632,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ec%a2%80100-%ec%a2%80%eb%b9%84%ea%b0%80-%eb%90%98%ea%b8%b0-%ec%a0%84%ec%97%90-%ed%95%98%ea%b3%a0-%ec%8b%b6%ec%9d%80-100%ea%b0%80%ec%a7%80/">
+                                                                    href="/movie/%ec%a2%80100-%ec%a2%80%eb%b9%84%ea%b0%80-%eb%90%98%ea%b8%b0-%ec%a0%84%ec%97%90-%ed%95%98%ea%b3%a0-%ec%8b%b6%ec%9d%80-100%ea%b0%80%ec%a7%80/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/wwwasianwikicom-4251296308.webp"
                                                                         style="width: 218px;">
@@ -647,7 +641,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ec%a2%80100-%ec%a2%80%eb%b9%84%ea%b0%80-%eb%90%98%ea%b8%b0-%ec%a0%84%ec%97%90-%ed%95%98%ea%b3%a0-%ec%8b%b6%ec%9d%80-100%ea%b0%80%ec%a7%80/">
+                                                                    href="/movie/%ec%a2%80100-%ec%a2%80%eb%b9%84%ea%b0%80-%eb%90%98%ea%b8%b0-%ec%a0%84%ec%97%90-%ed%95%98%ea%b3%a0-%ec%8b%b6%ec%9d%80-100%ea%b0%80%ec%a7%80/">
                                                                     <br>
                                                                     <h2 class="title_1">좀100: 좀비가 되기 전에 하고 싶은 100가지</h2>
                                                                 </a>
@@ -658,7 +652,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%eb%8f%8c%ec%8b%b1%ea%b8%80%ec%a6%88-%ec%8b%9c%ec%a6%8c-4-3%ed%99%94/">
+                                                                    href="/episode/%eb%8f%8c%ec%8b%b1%ea%b8%80%ec%a6%88-%ec%8b%9c%ec%a6%8c-4-3%ed%99%94/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/시즌-1.jpg"
                                                                         style="width: 218px;">
@@ -667,7 +661,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%eb%8f%8c%ec%8b%b1%ea%b8%80%ec%a6%88-%ec%8b%9c%ec%a6%8c-4-3%ed%99%94/">
+                                                                    href="/episode/%eb%8f%8c%ec%8b%b1%ea%b8%80%ec%a6%88-%ec%8b%9c%ec%a6%8c-4-3%ed%99%94/">
                                                                     <span class="s_e_title_1">시즌 4 – 3화</span><br>
                                                                     <h2 class="title_1">돌싱글즈</h2>
                                                                 </a>
@@ -678,7 +672,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ec%8a%a4%eb%82%b4%ed%91%b8/">
+                                                                    href="/movie/%ec%8a%a4%eb%82%b4%ed%91%b8/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/download-5.jpg"
                                                                         style="width: 218px;">
@@ -687,7 +681,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ec%8a%a4%eb%82%b4%ed%91%b8/">
+                                                                    href="/movie/%ec%8a%a4%eb%82%b4%ed%91%b8/">
                                                                     <br>
                                                                     <h2 class="title_1">스내푸</h2>
                                                                 </a>
@@ -698,7 +692,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="tv-show__link"
-                                                                    href="https://kokoatv.net/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/">
+                                                                    href="/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/1280-2.jpg"
                                                                         style="width: 218px;">
@@ -707,7 +701,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/">
+                                                                    href="/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/">
                                                                     <span class="s_e_title_1">4화</span><br>
                                                                     <h2 class="title_1">오랫동안 당신을 기다렸습니다</h2>
                                                                 </a>
@@ -718,7 +712,7 @@
                                                                 style="z-index:999">2023</span>
                                                             <div class="embla__slide__inner1">
                                                                 <a class="movie__link"
-                                                                    href="https://kokoatv.net/movie/%ec%98%a4%ed%86%a0%eb%9d%bc%eb%8a%94-%eb%82%a8%ec%9e%90/">
+                                                                    href="/movie/%ec%98%a4%ed%86%a0%eb%9d%bc%eb%8a%94-%eb%82%a8%ec%9e%90/">
                                                                     <img class="embla__slide__img1"
                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/maxresdefault.jpg"
                                                                         style="width: 218px;">
@@ -727,7 +721,7 @@
                                                             </div>
                                                             <div class="box_meta">
                                                                 <a
-                                                                    href="https://kokoatv.net/movie/%ec%98%a4%ed%86%a0%eb%9d%bc%eb%8a%94-%eb%82%a8%ec%9e%90/">
+                                                                    href="/movie/%ec%98%a4%ed%86%a0%eb%9d%bc%eb%8a%94-%eb%82%a8%ec%9e%90/">
                                                                     <br>
                                                                     <h2 class="title_1">오토라는 남자</h2>
                                                                 </a>
@@ -790,7 +784,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                                 alt="" width="83" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
+                                                                            href="/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="300" height="450"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/08/22cjCaUikOW14dr1htuhCVaUbzk.jpg"
@@ -810,7 +804,7 @@
                                                                                     Hard Cell
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
+                                                                                <a href="/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">6화</span>
@@ -829,7 +823,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                                 alt="" width="83" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/fisk-6%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
+                                                                            href="/episode/fisk-6%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="300" height="450"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/08/kfBHjnHTXJY82xzdeSkI7b5DMud.jpg"
@@ -849,7 +843,7 @@
                                                                                     Fisk
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/fisk-6%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
+                                                                                <a href="/episode/fisk-6%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">6화</span>
@@ -868,7 +862,7 @@
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/appletv.png"
                                                                                 alt="" width="60" height="31"
                                                                                 class="tv-channel"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%81%ac%eb%9d%bc%ec%9a%b0%eb%94%94%eb%93%9c-10%ed%99%94/"
+                                                                            href="/episode/%ed%81%ac%eb%9d%bc%ec%9a%b0%eb%94%94%eb%93%9c-10%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="300" height="450"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/vbTh2PFQXbS5KAwWdQV7Tko43OB.jpg"
@@ -888,7 +882,7 @@
                                                                                     The Crowded Room
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%81%ac%eb%9d%bc%ec%9a%b0%eb%94%94%eb%93%9c-10%ed%99%94/"
+                                                                                <a href="/episode/%ed%81%ac%eb%9d%bc%ec%9a%b0%eb%94%94%eb%93%9c-10%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">10화</span>
@@ -907,7 +901,7 @@
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/tvn.png"
                                                                                 alt="" width="52" height="31"
                                                                                 class="tv-channel"></div><a
-                                                                            href="https://kokoatv.net/episode/%eb%aa%85%ec%9d%98%eb%93%a4%ec%9d%98-%ea%b2%bd%ea%b3%a0-22%ed%99%94/"
+                                                                            href="/episode/%eb%aa%85%ec%9d%98%eb%93%a4%ec%9d%98-%ea%b2%bd%ea%b3%a0-22%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="168" height="242"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/03/sasasasas.jpg"
@@ -926,7 +920,7 @@
                                                                                 <div class="original-title-tvshow">
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%eb%aa%85%ec%9d%98%eb%93%a4%ec%9d%98-%ea%b2%bd%ea%b3%a0-22%ed%99%94/"
+                                                                                <a href="/episode/%eb%aa%85%ec%9d%98%eb%93%a4%ec%9d%98-%ea%b2%bd%ea%b3%a0-22%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">22화</span>
@@ -945,7 +939,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                                 alt="" width="75" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ec%9d%b8%ea%b0%84%ea%b7%b9%ec%9e%a5-5645%ed%99%94/"
+                                                                            href="/episode/%ec%9d%b8%ea%b0%84%ea%b7%b9%ec%9e%a5-5645%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="220" height="330"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/image_webp/2022/03/2124cb9ac948655afb91bf91cf28bc81.webp"
@@ -963,7 +957,7 @@
                                                                                     Screening Humanity
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ec%9d%b8%ea%b0%84%ea%b7%b9%ec%9e%a5-5645%ed%99%94/"
+                                                                                <a href="/episode/%ec%9d%b8%ea%b0%84%ea%b7%b9%ec%9e%a5-5645%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">5645화</span>
@@ -982,7 +976,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
                                                                                 alt="" width="68" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ec%a2%8b%ec%9d%80%ec%95%84%ec%b9%a8-6596%ed%99%94/"
+                                                                            href="/episode/%ec%a2%8b%ec%9d%80%ec%95%84%ec%b9%a8-6596%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="880" height="1320"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/1a159e5c496040762b6b394fc2512e88-transformed.jpeg"
@@ -1002,7 +996,7 @@
                                                                                     Good Morning!
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ec%a2%8b%ec%9d%80%ec%95%84%ec%b9%a8-6596%ed%99%94/"
+                                                                                <a href="/episode/%ec%a2%8b%ec%9d%80%ec%95%84%ec%b9%a8-6596%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">6596화</span>
@@ -1021,7 +1015,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
                                                                                 alt="" width="68" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ec%83%9d%eb%b0%a9%ec%86%a1-%ec%98%a4%eb%8a%98-%ec%95%84%ec%b9%a8-4266%ed%99%94/"
+                                                                            href="/episode/%ec%83%9d%eb%b0%a9%ec%86%a1-%ec%98%a4%eb%8a%98-%ec%95%84%ec%b9%a8-4266%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="600" height="847"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/05/131735148894995722.jpg"
@@ -1041,7 +1035,7 @@
                                                                                     Live Broadcast This Morning
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ec%83%9d%eb%b0%a9%ec%86%a1-%ec%98%a4%eb%8a%98-%ec%95%84%ec%b9%a8-4266%ed%99%94/"
+                                                                                <a href="/episode/%ec%83%9d%eb%b0%a9%ec%86%a1-%ec%98%a4%eb%8a%98-%ec%95%84%ec%b9%a8-4266%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">4266화</span>
@@ -1060,7 +1054,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                                 alt="" width="83" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%95%b4-%eb%b3%bc%eb%a7%8c%ed%95%9c-%ec%95%84%ec%b9%a8-mw-318%ed%99%94-2%eb%b6%80/"
+                                                                            href="/episode/%ed%95%b4-%eb%b3%bc%eb%a7%8c%ed%95%9c-%ec%95%84%ec%b9%a8-mw-318%ed%99%94-2%eb%b6%80/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="500" height="707"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/05/202205021554010203_l.jpg"
@@ -1080,7 +1074,7 @@
                                                                                     Good Morning M&amp;W
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%95%b4-%eb%b3%bc%eb%a7%8c%ed%95%9c-%ec%95%84%ec%b9%a8-mw-318%ed%99%94-2%eb%b6%80/"
+                                                                                <a href="/episode/%ed%95%b4-%eb%b3%bc%eb%a7%8c%ed%95%9c-%ec%95%84%ec%b9%a8-mw-318%ed%99%94-2%eb%b6%80/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">318.2화</span>
@@ -1099,7 +1093,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/ena.png"
                                                                                 alt="" width="61" height="29"></div><a
-                                                                            href="https://kokoatv.net/episode/%eb%82%a8%eb%82%a8-8%ed%99%94/"
+                                                                            href="/episode/%eb%82%a8%eb%82%a8-8%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="1000" height="1428"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q.webp"
@@ -1119,7 +1113,7 @@
                                                                                     Not Others
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%eb%82%a8%eb%82%a8-8%ed%99%94/"
+                                                                                <a href="/episode/%eb%82%a8%eb%82%a8-8%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">8화</span>
@@ -1138,7 +1132,7 @@
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/mnet.png"
                                                                                 alt="" width="62" height="31"
                                                                                 class="tv-channel"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%80%b8%eb%8d%a4-%ed%8d%bc%ec%a6%90-9%ed%99%94/"
+                                                                            href="/episode/%ed%80%b8%eb%8d%a4-%ed%8d%bc%ec%a6%90-9%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="2000" height="1428"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/F9BVouD-IPT_getp-sVdjQUzSwCZ5glaXqpd78vLpVnYCcCtq2T8sEHxohd4cF0y602RF70z6Gwt9BNx7kZHIQ-transformed.webp"
@@ -1158,7 +1152,7 @@
                                                                                     Queendom Puzzle
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%80%b8%eb%8d%a4-%ed%8d%bc%ec%a6%90-9%ed%99%94/"
+                                                                                <a href="/episode/%ed%80%b8%eb%8d%a4-%ed%8d%bc%ec%a6%90-9%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">9화</span>
@@ -1177,7 +1171,7 @@
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
                                                                                 alt="" width="68" height="31"
                                                                                 class="tv-channel"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%99%94%ec%9a%94%ec%9d%bc%ec%9d%80-%eb%b0%a4%ec%9d%b4-%ec%a2%8b%ec%95%84-79%ed%99%94/"
+                                                                            href="/episode/%ed%99%94%ec%9a%94%ec%9d%bc%ec%9d%80-%eb%b0%a4%ec%9d%b4-%ec%a2%8b%ec%95%84-79%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="600" height="825"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/WkblgpAmlZYPVP2gCdiryBTbbRrghZEkTPxQBo1mYDPJg2u0TKofgYxB69DEQUJaqCoilyWqVtlLkxaOXwlng.webp"
@@ -1197,7 +1191,7 @@
                                                                                     Tuesday Night is the Best
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%99%94%ec%9a%94%ec%9d%bc%ec%9d%80-%eb%b0%a4%ec%9d%b4-%ec%a2%8b%ec%95%84-79%ed%99%94/"
+                                                                                <a href="/episode/%ed%99%94%ec%9a%94%ec%9d%bc%ec%9d%80-%eb%b0%a4%ec%9d%b4-%ec%a2%8b%ec%95%84-79%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">79화</span>
@@ -1216,7 +1210,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                                 alt="" width="68" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%eb%b6%88%ed%83%80%eb%8a%94-%ec%9e%a5%eb%af%b8%eb%8b%a8-17%ed%99%94/"
+                                                                            href="/episode/%eb%b6%88%ed%83%80%eb%8a%94-%ec%9e%a5%eb%af%b8%eb%8b%a8-17%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="700" height="986"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/news-p.v1.20230414.4733cefb3736444eb07f3d354a23a737_P1.jpg"
@@ -1236,7 +1230,7 @@
                                                                                     The Burning Roses
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%eb%b6%88%ed%83%80%eb%8a%94-%ec%9e%a5%eb%af%b8%eb%8b%a8-17%ed%99%94/"
+                                                                                <a href="/episode/%eb%b6%88%ed%83%80%eb%8a%94-%ec%9e%a5%eb%af%b8%eb%8b%a8-17%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">17화</span>
@@ -1255,7 +1249,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
                                                                                 alt="" width="68" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ea%b0%95%ec%8b%ac%ec%9e%a5-%eb%a6%ac%ea%b7%b8-11%ed%99%94/"
+                                                                            href="/episode/%ea%b0%95%ec%8b%ac%ec%9e%a5-%eb%a6%ac%ea%b7%b8-11%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="1316" height="1860"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/download_1-9nrC-42e05-transformed.jpeg"
@@ -1275,7 +1269,7 @@
                                                                                     Strong Heart League
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ea%b0%95%ec%8b%ac%ec%9e%a5-%eb%a6%ac%ea%b7%b8-11%ed%99%94/"
+                                                                                <a href="/episode/%ea%b0%95%ec%8b%ac%ec%9e%a5-%eb%a6%ac%ea%b7%b8-11%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">11화</span>
@@ -1294,7 +1288,7 @@
                                                                                 class="tv-channel"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                                 alt="" width="75" height="31"></div><a
-                                                                            href="https://kokoatv.net/episode/%ed%95%9c%eb%b0%a4%ec%9d%98-%ec%8b%9c%ec%82%ac%ed%86%a0%ed%81%ac-%eb%8d%94-%eb%9d%bc%ec%9d%b4%eb%b8%8c-731%ed%99%94/"
+                                                                            href="/episode/%ed%95%9c%eb%b0%a4%ec%9d%98-%ec%8b%9c%ec%82%ac%ed%86%a0%ed%81%ac-%eb%8d%94-%eb%9d%bc%ec%9d%b4%eb%b8%8c-731%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="680" height="1018"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/05/N201909171106051.jpg"
@@ -1314,7 +1308,7 @@
                                                                                     Midnight Talk: The Live
                                                                                 </div>
                                                                                 <!-- Lam original title End-->
-                                                                                <a href="https://kokoatv.net/episode/%ed%95%9c%eb%b0%a4%ec%9d%98-%ec%8b%9c%ec%82%ac%ed%86%a0%ed%81%ac-%eb%8d%94-%eb%9d%bc%ec%9d%b4%eb%b8%8c-731%ed%99%94/"
+                                                                                <a href="/episode/%ed%95%9c%eb%b0%a4%ec%9d%98-%ec%8b%9c%ec%82%ac%ed%86%a0%ed%81%ac-%eb%8d%94-%eb%9d%bc%ec%9d%b4%eb%b8%8c-731%ed%99%94/"
                                                                                     class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                         style="display:none"
                                                                                         class="span_sea_ep_title">731화</span>
@@ -1333,7 +1327,7 @@
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2022/05/tvn.png"
                                                                                 alt="" width="52" height="31"
                                                                                 class="tv-channel"></div><a
-                                                                            href="https://kokoatv.net/episode/%eb%b2%8c%ea%b1%b0%eb%b2%97%ec%9d%80-%ec%84%b8%ea%b3%84%ec%82%ac-111%ed%99%94/"
+                                                                            href="/episode/%eb%b2%8c%ea%b1%b0%eb%b2%97%ec%9d%80-%ec%84%b8%ea%b3%84%ec%82%ac-111%ed%99%94/"
                                                                             class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                                 width="841" height="1200"
                                                                                 src="https://image002.modooup.com/wp-content/uploads/2023/06/XL.jpg"
@@ -1353,7 +1347,7 @@
                                                                                 Seol Min-seok’s Naked World History
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%b2%8c%ea%b1%b0%eb%b2%97%ec%9d%80-%ec%84%b8%ea%b3%84%ec%82%ac-111%ed%99%94/"
+                                                                            <a href="/episode/%eb%b2%8c%ea%b1%b0%eb%b2%97%ec%9d%80-%ec%84%b8%ea%b3%84%ec%82%ac-111%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">111화</span>
@@ -1372,7 +1366,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/jtbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%a7%a0%eb%8b%b9%ed%8f%ac-8%ed%99%94/"
+                                                                        href="/episode/%ec%a7%a0%eb%8b%b9%ed%8f%ac-8%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1100" height="1590"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/202306131440005552-transformed.jpeg"
@@ -1392,7 +1386,7 @@
                                                                                 Salty Pawn Shop
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%a7%a0%eb%8b%b9%ed%8f%ac-8%ed%99%94/"
+                                                                            <a href="/episode/%ec%a7%a0%eb%8b%b9%ed%8f%ac-8%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">8화</span>
@@ -1411,7 +1405,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%8b%ac%ec%95%bc-%ea%b4%b4%eb%8b%b4%ed%9a%8c-%ec%8b%9c%ec%a6%8c-2-39%ed%99%94/"
+                                                                        href="/episode/%ec%8b%ac%ec%95%bc-%ea%b4%b4%eb%8b%b4%ed%9a%8c-%ec%8b%9c%ec%a6%8c-2-39%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1491"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/6kMVJWu6gNDqX72-jLFLdYZ7VMnZBeuBWQnreckjaKJ2jz0UrwmbbuZz9UiX3o3bo5f9tZBhGe54gZogE7wiJZ5IEEKPxUuoNUKdhQbJa7oWWFU-KWN8nJd9CgVQtOMXgf1bcCVWHu5AJhD8jt_0GFzizyvNMzVJhVs_fup_4mI.webp"
@@ -1431,7 +1425,7 @@
                                                                                 Midnight Horror Story
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%8b%ac%ec%95%bc-%ea%b4%b4%eb%8b%b4%ed%9a%8c-%ec%8b%9c%ec%a6%8c-2-39%ed%99%94/"
+                                                                            <a href="/episode/%ec%8b%ac%ec%95%bc-%ea%b4%b4%eb%8b%b4%ed%9a%8c-%ec%8b%9c%ec%a6%8c-2-39%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -1451,7 +1445,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ea%b0%80%ec%8a%b4%ec%9d%b4-%eb%9b%b4%eb%8b%a4-14%ed%99%94/"
+                                                                        href="/episode/%ea%b0%80%ec%8a%b4%ec%9d%b4-%eb%9b%b4%eb%8b%a4-14%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1429"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/image_readtop_2023_464334_16872214215515084.jpg"
@@ -1471,7 +1465,7 @@
                                                                                 Heartbeat
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ea%b0%80%ec%8a%b4%ec%9d%b4-%eb%9b%b4%eb%8b%a4-14%ed%99%94/"
+                                                                            <a href="/episode/%ea%b0%80%ec%8a%b4%ec%9d%b4-%eb%9b%b4%eb%8b%a4-14%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">14화</span>
@@ -1490,7 +1484,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%8b%a0%eb%b0%9c-%eb%b2%97%ea%b3%a0-%eb%8f%8c%ec%8b%b1%ed%8f%ac%eb%a7%a8-101%ed%99%94/"
+                                                                        href="/episode/%ec%8b%a0%eb%b0%9c-%eb%b2%97%ea%b3%a0-%eb%8f%8c%ec%8b%b1%ed%8f%ac%eb%a7%a8-101%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1328" height="1888"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/시즌-1_1-transformed.jpeg"
@@ -1510,7 +1504,7 @@
                                                                                 Dolsing Fourmen
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%8b%a0%eb%b0%9c-%eb%b2%97%ea%b3%a0-%eb%8f%8c%ec%8b%b1%ed%8f%ac%eb%a7%a8-101%ed%99%94/"
+                                                                            <a href="/episode/%ec%8b%a0%eb%b0%9c-%eb%b2%97%ea%b3%a0-%eb%8f%8c%ec%8b%b1%ed%8f%ac%eb%a7%a8-101%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">101화</span>
@@ -1529,7 +1523,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/e_channel.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%a9%90%ec%83%9d%ec%97%b0%eb%b6%84-6%ed%99%94/"
+                                                                        href="/episode/%ec%a9%90%ec%83%9d%ec%97%b0%eb%b6%84-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="960" height="1386"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/F_webp_480_2-transformed.jpeg"
@@ -1549,7 +1543,7 @@
                                                                                 Soul Mates
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%a9%90%ec%83%9d%ec%97%b0%eb%b6%84-6%ed%99%94/"
+                                                                            <a href="/episode/%ec%a9%90%ec%83%9d%ec%97%b0%eb%b6%84-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">6화</span>
@@ -1568,7 +1562,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/tvn.png"
                                                                             alt="" width="52" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%86%8c%ec%9a%a9%ec%97%86%ec%96%b4-%ea%b1%b0%ec%a7%93%eb%a7%90-4%ed%99%94/"
+                                                                        href="/episode/%ec%86%8c%ec%9a%a9%ec%97%86%ec%96%b4-%ea%b1%b0%ec%a7%93%eb%a7%90-4%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1433"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/DKq7u1vxdjxrbtxJSI4BUrpDG14kBOHCzugTySVFuK-HAOsMYxMdj6RZTq30Ird0dLx4TLz8wVUusTisJ9oCLg.webp"
@@ -1588,7 +1582,7 @@
                                                                                 My Lovely Liar
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%86%8c%ec%9a%a9%ec%97%86%ec%96%b4-%ea%b1%b0%ec%a7%93%eb%a7%90-4%ed%99%94/"
+                                                                            <a href="/episode/%ec%86%8c%ec%9a%a9%ec%97%86%ec%96%b4-%ea%b1%b0%ec%a7%93%eb%a7%90-4%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">4화</span>
@@ -1607,7 +1601,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs_plus.png"
                                                                             alt="" width="68" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%a6%ac%ec%96%bc-law%eb%a7%a8%ec%8a%a4-%ea%b3%a0%ec%86%8c%ed%95%9c-%eb%82%a8%eb%85%80-5%ed%99%94/"
+                                                                        href="/episode/%eb%a6%ac%ec%96%bc-law%eb%a7%a8%ec%8a%a4-%ea%b3%a0%ec%86%8c%ed%95%9c-%eb%82%a8%eb%85%80-5%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="720" height="1018"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/NISI20230710_0001310977_web.jpg"
@@ -1627,7 +1621,7 @@
                                                                                 Real Lawman’s Savory
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%a6%ac%ec%96%bc-law%eb%a7%a8%ec%8a%a4-%ea%b3%a0%ec%86%8c%ed%95%9c-%eb%82%a8%eb%85%80-5%ed%99%94/"
+                                                                            <a href="/episode/%eb%a6%ac%ec%96%bc-law%eb%a7%a8%ec%8a%a4-%ea%b3%a0%ec%86%8c%ed%95%9c-%eb%82%a8%eb%85%80-5%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">5화</span>
@@ -1646,7 +1640,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%9e%a5%eb%af%b8%ea%bd%83-%ed%95%84-%eb%ac%b4%eb%a0%b5-8%ed%99%94/"
+                                                                        href="/episode/%ec%9e%a5%eb%af%b8%ea%bd%83-%ed%95%84-%eb%ac%b4%eb%a0%b5-8%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="656" height="940"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/1683506195748.png"
@@ -1666,7 +1660,7 @@
                                                                                 When The Roses Bloom
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%9e%a5%eb%af%b8%ea%bd%83-%ed%95%84-%eb%ac%b4%eb%a0%b5-8%ed%99%94/"
+                                                                            <a href="/episode/%ec%9e%a5%eb%af%b8%ea%bd%83-%ed%95%84-%eb%ac%b4%eb%a0%b5-8%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">8화</span>
@@ -1685,7 +1679,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/pd-%ec%88%98%ec%b2%a9-1385%ed%99%94/"
+                                                                        href="/episode/pd-%ec%88%98%ec%b2%a9-1385%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1200" height="1694"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/download_2-U-bF_W6thb-transformed.jpeg"
@@ -1705,7 +1699,7 @@
                                                                                 PD Note
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/pd-%ec%88%98%ec%b2%a9-1385%ed%99%94/"
+                                                                            <a href="/episode/pd-%ec%88%98%ec%b2%a9-1385%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">1385화</span>
@@ -1724,7 +1718,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%8a%88%ed%8d%bc%eb%a7%a8%ec%9d%b4-%eb%8f%8c%ec%95%84%ec%99%94%eb%8b%a4-490%ed%99%94/"
+                                                                        href="/episode/%ec%8a%88%ed%8d%bc%eb%a7%a8%ec%9d%b4-%eb%8f%8c%ec%95%84%ec%99%94%eb%8b%a4-490%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="800" height="1164"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/04/d6UfckcJIPwyFj7jefk4c690CDZ.jpg"
@@ -1744,7 +1738,7 @@
                                                                                 The Return of Superman
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%8a%88%ed%8d%bc%eb%a7%a8%ec%9d%b4-%eb%8f%8c%ec%95%84%ec%99%94%eb%8b%a4-490%ed%99%94/"
+                                                                            <a href="/episode/%ec%8a%88%ed%8d%bc%eb%a7%a8%ec%9d%b4-%eb%8f%8c%ec%95%84%ec%99%94%eb%8b%a4-490%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">490화</span>
@@ -1763,7 +1757,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_joy_1.png"
                                                                             alt="" width="71" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%97%b0%ec%95%a0%ec%9d%98-%ec%b0%b8%ea%b2%ac-%ec%8b%9c%ec%a6%8c-3-187%ed%99%94/"
+                                                                        href="/episode/%ec%97%b0%ec%95%a0%ec%9d%98-%ec%b0%b8%ea%b2%ac-%ec%8b%9c%ec%a6%8c-3-187%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1280" height="1812"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/22M89A19OJ_1-transformed.jpeg"
@@ -1783,7 +1777,7 @@
                                                                                 Love Naggers
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%97%b0%ec%95%a0%ec%9d%98-%ec%b0%b8%ea%b2%ac-%ec%8b%9c%ec%a6%8c-3-187%ed%99%94/"
+                                                                            <a href="/episode/%ec%97%b0%ec%95%a0%ec%9d%98-%ec%b0%b8%ea%b2%ac-%ec%8b%9c%ec%a6%8c-3-187%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 3 –
@@ -1803,7 +1797,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/ebs_1.png"
                                                                             alt="" width="74" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%84%b8%ea%b3%84%ed%85%8c%eb%a7%88%ea%b8%b0%ed%96%89-3306%ed%99%94/"
+                                                                        href="/episode/%ec%84%b8%ea%b3%84%ed%85%8c%eb%a7%88%ea%b8%b0%ed%96%89-3306%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="592" height="841"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/04/segyetemagihaeng.jpg"
@@ -1823,7 +1817,7 @@
                                                                                 Themes Around the World
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%84%b8%ea%b3%84%ed%85%8c%eb%a7%88%ea%b8%b0%ed%96%89-3306%ed%99%94/"
+                                                                            <a href="/episode/%ec%84%b8%ea%b3%84%ed%85%8c%eb%a7%88%ea%b8%b0%ed%96%89-3306%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">3306화</span>
@@ -1842,7 +1836,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/ihq.png"
                                                                             alt="" width="55" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%af%b8%ec%b9%9c%e5%91%b3%e8%a6%aa-%ec%9b%90%ec%a0%95%eb%8c%80-9%ed%99%94/"
+                                                                        href="/episode/%eb%af%b8%ec%b9%9c%e5%91%b3%e8%a6%aa-%ec%9b%90%ec%a0%95%eb%8c%80-9%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="480" height="693"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/480-7.jpg"
@@ -1862,7 +1856,7 @@
                                                                                 Crazy “Taste” Expedition
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%af%b8%ec%b9%9c%e5%91%b3%e8%a6%aa-%ec%9b%90%ec%a0%95%eb%8c%80-9%ed%99%94/"
+                                                                            <a href="/episode/%eb%af%b8%ec%b9%9c%e5%91%b3%e8%a6%aa-%ec%9b%90%ec%a0%95%eb%8c%80-9%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">9화</span>
@@ -1881,7 +1875,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%97%84%ec%a7%80%ec%9d%98-%ec%a0%9c%ec%99%95-550%ed%99%94/"
+                                                                        href="/episode/%ec%97%84%ec%a7%80%ec%9d%98-%ec%a0%9c%ec%99%95-550%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="960" height="1386"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/480_6-transformed-1.jpeg"
@@ -1901,7 +1895,7 @@
                                                                                 The Lord Of The Thumb
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%97%84%ec%a7%80%ec%9d%98-%ec%a0%9c%ec%99%95-550%ed%99%94/"
+                                                                            <a href="/episode/%ec%97%84%ec%a7%80%ec%9d%98-%ec%a0%9c%ec%99%95-550%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">550화</span>
@@ -1920,7 +1914,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                             alt="" width="75" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ea%b8%88%ec%9d%b4%ec%95%bc-%ec%98%a5%ec%9d%b4%ec%95%bc-93%ed%99%94/"
+                                                                        href="/episode/%ea%b8%88%ec%9d%b4%ec%95%bc-%ec%98%a5%ec%9d%b4%ec%95%bc-93%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="700" height="1000"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/03/news-p.v1.20230317.9871529c034f4a7cbfb5cf258721eb43_P1.jpg"
@@ -1940,7 +1934,7 @@
                                                                                 Apple of My Eye
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ea%b8%88%ec%9d%b4%ec%95%bc-%ec%98%a5%ec%9d%b4%ec%95%bc-93%ed%99%94/"
+                                                                            <a href="/episode/%ea%b8%88%ec%9d%b4%ec%95%bc-%ec%98%a5%ec%9d%b4%ec%95%bc-93%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">93화</span>
@@ -1959,7 +1953,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                             alt="" width="75" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%9d%b4%ec%9b%83%ec%a7%91-%ec%b0%b0%ec%8a%a4-398%ed%99%94/"
+                                                                        href="/episode/%ec%9d%b4%ec%9b%83%ec%a7%91-%ec%b0%b0%ec%8a%a4-398%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1360" height="1920"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/67188626_1072616979795325_1422715948388843520_n-transformed.jpeg"
@@ -1979,7 +1973,7 @@
                                                                                 My Neighbor, Charles
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%9d%b4%ec%9b%83%ec%a7%91-%ec%b0%b0%ec%8a%a4-398%ed%99%94/"
+                                                                            <a href="/episode/%ec%9d%b4%ec%9b%83%ec%a7%91-%ec%b0%b0%ec%8a%a4-398%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">398화</span>
@@ -1998,7 +1992,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%9a%b0%ec%95%84%ed%95%9c-%ec%a0%9c%ea%b5%ad-2%ed%99%94/"
+                                                                        href="/episode/%ec%9a%b0%ec%95%84%ed%95%9c-%ec%a0%9c%ea%b5%ad-2%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1432"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/3jvhy0Q3SSfFys3Yj7Fu66EdhOsiQjrjMiEJX-weyyseU9keSpzJatYrRMUxraJGO5BMguVA8sml0CRlTdl9TuReog0jEMHxW63ZjydDgKgJHZsdhJlXS36hujTXy-2IEjSB5omCYOzAVg5l1ge0FA.webp"
@@ -2018,7 +2012,7 @@
                                                                                 Elegant Empire
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%9a%b0%ec%95%84%ed%95%9c-%ec%a0%9c%ea%b5%ad-2%ed%99%94/"
+                                                                            <a href="/episode/%ec%9a%b0%ec%95%84%ed%95%9c-%ec%a0%9c%ea%b5%ad-2%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">2화</span>
@@ -2037,7 +2031,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                             alt="" width="75" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/6%ec%8b%9c-%eb%82%b4%ea%b3%a0%ed%96%a5-7850%ed%99%94/"
+                                                                        href="/episode/6%ec%8b%9c-%eb%82%b4%ea%b3%a0%ed%96%a5-7850%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1707" height="2560"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/tvchart_1650960702-transformed-scaled.jpeg"
@@ -2057,7 +2051,7 @@
                                                                                 Hometown Report
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/6%ec%8b%9c-%eb%82%b4%ea%b3%a0%ed%96%a5-7850%ed%99%94/"
+                                                                            <a href="/episode/6%ec%8b%9c-%eb%82%b4%ea%b3%a0%ed%96%a5-7850%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">7850화</span>
@@ -2076,7 +2070,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%95%98%eb%8a%98%ec%9d%98-%ec%9d%b8%ec%97%b0-80%ed%99%94/"
+                                                                        href="/episode/%ed%95%98%eb%8a%98%ec%9d%98-%ec%9d%b8%ec%97%b0-80%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="680" height="1014"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/04/N16801731099909_be2583.jpg"
@@ -2096,7 +2090,7 @@
                                                                                 Meant To Be
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%95%98%eb%8a%98%ec%9d%98-%ec%9d%b8%ec%97%b0-80%ed%99%94/"
+                                                                            <a href="/episode/%ed%95%98%eb%8a%98%ec%9d%98-%ec%9d%b8%ec%97%b0-80%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">80화</span>
@@ -2115,7 +2109,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%8d%94-%ec%b2%b4%ec%8a%a4%ed%8a%b8%eb%84%9b-%eb%a7%a8-6%ed%99%94/"
+                                                                        href="/episode/%eb%8d%94-%ec%b2%b4%ec%8a%a4%ed%8a%b8%eb%84%9b-%eb%a7%a8-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/wLZTY1apb8895dmj9QLHYRT51UZ.jpg"
@@ -2135,7 +2129,7 @@
                                                                                 Kastanjemanden
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%8d%94-%ec%b2%b4%ec%8a%a4%ed%8a%b8%eb%84%9b-%eb%a7%a8-6%ed%99%94/"
+                                                                            <a href="/episode/%eb%8d%94-%ec%b2%b4%ec%8a%a4%ed%8a%b8%eb%84%9b-%eb%a7%a8-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">6화</span>
@@ -2154,7 +2148,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/06/hulu.png"
                                                                             alt="" width="62" height="30"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%97%85-%ed%9e%88%ec%96%b4-8%ed%99%94/"
+                                                                        href="/episode/%ec%97%85-%ed%9e%88%ec%96%b4-8%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/1Vjdjubfv23OR2iXvQJaNBZERs3.jpg"
@@ -2174,7 +2168,7 @@
                                                                                 Up Here
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%97%85-%ed%9e%88%ec%96%b4-8%ed%99%94/"
+                                                                            <a href="/episode/%ec%97%85-%ed%9e%88%ec%96%b4-8%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">8화</span>
@@ -2195,7 +2189,7 @@
                                                                             alt="" width="26" height="30"
                                                                             srcset="https://image002.modooup.com/wp-content/uploads/2023/06/9fGgdJz17aBX7dOyfHJtsozB7bf.png 26w, https://image002.modooup.com/wp-content/uploads/2023/06/9fGgdJz17aBX7dOyfHJtsozB7bf-21x24.png 21w"
                                                                             sizes="(max-width: 26px) 100vw, 26px"></div>
-                                                                    <a href="https://kokoatv.net/episode/%ec%9b%8c%ec%8b%b1%ed%84%b4-3%ed%99%94/"
+                                                                    <a href="/episode/%ec%9b%8c%ec%8b%b1%ed%84%b4-3%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/1ynDi8x0n5c2DL1z6FkA7m0ebk3.jpg"
@@ -2215,7 +2209,7 @@
                                                                                 Washington
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%9b%8c%ec%8b%b1%ed%84%b4-3%ed%99%94/"
+                                                                            <a href="/episode/%ec%9b%8c%ec%8b%b1%ed%84%b4-3%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">3화</span>
@@ -2234,7 +2228,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%9f%ac%ed%94%84-%eb%8b%a4%ec%9d%b4%ec%95%84%eb%aa%ac%eb%93%9c-8%ed%99%94/"
+                                                                        href="/episode/%eb%9f%ac%ed%94%84-%eb%8b%a4%ec%9d%b4%ec%95%84%eb%aa%ac%eb%93%9c-8%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/dr8BsZpkMsw7YFqVCM6aLEog3It.jpg"
@@ -2254,7 +2248,7 @@
                                                                                 Rough Diamonds
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%9f%ac%ed%94%84-%eb%8b%a4%ec%9d%b4%ec%95%84%eb%aa%ac%eb%93%9c-8%ed%99%94/"
+                                                                            <a href="/episode/%eb%9f%ac%ed%94%84-%eb%8b%a4%ec%9d%b4%ec%95%84%eb%aa%ac%eb%93%9c-8%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">8화</span>
@@ -2273,7 +2267,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/appletv.png"
                                                                             alt="" width="60" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%95%84%ec%b9%b4%ed%92%80%ec%bd%94-%ec%8b%9c%ec%a6%8c-2-10%ed%99%94/"
+                                                                        href="/episode/%ec%95%84%ec%b9%b4%ed%92%80%ec%bd%94-%ec%8b%9c%ec%a6%8c-2-10%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/gzBkO4zFr75A13GKnjvTeg25pze.jpg"
@@ -2293,7 +2287,7 @@
                                                                                 Acapulco
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%95%84%ec%b9%b4%ed%92%80%ec%bd%94-%ec%8b%9c%ec%a6%8c-2-10%ed%99%94/"
+                                                                            <a href="/episode/%ec%95%84%ec%b9%b4%ed%92%80%ec%bd%94-%ec%8b%9c%ec%a6%8c-2-10%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -2313,7 +2307,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%96%b4%eb%91%a0-%ec%86%8d%ec%9d%98-42%ec%9d%bc-6%ed%99%94/"
+                                                                        href="/episode/%ec%96%b4%eb%91%a0-%ec%86%8d%ec%9d%98-42%ec%9d%bc-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/1-1.jpg"
@@ -2333,7 +2327,7 @@
                                                                                 42 días en la oscuridad
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%96%b4%eb%91%a0-%ec%86%8d%ec%9d%98-42%ec%9d%bc-6%ed%99%94/"
+                                                                            <a href="/episode/%ec%96%b4%eb%91%a0-%ec%86%8d%ec%9d%98-42%ec%9d%bc-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">6화</span>
@@ -2352,7 +2346,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%8c%90%eb%8f%84%eb%9d%bc-338%ed%99%94/"
+                                                                        href="/episode/%ed%8c%90%eb%8f%84%eb%9d%bc-338%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="800" height="1103"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/16133528666029cfa2224a6.jpg"
@@ -2372,7 +2366,7 @@
                                                                                 Pandora
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%8c%90%eb%8f%84%eb%9d%bc-338%ed%99%94/"
+                                                                            <a href="/episode/%ed%8c%90%eb%8f%84%eb%9d%bc-338%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">338화</span>
@@ -2391,7 +2385,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%83%9d%ed%99%9c%ec%9d%98-%eb%8b%ac%ec%9d%b8-900%ed%99%94/"
+                                                                        href="/episode/%ec%83%9d%ed%99%9c%ec%9d%98-%eb%8b%ac%ec%9d%b8-900%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="533" height="723"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/fasdse.png"
@@ -2411,7 +2405,7 @@
                                                                                 Master of Living
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%83%9d%ed%99%9c%ec%9d%98-%eb%8b%ac%ec%9d%b8-900%ed%99%94/"
+                                                                            <a href="/episode/%ec%83%9d%ed%99%9c%ec%9d%98-%eb%8b%ac%ec%9d%b8-900%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">900화</span>
@@ -2430,7 +2424,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%95%9c%eb%b2%88-%eb%8d%94-%ec%b2%b4%ed%81%ac%ed%83%80%ec%9e%84-151%ed%99%94/"
+                                                                        href="/episode/%ed%95%9c%eb%b2%88-%eb%8d%94-%ec%b2%b4%ed%81%ac%ed%83%80%ec%9e%84-151%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="480" height="693"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/480-2.jpg"
@@ -2450,7 +2444,7 @@
                                                                                 One More Check Time
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%95%9c%eb%b2%88-%eb%8d%94-%ec%b2%b4%ed%81%ac%ed%83%80%ec%9e%84-151%ed%99%94/"
+                                                                            <a href="/episode/%ed%95%9c%eb%b2%88-%eb%8d%94-%ec%b2%b4%ed%81%ac%ed%83%80%ec%9e%84-151%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">151화</span>
@@ -2469,7 +2463,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/a_channel.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%88%9c%ec%a0%95%ec%8b%9c%eb%8c%80-36%ed%99%94/"
+                                                                        href="/episode/%ec%88%9c%ec%a0%95%ec%8b%9c%eb%8c%80-36%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="480" height="693"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/480-3.jpg"
@@ -2489,7 +2483,7 @@
                                                                                 Pure Age
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%88%9c%ec%a0%95%ec%8b%9c%eb%8c%80-36%ed%99%94/"
+                                                                            <a href="/episode/%ec%88%9c%ec%a0%95%ec%8b%9c%eb%8c%80-36%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">36화</span>
@@ -2508,7 +2502,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_1.png"
                                                                             alt="" width="75" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%9a%b0%eb%a6%ac%eb%a7%90-%ea%b2%a8%eb%a3%a8%ea%b8%b0-968%ed%99%94/"
+                                                                        href="/episode/%ec%9a%b0%eb%a6%ac%eb%a7%90-%ea%b2%a8%eb%a3%a8%ea%b8%b0-968%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="880" height="1280"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/05/woorimal_battle_poster.jpg"
@@ -2528,7 +2522,7 @@
                                                                                 Woorimal Battle
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%9a%b0%eb%a6%ac%eb%a7%90-%ea%b2%a8%eb%a3%a8%ea%b8%b0-968%ed%99%94/"
+                                                                            <a href="/episode/%ec%9a%b0%eb%a6%ac%eb%a7%90-%ea%b2%a8%eb%a3%a8%ea%b8%b0-968%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">968화</span>
@@ -2547,7 +2541,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%97%ac%eb%a6%84%ec%9d%98-%eb%b9%84%eb%b0%80-%ec%8b%9c%ec%a6%8c-2-8%ed%99%94/"
+                                                                        href="/episode/%ec%97%ac%eb%a6%84%ec%9d%98-%eb%b9%84%eb%b0%80-%ec%8b%9c%ec%a6%8c-2-8%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="220" height="327"
                                                                             src="https://image002.modooup.com/wp-content/uploads/image_webp/2022/02/eab759f57ebc31eb7697987708d96321.webp"
@@ -2565,7 +2559,7 @@
                                                                                 Cielo grande
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%97%ac%eb%a6%84%ec%9d%98-%eb%b9%84%eb%b0%80-%ec%8b%9c%ec%a6%8c-2-8%ed%99%94/"
+                                                                            <a href="/episode/%ec%97%ac%eb%a6%84%ec%9d%98-%eb%b9%84%eb%b0%80-%ec%8b%9c%ec%a6%8c-2-8%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -2585,7 +2579,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%95%88-%ec%88%98%ec%83%81%ed%95%9c-%ec%9a%a9%ec%9d%98%ec%9e%90%eb%93%a4-9%ed%99%94/"
+                                                                        href="/episode/%ec%95%88-%ec%88%98%ec%83%81%ed%95%9c-%ec%9a%a9%ec%9d%98%ec%9e%90%eb%93%a4-9%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/43tAwJwz3fJwKl5TqNIkYgatuXY.jpg"
@@ -2605,7 +2599,7 @@
                                                                                 Nada Suspeitos
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%95%88-%ec%88%98%ec%83%81%ed%95%9c-%ec%9a%a9%ec%9d%98%ec%9e%90%eb%93%a4-9%ed%99%94/"
+                                                                            <a href="/episode/%ec%95%88-%ec%88%98%ec%83%81%ed%95%9c-%ec%9a%a9%ec%9d%98%ec%9e%90%eb%93%a4-9%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">9화</span>
@@ -2624,7 +2618,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ea%b0%9c%eb%b9%84%ec%9d%98-%eb%a7%a4%ec%a7%81-%ed%95%98%ec%9a%b0%ec%8a%a4-%ec%8b%9c%ec%a6%8c-8-6%ed%99%94/"
+                                                                        href="/episode/%ea%b0%9c%eb%b9%84%ec%9d%98-%eb%a7%a4%ec%a7%81-%ed%95%98%ec%9a%b0%ec%8a%a4-%ec%8b%9c%ec%a6%8c-8-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="220" height="331"
                                                                             src="https://image002.modooup.com/wp-content/uploads/image_webp/2021/01/a17851d3fcbacaae7910fc855bf27ff8.webp"
@@ -2642,7 +2636,7 @@
                                                                                 Gabby’s Dollhouse
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ea%b0%9c%eb%b9%84%ec%9d%98-%eb%a7%a4%ec%a7%81-%ed%95%98%ec%9a%b0%ec%8a%a4-%ec%8b%9c%ec%a6%8c-8-6%ed%99%94/"
+                                                                            <a href="/episode/%ea%b0%9c%eb%b9%84%ec%9d%98-%eb%a7%a4%ec%a7%81-%ed%95%98%ec%9a%b0%ec%8a%a4-%ec%8b%9c%ec%a6%8c-8-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 8 –
@@ -2662,7 +2656,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%84%9c%eb%b0%94%ec%9d%b4%eb%b9%99-%ec%84%9c%eb%a8%b8-10%ed%99%94/"
+                                                                        href="/episode/%ec%84%9c%eb%b0%94%ec%9d%b4%eb%b9%99-%ec%84%9c%eb%a8%b8-10%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/3ACSUbLIYeNz1DuWkTN5LUQ7so5.jpg"
@@ -2682,7 +2676,7 @@
                                                                                 Surviving Summer
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%84%9c%eb%b0%94%ec%9d%b4%eb%b9%99-%ec%84%9c%eb%a8%b8-10%ed%99%94/"
+                                                                            <a href="/episode/%ec%84%9c%eb%b0%94%ec%9d%b4%eb%b9%99-%ec%84%9c%eb%a8%b8-10%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">10화</span>
@@ -2701,7 +2695,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%88%ac%ed%88%ac%ec%9e%a5%eb%b6%80%ec%a3%bc-20%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
+                                                                        href="/episode/%ed%88%ac%ed%88%ac%ec%9e%a5%eb%b6%80%ec%a3%bc-20%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/aMyypY2MhgXeYAuwUXPFH49MkOb.jpg"
@@ -2720,7 +2714,7 @@
                                                                                 偷偷藏不住
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%88%ac%ed%88%ac%ec%9e%a5%eb%b6%80%ec%a3%bc-20%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
+                                                                            <a href="/episode/%ed%88%ac%ed%88%ac%ec%9e%a5%eb%b6%80%ec%a3%bc-20%ed%99%94-%ec%98%81%ec%9e%90%eb%a7%89/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">20화</span>
@@ -2739,7 +2733,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%ac%b4%ec%a7%81%ec%a0%84%ec%83%9d-%ec%9d%b4%ec%84%b8%ea%b3%84%ec%97%90-%ea%b0%94%ec%9c%bc%eb%a9%b4-%ec%b5%9c%ec%84%a0%ec%9d%84-%eb%8b%a4%ed%95%9c%eb%8b%a4-%ec%8b%9c%ec%a6%8c-2-5%ed%99%94/"
+                                                                        href="/episode/%eb%ac%b4%ec%a7%81%ec%a0%84%ec%83%9d-%ec%9d%b4%ec%84%b8%ea%b3%84%ec%97%90-%ea%b0%94%ec%9c%bc%eb%a9%b4-%ec%b5%9c%ec%84%a0%ec%9d%84-%eb%8b%a4%ed%95%9c%eb%8b%a4-%ec%8b%9c%ec%a6%8c-2-5%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/4rMpdXpm2kyTCguHJHmmkrtdfXu.jpg"
@@ -2758,7 +2752,7 @@
                                                                                 無職転生 ～異世界行ったら本気だす～
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%ac%b4%ec%a7%81%ec%a0%84%ec%83%9d-%ec%9d%b4%ec%84%b8%ea%b3%84%ec%97%90-%ea%b0%94%ec%9c%bc%eb%a9%b4-%ec%b5%9c%ec%84%a0%ec%9d%84-%eb%8b%a4%ed%95%9c%eb%8b%a4-%ec%8b%9c%ec%a6%8c-2-5%ed%99%94/"
+                                                                            <a href="/episode/%eb%ac%b4%ec%a7%81%ec%a0%84%ec%83%9d-%ec%9d%b4%ec%84%b8%ea%b3%84%ec%97%90-%ea%b0%94%ec%9c%bc%eb%a9%b4-%ec%b5%9c%ec%84%a0%ec%9d%84-%eb%8b%a4%ed%95%9c%eb%8b%a4-%ec%8b%9c%ec%a6%8c-2-5%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -2781,7 +2775,7 @@
                                                                             srcset="https://image002.modooup.com/wp-content/uploads/2023/06/hSdroyVthq3CynxTIIY7lnS8w1.png 270w, https://image002.modooup.com/wp-content/uploads/2023/06/hSdroyVthq3CynxTIIY7lnS8w1-24x3.png 24w, https://image002.modooup.com/wp-content/uploads/2023/06/hSdroyVthq3CynxTIIY7lnS8w1-36x4.png 36w, https://image002.modooup.com/wp-content/uploads/2023/06/hSdroyVthq3CynxTIIY7lnS8w1-48x5.png 48w"
                                                                             sizes="(max-width: 270px) 100vw, 270px">
                                                                     </div><a
-                                                                        href="https://kokoatv.net/episode/%ed%98%b8%eb%a6%ac%eb%af%b8%ec%95%bc-piece-6%ed%99%94/"
+                                                                        href="/episode/%ed%98%b8%eb%a6%ac%eb%af%b8%ec%95%bc-piece-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/nnGb4NYOyRfCl5DKYPIK9A0Cgww.jpg"
@@ -2800,7 +2794,7 @@
                                                                                 ホリミヤ -piece-
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%98%b8%eb%a6%ac%eb%af%b8%ec%95%bc-piece-6%ed%99%94/"
+                                                                            <a href="/episode/%ed%98%b8%eb%a6%ac%eb%af%b8%ec%95%bc-piece-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">6화</span>
@@ -2819,7 +2813,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/jtbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/"
+                                                                        href="/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1430"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/SLO47sY0Y-bW7dmPXGmirWY3aXY0LnG0sWBIp6I9OZtkmNb0NksstE1iGPX5pUJC0KJds2dQdZXho3LDiz7zHvOnfExsyHxt9d4FPPSwubIC6t4xXjOlW_fvcrn4CoQt3gu8Ck4tjGgG5VM_1Q_37A.webp"
@@ -2838,7 +2832,7 @@
                                                                                 King the Land
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/"
+                                                                            <a href="/episode/%ed%82%b9%eb%8d%94%eb%9e%9c%eb%93%9c-16%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">16화</span>
@@ -2857,7 +2851,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
                                                                             alt="" width="68" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-14%ed%99%94/"
+                                                                        href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-14%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg"
@@ -2876,7 +2870,7 @@
                                                                                 Mrs. Durian
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-14%ed%99%94/"
+                                                                            <a href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-14%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">14화</span>
@@ -2897,7 +2891,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/tvn.png"
                                                                             alt="" width="52" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/"
+                                                                        href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1417"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2021/01/c6Sk9oUhUIFqarwohdjP6h_4fMcGFhHZsS33CpIFhg_Ky70phfHPRvm3iBHdL-g0ZjoEnGxkLzlQMLuOPIQkr-iCJLqSI35om-2_BvxZKAYxt8TxDkb-_VpfOq7Hb6vw0NUpYMzLiLJ4WRztwl7dfw.webp"
@@ -2916,7 +2910,7 @@
                                                                                 The Uncanny Counter
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/"
+                                                                            <a href="/episode/%ea%b2%bd%ec%9d%b4%eb%a1%9c%ec%9a%b4-%ec%86%8c%eb%ac%b82-%ec%b9%b4%ec%9a%b4%ed%84%b0-%ed%8e%80%ec%b9%98-4%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -2936,7 +2930,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4-40%ed%99%94/"
+                                                                        href="/episode/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4-40%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="168" height="242"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다.jpg"
@@ -2955,7 +2949,7 @@
                                                                                 The Real Has Come!
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4-40%ed%99%94/"
+                                                                            <a href="/episode/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4-40%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">40화</span>
@@ -2974,7 +2968,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbn.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ed%9c%b4%eb%a8%bc%eb%8b%a4%ed%81%90-%ec%82%ac%eb%85%b8%eb%9d%bc%eb%a9%b4-596%ed%99%94/"
+                                                                        href="/episode/%ed%9c%b4%eb%a8%bc%eb%8b%a4%ed%81%90-%ec%82%ac%eb%85%b8%eb%9d%bc%eb%a9%b4-596%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="592" height="841"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/04/hyumeondakyu-sanoramyeon.jpg"
@@ -2993,7 +2987,7 @@
                                                                                 Human Documentary Sano Ramen
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ed%9c%b4%eb%a8%bc%eb%8b%a4%ed%81%90-%ec%82%ac%eb%85%b8%eb%9d%bc%eb%a9%b4-596%ed%99%94/"
+                                                                            <a href="/episode/%ed%9c%b4%eb%a8%bc%eb%8b%a4%ed%81%90-%ec%82%ac%eb%85%b8%eb%9d%bc%eb%a9%b4-596%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">596화</span>
@@ -3012,7 +3006,7 @@
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
                                                                             alt="" width="68" height="31"
                                                                             class="tv-channel"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%8a%a4%ed%83%80%eb%8b%a4%ed%81%90-%eb%a7%88%ec%9d%b4%ec%9b%a8%ec%9d%b4-355%ed%99%94/"
+                                                                        href="/episode/%ec%8a%a4%ed%83%80%eb%8b%a4%ed%81%90-%eb%a7%88%ec%9d%b4%ec%9b%a8%ec%9d%b4-355%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="220" height="330"
                                                                             src="https://image002.modooup.com/wp-content/uploads/image_webp/2022/03/e2184ac38fd9c9fa95cc487cbdfbff6d.webp"
@@ -3028,7 +3022,7 @@
                                                                             <div class="original-title-tvshow">
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%8a%a4%ed%83%80%eb%8b%a4%ed%81%90-%eb%a7%88%ec%9d%b4%ec%9b%a8%ec%9d%b4-355%ed%99%94/"
+                                                                            <a href="/episode/%ec%8a%a4%ed%83%80%eb%8b%a4%ed%81%90-%eb%a7%88%ec%9d%b4%ec%9b%a8%ec%9d%b4-355%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">355화</span>
@@ -3049,7 +3043,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/"
+                                                                        href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="171" height="242"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/common.jpg"
@@ -3068,7 +3062,7 @@
                                                                                 The First Responders
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/"
+                                                                            <a href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-2%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">시즌 2 –
@@ -3088,7 +3082,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%97%b0%ec%9d%b8-2%ed%99%94/"
+                                                                        href="/episode/%ec%97%b0%ec%9d%b8-2%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="600" height="900"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg"
@@ -3107,7 +3101,7 @@
                                                                                 My Dearest
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%97%b0%ec%9d%b8-2%ed%99%94/"
+                                                                            <a href="/episode/%ec%97%b0%ec%9d%b8-2%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">2화</span>
@@ -3126,7 +3120,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%eb%b9%84%eb%b0%80%ec%9d%98-%ec%97%ac%ec%9e%90-103%ed%99%94/"
+                                                                        href="/episode/%eb%b9%84%eb%b0%80%ec%9d%98-%ec%97%ac%ec%9e%90-103%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="900" height="1286"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/04/BBSIMAGE_20230307145023_8e0a57bab8b4b827742906898003e894.jpg"
@@ -3145,7 +3139,7 @@
                                                                                 Woman in a Veil
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%eb%b9%84%eb%b0%80%ec%9d%98-%ec%97%ac%ec%9e%90-103%ed%99%94/"
+                                                                            <a href="/episode/%eb%b9%84%eb%b0%80%ec%9d%98-%ec%97%ac%ec%9e%90-103%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">103화</span>
@@ -3164,7 +3158,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png"
                                                                             alt="" width="83" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%96%b4%eb%a5%b8%eb%93%a4%ec%9d%98-%ea%b1%b0%ec%a7%93%eb%90%9c-%ec%82%b6-6%ed%99%94/"
+                                                                        href="/episode/%ec%96%b4%eb%a5%b8%eb%93%a4%ec%9d%98-%ea%b1%b0%ec%a7%93%eb%90%9c-%ec%82%b6-6%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/ruQQ9tZMQtLC2rUL2TOMGFpt4fF.jpg"
@@ -3183,7 +3177,7 @@
                                                                                 La vita bugiarda degli adulti
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%96%b4%eb%a5%b8%eb%93%a4%ec%9d%98-%ea%b1%b0%ec%a7%93%eb%90%9c-%ec%82%b6-6%ed%99%94/"
+                                                                            <a href="/episode/%ec%96%b4%eb%a5%b8%eb%93%a4%ec%9d%98-%ea%b1%b0%ec%a7%93%eb%90%9c-%ec%82%b6-6%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">6화</span>
@@ -3202,7 +3196,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/jtbc.png"
                                                                             alt="" width="68" height="31"></div><a
-                                                                        href="https://kokoatv.net/episode/%ea%b8%b0%ec%a0%81%ec%9d%98-%ed%98%95%ec%a0%9c-12%ed%99%94/"
+                                                                        href="/episode/%ea%b8%b0%ec%a0%81%ec%9d%98-%ed%98%95%ec%a0%9c-12%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="720" height="1080"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/06/scNOGjafZ1k29oz8hX2dNC6Ahdh.jpg"
@@ -3221,7 +3215,7 @@
                                                                                 Miraculous Brothers
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ea%b8%b0%ec%a0%81%ec%9d%98-%ed%98%95%ec%a0%9c-12%ed%99%94/"
+                                                                            <a href="/episode/%ea%b8%b0%ec%a0%81%ec%9d%98-%ed%98%95%ec%a0%9c-12%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">12화</span>
@@ -3240,7 +3234,7 @@
                                                                             class="tv-channel"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2022/05/ena.png"
                                                                             alt="" width="61" height="29"></div><a
-                                                                        href="https://kokoatv.net/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/"
+                                                                        href="/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/"
                                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                                                             width="1000" height="1428"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/07/hfoIsYGi9LhwaUzPNvIqj8NFkTH0-pLOKb4jPFyncmHtqA-70ydy41JDz7OuJ9jBp31GWKf9Hz-eBIlqHa6MYU277j849wXbrwuXhsScFP-UFWsEisi-uvdKu4jwxi0Ra8iSBSCt44PxqMlRKtLgdYysZsKfYSDdR0-xSfheLAU.webp"
@@ -3259,7 +3253,7 @@
                                                                                 Longing for You
                                                                             </div>
                                                                             <!-- Lam original title End-->
-                                                                            <a href="https://kokoatv.net/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/"
+                                                                            <a href="/episode/%ec%98%a4%eb%9e%ab%eb%8f%99%ec%95%88-%eb%8b%b9%ec%8b%a0%ec%9d%84-%ea%b8%b0%eb%8b%a4%eb%a0%b8%ec%8a%b5%eb%8b%88%eb%8b%a4-4%ed%99%94/"
                                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                                                                     style="display:none"
                                                                                     class="span_sea_ep_title">4화</span>
@@ -3294,7 +3288,7 @@
                                                             <div
                                                                 class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
+                                                                        href="/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/eLuN9mjREtGS7BtALDUSPMu0MsE.jpg"
@@ -3313,17 +3307,17 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2007</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%ea%b0%80%ec%a1%b1/"
+                                                                                        href="/movie-genre/%ea%b0%80%ec%a1%b1/"
                                                                                         rel="tag">가족</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                        href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                         rel="tag">모험</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                        href="/movie-genre/wmovie/"
                                                                                         rel="tag">서양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                         rel="tag">애니메이션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                        href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                         rel="tag">코미디</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
+                                                                                href="/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3340,7 +3334,7 @@
                                                             <div
                                                                 class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                        href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/5sQss4mYJa0oONrHUn03SqeVHEx-300x450.jpg"
@@ -3359,13 +3353,13 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                        href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                         rel="tag">로맨스</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span></div>
-                                                                            <a href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                            <a href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3382,7 +3376,7 @@
                                                             <div
                                                                 class="post-202498 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-230 movie_genre-238 movie_genre-221">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
+                                                                        href="/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/4aibIe4IdGQvO142HyvB7rIoAut-300x450.jpg"
@@ -3401,15 +3395,15 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2022</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                        href="/movie-genre/amovie/"
                                                                                         rel="tag">동양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                        href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                         rel="tag">로맨스</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                        href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                         rel="tag">코미디</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
+                                                                                href="/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3426,7 +3420,7 @@
                                                             <div
                                                                 class="post-202496 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                        href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/zV5zkOQGuZPWYcVhfFu6rZMz9yC-300x450.jpg"
@@ -3445,11 +3439,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span></div>
-                                                                            <a href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                            <a href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3466,7 +3460,7 @@
                                                             <div
                                                                 class="post-202494 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                        href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/lcjsQkNbGV7c9OC8OrQOm5CK9eh-300x450.jpg"
@@ -3485,11 +3479,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span></div>
-                                                                            <a href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                            <a href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3506,7 +3500,7 @@
                                                             <div
                                                                 class="post-202443 movie type-movie status-publish has-post-thumbnail hentry movie_genre-239 movie_genre-wmovie">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
+                                                                        href="/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/e7CKgRnRdE7bk1jl2vhJniX89cU.jpg"
@@ -3525,11 +3519,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%8b%a4%ed%81%90%eb%a9%98%ed%84%b0%eb%a6%ac/"
+                                                                                        href="/movie-genre/%eb%8b%a4%ed%81%90%eb%a9%98%ed%84%b0%eb%a6%ac/"
                                                                                         rel="tag">다큐멘터리</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                        href="/movie-genre/wmovie/"
                                                                                         rel="tag">서양영화</a></span></div>
-                                                                            <a href="https://kokoatv.net/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
+                                                                            <a href="/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3546,7 +3540,7 @@
                                                             <div
                                                                 class="post-202440 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-224 movie_genre-220 movie_genre-209 movie_genre-226 movie_tag-the-seven-deadly-sins-grudge-of-edinburgh-part-2">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
+                                                                        href="/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/p9WwpYRfKz3LcGva19v1SXsln1h.jpg"
@@ -3565,17 +3559,17 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                        href="/movie-genre/amovie/"
                                                                                         rel="tag">동양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                        href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                         rel="tag">모험</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                         rel="tag">애니메이션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                         rel="tag">액션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
+                                                                                        href="/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
                                                                                         rel="tag">판타지</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
+                                                                                href="/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3594,7 +3588,7 @@
                                                                 <span class="movie__badge"><span
                                                                         class="movie__badge--featured">Featured</span></span>
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
+                                                                        href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/zG9TYiHt0fdaJiWuNEhFrfKzwoi-300x450.jpg"
@@ -3614,15 +3608,15 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/sf/"
+                                                                                        href="/movie-genre/sf/"
                                                                                         rel="tag">SF</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                        href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                         rel="tag">모험</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                         rel="tag">애니메이션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                         rel="tag">액션</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
+                                                                                href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3639,7 +3633,7 @@
                                                             <div
                                                                 class="post-202364 movie type-movie status-publish has-post-thumbnail hentry movie_genre-sf movie_genre-wmovie">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%eb%8d%94-%eb%94%9c/"
+                                                                        href="/movie/%eb%8d%94-%eb%94%9c/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/yeqn2t4aadIvd4sgb73IOqqkLIL-300x450.jpg"
@@ -3658,11 +3652,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2022</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/sf/"
+                                                                                        href="/movie-genre/sf/"
                                                                                         rel="tag">SF</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                        href="/movie-genre/wmovie/"
                                                                                         rel="tag">서양영화</a></span></div>
-                                                                            <a href="https://kokoatv.net/movie/%eb%8d%94-%eb%94%9c/"
+                                                                            <a href="/movie/%eb%8d%94-%eb%94%9c/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3679,7 +3673,7 @@
                                                             <div
                                                                 class="post-202342 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-230 movie_genre-209 movie_genre-226">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%9c%a0%eb%8b%a4%ec%9c%a0-%ec%9e%a5%ea%b5%b0/"
+                                                                        href="/movie/%ec%9c%a0%eb%8b%a4%ec%9c%a0-%ec%9e%a5%ea%b5%b0/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/j9dNIp4MkEqjkDn4aBb00oZtrcy-1-300x450.jpg"
@@ -3698,15 +3692,15 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2023</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                        href="/movie-genre/amovie/"
                                                                                         rel="tag">동양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                         rel="tag">액션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
+                                                                                        href="/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
                                                                                         rel="tag">판타지</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ec%9c%a0%eb%8b%a4%ec%9c%a0-%ec%9e%a5%ea%b5%b0/"
+                                                                                href="/movie/%ec%9c%a0%eb%8b%a4%ec%9c%a0-%ec%9e%a5%ea%b5%b0/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3723,7 +3717,7 @@
                                                             <div
                                                                 class="post-202343 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%9a%b0%eb%a6%ac%eb%93%a4%ec%9d%98-%ec%97%ac%eb%a6%84%eb%82%a0/"
+                                                                        href="/movie/%ec%9a%b0%eb%a6%ac%eb%93%a4%ec%9d%98-%ec%97%ac%eb%a6%84%eb%82%a0/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/s2OLfim4v1WvgTzP0VjuBCISS2L-300x450.jpg"
@@ -3742,11 +3736,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2021</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                        href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                         rel="tag">드라마</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                        href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                         rel="tag">로맨스</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ec%9a%b0%eb%a6%ac%eb%93%a4%ec%9d%98-%ec%97%ac%eb%a6%84%eb%82%a0/"
+                                                                                href="/movie/%ec%9a%b0%eb%a6%ac%eb%93%a4%ec%9d%98-%ec%97%ac%eb%a6%84%eb%82%a0/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3763,7 +3757,7 @@
                                                             <div
                                                                 class="post-202198 movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie movie_genre-221">
                                                                 <div class="movie__poster"><a
-                                                                        href="https://kokoatv.net/movie/%ec%95%88%ec%86%8c%eb%8b%88-%ec%a0%9c%ec%85%80%eb%8b%89-%ea%b8%88%ea%b8%b0%ec%9d%98-%eb%86%8d%eb%8b%b4%eb%93%a4/"
+                                                                        href="/movie/%ec%95%88%ec%86%8c%eb%8b%88-%ec%a0%9c%ec%85%80%eb%8b%89-%ea%b8%88%ea%b8%b0%ec%9d%98-%eb%86%8d%eb%8b%b4%eb%93%a4/"
                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                             width="300" height="450"
                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/eo28E6qGhcOfswKrk6EcQpOcGC8-300x450.jpg"
@@ -3783,11 +3777,11 @@
                                                                             <div class="movie__meta"><span
                                                                                     class="movie__meta--release-year">2019</span><span
                                                                                     class="movie__meta--genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                        href="/movie-genre/wmovie/"
                                                                                         rel="tag">서양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                        href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                         rel="tag">코미디</a></span></div><a
-                                                                                href="https://kokoatv.net/movie/%ec%95%88%ec%86%8c%eb%8b%88-%ec%a0%9c%ec%85%80%eb%8b%89-%ea%b8%88%ea%b8%b0%ec%9d%98-%eb%86%8d%eb%8b%b4%eb%93%a4/"
+                                                                                href="/movie/%ec%95%88%ec%86%8c%eb%8b%88-%ec%a0%9c%ec%85%80%eb%8b%89-%ea%b8%88%ea%b8%b0%ec%9d%98-%eb%86%8d%eb%8b%b4%eb%93%a4/"
                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                 <h3
                                                                                     class="masvideos-loop-movie__title  movie__title">
@@ -3846,7 +3840,7 @@
                                                                                     <div class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                                                href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -3873,17 +3867,17 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                                                href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">드라마</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                                            <a href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">로맨스</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                                                        href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -3909,7 +3903,7 @@
                                                                                     <div class="post-202496 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                                                href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -3936,14 +3930,14 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                                                href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">드라마</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                                                        href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -3969,7 +3963,7 @@
                                                                                     <div class="post-202494 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                                                href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -3996,14 +3990,14 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                                                href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">드라마</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                                                        href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -4029,7 +4023,7 @@
                                                                                     <div class="post-202196 movie type-movie status-publish has-post-thumbnail hentry movie_genre-238 movie_genre-221 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ea%b1%b4%ec%b6%95%ed%95%99%ea%b0%9c%eb%a1%a0/"
+                                                                                                href="/movie/%ea%b1%b4%ec%b6%95%ed%95%99%ea%b0%9c%eb%a1%a0/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -4056,17 +4050,17 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2012</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                                                href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">로맨스</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                                            <a href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">코미디</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ea%b1%b4%ec%b6%95%ed%95%99%ea%b0%9c%eb%a1%a0/"
+                                                                                                        href="/movie/%ea%b1%b4%ec%b6%95%ed%95%99%ea%b0%9c%eb%a1%a0/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -4094,7 +4088,7 @@
                                                                                         <span class="movie__badge"><span
                                                                                                 class="movie__badge--featured">Featured</span></span>
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/"
+                                                                                                href="/movie/%eb%9d%bc%eb%b0%a9/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -4121,14 +4115,14 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%b2%94%ec%a3%84/"
+                                                                                                                href="/movie-genre/%eb%b2%94%ec%a3%84/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">범죄</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/"
+                                                                                                        href="/movie/%eb%9d%bc%eb%b0%a9/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -4154,7 +4148,7 @@
                                                                                     <div class="post-201681 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-208 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ec%98%81%ec%9b%90%ed%95%9c-%ec%a0%9c%ea%b5%ad/"
+                                                                                                href="/movie/%ec%98%81%ec%9b%90%ed%95%9c-%ec%a0%9c%ea%b5%ad/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="0"><img
                                                                                                     width="300"
@@ -4181,17 +4175,17 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">1995</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                                                href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">드라마</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
+                                                                                                            <a href="/movie-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">미스터리</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="0">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ec%98%81%ec%9b%90%ed%95%9c-%ec%a0%9c%ea%b5%ad/"
+                                                                                                        href="/movie/%ec%98%81%ec%9b%90%ed%95%9c-%ec%a0%9c%ea%b5%ad/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="0">
                                                                                                         <h3
@@ -4217,7 +4211,7 @@
                                                                                     <div class="post-201672 movie type-movie status-publish has-post-thumbnail hentry movie_genre-238 movie_genre-221 movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
+                                                                                                href="/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="-1"><img
                                                                                                     width="300"
@@ -4244,17 +4238,17 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                                                href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="-1">로맨스</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                                            <a href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="-1">코미디</a>,
-                                                                                                            <a href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                            <a href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="-1">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
+                                                                                                        href="/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="-1">
                                                                                                         <h3
@@ -4280,7 +4274,7 @@
                                                                                     <div class="post-201308 movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie"
                                                                                         style="width: 100%; display: inline-block;">
                                                                                         <div class="movie__poster"><a
-                                                                                                href="https://kokoatv.net/movie/%ed%88%ac%eb%aa%a8%eb%a1%9c%ec%9a%b0%eb%b0%94%ec%9d%b4%ed%88%ac%ea%b2%8c%eb%8d%94%ef%bc%9a%ec%95%84%ec%9b%8c-%eb%a1%9c%ec%8a%a4%ed%8a%b8-%ec%84%9c%eb%a8%b8/"
+                                                                                                href="/movie/%ed%88%ac%eb%aa%a8%eb%a1%9c%ec%9a%b0%eb%b0%94%ec%9d%b4%ed%88%ac%ea%b2%8c%eb%8d%94%ef%bc%9a%ec%95%84%ec%9b%8c-%eb%a1%9c%ec%8a%a4%ed%8a%b8-%ec%84%9c%eb%a8%b8/"
                                                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                 tabindex="-1"><img
                                                                                                     width="300"
@@ -4309,11 +4303,11 @@
                                                                                                         <span
                                                                                                             class="movie__meta--release-year">2023</span><span
                                                                                                             class="movie__meta--genre"><a
-                                                                                                                href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                                                href="/movie-genre/kmovie/"
                                                                                                                 rel="tag"
                                                                                                                 tabindex="-1">한국영화</a></span>
                                                                                                     </div><a
-                                                                                                        href="https://kokoatv.net/movie/%ed%88%ac%eb%aa%a8%eb%a1%9c%ec%9a%b0%eb%b0%94%ec%9d%b4%ed%88%ac%ea%b2%8c%eb%8d%94%ef%bc%9a%ec%95%84%ec%9b%8c-%eb%a1%9c%ec%8a%a4%ed%8a%b8-%ec%84%9c%eb%a8%b8/"
+                                                                                                        href="/movie/%ed%88%ac%eb%aa%a8%eb%a1%9c%ec%9a%b0%eb%b0%94%ec%9d%b4%ed%88%ac%ea%b2%8c%eb%8d%94%ef%bc%9a%ec%95%84%ec%9b%8c-%eb%a1%9c%ec%8a%a4%ed%8a%b8-%ec%84%9c%eb%a8%b8/"
                                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                                                         tabindex="-1">
                                                                                                         <h3
@@ -4360,7 +4354,7 @@
                                                                         class="post-201925 movie type-movie status-publish has-post-thumbnail hentry movie_genre-231 movie_genre-kmovie">
                                                                         <div class="movie-list">
                                                                             <div class="movie-list__poster">
-                                                                                <a href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/"
+                                                                                <a href="/movie/%eb%9d%bc%eb%b0%a9/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                         width="150" height="225"
                                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/hvjR3E9K9iRlVTsTSEByPflZjQ0-150x225.jpg"
@@ -4372,13 +4366,13 @@
                                                                             <div class="movie-list__body">
                                                                                 <span
                                                                                     class="movie-list__year">2023</span>
-                                                                                <a href="https://kokoatv.net/movie/%eb%9d%bc%eb%b0%a9/"
+                                                                                <a href="/movie/%eb%9d%bc%eb%b0%a9/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                     <h3 class="movie-list__name">라방</h3>
                                                                                 </a> <span class="movie-list__genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%b2%94%ec%a3%84/"
+                                                                                        href="/movie-genre/%eb%b2%94%ec%a3%84/"
                                                                                         rel="tag">범죄</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span>
                                                                             </div>
                                                                         </div>
@@ -4387,7 +4381,7 @@
                                                                         class="post-201672 movie type-movie status-publish has-post-thumbnail hentry movie_genre-238 movie_genre-221 movie_genre-kmovie">
                                                                         <div class="movie-list">
                                                                             <div class="movie-list__poster">
-                                                                                <a href="https://kokoatv.net/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
+                                                                                <a href="/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                         width="150" height="225"
                                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/7eThTfPenyYVmZHMOMeE4oCB8fw-1-150x225.jpg"
@@ -4399,16 +4393,16 @@
                                                                             <div class="movie-list__body">
                                                                                 <span
                                                                                     class="movie-list__year">2023</span>
-                                                                                <a href="https://kokoatv.net/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
+                                                                                <a href="/movie/%eb%b9%88%ed%8b%88%ec%97%86%eb%8a%94-%ec%82%ac%ec%9d%b4/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                     <h3 class="movie-list__name">빈틈없는 사이
                                                                                     </h3>
                                                                                 </a> <span class="movie-list__genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                        href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                         rel="tag">로맨스</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                        href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                         rel="tag">코미디</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span>
                                                                             </div>
                                                                         </div>
@@ -4417,7 +4411,7 @@
                                                                         class="post-201025 movie type-movie status-publish has-post-thumbnail hentry movie_genre-232 movie_genre-kmovie">
                                                                         <div class="movie-list">
                                                                             <div class="movie-list__poster">
-                                                                                <a href="https://kokoatv.net/movie/%ec%95%85%eb%a7%88%eb%93%a4/"
+                                                                                <a href="/movie/%ec%95%85%eb%a7%88%eb%93%a4/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                         width="150" height="225"
                                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/kOrXI09Ng7QMxB41TqTogSodn2b-150x225.jpg"
@@ -4429,14 +4423,14 @@
                                                                             <div class="movie-list__body">
                                                                                 <span
                                                                                     class="movie-list__year">2023</span>
-                                                                                <a href="https://kokoatv.net/movie/%ec%95%85%eb%a7%88%eb%93%a4/"
+                                                                                <a href="/movie/%ec%95%85%eb%a7%88%eb%93%a4/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                     <h3 class="movie-list__name">악마들
                                                                                     </h3>
                                                                                 </a> <span class="movie-list__genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%8a%a4%eb%a6%b4%eb%9f%ac/"
+                                                                                        href="/movie-genre/%ec%8a%a4%eb%a6%b4%eb%9f%ac/"
                                                                                         rel="tag">스릴러</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span>
                                                                             </div>
                                                                         </div>
@@ -4445,7 +4439,7 @@
                                                                         class="post-198919 movie type-movie status-publish has-post-thumbnail hentry movie_genre-231 movie_genre-209 movie_genre-kmovie">
                                                                         <div class="movie-list">
                                                                             <div class="movie-list__poster">
-                                                                                <a href="https://kokoatv.net/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/"
+                                                                                <a href="/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                         width="150" height="225"
                                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/07/jbremGnsRR4XZMDj97YHt20isRP-150x225.jpg"
@@ -4457,16 +4451,16 @@
                                                                             <div class="movie-list__body">
                                                                                 <span
                                                                                     class="movie-list__year">2023</span>
-                                                                                <a href="https://kokoatv.net/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/"
+                                                                                <a href="/movie/%eb%b2%94%ec%a3%84%eb%8f%84%ec%8b%9c-3/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                     <h3 class="movie-list__name">범죄도시 3
                                                                                     </h3>
                                                                                 </a> <span class="movie-list__genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%b2%94%ec%a3%84/"
+                                                                                        href="/movie-genre/%eb%b2%94%ec%a3%84/"
                                                                                         rel="tag">범죄</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                        href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                         rel="tag">액션</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                        href="/movie-genre/kmovie/"
                                                                                         rel="tag">한국영화</a></span>
                                                                             </div>
                                                                         </div>
@@ -4475,7 +4469,7 @@
                                                                         class="post-201923 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-238 movie_tag-hand-in-hand">
                                                                         <div class="movie-list">
                                                                             <div class="movie-list__poster">
-                                                                                <a href="https://kokoatv.net/movie/%eb%84%88%ec%99%80-%eb%81%9d%ea%b9%8c%ec%a7%80/"
+                                                                                <a href="/movie/%eb%84%88%ec%99%80-%eb%81%9d%ea%b9%8c%ec%a7%80/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                         width="150" height="225"
                                                                                         src="https://image002.modooup.com/wp-content/uploads/2023/08/xEKHj0rjvEZ99uhXecELUbyqjj8-150x225.jpg"
@@ -4487,14 +4481,14 @@
                                                                             <div class="movie-list__body">
                                                                                 <span
                                                                                     class="movie-list__year">2023</span>
-                                                                                <a href="https://kokoatv.net/movie/%eb%84%88%ec%99%80-%eb%81%9d%ea%b9%8c%ec%a7%80/"
+                                                                                <a href="/movie/%eb%84%88%ec%99%80-%eb%81%9d%ea%b9%8c%ec%a7%80/"
                                                                                     class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                     <h3 class="movie-list__name">너와 끝까지
                                                                                     </h3>
                                                                                 </a> <span class="movie-list__genre"><a
-                                                                                        href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                        href="/movie-genre/amovie/"
                                                                                         rel="tag">동양영화</a>, <a
-                                                                                        href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                        href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                         rel="tag">로맨스</a></span>
                                                                             </div>
                                                                         </div>
@@ -4517,7 +4511,7 @@
                                                                             class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
+                                                                                    <a href="/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/eLuN9mjREtGS7BtALDUSPMu0MsE-150x225.jpg"
@@ -4529,21 +4523,21 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2007</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
+                                                                                    <a href="/movie/%ea%bf%80%eb%b2%8c-%eb%8c%80%ec%86%8c%eb%8f%99/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">꿀벌
                                                                                             대소동</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/%ea%b0%80%ec%a1%b1/"
+                                                                                            href="/movie-genre/%ea%b0%80%ec%a1%b1/"
                                                                                             rel="tag">가족</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                            href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                             rel="tag">모험</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                            href="/movie-genre/wmovie/"
                                                                                             rel="tag">서양영화</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                            href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                             rel="tag">애니메이션</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                            href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                             rel="tag">코미디</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4552,7 +4546,7 @@
                                                                             class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                                    <a href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/5sQss4mYJa0oONrHUn03SqeVHEx-150x225.jpg"
@@ -4564,17 +4558,17 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                                                    <a href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">사랑의
                                                                                             고고학</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                            href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                             rel="tag">드라마</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                            href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                             rel="tag">로맨스</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                            href="/movie-genre/kmovie/"
                                                                                             rel="tag">한국영화</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4583,7 +4577,7 @@
                                                                             class="post-202498 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-230 movie_genre-238 movie_genre-221">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
+                                                                                    <a href="/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/4aibIe4IdGQvO142HyvB7rIoAut-150x225.jpg"
@@ -4595,19 +4589,19 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2022</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
+                                                                                    <a href="/movie/%ed%86%b1-%ec%98%a4%eb%b8%8c-%eb%8d%94-%ec%9b%94%eb%93%9c/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">톱
                                                                                             오브 더 월드</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                            href="/movie-genre/amovie/"
                                                                                             rel="tag">동양영화</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                            href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                             rel="tag">드라마</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
+                                                                                            href="/movie-genre/%eb%a1%9c%eb%a7%a8%ec%8a%a4/"
                                                                                             rel="tag">로맨스</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                                                            href="/movie-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
                                                                                             rel="tag">코미디</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4616,7 +4610,7 @@
                                                                             class="post-202496 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                                    <a href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/zV5zkOQGuZPWYcVhfFu6rZMz9yC-150x225.jpg"
@@ -4628,15 +4622,15 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
+                                                                                    <a href="/movie/%ec%bb%a8%eb%b2%84%ec%84%b8%ec%9d%b4%ec%85%98-2/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">
                                                                                             컨버세이션</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                            href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                             rel="tag">드라마</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                            href="/movie-genre/kmovie/"
                                                                                             rel="tag">한국영화</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4645,7 +4639,7 @@
                                                                             class="post-202494 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-kmovie">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                                    <a href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/lcjsQkNbGV7c9OC8OrQOm5CK9eh-150x225.jpg"
@@ -4657,15 +4651,15 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
+                                                                                    <a href="/movie/%ea%b7%b8%eb%8c%80-%ec%96%b4%ec%9d%b4%ea%b0%80%eb%a6%ac/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">그대
                                                                                             어이가리</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                                                            href="/movie-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
                                                                                             rel="tag">드라마</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/kmovie/"
+                                                                                            href="/movie-genre/kmovie/"
                                                                                             rel="tag">한국영화</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4674,7 +4668,7 @@
                                                                             class="post-202443 movie type-movie status-publish has-post-thumbnail hentry movie_genre-239 movie_genre-wmovie">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
+                                                                                    <a href="/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/e7CKgRnRdE7bk1jl2vhJniX89cU-150x225.jpg"
@@ -4686,15 +4680,15 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
+                                                                                    <a href="/movie/%eb%a7%90%ed%95%98%ec%a7%80-%eb%aa%bb%ed%95%9c-%ec%9d%b4%ec%95%bc%ea%b8%b0-%ec%a1%b0%eb%8b%88-%ed%92%8b%eb%b3%bc/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">말하지
                                                                                             못한 이야기: 조니 풋볼</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%8b%a4%ed%81%90%eb%a9%98%ed%84%b0%eb%a6%ac/"
+                                                                                            href="/movie-genre/%eb%8b%a4%ed%81%90%eb%a9%98%ed%84%b0%eb%a6%ac/"
                                                                                             rel="tag">다큐멘터리</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/wmovie/"
+                                                                                            href="/movie-genre/wmovie/"
                                                                                             rel="tag">서양영화</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4703,7 +4697,7 @@
                                                                             class="post-202440 movie type-movie status-publish has-post-thumbnail hentry movie_genre-amovie movie_genre-224 movie_genre-220 movie_genre-209 movie_genre-226 movie_tag-the-seven-deadly-sins-grudge-of-edinburgh-part-2">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
+                                                                                    <a href="/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/p9WwpYRfKz3LcGva19v1SXsln1h-150x225.jpg"
@@ -4715,21 +4709,21 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
+                                                                                    <a href="/movie/%ec%9d%bc%ea%b3%b1-%ea%b0%9c%ec%9d%98-%eb%8c%80%ec%a3%84-%ec%9b%90%eb%a7%9d%ec%9d%98-%ec%97%90%eb%93%a0%eb%b2%84%eb%9f%ac-%ed%8c%8c%ed%8a%b8-2/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">일곱
                                                                                             개의 대죄: 원망의 에든버러 파트 2</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/amovie/"
+                                                                                            href="/movie-genre/amovie/"
                                                                                             rel="tag">동양영화</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                            href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                             rel="tag">모험</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                            href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                             rel="tag">애니메이션</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                            href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                             rel="tag">액션</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
+                                                                                            href="/movie-genre/%ed%8c%90%ed%83%80%ec%a7%80/"
                                                                                             rel="tag">판타지</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4738,7 +4732,7 @@
                                                                             class="post-202365 movie type-movie status-publish has-post-thumbnail hentry movie_genre-sf movie_genre-224 movie_genre-220 movie_genre-209">
                                                                             <div class="movie-list">
                                                                                 <div class="movie-list__poster">
-                                                                                    <a href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
+                                                                                    <a href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                                                             width="150" height="225"
                                                                                             src="https://image002.modooup.com/wp-content/uploads/2023/08/zG9TYiHt0fdaJiWuNEhFrfKzwoi-150x225.jpg"
@@ -4750,19 +4744,19 @@
                                                                                 <div class="movie-list__body">
                                                                                     <span
                                                                                         class="movie-list__year">2023</span>
-                                                                                    <a href="https://kokoatv.net/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
+                                                                                    <a href="/movie/%ec%8a%a4%ed%8c%8c%ec%9d%b4%eb%8d%94%eb%a7%a8-%ec%96%b4%ed%81%ac%eb%a1%9c%ec%8a%a4-%eb%8d%94-%ec%9c%a0%eb%8b%88%eb%b2%84%ec%8a%a4/"
                                                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                                                                         <h3 class="movie-list__name">
                                                                                             스파이더맨: 어크로스 더 유니버스</h3>
                                                                                     </a> <span
                                                                                         class="movie-list__genre"><a
-                                                                                            href="https://kokoatv.net/movie-genre/sf/"
+                                                                                            href="/movie-genre/sf/"
                                                                                             rel="tag">SF</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%eb%aa%a8%ed%97%98/"
+                                                                                            href="/movie-genre/%eb%aa%a8%ed%97%98/"
                                                                                             rel="tag">모험</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
+                                                                                            href="/movie-genre/%ec%95%a0%eb%8b%88%eb%a9%94%ec%9d%b4%ec%85%98/"
                                                                                             rel="tag">애니메이션</a>, <a
-                                                                                            href="https://kokoatv.net/movie-genre/%ec%95%a1%ec%85%98/"
+                                                                                            href="/movie-genre/%ec%95%a1%ec%85%98/"
                                                                                             rel="tag">액션</a></span>
                                                                                 </div>
                                                                             </div>
@@ -4792,7 +4786,7 @@
         <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
             <div class="container">
                 <div class="footer-v4-bar">
-                    <div class="site-footer__logo footer-logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                    <div class="site-footer__logo footer-logo"><a href="/" class="custom-logo-link"
                             rel="home" aria-current="page"><img width="653" height="152"
                                 src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                 class="custom-logo" alt="코코아티비 :: KOKOA.TV"
