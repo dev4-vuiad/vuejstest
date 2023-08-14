@@ -1,6 +1,6 @@
 <script setup>
     import popularItems from "/sampledata/popularitems.js"
-    import items from "/sampledata/items.js"
+    import items from "/sampledata/items_tv_shows.js"
 
     const pagedItems = items[0]
 </script>
@@ -374,12 +374,12 @@
                                 </div>
                             </div>
                             <div class="vodi-archive-wrapper" data-view="grid">
-                                <div class="movies columns-6">
-                                    <div class="movies__inner">
-                                        <MovieItem v-for="(item, index) in pagedItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :titleEn="item.titleEn" :types="item.types" :thumbnail="item.thumbnail" />
+                                <div class="tv-shows columns-6">
+                                    <div class="tv-shows__inner">
+                                        <TvshowsItem v-for="(item, index) in pagedItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :titleEn="item.titleEn" :ep="item.ep" :thumbnail="item.thumbnail" tvChannel="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png" />
                                     </div>
+                                </div>
                             </div>
-                        </div>
                         <Pagination category="tv-shows" pageNumber="1" numPerPage="30" />
                         <center></center>
                     </div><!-- /.content-area -->

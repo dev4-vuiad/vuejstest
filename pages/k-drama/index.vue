@@ -1,7 +1,6 @@
 <script setup>
     import popularItems from "/sampledata/popularitems.js"
-    import items from "/sampledata/items.js"
-
+    import items from "/sampledata/items_k_drama.js"
     const pagedItems = items[0]
 </script>
 

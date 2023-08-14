@@ -1,0 +1,9 @@
+.menu-item-has-children .sub-menu {
+    transition: 500ms;
+}
+
+.menu-item-has-children:hover ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}

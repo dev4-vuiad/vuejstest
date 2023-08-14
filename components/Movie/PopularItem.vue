@@ -1,10 +1,10 @@
 <script setup>
 
-    const props = defineProps(['id', 'year', 'title', 'genre', 'thumbnail'])
+    const props = defineProps(['id', 'year', 'title', 'genres', 'thumbnail'])
     const id = props.id
     const year = props.year
     const title = props.title
-    const genres = props.genre
+    const genres = props.genres
     const thumbnail = props.thumbnail
 </script>
 
