@@ -2,7 +2,7 @@
     const route = useRoute();
     let page = route.params.num * 1
     import popularItems from "/sampledata/popularitems.js"
-    import items from "/sampledata/items.js"
+    import items from "/sampledata/items_k_drama.js"
 
     const pagedItems = items[page - 1]
 </script>
@@ -382,12 +382,12 @@
                                     </div>
                             </div>
                         </div>
-                        <Pagination category="k-sisa" :pageNumber="page" numPerPage="30" />
+                        <Pagination category="k-drama" :pageNumber="page" numPerPage="30" />
                         <center></center>
                     </div><!-- /.content-area -->
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                         role="complementary">
-                        <KSisaPopularContents />
+                        <KDramaPopularContents />
                     </div><!-- #secondary -->
                 </div><!-- /.site-content-inner -->
             </div><!-- /.container -->

@@ -1,10 +1,7 @@
 <script setup>
     const route = useRoute();
-    let page = route.params.num * 1
-    import popularItems from "/sampledata/popularmovies.js"
-    import items from "/sampledata/items.js"
-
-    const pagedItems = items[page - 1]
+    const page = route.params.num
+    const { data } = await useFetch('https://backend.takitv.net/api/movies?page=' + page)
 </script>
 
 <template>
@@ -297,7 +294,7 @@
                                 <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                                     <div class="movies columns-6">
                                         <div class="movies__inner">
-                                            <MoviePopularItem v-for="(item, index) in popularItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :genres="item.genres" :thumbnail="item.thumbnail" />
+                                            <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index" :link="item.link" :year="item.year" :title="item.title" :genres="item.genres" :src="item.src" />
                                         </div>
                                     </div>
                                 </div>
@@ -378,11 +375,11 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="movies columns-6">
                                     <div class="movies__inner">
-                                        <MovieItem v-for="(item, index) in pagedItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :titleEn="item.titleEn" :types="item.types" :thumbnail="item.thumbnail" />
+                                        <MovieItem v-if="data" v-for="(item, index) in data.data.movies" :key="index" :link="item.link" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :genres="item.genres" :src="item.src" />
                                     </div>
                             </div>
                         </div>
-                        <Pagination category="movie" :pageNumber="page" numPerPage="30" />
+                        <Pagination v-if="data" category="movie" :total="data.total" :perPage="data.perPage" :currentPage="page" />
                         <center></center>
                     </div><!-- /.content-area -->
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"

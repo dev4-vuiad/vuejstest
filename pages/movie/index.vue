@@ -1,8 +1,5 @@
 <script setup>
-    import popularItems from "/sampledata/popularmovies.js"
-    import items from "/sampledata/items.js"
-
-    const pagedItems = items[0]
+    const { data } = await useFetch('https://backend.takitv.net/api/movies')
 </script>
 
 <template>
@@ -295,7 +292,7 @@
                                 <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                                     <div class="movies columns-6">
                                         <div class="movies__inner">
-                                            <MoviePopularItem v-for="(item, index) in popularItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :genres="item.genres" :thumbnail="item.thumbnail" />
+                                            <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index" :link="item.link" :year="item.year" :title="item.title" :genres="item.genres" :src="item.src" />
                                         </div>
                                     </div>
                                 </div>
@@ -376,11 +373,11 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="movies columns-6">
                                     <div class="movies__inner">
-                                        <MovieItem v-for="(item, index) in pagedItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :titleEn="item.titleEn" :types="item.types" :thumbnail="item.thumbnail" />
+                                        <MovieItem v-if="data" v-for="(item, index) in data.data.movies" :key="index" :link="item.link" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :genres="item.genres" :src="item.src" />
                                     </div>
+                                </div>
                             </div>
-                        </div>
-                        <Pagination category="movie" pageNumber="1" numPerPage="30" />
+                        <Pagination v-if="data" category="movie" :total="data.total" :perPage="data.perPage" currentPage="1" />
                         <center></center>
                     </div><!-- /.content-area -->
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
@@ -390,7 +387,7 @@
                                 <div class="textwidget">
                                 </div>
                             </div>
-                            <MoviePopularContents />
+                            <MoviePopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.top5" />
                             <div class="widget widget_vodi_movies_filter">
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
