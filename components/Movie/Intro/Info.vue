@@ -35,7 +35,7 @@
                         <span class="movie__meta--genre">
                             <template v-for="(genre, idx) in genres" :key="idx">
                                 <span v-if="idx > 0">, </span>
-                                <a :href="genre.link" rel="tag">{{ genre.name }}</a>
+                                <a :href="'/' + genre.link" rel="tag">{{ genre.name }}</a>
                             </template>
                         </span>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="movie__description">
                 <div style="height: 47px; max-height: none;" data-readmore="" aria-expanded="false" id="rmjs-1">
-                    <p>{{ description }}</p>
+                    <p v-html="description"></p>
                 </div>
                 <a class="maxlist-more" href="#" data-readmore-toggle="rmjs-1" aria-controls="rmjs-1">더 보기</a>
             </div>

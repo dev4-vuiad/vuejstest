@@ -1,18 +1,17 @@
 <script setup>
     import { onBeforeUpdate } from 'vue';
     const route = useRoute();
-    const page = route.params.page
 
+    let genre = route.params.name
     let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderby || 'date'
-
-    const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
+    
+    let { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
         query: {
-            genre: genres.join(','),
+            genre: genre,
             year: year,
             orderby: orderBy,
-            page: page
         }
     })
 
@@ -23,8 +22,7 @@
             useFetch('https://backend.takitv.net/api/movies', {
                 query: {
                     genre: genres.join(','),
-                    year: year,
-                    page : page
+                    year:year
                 },
                 onResponse({ request, response }) {
                     data = response._data
@@ -37,9 +35,9 @@
         let val = event.target.value
         const url = new URL(window.location.href);
         url.searchParams.set('orderby', val);
-        url.pathname = '/movie'
         window.location.href = url.toString()
     }
+    
 </script>
 
 <template>
@@ -372,13 +370,13 @@
                                     <div class="movies__inner">
                                         <MovieItem v-if="data" v-for="(item, index) in data.data.movies" :key="index" :link="item.link" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :genres="item.genres" :src="item.src" />
                                     </div>
+                                </div>
                             </div>
-                        </div>
-                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" :currentPage="page" 
+                        <Pagination v-if="data" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" currentPage="1" 
                             :year="year" :genres="genres" :orderBy="orderBy"
                         />
                         <center></center>
-                    </div><!-- /.content-area -->
+                    </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                         role="complementary">
                         <div class="widget-area-inner">
@@ -391,9 +389,9 @@
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
                                     <div class="widget-header"><span class="widget-title">장르</span></div>
-                                    <MovieSidebarType :selected="genres" :year="year" :page="page" />
+                                    <MovieSidebarType :base="'/movie-genre/' + genre" :selected="genres" :year="year" :exclude="genre" />
                                 </div>
-                                <MovieSidebarListYear :selected="year" :genres="genres" :page="page" />
+                                <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" />
                             </div>
                         </div>
                     </div>

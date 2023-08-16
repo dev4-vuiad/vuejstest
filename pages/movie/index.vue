@@ -371,7 +371,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <Pagination v-if="data" category="movie" :total="data.total" :perPage="data.perPage" currentPage="1" 
+                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" currentPage="1" 
                             :year="year" :genres="genres" :orderBy="orderBy"
                         />
                         <center></center>
