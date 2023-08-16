@@ -1,7 +1,45 @@
 <script setup>
+    import { onBeforeUpdate } from 'vue';
     const route = useRoute();
-    const page = route.params.num
-    const { data } = await useFetch('https://backend.takitv.net/api/movies?page=' + page)
+    const page = route.params.page
+
+    let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
+    let year = route.query.year_filter || ''
+    let orderBy = route.query.orderby || 'date'
+
+    const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
+        query: {
+            genre: genres.join(','),
+            year: year,
+            orderby: orderBy,
+            page: page
+        }
+    })
+
+    onBeforeUpdate(() => {
+        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
+        year = route.query.year_filter || ''
+        if (!pending.value) {
+            useFetch('https://backend.takitv.net/api/movies', {
+                query: {
+                    genre: genres.join(','),
+                    year: year,
+                    page : page
+                },
+                onResponse({ request, response }) {
+                    data = response._data
+                }
+            })
+        }
+    });
+
+    const onChangeOrderBy = (event) => {
+        let val = event.target.value
+        const url = new URL(window.location.href);
+        url.searchParams.set('orderby', val);
+        url.pathname = '/movie'
+        window.location.href = url.toString()
+    }
 </script>
 
 <template>
@@ -307,49 +345,6 @@
                                 <div class="vodi-control-bar__left">
                                 </div>
                                 <div class="vodi-control-bar__right">
-                                    <ul class="archive-view-switcher nav nav-tabs">
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-grid" class="nav-link active"
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="grid"
-                                                title="Grid View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(176, 183, 188)"
-                                                        d="M16.500,10.999 C15.671,10.999 15.000,10.327 15.000,9.500 C15.000,8.671 15.671,7.999 16.500,7.999 C17.328,7.999 18.000,8.671 18.000,9.500 C18.000,10.327 17.328,10.999 16.500,10.999 ZM16.500,6.999 C15.671,6.999 15.000,6.328 15.000,5.499 C15.000,4.671 15.671,3.999 16.500,3.999 C17.328,3.999 18.000,4.671 18.000,5.499 C18.000,6.328 17.328,6.999 16.500,6.999 ZM16.500,3.000 C15.671,3.000 15.000,2.328 15.000,1.499 C15.000,0.671 15.671,-0.001 16.500,-0.001 C17.328,-0.001 18.000,0.671 18.000,1.499 C18.000,2.328 17.328,3.000 16.500,3.000 ZM11.500,14.999 C10.672,14.999 10.000,14.328 10.000,13.499 C10.000,12.671 10.672,11.999 11.500,11.999 C12.328,11.999 13.000,12.671 13.000,13.499 C13.000,14.328 12.328,14.999 11.500,14.999 ZM11.500,10.999 C10.672,10.999 10.000,10.327 10.000,9.500 C10.000,8.671 10.672,7.999 11.500,7.999 C12.328,7.999 13.000,8.671 13.000,9.500 C13.000,10.327 12.328,10.999 11.500,10.999 ZM11.500,6.999 C10.672,6.999 10.000,6.328 10.000,5.499 C10.000,4.671 10.672,3.999 11.500,3.999 C12.328,3.999 13.000,4.671 13.000,5.499 C13.000,6.328 12.328,6.999 11.500,6.999 ZM11.500,3.000 C10.672,3.000 10.000,2.328 10.000,1.499 C10.000,0.671 10.672,-0.001 11.500,-0.001 C12.328,-0.001 13.000,0.671 13.000,1.499 C13.000,2.328 12.328,3.000 11.500,3.000 ZM6.500,14.999 C5.671,14.999 5.000,14.328 5.000,13.499 C5.000,12.671 5.671,11.999 6.500,11.999 C7.328,11.999 8.000,12.671 8.000,13.499 C8.000,14.328 7.328,14.999 6.500,14.999 ZM6.500,10.999 C5.671,10.999 5.000,10.327 5.000,9.500 C5.000,8.671 5.671,7.999 6.500,7.999 C7.328,7.999 8.000,8.671 8.000,9.500 C8.000,10.327 7.328,10.999 6.500,10.999 ZM6.500,6.999 C5.671,6.999 5.000,6.328 5.000,5.499 C5.000,4.671 5.671,3.999 6.500,3.999 C7.328,3.999 8.000,4.671 8.000,5.499 C8.000,6.328 7.328,6.999 6.500,6.999 ZM6.500,3.000 C5.671,3.000 5.000,2.328 5.000,1.499 C5.000,0.671 5.671,-0.001 6.500,-0.001 C7.328,-0.001 8.000,0.671 8.000,1.499 C8.000,2.328 7.328,3.000 6.500,3.000 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.327 -0.000,9.500 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.500 C3.000,10.327 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,3.000 C0.671,3.000 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,3.000 1.500,3.000 ZM16.500,11.999 C17.328,11.999 18.000,12.671 18.000,13.499 C18.000,14.328 17.328,14.999 16.500,14.999 C15.671,14.999 15.000,14.328 15.000,13.499 C15.000,12.671 15.671,11.999 16.500,11.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-grid-extended"
-                                                class="nav-link " data-archive-columns="6" data-toggle="tab"
-                                                data-archive-class="grid-extended" title="Grid View Spacious"
-                                                href="#vodi-archive-view-content"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="17px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
-                                                        d="M15.500,8.999 C14.671,8.999 14.000,8.328 14.000,7.499 C14.000,6.671 14.671,5.999 15.500,5.999 C16.328,5.999 17.000,6.671 17.000,7.499 C17.000,8.328 16.328,8.999 15.500,8.999 ZM15.500,2.999 C14.671,2.999 14.000,2.328 14.000,1.499 C14.000,0.671 14.671,-0.000 15.500,-0.000 C16.328,-0.000 17.000,0.671 17.000,1.499 C17.000,2.328 16.328,2.999 15.500,2.999 ZM8.500,14.999 C7.671,14.999 7.000,14.328 7.000,13.499 C7.000,12.671 7.671,11.999 8.500,11.999 C9.328,11.999 10.000,12.671 10.000,13.499 C10.000,14.328 9.328,14.999 8.500,14.999 ZM8.500,8.999 C7.671,8.999 7.000,8.328 7.000,7.499 C7.000,6.671 7.671,5.999 8.500,5.999 C9.328,5.999 10.000,6.671 10.000,7.499 C10.000,8.328 9.328,8.999 8.500,8.999 ZM8.500,2.999 C7.671,2.999 7.000,2.328 7.000,1.499 C7.000,0.671 7.671,-0.000 8.500,-0.000 C9.328,-0.000 10.000,0.671 10.000,1.499 C10.000,2.328 9.328,2.999 8.500,2.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.000 1.500,-0.000 C2.328,-0.000 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 ZM15.500,11.999 C16.328,11.999 17.000,12.671 17.000,13.499 C17.000,14.328 16.328,14.999 15.500,14.999 C14.671,14.999 14.000,14.328 14.000,13.499 C14.000,12.671 14.671,11.999 15.500,11.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list-large" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list-large"
-                                                title="List Large View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
-                                                        d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,6.999 L18.000,6.999 L18.000,7.999 L5.000,7.999 L5.000,6.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list-small" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list-small"
-                                                title="List View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
-                                                        d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,8.999 L18.000,8.999 L18.000,10.000 L5.000,10.000 L5.000,8.999 ZM5.000,4.999 L18.000,4.999 L18.000,5.999 L5.000,5.999 L5.000,4.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.328 -0.000,9.499 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.499 C3.000,10.328 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list"
-                                                title="List Small View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="17px" height="13px">
-                                                    <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
-                                                        d="M-0.000,13.000 L-0.000,11.999 L17.000,11.999 L17.000,13.000 L-0.000,13.000 ZM-0.000,7.999 L17.000,7.999 L17.000,8.999 L-0.000,8.999 L-0.000,7.999 ZM-0.000,3.999 L17.000,3.999 L17.000,4.999 L-0.000,4.999 L-0.000,3.999 ZM-0.000,-0.001 L17.000,-0.001 L17.000,0.999 L-0.000,0.999 L-0.000,-0.001 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                    </ul>
                                     <div class="movies-ordering">
                                         <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler"
                                                 type="button"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
@@ -360,12 +355,12 @@
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" class="orderby" onchange="this.form.submit();">
-                                                <option value="title-asc">A 부터 Z</option>
-                                                <option value="title-desc">Z 부터 A</option>
-                                                <option value="date" selected="selected">시간순</option>
-                                                <option value="menu_order">Menu Order</option>
-                                                <option value="rating">별점순</option>
+                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                                <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
+                                                <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
+                                                <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
+                                                <option value="menuOrder" v-bind:selected="orderBy == 'menuOrder'">Menu Order</option>
+                                                <option value="rating" v-bind:selected="orderBy == 'rating'">별점순</option>
                                             </select>
                                             <input type="hidden" name="paged" value="1">
                                         </form>
@@ -379,7 +374,9 @@
                                     </div>
                             </div>
                         </div>
-                        <Pagination v-if="data" category="movie" :total="data.total" :perPage="data.perPage" :currentPage="page" />
+                        <Pagination v-if="data" category="movie" :total="data.total" :perPage="data.perPage" :currentPage="page" 
+                            :year="year" :genres="genres" :orderBy="orderBy"
+                        />
                         <center></center>
                     </div><!-- /.content-area -->
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
@@ -389,22 +386,22 @@
                                 <div class="textwidget">
                                 </div>
                             </div>
-                            <MoviePopularContents />
+                            <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.top5" />
                             <div class="widget widget_vodi_movies_filter">
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
                                     <div class="widget-header"><span class="widget-title">장르</span></div>
-                                    <MovieType />
+                                    <MovieSidebarType :selected="genres" :year="year" :page="page" />
                                 </div>
-                                <MovieListYear />
+                                <MovieSidebarListYear :selected="year" :genres="genres" :page="page" />
                             </div>
-                        </div><!-- /.widget-area-inner -->
-                    </div><!-- #secondary -->
-                </div><!-- /.site-content-inner -->
-            </div><!-- /.container -->
-        </div><!-- #content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <Footer />
-    </div><!-- #page -->
+    </div>
     <div class="modal-register-login-wrapper">
         <div class="modal fade modal-register-login" id="modal-register-login" tabindex="-1" role="dialog"
             aria-hidden="true">
