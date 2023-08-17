@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['base', 'total', 'currentPage', 'perPage', 'year', 'genres', 'orderBy'])
+    const props = defineProps(['base', 'total', 'currentPage', 'perPage', 'year', 'genres', 'orderBy', 's'])
     const base = (props.base || '/movie') + '/page'
     const perPage = props.perPage * 1
     const totalPages = Math.ceil(props.total / perPage);
@@ -31,6 +31,9 @@
     }
     if (props.orderBy) {
         url.searchParams.set('orderby', props.orderBy)
+    }
+    if (props.s) {
+        url.searchParams.set('s', props.s)
     }
     const query = '?' + url.searchParams.toString();
 </script>

@@ -21,7 +21,7 @@
                 </path>
             </svg>
         </span>
-        <a :href="'/' + genre.link">{{ genre.name }}</a>
+        <a :href="'/movie-genre/' + genre.link">{{ genre.name }}</a>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
