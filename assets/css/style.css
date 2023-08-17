@@ -2,8 +2,10 @@
     transition: 500ms;
 }
 
-.menu-item-has-children:hover ul.sub-menu {
-    opacity: 1;
-    visibility: visible;
-    top: 100%;
+.maxlist-more {
+    display: none;
+}
+
+.offcanvas-drawer {
+    display: none !important;
 }

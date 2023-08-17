@@ -169,12 +169,7 @@ const onChangeOrderBy = (event) => {
             </header>
             <div id="content" class="site-content " tabindex="-1">
                 <div class="container">
-                    <nav class="masvideos-breadcrumb"><a href="https://kokoatv.net">Home</a><span class="delimiter"><svg
-                                width="4px" height="7px">
-                                <path fill-rule="evenodd"
-                                    d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
-                                </path>
-                            </svg></span>TV Shows</nav>
+                    <TvshowsBreadScrumb />
                     <div class="site-content__inner">
                         <div id="primary" class="content-area"> <!-- ads tv-show top -->
                             <div class="ads-achive-tvshow-top" style="text-align: center;">
@@ -185,143 +180,15 @@ const onChangeOrderBy = (event) => {
                                 </header>
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
-                                        <div class="tv-shows__inner">
-                                            <div
-                                                class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
-                                                <div class="tv-show__poster">
-                                                    <div class="box-tv-channel"><img
-                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/disney.png"
-                                                            alt="" width="62" height="31" class="tv-channel"></div><a
-                                                        href="/episode/%eb%ac%b4%eb%b9%99-9%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                            width="600" height="900"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg"
-                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            loading="lazy"
-                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-150x225.jpg 150w"
-                                                            sizes="(max-width: 600px) 100vw, 600px"></a>
-                                                </div>
-                                                <div class="tv-show__body"><span class="tv-show__meta--release-year">23 시간
-                                                        전</span><a
-                                                        href="/episode/%eb%ac%b4%eb%b9%99-9%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                                            style="display:none" class="span_sea_ep_title">9화</span>
-                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">무빙</h3>
-                                                    </a><span class="tv-show__meta--genre"><a
-                                                            href="/tv-show-genre/action-adventure/"
-                                                            rel="tag">Action &amp; Adventure</a>, <a
-                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                            rel="tag">드라마</a>, <a
-                                                            href="/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
-                                                            rel="tag">미스터리</a></span></div>
-                                            </div>
-                                            <div
-                                                class="tv-show post-154371 tv_show type-tv_show status-publish has-post-thumbnail hentry category-sbs category-k-drama tv_show_genre-214">
-                                                <div class="tv-show__poster">
-                                                    <div class="box-tv-channel"><img class="tv-channel"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
-                                                            alt="" width="68" height="31"></div><a
-                                                        href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-4%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                            width="1000" height="1412"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp"
-                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            loading="lazy"
-                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp 1000w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-212x300.webp 212w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-725x1024.webp 725w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-768x1084.webp 768w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-17x24.webp 17w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-25x36.webp 25w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-34x48.webp 34w"
-                                                            sizes="(max-width: 1000px) 100vw, 1000px"></a>
-                                                </div>
-                                                <div class="tv-show__body"><span
-                                                        class="tv-show__meta--release-year">2023-08-12</span><a
-                                                        href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-4%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                                            style="display:none" class="span_sea_ep_title">시즌 2 - 4화</span>
-                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">소방서 옆 경찰서
-                                                        </h3>
-                                                    </a><span class="tv-show__meta--genre"><a
-                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                            rel="tag">드라마</a></span></div>
-                                            </div>
-                                            <div
-                                                class="tv-show post-201131 tv_show type-tv_show status-publish has-post-thumbnail hentry category-mbc category-k-drama tv_show_genre-214 tv_show_genre-218">
-                                                <div class="tv-show__poster">
-                                                    <div class="box-tv-channel"><img class="tv-channel"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
-                                                            alt="" width="68" height="31"></div><a
-                                                        href="/episode/%ec%97%b0%ec%9d%b8-4%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                            width="600" height="900"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg"
-                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            loading="lazy"
-                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-32x48.jpg 32w"
-                                                            sizes="(max-width: 600px) 100vw, 600px"></a>
-                                                </div>
-                                                <div class="tv-show__body"><span
-                                                        class="tv-show__meta--release-year">2023-08-12</span><a
-                                                        href="/episode/%ec%97%b0%ec%9d%b8-4%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                                            style="display:none" class="span_sea_ep_title">4화</span>
-                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">연인</h3>
-                                                    </a><span class="tv-show__meta--genre"><a
-                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                            rel="tag">드라마</a>, <a
-                                                            href="/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
-                                                            rel="tag">미스터리</a></span></div>
-                                            </div>
-                                            <div
-                                                class="tv-show post-200178 tv_show type-tv_show status-publish has-post-thumbnail hentry category-ena category-k-drama tv_show_genre-214 tv_show_genre-213">
-                                                <div class="tv-show__poster">
-                                                    <div class="box-tv-channel"><img class="tv-channel"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/ena.png"
-                                                            alt="" width="61" height="29"></div><a
-                                                        href="/episode/%eb%82%a8%eb%82%a8-10%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                            width="1000" height="1428"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q.webp"
-                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            loading="lazy"
-                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q.webp 1000w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-210x300.webp 210w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-717x1024.webp 717w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-768x1097.webp 768w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-17x24.webp 17w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-25x36.webp 25w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-34x48.webp 34w"
-                                                            sizes="(max-width: 1000px) 100vw, 1000px"></a>
-                                                </div>
-                                                <div class="tv-show__body"><span class="tv-show__meta--release-year">1일
-                                                        전</span><a
-                                                        href="/episode/%eb%82%a8%eb%82%a8-10%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                                            style="display:none" class="span_sea_ep_title">10화</span>
-                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">남남</h3>
-                                                    </a><span class="tv-show__meta--genre"><a
-                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                            rel="tag">드라마</a>, <a
-                                                            href="/tv-show-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
-                                                            rel="tag">코미디</a></span></div>
-                                            </div>
-                                            <div
-                                                class="tv-show post-197995 tv_show type-tv_show status-publish has-post-thumbnail hentry category-tv-chosun category-k-drama tv_show_genre-sci-fi-fantasy tv_show_genre-214">
-                                                <div class="tv-show__poster">
-                                                    <div class="box-tv-channel"><img
-                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
-                                                            alt="" width="68" height="31" class="tv-channel"></div><a
-                                                        href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-16%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                            width="300" height="450"
-                                                            src="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg"
-                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            loading="lazy"
-                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-32x48.jpg 32w"
-                                                            sizes="(max-width: 300px) 100vw, 300px"></a>
-                                                </div>
-                                                <div class="tv-show__body"><span
-                                                        class="tv-show__meta--release-year">2023-08-13</span><a
-                                                        href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-16%ed%99%94/"
-                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                                            style="display:none" class="span_sea_ep_title">16화</span>
-                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">아씨두리안</h3>
-                                                    </a><span class="tv-show__meta--genre"><a
-                                                            href="/tv-show-genre/sci-fi-fantasy/"
-                                                            rel="tag">Sci-Fi &amp; Fantasy</a>, <a
-                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                            rel="tag">드라마</a></span></div>
-                                            </div>
+                                        <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
+                                            <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="item" 
+                                            :link="item.link"
+                                            :year="item.year"
+                                            :title="item.title"
+                                            :src="item.src"
+                                            :totalEpisode="item.totalEpisode"
+                                            :chanelImage="item.chanelImage"
+                                        />
                                         </div>
                                     </div>
                                 </div>
