@@ -7,7 +7,8 @@
 </script>
 
 <template>
-    <body class="search search-no-results wp-custom-logo wp-embed-responsive masvideos-js any-search-results sidebar-right dark sidebar-left template-search-custom-page">
+    <body
+        class="search search-no-results wp-custom-logo wp-embed-responsive masvideos-js any-search-results sidebar-right dark sidebar-left template-search-custom-page">
         <div id="page" class="hfeed site">
             <header id="site-header" class="site-header header-v1 desktop-header stick-this light" role="banner" style="">
                 <div class="container-fluid">
@@ -109,45 +110,40 @@
                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
                                         srcset="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png 653w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-300x70.png 300w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-24x6.png 24w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-36x8.png 36w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-48x11.png 48w"
-                                        sizes="(max-width: 653px) 100vw, 653px"></a>
-                            </div>
-                            <HeaderMenu />
-                        </div><!-- /.site-header__right -->
-                        <div class="site-header__left">
-                            <div class="site-header__search">
-                                <form role="search" method="get"
-                                    class="search-form masvideos-search masvideos-search-tv_show"
-                                    action="https://kokoatv.net/">
-                                    <label class="screen-reader-text" for="masvideos-search-field-0">Search for:</label>
-                                    <input type="search" id="masvideos-search-field-0"
-                                        class="search-field ui-autocomplete-input" placeholder="검색 ..." value="라방" name="s"
-                                        autocomplete="off">
-                                    <button type="submit" class="search-submit"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="18" height="18">
-                                            <path
-                                                d="M7 0C11-0.1 13.4 2.1 14.6 4.9 15.5 7.1 14.9 9.8 13.9 11.4 13.7 11.7 13.6 12 13.3 12.2 13.4 12.5 14.2 13.1 14.4 13.4 15.4 14.3 16.3 15.2 17.2 16.1 17.5 16.4 18.2 16.9 18 17.5 17.9 17.6 17.9 17.7 17.8 17.8 17.2 18.3 16.7 17.8 16.4 17.4 15.4 16.4 14.3 15.4 13.3 14.3 13 14.1 12.8 13.8 12.5 13.6 12.4 13.5 12.3 13.3 12.2 13.3 12 13.4 11.5 13.8 11.3 14 10.7 14.4 9.9 14.6 9.2 14.8 8.9 14.9 8.6 14.9 8.3 14.9 8 15 7.4 15.1 7.1 15 6.3 14.8 5.6 14.8 4.9 14.5 2.7 13.6 1.1 12.1 0.4 9.7 0 8.7-0.2 7.1 0.2 6 0.3 5.3 0.5 4.6 0.9 4 1.8 2.4 3 1.3 4.7 0.5 5.2 0.3 5.7 0.2 6.3 0.1 6.5 0 6.8 0.1 7 0ZM7.3 1.5C7.1 1.6 6.8 1.5 6.7 1.5 6.2 1.6 5.8 1.7 5.4 1.9 3.7 2.5 2.6 3.7 1.9 5.4 1.7 5.8 1.7 6.2 1.6 6.6 1.4 7.4 1.6 8.5 1.8 9.1 2.4 11.1 3.5 12.3 5.3 13 5.9 13.3 6.6 13.5 7.5 13.5 7.7 13.5 7.9 13.5 8.1 13.5 8.6 13.4 9.1 13.3 9.6 13.1 11.2 12.5 12.4 11.4 13.1 9.8 13.6 8.5 13.6 6.6 13.1 5.3 12.2 3.1 10.4 1.5 7.3 1.5Z">
-                                            </path>
-                                        </svg><span class="screen-reader-text">Search</span></button>
-                                    <!-- <input type="hidden" name="post_type" value="" /> -->
-
-                                </form>
-                            </div>
-                            <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
-                                    data-toggle="dropdown">
-                                    <svg width="32px" height="32px">
-                                        <image x="0px" y="0px" width="32px" height="32px"
-                                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACB1BMVEW7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu3t7eys7KztLO4uLi6u7q0tbSxsrG2t7awsrC7vLu8vLy1trW8vby1tbWysrK6urq3uLe5urm9vr24ubitrq2wsbCsrazV1dXs7Oz29vb39/fw8PDe3t6vsK/v7+/////5+vnLy8urrKuxsbHGx8aur67k5OT4+Pizs7P9/f3R0tGurq7Oz87j4+OsrqzU1NTo6OiusK7+/v7k5eT4+fjGyMa7u7v6+vrMzMyrq6u+vr7Ky8ri4uLt7e3u7u7m5+bT1NOwsLC+v77Q0NDe397f39/T09O/v7/FxsX5+fn09PS9vb37+/v09fTNzs3g4ODh4uHX2Nf8/PzY2djIyMjIycjU1dTl5uXx8fHm5ubV1tVi3+TsAAAAUnRSTlMADleWxOHwxphZESftmiuDiBvN0iAq8TAW9xzX340dI5ymCPj9VV+lydDl5/P05srRnqdjCvr+EKCqipTd5Pb7IfI31NmLkAQvojIVn+PLoWIYYNJBTgAAAAFiS0dEca8HXOIAAAAHdElNRQfjBQECDwMxTbKCAAACG0lEQVQ4y21T90PTQBQ+RKpY3FisExcuEHEvFPdeXLikJLnakjbVgjESSEutqIiKIo66R90L/SNtbzTp+H66e9/37r17A4ACqqZUT63xeGqmTa+dAcrhra7rhEIXQl2iFPDMnFXKz0bdoqzIBIosdqM5RfTceYKKZRdwUJhf7/AL6iD35lAU6Gvg/ELfJe4eCgd62FGT/IuYYDGkPI5E9RASYiK9anAJyw8yFx1evhLv7buKYwoJqMCleX4ZUskVG+iaSXC936ICFS3PCRoHyItKUOw1OQZtYsMDKwBYuUqgEaxEgTeTQxFiE1dXgTWdlFdxyhGYN9LM2gQaJVoB46aLN4ctWg19LVjH/nDrtltwJ42IFa4HG8JUMFLpBTm8ETSHeA53K+SAmkELE8jWqMPfY7/ICzYFWHfcdbhv40KIVok3Z+RBH6XHHj7ivYWbQZvOL+N6+vHEk6fPnoejCh8dfQuo5SHkjB158fLV6zdvg3aGj4e6FWzbTkqtida74SQN8T4xGBM0UuodOwHYlW+WZosT7jok1HROgfXduW7WI1HRoviDWYT4eEzLtdubH4g98GOmZ8wsQVY2NLiXjtQ+Q/pkliE+ZLTzod/fb1bA5wMdfKwbDn4p57/6DzmL0XH42/diOvXjiLdot47+TLgkqdFfx46XLOeJtpbffyaT2Wxy8u8//8lTFfb7dNOZ1rMeX/u58xcuOtb/keQ/CDzeyUsAAAAASUVORK5CYII=">
-                                        </image>
-                                    </svg> </a>
-                                <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
-                                            data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
-                                            data-target="#modal-register-login">회원가입</a></li>
+                                        sizes="(max-width: 653px) 100vw, 653px"></a></div>
+                            <div class="site_header__primary-nav">
+                                <ul id="menu-main-menu-1" class="nav yamm">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a
+                                            title="영화" href="https://kokoatv.net/movie/">영화</a></li>
+                                    <li
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-161947">
+                                        <a href="/tv-shows/">TV</a>
+                                        <ul class="sub-menu">
+                                            <li
+                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093">
+                                                <a title="드라마" href="https://kokoatv.net/k-drama/">드라마</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094">
+                                                <a title="예능" href="https://kokoatv.net/k-show/">예능</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095">
+                                                <a title="시사다큐" href="https://kokoatv.net/k-sisa/">시사</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282">
+                                        <a href="https://kokoatv.net/u-drama/">미드</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098">
+                                        <a title="OTT/Web" href="https://kokoatv.net/ott-web/">OTT</a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div><!-- /.site-header__left -->
+                        </div><!-- /.site-header__right -->
+                        <HeaderRight />
                     </div>
                 </div>
             </header><!-- #site-header -->
@@ -246,7 +242,7 @@
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
                                         srcset="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png 653w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-300x70.png 300w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-24x6.png 24w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-36x8.png 36w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-48x11.png 48w"
                                         sizes="(max-width: 653px) 100vw, 653px"></a></div>
-                        </div>
+                        </div><!-- /.site-header__left -->
                         <div class="site-header__right">
                             <div class="site-header__search">
                                 <div class="dropdown">
@@ -255,8 +251,7 @@
                                             <path
                                                 d="M7 0C11-0.1 13.4 2.1 14.6 4.9 15.5 7.1 14.9 9.8 13.9 11.4 13.7 11.7 13.6 12 13.3 12.2 13.4 12.5 14.2 13.1 14.4 13.4 15.4 14.3 16.3 15.2 17.2 16.1 17.5 16.4 18.2 16.9 18 17.5 17.9 17.6 17.9 17.7 17.8 17.8 17.2 18.3 16.7 17.8 16.4 17.4 15.4 16.4 14.3 15.4 13.3 14.3 13 14.1 12.8 13.8 12.5 13.6 12.4 13.5 12.3 13.3 12.2 13.3 12 13.4 11.5 13.8 11.3 14 10.7 14.4 9.9 14.6 9.2 14.8 8.9 14.9 8.6 14.9 8.3 14.9 8 15 7.4 15.1 7.1 15 6.3 14.8 5.6 14.8 4.9 14.5 2.7 13.6 1.1 12.1 0.4 9.7 0 8.7-0.2 7.1 0.2 6 0.3 5.3 0.5 4.6 0.9 4 1.8 2.4 3 1.3 4.7 0.5 5.2 0.3 5.7 0.2 6.3 0.1 6.5 0 6.8 0.1 7 0ZM7.3 1.5C7.1 1.6 6.8 1.5 6.7 1.5 6.2 1.6 5.8 1.7 5.4 1.9 3.7 2.5 2.6 3.7 1.9 5.4 1.7 5.8 1.7 6.2 1.6 6.6 1.4 7.4 1.6 8.5 1.8 9.1 2.4 11.1 3.5 12.3 5.3 13 5.9 13.3 6.6 13.5 7.5 13.5 7.7 13.5 7.9 13.5 8.1 13.5 8.6 13.4 9.1 13.3 9.6 13.1 11.2 12.5 12.4 11.4 13.1 9.8 13.6 8.5 13.6 6.6 13.1 5.3 12.2 3.1 10.4 1.5 7.3 1.5Z">
                                             </path>
-                                        </svg>
-                                    </a>
+                                        </svg></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <form role="search" method="get"
@@ -266,7 +261,7 @@
                                                     for:</label>
                                                 <input type="search" id="masvideos-search-field-1"
                                                     class="search-field ui-autocomplete-input" placeholder="검색 ..."
-                                                    value="라방" name="s" autocomplete="off">
+                                                    value="{{ s }}" name="s" autocomplete="off">
                                                 <button type="submit" class="search-submit"><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                                                         <path
@@ -311,16 +306,73 @@
                                 class="fas fa-sliders-h"></i><span>Filters</span></button></div>
                     <div class="site-content__inner">
 
+                        <!-- result search -->
                         <div id="primary" class="content-area">
+
+                            <!-- ads top search -->
+                            <center>
+                            </center>
+
                             <main id="main" class="site-main" role="main">
 
                                 <div class="vodi-control-bar">
 
                                     <div class="vodi-control-bar__left">
-                                        <h2 class="h2_title_search">“{{ s }}” <span class="span_title_search">검색결과 입니다</span>
-                                        </h2>
+
+                                        <h2 class="h2_title_search">“{{ s }}” <span class="span_title_search">검색결과
+                                                입니다</span> </h2>
                                     </div>
                                     <div class="vodi-control-bar__right">
+                                        <ul class="archive-view-switcher nav nav-tabs">
+                                            <ul class="archive-view-switcher nav nav-tabs">
+                                                <li class="nav-item"><a id="vodi-archive-view-switcher-grid"
+                                                        class="nav-link active" data-archive-columns="6" data-toggle="tab"
+                                                        data-archive-class="grid" title="Grid View"
+                                                        href="#vodi-archive-view-content"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
+                                                            <path fill-rule="evenodd" fill="rgb(176, 183, 188)"
+                                                                d="M16.500,10.999 C15.671,10.999 15.000,10.327 15.000,9.500 C15.000,8.671 15.671,7.999 16.500,7.999 C17.328,7.999 18.000,8.671 18.000,9.500 C18.000,10.327 17.328,10.999 16.500,10.999 ZM16.500,6.999 C15.671,6.999 15.000,6.328 15.000,5.499 C15.000,4.671 15.671,3.999 16.500,3.999 C17.328,3.999 18.000,4.671 18.000,5.499 C18.000,6.328 17.328,6.999 16.500,6.999 ZM16.500,3.000 C15.671,3.000 15.000,2.328 15.000,1.499 C15.000,0.671 15.671,-0.001 16.500,-0.001 C17.328,-0.001 18.000,0.671 18.000,1.499 C18.000,2.328 17.328,3.000 16.500,3.000 ZM11.500,14.999 C10.672,14.999 10.000,14.328 10.000,13.499 C10.000,12.671 10.672,11.999 11.500,11.999 C12.328,11.999 13.000,12.671 13.000,13.499 C13.000,14.328 12.328,14.999 11.500,14.999 ZM11.500,10.999 C10.672,10.999 10.000,10.327 10.000,9.500 C10.000,8.671 10.672,7.999 11.500,7.999 C12.328,7.999 13.000,8.671 13.000,9.500 C13.000,10.327 12.328,10.999 11.500,10.999 ZM11.500,6.999 C10.672,6.999 10.000,6.328 10.000,5.499 C10.000,4.671 10.672,3.999 11.500,3.999 C12.328,3.999 13.000,4.671 13.000,5.499 C13.000,6.328 12.328,6.999 11.500,6.999 ZM11.500,3.000 C10.672,3.000 10.000,2.328 10.000,1.499 C10.000,0.671 10.672,-0.001 11.500,-0.001 C12.328,-0.001 13.000,0.671 13.000,1.499 C13.000,2.328 12.328,3.000 11.500,3.000 ZM6.500,14.999 C5.671,14.999 5.000,14.328 5.000,13.499 C5.000,12.671 5.671,11.999 6.500,11.999 C7.328,11.999 8.000,12.671 8.000,13.499 C8.000,14.328 7.328,14.999 6.500,14.999 ZM6.500,10.999 C5.671,10.999 5.000,10.327 5.000,9.500 C5.000,8.671 5.671,7.999 6.500,7.999 C7.328,7.999 8.000,8.671 8.000,9.500 C8.000,10.327 7.328,10.999 6.500,10.999 ZM6.500,6.999 C5.671,6.999 5.000,6.328 5.000,5.499 C5.000,4.671 5.671,3.999 6.500,3.999 C7.328,3.999 8.000,4.671 8.000,5.499 C8.000,6.328 7.328,6.999 6.500,6.999 ZM6.500,3.000 C5.671,3.000 5.000,2.328 5.000,1.499 C5.000,0.671 5.671,-0.001 6.500,-0.001 C7.328,-0.001 8.000,0.671 8.000,1.499 C8.000,2.328 7.328,3.000 6.500,3.000 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.327 -0.000,9.500 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.500 C3.000,10.327 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,3.000 C0.671,3.000 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,3.000 1.500,3.000 ZM16.500,11.999 C17.328,11.999 18.000,12.671 18.000,13.499 C18.000,14.328 17.328,14.999 16.500,14.999 C15.671,14.999 15.000,14.328 15.000,13.499 C15.000,12.671 15.671,11.999 16.500,11.999 Z">
+                                                            </path>
+                                                        </svg></a></li>
+                                                <li class="nav-item"><a id="vodi-archive-view-switcher-grid-extended"
+                                                        class="nav-link " data-archive-columns="6" data-toggle="tab"
+                                                        data-archive-class="grid-extended" title="Grid View Spacious"
+                                                        href="#vodi-archive-view-content"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="17px" height="15px">
+                                                            <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
+                                                                d="M15.500,8.999 C14.671,8.999 14.000,8.328 14.000,7.499 C14.000,6.671 14.671,5.999 15.500,5.999 C16.328,5.999 17.000,6.671 17.000,7.499 C17.000,8.328 16.328,8.999 15.500,8.999 ZM15.500,2.999 C14.671,2.999 14.000,2.328 14.000,1.499 C14.000,0.671 14.671,-0.000 15.500,-0.000 C16.328,-0.000 17.000,0.671 17.000,1.499 C17.000,2.328 16.328,2.999 15.500,2.999 ZM8.500,14.999 C7.671,14.999 7.000,14.328 7.000,13.499 C7.000,12.671 7.671,11.999 8.500,11.999 C9.328,11.999 10.000,12.671 10.000,13.499 C10.000,14.328 9.328,14.999 8.500,14.999 ZM8.500,8.999 C7.671,8.999 7.000,8.328 7.000,7.499 C7.000,6.671 7.671,5.999 8.500,5.999 C9.328,5.999 10.000,6.671 10.000,7.499 C10.000,8.328 9.328,8.999 8.500,8.999 ZM8.500,2.999 C7.671,2.999 7.000,2.328 7.000,1.499 C7.000,0.671 7.671,-0.000 8.500,-0.000 C9.328,-0.000 10.000,0.671 10.000,1.499 C10.000,2.328 9.328,2.999 8.500,2.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.000 1.500,-0.000 C2.328,-0.000 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 ZM15.500,11.999 C16.328,11.999 17.000,12.671 17.000,13.499 C17.000,14.328 16.328,14.999 15.500,14.999 C14.671,14.999 14.000,14.328 14.000,13.499 C14.000,12.671 14.671,11.999 15.500,11.999 Z">
+                                                            </path>
+                                                        </svg></a></li>
+                                                <li class="nav-item"><a id="vodi-archive-view-switcher-list-large"
+                                                        class="nav-link " data-archive-columns="6" data-toggle="tab"
+                                                        data-archive-class="list-large" title="List Large View"
+                                                        href="#vodi-archive-view-content"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
+                                                            <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
+                                                                d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,6.999 L18.000,6.999 L18.000,7.999 L5.000,7.999 L5.000,6.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
+                                                            </path>
+                                                        </svg></a></li>
+                                                <li class="nav-item"><a id="vodi-archive-view-switcher-list-small"
+                                                        class="nav-link " data-archive-columns="6" data-toggle="tab"
+                                                        data-archive-class="list-small" title="List View"
+                                                        href="#vodi-archive-view-content"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
+                                                            <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
+                                                                d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,8.999 L18.000,8.999 L18.000,10.000 L5.000,10.000 L5.000,8.999 ZM5.000,4.999 L18.000,4.999 L18.000,5.999 L5.000,5.999 L5.000,4.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.328 -0.000,9.499 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.499 C3.000,10.328 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
+                                                            </path>
+                                                        </svg></a></li>
+                                                <li class="nav-item"><a id="vodi-archive-view-switcher-list"
+                                                        class="nav-link " data-archive-columns="6" data-toggle="tab"
+                                                        data-archive-class="list" title="List Small View"
+                                                        href="#vodi-archive-view-content"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="17px" height="13px">
+                                                            <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
+                                                                d="M-0.000,13.000 L-0.000,11.999 L17.000,11.999 L17.000,13.000 L-0.000,13.000 ZM-0.000,7.999 L17.000,7.999 L17.000,8.999 L-0.000,8.999 L-0.000,7.999 ZM-0.000,3.999 L17.000,3.999 L17.000,4.999 L-0.000,4.999 L-0.000,3.999 ZM-0.000,-0.001 L17.000,-0.001 L17.000,0.999 L-0.000,0.999 L-0.000,-0.001 Z">
+                                                            </path>
+                                                        </svg></a></li>
+                                            </ul>
+                                        </ul>
+                                        <!-- sort -->
                                         <div class="tv-shows-ordering">
                                             <div class="handheld-sidebar-toggle">
                                                 <button class="btn sidebar-toggler" type="button">
@@ -344,52 +396,28 @@
 
                                                 <input type="hidden" name="paged" value="1">
 
-                                                <input type="hidden" name="s" value="라방">
+                                                <input type="hidden" name="s" value="oppenheimer">
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="vodi-archive-wrapper search-movie" data-view="grid">
                                     <div class="tv-shows columns-6 movies columns-6">
-                                        <div class="tv-shows__inner movies__inner">
-                                            <div v-for="(item, idx) in results" :key="idx" class="movie type-movie status-publish has-post-thumbnail hentry">
-                                                <div class="movie__poster  box-phim">
-                                                    <a :href="'/' + item.link" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                                                        <img src="https://image002.modooup.com/wp-content/uploads/2023/08/hvjR3E9K9iRlVTsTSEByPflZjQ0.jpg"
-                                                            class="movie__poster--image">
-                                                    </a>
-                                                    <div class="box-movie">
-                                                        영화
-                                                    </div>
-                                                </div>
-                                                <div class="movie__body">
-                                                    <div class="movie__info">
-                                                        <div class="movie__info--head">
-                                                            <a :href="'/' + item.link"
-                                                                class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                                                                <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title }}</h3>
-                                                            </a>
-                                                            <div class="original-title__movie-search">
-                                                                {{ item.originalTitle }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="tv-shows__inner movies__inner" v-if="data && data.data && data.data.movies.length">
+                                            <SearchMovieItem v-for="(item, index) in data.data.movies" :key="index"
+                                                :title="item.title" 
+                                                :originalTitle="item.originalTitle"
+                                                :src="item.src"
+                                            />
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="page-control-bar-bottom">
                                     <nav class="masvideos-pagination masvideos-movies-pagination">
                                     </nav>
                                 </div>
                             </main>
-                            <center>
-                            </center>
                         </div>
-
-
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                             role="complementary">
                             <div class="widget-area-inner">
@@ -397,151 +425,7 @@
                                     <div class="textwidget">
                                     </div>
                                 </div>
-                                <div id="masvideos_tv_shows_widget-1"
-                                    class="widget masvideos masvideos_tv_shows_widget masvideos-tv-shows-widget">
-                                    <div class="widget-header"><span class="widget-title">주간 TVShows 인기컨텐츠</span></div>
-                                    <div class="masvideos masvideos-tv-shows ">
-                                        <div class="tv-shows columns-1">
-                                            <div class="tv-shows__inner">
-                                                <div
-                                                    class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
-                                                    <div class="tv-show__poster">
-                                                        <div class="box-tv-channel"><img
-                                                                src="https://image002.modooup.com/wp-content/uploads/2022/05/disney.png"
-                                                                alt="" width="62" height="31" class="tv-channel"></div><a
-                                                            href="https://kokoatv.net/tv-show/%eb%ac%b4%eb%b9%99/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                                width="600" height="900"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg"
-                                                                class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                                loading="lazy"
-                                                                srcset="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-150x225.jpg 150w"
-                                                                sizes="(max-width: 600px) 100vw, 600px"></a>
-                                                    </div>
-                                                    <div class="tv-show__body"><span
-                                                            class="tv-show__meta--release-year">2023-08-09</span><a
-                                                            href="https://kokoatv.net/tv-show/%eb%ac%b4%eb%b9%99/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                                                            <h3 class="masvideos-loop-tv-show__title  tv-show__title">무빙
-                                                            </h3>
-                                                        </a><span class="tv-show__meta--genre"><a
-                                                                href="https://kokoatv.net/tv-show-genre/action-adventure/"
-                                                                rel="tag">Action &amp; Adventure</a>, <a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                                rel="tag">드라마</a>, <a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
-                                                                rel="tag">미스터리</a></span></div>
-                                                </div>
-                                                <div
-                                                    class="tv-show post-154371 tv_show type-tv_show status-publish has-post-thumbnail hentry category-sbs category-k-drama tv_show_genre-214">
-                                                    <div class="tv-show__poster">
-                                                        <div class="box-tv-channel"><img class="tv-channel"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
-                                                                alt="" width="68" height="31"></div><a
-                                                            href="https://kokoatv.net/tv-show/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-1/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                                width="1000" height="1412"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp"
-                                                                class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                                loading="lazy"
-                                                                srcset="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp 1000w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-212x300.webp 212w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-725x1024.webp 725w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-768x1084.webp 768w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-17x24.webp 17w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-25x36.webp 25w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-34x48.webp 34w"
-                                                                sizes="(max-width: 1000px) 100vw, 1000px"></a>
-                                                    </div>
-                                                    <div class="tv-show__body"><span
-                                                            class="tv-show__meta--release-year">2023-08-12</span><a
-                                                            href="https://kokoatv.net/tv-show/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-1/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                                                            <h3 class="masvideos-loop-tv-show__title  tv-show__title">소방서 옆
-                                                                경찰서</h3>
-                                                        </a><span class="tv-show__meta--genre"><a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                                rel="tag">드라마</a></span></div>
-                                                </div>
-                                                <div
-                                                    class="tv-show post-201131 tv_show type-tv_show status-publish has-post-thumbnail hentry category-mbc category-k-drama tv_show_genre-214 tv_show_genre-218">
-                                                    <div class="tv-show__poster">
-                                                        <div class="box-tv-channel"><img class="tv-channel"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
-                                                                alt="" width="68" height="31"></div><a
-                                                            href="https://kokoatv.net/tv-show/%ec%97%b0%ec%9d%b8/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                                width="600" height="900"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg"
-                                                                class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                                loading="lazy"
-                                                                srcset="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-32x48.jpg 32w"
-                                                                sizes="(max-width: 600px) 100vw, 600px"></a>
-                                                    </div>
-                                                    <div class="tv-show__body"><span
-                                                            class="tv-show__meta--release-year">2023-08-12</span><a
-                                                            href="https://kokoatv.net/tv-show/%ec%97%b0%ec%9d%b8/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                                                            <h3 class="masvideos-loop-tv-show__title  tv-show__title">연인
-                                                            </h3>
-                                                        </a><span class="tv-show__meta--genre"><a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                                rel="tag">드라마</a>, <a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
-                                                                rel="tag">미스터리</a></span></div>
-                                                </div>
-                                                <div
-                                                    class="tv-show post-197995 tv_show type-tv_show status-publish has-post-thumbnail hentry category-tv-chosun category-k-drama tv_show_genre-sci-fi-fantasy tv_show_genre-214">
-                                                    <div class="tv-show__poster">
-                                                        <div class="box-tv-channel"><img
-                                                                src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
-                                                                alt="" width="68" height="31" class="tv-channel"></div><a
-                                                            href="https://kokoatv.net/tv-show/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                                width="300" height="450"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg"
-                                                                class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                                loading="lazy"
-                                                                srcset="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-32x48.jpg 32w"
-                                                                sizes="(max-width: 300px) 100vw, 300px"></a>
-                                                    </div>
-                                                    <div class="tv-show__body"><span
-                                                            class="tv-show__meta--release-year">2023-08-13</span><a
-                                                            href="https://kokoatv.net/tv-show/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                                                            <h3 class="masvideos-loop-tv-show__title  tv-show__title">아씨두리안
-                                                            </h3>
-                                                        </a><span class="tv-show__meta--genre"><a
-                                                                href="https://kokoatv.net/tv-show-genre/sci-fi-fantasy/"
-                                                                rel="tag">Sci-Fi &amp; Fantasy</a>, <a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                                rel="tag">드라마</a></span></div>
-                                                </div>
-                                                <div
-                                                    class="tv-show post-188685 tv_show type-tv_show status-publish has-post-thumbnail hentry category-kbs2 category-k-drama tv_show_genre-212 tv_show_genre-214 tv_show_tag-529">
-                                                    <div class="tv-show__poster">
-                                                        <div class="box-tv-channel"><img class="tv-channel"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2022/05/kbs_2.png"
-                                                                alt="" width="83" height="31"></div><a
-                                                            href="https://kokoatv.net/tv-show/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                                                width="168" height="242"
-                                                                src="https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다.jpg"
-                                                                class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                                loading="lazy"
-                                                                srcset="https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다.jpg 168w, https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다-17x24.jpg 17w, https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다-25x36.jpg 25w, https://image002.modooup.com/wp-content/uploads/2023/03/진짜가-나타났다-33x48.jpg 33w"
-                                                                sizes="(max-width: 168px) 100vw, 168px"></a>
-                                                    </div>
-                                                    <div class="tv-show__body"><span
-                                                            class="tv-show__meta--release-year">2023-08-13</span><a
-                                                            href="https://kokoatv.net/tv-show/%ec%a7%84%ec%a7%9c%ea%b0%80-%eb%82%98%ed%83%80%eb%82%ac%eb%8b%a4/"
-                                                            class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                                                            <h3 class="masvideos-loop-tv-show__title  tv-show__title">진짜가
-                                                                나타났다!</h3>
-                                                        </a><span class="tv-show__meta--genre"><a
-                                                                href="https://kokoatv.net/tv-show-genre/%ea%b0%80%ec%a1%b1/"
-                                                                rel="tag">가족</a>, <a
-                                                                href="https://kokoatv.net/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
-                                                                rel="tag">드라마</a></span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data" :data="data.data.populars" />
                             </div><!-- /.widget-area-inner -->
                         </div><!-- #secondary -->
                     </div>
@@ -617,6 +501,7 @@
                     Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
             </div><!-- /.container -->
         </footer>
+        <!-- #page -->
         <div class="modal-register-login-wrapper">
             <div class="modal fade modal-register-login" id="modal-register-login" tabindex="-1" role="dialog"
                 aria-hidden="true">
@@ -647,10 +532,9 @@
 
                                                 <p class="masvideos-FormRow form-row">
                                                     <input type="hidden" id="masvideos-register-nonce"
-                                                        name="masvideos-register-nonce" value="eee6cf2129"><input
-                                                        type="hidden" name="_wp_http_referer"
-                                                        value="/?s=%EB%9D%BC%EB%B0%A9"> <button type="submit"
-                                                        class="masvideos-Button button" name="register"
+                                                        name="masvideos-register-nonce" value="2462fcf372"><input
+                                                        type="hidden" name="_wp_http_referer" value="/?s=oppenheimer">
+                                                    <button type="submit" class="masvideos-Button button" name="register"
                                                         value="회원가입">회원가입</button>
                                                 </p>
 
@@ -658,6 +542,7 @@
                                             </form>
                                         </div>
                                     </div>
+
 
                                     <div class="masvideos-login">
                                         <div class="masvideos-login__inner">
@@ -686,8 +571,8 @@
 
                                                 <p class="form-row">
                                                     <input type="hidden" id="masvideos-login-nonce"
-                                                        name="masvideos-login-nonce" value="ba502d0603"><input type="hidden"
-                                                        name="_wp_http_referer" value="/?s=%EB%9D%BC%EB%B0%A9"> <button
+                                                        name="masvideos-login-nonce" value="51d64bb6c2"><input type="hidden"
+                                                        name="_wp_http_referer" value="/?s=oppenheimer"> <button
                                                         type="submit" class="masvideos-Button button" name="login"
                                                         value="로그인">로그인</button>
                                                     <label
@@ -746,9 +631,10 @@
                     <div class="pswp__caption">
                         <div class="pswp__caption__center"></div>
                     </div>
+                </div>
             </div>
-        </div>
     </div>
+
 
     <p id="a11y-speak-intro-text" class="a11y-speak-intro-text"
         style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
@@ -766,5 +652,4 @@
     <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
         style="display: none;"></ul>
     <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body>
-</template>
+</body></template>
