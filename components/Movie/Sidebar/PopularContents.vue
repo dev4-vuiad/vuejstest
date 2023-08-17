@@ -1,7 +1,7 @@
 <script setup>
-const props = defineProps(['data', 'title'])
-const data = props.data
-const title = props.title
+    const props = defineProps(['data', 'title'])
+    const data = props.data
+    const title = props.title
 </script>
 
 <template>

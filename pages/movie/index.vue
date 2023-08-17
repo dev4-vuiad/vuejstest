@@ -240,7 +240,7 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="movies columns-6">
                                     <div class="movies__inner">
-                                        <MovieItem v-if="data" v-for="(item, index) in data.data.movies" :key="index" :link="item.link" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :genres="item.genres" :src="item.src" />
+                                        <MovieItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :link="item.link" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :genres="item.genres" :src="item.src" />
                                     </div>
                                 </div>
                             </div>

@@ -224,8 +224,8 @@
                                 <div class="vodi-archive-wrapper search-movie" data-view="grid">
                                     <div class="tv-shows columns-6 movies columns-6">
                                         <div class="tv-shows__inner movies__inner"
-                                            v-if="data && data.data && data.data.movies.length">
-                                            <SearchMovieItem v-for="(item, index) in data.data.movies" :key="index"
+                                            v-if="data && data.data && data.data.items.length">
+                                            <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
                                                 :title="item.title" :originalTitle="item.originalTitle" :src="item.src" />
                                         </div>
                                     </div>

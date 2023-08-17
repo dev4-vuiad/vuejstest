@@ -8,8 +8,8 @@
     }
 
     const getMovieFromData = (data) => {
-        if (data && data.data && data.data.movies && data.data.movies[0]) {
-            return data.data.movies[0]
+        if (data && data.data && data.data.items && data.data.items[0]) {
+            return data.data.items[0]
         }
         
         return null
@@ -179,19 +179,19 @@
                                 class="post-202135 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
                                 <div class="single-movie__player-container stretch-full-width">
                                     <div class="single-movie__player-container--inner container">
-                                        <MovieBreadScrumb :genre="lastGenre(data.data.movies[0].genres)" :title="data.data.movies[0].title" />
+                                        <MovieBreadScrumb :genre="lastGenre(data.data.items[0].genres)" :title="data.data.items[0].title" />
                                         <div class="ads-movie-top" style="text-align: center;margin-bottom: 10px;">
                                         </div>
                                         <div class="single-movie__row row">
-                                            <MovieIntroInfo v-if="data && data.data && data.data.movies && data.data.movies[0]"
-                                                :year="data.data.movies[0].year"
-                                                :movieRunTime="data.data.movies[0].movieRunTime"
-                                                :title="data.data.movies[0].title"
-                                                :originalTitle="data.data.movies[0].originalTitle"
-                                                :genres="data.data.movies[0].genres"
-                                                :src="data.data.movies[0].src"
-                                                :description="data.data.movies[0].description"
-                                                :outlink="data.data.movies[0].outlink"
+                                            <MovieIntroInfo v-if="data && data.data && data.data.items && data.data.items[0]"
+                                                :year="data.data.items[0].year"
+                                                :movieRunTime="data.data.items[0].movieRunTime"
+                                                :title="data.data.items[0].title"
+                                                :originalTitle="data.data.items[0].originalTitle"
+                                                :genres="data.data.items[0].genres"
+                                                :src="data.data.items[0].src"
+                                                :description="data.data.items[0].description"
+                                                :outlink="data.data.items[0].outlink"
                                             />
                                             <div class="single-movie-ads-box">
                                                 <div class="ads-box-child">
@@ -203,7 +203,7 @@
                                 <section class="movie__related">
                                     <div class="movie__related--inner">
                                         <h2 class="movie__related--title">관련 컨텐츠</h2>
-                                        <MovieIntroRelatedList v-if="data && data.data && data.data.movies && data.data.movies[0]" :data="data.data.movies[0].relateds" />
+                                        <MovieIntroRelatedList v-if="data && data.data && data.data.items && data.data.items[0]" :data="data.data.items[0].relateds" />
                                     </div>
                                 </section>
                                 <div style="text-align: center;margin-top: 10px;"></div>

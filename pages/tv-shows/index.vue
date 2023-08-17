@@ -1,13 +1,25 @@
 <script setup>
-    import popularItems from "/sampledata/popularitems.js"
-    import items from "/sampledata/items_tv_shows.js"
 
-    const pagedItems = items[0]
+const route = useRoute();
+let orderBy = route.query.orderby || 'date'
+
+let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
+    query: {
+        orderby: orderBy,
+    }
+})
+
+const onChangeOrderBy = (event) => {
+    let val = event.target.value
+    const url = new URL(window.location.href);
+    url.searchParams.set('orderby', val);
+    window.location.href = url.toString()
+}
 </script>
 
 <template>
     <body
-        class="archive post-type-archive post-type-archive-movie wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js  sidebar-left dark">
+        class="archive post-type-archive post-type-archive-tv_show wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js  sidebar-left dark">
         <div id="page" class="hfeed site">
             <Header />
             <header class="handheld-header site-header handheld-stick-this light">
@@ -36,11 +48,12 @@
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                                    <a title="영화" href="https://kokoatv.net/movie/"
-                                                                        class="nav-link show">영화</a></li>
+                                                                    <a title="영화" href="/movie/"
+                                                                        class="nav-link show">영화</a>
+                                                                </li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-161947 nav-item show">
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-has-children dropdown active menu-item-161947 nav-item show">
                                                                     <a title="TV" href="#" data-toggle="dropdown"
                                                                         aria-haspopup="true" aria-expanded="false"
                                                                         class="dropdown-toggle nav-link">TV</a>
@@ -49,31 +62,36 @@
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="https://kokoatv.net/k-drama/"
-                                                                                class="dropdown-item show">드라마</a></li>
+                                                                                href="/k-drama/"
+                                                                                class="dropdown-item show">드라마</a>
+                                                                        </li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                                            <a title="예능" href="https://kokoatv.net/k-show/"
-                                                                                class="dropdown-item show">예능</a></li>
+                                                                            <a title="예능" href="/k-show/"
+                                                                                class="dropdown-item show">예능</a>
+                                                                        </li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="https://kokoatv.net/k-sisa/"
-                                                                                class="dropdown-item show">시사</a></li>
+                                                                                href="/k-sisa/"
+                                                                                class="dropdown-item show">시사</a>
+                                                                        </li>
                                                                     </ul>
                                                                 </li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                                                    <a title="미드" href="https://kokoatv.net/u-drama/"
-                                                                        class="nav-link show">미드</a></li>
+                                                                    <a title="미드" href="/u-drama/"
+                                                                        class="nav-link show">미드</a>
+                                                                </li>
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                                                    <a title="OTT/Web" href="https://kokoatv.net/ott-web/"
-                                                                        class="nav-link show">OTT</a></li>
+                                                                    <a title="OTT/Web" href="/ott-web/"
+                                                                        class="nav-link show">OTT</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -92,7 +110,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="site-header__logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                            <div class="site-header__logo"><a href="/" class="custom-logo-link"
                                     rel="home"><img width="653" height="152"
                                         src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
                                         class="custom-logo" alt="코코아티비 :: KOKOA.TV"
@@ -112,12 +130,12 @@
                                         <li>
                                             <form role="search" method="get"
                                                 class="search-form masvideos-search masvideos-search-tv_show"
-                                                action="https://kokoatv.net/">
+                                                action="/">
                                                 <label class="screen-reader-text" for="masvideos-search-field-1">Search
                                                     for:</label>
                                                 <input type="search" id="masvideos-search-field-1"
                                                     class="search-field ui-autocomplete-input" placeholder="검색 ..." value=""
-                                                    name="s" autocomplete="off">
+                                                    name="s">
                                                 <button type="submit" class="search-submit"><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                                                         <path
@@ -131,7 +149,7 @@
                                 </div>
                             </div>
                             <div class="site-header__user-account dropdown">
-                                <a href="https://kokoatv.net/my-account/" class="site-header__user-account--link"
+                                <a href="/my-account/" class="site-header__user-account--link"
                                     data-toggle="dropdown">
                                     <svg width="32px" height="32px">
                                         <image x="0px" y="0px" width="32px" height="32px"
@@ -139,9 +157,9 @@
                                         </image>
                                     </svg> </a>
                                 <ul class="dropdown-menu sub-menu">
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">로그인</a></li>
-                                    <li><a href="https://kokoatv.net/my-account/" data-toggle="modal"
+                                    <li><a href="/my-account/" data-toggle="modal"
                                             data-target="#modal-register-login">회원가입</a></li>
                                 </ul>
                             </div>
@@ -156,75 +174,167 @@
                                 <path fill-rule="evenodd"
                                     d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
                                 </path>
-                            </svg></span>영화</nav>
+                            </svg></span>TV Shows</nav>
                     <div class="site-content__inner">
-                        <div id="primary" class="content-area"> <!-- ads movies top -->
-                            <div class="ads-achive-movies-top" style="text-align: center;">
+                        <div id="primary" class="content-area"> <!-- ads tv-show top -->
+                            <div class="ads-achive-tvshow-top" style="text-align: center;">
                             </div>
-                            <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
+                            <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
                                 <header class="page-header" style="margin-bottom:15px;">
-                                    <h1 class="page-title">실시간 영화 인기컨텐츠</h1>
+                                    <h1 class="page-title">인기 컨텐츠</h1>
                                 </header>
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
                                         <div class="tv-shows__inner">
-                                            <PopularItems v-for="(item, index) in popularItems" :key="index" :id="item.id" :date="item.date" :title="item.title" :totalEp="item.totalEp" :thumbnail="item.thumbnail" />
+                                            <div
+                                                class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
+                                                <div class="tv-show__poster">
+                                                    <div class="box-tv-channel"><img
+                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/disney.png"
+                                                            alt="" width="62" height="31" class="tv-channel"></div><a
+                                                        href="/episode/%eb%ac%b4%eb%b9%99-9%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
+                                                            width="600" height="900"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg"
+                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
+                                                            loading="lazy"
+                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/08/knsQmzXhgatXog9hh02VAjcE47W-150x225.jpg 150w"
+                                                            sizes="(max-width: 600px) 100vw, 600px"></a>
+                                                </div>
+                                                <div class="tv-show__body"><span class="tv-show__meta--release-year">23 시간
+                                                        전</span><a
+                                                        href="/episode/%eb%ac%b4%eb%b9%99-9%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                                            style="display:none" class="span_sea_ep_title">9화</span>
+                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">무빙</h3>
+                                                    </a><span class="tv-show__meta--genre"><a
+                                                            href="/tv-show-genre/action-adventure/"
+                                                            rel="tag">Action &amp; Adventure</a>, <a
+                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                            rel="tag">드라마</a>, <a
+                                                            href="/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
+                                                            rel="tag">미스터리</a></span></div>
+                                            </div>
+                                            <div
+                                                class="tv-show post-154371 tv_show type-tv_show status-publish has-post-thumbnail hentry category-sbs category-k-drama tv_show_genre-214">
+                                                <div class="tv-show__poster">
+                                                    <div class="box-tv-channel"><img class="tv-channel"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/sbs.png"
+                                                            alt="" width="68" height="31"></div><a
+                                                        href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-4%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
+                                                            width="1000" height="1412"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp"
+                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
+                                                            loading="lazy"
+                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig.webp 1000w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-212x300.webp 212w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-725x1024.webp 725w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-768x1084.webp 768w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-17x24.webp 17w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-25x36.webp 25w, https://image002.modooup.com/wp-content/uploads/2023/08/fi0DxTU7erk0r-OOVAAOqYMGPloSkD7PhsYDc8wG8Cz3oRu6fquID4OX2subaUDvBJpL84YhuesWYSzYH0AyjemMdokDitUEk3ldJB4Xv7H3ClzJRxu9Y0k-tdetoY8DnB_XyevE5Ztj8bxwYolMig-34x48.webp 34w"
+                                                            sizes="(max-width: 1000px) 100vw, 1000px"></a>
+                                                </div>
+                                                <div class="tv-show__body"><span
+                                                        class="tv-show__meta--release-year">2023-08-12</span><a
+                                                        href="/episode/%ec%86%8c%eb%b0%a9%ec%84%9c-%ec%98%86-%ea%b2%bd%ec%b0%b0%ec%84%9c-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b5%ad%ea%b3%bc%ec%88%98-4%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                                            style="display:none" class="span_sea_ep_title">시즌 2 - 4화</span>
+                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">소방서 옆 경찰서
+                                                        </h3>
+                                                    </a><span class="tv-show__meta--genre"><a
+                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                            rel="tag">드라마</a></span></div>
+                                            </div>
+                                            <div
+                                                class="tv-show post-201131 tv_show type-tv_show status-publish has-post-thumbnail hentry category-mbc category-k-drama tv_show_genre-214 tv_show_genre-218">
+                                                <div class="tv-show__poster">
+                                                    <div class="box-tv-channel"><img class="tv-channel"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/mbc.png"
+                                                            alt="" width="68" height="31"></div><a
+                                                        href="/episode/%ec%97%b0%ec%9d%b8-4%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
+                                                            width="600" height="900"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg"
+                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
+                                                            loading="lazy"
+                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS.jpg 600w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-300x450.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/07/dXVLyvjmdteP8JrWyipQwc5olwS-32x48.jpg 32w"
+                                                            sizes="(max-width: 600px) 100vw, 600px"></a>
+                                                </div>
+                                                <div class="tv-show__body"><span
+                                                        class="tv-show__meta--release-year">2023-08-12</span><a
+                                                        href="/episode/%ec%97%b0%ec%9d%b8-4%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                                            style="display:none" class="span_sea_ep_title">4화</span>
+                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">연인</h3>
+                                                    </a><span class="tv-show__meta--genre"><a
+                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                            rel="tag">드라마</a>, <a
+                                                            href="/tv-show-genre/%eb%af%b8%ec%8a%a4%ed%84%b0%eb%a6%ac/"
+                                                            rel="tag">미스터리</a></span></div>
+                                            </div>
+                                            <div
+                                                class="tv-show post-200178 tv_show type-tv_show status-publish has-post-thumbnail hentry category-ena category-k-drama tv_show_genre-214 tv_show_genre-213">
+                                                <div class="tv-show__poster">
+                                                    <div class="box-tv-channel"><img class="tv-channel"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/ena.png"
+                                                            alt="" width="61" height="29"></div><a
+                                                        href="/episode/%eb%82%a8%eb%82%a8-10%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
+                                                            width="1000" height="1428"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q.webp"
+                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
+                                                            loading="lazy"
+                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q.webp 1000w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-210x300.webp 210w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-717x1024.webp 717w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-768x1097.webp 768w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-17x24.webp 17w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-25x36.webp 25w, https://image002.modooup.com/wp-content/uploads/2023/07/obwX9lsKqZaPrX2QDtZSOkMW5hBYsTH-WlwLszz6M9AWyfORL5t8PvC2QcXJ-AADsi7UwmuBbC-5h-Dm_l936Q-34x48.webp 34w"
+                                                            sizes="(max-width: 1000px) 100vw, 1000px"></a>
+                                                </div>
+                                                <div class="tv-show__body"><span class="tv-show__meta--release-year">1일
+                                                        전</span><a
+                                                        href="/episode/%eb%82%a8%eb%82%a8-10%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                                            style="display:none" class="span_sea_ep_title">10화</span>
+                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">남남</h3>
+                                                    </a><span class="tv-show__meta--genre"><a
+                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                            rel="tag">드라마</a>, <a
+                                                            href="/tv-show-genre/%ec%bd%94%eb%af%b8%eb%94%94/"
+                                                            rel="tag">코미디</a></span></div>
+                                            </div>
+                                            <div
+                                                class="tv-show post-197995 tv_show type-tv_show status-publish has-post-thumbnail hentry category-tv-chosun category-k-drama tv_show_genre-sci-fi-fantasy tv_show_genre-214">
+                                                <div class="tv-show__poster">
+                                                    <div class="box-tv-channel"><img
+                                                            src="https://image002.modooup.com/wp-content/uploads/2022/05/tv_chosun.png"
+                                                            alt="" width="68" height="31" class="tv-channel"></div><a
+                                                        href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-16%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
+                                                            width="300" height="450"
+                                                            src="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg"
+                                                            class="tv-show__poster--image tv_show__poster--image" alt=""
+                                                            loading="lazy"
+                                                            srcset="https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn.jpg 300w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-200x300.jpg 200w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-150x225.jpg 150w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-16x24.jpg 16w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-24x36.jpg 24w, https://image002.modooup.com/wp-content/uploads/2023/06/2a2otj0fjQ3GpzjYWaJhae0n3rn-32x48.jpg 32w"
+                                                            sizes="(max-width: 300px) 100vw, 300px"></a>
+                                                </div>
+                                                <div class="tv-show__body"><span
+                                                        class="tv-show__meta--release-year">2023-08-13</span><a
+                                                        href="/episode/%ec%95%84%ec%94%a8%eb%91%90%eb%a6%ac%ec%95%88-16%ed%99%94/"
+                                                        class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                                            style="display:none" class="span_sea_ep_title">16화</span>
+                                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">아씨두리안</h3>
+                                                    </a><span class="tv-show__meta--genre"><a
+                                                            href="/tv-show-genre/sci-fi-fantasy/"
+                                                            rel="tag">Sci-Fi &amp; Fantasy</a>, <a
+                                                            href="/tv-show-genre/%eb%93%9c%eb%9d%bc%eb%a7%88/"
+                                                            rel="tag">드라마</a></span></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                             </div>
                             <header class="page-header">
-                                <h1 class="page-title">영화</h1>
+                                <h1 class="page-title">TV Shows</h1>
                             </header>
-                            <div class="vodi-control-bar">
+                            <div class="masvideos-tv-show-control-bar1 vodi-control-bar">
                                 <div class="vodi-control-bar__left">
                                 </div>
                                 <div class="vodi-control-bar__right">
-                                    <ul class="archive-view-switcher nav nav-tabs">
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-grid" class="nav-link active"
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="grid"
-                                                title="Grid View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(176, 183, 188)"
-                                                        d="M16.500,10.999 C15.671,10.999 15.000,10.327 15.000,9.500 C15.000,8.671 15.671,7.999 16.500,7.999 C17.328,7.999 18.000,8.671 18.000,9.500 C18.000,10.327 17.328,10.999 16.500,10.999 ZM16.500,6.999 C15.671,6.999 15.000,6.328 15.000,5.499 C15.000,4.671 15.671,3.999 16.500,3.999 C17.328,3.999 18.000,4.671 18.000,5.499 C18.000,6.328 17.328,6.999 16.500,6.999 ZM16.500,3.000 C15.671,3.000 15.000,2.328 15.000,1.499 C15.000,0.671 15.671,-0.001 16.500,-0.001 C17.328,-0.001 18.000,0.671 18.000,1.499 C18.000,2.328 17.328,3.000 16.500,3.000 ZM11.500,14.999 C10.672,14.999 10.000,14.328 10.000,13.499 C10.000,12.671 10.672,11.999 11.500,11.999 C12.328,11.999 13.000,12.671 13.000,13.499 C13.000,14.328 12.328,14.999 11.500,14.999 ZM11.500,10.999 C10.672,10.999 10.000,10.327 10.000,9.500 C10.000,8.671 10.672,7.999 11.500,7.999 C12.328,7.999 13.000,8.671 13.000,9.500 C13.000,10.327 12.328,10.999 11.500,10.999 ZM11.500,6.999 C10.672,6.999 10.000,6.328 10.000,5.499 C10.000,4.671 10.672,3.999 11.500,3.999 C12.328,3.999 13.000,4.671 13.000,5.499 C13.000,6.328 12.328,6.999 11.500,6.999 ZM11.500,3.000 C10.672,3.000 10.000,2.328 10.000,1.499 C10.000,0.671 10.672,-0.001 11.500,-0.001 C12.328,-0.001 13.000,0.671 13.000,1.499 C13.000,2.328 12.328,3.000 11.500,3.000 ZM6.500,14.999 C5.671,14.999 5.000,14.328 5.000,13.499 C5.000,12.671 5.671,11.999 6.500,11.999 C7.328,11.999 8.000,12.671 8.000,13.499 C8.000,14.328 7.328,14.999 6.500,14.999 ZM6.500,10.999 C5.671,10.999 5.000,10.327 5.000,9.500 C5.000,8.671 5.671,7.999 6.500,7.999 C7.328,7.999 8.000,8.671 8.000,9.500 C8.000,10.327 7.328,10.999 6.500,10.999 ZM6.500,6.999 C5.671,6.999 5.000,6.328 5.000,5.499 C5.000,4.671 5.671,3.999 6.500,3.999 C7.328,3.999 8.000,4.671 8.000,5.499 C8.000,6.328 7.328,6.999 6.500,6.999 ZM6.500,3.000 C5.671,3.000 5.000,2.328 5.000,1.499 C5.000,0.671 5.671,-0.001 6.500,-0.001 C7.328,-0.001 8.000,0.671 8.000,1.499 C8.000,2.328 7.328,3.000 6.500,3.000 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.327 -0.000,9.500 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.500 C3.000,10.327 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,3.000 C0.671,3.000 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,3.000 1.500,3.000 ZM16.500,11.999 C17.328,11.999 18.000,12.671 18.000,13.499 C18.000,14.328 17.328,14.999 16.500,14.999 C15.671,14.999 15.000,14.328 15.000,13.499 C15.000,12.671 15.671,11.999 16.500,11.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-grid-extended"
-                                                class="nav-link " data-archive-columns="6" data-toggle="tab"
-                                                data-archive-class="grid-extended" title="Grid View Spacious"
-                                                href="#vodi-archive-view-content"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="17px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
-                                                        d="M15.500,8.999 C14.671,8.999 14.000,8.328 14.000,7.499 C14.000,6.671 14.671,5.999 15.500,5.999 C16.328,5.999 17.000,6.671 17.000,7.499 C17.000,8.328 16.328,8.999 15.500,8.999 ZM15.500,2.999 C14.671,2.999 14.000,2.328 14.000,1.499 C14.000,0.671 14.671,-0.000 15.500,-0.000 C16.328,-0.000 17.000,0.671 17.000,1.499 C17.000,2.328 16.328,2.999 15.500,2.999 ZM8.500,14.999 C7.671,14.999 7.000,14.328 7.000,13.499 C7.000,12.671 7.671,11.999 8.500,11.999 C9.328,11.999 10.000,12.671 10.000,13.499 C10.000,14.328 9.328,14.999 8.500,14.999 ZM8.500,8.999 C7.671,8.999 7.000,8.328 7.000,7.499 C7.000,6.671 7.671,5.999 8.500,5.999 C9.328,5.999 10.000,6.671 10.000,7.499 C10.000,8.328 9.328,8.999 8.500,8.999 ZM8.500,2.999 C7.671,2.999 7.000,2.328 7.000,1.499 C7.000,0.671 7.671,-0.000 8.500,-0.000 C9.328,-0.000 10.000,0.671 10.000,1.499 C10.000,2.328 9.328,2.999 8.500,2.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.328 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.328 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.000 1.500,-0.000 C2.328,-0.000 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 ZM15.500,11.999 C16.328,11.999 17.000,12.671 17.000,13.499 C17.000,14.328 16.328,14.999 15.500,14.999 C14.671,14.999 14.000,14.328 14.000,13.499 C14.000,12.671 14.671,11.999 15.500,11.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list-large" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list-large"
-                                                title="List Large View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
-                                                        d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,6.999 L18.000,6.999 L18.000,7.999 L5.000,7.999 L5.000,6.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,8.999 C0.671,8.999 -0.000,8.328 -0.000,7.499 C-0.000,6.671 0.671,5.999 1.500,5.999 C2.328,5.999 3.000,6.671 3.000,7.499 C3.000,8.328 2.328,8.999 1.500,8.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list-small" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list-small"
-                                                title="List View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="18px" height="15px">
-                                                    <path fill-rule="evenodd" fill="rgb(112, 112, 112)"
-                                                        d="M5.000,13.999 L5.000,12.999 L18.000,12.999 L18.000,13.999 L5.000,13.999 ZM5.000,8.999 L18.000,8.999 L18.000,10.000 L5.000,10.000 L5.000,8.999 ZM5.000,4.999 L18.000,4.999 L18.000,5.999 L5.000,5.999 L5.000,4.999 ZM5.000,0.999 L18.000,0.999 L18.000,1.999 L5.000,1.999 L5.000,0.999 ZM1.500,14.999 C0.671,14.999 -0.000,14.327 -0.000,13.499 C-0.000,12.671 0.671,11.999 1.500,11.999 C2.328,11.999 3.000,12.671 3.000,13.499 C3.000,14.327 2.328,14.999 1.500,14.999 ZM1.500,10.999 C0.671,10.999 -0.000,10.328 -0.000,9.499 C-0.000,8.671 0.671,7.999 1.500,7.999 C2.328,7.999 3.000,8.671 3.000,9.499 C3.000,10.328 2.328,10.999 1.500,10.999 ZM1.500,6.999 C0.671,6.999 -0.000,6.328 -0.000,5.499 C-0.000,4.671 0.671,3.999 1.500,3.999 C2.328,3.999 3.000,4.671 3.000,5.499 C3.000,6.328 2.328,6.999 1.500,6.999 ZM1.500,2.999 C0.671,2.999 -0.000,2.328 -0.000,1.499 C-0.000,0.671 0.671,-0.001 1.500,-0.001 C2.328,-0.001 3.000,0.671 3.000,1.499 C3.000,2.328 2.328,2.999 1.500,2.999 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                        <li class="nav-item"><a id="vodi-archive-view-switcher-list" class="nav-link "
-                                                data-archive-columns="6" data-toggle="tab" data-archive-class="list"
-                                                title="List Small View" href="#vodi-archive-view-content"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="17px" height="13px">
-                                                    <path fill-rule="evenodd" fill="rgb(180, 187, 192)"
-                                                        d="M-0.000,13.000 L-0.000,11.999 L17.000,11.999 L17.000,13.000 L-0.000,13.000 ZM-0.000,7.999 L17.000,7.999 L17.000,8.999 L-0.000,8.999 L-0.000,7.999 ZM-0.000,3.999 L17.000,3.999 L17.000,4.999 L-0.000,4.999 L-0.000,3.999 ZM-0.000,-0.001 L17.000,-0.001 L17.000,0.999 L-0.000,0.999 L-0.000,-0.001 Z">
-                                                    </path>
-                                                </svg></a></li>
-                                    </ul>
-                                    <div class="movies-ordering">
+                                    <div class="tv-shows-ordering">
                                         <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler"
                                                 type="button"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
                                         </div><svg class="svg-icon svg-icon__sort" aria-hidden="true" role="img"
@@ -234,14 +344,13 @@
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" class="orderby" onchange="this.form.submit();">
-                                                <option value="title-asc">A 부터 Z</option>
-                                                <option value="title-desc">Z 부터 A</option>
-                                                <option value="date" selected="selected">시간순</option>
-                                                <option value="menu_order">Menu Order</option>
-                                                <option value="rating">별점순</option>
+                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                                <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
+                                                <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
+                                                <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
+                                                <option value="menuOrder" v-bind:selected="orderBy == 'menuOrder'">Menu Order</option>
+                                                <option value="rating" v-bind:selected="orderBy == 'rating'">별점순</option>
                                             </select>
-                                            <input type="hidden" name="paged" value="1">
                                         </form>
                                     </div>
                                 </div>
@@ -249,148 +358,146 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
-                                        <TvshowsItem v-for="(item, index) in pagedItems" :key="index" :id="item.id" :year="item.year" :title="item.title" :titleEn="item.titleEn" :ep="item.ep" :thumbnail="item.thumbnail" tvChannel="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png" />
+                                        <TvshowsItem v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :titleEn="'y Dad the Bounty Hunter'" :totalEpisode="item.totalEpisode" :src="item.src" :chanelImage="item.chanelImage" />
                                     </div>
                                 </div>
                             </div>
-                        <Pagination category="tv-shows" pageNumber="1" numPerPage="30" />
-                        <center></center>
-                    </div><!-- /.content-area -->
-                    <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
-                        role="complementary">
-                        <TvshowsPopularContents />
-                    </div><!-- #secondary -->
-                </div><!-- /.site-content-inner -->
-            </div><!-- /.container -->
-        </div><!-- #content -->
-        <Footer />
-    </div><!-- #page -->
-    <div class="modal-register-login-wrapper">
-        <div class="modal fade modal-register-login" id="modal-register-login" tabindex="-1" role="dialog"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="masvideos">
-                            <div class="masvideos-notices-wrapper"></div>
-                            <div class="masvideos-register-login">
-                                <div class="masvideos-register">
-                                    <div class="masvideos-register__inner">
-                                        <h2>회원가입</h2>
-                                        <form method="post" class="masvideos-form masvideos-form-register register">
-                                            <p
-                                                class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
-                                                <label for="reg_email">이메일&nbsp;<span class="required">*</span></label>
-                                                <input type="email"
-                                                    class="masvideos-Input masvideos-Input--text input-text"
-                                                    name="email" id="reg_email" autocomplete="email" value="">
-                                            </p>
-                                            <p class="masvideos-FormRow form-row">
-                                                <input type="hidden" id="masvideos-register-nonce"
-                                                    name="masvideos-register-nonce" value="700ba13235"><input
-                                                    type="hidden" name="_wp_http_referer" value="/movie/"> <button
-                                                    type="submit" class="masvideos-Button button" name="register"
-                                                    value="회원가입">회원가입</button>
-                                            </p>
-                                        </form>
+                            <Pagination base="/tv-shows" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                        </div><!-- /.content-area -->
+                        <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
+                            <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.top5" />
+                        </div><!-- #secondary -->
+                    </div><!-- /.site-content-inner -->
+                </div><!-- /.container -->
+            </div><!-- #content -->
+            <Footer />
+        </div><!-- #page -->
+        <div class="modal-register-login-wrapper">
+            <div class="modal fade modal-register-login" id="modal-register-login" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="masvideos">
+                                <div class="masvideos-notices-wrapper"></div>
+                                <div class="masvideos-register-login">
+                                    <div class="masvideos-register">
+                                        <div class="masvideos-register__inner">
+                                            <h2>회원가입</h2>
+                                            <form method="post" class="masvideos-form masvideos-form-register register">
+                                                <p
+                                                    class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_email">이메일&nbsp;<span class="required">*</span></label>
+                                                    <input type="email"
+                                                        class="masvideos-Input masvideos-Input--text input-text"
+                                                        name="email" id="reg_email" autocomplete="email" value="">
+                                                </p>
+                                                <p class="masvideos-FormRow form-row">
+                                                    <input type="hidden" id="masvideos-register-nonce"
+                                                        name="masvideos-register-nonce" value="2462fcf372"><input
+                                                        type="hidden" name="_wp_http_referer" value="/tv-shows/"> <button
+                                                        type="submit" class="masvideos-Button button" name="register"
+                                                        value="회원가입">회원가입</button>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="masvideos-login">
+                                        <div class="masvideos-login__inner">
+                                            <h2>Login</h2>
+                                            <form class="masvideos-form masvideos-form-login login" method="post">
+                                                <p
+                                                    class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
+                                                    <label for="username">아이디/이메일&nbsp;<span
+                                                            class="required">*</span></label>
+                                                    <input type="text"
+                                                        class="masvideos-Input masvideos-Input--text input-text"
+                                                        name="username" id="username" autocomplete="username" value="">
+                                                </p>
+                                                <p
+                                                    class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
+                                                    <label for="password">비밀번호&nbsp;<span class="required">*</span></label>
+                                                    <input class="masvideos-Input masvideos-Input--text input-text"
+                                                        type="password" name="password" id="password"
+                                                        autocomplete="current-password">
+                                                </p>
+                                                <p class="form-row">
+                                                    <input type="hidden" id="masvideos-login-nonce"
+                                                        name="masvideos-login-nonce" value="51d64bb6c2"><input type="hidden"
+                                                        name="_wp_http_referer" value="/tv-shows/"> <button type="submit"
+                                                        class="masvideos-Button button" name="login"
+                                                        value="로그인">로그인</button>
+                                                    <label
+                                                        class="masvideos-form__label masvideos-form__label-for-checkbox inline">
+                                                        <input class="masvideos-form__input masvideos-form__input-checkbox"
+                                                            name="rememberme" type="checkbox" id="rememberme"
+                                                            value="forever"> <span>아이디 기억하기</span>
+                                                    </label>
+                                                </p>
+                                                <p class="masvideos-LostPassword lost_password">
+                                                    <a
+                                                        href="/wp-login.php?action=lostpassword">비밀번호찾기</a>
+                                                </p>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="masvideos-login">
-                                    <div class="masvideos-login__inner">
-                                        <h2>Login</h2>
-                                        <form class="masvideos-form masvideos-form-login login" method="post">
-                                            <p
-                                                class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
-                                                <label for="username">아이디/이메일&nbsp;<span
-                                                        class="required">*</span></label>
-                                                <input type="text"
-                                                    class="masvideos-Input masvideos-Input--text input-text"
-                                                    name="username" id="username" autocomplete="username" value="">
-                                            </p>
-                                            <p
-                                                class="masvideos-form-row masvideos-form-row--wide form-row form-row-wide">
-                                                <label for="password">비밀번호&nbsp;<span class="required">*</span></label>
-                                                <input class="masvideos-Input masvideos-Input--text input-text"
-                                                    type="password" name="password" id="password"
-                                                    autocomplete="current-password">
-                                            </p>
-                                            <p class="form-row">
-                                                <input type="hidden" id="masvideos-login-nonce"
-                                                    name="masvideos-login-nonce" value="85e044ef1c"><input type="hidden"
-                                                    name="_wp_http_referer" value="/movie/"> <button type="submit"
-                                                    class="masvideos-Button button" name="login"
-                                                    value="로그인">로그인</button>
-                                                <label
-                                                    class="masvideos-form__label masvideos-form__label-for-checkbox inline">
-                                                    <input class="masvideos-form__input masvideos-form__input-checkbox"
-                                                        name="rememberme" type="checkbox" id="rememberme"
-                                                        value="forever"> <span>아이디 기억하기</span>
-                                                </label>
-                                            </p>
-                                            <p class="masvideos-LostPassword lost_password">
-                                                <a
-                                                    href="https://kokoatv.net/wp-login.php?action=lostpassword">비밀번호찾기</a>
-                                            </p>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <a class="close-button" data-dismiss="modal" aria-label="Close"><i
-                                class="la la-close"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" aria-label="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" aria-label="Share"></button>
-                    <button class="pswp__button pswp__button--fs" aria-label="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" aria-label="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
+                            </div> <a class="close-button" data-dismiss="modal" aria-label="Close"><i
+                                    class="la la-close"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
+            </div>
+        </div>
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
                 </div>
-                <button class="pswp__button pswp__button--arrow--left" aria-label="Previous (arrow left)"></button>
-                <button class="pswp__button pswp__button--arrow--right" aria-label="Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" aria-label="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" aria-label="Share"></button>
+                        <button class="pswp__button pswp__button--fs" aria-label="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" aria-label="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" aria-label="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" aria-label="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <p id="a11y-speak-intro-text" class="a11y-speak-intro-text"
-        style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-        hidden="hidden">알림</p>
-    <div id="a11y-speak-assertive" class="a11y-speak-region"
-        style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-        aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div>
-    <div id="a11y-speak-polite" class="a11y-speak-region"
-        style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-        aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><a id="scrollUp" href="#top"
-        style="display: none; position: fixed; z-index: 1001;"><i class="fas fa-angle-up"></i></a>
-    <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
-        style="display: none;"></ul>
-    <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-    <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
-        style="display: none;"></ul>
-    <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body></template>
+        <p id="a11y-speak-intro-text" class="a11y-speak-intro-text"
+            style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
+            hidden="hidden">알림</p>
+        <div id="a11y-speak-assertive" class="a11y-speak-region"
+            style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
+            aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div>
+        <div id="a11y-speak-polite" class="a11y-speak-region"
+            style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
+            aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><a id="scrollUp" href="#top"
+            style="position: fixed; z-index: 1001;"><i class="fas fa-angle-up"></i></a>
+        <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
+            style="display: none;"></ul>
+        <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+        <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
+            style="display: none;"></ul>
+        <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+    </body>
+</template>
