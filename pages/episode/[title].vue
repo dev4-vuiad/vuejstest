@@ -164,7 +164,6 @@
                             <div id="episode-202016" class="post-202016 episode type-episode status-publish hentry">
                                 <TvshowsIntroBreadScrumb v-if="data && data.data && data.data.items && data.data.items[0]"
                                     :genre="data.data.items[0].genres[data.data.items[0].genres.length - 1]"
-                                    
                                 />
                                 <div class="single-episode__content column">
                                     <!-- ads top -->

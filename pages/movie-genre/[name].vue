@@ -245,7 +245,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <Pagination v-if="data" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" currentPage="1" 
+                        <Pagination v-if="data && data.data.items.length" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" currentPage="1" 
                             :year="year" :genres="genres" :orderBy="orderBy"
                         />
                         <center></center>
