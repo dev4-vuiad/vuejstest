@@ -17,7 +17,7 @@
             <div class="box-tv-channel">
                 <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31">
             </div>
-            <a :href="'/episode/' + title + '-' + totalEpisode" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="300" height="450" :src="src" class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy">
             </a>
         </div>
@@ -28,7 +28,7 @@
                     <div class="original-title-tvshow">
                         {{ titleEn }}
                     </div>
-                    <a :href="'/episode/' + title + totalEpisode" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                    <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                         <span style="display:none" class="span_sea_ep_title">{{ totalEpisode }}</span>
                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ title }}</h3>
                     </a>

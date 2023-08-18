@@ -5,8 +5,8 @@
     const year = props.year
     const title = props.title
     const src = props.src
-    const totalEpisode = '9화'
-    const chanelImage = 'https://image002.modooup.com/wp-content/uploads/2022/05/disney.png'
+    const totalEpisode = props.totalEpisode
+    const chanelImage = props.chanelImage
 </script>
 
 <template>
@@ -15,7 +15,7 @@
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel">
             </div>
-            <a :href="'/episode/' + title + '-' + totalEpisode" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
                 :src="src"
                 class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
@@ -24,7 +24,7 @@
         </div>
         <div class="tv-show__body">
             <span class="tv-show__meta--release-year">{{ year }}</span>
-            <a :href="'/episode/' + title + '-' + totalEpisode" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <span style="display:none;" class="span_sea_ep_title">{{ totalEpisode }}</span>
                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ title }}</h3>
             </a>

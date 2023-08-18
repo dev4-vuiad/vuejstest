@@ -15,14 +15,14 @@
                             class="tv-show post-197303 tv_show type-tv_show status-publish has-post-thumbnail hentry category-jtbc category-k-drama tv_show_genre-214 tv_show_genre-213 tv_show_tag-1086">
                             <div class="tv-show__body">
                                 <span class="tv-show__meta--release-year">{{ item.year }}</span>
-                                <a :href="'/' + item.link.replace('movie/', 'episode/')" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                <a :href="'/episode/' + item.title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                         style="display:none" class="span_sea_ep_title">16화</span>
                                     <h3 class="masvideos-loop-tv-show__title  tv-show__title">킹더랜드</h3>
                                 </a>
                                 <span class="tv-show__meta--genre">
                                     <template v-for="(genre, idx) in item.genres">
                                         <span v-if="idx > 0">, </span>
-                                        <a :href="'/' + genre.link.replace('movie-genre', 'tv-show-genre')" rel="tag">{{ genre.name }}</a>
+                                        <a :href="'/episode/' + item.title" rel="tag">{{ genre.name }}</a>
                                     </template>
                                 </span>
                             </div>

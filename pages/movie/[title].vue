@@ -174,7 +174,7 @@
                                 class="post-202135 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
                                 <div class="single-movie__player-container stretch-full-width">
                                     <div class="single-movie__player-container--inner container">
-                                        <MovieBreadScrumb :genre="lastGenre(data.data.items[0].genres)" :title="data.data.items[0].title" />
+                                        <MovieBreadScrumb v-if="data && data.data && data.data.items.length && data.data.items[0].genres.length" :genre="lastGenre(data.data.items[0].genres)" :title="data.data.items[0].title" />
                                         <div class="ads-movie-top" style="text-align: center;margin-bottom: 10px;">
                                         </div>
                                         <div class="single-movie__row row">

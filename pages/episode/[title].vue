@@ -1,3 +1,10 @@
+<script setup>
+    const route = useRoute();
+    let title = route.params.title
+    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows?title=' + title)
+
+</script>
+
 <template>
     <body
         class="episode-template-default single single-episode postid-202016 wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-single masvideos-js single-episode-v3 full-width dark ">
@@ -163,7 +170,17 @@
                                     </div>
                                     <div class="single-episode__row row">
                                         <div class="single-episode__sidebar column1 single-episode-custom">
-                                            <TvshowsIntroInfo />
+                                            <TvshowsIntroInfo v-if="data && data.data && data.data.items && data.data.items[0]"
+                                                :year="data.data.items[0].year"
+                                                :movieRunTime="data.data.items[0].movieRunTime"
+                                                :title="data.data.items[0].title"
+                                                :originalTitle="data.data.items[0].originalTitle"
+                                                :genres="data.data.items[0].genres"
+                                                :src="data.data.items[0].src"
+                                                :description="data.data.items[0].description"
+                                                :outlink="data.data.items[0].outlink"
+                                                :totalEpisode="data.data.items[0].totalEpisode"
+                                            />
                                             <div style="margin-bottom:15px;">
                                                 <a href="https://justlink.tv/하남시-맛집-청년다방?pid=202016"
                                                     link="https://justlink.tv/하남시-맛집-청년다방" pid="202016" class="a_btn_out">
@@ -205,13 +222,7 @@
                                         <div class="tab-content">
                                             <div id="tab-64de55f662ec6description" class="tab-pane active show">
                                                 <div class="episode__description">
-                                                    <div>대한민국 부모들의 영원한 숙제, 육아!
-                                                        내 아이지만 나도 잘 모르겠는 내 나이의 마음...
-                                                        육아가 어려운 부모를 도와주러 솔루션 마스터즈가 뭉쳤다!
-                                                        각종 육아 서적과 관련 커뮤니티로 정보는 많지만, 정작 내 아이는 어떻게 해야할지 모르는 부모를 위해 베테랑 육아 전문가가
-                                                        '맞춤형 솔루션 및 육아 코칭'을 제공한다!
-                                                        금쪽같은 내새끼를 위해 가족이 변하는 리얼 메이크오버쇼!
-                                                        당신의 자녀를 위한 맞춤형 육아 솔루션!</div>
+                                                    <div v-html="data.data.items[0].description"></div>
                                                 </div>
                                             </div>
                                             <div id="tab-64de55f662ec6reviews" class="tab-pane">

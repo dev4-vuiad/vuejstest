@@ -1,21 +1,23 @@
 <script setup>
 
-const route = useRoute();
-let orderBy = route.query.orderby || 'date'
+    const route = useRoute();
+    let orderBy = route.query.orderby || 'date'
+    const page = route.params.page || 1
 
-let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
-    query: {
-        type: 'ott-web',
-        orderby: orderBy,
+    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
+        query: {
+            page: page,
+            orderby: orderBy,
+            type: 'k-show'
+        }
+    })
+
+    const onChangeOrderBy = (event) => {
+        let val = event.target.value
+        const url = new URL(window.location.href);
+        url.searchParams.set('orderby', val);
+        window.location.href = url.toString()
     }
-})
-
-const onChangeOrderBy = (event) => {
-    let val = event.target.value
-    const url = new URL(window.location.href);
-    url.searchParams.set('orderby', val);
-    window.location.href = url.toString()
-}
 </script>
 
 <template>
@@ -63,7 +65,7 @@ const onChangeOrderBy = (event) => {
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
-                                                                                href="/ott-web/"
+                                                                                href="/k-show/"
                                                                                 class="dropdown-item show">드라마</a>
                                                                         </li>
                                                                         <li itemscope="itemscope"
@@ -76,7 +78,7 @@ const onChangeOrderBy = (event) => {
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
-                                                                                href="/ott-web/"
+                                                                                href="/k-sisa/"
                                                                                 class="dropdown-item show">시사</a>
                                                                         </li>
                                                                     </ul>
@@ -170,14 +172,14 @@ const onChangeOrderBy = (event) => {
             </header>
             <div id="content" class="site-content " tabindex="-1">
                 <div class="container">
-                    <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" />
+                    <TvshowsBreadScrumb base="/k-show" title="드라마" :page="page" />
                     <div class="site-content__inner">
                         <div id="primary" class="content-area"> <!-- ads tv-show top -->
                             <div class="ads-achive-tvshow-top" style="text-align: center;">
                             </div>
                             <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
                                 <header class="page-header" style="margin-bottom:15px;">
-                                    <h1 class="page-title">실시간 OTT/Web 인기컨텐츠</h1>
+                                    <h1 class="page-title">실시간 예능 인기컨텐츠</h1>
                                 </header>
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
@@ -196,7 +198,7 @@ const onChangeOrderBy = (event) => {
                                 <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                             </div>
                             <header class="page-header">
-                                <h1 class="page-title">OTT/Web</h1>
+                                <h1 class="page-title">드라마</h1>
                             </header>
                             <div class="masvideos-tv-show-control-bar1 vodi-control-bar">
                                 <div class="vodi-control-bar__left">
@@ -230,10 +232,10 @@ const onChangeOrderBy = (event) => {
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/ott-web" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination base="/k-show" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                            <TvshowsPopularContents v-if="data" title="주간 OTT/Web 인기컨텐츠" :data="data.data.top5" />
+                            <TvshowsPopularContents v-if="data" title="주간 예능 인기컨텐츠" :data="data.data.top5" />
                         </div><!-- #secondary -->
                     </div><!-- /.site-content-inner -->
                 </div><!-- /.container -->

@@ -1,21 +1,23 @@
 <script setup>
 
-const route = useRoute();
-let orderBy = route.query.orderby || 'date'
+    const route = useRoute();
+    let orderBy = route.query.orderby || 'date'
+    const page = route.params.page || 1
 
-let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
-    query: {
-        type: 'ott-web',
-        orderby: orderBy,
+    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
+        query: {
+            page: page,
+            orderby: orderBy,
+            type: 'ott-web'
+        }
+    })
+
+    const onChangeOrderBy = (event) => {
+        let val = event.target.value
+        const url = new URL(window.location.href);
+        url.searchParams.set('orderby', val);
+        window.location.href = url.toString()
     }
-})
-
-const onChangeOrderBy = (event) => {
-    let val = event.target.value
-    const url = new URL(window.location.href);
-    url.searchParams.set('orderby', val);
-    window.location.href = url.toString()
-}
 </script>
 
 <template>
@@ -170,7 +172,7 @@ const onChangeOrderBy = (event) => {
             </header>
             <div id="content" class="site-content " tabindex="-1">
                 <div class="container">
-                    <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" />
+                    <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" :page="page" />
                     <div class="site-content__inner">
                         <div id="primary" class="content-area"> <!-- ads tv-show top -->
                             <div class="ads-achive-tvshow-top" style="text-align: center;">
@@ -230,7 +232,7 @@ const onChangeOrderBy = (event) => {
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/ott-web" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination base="/ott-web" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 OTT/Web 인기컨텐츠" :data="data.data.top5" />
