@@ -2,7 +2,6 @@
     const route = useRoute();
     let title = route.params.title
     let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows?title=' + title)
-
 </script>
 
 <template>
@@ -163,7 +162,10 @@
                     <div class="site-content__inner">
                         <div id="primary" class="content-area">
                             <div id="episode-202016" class="post-202016 episode type-episode status-publish hentry">
-                                <TvshowsIntroBreadScrumb />
+                                <TvshowsIntroBreadScrumb v-if="data && data.data && data.data.items && data.data.items[0]"
+                                    :genre="data.data.items[0].genres[data.data.items[0].genres.length - 1]"
+                                    
+                                />
                                 <div class="single-episode__content column">
                                     <!-- ads top -->
                                     <div class="ads-episode-top" style="text-align: center;margin-bottom: 10px;">
@@ -171,7 +173,7 @@
                                     <div class="single-episode__row row">
                                         <div class="single-episode__sidebar column1 single-episode-custom">
                                             <TvshowsIntroInfo v-if="data && data.data && data.data.items && data.data.items[0]"
-                                                :year="data.data.items[0].year"
+                                                :postDateGmt="data.data.items[0].postDateGmt"
                                                 :movieRunTime="data.data.items[0].movieRunTime"
                                                 :title="data.data.items[0].title"
                                                 :originalTitle="data.data.items[0].originalTitle"
@@ -179,7 +181,7 @@
                                                 :src="data.data.items[0].src"
                                                 :description="data.data.items[0].description"
                                                 :outlink="data.data.items[0].outlink"
-                                                :totalEpisode="data.data.items[0].totalEpisode"
+                                                :episodeNumber="data.data.items[0].episodeNumber"
                                             />
                                             <div style="margin-bottom:15px;">
                                                 <a href="https://justlink.tv/하남시-맛집-청년다방?pid=202016"

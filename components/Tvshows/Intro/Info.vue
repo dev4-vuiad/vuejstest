@@ -1,6 +1,6 @@
 <script setup>
-    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'totalEpisode'])
-    const year = props.year
+    const props = defineProps(['postDateGmt', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'episodeNumber'])
+    const postDateGmt = props.postDateGmt
     const movieRunTime = props.movieRunTime
     const title = props.title
     const originalTitle = props.originalTitle
@@ -8,7 +8,12 @@
     const src = props.src
     const description = props.description
     const outlink = props.outlink
-    const totalEpisode = props.totalEpisode
+    const episodeNumber = props.episodeNumber
+
+    const format = (d) => {
+        d = new Date(d.replace(' ', 'T') + '.000Z')
+        return d.toLocaleDateString('fr-CH')
+    }
 </script>
 
 <template>
@@ -36,12 +41,12 @@
                         </template>
                     </span>
                     <div class="episode__meta">
-                        <span class="episode__meta--release-date">Added: {{ year }}</span>
+                        <span class="episode__meta--release-date">Added: {{ format(postDateGmt) }}</span>
                         <div class="vodi-views-likes"></div>
                     </div><a
                         href="https://kokoatv.net/tv-show/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-1/"
                         class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                        <h1 class="episode_title entry-title">{{ title }} - {{ totalEpisode }}
+                        <h1 class="episode_title entry-title">{{ title }} - {{ episodeNumber }}
                         </h1>
                     </a>
                     <div class="title-orginal__tvshow_single">

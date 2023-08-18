@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'totalEpisode'])
+    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'episodeNumber'])
     const year = props.year
     const movieRunTime = props.movieRunTime
     const title = props.title
@@ -8,7 +8,7 @@
     const src = props.src
     const description = props.description
     const outlink = props.outlink
-    const totalEpisode = props.totalEpisode
+    const episodeNumber = props.episodeNumber
 </script>
 
 <template>
