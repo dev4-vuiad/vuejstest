@@ -16,7 +16,7 @@
                         data-v-inspector="pages/tv-shows/index.vue:117:47">Search</span></button><!-- <input type="hidden" name="post_type" value="" /> -->
             </form>
         </div>
-        <div class="site-header__user-account dropdown" data-v-inspector="pages/tv-shows/index.vue:121:29"><a
+        <!-- <div class="site-header__user-account dropdown" data-v-inspector="pages/tv-shows/index.vue:121:29"><a
                 href="/my-account/" class="site-header__user-account--link" data-toggle="dropdown"
                 data-v-inspector="pages/tv-shows/index.vue:122:33"><svg width="32px" height="32px"
                     data-v-inspector="pages/tv-shows/index.vue:124:37">
@@ -30,6 +30,6 @@
                 <li data-v-inspector="pages/tv-shows/index.vue:132:37"><a href="/my-account/" data-toggle="modal"
                         data-target="#modal-register-login" data-v-inspector="pages/tv-shows/index.vue:132:41">회원가입</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
 </template>
