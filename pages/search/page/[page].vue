@@ -4,7 +4,7 @@
     const page = route.params.page
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('http://38.54.125.46:8080/api/movies', {
+    const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
         query: {
             title: s,
             page: page,

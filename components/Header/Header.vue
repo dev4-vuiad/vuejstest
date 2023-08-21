@@ -16,6 +16,20 @@
                 e.parents(".menu-item-has-children").length <= 0 && a.removeClass("animated-dropdown")
             }
         })
+
+        //Sidebar menu
+        $(".site-header__offcanvas .navbar-toggler").on("click", function() {
+            0 < $(this).parents(".stuck").length && $("html, body").animate({
+                scrollTop: $("body")
+            }, 0),
+            $(this).closest(".site-header__offcanvas").toggleClass("toggled"),
+            $("body").toggleClass("off-canvas-active")
+        })
+        
+        $(document).on("click", function(e) {
+            $(".site-header__offcanvas").hasClass("toggled") && ($(".navbar-toggler").is(e.target) || 0 !== $(".navbar-toggler").has(e.target).length || $(".offcanvas-collapse").is(e.target) || 0 !== $(".offcanvas-collapse").has(e.target).length || ($(".site-header__offcanvas").removeClass("toggled"),
+            $("body").removeClass("off-canvas-active")))
+        })
     })
 </script>
 <template>
