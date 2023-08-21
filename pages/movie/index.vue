@@ -1,30 +1,44 @@
 <script setup>
-    import { ref } from 'vue';
+    import { onBeforeUpdate } from 'vue';
     const route = useRoute();
+    const page = route.params.page
 
     let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderBy || 'date'
 
-    const data = ref(undefined)
-    getData(genres, year, orderBy)
+    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
+        query: {
+            genre: genres.join(','),
+            year: year,
+            orderBy: orderBy,
+            page: page
+        }
+    })
+
+    onBeforeUpdate(() => {
+        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
+        year = route.query.year_filter || ''
+        if (!pending.value) {
+            useFetch('https://backendnew.takitv.net/api/movies', {
+                query: {
+                    genre: genres.join(','),
+                    year: year,
+                    page : page
+                },
+                onResponse({ request, response }) {
+                    data = response._data
+                }
+            })
+        }
+    });
 
     const onChangeOrderBy = (event) => {
-        orderBy = event.target.value
-        getData(genres, year, orderBy)
-    }
-
-    function getData(genres, year, orderBy) {
-        useFetch('https://backendnew.takitv.net/api/movies', {
-            query: {
-                genre: genres.join(','),
-                year: year,
-                orderBy: orderBy,
-            },
-            onResponse({ request, response }) {
-                data.value = response._data
-            }
-        })
+        let val = event.target.value
+        const url = new URL(window.location.href);
+        url.searchParams.set('orderBy', val);
+        url.pathname = '/movie'
+        window.location.href = url.toString()
     }
     
 </script>

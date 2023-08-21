@@ -1,28 +1,21 @@
 <script setup>
-    import { ref } from 'vue'
     const route = useRoute();
     let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
-    const data = ref(undefined)
 
-    getData(orderBy)
-
-    function getData(orderBy) {
-        useFetch('https://backendnew.takitv.net/api/tvshows', {
-            query: {
-                page: page,
-                type: 'k-show',
-                orderBy: orderBy
-            },
-            onResponse({ request, response }) {
-                data.value = response._data
-            }
-        })
-    }
+    let { pending, data } = await useFetch('https://backendnew.takitv.net/api/tvshows', {
+        query: {
+            page: page,
+            orderBy: orderBy,
+            type: 'k-show'
+        }
+    })
 
     const onChangeOrderBy = (event) => {
-        orderBy = event.target.value
-        getData(orderBy)
+        let val = event.target.value
+        const url = new URL(window.location.href);
+        url.searchParams.set('orderBy', val);
+        window.location.href = url.toString()
     }
 </script>
 
