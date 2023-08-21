@@ -3,7 +3,7 @@
 const route = useRoute();
 let orderBy = route.query.orderBy || 'date'
 
-let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
+let { pending, data } = await useFetch('http://38.60.146.22/api/tvshows', {
     query: {
         type: 'k-drama',
         orderBy: orderBy,
