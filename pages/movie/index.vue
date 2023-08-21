@@ -4,13 +4,13 @@
 
     let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
     let year = route.query.year_filter || ''
-    let orderBy = route.query.orderby || 'date'
+    let orderBy = route.query.orderBy || 'date'
     
     let { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
         query: {
             genre: genres.join(','),
             year: year,
-            orderby: orderBy,
+            orderBy: orderBy,
         }
     })
 
@@ -33,7 +33,7 @@
     const onChangeOrderBy = (event) => {
         let val = event.target.value
         const url = new URL(window.location.href);
-        url.searchParams.set('orderby', val);
+        url.searchParams.set('orderBy', val);
         window.location.href = url.toString()
     }
     

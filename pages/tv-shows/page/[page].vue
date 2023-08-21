@@ -1,20 +1,20 @@
 <script setup>
 
     const route = useRoute();
-    let orderBy = route.query.orderby || 'date'
+    let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
 
     let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
         query: {
             page: page,
-            orderby: orderBy
+            orderBy: orderBy
         }
     })
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
         const url = new URL(window.location.href);
-        url.searchParams.set('orderby', val);
+        url.searchParams.set('orderBy', val);
         window.location.href = url.toString()
     }
 </script>

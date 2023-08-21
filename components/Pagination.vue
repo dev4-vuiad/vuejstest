@@ -30,7 +30,7 @@
         url.searchParams.set('genres', props.genres)
     }
     if (props.orderBy) {
-        url.searchParams.set('orderby', props.orderBy)
+        url.searchParams.set('orderBy', props.orderBy)
     }
     if (props.s) {
         url.searchParams.set('s', props.s)

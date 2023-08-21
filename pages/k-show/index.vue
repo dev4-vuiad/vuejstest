@@ -1,19 +1,19 @@
 <script setup>
 
 const route = useRoute();
-let orderBy = route.query.orderby || 'date'
+let orderBy = route.query.orderBy || 'date'
 
 let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
     query: {
         type: 'k-show',
-        orderby: orderBy,
+        orderBy: orderBy,
     }
 })
 
 const onChangeOrderBy = (event) => {
     let val = event.target.value
     const url = new URL(window.location.href);
-    url.searchParams.set('orderby', val);
+    url.searchParams.set('orderBy', val);
     window.location.href = url.toString()
 }
 </script>
@@ -212,7 +212,7 @@ const onChangeOrderBy = (event) => {
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                            <select @change="onChangeOrderBy" class="orderby">
                                                 <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                 <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                                 <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>

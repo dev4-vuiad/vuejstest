@@ -2,20 +2,20 @@
     const route = useRoute();
     const s = route.query.s
     const page = route.params.page
-    let orderBy = route.query.orderby || 'date'
+    let orderBy = route.query.orderBy || 'date'
 
     const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
         query: {
             title: s,
             page: page,
-            orderby: orderBy
+            orderBy: orderBy
         }
     })
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
         const url = new URL(window.location.href);
-        url.searchParams.set('orderby', val);
+        url.searchParams.set('orderBy', val);
         url.pathname = '/search'
         window.location.href = url.toString()
     }
