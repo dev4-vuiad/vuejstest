@@ -3,7 +3,7 @@
     const s = route.query.s
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('http://38.54.125.46/api/movies', {
+    const { pending, data } = await useFetch('http://38.54.125.46:8080/api/movies', {
         query: {
             title:s,
             orderBy: orderBy

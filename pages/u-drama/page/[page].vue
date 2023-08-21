@@ -4,7 +4,7 @@
     let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
 
-    let { pending, data } = await useFetch('http://38.54.125.46/api/tvshows', {
+    let { pending, data } = await useFetch('http://38.54.125.46:8080/api/tvshows', {
         query: {
             page: page,
             orderBy: orderBy,
