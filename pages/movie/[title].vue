@@ -1,7 +1,7 @@
 <script setup>
     const route = useRoute();
     let title = route.params.title
-    let { pending, data } = await useFetch('http://38.60.146.22/api/movies?title=' + title)
+    let { pending, data } = await useFetch('http://38.54.125.46/api/movies?title=' + title)
 
     const lastGenre = (genres) => {
         return genres[genres.length - 1]

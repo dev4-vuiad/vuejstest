@@ -8,7 +8,7 @@
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('http://38.60.146.22/api/movies', {
+    const { pending, data } = await useFetch('http://38.54.125.46/api/movies', {
         query: {
             genre: genre,
             year: year,
@@ -21,7 +21,7 @@
         genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
         year = route.query.year_filter || ''
         if (!pending.value) {
-            useFetch('http://38.60.146.22/api/movies', {
+            useFetch('http://38.54.125.46/api/movies', {
                 query: {
                     genre: genres.join(','),
                     year: year,
