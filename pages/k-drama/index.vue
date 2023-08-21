@@ -1,21 +1,28 @@
 <script setup>
+    import { ref } from 'vue'
+    const route = useRoute();
+    let orderBy = route.query.orderBy || 'date'
+    const data = ref(undefined)
 
-const route = useRoute();
-let orderBy = route.query.orderBy || 'date'
+    getData(orderBy)
 
-let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
-    query: {
-        type: 'k-drama',
-        orderBy: orderBy,
+    function getData(orderBy) {
+        useFetch('https://backend.takitv.net/api/tvshows', {
+            query: {
+                type: 'k-drama',
+                orderBy: orderBy
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
     }
-})
 
-const onChangeOrderBy = (event) => {
-    let val = event.target.value
-    const url = new URL(window.location.href);
-    url.searchParams.set('orderBy', val);
-    window.location.href = url.toString()
-}
+    const onChangeOrderBy = (event) => {
+        orderBy = event.target.value
+        getData(orderBy)
+    }
+
 </script>
 
 <template>
@@ -181,8 +188,8 @@ const onChangeOrderBy = (event) => {
                                 </header>
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
-                                        <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
-                                            <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="item" 
+                                        <div class="tv-shows__inner">
+                                            <TvshowsPopularItem v-if="data && data.data && data.data.populars" v-for="(item, idx) in data.data.populars" :key="item" 
                                             :link="item.link"
                                             :year="item.year"
                                             :title="item.title"
@@ -226,11 +233,11 @@ const onChangeOrderBy = (event) => {
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
-                                        <TvshowsItem v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
+                                        <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/k-drama" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination v-if="data" base="/k-drama" :perPage="data.perPage" :currentPage="1" :total="data.total" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 드라마 인기컨텐츠" :data="data.data.top5" />

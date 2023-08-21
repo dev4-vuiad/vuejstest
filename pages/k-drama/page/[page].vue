@@ -1,22 +1,28 @@
 <script setup>
-
+    import { ref } from 'vue'
     const route = useRoute();
     let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
+    const data = ref(undefined)
 
-    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
-        query: {
-            page: page,
-            orderBy: orderBy,
-            type: 'k-drama'
-        }
-    })
+    getData(orderBy)
+
+    function getData(orderBy) {
+        useFetch('https://backend.takitv.net/api/tvshows', {
+            query: {
+                type: 'k-drama',
+                orderBy: orderBy,
+                page: page
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
+    }
 
     const onChangeOrderBy = (event) => {
-        let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        window.location.href = url.toString()
+        orderBy = event.target.value
+        getData(orderBy)
     }
 </script>
 
@@ -228,11 +234,11 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
-                                        <TvshowsItem v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
+                                        <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/k-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
+                            <Pagination v-if="data" base="/k-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 드라마 인기컨텐츠" :data="data.data.top5" />

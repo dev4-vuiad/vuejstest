@@ -36,6 +36,8 @@
         url.searchParams.set('s', props.s)
     }
     const query = '?' + url.searchParams.toString();
+
+    
 </script>
 <template>
     <div class="page-control-bar-bottom">
@@ -44,19 +46,19 @@
         <nav class="masvideos-pagination masvideos-tv-shows-pagination">
             <ul class="page-numbers">
                 <li v-if="currentPage - 1 >= 1">
-                    <a class="prev page-numbers" :href="base + '/' + (currentPage -1) + query">←&nbsp;&nbsp;&nbsp; 이전 페이지</a>
+                    <NuxtLink class="prev page-numbers" :to="base + '/' + (currentPage -1) + query">←&nbsp;&nbsp;&nbsp; 이전 페이지</NuxtLink>
                 </li>
                 <template v-for="(page, index) in pages" :key="index">
                     <li v-if="page > 2 && page < totalPages && page > pages[index - 1] + 1">
                         <span class="page-numbers dots">…</span>
                     </li>
                     <li>
-                        <a v-if="currentPage != page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')" :href="base + '/' + page + query">{{ page }}</a>
+                        <NuxtLink v-if="currentPage != page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')" :to="base + '/' + page + query">{{ page }}</NuxtLink>
                         <span v-if="currentPage == page" aria-current="page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')">{{ page }}</span>
                     </li>
                 </template>
                 <li v-if="currentPage + 1 <= totalPages">
-                    <a class="next page-numbers" :href="base + '/' + (currentPage + 1) + query">다음 페이지 &nbsp;&nbsp;&nbsp;→</a>
+                    <NuxtLink class="next page-numbers" :to="base + '/' + (currentPage + 1) + query">다음 페이지 &nbsp;&nbsp;&nbsp;→</NuxtLink>
                 </li>
             </ul>
         </nav>

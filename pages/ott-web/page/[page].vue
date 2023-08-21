@@ -1,22 +1,28 @@
 <script setup>
-
+    import { ref } from 'vue'
     const route = useRoute();
     let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
+    const data = ref(undefined)
 
-    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
-        query: {
-            page: page,
-            orderBy: orderBy,
-            type: 'ott-web'
-        }
-    })
+    getData(orderBy)
+
+    function getData(orderBy) {
+        useFetch('https://backend.takitv.net/api/tvshows', {
+            query: {
+                type: 'ott-web',
+                orderBy: orderBy,
+                page: page
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
+    }
 
     const onChangeOrderBy = (event) => {
-        let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        window.location.href = url.toString()
+        orderBy = event.target.value
+        getData(orderBy)
     }
 </script>
 
@@ -183,8 +189,8 @@
                                 </header>
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
-                                        <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
-                                            <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="item" 
+                                        <div class="tv-shows__inner">
+                                            <TvshowsPopularItem v-if="data && data.data && data.data.populars" v-for="(item, idx) in data.data.populars" :key="item" 
                                             :link="item.link"
                                             :year="item.year"
                                             :title="item.title"
@@ -214,7 +220,7 @@
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                            <select @change="onChangeOrderBy" class="orderby">
                                                 <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                 <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                                 <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
@@ -228,11 +234,11 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
-                                        <TvshowsItem v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
+                                        <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/ott-web" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
+                            <Pagination v-if="data" base="/ott-web" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 OTT/Web 인기컨텐츠" :data="data.data.top5" />

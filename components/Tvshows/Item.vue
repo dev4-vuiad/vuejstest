@@ -1,14 +1,26 @@
 
 <script setup>
 
+    import { onBeforeUpdate } from 'vue';
+
     const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'chanelImage'])
-    const postDateGmt = props.postDateGmt
-    const title = props.title
-    const episodeNumber = props.episodeNumber
-    const seasonNumber = props.seasonNumber
-    const originalTitle = props.originalTitle
-    const src = props.src
-    const chanelImage = props.chanelImage
+    let postDateGmt = props.postDateGmt
+    let title = props.title
+    let episodeNumber = props.episodeNumber
+    let seasonNumber = props.seasonNumber
+    let originalTitle = props.originalTitle
+    let src = props.src
+    let chanelImage = props.chanelImage
+
+    onBeforeUpdate(() => {
+        postDateGmt = props.postDateGmt
+        title = props.title
+        episodeNumber = props.episodeNumber
+        seasonNumber = props.seasonNumber
+        originalTitle = props.originalTitle
+        src = props.src
+        chanelImage = props.chanelImage
+    })
 
     const toTimeAgo = (d) => {
         const now = new Date()

@@ -1,5 +1,5 @@
 <script setup>
-    import { onBeforeUpdate } from 'vue';
+    import { ref } from 'vue';
     const route = useRoute();
     const page = route.params.page
 
@@ -7,38 +7,26 @@
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
-        query: {
-            genre: genres.join(','),
-            year: year,
-            orderBy: orderBy,
-            page: page
-        }
-    })
+    const data = ref(undefined)
+    getData(genres, year, orderBy, page)
 
-    onBeforeUpdate(() => {
-        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-        year = route.query.year_filter || ''
-        if (!pending.value) {
-            useFetch('https://backend.takitv.net/api/movies', {
-                query: {
-                    genre: genres.join(','),
-                    year: year,
-                    page : page
-                },
-                onResponse({ request, response }) {
-                    data = response._data
-                }
-            })
-        }
-    });
+    function getData(genres, year, orderBy, page) {
+        useFetch('https://backend.takitv.net/api/movies', {
+            query: {
+                genre: genres.join(','),
+                year: year,
+                orderBy: orderBy,
+                page: page
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
+    }
 
     const onChangeOrderBy = (event) => {
-        let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        url.pathname = '/movie'
-        window.location.href = url.toString()
+        orderBy = event.target.value
+        getData(genres, year, orderBy)
     }
 </script>
 
@@ -228,7 +216,7 @@
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                            <select @change="onChangeOrderBy" class="orderby">
                                                 <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                 <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                                 <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>

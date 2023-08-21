@@ -1,20 +1,26 @@
 <script setup>
+    import { ref } from 'vue'
+    const route = useRoute();
+    let orderBy = route.query.orderBy || 'date'
+    const data = ref(undefined)
 
-const route = useRoute();
-let orderBy = route.query.orderBy || 'date'
+    getData(orderBy)
 
-let { pending, data } = await useFetch('http://38.54.125.46:8080/api/tvshows', {
-    query: {
-        orderBy: orderBy,
+    const onChangeOrderBy = (event) => {
+        orderBy = event.target.value
+        getData(orderBy)
     }
-})
 
-const onChangeOrderBy = (event) => {
-    let val = event.target.value
-    const url = new URL(window.location.href);
-    url.searchParams.set('orderBy', val);
-    window.location.href = url.toString()
-}
+    function getData(orderBy) {
+        useFetch('https://backend.takitv.net/api/tvshows', {
+            query: {
+                orderBy: orderBy
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
+    }
 </script>
 
 <template>
@@ -211,7 +217,7 @@ const onChangeOrderBy = (event) => {
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                            <select @change="onChangeOrderBy" class="orderby">
                                                 <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                 <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                                 <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
@@ -225,11 +231,11 @@ const onChangeOrderBy = (event) => {
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
-                                        <TvshowsItem v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
+                                        <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
                                     </div>
                                 </div>
                             </div>
-                            <Pagination base="/tv-shows" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination v-if="data && data.total" base="/tv-shows" :perPage="data.perPage" :currentPage="1" :total="data.total" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.top5" />
