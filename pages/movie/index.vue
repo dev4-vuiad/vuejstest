@@ -1,40 +1,30 @@
 <script setup>
-    import { onBeforeUpdate } from 'vue';
+    import { ref } from 'vue';
     const route = useRoute();
 
     let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderBy || 'date'
-    
-    let { pending, data } = await useFetch('http://38.60.146.22/api/movies', {
-        query: {
-            genre: genres.join(','),
-            year: year,
-            orderBy: orderBy,
-        }
-    })
 
-    onBeforeUpdate(() => {
-        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-        year = route.query.year_filter || ''
-        if (!pending.value) {
-            useFetch('http://38.60.146.22/api/movies', {
-                query: {
-                    genre: genres.join(','),
-                    year:year
-                },
-                onResponse({ request, response }) {
-                    data = response._data
-                }
-            })
-        }
-    });
+    const data = ref(undefined)
+    getData(genres, year, orderBy)
 
     const onChangeOrderBy = (event) => {
-        let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        window.location.href = url.toString()
+        orderBy = event.target.value
+        getData(genres, year, orderBy)
+    }
+
+    function getData(genres, year, orderBy) {
+        useFetch('http://38.54.125.46/api/movies', {
+            query: {
+                genre: genres.join(','),
+                year: year,
+                orderBy: orderBy,
+            },
+            onResponse({ request, response }) {
+                data.value = response._data
+            }
+        })
     }
     
 </script>
