@@ -1,14 +1,26 @@
 <script setup>
-    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'episodeNumber'])
-    const year = props.year
-    const movieRunTime = props.movieRunTime
-    const title = props.title
-    const originalTitle = props.originalTitle
-    const genres = props.genres
-    const src = props.src
-    const description = props.description
-    const outlink = props.outlink
-    const episodeNumber = props.episodeNumber
+    import { onBeforeUpdate } from 'vue'; 
+    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+
+    let year = props.year
+    let movieRunTime = props.movieRunTime
+    let title = props.title
+    let originalTitle = props.originalTitle
+    let genres = props.genres
+    let src = props.src
+    let description = props.description
+    let outlink = props.outlink
+
+    onBeforeUpdate(() => {
+        year = props.year
+        movieRunTime = props.movieRunTime
+        title = props.title
+        originalTitle = props.originalTitle
+        genres = props.genres
+        src = props.src
+        description = props.description
+        outlink = props.outlink
+    });
 </script>
 
 <template>

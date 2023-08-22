@@ -1,8 +1,15 @@
 <script setup>
+    import { onBeforeUpdate } from 'vue'; 
     const props = defineProps(['title', 'originalTitle', 'src'])
-    const title = props.title
-    const originalTitle = props.originalTitle
-    const src = props.src
+    let title = props.title
+    let originalTitle = props.originalTitle
+    let src = props.src
+
+    onBeforeUpdate(() => {
+        title = props.title
+        originalTitle = props.originalTitle
+        src = props.src
+    })
 </script>
 
 <template>
