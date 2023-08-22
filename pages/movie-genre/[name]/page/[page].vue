@@ -8,7 +8,7 @@
     let year = route.query.year_filter || ''
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('https://backend.takitv.net/api/movies', {
+    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
         query: {
             genre: genre,
             year: year,
@@ -21,7 +21,7 @@
         genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
         year = route.query.year_filter || ''
         if (!pending.value) {
-            useFetch('https://backend.takitv.net/api/movies', {
+            useFetch('https://backendnew.takitv.net/api/movies', {
                 query: {
                     genre: genres.join(','),
                     year: year,

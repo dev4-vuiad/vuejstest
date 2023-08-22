@@ -8,7 +8,7 @@
     getData(orderBy)
 
     function getData(orderBy) {
-        useFetch('https://backend.takitv.net/api/tvshows', {
+        useFetch('https://backendnew.takitv.net/api/tvshows', {
             query: {
                 page: page,
                 type: 'k-show',

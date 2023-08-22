@@ -4,7 +4,7 @@
     let orderBy = route.query.orderBy || 'date'
     const page = route.params.page || 1
 
-    let { pending, data } = await useFetch('https://backend.takitv.net/api/tvshows', {
+    let { pending, data } = await useFetch('https://backendnew.takitv.net/api/tvshows', {
         query: {
             page: page,
             orderBy: orderBy

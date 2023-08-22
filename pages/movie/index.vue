@@ -15,7 +15,7 @@
     }
 
     function getData(genres, year, orderBy) {
-        useFetch('https://backend.takitv.net/api/movies', {
+        useFetch('https://backendnew.takitv.net/api/movies', {
             query: {
                 genre: genres.join(','),
                 year: year,
