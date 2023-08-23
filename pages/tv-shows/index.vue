@@ -180,12 +180,14 @@
                                 <div class="masvideos masvideos-tv-shows ">
                                     <div class="tv-shows columns-5">
                                         <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
-                                            <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="item" 
+                                            <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx" 
                                             :link="item.link"
                                             :year="item.year"
                                             :title="item.title"
                                             :src="item.src"
-                                            :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt"
+                                            :episodeNumber="item.episodeNumber" 
+                                            :seasonNumber="item.seasonNumber" 
+                                            :postDateGmt="item.postDateGmt"
                                             :chanelImage="item.chanelImage"
                                         />
                                         </div>
@@ -231,7 +233,7 @@
                             <Pagination v-if="data && data.total" base="/tv-shows" :perPage="data.perPage" :currentPage="1" :total="data.total" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                            <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.top5" />
+                            <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.topWeeks" />
                         </div><!-- #secondary -->
                     </div><!-- /.site-content-inner -->
                 </div><!-- /.container -->

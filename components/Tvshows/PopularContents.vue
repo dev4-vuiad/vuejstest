@@ -22,7 +22,7 @@
                                 <span class="tv-show__meta--genre">
                                     <template v-for="(genre, idx) in item.genres">
                                         <span v-if="idx > 0">, </span>
-                                        <a :href="'/episode/' + item.title" rel="tag">{{ genre.name }}</a>
+                                        <a :href="'/tv-show-genre/' + item.title" rel="tag" v-html="genre.name"></a>
                                     </template>
                                 </span>
                             </div>

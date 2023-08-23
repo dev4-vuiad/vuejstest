@@ -259,7 +259,7 @@
                                 <div class="textwidget">
                                 </div>
                             </div>
-                            <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.top5" />
+                            <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                             <div class="widget widget_vodi_movies_filter">
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">

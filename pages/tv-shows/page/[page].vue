@@ -234,7 +234,7 @@
                             <Pagination base="/tv-shows" :perPage="data.perPage" :currentPage="page" :total="data.total" :orderBy="orderBy" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                            <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.top5" />
+                            <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.topWeeks" />
                         </div><!-- #secondary -->
                     </div><!-- /.site-content-inner -->
                 </div><!-- /.container -->
