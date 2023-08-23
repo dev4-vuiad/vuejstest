@@ -32,7 +32,7 @@
                                     <div v-for="(episode, idx) in season.episodes" :key="idx" class="post-202016 episode type-episode status-publish hentry">
                                         <a :href="'/episode/' + episode.title"
                                             class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                                            <span class="masvideos-loop-episode__number episode__number">{{ episode.post_date_gmt.substr(0,10) }}</span>
+                                            <span class="masvideos-loop-episode__number episode__number">{{ episode.post_date_gmt }}</span>
                                             <h3 class="masvideos-loop-episode__title episode__title">{{ episode.title }}</h3>
                                         </a> 
                                         <div class="title-orginal__tvshow_single"></div>

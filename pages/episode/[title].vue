@@ -1,7 +1,7 @@
 <script setup>
     const route = useRoute();
     let title = route.params.title
-    const { data } = await useFetch('https://backendnew.takitv.net/api/tvshows/' + title)
+    const { data } = await useFetch('https://backendnew.takitv.net/api/episode/' + title)
 </script>
 
 <template>
