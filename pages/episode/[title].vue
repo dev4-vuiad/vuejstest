@@ -199,7 +199,8 @@
                             <div id="episode-202016" class="post-202016 episode type-episode status-publish hentry">
                                 <TvshowsIntroBreadScrumb v-if="data && data.title"
                                     :title="data.title"
-                                    :titleTvShow="data.titleTvShow"
+                                    :tvshowTitle="data.tvshowTitle"
+                                    :seasonName="data.seasonName"
                                     :genre="data.genres[data.genres.length - 1]"
                                     :season="findCurrentSeasonAndEpisode(data.title, data.seasons).season"
                                 />
