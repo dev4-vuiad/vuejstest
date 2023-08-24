@@ -232,20 +232,20 @@
                                     <div class="summary entry-summary episode__summary">
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
-                                                <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
+                                                <!-- <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
                                                     <a
                                                         :href="'/episode/' + findPrevtEp(data.title, data.seasons)"
                                                         class="episode__player--prev-episode__link">
                                                         <span class="episode__player--prev-episode__label"> Previous Episode </span>
                                                     </a>
-                                                </div>
-                                                <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
+                                                </div> -->
+                                                <!-- <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
                                                     <a
                                                         :href="'/episode/' + findNextEp(data.title, data.seasons)"
                                                         class="episode__player--next-episode__link">
                                                         <span class="episode__player--next-episode__label"> Next Episode </span>
                                                     </a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
