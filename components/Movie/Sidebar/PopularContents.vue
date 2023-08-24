@@ -22,7 +22,7 @@
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <a :href="'/' + base + '/' + genre.link" rel="tag">{{ genre.name }}</a>
+                                    <a :href="'/' + base + '/' + genre.link" rel="tag" v-html="genre.name"></a>
                                 </template>
                             </span>
                         </div>
