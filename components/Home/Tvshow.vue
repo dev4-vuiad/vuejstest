@@ -1,15 +1,34 @@
 <script setup>
+    import { ref, onBeforeUpdate } from 'vue'
     const props = defineProps(['data', 'title'])
     let data = props.data
     let title = props.title
-    let selected = Object.keys(data.items)[0]
-    let items = data.items[selected]
+
+    const type = ref('k-drama')
+    const { data: loadItems } = await useAsyncData(
+        'tv-shows' + type,
+        () => $fetch('https://backendnew.takitv.net/api/tvshows', {
+            params: {
+                type: type.value,
+                limit: 12
+            }
+        }).then(data => {
+            return data.data.items
+        }), {
+            watch: [type]
+        }
+    )
+    
+    let items = data.items[type.value] || loadItems
+    const selectType = (val) => {
+        type.value = val
+    }
 </script>
 
 <template>
     <ul class="nav nav-tabs">
         <li v-for="(item, index) in data.menu" :key="index" class="nav-item lamlamlama">
-            <a :class="'nav-link' + (selected == item.link ? ' active' : '')" href="#">{{ item.title }}</a>
+            <a :class="'nav-link' + (type == item.link ? ' active' : '')" href="#" @click.prevent="selectType(item.link)">{{ item.title }}</a>
         </li>
     </ul>
     <div class="home-tv-show-section-aside-header__inner">
@@ -25,11 +44,11 @@
                     <div v-for="(item, index) in items" :key="index" class="tv-show post-202541 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-213">
                         <div class="tv-show__poster">
                             <div class="box-tv-channel"><img loading="lazy" class="tv-channel"
-                                    src="https://image002.modooup.com/wp-content/uploads/2022/05/netflix_1.png" alt=""
+                                    :src="item.chanelImage" alt=""
                                     width="83" height="31"></div><a href="/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                     width="300" height="450"
-                                    src="https://image002.modooup.com/wp-content/uploads/2023/08/22cjCaUikOW14dr1htuhCVaUbzk.jpg"
+                                    :src="item.src"
                                     class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
                                     sizes="(max-width: 300px) 100vw, 300px"></a>
                         </div>
