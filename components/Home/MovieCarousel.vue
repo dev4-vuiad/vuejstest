@@ -12,7 +12,7 @@
                     aria-disabled="true" style="">Previous</button><button class="slick-next slick-arrow" aria-label="Next"
                     type="button" style="" aria-disabled="false">Next</button>
             </div>
-            <div class="home-section__action"><a href="/movie-genre/한국영화/" class="home-section__action-link">View All</a>
+            <div class="home-section__action"><NuxtLink to="/movie-genre/한국영화/" class="home-section__action-link">View All</NuxtLink>
             </div>
         </header>
         <div class="section-movies-carousel__carousel">
@@ -27,14 +27,14 @@
                                         <div>
                                             <div class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie"
                                                 style="width: 100%; display: inline-block;">
-                                                <div class="movie__poster"><a
-                                                        :href="'/movie/' + item.title"
+                                                <div class="movie__poster"><NuxtLink
+                                                        :to="'/movie/' + item.title"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
                                                         <img width="300" height="450"
                                                             :src="item.src"
                                                             class="movie__poster--image" alt="" loading="lazy"
-                                                            sizes="(max-width: 300px) 100vw, 300px"></a>
+                                                            sizes="(max-width: 300px) 100vw, 300px"></NuxtLink>
                                                 </div>
                                                 <div class="movie__body">
                                                     <div class="movie__info">
@@ -45,16 +45,16 @@
                                                                 <span class="movie__meta--genre">
                                                                     <template v-for="(genre, idx) in item.genres" :key="idx">
                                                                         <span v-if="idx > 0">, </span>
-                                                                        <a :href="'/movie-genre/' + genre.link" rel="tag" tabindex="0">{{ genre.name }}</a>
+                                                                        <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag" tabindex="0">{{ genre.name }}</NuxtLink>
                                                                     </template>
                                                                 </span>
                                                             </div>
-                                                            <a href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                            <NuxtLink to="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                 tabindex="0">
                                                                 <h3 class="masvideos-loop-movie__title  movie__title">
                                                                     사랑의 고고학</h3>
-                                                            </a>
+                                                            </NuxtLink>
                                                         </div>
                                                         <div class="original-title">{{ item.originalTitle }}</div>
                                                     </div>

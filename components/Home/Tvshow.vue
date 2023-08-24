@@ -28,7 +28,7 @@
 <template>
     <ul class="nav nav-tabs">
         <li v-for="(item, index) in data.menu" :key="index" class="nav-item lamlamlama">
-            <a :class="'nav-link' + (type == item.link ? ' active' : '')" href="#" @click.prevent="selectType(item.link)">{{ item.title }}</a>
+            <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" to="#" @click.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
         </li>
     </ul>
     <div class="home-tv-show-section-aside-header__inner">
@@ -37,8 +37,8 @@
                 <div class="tv-shows__inner">
                     <header class="home-section__header">
                         <h2 class="home-section__title">{{ title }}</h2>
-                        <div class="home-section__action"><a href="/tv-shows"
-                                class="tv-show-box home-section__action-link">전체보기</a>
+                        <div class="home-section__action"><NuxtLink to="/tv-shows"
+                                class="tv-show-box home-section__action-link">전체보기</NuxtLink>
                         </div>
                     </header>
                     <div v-for="(item, index) in items" :key="index" class="tv-show post-202541 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-213">
@@ -46,12 +46,12 @@
                             <div class="box-tv-channel"><img loading="lazy" class="tv-channel"
                                     :src="item.chanelImage" alt=""
                                     width="83" height="31"></div>
-                                    <a :href="'/' + item.link"
+                                    <NuxtLink :to="'/' + item.link"
                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                     width="300" height="450"
                                     :src="item.src"
                                     class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
-                                    sizes="(max-width: 300px) 100vw, 300px"></a>
+                                    sizes="(max-width: 300px) 100vw, 300px"></NuxtLink>
                         </div>
                         <div class="tv-show__body">
                             <div class="tv-show__info">
@@ -61,12 +61,12 @@
                                     <div class="original-title-tvshow">
                                         Hard Cell
                                     </div>
-                                    <a :href="'/' + item.link"
+                                    <NuxtLink :to="'/' + item.link"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                             style="display:none" class="span_sea_ep_title">6화</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">
                                             하드 셀</h3>
-                                    </a>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>

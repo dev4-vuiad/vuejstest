@@ -22,9 +22,9 @@
 <template>
     <div class="ott_logo">
         <div class="ott_home_item" v-for="(item, index) in channels" :key="index">
-            <a :href="'/' + item.link">
+            <NuxtLink :to="'/' + item.link">
                 <img :src="item.src" />
-            </a>
+            </NuxtLink>
         </div>
     </div>
     <div class="slider-title-netflix">
@@ -40,16 +40,16 @@
                 <div class="embla__slide1" v-for="(item, index) in sliders" :key="index">
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
-                        <a class="tv-show__link" :href="'/' + item.link">
+                        <NuxtLink class="tv-show__link" :to="'/' + item.link">
                             <img class="embla__slide__img1" :src="item.src" />
-                        </a>
+                        </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>
                     <div class="box_meta">
-                        <a :href="'/' + item.link">
+                        <NuxtLink :to="'/' + item.link">
                             <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span><br>
                             <h2 class="title_1">{{ item.title }}</h2>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>

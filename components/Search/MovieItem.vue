@@ -24,9 +24,9 @@
             </span>
         </div>
         <div class="tv-show__poster box-phim">
-                <a :href="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                     <img :src="src" class="tv-show__poster--image tv_show__poster--image">		                                                     
-                <span style="display:none" class="span_sea_ep_title box-ep">{{ episodeNumber }}화</span></a>
+                <span style="display:none" class="span_sea_ep_title box-ep">{{ episodeNumber }}화</span></NuxtLink>
                 <div class="box-tv_show">예능</div>
         </div>
         <div class="tv-show__body">
@@ -37,11 +37,11 @@
                         
                         </div>
                     </div>
-                    <a :href="'/' + link " class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                    <NuxtLink :to="'/' + link " class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">
                             {{ title }}		                                                                
                         </h3>
-                    </a>
+                    </NuxtLink>
                     <div class="original-title-search">{{ originalTitle }}</div>
                 </div>
             </div>
@@ -49,18 +49,18 @@
     </div>
     <div v-else class="movie type-movie status-publish has-post-thumbnail hentry">
         <div class="movie__poster box-phim">
-            <a :href="'/movie/' + title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <NuxtLink :to="'/movie/' + title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img :src="src" class="movie__poster--image">
-            </a>
+            </NuxtLink>
             <div class="box-movie">영화</div>
         </div>
         <div class="movie__body">
             <div class="movie__info">
                 <div class="movie__info--head">
-                    <a href="'/movie/ + title"
+                    <NuxtLink to="'/movie/ + title"
                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
-                    </a>
+                    </NuxtLink>
                     <div class="original-title__movie-search">
                         {{ originalTitle }}
                     </div>

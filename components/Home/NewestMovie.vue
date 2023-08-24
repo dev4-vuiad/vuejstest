@@ -17,23 +17,23 @@
                                 class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
                                 <div class="movie-list">
                                     <div class="movie-list__poster">
-                                        <a :href="'/movie/' + item.title"
+                                        <NuxtLink :to="'/movie/' + item.title"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
                                                 width="150" height="225"
                                                 :src="item.src"
                                                 class="movie__poster--image" alt="" loading="lazy"
-                                                sizes="(max-width: 150px) 100vw, 150px"></a>
+                                                sizes="(max-width: 150px) 100vw, 150px"></NuxtLink>
                                     </div>
                                     <div class="movie-list__body">
                                         <span class="movie-list__year">{{ item.year }}</span>
-                                        <a :href="'/movie/' + item.title"
+                                        <NuxtLink :to="'/movie/' + item.title"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <h3 class="movie-list__name">{{ item.title }}</h3>
-                                        </a>
+                                        </NuxtLink>
                                         <span class="movie-list__genre">
                                             <template v-for="(genre, idx) in item.genres" :key="idx">
                                                 <span v-if="idx > 0">, </span>
-                                                <a :href="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</a>
+                                                <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</NuxtLink>
                                             </template>
                                         </span>
                                     </div>

@@ -1,4 +1,5 @@
 <script setup>
+    import { nextTick } from 'vue'
     const route = useRoute();
     const router = useRouter();
 
@@ -29,6 +30,7 @@
         router.push({query: query})
         orderBy.value = val
         page.value = 1
+        nextTick()
     }
 
     const onSelectYear = (val) => {
@@ -38,6 +40,7 @@
         router.push({query: query})
         year.value = val
         page.value = 1
+        nextTick()
     }
 
     const onSelectPage = function(val) {

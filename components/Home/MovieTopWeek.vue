@@ -16,13 +16,13 @@
                             <div class="movie-list">
                                 <div class="movie-list__body">
                                     <span class="movie-list__year">{{ item.year }}</span>
-                                    <a :href="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <NuxtLink :to="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                         <h3 class="movie-list__name">{{ item.title }}</h3>
-                                    </a>
+                                    </NuxtLink>
                                     <span class="movie-list__genre">
                                         <template v-for="(genre, idx) in item.genres" :key="idx">
                                             <span v-if="idx > 0">, </span>
-                                            <a :href="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</a>
+                                            <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</NuxtLink>
                                         </template>
                                     </span>
                                 </div>

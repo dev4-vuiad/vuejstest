@@ -9,15 +9,15 @@
             <div class="embla__container" style="transform: translate3d(0%, 0px, 0px);">
                 <div class="embla__slide" v-for="(item, index) in data" :key="index">
                     <div class="embla__slide__inner">
-                        <a class="movie__link" :href="'/' + item.link">
+                        <NuxtLink class="movie__link" :to="'/' + item.link">
                             <img class="embla__slide__img" :src="item.src" />
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="box_meta">
-                        <a :href="'/' + item.link">
+                        <NuxtLink :to="'/' + item.link">
                             <span class="s_e_title_1" v-if="item.episodeNumber">{{ item.episodeNumber }}화</span>
                             <h2 class="title_1">{{ item.title }}</h2>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
