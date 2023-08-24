@@ -1,7 +1,9 @@
 <script setup>
-    const props = defineProps(['data', 'title'])
+    const props = defineProps(['data', 'title', 'base', 'type'])
+    const base = props.base || 'movie-genre'
     const data = props.data
     const title = props.title
+    const type = props.type || 'movie'
 </script>
 
 <template>
@@ -14,13 +16,13 @@
                         class="post-201925 movie type-movie status-publish has-post-thumbnail hentry movie_genre-231 movie_genre-kmovie">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.year }}</span>
-                            <a :href="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                            <a :href="'/' + type + '/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title }}</h3>
                             </a>
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <a :href="'/' + genre.link" rel="tag">{{ genre.name }}</a>
+                                    <a :href="'/' + base + '/' + genre.link" rel="tag">{{ genre.name }}</a>
                                 </template>
                             </span>
                         </div>

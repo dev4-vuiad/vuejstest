@@ -3,7 +3,7 @@
     const s = route.query.s
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
+    const { data } = await useFetch('https://backendnew.takitv.net/api/search', {
         query: {
             title:s,
             orderBy: orderBy
@@ -181,11 +181,8 @@
                     <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler" type="button"><i
                                 class="fas fa-sliders-h"></i><span>Filters</span></button></div>
                     <div class="site-content__inner">
-
-                        <!-- result search -->
                         <div id="primary" class="content-area">
 
-                            <!-- ads top search -->
                             <center>
                             </center>
 
@@ -232,7 +229,12 @@
                                     <div class="tv-shows columns-6 movies columns-6">
                                         <div class="tv-shows__inner movies__inner" v-if="data && data.data && data.data.items.length">
                                             <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
-                                                :title="item.title" :originalTitle="item.originalTitle" :src="item.src" />
+                                                :title="item.title" 
+                                                :originalTitle="item.originalTitle" 
+                                                :src="item.src"
+                                                :episodeNumber="item.episodeNumber"
+                                                :link="item.link"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -247,7 +249,7 @@
                                     </div>
                                 </div>
                                 <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
-                                    :data="data.data.populars" />
+                                    :data="data.data.topWeeks" type="tv-show" base="tv-show-genre" />
                             </div>
                         </div>
                     </div>

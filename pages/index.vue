@@ -259,7 +259,7 @@
                                         <section
                                             class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                             <div class="container">
-                                                <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title"  :data="data.tvshows.categories" />
+                                                <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
                                             </div>
                                         </section>
                                     <section

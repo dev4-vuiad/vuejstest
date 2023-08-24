@@ -4,7 +4,7 @@
     const page = route.params.page
     let orderBy = route.query.orderBy || 'date'
 
-    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
+    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/search', {
         query: {
             title: s,
             page: page,
@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                                 <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
-                                    :data="data.data.populars" />
+                                    :data="data.data.topWeeks" type="episode" base="tv-show-genre" />
                             </div>
                         </div>
                     </div>

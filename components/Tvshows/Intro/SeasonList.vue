@@ -4,6 +4,8 @@
     let data = props.data
     let currentSeason = ref(0)
 </script>
+
+
 <template>
     <div class="single-episode__sidebar column1 sidebar_episode ">
         <div class="vodi-single-episode__sidebar--seasons-episode custom-sidebar-ep">
@@ -40,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <a class="maxlist-more list-episode-show-more" href="#" data-readmore-toggle="rmjs-1" aria-controls="rmjs-1" style="display: inline;">더보기</a>
+            <!-- <a class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="">더보기</a> -->
         </div>
     </div>
 </template>
