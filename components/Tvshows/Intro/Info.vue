@@ -1,20 +1,36 @@
 <script setup>
-    const props = defineProps(['postDateGmt', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'episodeNumber'])
+    const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
     const postDateGmt = props.postDateGmt
-    const movieRunTime = props.movieRunTime
     const title = props.title
     const originalTitle = props.originalTitle
     const genres = props.genres
     const src = props.src
     const description = props.description
     const outlink = props.outlink
-    const episodeNumber = props.episodeNumber
 
     const format = (d) => {
         d = new Date(d.replace(' ', 'T') + '.000Z')
         return d.toLocaleDateString('fr-CH')
     }
+
+    const onReadMoreClick = (event) => {
+        let ele = $(event.target)
+        ele.prev().toggleClass('expanded')
+        ele.text(ele.prev().hasClass('expanded') ? 'Show Less' : 'Read More')
+    }
 </script>
+
+<style scoped>
+    .episode__description > div {
+        height: auto;
+        transition: max-height 600ms ease-in-out;
+        overflow: hidden;
+        max-height: 47px;
+    }
+    .episode__description > div.expanded {
+        max-height: 100px;
+    }
+</style>
 
 <template>
     <div class="vodi-single-episode__sidebar--tv-show">
@@ -46,16 +62,14 @@
                     </div><a
                         href="https://kokoatv.net/tv-show/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-1/"
                         class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                        <h1 class="episode_title entry-title">{{ title }} - {{ episodeNumber }}
-                        </h1>
+                        <h1 class="episode_title entry-title">{{ title }}</h1>
                     </a>
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle }}
                     </div>
                     <div class="episode__description">
-                        <div style="height: 47px; max-height: none;" data-readmore="" aria-expanded="false" id="rmjs-1" v-html="description"></div>
-                            <a class="maxlist-more" href="#" data-readmore-toggle="rmjs-1"
-                            aria-controls="rmjs-1">Read More</a>
+                        <div v-html="description"></div>
+                        <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">Read More</a>
                     </div>
                 </div>
             </div>

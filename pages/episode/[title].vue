@@ -2,6 +2,38 @@
     const route = useRoute();
     let title = route.params.title
     const { data } = await useFetch('https://backendnew.takitv.net/api/episode/' + title)
+
+    const findCurrentSeasonAndEpisode = (title, seasons) => {
+        for (let s in seasons) {
+            for (let e in seasons[s].episodes) {
+                if (title == seasons[s].episodes[e].title) {
+                    return {season:s, episode: e}
+                }
+            }
+        }
+
+        return {}
+    }
+
+    const findNextEp = (title, seasons) => {
+        for (let s in seasons) {
+            for (let e in seasons[s].episodes) {
+                if (title == seasons[s].episodes[e].title) {
+                    return e > 0 ? seasons[s].episodes[e - 1].title : null
+                }
+            }
+        }
+    }
+
+    const findPrevtEp = (title, seasons) => {
+        for (let s in seasons) {
+            for (let e in seasons[s].episodes) {
+                if (title == seasons[s].episodes[e].title) {
+                    return e < seasons[s].episodes.length - 1 ? seasons[s].episodes[e + 1].title : null
+                }
+            }
+        }
+    }
 </script>
 
 <template>
@@ -54,18 +86,21 @@
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
                                                                             <a title="드라마"
                                                                                 href="https://kokoatv.net/k-drama/"
-                                                                                class="dropdown-item show">드라마</a></li>
+                                                                                class="dropdown-item show">드라마</a>
+                                                                        </li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
                                                                             <a title="예능" href="https://kokoatv.net/k-show/"
-                                                                                class="dropdown-item show">예능</a></li>
+                                                                                class="dropdown-item show">예능</a>
+                                                                        </li>
                                                                         <li itemscope="itemscope"
                                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
                                                                             <a title="시사다큐"
                                                                                 href="https://kokoatv.net/k-sisa/"
-                                                                                class="dropdown-item show">시사</a></li>
+                                                                                class="dropdown-item show">시사</a>
+                                                                        </li>
                                                                     </ul>
                                                                 </li>
                                                                 <li itemscope="itemscope"
@@ -162,25 +197,23 @@
                     <div class="site-content__inner">
                         <div id="primary" class="content-area">
                             <div id="episode-202016" class="post-202016 episode type-episode status-publish hentry">
-                                <!-- <TvshowsIntroBreadScrumb v-if="data && data.id"
+                                <TvshowsIntroBreadScrumb v-if="data && data.id"
+                                    :title="data.title"
                                     :genre="data.genres[data.genres.length - 1]"
-                                /> -->
+                                    :season="findCurrentSeasonAndEpisode(data.title, data.seasons).season"
+                                />
                                 <div class="single-episode__content column">
                                     <!-- ads top -->
                                     <div class="ads-episode-top" style="text-align: center;margin-bottom: 10px;">
                                     </div>
                                     <div class="single-episode__row row">
                                         <div class="single-episode__sidebar column1 single-episode-custom">
-                                            <TvshowsIntroInfo v-if="data && data.id"
-                                                :postDateGmt="data.postDateGmt"
-                                                :movieRunTime="data.movieRunTime"
+                                            <TvshowsIntroInfo v-if="data && data.id" :postDateGmt="data.postDateGmt"
                                                 :title="data.title"
-                                                :originalTitle="data.originalTitle"
-                                                :genres="data.genres"
-                                                :src="data.src"
-                                                :description="data.description"
-                                                :outlink="data.outlink"
-                                                :episodeNumber="data.episodeNumber"
+                                                :originalTitle="data.originalTitle" 
+                                                :genres="data.genres" :src="data.src"
+                                                :description="data.description" 
+                                                :outlink="data.outlink" 
                                             />
                                             <div style="margin-bottom:15px;">
                                                 <a href="https://justlink.tv/하남시-맛집-청년다방?pid=202016"
@@ -199,167 +232,104 @@
                                     <div class="summary entry-summary episode__summary">
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
-                                                <div class="episode__player--prev-episode"><a
-                                                        href="https://kokoatv.net/episode/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-157%ed%99%94/"
-                                                        class="episode__player--prev-episode__link"><span
-                                                            class="episode__player--prev-episode__label">
-                                                            Previous Episode </span></a></div>
+                                                <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
+                                                    <a
+                                                        :href="'/episode/' + findPrevtEp(data.title, data.seasons)"
+                                                        class="episode__player--prev-episode__link">
+                                                        <span class="episode__player--prev-episode__label"> Previous Episode </span>
+                                                    </a>
+                                                </div>
+                                                <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
+                                                    <a
+                                                        :href="'/episode/' + findNextEp(data.title, data.seasons)"
+                                                        class="episode__player--next-episode__link">
+                                                        <span class="episode__player--next-episode__label"> Next Episode </span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="episode__season-tabs-wrap stretch-full-width"></div>
-                                    <div class="masvideos-tabs episode-tabs">
-                                        <ul class="nav" pos="0">
-                                            <li class="nav-item">
-                                                <a href="#tab-64de55f662ec6description" data-toggle="tab"
-                                                    class="nav-link active show">
-                                                    Description </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#tab-64de55f662ec6reviews" data-toggle="tab" class="nav-link">
-                                                    Review </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div id="tab-64de55f662ec6description" class="tab-pane active show">
-                                                <div class="episode__description">
-                                                    <div v-if="data && data.description" v-html="data.description"></div>
-                                                </div>
-                                            </div>
-                                            <div id="tab-64de55f662ec6reviews" class="tab-pane">
-                                                <div id="reviews" class="masvideos-Reviews">
-                                                    <div id="review_form_wrapper">
-                                                        <div id="review_form">
-                                                            <div id="respond" class="comment-respond">
-                                                                <span id="reply-title" class="comment-reply-title">Be the
-                                                                    first to review “요즘 육아 금쪽같은 내새끼 158화” <small><a
-                                                                            rel="nofollow" id="cancel-comment-reply-link"
-                                                                            href="/episode/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-158%ed%99%94/#respond"
-                                                                            style="display:none;">Cancel
-                                                                            reply</a></small></span>
-                                                                <form action="https://kokoatv.net/wp-comments-post.php"
-                                                                    method="post" id="commentform" class="comment-form"
-                                                                    novalidate="">
-                                                                    <p class="comment-notes"><span id="email-notes">Your
-                                                                            email address will not be published.</span>
-                                                                        <span class="required-field-message">Required fields
-                                                                            are marked <span
-                                                                                class="required">*</span></span></p>
-                                                                    <p class="comment-form-comment"><label
-                                                                            for="comment">Your review&nbsp;<span
-                                                                                class="required">*</span></label><textarea
-                                                                            id="comment" name="comment" cols="45" rows="8"
-                                                                            required=""></textarea></p>
-                                                                    <p class="comment-form-author"><label
-                                                                            for="author">Name&nbsp;<span
-                                                                                class="required">*</span></label> <input
-                                                                            id="author" name="author" type="text" value=""
-                                                                            size="30" required=""></p>
-                                                                    <p class="comment-form-email"><label
-                                                                            for="email">Email&nbsp;<span
-                                                                                class="required">*</span></label> <input
-                                                                            id="email" name="email" type="email" value=""
-                                                                            size="30" required=""></p>
-                                                                    <p class="comment-form-cookies-consent"><input
-                                                                            id="wp-comment-cookies-consent"
-                                                                            name="wp-comment-cookies-consent"
-                                                                            type="checkbox" value="yes"> <label
-                                                                            for="wp-comment-cookies-consent">Save my name,
-                                                                            email, and website in this browser for the next
-                                                                            time I comment.</label></p>
-                                                                    <p class="form-submit"><input name="submit"
-                                                                            type="submit" id="submit" class="submit"
-                                                                            value="Submit"> <input type="hidden"
-                                                                            name="comment_post_ID" value="202016"
-                                                                            id="comment_post_ID">
-                                                                        <input type="hidden" name="comment_parent"
-                                                                            id="comment_parent" value="0">
-                                                                    </p>
-                                                                </form>
-                                                            </div><!-- #respond -->
-                                                        </div>
-                                                    </div>
-                                                    <div id="comments">
-                                                        <p class="masvideos-noreviews">There are no reviews yet.</p>
-                                                    </div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <TvshowsIntroDescriptionSection v-if="data && data.description"
+                                        :data="data.description" />
                                 </div>
                                 <TvshowsIntroSeasonList v-if="data && data.seasons" :data="data.seasons" />
+                            </div>
+                        </div><!-- /.content-area -->
+                    </div><!-- /.site-content-inner -->
+                </div><!-- /.container -->
+            </div><!-- #content -->
+            <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
+                <div class="container">
+                    <div class="footer-v4-bar">
+                        <div class="site-footer__logo footer-logo"><a href="https://kokoatv.net/" class="custom-logo-link"
+                                rel="home"><img width="653" height="152"
+                                    src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
+                                    class="custom-logo" alt="코코아티비 :: KOKOA.TV" decoding="async"
+                                    srcset="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png 653w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-300x70.png 300w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-24x6.png 24w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-36x8.png 36w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-48x11.png 48w"
+                                    sizes="(max-width: 653px) 100vw, 653px"></a></div>
+                        <div class="site-footer__social-icons footer-social-icons">
+                            <ul id="menu-footer-social-menu" class="social-icons">
+                                <li
+                                    class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4994">
+                                    <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
+                                                class="fas fa-circle fa-stack-2x"></i><i
+                                                class="fab fa-facebook-f social-media-item__icon fa-stack-1x fa-inverse"
+                                                aria-hidden="true"></i> </span><span
+                                            class="social-media-item__title">Facebook</span></a>
+                                </li>
+                                <li
+                                    class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4995">
+                                    <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
+                                                class="fas fa-circle fa-stack-2x"></i><i
+                                                class="fab fa-twitter social-media-item__icon fa-stack-1x fa-inverse"
+                                                aria-hidden="true"></i> </span><span
+                                            class="social-media-item__title">Twitter</span></a>
+                                </li>
+                                <li
+                                    class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4996">
+                                    <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
+                                                class="fas fa-circle fa-stack-2x"></i><i
+                                                class="fab fa-google-plus-g social-media-item__icon fa-stack-1x fa-inverse"
+                                                aria-hidden="true"></i> </span><span
+                                            class="social-media-item__title">Google+</span></a>
+                                </li>
+                                <li
+                                    class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4997">
+                                    <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
+                                                class="fas fa-circle fa-stack-2x"></i><i
+                                                class="fas fa-globe social-media-item__icon fa-stack-1x fa-inverse"
+                                                aria-hidden="true"></i> </span><span
+                                            class="social-media-item__title">Vimeo</span></a>
+                                </li>
+                                <li
+                                    class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4998">
+                                    <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
+                                                class="fas fa-circle fa-stack-2x"></i><i
+                                                class="fas fa-rss social-media-item__icon fa-stack-1x fa-inverse"
+                                                aria-hidden="true"></i> </span><span
+                                            class="social-media-item__title">RSS</span></a>
+                                </li>
+                            </ul>
                         </div>
-                    </div><!-- /.content-area -->
-                </div><!-- /.site-content-inner -->
-            </div><!-- /.container -->
-        </div><!-- #content -->
-        <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
-            <div class="container">
-                <div class="footer-v4-bar">
-                    <div class="site-footer__logo footer-logo"><a href="https://kokoatv.net/" class="custom-logo-link"
-                            rel="home"><img width="653" height="152"
-                                src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
-                                class="custom-logo" alt="코코아티비 :: KOKOA.TV" decoding="async"
-                                srcset="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png 653w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-300x70.png 300w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-24x6.png 24w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-36x8.png 36w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-48x11.png 48w"
-                                sizes="(max-width: 653px) 100vw, 653px"></a></div>
-                    <div class="site-footer__social-icons footer-social-icons">
-                        <ul id="menu-footer-social-menu" class="social-icons">
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4994">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-facebook-f social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Facebook</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4995">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-twitter social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Twitter</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4996">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-google-plus-g social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Google+</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4997">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fas fa-globe social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Vimeo</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4998">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fas fa-rss social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">RSS</span></a></li>
-                        </ul>
-                    </div>
-                </div><!-- /.footer-v4-bar -->
-                <div class="site-footer__info site-info">
-                    Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
-            </div><!-- .container -->
-        </footer><!-- #colophon -->
-        <footer class="site-footer handheld-footer dark">
-            <div class="container">
-                <div class="site-footer__info site-info">
-                    Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
-            </div><!-- /.container -->
-        </footer>
-    </div><!-- #page -->
+                    </div><!-- /.footer-v4-bar -->
+                    <div class="site-footer__info site-info">
+                        Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                </div><!-- .container -->
+            </footer><!-- #colophon -->
+            <footer class="site-footer handheld-footer dark">
+                <div class="container">
+                    <div class="site-footer__info site-info">
+                        Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                </div><!-- /.container -->
+            </footer>
+        </div><!-- #page -->
 
-    <p id="a11y-speak-intro-text" class="a11y-speak-intro-text"
-        style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-        hidden="hidden">Notifications</p>
-    <div id="a11y-speak-assertive" class="a11y-speak-region"
-        style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
+        <p id="a11y-speak-intro-text" class="a11y-speak-intro-text"
+            style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
+            hidden="hidden">Notifications</p>
+        <div id="a11y-speak-assertive" class="a11y-speak-region"
+            style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
         aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div>
     <div id="a11y-speak-polite" class="a11y-speak-region"
         style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
@@ -371,5 +341,4 @@
     <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
         style="display: none;"></ul>
     <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body>
-</template>
+</body></template>
