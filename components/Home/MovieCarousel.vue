@@ -28,7 +28,7 @@
                                             <div class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie"
                                                 style="width: 100%; display: inline-block;">
                                                 <div class="movie__poster"><a
-                                                        href="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                        :href="'/movie/' + item.title"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
                                                         <img width="300" height="450"
