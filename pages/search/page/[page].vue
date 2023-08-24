@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                                 <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
-                                    :data="data.data.topWeeks" type="episode" base="tv-show-genre" />
+                                    :data="data.data.topWeeks" type="tv-show" base="tv-show-genre" />
                             </div>
                         </div>
                     </div>

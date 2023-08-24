@@ -4,12 +4,12 @@
     let data = props.data
     let title = props.title
 
-    const type = ref('k-drama')
+    const type = ref('tv-show')
     const { data: loadItems } = await useAsyncData(
         'tv-shows' + type,
         () => $fetch('https://backendnew.takitv.net/api/tvshows', {
             params: {
-                type: type.value,
+                type: (type.value == 'tv-show' ? '' : type.value),
                 limit: 12
             }
         }).then(data => {
@@ -19,7 +19,7 @@
         }
     )
     
-    let items = data.items[type.value] || loadItems
+    let items = loadItems
     const selectType = (val) => {
         type.value = val
     }

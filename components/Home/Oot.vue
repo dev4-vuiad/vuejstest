@@ -46,7 +46,7 @@
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>
                     <div class="box_meta">
-                        <a href="'/' + item.link">
+                        <a :href="'/' + item.link">
                             <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span><br>
                             <h2 class="title_1">{{ item.title }}</h2>
                         </a>
