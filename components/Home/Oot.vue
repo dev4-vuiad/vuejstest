@@ -38,7 +38,7 @@
         <div class="embla__viewport1">
             <div class="embla__container1" style="transform: translate3d(0%, 0px, 0px);">
                 <div class="embla__slide1" v-for="(item, index) in sliders" :key="index">
-                    <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year }}</span>
+                    <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <a class="tv-show__link" :href="'/' + item.link">
                             <img class="embla__slide__img1" :src="item.src" />
