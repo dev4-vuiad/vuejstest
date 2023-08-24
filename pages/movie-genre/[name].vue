@@ -1,41 +1,50 @@
 <script setup>
-    import { onBeforeUpdate } from 'vue';
     const route = useRoute();
+    const router = useRouter();
 
-    let genre = route.params.name
-    let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-    let year = route.query.year_filter || ''
-    let orderBy = route.query.orderBy || 'date'
-    
-    let { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
-        query: {
-            genre: genre,
-            year: year,
-            orderBy: orderBy,
-        }
-    })
+    const genres = ref([route.params.name])
+    const year = ref(route.query.year_filter || '')
+    const orderBy = ref(route.query.orderBy || 'date')
+    const page = ref(route.query.page || 1)
 
-    onBeforeUpdate(() => {
-        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-        year = route.query.year_filter || ''
-        if (!pending.value) {
-            useFetch('https://backendnew.takitv.net/api/movies', {
-                query: {
-                    genre: genres.join(','),
-                    year:year
-                },
-                onResponse({ request, response }) {
-                    data = response._data
-                }
-            })
+    const { data, refresh }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/movies', {
+            params: {
+                genre: genres.value.length ? genres.value.join(',') : undefined,
+                year: year.value || undefined,
+                orderBy: orderBy.value || undefined,
+                page: page.value
+            }
+        }),
+        {
+            watch: [genres, year, orderBy, page]
         }
-    });
+    )
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        window.location.href = url.toString()
+        let query = Object.assign({}, route.query)
+        query.orderBy = val
+        query.page = 1
+        router.push({query: query})
+        orderBy.value = val
+        page.value = 1
+    }
+
+    const onSelectYear = (val) => {
+        let query = Object.assign({}, route.query)
+        query.year_filter = val
+        query.page = 1
+        router.push({query: query})
+        year.value = val
+        page.value = 1
+    }
+
+    const onSelectPage = function(val) {
+        let query = Object.assign({}, route.query)
+        query.page = val
+        router.push({query: query})
+        page.value = val
     }
     
 </script>
@@ -107,10 +116,9 @@
                                     </div>
                                 </div>
                             </div>
-                        <Pagination v-if="data && data.data.items.length" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" currentPage="1" 
-                            :year="year" :genres="genres" :orderBy="orderBy"
+                        <Pagination v-if="data && data.data.items.length" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" :currentPage="page" 
+                            :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
-                        <center></center>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                         role="complementary">
@@ -121,12 +129,12 @@
                             </div>
                             <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                             <div class="widget widget_vodi_movies_filter">
-                                <div id="masvideos_movies_filter_widget-1"
+                                <!-- <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
                                     <div class="widget-header"><span class="widget-title">장르</span></div>
                                     <MovieSidebarType :base="'/movie-genre/' + genre" :selected="genres" :year="year" :exclude="genre" />
-                                </div>
-                                <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" />
+                                </div> -->
+                                <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>
                         </div>
                     </div>

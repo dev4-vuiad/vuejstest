@@ -6,7 +6,7 @@
 </script>
 <template>
     <nav class="masvideos-breadcrumb">
-        <a href="/">Home</a>
+        <NuxtLink to="/">Home</NuxtLink>
         <span class="delimiter">
             <svg width="4px"
                 height="7px">
@@ -15,7 +15,7 @@
             </path>
             </svg>
         </span>
-        <a v-if="page" :href="base">{{ title }}</a>
+        <NuxtLink v-if="page" :to="base">{{ title }}</NuxtLink>
         <template v-else>{{ title }}</template>
         <template v-if="page">
             <span class="delimiter">

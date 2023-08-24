@@ -40,19 +40,19 @@
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel">
             </div>
-            <a :href="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
                 :src="src"
                 class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
                 sizes="(max-width: 600px) 100vw, 600px">
-            </a>
+            </NuxtLink>
         </div>
         <div class="tv-show__body">
             <span class="tv-show__meta--release-year">{{ toTimeAgo(postDateGmt) }}</span>
-            <a :href="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <span style="display:none;" class="span_sea_ep_title">{{ (seasonNumber > 1 ? '시즌 ' + seasonNumber + ' - ' : '') + episodeNumber }}화</span>
                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ title }}</h3>
-            </a>
+            </NuxtLink>
         </div>
     </div>
 </template>

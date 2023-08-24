@@ -46,9 +46,9 @@
             <div class="box-tv-channel">
                 <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31">
             </div>
-            <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <NuxtLink :to="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="300" height="450" :src="src" class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy">
-            </a>
+            </NuxtLink>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">
@@ -57,10 +57,10 @@
                     <div v-if="originalTitle" class="original-title-tvshow">
                         {{ originalTitle }}
                     </div>
-                    <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                    <NuxtLink :to="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                         <span style="display:none" class="span_sea_ep_title">{{ (seasonNumber > 1 ? '시즌 ' + seasonNumber + ' - ' : '') + episodeNumber }}화</span>
                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ title }}</h3>
-                    </a>
+                    </NuxtLink>
                 </div>
             </div>
         </div>

@@ -9,9 +9,9 @@
             <div class="movies__inner">
                 <div v-for="(item, index) in data" :key="index" class="post-84871 movie type-movie status-publish has-post-thumbnail hentry movie_genre-209 movie_genre-221 movie_genre-kmovie">
                     <div class="movie__poster">
-                        <a :href="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                        <NuxtLink :to="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                             <img width="220" height="310" :src="item.src" class="movie__poster--image" alt="" loading="lazy">
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="movie__body">
                         <div class="movie__info">
@@ -24,13 +24,13 @@
                                     <span class="movie__meta--genre">
                                         <template v-for="(genre, idx) in item.genres">
                                             <span v-if="idx > 0">, </span>
-                                            <a :href="genre.link" rel="tag">{{ genre.name }}</a>
+                                            <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</NuxtLink>
                                         </template>
                                     </span>
                                 </div>
-                                <a :href="item.link" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                <NuxtLink :to="item.link" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                     <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title }}</h3>
-                                </a>
+                                </NuxtLink>
                             </div>
                             <div class="original-title">
                                 {{ item.originalTitle }}

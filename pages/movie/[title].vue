@@ -1,18 +1,20 @@
 <script setup>
-    const route = useRoute();
-    let title = route.params.title
-    let { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies?title=' + title)
+    const route = useRoute()
+    const title = ref(route.params.title)
+
+    const { data, refresh }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/movies', {
+            params: {
+                title: title.value
+            }
+        }),
+        {
+            watch: [title]
+        }
+    )
 
     const lastGenre = (genres) => {
         return genres[genres.length - 1]
-    }
-
-    const getMovieFromData = (data) => {
-        if (data && data.data && data.data.items && data.data.items[0]) {
-            return data.data.items[0]
-        }
-        
-        return null
     }
 
 </script>

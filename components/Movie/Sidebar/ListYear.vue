@@ -1,24 +1,22 @@
 <script setup>
-        import { onBeforeUpdate } from 'vue';
+        const years = getListYears();
 
-        let start = (new Date()).getFullYear()
-        let end = 1980;
-        const years = []
-        for (let i = start; i >= end; i --) {
-                years.push(i)
+        const emit = defineEmits(['onSelectYear'])
+        const props = defineProps(['selected'])
+
+        const selectYear = function(year) {
+                emit('onSelectYear', year)
         }
 
-        const props = defineProps(['base', 'selected', 'genres'], 'page')
-        const base = props.base || '/movie'
-
-        let selected = props.selected
-        let genres = props.genres
-        let page = props.page
-        onBeforeUpdate(() => {
-                selected = props.selected
-                genres = props.genres
-                page = props.page
-        });
+        function getListYears() {
+                let years = []
+                let start = (new Date()).getFullYear()
+                let end = 1980;
+                for (let i = start; i >= end; i --) {
+                        years.push(i)
+                }
+                return years
+        }
 </script>
 
 <template>
@@ -26,9 +24,9 @@
                 <div class="widget-header"><span class="widget-title">연도별</span></div>
                 <ul>
                         <li v-for="(year, idx) in years" :key="idx" :class="'masvideos-layered-nav-movies-year' + (selected == year ? ' chosen' : '')">
-                                <a :href="base + (typeof page != 'undefined' ? '/page/' + page : '') + '?filter_genre=' + genres.join(',') + '&year_filter=' + year">
+                                <NuxtLink href="#" @click.prevent="selectYear(year)">
                                         <span>{{ year }}</span>
-                                </a>
+                                </NuxtLink>
                         </li>
                 </ul>
         </div>

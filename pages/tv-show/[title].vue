@@ -1,8 +1,14 @@
 <script setup>
-    const route = useRoute();
-    let title = route.params.title
-    const { data } = await useFetch('https://backendnew.takitv.net/api/tvshows/' + title)
-    console.log(data.value)
+    const route = useRoute()
+    const title = ref(route.params.title)
+
+    const { data, refresh }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/tvshows/' + title.value),
+        {
+            watch: [title]
+        }
+    )
+    
 </script>
 
 <template>

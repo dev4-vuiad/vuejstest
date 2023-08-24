@@ -1,9 +1,12 @@
 <script setup>
+    import { onBeforeUpdate } from 'vue'
+
+    const emit = defineEmits(['onSelectPage'])
     const props = defineProps(['base', 'total', 'currentPage', 'perPage', 'year', 'genres', 'orderBy', 's'])
     const base = (props.base || '/movie') + '/page'
     const perPage = props.perPage * 1
     const totalPages = Math.ceil(props.total / perPage);
-    const currentPage = props.currentPage * 1
+    let currentPage = props.currentPage * 1
     const start = (currentPage - 1) * perPage + 1
     const end = start + perPage - 1
     let pages = [
@@ -37,7 +40,14 @@
     }
     const query = '?' + url.searchParams.toString();
 
-    
+    const selectPage = (val) => {
+        currentPage = val
+        emit('onSelectPage', val)
+    }
+
+    onBeforeUpdate(() => {
+        currentPage = props.currentPage * 1
+    })
 </script>
 <template>
     <div class="page-control-bar-bottom">
@@ -46,19 +56,19 @@
         <nav class="masvideos-pagination masvideos-tv-shows-pagination">
             <ul class="page-numbers">
                 <li v-if="currentPage - 1 >= 1">
-                    <a class="prev page-numbers" :href="base + '/' + (currentPage -1) + query">←&nbsp;&nbsp;&nbsp; 이전 페이지</a>
+                    <a class="prev page-numbers" :href="base + '/' + (currentPage -1) + query" @click.prevent="selectPage(currentPage -1)">←&nbsp;&nbsp;&nbsp; 이전 페이지</a>
                 </li>
                 <template v-for="(page, index) in pages" :key="index">
                     <li v-if="page > 2 && page < totalPages && page > pages[index - 1] + 1">
                         <span class="page-numbers dots">…</span>
                     </li>
                     <li>
-                        <a v-if="currentPage != page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')" :href="base + '/' + page + query">{{ page }}</a>
+                        <a v-if="currentPage != page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')" @click.prevent="selectPage(page)">{{ page }}</a>
                         <span v-if="currentPage == page" aria-current="page" :class="'page-numbers'+ (currentPage == page ? ' current' : '')">{{ page }}</span>
                     </li>
                 </template>
                 <li v-if="currentPage + 1 <= totalPages">
-                    <a class="next page-numbers" :href="base + '/' + (currentPage + 1) + query">다음 페이지 &nbsp;&nbsp;&nbsp;→</a>
+                    <a class="next page-numbers" :href="base + '/' + (currentPage + 1) + query" @click.prevent="selectPage(currentPage + 1)">다음 페이지 &nbsp;&nbsp;&nbsp;→</a>
                 </li>
             </ul>
         </nav>

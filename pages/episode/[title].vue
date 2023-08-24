@@ -1,7 +1,13 @@
 <script setup>
-    const route = useRoute();
-    let title = route.params.title
-    const { data } = await useFetch('https://backendnew.takitv.net/api/episode/' + title)
+    const route = useRoute()
+    const title = ref(route.params.title)
+
+    const { data, refresh }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/episode/' + title.value),
+        {
+            watch: [title]
+        }
+    )
 
     const findNextEp = (title, seasons) => {
         for (let s in seasons) {
@@ -72,18 +78,18 @@
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
                                                 <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
-                                                    <a
-                                                        :href="'/episode/' + findPrevtEp(data.title, data.seasons)"
+                                                    <NuxtLink
+                                                        :to="'/episode/' + findPrevtEp(data.title, data.seasons)"
                                                         class="episode__player--prev-episode__link">
                                                         <span class="episode__player--prev-episode__label"> Previous Episode </span>
-                                                    </a>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
-                                                    <a
-                                                        :href="'/episode/' + findNextEp(data.title, data.seasons)"
+                                                    <NuxtLink
+                                                        :to="'/episode/' + findNextEp(data.title, data.seasons)"
                                                         class="episode__player--next-episode__link">
                                                         <span class="episode__player--next-episode__label"> Next Episode </span>
-                                                    </a>
+                                                    </NuxtLink>
                                                 </div>
                                             </div>
                                         </div>

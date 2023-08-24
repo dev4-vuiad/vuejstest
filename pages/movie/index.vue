@@ -1,46 +1,62 @@
 <script setup>
-    import { onBeforeUpdate } from 'vue';
     const route = useRoute();
-    const page = route.params.page
+    const router = useRouter();
+    
+    const genres = ref((route.query.filter_genre || '').split(',').filter(v => v.length))
+    const year = ref(route.query.year_filter || '')
+    const orderBy = ref(route.query.orderBy || 'date')
+    const page = ref(route.query.page || 1)
 
-    let genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-    let year = route.query.year_filter || ''
-    let orderBy = route.query.orderBy || 'date'
-
-    const { pending, data } = await useFetch('https://backendnew.takitv.net/api/movies', {
-        query: {
-            genre: genres.join(','),
-            year: year,
-            orderBy: orderBy,
-            page: page
+    const { data, refresh }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/movies', {
+            params: {
+                genre: genres.value.length ? genres.value.join(',') : undefined,
+                year: year.value || undefined,
+                orderBy: orderBy.value || undefined,
+                page: page.value
+            }
+        }),
+        {
+            watch: [genres, year, orderBy, page]
         }
-    })
-
-    onBeforeUpdate(() => {
-        genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
-        year = route.query.year_filter || ''
-        if (!pending.value) {
-            useFetch('https://backendnew.takitv.net/api/movies', {
-                query: {
-                    genre: genres.join(','),
-                    year: year,
-                    page : page
-                },
-                onResponse({ request, response }) {
-                    data = response._data
-                }
-            })
-        }
-    });
+    )
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        url.pathname = '/movie'
-        window.location.href = url.toString()
+        let query = Object.assign({}, route.query)
+        query.orderBy = val
+        router.push({query: query})
+        orderBy.value = val
+    }    
+
+    const onSelectYear = (val) => {
+        let query = Object.assign({}, route.query)
+        query.year_filter = val
+        router.push({query: query})
+        year.value = val
     }
-    
+
+    const onSelectGenres = function(val) {
+        let query = Object.assign({}, route.query)
+        if (val.length) {
+            query.filter_genre = val.join(',')
+            query.query_type_genre = 'or'
+        } else {
+            query.filter_genre = undefined
+            query.query_type_genre = undefined
+        }
+
+        router.push({query: query})
+        genres.value = val
+        refresh()
+    }
+
+    const onSelectPage = function(val) {
+        let query = Object.assign({}, route.query)
+        query.page = val
+        router.push({query: query})
+        page.value = val
+    }
 </script>
 
 <template>
@@ -91,14 +107,13 @@
                                             </path>
                                         </svg>
                                         <form method="get">
-                                            <select name="orderby" @change="onChangeOrderBy" class="orderby">
+                                            <select @change="onChangeOrderBy" class="orderby">
                                                 <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                 <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                                 <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
                                                 <option value="menuOrder" v-bind:selected="orderBy == 'menuOrder'">Menu Order</option>
                                                 <option value="rating" v-bind:selected="orderBy == 'rating'">별점순</option>
                                             </select>
-                                            <input type="hidden" name="paged" value="1">
                                         </form>
                                     </div>
                                 </div>
@@ -110,10 +125,9 @@
                                     </div>
                                 </div>
                             </div>
-                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" currentPage="1" 
-                            :year="year" :genres="genres" :orderBy="orderBy"
+                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" :currentPage="page"
+                            :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
-                        <center></center>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                         role="complementary">
@@ -127,9 +141,9 @@
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
                                     <div class="widget-header"><span class="widget-title">장르</span></div>
-                                    <MovieSidebarType :selected="genres" :year="year" />
+                                    <MovieSidebarType :selected="genres" :year="year" @on-select-genres="onSelectGenres" />
                                 </div>
-                                <MovieSidebarListYear :selected="year" :genres="genres" />
+                                <MovieSidebarListYear :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>
                         </div>
                     </div>
