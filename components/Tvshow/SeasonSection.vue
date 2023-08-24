@@ -3,19 +3,23 @@
     const props = defineProps(['data', 'src', ])
     const data = props.data
     const src = props.src
-    const season = ref(0)
+    const seasonIdx = ref(0)
+
+    const showSeason = (idx) => {
+        seasonIdx.value = idx
+    }
 </script>
 
 <template>
     <div class="tv_show__season-tabs-wrap">
         <div class="masvideos-tabs">
-            <ul v-for="(item, index) in data" :key="index" class="nav" pos="0">
-                <li class="nav-item">
-                    <a href="#" data-toggle="tab" :class="'nav-link' + (index == season ? ' active show' : '')">{{ item.name }}</a>
+            <ul class="nav" pos="0">
+                <li v-for="(item, index) in data" :key="index" class="nav-item">
+                    <a href="#" data-toggle="tab" :class="'nav-link' + (index == seasonIdx ? ' active show' : '')" @click.prevent="showSeason(index)">{{ item.name }}</a>
                 </li>
             </ul>
             <div class="tab-content">
-                <div v-for="(item, index) in data" :key="index" :class="'tab-pane' + (index == season ? ' active show' : '')">
+                <div v-for="(item, index) in data" :key="index" :class="'tab-pane' + (index == seasonIdx ? ' active show' : '')">
                     <div class="masvideos masvideos-episodes ">
                         <div class="episodes columns-6">
                             <div class="episodes__inner">
