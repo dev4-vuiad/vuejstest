@@ -21,7 +21,26 @@
         description = props.description
         outlink = props.outlink
     });
+
+    const onReadMoreClick = (event) => {
+        let ele = $(event.target)
+        ele.prev().toggleClass('expanded')
+        ele.text(ele.prev().hasClass('expanded') ? 'Show Less' : 'Read More')
+    }
 </script>
+
+<style scoped>
+    .movie__description > div {
+        height: auto;
+        transition: max-height 600ms ease-in-out;
+        overflow: hidden;
+        max-height: 47px;
+
+    }
+    .movie__description > div.expanded {
+        max-height: 300px;
+    }
+</style>
 
 <template>
     <div class="movie__head">
@@ -71,10 +90,8 @@
                 </div>
             </div>
             <div class="movie__description">
-                <div style="height: 47px; max-height: none;" data-readmore="" aria-expanded="false" id="rmjs-1">
-                    <p v-html="description"></p>
-                </div>
-                <a class="maxlist-more" href="#" data-readmore-toggle="rmjs-1" aria-controls="rmjs-1">더 보기</a>
+                <div data-readmore="" v-html="description"></div>
+                <a class="maxlist-more" href="#" @click.event="onReadMoreClick">Read More</a>
             </div>
             <div class="movie__sharing vodi-sharing"></div>
             <div class="movie__info--head"></div>

@@ -20,7 +20,7 @@
             </span>
         </div>
         <div class="tab-content">
-            <div id="phimbo_week" :class="'ott-tab tab-pane' + (tabIdx == 1 ? ' active' : '')">
+            <div id="phimbo_week" :class="'ott-tab tab-pane' + (tabIdx == 0 ? ' active' : '')">
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">
@@ -44,7 +44,7 @@
                 <div style="display: none;" class="lamtest-top">
                 </div>
             </div>
-            <div id="phimbo_month" :class="'ott-tab tab-pane' + (tabIdx == 0 ? ' active' : '')">
+            <div id="phimbo_month" :class="'ott-tab tab-pane' + (tabIdx == 1 ? ' active' : '')">
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">

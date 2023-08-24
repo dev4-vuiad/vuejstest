@@ -28,7 +28,7 @@
         max-height: 47px;
     }
     .episode__description > div.expanded {
-        max-height: 100px;
+        max-height: 200px;
     }
 </style>
 

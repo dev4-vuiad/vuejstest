@@ -3,18 +3,6 @@
     let title = route.params.title
     const { data } = await useFetch('https://backendnew.takitv.net/api/episode/' + title)
 
-    const findCurrentSeasonAndEpisode = (title, seasons) => {
-        for (let s in seasons) {
-            for (let e in seasons[s].episodes) {
-                if (title == seasons[s].episodes[e].title) {
-                    return {season:s, episode: e}
-                }
-            }
-        }
-
-        return {}
-    }
-
     const findNextEp = (title, seasons) => {
         for (let s in seasons) {
             for (let e in seasons[s].episodes) {
@@ -29,7 +17,7 @@
         for (let s in seasons) {
             for (let e in seasons[s].episodes) {
                 if (title == seasons[s].episodes[e].title) {
-                    return e < seasons[s].episodes.length - 1 ? seasons[s].episodes[e + 1].title : null
+                    return e == seasons[s].episodes.length - 1 ? null : seasons[s].episodes[e * 1 + 1].title
                 }
             }
         }
@@ -202,7 +190,6 @@
                                     :tvshowTitle="data.tvshowTitle"
                                     :seasonName="data.seasonName"
                                     :genre="data.genres[data.genres.length - 1]"
-                                    :season="findCurrentSeasonAndEpisode(data.title, data.seasons).season"
                                 />
                                 <div class="single-episode__content column">
                                     <!-- ads top -->
@@ -234,20 +221,20 @@
                                     <div class="summary entry-summary episode__summary">
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
-                                                <!-- <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
+                                                <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
                                                     <a
                                                         :href="'/episode/' + findPrevtEp(data.title, data.seasons)"
                                                         class="episode__player--prev-episode__link">
                                                         <span class="episode__player--prev-episode__label"> Previous Episode </span>
                                                     </a>
-                                                </div> -->
-                                                <!-- <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
+                                                </div>
+                                                <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
                                                     <a
                                                         :href="'/episode/' + findNextEp(data.title, data.seasons)"
                                                         class="episode__player--next-episode__link">
                                                         <span class="episode__player--next-episode__label"> Next Episode </span>
                                                     </a>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

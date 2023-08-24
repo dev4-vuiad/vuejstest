@@ -45,7 +45,8 @@
                         <div class="tv-show__poster">
                             <div class="box-tv-channel"><img loading="lazy" class="tv-channel"
                                     :src="item.chanelImage" alt=""
-                                    width="83" height="31"></div><a href="/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
+                                    width="83" height="31"></div>
+                                    <a :href="'/' + item.link"
                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                     width="300" height="450"
                                     :src="item.src"
@@ -60,7 +61,7 @@
                                     <div class="original-title-tvshow">
                                         Hard Cell
                                     </div>
-                                    <a href="/episode/%ed%95%98%eb%93%9c-%ec%85%80-6%ed%99%94/"
+                                    <a :href="'/' + item.link"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                             style="display:none" class="span_sea_ep_title">6화</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">

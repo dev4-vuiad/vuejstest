@@ -4,7 +4,26 @@
     const originalTitle = props.originalTitle
     const src = props.src
     const description = props.description
+
+    const onReadMoreClick = (event) => {
+        let ele = $(event.target)
+        ele.prev().toggleClass('expanded')
+        ele.text(ele.prev().hasClass('expanded') ? 'Show Less' : 'Read More')
+    }
 </script>
+
+<style scoped>
+    .tv-show__short-description > div {
+        height: auto;
+        transition: max-height 600ms ease-in-out;
+        overflow: hidden;
+        max-height: 47px;
+
+    }
+    .tv-show__short-description > div.expanded {
+        max-height: 200px;
+    }
+</style>
 
 <template>
     <div class="single-tv-show tv-show column poster-column">
@@ -31,13 +50,9 @@
         </div>
         <div class="tv-show__info--body">
             <div class="tv-show__short-description">
-                <div style="height: 78px; max-height: none;" v-html="description">
-                </div>
-                <a class="maxlist-more" href="#" data-readmore-toggle="rmjs-1" aria-controls="rmjs-1">더 보기</a>
+                <div v-html="description"></div>
+                <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">Read More</a>
             </div>
-        </div>
-        <div class="single-tv-show-ads ads-category-tvshow" style="text-align: center;">
-
         </div>
     </div>
 </template>

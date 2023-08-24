@@ -15,7 +15,8 @@
             </path>
             </svg>
         </span>
-        <a :href="base">{{ title }}</a>
+        <a v-if="page" :href="base">{{ title }}</a>
+        <template v-else>{{ title }}</template>
         <template v-if="page">
             <span class="delimiter">
                 <svg width="4px" height="7px">
