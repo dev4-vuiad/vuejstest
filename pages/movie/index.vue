@@ -8,7 +8,7 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    const { data }  = await useAsyncData(
+    const { data, refresh }  = await useAsyncData(
         () => $fetch('https://backendnew.takitv.net/api/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
@@ -18,7 +18,7 @@
             }
         }),
         {
-            watch: [genres, year, orderBy, page]
+            watch: [year, orderBy]
         }
     )
 
@@ -30,7 +30,6 @@
         router.push({query: query})
         orderBy.value = val
         page.value = 1;
-        nextTick()
     }    
 
     const onSelectYear = (val) => {
@@ -40,7 +39,6 @@
         router.push({query: query})
         year.value = val
         page.value = 1
-        nextTick()
     }
 
     const onSelectGenres = function(val) {
@@ -58,6 +56,7 @@
         router.push({query: query})
         genres.value = val
         page.value = 1
+        refresh()
     }
 
     const onSelectPage = function(val) {
@@ -65,6 +64,7 @@
         query.page = val
         router.push({query: query})
         page.value = val
+        refresh()
     }
 </script>
 
