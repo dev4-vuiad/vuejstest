@@ -3704,8 +3704,6 @@ visibility: visible; }
 transform: none;
 z-index: 2000;
 overflow: visible; }
-body.off-canvas-active {
-overflow: hidden; }
 .admin-bar .site-header__offcanvas.toggled .offcanvas-drawer {
 top: 32px; }
 .admin-bar .site-header__offcanvas.toggled .offcanvas-collapse {
