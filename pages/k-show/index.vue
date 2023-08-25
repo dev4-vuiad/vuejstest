@@ -1,19 +1,40 @@
 <script setup>
+    import { nextTick } from 'vue'
     const route = useRoute();
-    let orderBy = route.query.orderBy || 'date'
+    const router = useRouter();
 
-    let { pending, data } = await useFetch('https://backendnew.takitv.net/api/tvshows', {
-        query: {
-            type: 'k-show',
-            orderBy: orderBy,
+    const orderBy = ref(route.query.orderBy || 'date')
+    const page = ref(route.query.page || 1)
+
+    const { data }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/tvshows', {
+            params: {
+                orderBy: orderBy.value || undefined,
+                page: page.value,
+                type: 'k-show'
+            }
+        }),
+        {
+            watch: [orderBy, page]
         }
-    })
+    )
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        window.location.href = url.toString()
+        let query = Object.assign({}, route.query)
+        query.orderBy = val
+        query.page = 1
+        router.push({query: query})
+        orderBy.value = val
+        page.value = 1
+        nextTick()
+    }
+
+    const onSelectPage = function(val) {
+        let query = Object.assign({}, route.query)
+        query.page = val
+        router.push({query: query})
+        page.value = val
     }
 </script>
 
@@ -85,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <Pagination v-if="data" base="/k-show" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination v-if="data" base="/k-show" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 예능 인기컨텐츠" :data="data.data.topWeeks" />
