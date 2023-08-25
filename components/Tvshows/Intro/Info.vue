@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+    const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
     const postDateGmt = props.postDateGmt
     const title = props.title
     const originalTitle = props.originalTitle
@@ -7,6 +7,7 @@
     const src = props.src
     const description = props.description
     const outlink = props.outlink
+    const tvshowTitle = props.tvshowTitle
 
     const format = (d) => {
         d = new Date(d.replace(' ', 'T') + '.000Z')
@@ -40,7 +41,7 @@
                     :src="src" alt="" width="68"
                     height="31">
             </div>
-            <a :href="outlink" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <span style="display:none"
                     class="span_sea_ep_title">158화</span>
                     <img width="220" height="312"
@@ -60,7 +61,7 @@
                         <span class="episode__meta--release-date">Added: {{ format(postDateGmt) }}</span>
                         <div class="vodi-views-likes"></div>
                     </div><a
-                        href="https://kokoatv.net/tv-show/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-1/"
+                        :href="'/tv-show/' + tvshowTitle"
                         class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                         <h1 class="episode_title entry-title">{{ title }}</h1>
                     </a>

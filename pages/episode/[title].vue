@@ -58,11 +58,11 @@
                                                 :originalTitle="data.originalTitle" 
                                                 :genres="data.genres" :src="data.src"
                                                 :description="data.description" 
-                                                :outlink="data.outlink" 
+                                                :outlink="data.outlink"
+                                                :tvshowTitle="data.tvshowTitle"
                                             />
                                             <div style="margin-bottom:15px;">
-                                                <a href="https://justlink.tv/하남시-맛집-청년다방?pid=202016"
-                                                    link="https://justlink.tv/하남시-맛집-청년다방" pid="202016" class="a_btn_out">
+                                                <a :href="data.outlink" class="a_btn_out">
                                                     <button class="btn-outlink">바로보기</button>
                                                 </a>
                                             </div>
