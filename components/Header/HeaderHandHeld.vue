@@ -37,14 +37,20 @@
                                                         <li itemscope="itemscope"
                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                                            <NuxtLink title="영화" to="/movie/" class="nav-link show">영화</NuxtLink>
+                                                            <NuxtLink title="영화" to="/movie/" class="nav-link show">
+                                                                <span class="dashicons fas fa-film after-menu-image-icons"></span>
+                                                                <span class="menu-image-title-after menu-image-title">영화</span>
+                                                            </NuxtLink>
                                                         </li>
                                                         <li itemscope="itemscope"
                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-161947 nav-item show">
                                                             <NuxtLink title="TV" to="#" data-toggle="dropdown"
                                                                 aria-haspopup="true" aria-expanded="false"
-                                                                class="dropdown-toggle nav-link">TV</NuxtLink>
+                                                                class="dropdown-toggle nav-link">
+                                                                <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
+                                                                <span class="menu-image-title-after menu-image-title">TV</span>    
+                                                            </NuxtLink>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li itemscope="itemscope"
                                                                     itemtype="https://www.schema.org/SiteNavigationElement"
@@ -75,7 +81,10 @@
                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
                                                             <NuxtLink title="OTT/Web" to="/ott-web/"
-                                                                class="nav-link show">OTT</NuxtLink>
+                                                                class="nav-link show">
+                                                                <span class="dashicons fas fa-cube after-menu-image-icons"></span>
+                                                                <span class="menu-image-title-after menu-image-title">OTT</span>
+                                                            </NuxtLink>
                                                         </li>
                                                     </ul>
                                                 </div>

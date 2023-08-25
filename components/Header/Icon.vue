@@ -19,43 +19,60 @@
                                         <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                             id="menu-item-8092"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092 nav-item show">
-                                            <a title="영화" href="/movie/" class="nav-link show">영화</a>
+                                            <NuxtLink title="영화" to="/movie">
+                                                <span class="dashicons fas fa-film after-menu-image-icons"></span>
+                                                <span class="menu-image-title-after menu-image-title">영화</span>
+                                            </NuxtLink>
                                         </li>
                                         <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                             id="menu-item-161947"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-161947 nav-item show">
-                                            <a title="TV" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" class="dropdown-toggle nav-link">TV</a>
+                                            <NuxtLink to="/tv-shows" title="TV" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" class="dropdown-toggle nav-link">
+                                                <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
+                                                <span class="menu-image-title-after menu-image-title">TV</span>
+                                            </NuxtLink>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li itemscope="itemscope"
                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                     id="menu-item-8093"
                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093 nav-item show">
-                                                    <a title="드라마" href="/k-drama/" class="dropdown-item show">드라마</a>
+                                                    <NuxtLink title="드라마" to="/k-drama/" class="dropdown-item show">
+                                                        드라마
+                                                    </NuxtLink>
                                                 </li>
                                                 <li itemscope="itemscope"
                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                     id="menu-item-8094"
                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8094 nav-item show">
-                                                    <a title="예능" href="/k-show/" class="dropdown-item show">예능</a>
+                                                    <NuxtLink title="예능" to="/k-show/" class="dropdown-item show">
+                                                        예능
+                                                    </NuxtLink>
                                                 </li>
                                                 <li itemscope="itemscope"
                                                     itemtype="https://www.schema.org/SiteNavigationElement"
                                                     id="menu-item-8095"
                                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8095 nav-item show">
-                                                    <a title="시사다큐" href="/k-sisa/" class="dropdown-item show">시사</a>
+                                                    <NuxtLink title="시사다큐" to="/k-sisa/" class="dropdown-item show">
+                                                        시사
+                                                    </NuxtLink>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                             id="menu-item-118282"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282 nav-item show">
-                                            <a title="미드" href="/u-drama/" class="nav-link show">미드</a>
+                                            <NuxtLink title="미드" to="/u-drama/" class="nav-link show">
+                                                미드
+                                            </NuxtLink>
                                         </li>
                                         <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                             id="menu-item-8098"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098 nav-item show">
-                                            <a title="OTT/Web" href="/ott-web/" class="nav-link show">OTT</a>
+                                            <NuxtLink title="OTT/Web" to="/ott-web/" class="nav-link show">
+                                                <span class="dashicons fas fa-cube after-menu-image-icons"></span>
+                                                <span class="menu-image-title-after menu-image-title">OTT</span>
+                                            </NuxtLink>
                                         </li>
                                     </ul>
                                 </div>

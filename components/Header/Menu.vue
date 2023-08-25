@@ -2,10 +2,16 @@
     <div class="site_header__primary-nav">
         <ul id="menu-main-menu-1" class="nav yamm">
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8092">
-                <NuxtLink title="영화" to="/movie">영화</NuxtLink>
+                <NuxtLink title="영화" to="/movie">
+                    <span class="dashicons fas fa-film after-menu-image-icons"></span>
+                    <span class="menu-image-title-after menu-image-title">영화</span>
+                </NuxtLink>
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-161947">
-                <NuxtLink to="/tv-shows">TV</NuxtLink>
+                <NuxtLink to="/tv-shows">
+                    <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
+                    <span class="menu-image-title-after menu-image-title">TV</span>
+                </NuxtLink>
                 <ul class="sub-menu">
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8093">
                         <NuxtLink title="드라마" to="/k-drama/">드라마</NuxtLink>
@@ -22,7 +28,10 @@
                 <NuxtLink to="/u-drama/">미드</NuxtLink>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098">
-                <NuxtLink title="OTT/Web" to="/ott-web/">OTT</NuxtLink>
+                <NuxtLink title="OTT/Web" to="/ott-web/">
+                    <span class="dashicons fas fa-cube after-menu-image-icons"></span>
+                    <span class="menu-image-title-after menu-image-title">OTT</span>
+                </NuxtLink>
             </li>
         </ul>
     </div>
