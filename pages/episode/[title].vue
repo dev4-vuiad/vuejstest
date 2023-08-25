@@ -13,20 +13,41 @@
         for (let s in seasons) {
             for (let e in seasons[s].episodes) {
                 if (title == seasons[s].episodes[e].title) {
-                    return e > 0 ? seasons[s].episodes[e - 1].title : null
+                    if (s == 0 && e == 0) {
+                        return null
+                    }
+                    else if (e > 0) {
+                        return seasons[s].episodes[e * 1 - 1].title
+                    } else {
+                        let newS = s * 1 - 1
+                        let newE = seasons[newS].length - 1
+                        return seasons[newS].episodes[newE].title
+                    }
+                    return null
                 }
             }
         }
+        return null
     }
 
-    const findPrevtEp = (title, seasons) => {
+    const findPrevEp = (title, seasons) => {
         for (let s in seasons) {
             for (let e in seasons[s].episodes) {
                 if (title == seasons[s].episodes[e].title) {
-                    return e == seasons[s].episodes.length - 1 ? null : seasons[s].episodes[e * 1 + 1].title
+                    if (s == seasons.length - 1 && e == seasons[s].episodes.length - 1) {
+                        return null
+                    }
+                    else if (e < seasons[s].episodes.length - 1) {
+                        return seasons[s].episodes[e * 1 + 1].title
+                    } else {
+                        seasons[s * 1 + 1].episodes[0].title
+                    }
+                    return null
                 }
             }
         }
+
+        return null
     }
 </script>
 
@@ -77,9 +98,9 @@
                                     <div class="summary entry-summary episode__summary">
                                         <div class="episode__title-with-nav">
                                             <div class="episode__player--arrows">
-                                                <div class="episode__player--prev-episode" v-if="data && findPrevtEp(data.title, data.seasons)">
+                                                <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
                                                     <NuxtLink
-                                                        :to="'/episode/' + findPrevtEp(data.title, data.seasons)"
+                                                        :to="'/episode/' + findPrevEp(data.title, data.seasons)"
                                                         class="episode__player--prev-episode__link">
                                                         <span class="episode__player--prev-episode__label"> Previous Episode </span>
                                                     </NuxtLink>
