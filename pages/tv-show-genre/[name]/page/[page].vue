@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <Pagination v-if="data && data.total" :base="'/tv-show-genre/' + genre" :perPage="data.perPage" :currentPage="1" :total="data.total" />
+                            <Pagination v-if="data && data.total > data.perPage" :base="'/tv-show-genre/' + genre" :perPage="data.perPage" :currentPage="1" :total="data.total" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 TVShows 인기컨텐츠" :data="data.data.topWeeks" />

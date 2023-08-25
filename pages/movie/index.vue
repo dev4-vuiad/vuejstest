@@ -1,4 +1,5 @@
 <script setup>
+    import { nextTick } from 'vue';
     const route = useRoute();
     const router = useRouter();
     
@@ -7,7 +8,7 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    const { data, refresh }  = await useAsyncData(
+    const { data }  = await useAsyncData(
         () => $fetch('https://backendnew.takitv.net/api/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
@@ -25,15 +26,21 @@
         let val = event.target.value
         let query = Object.assign({}, route.query)
         query.orderBy = val
+        query.page = 1
         router.push({query: query})
         orderBy.value = val
+        page.value = 1;
+        nextTick()
     }    
 
     const onSelectYear = (val) => {
         let query = Object.assign({}, route.query)
         query.year_filter = val
+        query.page = 1
         router.push({query: query})
         year.value = val
+        page.value = 1
+        nextTick()
     }
 
     const onSelectGenres = function(val) {
@@ -41,14 +48,16 @@
         if (val.length) {
             query.filter_genre = val.join(',')
             query.query_type_genre = 'or'
+            query.page = 1
         } else {
             query.filter_genre = undefined
             query.query_type_genre = undefined
+            query.page = 1
         }
 
         router.push({query: query})
         genres.value = val
-        refresh()
+        page.value = 1
     }
 
     const onSelectPage = function(val) {
@@ -127,7 +136,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" :currentPage="page"
+                        <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" :currentPage="page"
                             :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
                     </div>

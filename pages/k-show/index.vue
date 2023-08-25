@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <Pagination v-if="data" base="/k-show" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
+                            <Pagination v-if="data && data.total > data.perPage" base="/k-show" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                         </div><!-- /.content-area -->
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                             <TvshowsPopularContents v-if="data" title="주간 예능 인기컨텐츠" :data="data.data.topWeeks" />

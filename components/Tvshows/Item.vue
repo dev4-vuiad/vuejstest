@@ -26,17 +26,25 @@
 
     const toTimeAgo = (d) => {
         const now = new Date()
-        d = new Date(d.replace(' ', 'T') + '.000Z')
-        let disTs = Math.floor((now.valueOf() - d.valueOf()) / 1000)
+        let date = new Date(d.replace(' ', 'T') + '.000Z')
+        let disTs = Math.floor((now.valueOf() - date.valueOf()) / 1000)
         if (disTs > 48 * 3600) {
-            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+            return d.substr(0,10)
+            // d = new Date(d.valueOf() + 3600 * 9 * 1000)
+            // let month = d.getMonth() + 1;
+            // if (month < 10) {
+            //     month = '0' + month
+            // }
+            // let date = d.getDate();
+            // if (date < 10) {
+            //     date = '0' + mondateth
+            // }
+            // return d.getFullYear() + '-' + month + '-' + date
         } else if (disTs < 24 * 3600) {
             let hours = Math.floor(disTs / 3600)
             return hours + ' 시간 전'
-        } 
-        else {
-            let hours = Math.floor(disTs / 3600)
-            return hours + '1일 전'
+        } else {
+            return '1일 전'
         }
     }
 </script>

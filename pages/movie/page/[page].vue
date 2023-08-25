@@ -112,7 +112,7 @@
                                     </div>
                             </div>
                         </div>
-                        <Pagination v-if="data" :total="data.total" :perPage="data.perPage" :currentPage="page" 
+                        <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" :currentPage="page" 
                             :year="year" :genres="genres" :orderBy="orderBy"
                         />
                     </div><!-- /.content-area -->

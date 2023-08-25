@@ -94,7 +94,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <Pagination v-if="data" :total="data.total" :perPage="data.perPage" currentPage="1" :orderBy="orderBy" base="/search" :s="s" />
+                                <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" currentPage="1" :orderBy="orderBy" base="/search" :s="s" />
                             </main>
                         </div>
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"

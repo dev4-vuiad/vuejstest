@@ -23,6 +23,30 @@
     const selectType = (val) => {
         type.value = val
     }
+
+    const toTimeAgo = (d) => {
+        const now = new Date()
+        let date = new Date(d.replace(' ', 'T') + '.000Z')
+        let disTs = Math.floor((now.valueOf() - date.valueOf()) / 1000)
+        if (disTs > 48 * 3600) {
+            return d.substr(0,10)
+            // d = new Date(d.valueOf() + 3600 * 9 * 1000)
+            // let month = d.getMonth() + 1;
+            // if (month < 10) {
+            //     month = '0' + month
+            // }
+            // let date = d.getDate();
+            // if (date < 10) {
+            //     date = '0' + mondateth
+            // }
+            // return d.getFullYear() + '-' + month + '-' + date
+        } else if (disTs < 24 * 3600) {
+            let hours = Math.floor(disTs / 3600)
+            return hours + ' 시간 전'
+        } else {
+            return '1일 전'
+        }
+    }
 </script>
 
 <template>
@@ -56,16 +80,14 @@
                         <div class="tv-show__body">
                             <div class="tv-show__info">
                                 <div class="tv-show__info--head">
-                                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">2
-                                            분 전</span></div>
+                                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">{{ toTimeAgo(item.postDateGmt) }}</span></div>
                                     <div class="original-title-tvshow">
-                                        Hard Cell
+                                        {{ item.originalTitle }}
                                     </div>
                                     <NuxtLink :to="'/' + item.link"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                            style="display:none" class="span_sea_ep_title">6화</span>
-                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">
-                                            하드 셀</h3>
+                                            style="display:none" class="span_sea_ep_title">{{ item.episodeNumber }}화</span>
+                                        <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                 </div>
                             </div>
