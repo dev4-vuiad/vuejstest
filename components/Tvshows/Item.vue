@@ -3,7 +3,8 @@
 
     import { onBeforeUpdate } from 'vue';
 
-    const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'chanelImage'])
+    const props = defineProps(['id', 'postDateGmt', 'title', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'chanelImage'])
+    let id = props.id
     let postDateGmt = props.postDateGmt
     let title = props.title
     let episodeNumber = props.episodeNumber
@@ -13,6 +14,7 @@
     let chanelImage = props.chanelImage
 
     onBeforeUpdate(() => {
+        id = props.id
         postDateGmt = props.postDateGmt
         title = props.title
         episodeNumber = props.episodeNumber
@@ -41,7 +43,7 @@
 
 <template>
     <div
-        class="tv-show post-203100 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-234">
+        :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-234'">
         <div class="tv-show__poster">
             <div class="box-tv-channel">
                 <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31">

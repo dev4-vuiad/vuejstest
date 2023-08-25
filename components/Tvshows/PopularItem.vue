@@ -1,6 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
-    const props = defineProps(['link', 'postDateGmt', 'title', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const props = defineProps(['id', 'link', 'postDateGmt', 'title', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    let id = props.id
     let postDateGmt = props.postDateGmt
     let title = props.title
     let src = props.src
@@ -35,7 +36,7 @@
 </script>
 
 <template>
-    <div class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
+    <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126'">
         <div class="tv-show__poster">
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel">
