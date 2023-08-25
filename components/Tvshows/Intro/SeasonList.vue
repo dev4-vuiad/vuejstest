@@ -15,7 +15,7 @@
                 <ul class="nav" pos="0" v-if="data">
                     <li v-for="(season, index) in data" :index="index" class="nav-item">
                         <a href="#" data-toggle="tab" :class="'nav-link' + (currentSeason == index ? ' active show' : '')" @click.prevent="currentSeason = index">
-                            <h3 class="season-title">시즌 {{ season.number }}</h3>
+                            <h3 class="season-title">{{ season.name }}</h3>
                             <span v-if="season.episodes" class="episodes-count">{{ season.episodes.length }}</span>
                         </a>
                     </li>
@@ -23,7 +23,7 @@
                 <div class="tab-content">
                     <div v-for="(season, index) in data" :key="index" :class="'tab-pane' + (currentSeason == index ? ' active show' : '')">
                         <h3 class="vodi-single-episode__sidebar--seasons-episode__seson-title">
-                            Episodes of 시즌 {{ season.number }}
+                            Episodes of {{ season.name }}
                         </h3>
                         <div class="masvideos masvideos-episodes ">
                             <div class="episodes columns-6">
