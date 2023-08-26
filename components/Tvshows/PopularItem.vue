@@ -1,9 +1,10 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
-    const props = defineProps(['id', 'link', 'postDateGmt', 'title', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const props = defineProps(['id', 'link', 'postDateGmt', 'title', 'tvshowTitle', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
     let id = props.id
     let postDateGmt = props.postDateGmt
     let title = props.title
+    let tvshowTitle = props.tvshowTitle
     let src = props.src
     let episodeNumber = props.episodeNumber
     let seasonNumber = props.seasonNumber
@@ -12,6 +13,7 @@
     onBeforeUpdate(() => {
         postDateGmt = props.postDateGmt
         title = props.title
+        tvshowTitle = props.tvshowTitle
         src = props.src
         episodeNumber = props.episodeNumber
         seasonNumber = props.seasonNumber

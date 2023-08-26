@@ -1,7 +1,8 @@
 <script setup>
-    const props = defineProps(['data', 'title'])
+    const props = defineProps(['data', 'title', 'tvshowTitle'])
     const data = props.data
     const title = props.title
+    const tvshowTitle = props.tvshowTitle
 </script>
 
 <template>
@@ -22,7 +23,7 @@
                                 <span class="tv-show__meta--genre">
                                     <template v-for="(genre, idx) in item.genres">
                                         <span v-if="idx > 0">, </span>
-                                        <NuxtLink :to="'/tv-show-genre/' + item.title" rel="tag" v-html="genre.name"></NuxtLink>
+                                        <NuxtLink :to="'/tv-show-genre/' + genre.name" rel="tag" v-html="genre.name"></NuxtLink>
                                     </template>
                                 </span>
                             </div>

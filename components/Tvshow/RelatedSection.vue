@@ -44,7 +44,7 @@
                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"
                                                                 tabindex="-1"><span class="span_sea_ep_title"
                                                                     style="display: none;">시즌 2 - 16화</span>
-                                                                <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.title }}</h3>
+                                                                <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.tvshowTitle }}</h3>
                                                             </a>
                                                         </div>
                                                     </div>

@@ -1,8 +1,9 @@
 <script setup>
     import { ref, onBeforeUpdate } from 'vue'
-    const props = defineProps(['data', 'title'])
+    const props = defineProps(['data', 'title', 'tvshowTitle'])
     let data = props.data
     let title = props.title
+    let tvshowTitle = props.tvshowTitle
 
     const type = ref('tv-show')
     const { data: loadItems } = await useAsyncData(
@@ -60,7 +61,7 @@
             <div class="tv-shows columns-7">
                 <div class="tv-shows__inner">
                     <header class="home-section__header">
-                        <h2 class="home-section__title">{{ title }}</h2>
+                        <h2 class="home-section__title">{{ tvshowTitle }}</h2>
                         <div class="home-section__action"><NuxtLink to="/tv-shows"
                                 class="tv-show-box home-section__action-link">전체보기</NuxtLink>
                         </div>
