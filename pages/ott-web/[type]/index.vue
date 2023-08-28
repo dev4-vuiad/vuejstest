@@ -68,6 +68,7 @@
                                     <div class="tv-shows columns-5">
                                         <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
                                             <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx" 
+                                            :id="item.id"
                                             :link="item.link"
                                             :year="item.year"
                                             :title="item.title"
@@ -115,6 +116,7 @@
                                 <div class="tv-shows columns-6">
                                     <div class="tv-shows__inner">
                                         <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" 
+                                            :id="item.id"
                                             :year="item.year" 
                                             :title="item.title" 
                                             :tvshowTitle="item.tvshowTitle"
