@@ -24,13 +24,13 @@
                                                     <div class="box-tv-channel">
                                                         <img class="tv-channel"
                                                             :src="item.chanelImage"
-                                                            alt="" width="68" height="31"></div><a
-                                                        :href="item.link"
+                                                            alt="" width="68" height="31"></div><NuxtLink
+                                                        :to="'/' + item.link"
                                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"
                                                         tabindex="-1"><img width="220" height="314"
                                                             :src="item.src"
                                                             class="tv-show__poster--image tv_show__poster--image" alt=""
-                                                            decoding="async" loading="lazy"></a>
+                                                            decoding="async" loading="lazy"></NuxtLink>
                                                 </div>
                                                 <div class="tv-show__body">
                                                     <div class="tv-show__info">
@@ -39,13 +39,12 @@
                                                                     class="tv-show__meta--release-year">{{ item.year }}</span>
                                                             </div>
                                                             <div class="original-title-tvshow"> {{ item.originalTitle }} </div>
-                                                            <a
-                                                                :href="item.link"
+                                                            <NuxtLink :to="'/' + item.link"
                                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"
                                                                 tabindex="-1"><span class="span_sea_ep_title"
                                                                     style="display: none;">시즌 2 - 16화</span>
                                                                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.tvshowTitle }}</h3>
-                                                            </a>
+                                                            </NuxtLink>
                                                         </div>
                                                     </div>
                                                 </div>
