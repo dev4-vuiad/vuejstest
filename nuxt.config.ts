@@ -30,6 +30,17 @@ export default defineNuxtConfig({
         },
         {
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/embla-carousel.umd.js?ver=1692290764"
+        },
+        {
+          src: "_nuxt/assets/js/ads.js"
+        },
+        {
+          src: "_nuxt/assets/js/header_ads.js",
+          async: true
+        },
+        {
+          src: "_nuxt/assets/js/footer_ads.js",
+          body: true
         }
       ]
     }
