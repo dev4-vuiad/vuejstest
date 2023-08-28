@@ -38,7 +38,6 @@
                                 class="tv-show post-203734 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-k-drama tv_show_genre-214">
                                 <TvshowInfo v-if="data"
                                     :title="data.title"
-                                    :tvshowTitle="item.tvshowTitle"
                                     :originalTitle="data.originalTitle"
                                     :src="data.src"
                                     :description="data.description"
