@@ -1,9 +1,8 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
-    const props = defineProps(['id', 'link', 'postDateGmt', 'title', 'tvshowTitle', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const props = defineProps(['id', 'link', 'postDateGmt', 'tvshowTitle', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
     let id = props.id
     let postDateGmt = props.postDateGmt
-    let title = props.title
     let tvshowTitle = props.tvshowTitle
     let src = props.src
     let episodeNumber = props.episodeNumber
@@ -62,7 +61,7 @@
             <span class="tv-show__meta--release-year">{{ toTimeAgo(postDateGmt) }}</span>
             <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <span style="display:none;" class="span_sea_ep_title">{{ (seasonNumber > 1 ? '시즌 ' + seasonNumber + ' - ' : '') + episodeNumber }}화</span>
-                <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ title }}</h3>
+                <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ tvshowTitle }}</h3>
             </NuxtLink>
         </div>
     </div>
