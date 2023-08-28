@@ -84,7 +84,7 @@
 </script>
 
 <template>
-    <body class="home page-template-default page page-id-7782 wp-custom-logo wp-embed-responsive masvideos-js  full-width">
+    <body :class="'home page-template-default page page-id-7782 wp-custom-logo wp-embed-responsive masvideos-js full-width'">
         <div id="page" class="hfeed site">
             <Header />
             <HeaderHandHeld />

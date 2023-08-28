@@ -61,7 +61,7 @@
             <div class="tv-shows columns-7">
                 <div class="tv-shows__inner">
                     <header class="home-section__header">
-                        <h2 class="home-section__title">{{ tvshowTitle }}</h2>
+                        <h2 class="home-section__title">{{ title }}</h2>
                         <div class="home-section__action"><NuxtLink to="/tv-shows"
                                 class="tv-show-box home-section__action-link">전체보기</NuxtLink>
                         </div>
