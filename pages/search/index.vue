@@ -90,6 +90,7 @@
                                                 :src="item.src"
                                                 :episodeNumber="item.episodeNumber"
                                                 :link="item.link"
+                                                :postType="item.postType"
                                             />
                                         </div>
                                     </div>

@@ -17,7 +17,7 @@
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.year }}</span>
                             <NuxtLink :to="'/' + type + '/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                                <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title }}</h3>
+                                <h3 class="masvideos-loop-movie__title  movie__title">{{ item.tvshowTitle }}</h3>
                             </NuxtLink>
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">

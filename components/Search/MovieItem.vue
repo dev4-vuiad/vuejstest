@@ -1,6 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'; 
-    const props = defineProps(['title', 'originalTitle', 'src', 'episodeNumber', 'link'])
+    const props = defineProps(['title', 'originalTitle', 'src', 'episodeNumber', 'link', 'postType'])
+    let postType = props.postType
     let title = props.title
     let originalTitle = props.originalTitle
     let src = props.src
@@ -17,7 +18,7 @@
 </script>
 
 <template>
-    <div v-if="episodeNumber" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry ">  
+    <div v-if="postType == 'tv_show'" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry ">  
         <div class="tv-show__badge">
             <span class="tv-show__badge--featured">
                 Featured
