@@ -5,40 +5,27 @@
     const props = defineProps(['base', 'total', 'currentPage', 'perPage', 'year', 'genres', 'orderBy', 's'])
     const base = (props.base || '/movie') + '/page'
     const perPage = props.perPage * 1
-    const totalPages = Math.ceil(props.total / perPage);
+    let total = props.total * 1
     let currentPage = props.currentPage * 1
-    const start = (currentPage - 1) * perPage + 1
-    const end = start + perPage - 1
-    let pages = [
-        1, 
-        2,
-        currentPage - 2,
-        currentPage - 1,
-        currentPage - 2,
-        currentPage - 1,
-        currentPage,
-        currentPage + 1,
-        currentPage + 2,
-        totalPages - 2,
-        totalPages - 1,
-        totalPages
-    ].filter(p => p > 0 && p <= totalPages && ((p >= currentPage - 2 && p <= currentPage + 2) || p <= 2 || p >= totalPages - 2))
-    pages = [...new Set(pages)]
-
-    const url = new URL('http://localhost');
-    if (props.year) {
-        url.searchParams.set('year_filter', props.year)
-    }
-    if (props.genres) {
-        url.searchParams.set('genres', props.genres)
-    }
-    if (props.orderBy) {
-        url.searchParams.set('orderBy', props.orderBy)
-    }
-    if (props.s) {
-        url.searchParams.set('s', props.s)
-    }
-    const query = '?' + url.searchParams.toString();
+    let { pages, start, end, totalPages } = calPages(props.total, currentPage)
+    // let totalPages = Math.ceil(props.total / perPage);
+    // let start = (currentPage - 1) * perPage + 1
+    // let end = start + perPage - 1
+    // let pages = [
+    //     1, 
+    //     2,
+    //     currentPage - 2,
+    //     currentPage - 1,
+    //     currentPage - 2,
+    //     currentPage - 1,
+    //     currentPage,
+    //     currentPage + 1,
+    //     currentPage + 2,
+    //     totalPages - 2,
+    //     totalPages - 1,
+    //     totalPages
+    // ].filter(p => p > 0 && p <= totalPages && ((p >= currentPage - 2 && p <= currentPage + 2) || p <= 2 || p >= totalPages - 2))
+    // pages = [...new Set(pages)]
 
     const selectPage = (val) => {
         currentPage = val
@@ -46,8 +33,43 @@
     }
 
     onBeforeUpdate(() => {
+        total = props.total * 1
         currentPage = props.currentPage * 1
+        let cal = calPages(total, currentPage)
+        pages = cal.pages
+        start = cal.start
+        end = cal.end
+        totalPages = cal.totalPages
     })
+
+    function calPages(total, currentPage) {
+        console.log(total, currentPage)
+        let totalPages = Math.ceil(total / perPage);
+        let start = (currentPage - 1) * perPage + 1
+        let end = start + perPage - 1
+        let pages = [
+            1, 
+            2,
+            currentPage - 2,
+            currentPage - 1,
+            currentPage - 2,
+            currentPage - 1,
+            currentPage,
+            currentPage + 1,
+            currentPage + 2,
+            totalPages - 2,
+            totalPages - 1,
+            totalPages
+        ].filter(p => p > 0 && p <= totalPages && ((p >= currentPage - 2 && p <= currentPage + 2) || p <= 2 || p >= totalPages - 2))
+        pages = [...new Set(pages)]
+
+        return {
+            pages: pages,
+            start: start,
+            end: end,
+            totalPages: totalPages
+        }
+    }
 </script>
 <template>
     <div class="page-control-bar-bottom">
@@ -56,7 +78,7 @@
         <nav class="masvideos-pagination masvideos-tv-shows-pagination">
             <ul class="page-numbers">
                 <li v-if="currentPage - 1 >= 1">
-                    <a class="prev page-numbers" :href="base + '/' + (currentPage -1) + query" @click.prevent="selectPage(currentPage -1)">←&nbsp;&nbsp;&nbsp; 이전 페이지</a>
+                    <NuxtLink class="prev page-numbers" to="#" @click.prevent="selectPage(currentPage -1)">←&nbsp;&nbsp;&nbsp; 이전 페이지</NuxtLink>
                 </li>
                 <template v-for="(page, index) in pages" :key="index">
                     <li v-if="page > 2 && page < totalPages && page > pages[index - 1] + 1">
@@ -68,7 +90,7 @@
                     </li>
                 </template>
                 <li v-if="currentPage + 1 <= totalPages">
-                    <a class="next page-numbers" :href="base + '/' + (currentPage + 1) + query" @click.prevent="selectPage(currentPage + 1)">다음 페이지 &nbsp;&nbsp;&nbsp;→</a>
+                    <NuxtLink class="next page-numbers" to="#" @click.prevent="selectPage(currentPage + 1)">다음 페이지 &nbsp;&nbsp;&nbsp;→</NuxtLink>
                 </li>
             </ul>
         </nav>
