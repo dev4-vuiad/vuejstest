@@ -43,7 +43,6 @@
     })
 
     function calPages(total, currentPage) {
-        console.log(total, currentPage)
         let totalPages = Math.ceil(total / perPage);
         let start = (currentPage - 1) * perPage + 1
         let end = start + perPage - 1
