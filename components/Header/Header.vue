@@ -38,6 +38,19 @@
         $(document).on("click", function(e) {
             $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
         })
+
+        // Bottom slider
+        let slider = $('#section-movies-carousel-aside-header-64d3194c4e219').find('.slick-track').slick({
+            slidesToShow: 6,
+            slidesToScroll: 2,
+            infinite: false
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-next').on('click', function() {
+            slider.slick('slickNext')
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
+            slider.slick('slickPrev')
+        })
     })
 </script>
 <template>

@@ -32,16 +32,19 @@ export default defineNuxtConfig({
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/embla-carousel.umd.js?ver=1692290764"
         },
         {
-          src: "_nuxt/assets/js/ads.js"
-        },
-        {
-          src: "_nuxt/assets/js/header_ads.js",
-          async: true
-        },
-        {
-          src: "_nuxt/assets/js/footer_ads.js",
-          body: true
+          src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
         }
+        // {
+        //   src: "_nuxt/assets/js/ads.js"
+        // },
+        // {
+        //   src: "_nuxt/assets/js/header_ads.js",
+        //   async: true
+        // },
+        // {
+        //   src: "_nuxt/assets/js/footer_ads.js",
+        //   body: true
+        // }
       ]
     }
   }
