@@ -3,6 +3,12 @@
     const s = route.query.s
     let orderBy = route.query.orderBy || 'date'
 
+    useHead({
+        bodyAttrs: {
+            class: 'search search-no-results wp-custom-logo wp-embed-responsive masvideos-js any-search-results sidebar-right dark sidebar-left template-search-custom-page'
+        }
+    });
+
     const { data } = await useFetch('https://backendnew.takitv.net/api/search', {
         query: {
             title:s,
@@ -20,8 +26,6 @@
 </script>
 
 <template>
-    <body
-        class="search search-no-results wp-custom-logo wp-embed-responsive masvideos-js any-search-results sidebar-right dark sidebar-left template-search-custom-page">
         <div id="page" class="hfeed site">
             <Header />
             <HeaderHandHeld />
@@ -333,4 +337,4 @@
         <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
             style="display: none;"></ul>
     <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body></template>
+</template>

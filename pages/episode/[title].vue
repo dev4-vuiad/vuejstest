@@ -2,6 +2,12 @@
     const route = useRoute()
     const title = ref(route.params.title)
 
+    useHead({
+        bodyAttrs: {
+            class: 'episode-template-default single single-episode postid-202016 wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-single masvideos-js single-episode-v3 full-width dark'
+        }
+    });
+
     const { data, refresh }  = await useAsyncData(
         () => $fetch('https://backendnew.takitv.net/api/episode/' + title.value),
         {
@@ -52,8 +58,6 @@
 </script>
 
 <template>
-    <body
-        class="episode-template-default single single-episode postid-202016 wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-single masvideos-js single-episode-v3 full-width dark ">
         <div id="page" class="hfeed site">
             <Header />
             <HeaderHandHeld />
@@ -207,4 +211,4 @@
     <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
         style="display: none;"></ul>
     <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body></template>
+</template>

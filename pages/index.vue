@@ -1,6 +1,12 @@
 <script setup>
     import { onMounted } from 'vue'
 
+    useHead({
+        bodyAttrs: {
+            class: 'home page-template-default page wp-custom-logo wp-embed-responsive masvideos-js full-width'
+        }
+    });
+
     let { data } = await useFetch('https://backendnew.takitv.net/api/homepage')
 
     onMounted(() => {
@@ -84,85 +90,84 @@
 </script>
 
 <template>
-    <body class="home page-template-default page page-id-7782 wp-custom-logo wp-embed-responsive masvideos-js full-width">
-        <div id="page" class="hfeed site">
-            <Header />
-            <HeaderHandHeld />
-            <div id="content" class="site-content " tabindex="-1">
-                <div class="container">
-                    <div class="site-content__inner">
-                        <div id="primary" class="content-area">
-                            <main id="main" class="site-main" role="main">
-                                <article id="post-7782" class="post-7782 page type-page status-publish hentry">
-                                    <div class="page__content">
-                                        <section id="section-home-slider-custom-64d31949b2fcb"
-                                            class="home-section more-dark">
-                                            <div class="container">
-                                                <header class="home-section__header">
-                                                    <h2 class="home-section__title slider-title">추천 컨텐츠</h2>
-                                                    <div class="home-section__action"></div>
-                                                </header>
-                                            </div>
-                                            <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
-                                        </section>
-                                        <section class="home-section  ads-top"
-                                            style="background-color:#2E3037;padding-top: 10px; padding-bottom: 10px;text-align: center;">
-                                            <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div>
-                                        </section>
-                                        <section id="section-home-slider-custom-ott-64d31949c9733"
-                                            class="home-section home-slider-custom-ott">
-                                            <div class="bg_opacity"></div>
-                                            <HomeOot v-if="data && data.otts" 
-                                                :channels="data.otts.ottChanels"
-                                                :title="data.otts.ottTitle"
-                                                :sliders="data.otts.ottSliders"
-                                            />
-                                        </section>
-                                        <section
-                                            class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
-                                            <div class="container">
-                                                <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
-                                            </div>
-                                        </section>
+    <div id="page" class="hfeed site">
+        <Header />
+        <HeaderHandHeld />
+        <div id="content" class="site-content " tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main" role="main">
+                            <article id="post-7782" class="post-7782 page type-page status-publish hentry">
+                                <div class="page__content">
+                                    <section id="section-home-slider-custom-64d31949b2fcb"
+                                        class="home-section more-dark">
+                                        <div class="container">
+                                            <header class="home-section__header">
+                                                <h2 class="home-section__title slider-title">추천 컨텐츠</h2>
+                                                <div class="home-section__action"></div>
+                                            </header>
+                                        </div>
+                                        <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
+                                    </section>
+                                    <section class="home-section  ads-top"
+                                        style="background-color:#2E3037;padding-top: 10px; padding-bottom: 10px;text-align: center;">
+                                        <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div>
+                                    </section>
+                                    <section id="section-home-slider-custom-ott-64d31949c9733"
+                                        class="home-section home-slider-custom-ott">
+                                        <div class="bg_opacity"></div>
+                                        <HomeOot v-if="data && data.otts" 
+                                            :channels="data.otts.ottChanels"
+                                            :title="data.otts.ottTitle"
+                                            :sliders="data.otts.ottSliders"
+                                        />
+                                    </section>
                                     <section
-                                        class="home-section home-movie-section-aside-header has-bg-color dark more-dark"
-                                        style="padding-bottom: 13px; padding-top: 35px; ">
+                                        class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                         <div class="container">
-                                            <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
+                                            <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
                                         </div>
                                     </section>
-                                    <section class="home-section home-ads-bt-feature ads-bottom"
-                                        style="background-color:#1B212D;padding: 25px 0px;text-align: center;">
-                                    </section>
-                                    <section id="section-movies-carousel-aside-header-64d3194c4e219"
-                                        class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right"
-                                        style="padding-bottom: 11px; ">
-                                        <div class="container">
-                                            <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
+                                <section
+                                    class="home-section home-movie-section-aside-header has-bg-color dark more-dark"
+                                    style="padding-bottom: 13px; padding-top: 35px; ">
+                                    <div class="container">
+                                        <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
+                                    </div>
+                                </section>
+                                <section class="home-section home-ads-bt-feature ads-bottom"
+                                    style="background-color:#1B212D;padding: 25px 0px;text-align: center;">
+                                </section>
+                                <section id="section-movies-carousel-aside-header-64d3194c4e219"
+                                    class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right"
+                                    style="padding-bottom: 11px; ">
+                                    <div class="container">
+                                        <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
+                                    </div>
+                                </section>
+                                <section id="section-movies-list-64d3194c644bd"
+                                    class="home-section section-movies-list">
+                                    <div class="container">
+                                        <div class="section-movies-list__inner">
+                                            <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
+                                            <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
                                         </div>
-                                    </section>
-                                    <section id="section-movies-list-64d3194c644bd"
-                                        class="home-section section-movies-list">
-                                        <div class="container">
-                                            <div class="section-movies-list__inner">
-                                                <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
-                                                <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <!-- add ads  home-section home-ads-bt-feature1 ads-footer Kiosked -->
-                                    <section class="home-section home-ads-bt-feature ads-footer"
-                                        style="background-color:#2E3037;padding: 10px 0px;text-align: center;min-height: 135px">
-                                        <!-- <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div> -->
-                                    </section>
-                                    <p></p>
-                                </div><!-- .entry-content -->
-                            </article><!-- #post-## -->
-                        </main><!-- #main -->
-                    </div><!-- #primary -->
-                </div><!-- /.site-content-inner -->
-            </div><!-- /.container -->
-        </div><!-- #content -->
+                                    </div>
+                                </section>
+                                <!-- add ads  home-section home-ads-bt-feature1 ads-footer Kiosked -->
+                                <section class="home-section home-ads-bt-feature ads-footer"
+                                    style="background-color:#2E3037;padding: 10px 0px;text-align: center;min-height: 135px">
+                                    <!-- <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div> -->
+                                </section>
+                                <p></p>
+                            </div><!-- .entry-content -->
+                        </article><!-- #post-## -->
+                    </main><!-- #main -->
+                </div><!-- #primary -->
+            </div><!-- /.site-content-inner -->
+        </div><!-- /.container -->
+    </div><!-- #content -->
         <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
             <div class="container">
                 <div class="footer-v4-bar">
@@ -223,4 +228,4 @@
             </div><!-- /.container -->
         </footer>
     </div>
-</body></template>
+</template>

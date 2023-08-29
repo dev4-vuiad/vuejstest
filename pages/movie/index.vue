@@ -1,7 +1,12 @@
 <script setup>
-    import { nextTick } from 'vue';
     const route = useRoute();
     const router = useRouter();
+
+    useHead({
+        bodyAttrs: {
+            class: 'archive post-type-archive post-type-archive-movie wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark'
+        }
+    });
     
     const genres = ref((route.query.filter_genre || '').split(',').filter(v => v.length))
     const year = ref(route.query.year_filter || '')
@@ -69,7 +74,6 @@
 </script>
 
 <template>
-    <body class="archive post-type-archive post-type-archive-movie wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark">
         <div id="page" class="hfeed site">
             <Header />
             <HeaderHandHeld />
@@ -291,4 +295,4 @@
     <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
         style="display: none;"></ul>
     <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body></template>
+</template>
