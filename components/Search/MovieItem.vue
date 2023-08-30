@@ -1,17 +1,20 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'; 
-    const props = defineProps(['title', 'originalTitle', 'src', 'episodeNumber', 'link', 'postType'])
+    const props = defineProps(['title', 'originalTitle', 'src', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
     let postType = props.postType
     let title = props.title
     let originalTitle = props.originalTitle
     let src = props.src
+    let seasonNumber = props.seasonNumber
     let episodeNumber = props.episodeNumber
     let link = props.link
 
     onBeforeUpdate(() => {
+        postType = props.postType
         title = props.title
         originalTitle = props.originalTitle
         src = props.src
+        seasonNumber = props.seasonNumber
         episodeNumber = props.episodeNumber
         link = props.link
     })
@@ -27,7 +30,7 @@
         <div class="tv-show__poster box-phim">
                 <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                     <img :src="src" class="tv-show__poster--image tv_show__poster--image">		                                                     
-                <span style="display:none" class="span_sea_ep_title box-ep">{{ episodeNumber }}화</span></NuxtLink>
+                <span style="display:none" class="span_sea_ep_title box-ep">{{ seasonNumber + ' - ' + episodeNumber }} 화</span></NuxtLink>
                 <div class="box-tv_show">예능</div>
         </div>
         <div class="tv-show__body">

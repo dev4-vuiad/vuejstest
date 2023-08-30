@@ -1,7 +1,10 @@
 <script setup>
+    import { nextTick, ref } from 'vue'
     const route = useRoute();
+    const router = useRouter();
     const s = route.query.s
-    let orderBy = route.query.orderBy || 'date'
+    const orderBy = ref(route.query.orderBy || 'date')
+    const page = ref(route.query.page || 1)
 
     useHead({
         bodyAttrs: {
@@ -9,19 +12,35 @@
         }
     });
 
-    const { data } = await useFetch('https://backendnew.takitv.net/api/search', {
-        query: {
-            title:s,
-            orderBy: orderBy
+    const { data }  = await useAsyncData(
+        () => $fetch('https://backendnew.takitv.net/api/search', {
+            params: {
+                title: s,
+                orderBy: orderBy.value || undefined,
+                page: page.value
+            }
+        }),
+        {
+            watch: [orderBy, page]
         }
-    })
+    )
 
     const onChangeOrderBy = (event) => {
         let val = event.target.value
-        const url = new URL(window.location.href);
-        url.searchParams.set('orderBy', val);
-        url.pathname = '/search'
-        window.location.href = url.toString()
+        let query = Object.assign({}, route.query)
+        query.orderBy = val
+        query.page = 1
+        router.push({query: query})
+        orderBy.value = val
+        page.value = 1
+        nextTick()
+    }
+
+    const onSelectPage = function(val) {
+        let query = Object.assign({}, route.query)
+        query.page = val
+        router.push({query: query})
+        page.value = val
     }
 </script>
 
@@ -72,7 +91,7 @@
                                             </svg>
 
                                             <form method="get">
-                                                <select name="orderby" class="orderby" @change="onChangeOrderBy">
+                                                <select class="orderby" @change="onChangeOrderBy">
                                                     <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
                                                     <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                                     <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
@@ -92,6 +111,7 @@
                                                 :title="item.title" 
                                                 :originalTitle="item.originalTitle" 
                                                 :src="item.src"
+                                                :seasonNumber="item.seasonNumber"
                                                 :episodeNumber="item.episodeNumber"
                                                 :link="item.link"
                                                 :postType="item.postType"
@@ -99,13 +119,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" currentPage="1" :orderBy="orderBy" base="/search" :s="s" />
+                                <Pagination v-if="data && data.total > data.perPage" 
+                                    :total="data.total" 
+                                    :perPage="data.perPage" 
+                                    :currentPage="page" 
+                                    :orderBy="orderBy"
+                                    @on-select-page="onSelectPage"
+                                />
                             </main>
                         </div>
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                             role="complementary">
                             <div class="widget-area-inner">
-                                <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
+                                <SearchTopWeek title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
                                     :data="data.data.topWeeks" type="tv-show" base="tv-show-genre" />
                             </div>
                         </div>
