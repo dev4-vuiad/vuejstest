@@ -41,7 +41,7 @@
             let hours = Math.floor(disTs / 3600)
             return hours + '시간 전'
         } else if (disTs < 3600 && disTs >= 60) {
-            let minutes = Math.ceil(disTs / 60)
+            let minutes = Math.floor(disTs / 60)
             return minutes + '분 전'
         } else {
             return disTs + '초 전'

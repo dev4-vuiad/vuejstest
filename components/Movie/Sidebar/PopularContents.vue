@@ -6,6 +6,15 @@
     const type = props.type || 'movie'
 </script>
 
+<style scoped>
+    .movie__body a {
+        color: #949cb0;
+    }
+    .movie__body a:hover, .movie__body a:hover h3{
+        color: #0f9ed1
+    }
+</style>
+
 <template>
     <div id="masvideos_movies_widget-2" class="widget masvideos masvideos_movies_widget masvideos-movies-widget">
         <div class="widget-header"><span class="widget-title">{{ title }}</span></div>
@@ -22,7 +31,7 @@
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <NuxtLink :to="'/' + base + '/' + genre.link" rel="tag">{{ genre.name }}</NuxtLink>
+                                    <NuxtLink :to="'/' + base + '/' + genre.link" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                 </template>
                             </span>
                         </div>

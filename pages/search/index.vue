@@ -105,10 +105,6 @@
                         <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                             role="complementary">
                             <div class="widget-area-inner">
-                                <div id="text-3" class="widget widget_text">
-                                    <div class="textwidget">
-                                    </div>
-                                </div>
                                 <MovieSidebarPopularContents title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
                                     :data="data.data.topWeeks" type="tv-show" base="tv-show-genre" />
                             </div>
