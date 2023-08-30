@@ -3,6 +3,24 @@
     const props = defineProps(['data'])
     let data = props.data
     let currentSeason = ref(0)
+
+    const toTimeAgo = (d) => {
+        const now = new Date()
+        let date = new Date(d.replace(' ', 'T') + '.000Z')
+        let disTs = Math.ceil((now.valueOf() - date.valueOf()) / 1000)
+        if (disTs >= 48 * 3600) {
+            d = new Date(date.valueOf() + 3600 * 9 * 1000)
+            return d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1).toString().padStart(2, '0') + '-' + d.getUTCDate().toString().padStart(2, '0')
+        } else if (disTs < 24 * 3600 && disTs >= 3600) {
+            let hours = Math.ceil(disTs / 3600)
+            return hours + ' 시간 전'
+        } else if (disTs < 3600 && disTs >= 60) {
+            let minutes = Math.ceil(disTs / 60)
+            return minutes + ' 분 전'
+        } else {
+            return disTs + ' 초 전'
+        }
+    }
 </script>
 
 
@@ -31,7 +49,7 @@
                                     <div v-for="(episode, idx) in season.episodes" :key="idx" class="post-202016 episode type-episode status-publish hentry">
                                         <NuxtLink :to="'/episode/' + episode.title"
                                             class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                                            <span class="masvideos-loop-episode__number episode__number">{{ episode.postDateGmt.substr(0,10) }}</span>
+                                            <span class="masvideos-loop-episode__number episode__number">{{ toTimeAgo(episode.postDateGmt) }}</span>
                                             <h3 class="masvideos-loop-episode__title episode__title">{{ episode.title }}</h3>
                                         </NuxtLink> 
                                         <div class="title-orginal__tvshow_single"></div>
