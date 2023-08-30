@@ -1,8 +1,11 @@
 <script setup>
-    import { ref } from 'vue'
+    import { ref, reactive } from 'vue'
     const props = defineProps(['data'])
-    let data = props.data
+    const data = props.data
     let currentSeason = ref(0)
+    const state = reactive({
+        showIdx: setShowIdx(data)
+    })
 
     const toTimeAgo = (d) => {
         const now = new Date()
@@ -22,6 +25,15 @@
         } else {
             return disTs + '초 전'
         }
+    }
+
+    function setShowIdx(data) {
+        let results = {}
+        for (let k in data) {
+            results[k] = 10
+        }
+
+        return results
     }
 </script>
 
@@ -48,21 +60,23 @@
                         <div class="masvideos masvideos-episodes ">
                             <div class="episodes columns-6">
                                 <div class="episodes__inner">
-                                    <div v-for="(episode, idx) in season.episodes" :key="idx" class="post-202016 episode type-episode status-publish hentry">
-                                        <NuxtLink :to="'/episode/' + episode.title"
-                                            class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                                            <span class="masvideos-loop-episode__number episode__number">{{ toTimeAgo(episode.postDate) }}</span>
-                                            <h3 class="masvideos-loop-episode__title episode__title">{{ episode.title }}</h3>
-                                        </NuxtLink> 
-                                        <div class="title-orginal__tvshow_single"></div>
-                                    </div>
+                                    <template v-for="(episode, idx) in season.episodes" :key="idx">
+                                        <div v-if="idx < state.showIdx[index]" class="episode type-episode status-publish hentry">
+                                            <NuxtLink :to="'/episode/' + episode.title"
+                                                class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                                                <span class="masvideos-loop-episode__number episode__number">{{ toTimeAgo(episode.postDate) }}</span>
+                                                <h3 class="masvideos-loop-episode__title episode__title">{{ episode.title }}</h3>
+                                            </NuxtLink> 
+                                            <div class="title-orginal__tvshow_single"></div>
+                                        </div>
+                                    </template>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <a class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="">더보기</a> -->
+            <a v-if="state.showIdx[currentSeason] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showIdx[currentSeason] += 10">더보기</a>
         </div>
     </div>
 </template>
