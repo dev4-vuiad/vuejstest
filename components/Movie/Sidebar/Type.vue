@@ -24,6 +24,12 @@
 
 </script>
 
+<style scoped>
+    a {
+        text-transform: capitalize;
+    }
+</style>
+
 <template>
     <ul class="masvideos-widget-movies-layered-nav-list">
         <li v-for="(genre, index) in genres" :key="index" :class="'masvideos-widget-movies-layered-nav-list__item masvideos-layered-nav-term ' + (selected.includes(genre) ? 'masvideos-widget-movies-layered-nav-list__item--chosen chosen' : '')">
