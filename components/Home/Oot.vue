@@ -12,6 +12,7 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+        padding-right: 30px;
     }
 
     .ott_home_item img {
