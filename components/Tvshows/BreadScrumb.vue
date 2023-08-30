@@ -7,7 +7,6 @@
 
     onBeforeUpdate(() => {
         page = props.page
-        title = props.title
     })
 </script>
 <template>
