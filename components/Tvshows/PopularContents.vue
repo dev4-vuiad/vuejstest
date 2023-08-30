@@ -2,12 +2,6 @@
     const props = defineProps(['data', 'title'])
     const data = props.data
     const title = props.title
-
-    const toKRTime = (d) => {
-        let date = new Date(d.replace(' ', 'T') + '.000Z')
-        d = new Date(date.valueOf() + 3600 * 9 * 1000)
-        return d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1).toString().padStart(2, '0') + '-' + d.getUTCDate().toString().padStart(2, '0')
-    }
 </script>
 
 <template>
@@ -20,7 +14,7 @@
                         <div v-for="(item, index) in data" :key="index"
                             class="tv-show post-197303 tv_show type-tv_show status-publish has-post-thumbnail hentry category-jtbc category-k-drama tv_show_genre-214 tv_show_genre-213 tv_show_tag-1086">
                             <div class="tv-show__body">
-                                <span class="tv-show__meta--release-year">{{ toKRTime(item.postDateGmt) }}</span>
+                                <span class="tv-show__meta--release-year">{{ item.postDate.substr(0, 10) }}</span>
                                 <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                     <span style="display:none" class="span_sea_ep_title">16화</span>
                                     <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
