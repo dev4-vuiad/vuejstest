@@ -1,8 +1,14 @@
 <script setup>
+    import { onBeforeUpdate } from 'vue';
     const props = defineProps(['base', 'page', 'title'])
     const base = props.base || '/tv-shows'
-    const page = props.page
-    const title = props.title || 'TV Shows'
+    let page = props.page
+    let title = props.title || 'TV Shows'
+
+    onBeforeUpdate(() => {
+        page = props.page
+        title = props.title
+    })
 </script>
 <template>
     <nav class="masvideos-breadcrumb">

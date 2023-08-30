@@ -50,7 +50,7 @@
         <HeaderHandHeld />
         <div id="content" class="site-content " tabindex="-1">
             <div class="container">
-                <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" />
+                <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" :page="page * 1 > 1 ? page : undefined" />
                 <div class="site-content__inner">
                     <div id="primary" class="content-area"> <!-- ads tv-show top -->
                         <div class="ads-achive-tvshow-top" style="text-align: center;">
