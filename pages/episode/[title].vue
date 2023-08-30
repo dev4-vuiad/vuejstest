@@ -78,7 +78,9 @@
                                     </div>
                                     <div class="single-episode__row row">
                                         <div class="single-episode__sidebar column1 single-episode-custom">
-                                            <TvshowsIntroInfo v-if="data && data.id" :postDateGmt="data.postDateGmt"
+                                            <TvshowsIntroInfo v-if="data && data.id"
+                                                :postDate="data.postDate"
+                                                :postDateGmt="data.postDateGmt"
                                                 :title="data.title"
                                                 :originalTitle="data.originalTitle" 
                                                 :genres="data.genres" :src="data.src"

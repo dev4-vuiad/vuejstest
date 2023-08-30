@@ -69,7 +69,8 @@
                                         :title="item.title"
                                         :src="item.src"
                                         :episodeNumber="item.episodeNumber" 
-                                        :seasonNumber="item.seasonNumber" 
+                                        :seasonNumber="item.seasonNumber"
+                                        :postDate="item.postDate" 
                                         :postDateGmt="item.postDateGmt"
                                         :chanelImage="item.chanelImage"
                                     />
@@ -109,7 +110,17 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6">
                                 <div class="tv-shows__inner">
-                                    <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" :year="item.year" :title="item.title" :originalTitle="item.originalTitle" :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt" :src="item.src" :chanelImage="item.chanelImage" />
+                                    <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" 
+                                        :year="item.year" 
+                                        :title="item.title" 
+                                        :originalTitle="item.originalTitle" 
+                                        :episodeNumber="item.episodeNumber" 
+                                        :seasonNumber="item.seasonNumber"
+                                        :postDate="item.postDate" 
+                                        :postDateGmt="item.postDateGmt" 
+                                        :src="item.src" 
+                                        :chanelImage="item.chanelImage" 
+                                    />
                                 </div>
                             </div>
                         </div>

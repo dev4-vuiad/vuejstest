@@ -70,7 +70,10 @@
                                             :title="item.title"
                                             :tvshowTitle="item.tvshowTitle"
                                             :src="item.src"
-                                            :episodeNumber="item.episodeNumber" :seasonNumber="item.seasonNumber" :postDateGmt="item.postDateGmt"
+                                            :episodeNumber="item.episodeNumber" 
+                                            :seasonNumber="item.seasonNumber"
+                                            :postDate="item.postDate"
+                                            :postDateGmt="item.postDateGmt"
                                             :chanelImage="item.chanelImage"
                                         />
                                     </div>
@@ -116,7 +119,8 @@
                                         :tvshowTitle="item.tvshowTitle" 
                                         :originalTitle="item.originalTitle" 
                                         :episodeNumber="item.episodeNumber" 
-                                        :seasonNumber="item.seasonNumber" 
+                                        :seasonNumber="item.seasonNumber"
+                                        :postDate="item.postDate" 
                                         :postDateGmt="item.postDateGmt" 
                                         :src="item.src" 
                                         :chanelImage="item.chanelImage" 

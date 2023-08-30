@@ -1,5 +1,6 @@
 <script setup>
-    const props = defineProps(['postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
+    const props = defineProps(['postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
+    const postDate = props.postDate
     const postDateGmt = props.postDateGmt
     const title = props.title
     const originalTitle = props.originalTitle
@@ -58,7 +59,7 @@
                         </template>
                     </span>
                     <div class="episode__meta">
-                        <span class="episode__meta--release-date">Added: {{ format(postDateGmt) }}</span>
+                        <span class="episode__meta--release-date">Added: {{ format(postDate) }}</span>
                         <div class="vodi-views-likes"></div>
                     </div><a
                         :href="'/tv-show/' + tvshowTitle"
