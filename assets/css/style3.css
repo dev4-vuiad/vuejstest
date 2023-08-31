@@ -23121,9 +23121,6 @@ font-size: 20px !important;
 } .list-episode-show-more{
 display: none;
 }
-.vodi-single-episode__sidebar--seasons-episode .type-episode:nth-child( n + 11 ){
-display: none;
-}
 #feature-cate-page .type-tv_show, #feature-cate-page .type-movie{
 margin-bottom: 0;
 }
