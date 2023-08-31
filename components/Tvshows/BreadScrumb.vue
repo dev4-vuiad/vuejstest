@@ -20,8 +20,8 @@
             </path>
             </svg>
         </span>
-        <NuxtLink v-if="page" :to="base">{{ title }}</NuxtLink>
-        <template v-else>{{ title }}</template>
+        <NuxtLink v-if="page" :to="base"><span v-html="title"></span></NuxtLink>
+        <template v-else><span v-html="title"></span></template>
         <template v-if="page">
             <span class="delimiter">
                 <svg width="4px" height="7px">
