@@ -1,12 +1,13 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
 
-    const props = defineProps(['link', 'year', 'title', 'originalTitle', 'genres', 'src'])
+    const props = defineProps(['link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
     let year = props.year
     let title = props.title
     let originalTitle = props.originalTitle
     let genres = props.genres
     let src = props.src
+    let srcSet = props.srcSet
 
     onBeforeUpdate(() => {
         year = props.year
@@ -14,6 +15,7 @@
         originalTitle = props.originalTitle
         genres = props.genres
         src = props.src
+        srcSet = props.srcSet
     })
 </script>
 
@@ -24,6 +26,7 @@
                 <img
                     width="300" height="450"
                     :src="src"
+                    :srcset="srcSet"
                     class="movie__poster--image" alt="" loading="lazy"
                     sizes="(max-width: 300px) 100vw, 300px">
             </NuxtLink>

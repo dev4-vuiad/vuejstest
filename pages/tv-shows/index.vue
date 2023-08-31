@@ -73,6 +73,7 @@
                                             :title="item.title"
                                             :tvshowTitle="item.tvshowTitle"
                                             :src="item.src"
+                                            :srcSet="item.srcSet"
                                             :episodeNumber="item.episodeNumber" 
                                             :seasonNumber="item.seasonNumber"
                                             :postDate="item.postDate"
@@ -126,6 +127,7 @@
                                         :postDate="item.postDate" 
                                         :postDateGmt="item.postDateGmt" 
                                         :src="item.src" 
+                                        :srcSet="item.srcSet" 
                                         :chanelImage="item.chanelImage" 
                                     />
                                 </div>

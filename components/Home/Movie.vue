@@ -21,6 +21,7 @@
                                 <img width="300"
                                     height="450"
                                     :src="item.src"
+                                    :srcset="item.srcSet"
                                     class="movie__poster--image" alt="" loading="lazy"
                                     sizes="(max-width: 300px) 100vw, 300px">
                             </NuxtLink>

@@ -1,11 +1,12 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
-    const props = defineProps(['id', 'link', 'postDate', 'postDateGmt', 'tvshowTitle', 'src', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const props = defineProps(['id', 'link', 'postDate', 'postDateGmt', 'tvshowTitle', 'src', 'srcSet', 'episodeNumber', 'seasonNumber', 'chanelImage'])
     let id = props.id
     let postDate = props.postDate
     let postDateGmt = props.postDateGmt
     let tvshowTitle = props.tvshowTitle
     let src = props.src
+    let srcSet = props.srcSet
     let episodeNumber = props.episodeNumber
     let seasonNumber = props.seasonNumber
     let chanelImage = props.chanelImage
@@ -16,6 +17,7 @@
         title = props.title
         tvshowTitle = props.tvshowTitle
         src = props.src
+        srcSet = props.srcSet
         episodeNumber = props.episodeNumber
         seasonNumber = props.seasonNumber
         chanelImage = props.chanelImage
@@ -51,6 +53,7 @@
             <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
                 :src="src"
+                :srcset="srcSet"
                 class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
                 sizes="(max-width: 600px) 100vw, 600px">
             </NuxtLink>

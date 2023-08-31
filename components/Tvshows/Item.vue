@@ -3,7 +3,7 @@
 
     import { onBeforeUpdate } from 'vue';
 
-    const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'chanelImage'])
+    const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage'])
     let id = props.id
     let postDate = props.postDate
     let postDateGmt = props.postDateGmt
@@ -13,6 +13,7 @@
     let seasonNumber = props.seasonNumber
     let originalTitle = props.originalTitle
     let src = props.src
+    let srcSet = props.srcSet
     let chanelImage = props.chanelImage
 
     onBeforeUpdate(() => {
@@ -25,6 +26,7 @@
         seasonNumber = props.seasonNumber
         originalTitle = props.originalTitle
         src = props.src
+        srcSet = props.srcSet
         chanelImage = props.chanelImage
     })
 
@@ -57,7 +59,7 @@
                 <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31">
             </div>
             <NuxtLink :to="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                <img width="300" height="450" :src="src" class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy">
+                <img width="300" height="450" :src="src" :srcset="srcSet" class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy">
             </NuxtLink>
         </div>
         <div class="tv-show__body">

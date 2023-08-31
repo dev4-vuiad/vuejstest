@@ -68,7 +68,15 @@
                                 <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                                     <div class="movies columns-6">
                                         <div class="movies__inner">
-                                            <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index" :link="item.link" :year="item.year" :title="item.title" :genres="item.genres" :src="item.src" />
+                                            <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" 
+                                                :key="index" 
+                                                :link="item.link" 
+                                                :year="item.year" 
+                                                :title="item.title" 
+                                                :genres="item.genres" 
+                                                :src="item.src" 
+                                                :srcSet="item.srcSet" 
+                                            />
                                         </div>
                                     </div>
                                 </div>

@@ -116,6 +116,7 @@
                                                 :title="item.title" 
                                                 :originalTitle="item.originalTitle" 
                                                 :src="item.src"
+                                                :srcSet="item.srcSet"
                                                 :seasonNumber="item.seasonNumber"
                                                 :episodeNumber="item.episodeNumber"
                                                 :link="item.link"

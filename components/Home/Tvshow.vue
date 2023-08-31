@@ -71,6 +71,7 @@
                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
                                     width="300" height="450"
                                     :src="item.src"
+                                    :srcset="item.srcSet"
                                     class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
                                     sizes="(max-width: 300px) 100vw, 300px"></NuxtLink>
                         </div>
