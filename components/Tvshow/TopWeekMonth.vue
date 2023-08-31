@@ -15,8 +15,8 @@
         style="margin-bottom: 20px; padding: 25px 20px;">
         <div class="widget-header">
             <span class="widget-title">
-                <a class="a_tag_btn a_tab_active" href="#" style="margin-right: 10px;" @click.prevent="showTab(0)">Top Week</a> |
-                <a class="a_tag_btn" href="#" style="margin-left: 10px;" @click.prevent="showTab(1)">Top Month</a>
+                <a :class="'a_tag_btn' + (tabIdx == 0 ? ' a_tab_active' : '')" href="#" style="margin-right: 10px;" @click.prevent="showTab(0)">Top Week</a> |
+                <a :class="'a_tag_btn' + (tabIdx == 1 ? ' a_tab_active' : '')" href="#" style="margin-left: 10px;" @click.prevent="showTab(1)">Top Month</a>
             </span>
         </div>
         <div class="tab-content">
