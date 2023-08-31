@@ -61,7 +61,7 @@
         <HeaderHandHeld />
         <div id="content" class="site-content " tabindex="-1">
             <div class="container">
-                <TvshowsBreadScrumb base="tv-show-genre" :title="genre" :page="page * 1 > 1 ? page : undefined" />
+                <TvshowsBreadScrumb base="tv-show-genre" :title="getGenreTitle(genre, data.data.items[0].genres)" :page="page * 1 > 1 ? page : undefined" />
                 <div class="site-content__inner">
                     <div id="primary" class="content-area"> <!-- ads tv-show top -->
                         <div class="ads-achive-tvshow-top" style="text-align: center;">
