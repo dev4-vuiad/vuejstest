@@ -45,6 +45,11 @@
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>{{ 'Search Results for “' + s + '” – 코코아티비 :: KOKOA.TV' }}</Title>
+         </Head>
+    </div>
         <div id="page" class="hfeed site">
             <Header />
             <HeaderHandHeld />

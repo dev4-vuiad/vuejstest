@@ -59,6 +59,11 @@
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>{{ name + ' – 코코아티비 :: KOKOA.TV' }}</Title>
+        </Head>
+    </div>
     <body
         class="archive post-type-archive post-type-archive-movie wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js  sidebar-left dark">
         <div id="page" class="hfeed site">

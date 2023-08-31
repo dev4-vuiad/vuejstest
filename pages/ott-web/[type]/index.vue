@@ -54,6 +54,11 @@
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>{{ type + ' – 코코아티비 :: KOKOA.TV' }}</Title>
+        </Head>
+    </div>
     <div id="page" class="hfeed site">
         <Header />
         <HeaderHandHeld />

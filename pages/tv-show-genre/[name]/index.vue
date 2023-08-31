@@ -43,9 +43,19 @@
         router.push({query: query})
         page.value = val
     }
+    
+    const getGenreTitle = (link, genres) => {
+        let v = genres.filter(v => v.link == link || decodeURI(v.link) == link)
+        return v[0] ? v[0].name : ''
+    }
 </script>
 
 <template>
+    <div v-if="data && data.data.items[0]">
+        <Head>
+            <Title>{{ getGenreTitle(genre, data.data.items[0].genres) + ' – 코코아티비 :: KOKOA.TV' }}</Title>
+        </Head>
+    </div>
     <div id="page" class="hfeed site">
         <Header />
         <HeaderHandHeld />

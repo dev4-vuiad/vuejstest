@@ -46,6 +46,11 @@
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>드라마 – 코코아티비 :: KOKOA.TV</Title>
+         </Head>
+    </div>
     <div id="page" class="hfeed site">
         <Header />
         <HeaderHandHeld />
