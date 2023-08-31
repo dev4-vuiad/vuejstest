@@ -1,9 +1,9 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'; 
-    const props = defineProps(['year', 'movieRunTime', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+    const props = defineProps(['year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
 
     let year = props.year
-    let movieRunTime = props.movieRunTime
+    let duration = props.duration
     let title = props.title
     let originalTitle = props.originalTitle
     let genres = props.genres
@@ -13,7 +13,7 @@
 
     onBeforeUpdate(() => {
         year = props.year
-        movieRunTime = props.movieRunTime
+        duration = props.duration
         title = props.title
         originalTitle = props.originalTitle
         genres = props.genres
@@ -63,7 +63,7 @@
                     </div>
                     <div class="movie__meta">
                         <span v-if="year" class="movie__meta--release-year">{{ year }}</span>
-                        <span v-if="movieRunTime" class="movie__meta--movie-run-time">{{ movieRunTime }}</span>
+                        <span v-if="duration" class="movie__meta--movie-run-time">{{ duration }}</span>
                         <span class="movie__meta--genre">
                             <template v-for="(genre, idx) in genres" :key="idx">
                                 <span v-if="idx > 0">, </span>

@@ -47,7 +47,7 @@
                                     <div class="single-movie__row row">
                                         <MovieIntroInfo v-if="data && data.data && data.data.items && data.data.items[0]"
                                             :year="data.data.items[0].year"
-                                            :movieRunTime="data.data.items[0].movieRunTime"
+                                            :duration="data.data.items[0].duration"
                                             :title="data.data.items[0].title"
                                             :originalTitle="data.data.items[0].originalTitle"
                                             :genres="data.data.items[0].genres"
