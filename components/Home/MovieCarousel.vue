@@ -1,6 +1,22 @@
 <script setup>
+    import { onMounted } from 'vue'
     const props = defineProps(['data'])
     let data = props.data
+
+    onMounted(() => {
+        // Bottom slider
+        let slider = $('#section-movies-carousel-aside-header-64d3194c4e219').find('.slick-track').slick({
+            slidesToShow: 6,
+            slidesToScroll: 2,
+            infinite: false
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-next').on('click', function() {
+            slider.slick('slickNext')
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
+            slider.slick('slickPrev')
+        })
+    })
 </script>
 
 <template>

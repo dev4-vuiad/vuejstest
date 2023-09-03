@@ -1,13 +1,15 @@
 <script setup>
     import { onMounted } from 'vue'
 
-    useHead({
-        bodyAttrs: {
-            class: 'home page-template-default page wp-custom-logo wp-embed-responsive masvideos-js full-width'
-        }
-    });
+    definePageMeta({
+        layout: 'home'
+    })
 
     let { data } = await useFetch('https://backendnew.takitv.net/api/homepage')
+
+    useHead({
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
+    });
 
     onMounted(() => {
         const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
@@ -90,50 +92,42 @@
 </script>
 
 <template>
-    <div>
-        <Head>
-            <Title>코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비</Title>
-         </Head>
-    </div>
-    <div id="page" class="hfeed site">
-        <Header />
-        <HeaderHandHeld />
-        <div id="content" class="site-content " tabindex="-1">
-            <div class="container">
-                <div class="site-content__inner">
-                    <div id="primary" class="content-area">
-                        <main id="main" class="site-main" role="main">
-                            <article id="post-7782" class="post-7782 page type-page status-publish hentry">
-                                <div class="page__content">
-                                    <section id="section-home-slider-custom-64d31949b2fcb"
+    <div id="content" class="site-content " tabindex="-1">
+        <div class="container">
+            <div class="site-content__inner">
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+                        <article id="post-7782" class="post-7782 page type-page status-publish hentry">
+                            <div class="page__content">
+                                <section id="section-home-slider-custom-64d31949b2fcb"
                                         class="home-section more-dark">
-                                        <div class="container">
-                                            <header class="home-section__header">
-                                                <h2 class="home-section__title slider-title">추천 컨텐츠</h2>
-                                                <div class="home-section__action"></div>
-                                            </header>
-                                        </div>
-                                        <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
-                                    </section>
-                                    <section class="home-section  ads-top"
-                                        style="background-color:#2E3037;padding-top: 10px; padding-bottom: 10px;text-align: center;">
-                                        <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div>
-                                    </section>
-                                    <section id="section-home-slider-custom-ott-64d31949c9733"
-                                        class="home-section home-slider-custom-ott">
-                                        <div class="bg_opacity"></div>
-                                        <HomeOot v-if="data && data.otts" 
-                                            :channels="data.otts.ottChanels"
-                                            :title="data.otts.ottTitle"
-                                            :sliders="data.otts.ottSliders"
-                                        />
-                                    </section>
-                                    <section
-                                        class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
-                                        <div class="container">
-                                            <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
-                                        </div>
-                                    </section>
+                                    <div class="container">
+                                        <header class="home-section__header">
+                                            <h2 class="home-section__title slider-title">추천 컨텐츠</h2>
+                                            <div class="home-section__action"></div>
+                                        </header>
+                                    </div>
+                                    <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
+                                </section>
+                                <section class="home-section  ads-top"
+                                    style="background-color:#2E3037;padding-top: 10px; padding-bottom: 10px;text-align: center;">
+                                    <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div>
+                                </section>
+                                <section id="section-home-slider-custom-ott-64d31949c9733"
+                                    class="home-section home-slider-custom-ott">
+                                    <div class="bg_opacity"></div>
+                                    <HomeOot v-if="data && data.otts" 
+                                        :channels="data.otts.ottChanels"
+                                        :title="data.otts.ottTitle"
+                                        :sliders="data.otts.ottSliders"
+                                    />
+                                </section>
+                                <section
+                                    class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
+                                    <div class="container">
+                                        <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
+                                    </div>
+                                </section>
                                 <section
                                     class="home-section home-movie-section-aside-header has-bg-color dark more-dark"
                                     style="padding-bottom: 13px; padding-top: 35px; ">
@@ -173,64 +167,4 @@
             </div><!-- /.site-content-inner -->
         </div><!-- /.container -->
     </div><!-- #content -->
-        <footer id="colophon" class="site-footer site__footer--v4 desktop-footer dark" role="contentinfo">
-            <div class="container">
-                <div class="footer-v4-bar">
-                    <div class="site-footer__logo footer-logo"><a href="/" class="custom-logo-link"
-                            rel="home" aria-current="page"><img width="653" height="152"
-                                src="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png"
-                                class="custom-logo" alt="코코아티비 :: KOKOA.TV"
-                                srcset="https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo.png 653w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-300x70.png 300w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-24x6.png 24w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-36x8.png 36w, https://image002.modooup.com/wp-content/uploads/2023/03/cropped-kokoatv_logo-48x11.png 48w"
-                                sizes="(max-width: 653px) 100vw, 653px"></a></div>
-                    <div class="site-footer__social-icons footer-social-icons">
-                        <ul id="menu-footer-social-menu" class="social-icons">
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4994">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-facebook-f social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Facebook</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4995">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-twitter social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Twitter</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4996">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fab fa-google-plus-g social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Google+</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4997">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fas fa-globe social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">Vimeo</span></a></li>
-                            <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom social-media-item social-media-item-4998">
-                                <a title="						" href="#" class="footer-social-icon"><span class="fa-stack"><i
-                                            class="fas fa-circle fa-stack-2x"></i><i
-                                            class="fas fa-rss social-media-item__icon fa-stack-1x fa-inverse"
-                                            aria-hidden="true"></i> </span><span
-                                        class="social-media-item__title">RSS</span></a></li>
-                        </ul>
-                    </div>
-                </div><!-- /.footer-v4-bar -->
-                <div class="site-footer__info site-info">
-                    Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
-            </div><!-- .container -->
-        </footer><!-- #colophon -->
-        <footer class="site-footer handheld-footer dark">
-            <div class="container">
-                <div class="site-footer__info site-info">
-                    Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
-            </div><!-- /.container -->
-        </footer>
-    </div>
 </template>

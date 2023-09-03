@@ -46,6 +46,7 @@ export default defineNuxtConfig({
         //   body: true
         // }
       ]
-    }
+    },
+    layoutTransition: { name: 'layout', mode: 'out-in' }
   }
 })
