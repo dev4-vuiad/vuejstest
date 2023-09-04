@@ -1,6 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  modules: [
+    'nuxt-lazy-load'
+  ],
+  lazyLoad: {
+    images: true,
+    appendClass: 'lazyload',
+    loadedClass: 'lazyloaded'
+  },
   css: [
     '~/assets/css/style1.css',
     '~/assets/css/style2.css',

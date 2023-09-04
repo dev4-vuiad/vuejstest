@@ -1,6 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
     const props = defineProps(['id', 'link', 'postDate', 'postDateGmt', 'tvshowTitle', 'src', 'srcSet', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const renderCount = ref(0)
     let id = props.id
     let postDate = props.postDate
     let postDateGmt = props.postDateGmt
@@ -21,6 +22,7 @@
         episodeNumber = props.episodeNumber
         seasonNumber = props.seasonNumber
         chanelImage = props.chanelImage
+        renderCount.value ++ 
     })
 
     const toTimeAgo = (d) => {
@@ -54,7 +56,7 @@
                 <img width="600" height="900"
                 :src="src"
                 :srcset="srcSet"
-                class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
+                class="tv-show__poster--image tv_show__poster--image" alt="" :key="renderCount"
                 sizes="(max-width: 600px) 100vw, 600px">
             </NuxtLink>
         </div>

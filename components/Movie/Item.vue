@@ -2,6 +2,7 @@
     import { onBeforeUpdate } from 'vue'
 
     const props = defineProps(['link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
+    const renderCount = ref(0)
     let year = props.year
     let title = props.title
     let originalTitle = props.originalTitle
@@ -16,6 +17,7 @@
         genres = props.genres
         src = props.src
         srcSet = props.srcSet
+        renderCount.value ++
     })
 </script>
 
@@ -27,7 +29,7 @@
                     width="300" height="450"
                     :src="src"
                     :srcset="srcSet"
-                    class="movie__poster--image" alt="" loading="lazy"
+                    class="movie__poster--image" alt="" :key="renderCount"
                     sizes="(max-width: 300px) 100vw, 300px">
             </NuxtLink>
         </div>
