@@ -54,7 +54,7 @@
     )
 
     useHead({
-        title: data.title + ' – 코코아티비 :: KOKOA.TV'
+        title: title.value + ' – 코코아티비 :: KOKOA.TV'
     });
 
     const findNextEp = (title, seasons) => {
