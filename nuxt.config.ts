@@ -41,6 +41,12 @@ export default defineNuxtConfig({
         {
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
         },
+        {
+          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/scrollup.min.js?ver=1.2.7'
+        },
+        {
+          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/jquery.easing.min.js?ver=1.2.7'
+        }
         // {
         //   children: 'window.__ITGS_started = Date.now();'
         // },
