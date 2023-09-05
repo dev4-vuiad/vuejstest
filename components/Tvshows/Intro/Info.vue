@@ -47,7 +47,7 @@
                     class="span_sea_ep_title">158화</span>
                     <img width="220" height="312"
                     :src="src"
-                    class="tv-show__poster--image tv_show__poster--image" alt="" decoding="async" loading="lazy"></a>
+                    class="tv-show__poster--image tv_show__poster--image" alt=""></a>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">

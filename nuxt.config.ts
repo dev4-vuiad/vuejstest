@@ -22,7 +22,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png', sizes: '32x32' },
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png', sizes: '192x192' },
@@ -41,18 +40,14 @@ export default defineNuxtConfig({
         },
         {
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
+        },
+        {
+          src: "/_nuxt/assets/js/ads.js"
+        },
+        {
+          src: "/_nuxt/assets/js/header_ads.js",
+          async: true
         }
-        // {
-        //   src: "_nuxt/assets/js/ads.js"
-        // },
-        // {
-        //   src: "_nuxt/assets/js/header_ads.js",
-        //   async: true
-        // },
-        // {
-        //   src: "_nuxt/assets/js/footer_ads.js",
-        //   body: true
-        // }
       ]
     },
     layoutTransition: { name: 'layout', mode: 'out-in' }
