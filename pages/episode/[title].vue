@@ -26,7 +26,7 @@
                         return seasons[s].episodes[e * 1 - 1].title
                     } else {
                         let newS = s * 1 - 1
-                        let newE = seasons[newS].length - 1
+                        let newE = seasons[newS].episodes.length - 1
                         return seasons[newS].episodes[newE].title
                     }
                     return null
