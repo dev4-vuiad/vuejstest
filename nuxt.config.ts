@@ -41,13 +41,16 @@ export default defineNuxtConfig({
         {
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
         },
-        {
-          children: 'window.__ITGS_started = Date.now();'
-        },
-        {
-          src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-          async: true
-        }
+        // {
+        //   children: 'window.__ITGS_started = Date.now();'
+        // },
+        // {
+        //   src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
+        //   async: true
+        // },
+        // {
+        //   children: '!function(t,e){t.setAttribute("async","async"),t.setAttribute("type","text/javascript"),t.setAttribute("src","//scripts.kiosked.com/loader/kiosked-loader.js?site=17622"),e.document.body.appendChild(t)}(window.top.document.createElement("script"),window.top);',
+        // }
       ]
     },
     layoutTransition: { name: 'layout', mode: 'out-in' }

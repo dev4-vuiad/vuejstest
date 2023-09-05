@@ -140,7 +140,6 @@
                             </div>
                             <div class="episode__head">
                             </div>
-                            <div class="masvideos-movies-widget widget_vodi_movies_filter masvideos-tv-shows-widget" style="width: 300px; height: 300px;"></div>
                             <div class="summary entry-summary episode__summary">
                                 <div class="episode__title-with-nav">
                                     <div class="episode__player--arrows">
