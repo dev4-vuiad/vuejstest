@@ -45,7 +45,7 @@ export default defineNuxtConfig({
           children: 'window.__ITGS_started = Date.now();'
         },
         {
-          src: "/_nuxt/assets/js/header_ads.js",
+          src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
           async: true
         }
       ]
