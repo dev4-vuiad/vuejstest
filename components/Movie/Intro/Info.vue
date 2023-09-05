@@ -79,7 +79,7 @@
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>
-            <div class="movie__rating-with-playlist">
+            <!-- <div class="movie__rating-with-playlist">
                 <div class="movie-actions--link_add-to-playlist dropdown">
                     <a class="dropdown-toggle" href="https://kokoatv.net/movie/%ed%95%98%ec%9d%b4%ed%9e%90/"
                         data-toggle="dropdown">+플레이리스트</a>
@@ -88,7 +88,7 @@
                             movie to a playlist.</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="movie__description">
                 <div data-readmore="" v-html="description"></div>
                 <a class="maxlist-more" href="#" @click.event="onReadMoreClick">Read More</a>
