@@ -42,7 +42,7 @@ export default defineNuxtConfig({
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
         },
         {
-          src: "/_nuxt/assets/js/ads.js"
+          src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622"
         },
         {
           src: "/_nuxt/assets/js/header_ads.js",
