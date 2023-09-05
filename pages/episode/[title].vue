@@ -5,7 +5,9 @@
     definePageMeta({
         layout: 'episode',
         layoutTransition: {
-            onAppear: () => {
+            name: 'layout', 
+            mode: 'out-in',
+            onAfterEnter: () => {
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
                     var e = $(this)

@@ -5,7 +5,9 @@
     definePageMeta({
         layout: 'tvshow',
         layoutTransition: {
-            onAppear: () => {
+            name: 'layout', 
+            mode: 'out-in',
+            onAfterEnter: () => {
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
                     var e = $(this)
@@ -42,6 +44,23 @@
                 $(document).on("click", function(e) {
                     $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
                 })
+
+
+                // Bottom slider
+                let slider = $('#tv-show-related').find('.tv-shows__inner').slick({
+                    "slidesToShow":5,
+                    "slidesToScroll":5,
+                    "dots":false,
+                    "arrows":true,
+                    "autoplay":false,
+                    "responsive":[{"breakpoint":767,"settings":{"slidesToShow":2,"slidesToScroll":2}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":3}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":4}}]
+                })
+                $('#tv-show-related').find('button.slick-next').on('click', function() {
+                    slider.slick('slickNext')
+                })
+                $('#tv-show-related').find('button.slick-prev').on('click', function() {
+                    slider.slick('slickPrev')
+                })
             }
         }
     })
@@ -56,6 +75,23 @@
     useHead({
         title: title.value + ' – 코코아티비 :: KOKOA.TV'
     });
+
+    onMounted(() => {
+        let slider = $('#tv-show-related').find('.tv-shows__inner').slick({
+            "slidesToShow":5,
+            "slidesToScroll":5,
+            "dots":false,
+            "arrows":true,
+            "autoplay":false,
+            "responsive":[{"breakpoint":767,"settings":{"slidesToShow":2,"slidesToScroll":2}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":3}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":4}}]
+        })
+        $('#tv-show-related').find('button.slick-next').on('click', function() {
+            slider.slick('slickNext')
+        })
+        $('#tv-show-related').find('button.slick-prev').on('click', function() {
+            slider.slick('slickPrev')
+        })
+    })
     
 </script>
 

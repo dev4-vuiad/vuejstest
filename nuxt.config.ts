@@ -52,7 +52,6 @@ export default defineNuxtConfig({
         //   children: '!function(t,e){t.setAttribute("async","async"),t.setAttribute("type","text/javascript"),t.setAttribute("src","//scripts.kiosked.com/loader/kiosked-loader.js?site=17622"),e.document.body.appendChild(t)}(window.top.document.createElement("script"),window.top);',
         // }
       ]
-    },
-    layoutTransition: { name: 'layout', mode: 'out-in' }
+    }
   }
 })

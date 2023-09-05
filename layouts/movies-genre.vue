@@ -1,7 +1,7 @@
 <script setup>
     useHead({
         bodyAttrs: {
-            class: 'episode-template-default single single-episode wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-single masvideos-js single-episode-v3 full-width dark'
+            class: 'archive post-type-archive post-type-archive-movie wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark'
         }
     });
 
