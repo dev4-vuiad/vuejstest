@@ -93,6 +93,12 @@
     }
 </script>
 
+<style scoped>
+    .handheld-sidebar-toggle {
+        display: none;
+    }
+</style>
+
 <template>
     <div id="content" class="site-content " tabindex="-1">
         <div class="container">
