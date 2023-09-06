@@ -7,7 +7,7 @@
 
 </script>
 <template>
-    <div id="page" class="hfeed site">
+    <div id="page" class="hfeed site archive post-type-archive post-type-archive-tv_show wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark">
         <Header />
         <HeaderHandHeld />
         <slot />
