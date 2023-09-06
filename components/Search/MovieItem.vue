@@ -63,7 +63,7 @@
         <div class="movie__body">
             <div class="movie__info">
                 <div class="movie__info--head">
-                    <NuxtLink to="'/movie/ + title"
+                    <NuxtLink :to="'/movie/' + title"
                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
                     </NuxtLink>
