@@ -67,7 +67,7 @@
     )
 
     useHead({
-        title: 'Search Results for “' + s + '” – 코코아티비 :: KOKOA.TV'
+        title: 'Search Results for “' + s.value + '” – 코코아티비 :: KOKOA.TV'
     });
 
     onBeforeRouteUpdate ((newRoute) => {
