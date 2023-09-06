@@ -7,7 +7,7 @@
 
 <style>
   .layout-enter-active, .layout-leave-active {
-    transition: opacity .2s;
+    transition: opacity .3s;
   }
   .layout-enter-from, .layout-leave-to {
     opacity: 0;

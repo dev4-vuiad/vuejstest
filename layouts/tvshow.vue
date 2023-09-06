@@ -12,6 +12,6 @@
         <HeaderHandHeld />
         <slot />
         <Footer />
-        <a id="scrollUp" href="#top"><i class="fas fa-angle-up"></i></a>
+        
     </div>
 </template>
