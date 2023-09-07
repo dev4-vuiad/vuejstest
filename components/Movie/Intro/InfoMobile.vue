@@ -1,5 +1,5 @@
-
 <script setup>
+    const expanded = ref(false)
     import { onBeforeUpdate } from 'vue'; 
     const props = defineProps(['year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
 
@@ -23,7 +23,36 @@
         outlink = props.outlink
     });
 
+    const onReadMoreClick = (event) => {
+        expanded.value = !expanded.value
+        let ele = $(event.target), h
+        if (expanded.value) {
+            let div = ele.parent().clone()
+            div.children('div').css('max-height', 'fit-content')
+            div.css('display', 'none').appendTo(ele.parent().parent())
+            h = div.height()
+            div.remove()
+        } else {
+            h = 50
+        }
+        ele.prev().css('max-height', h + 'px')
+    }
 </script>
+
+<style scoped>
+    .movie__description > div {
+        height: auto;
+        transition: max-height 600ms ease-in-out;
+        overflow: hidden;
+        max-height: 50px;
+
+    }
+
+    .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+</style>
 
 <template>
     <div class="single-movie__sidebar column ">
@@ -59,6 +88,7 @@
             </div>
             <div class="movie__description">
                 <div v-html="description"></div>
+                <a v-if="description && description.trim().length" class="maxlist-more" href="#" @click.event="onReadMoreClick">{{ expanded ? 'Show Less' : 'Read More' }}</a>
             </div>
             <div class="movie__sharing vodi-sharing"></div>
             <div class="movie__info--head"></div>
