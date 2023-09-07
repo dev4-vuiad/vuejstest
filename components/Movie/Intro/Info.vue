@@ -1,4 +1,5 @@
 <script setup>
+    const expanded = ref(false)
     import { onBeforeUpdate } from 'vue'; 
     const props = defineProps(['year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
 
@@ -23,9 +24,18 @@
     });
 
     const onReadMoreClick = (event) => {
-        let ele = $(event.target)
-        ele.prev().toggleClass('expanded')
-        ele.text(ele.prev().hasClass('expanded') ? 'Show Less' : 'Read More')
+        expanded.value = !expanded.value
+        let ele = $(event.target), h
+        if (expanded.value) {
+            let div = ele.parent().clone()
+            div.children('div').css('max-height', 'fit-content')
+            div.css('display', 'none').appendTo(ele.parent().parent())
+            h = div.height()
+            div.remove()
+        } else {
+            h = 50
+        }
+        ele.prev().css('max-height', h + 'px')
     }
 </script>
 
@@ -34,11 +44,13 @@
         height: auto;
         transition: max-height 600ms ease-in-out;
         overflow: hidden;
-        max-height: 47px;
+        max-height: 50px;
 
     }
-    .movie__description > div.expanded {
-        max-height: 300px;
+
+    .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 </style>
 
@@ -79,19 +91,9 @@
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>
-            <!-- <div class="movie__rating-with-playlist">
-                <div class="movie-actions--link_add-to-playlist dropdown">
-                    <a class="dropdown-toggle" href="https://kokoatv.net/movie/%ed%95%98%ec%9d%b4%ed%9e%90/"
-                        data-toggle="dropdown">+플레이리스트</a>
-                    <div class="dropdown-menu">
-                        <a class="login-link" href="https://kokoatv.net/my-account/movie-playlists/">Sign in to add this
-                            movie to a playlist.</a>
-                    </div>
-                </div>
-            </div> -->
             <div class="movie__description">
                 <div data-readmore="" v-html="description"></div>
-                <a class="maxlist-more" href="#" @click.event="onReadMoreClick">Read More</a>
+                <a v-if="description && description.trim().length" class="maxlist-more" href="#" @click.event="onReadMoreClick">{{ expanded ? 'Show Less' : 'Read More' }}</a>
             </div>
             <div class="movie__sharing vodi-sharing"></div>
             <div class="movie__info--head"></div>
