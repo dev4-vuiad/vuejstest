@@ -55,12 +55,6 @@
 </style>
 
 <template>
-    <div class="movie__head">
-        <div class="movie__player">
-            <p>https://short.ink/BVP6do_hS<br>
-                https://videojs.vidground.com/watch/cVGpkrEHDvy</p>
-        </div>
-    </div>
     <div class="single-movie__sidebar column poster-custom">
         <div class="movie__poster">
             <img width="300" height="450" :src="src" class="movie__poster--image" alt="" loading="lazy"

@@ -2,6 +2,8 @@
     const route = useRoute()
     const title = route.params.title
 
+    const { isMobile } = useDevice()
+
     definePageMeta({
         layout: 'movie',
         layoutTransition: {
@@ -67,10 +69,19 @@
                         <div class="single-movie__player-container stretch-full-width">
                             <div class="single-movie__player-container--inner container">
                                 <MovieBreadScrumb v-if="data && data.genres && data.genres.length" :genre="data.genres[data.genres.length - 1]" :title="data.title" />
-                                <div class="ads-movie-top" style="text-align: center;margin-bottom: 10px;">
-                                </div>
+                                <div class="ads-movie-top"></div>
                                 <div class="single-movie__row row">
-                                    <MovieIntroInfo v-if="data && data.id"
+                                    <MovieIntroInfoMobile v-if="data && data.id && isMobile"
+                                        :year="data.year"
+                                        :duration="data.duration"
+                                        :title="data.title"
+                                        :originalTitle="data.originalTitle"
+                                        :genres="data.genres"
+                                        :src="data.src"
+                                        :description="data.description"
+                                        :outlink="data.outlink"
+                                    />
+                                    <MovieIntroInfo v-if="data && data.id && !isMobile"
                                         :year="data.year"
                                         :duration="data.duration"
                                         :title="data.title"

@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
-    'nuxt-lazy-load'
+    'nuxt-lazy-load',
+    '@nuxtjs/device'
   ],
   lazyLoad: {
     images: true,
