@@ -47,11 +47,6 @@
         max-height: 50px;
 
     }
-
-    .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
 </style>
 
 <template>
