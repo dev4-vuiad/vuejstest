@@ -21,7 +21,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink :to="'/movie-genre/' + genre.link">{{ genre.name }}</NuxtLink>
+        <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)"><span v-html="genre.name"></span></NuxtLink>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
