@@ -32,7 +32,7 @@
             <span class="movie__meta--genre">
                 <template v-for="(genre, index) in genres" :key="index">
                     <span v-if="index > 0">, </span>
-                    <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag">{{ genre.name }}</NuxtLink>
+                    <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                 </template>
             </span>
         </div>
