@@ -49,7 +49,11 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/episode/' + encodeURIComponent(title.value)),
+        () => $fetch('https://backendnew.takitv.net/api/episode/' + encodeURIComponent(title.value), {
+            params: {
+                title: encodeURIComponent(title.value)
+            }
+        }),
         {
             watch: [title]
         }
