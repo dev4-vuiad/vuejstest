@@ -6,6 +6,7 @@
 
     definePageMeta({
         layout: 'movie',
+        scrollToTop: false,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -51,7 +52,11 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/movies/' + encodeURIComponent(title))
+        () => $fetch('https://backendnew.takitv.net/api/movies/' + encodeURIComponent(title), {
+            params: {
+                title: title
+            }
+        })
     )
 
     useHead({
