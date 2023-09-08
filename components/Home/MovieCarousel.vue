@@ -1,6 +1,23 @@
 <script setup>
+    import { onMounted } from 'vue'
     const props = defineProps(['data'])
     let data = props.data
+
+    onMounted(() => {
+        // Bottom slider
+        let slider = $('#section-movies-carousel-aside-header-64d3194c4e219').find('.slick-track').slick({
+            slidesToShow: 6,
+            slidesToScroll: 2,
+            infinite: false,
+            responsive: [{"breakpoint":768,"settings":{"slidesToShow":2,"slidesToScroll":1}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":1}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":1}}]
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-next').on('click', function() {
+            slider.slick('slickNext')
+        })
+        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
+            slider.slick('slickPrev')
+        })
+    })
 </script>
 
 <template>
@@ -46,7 +63,9 @@
                                                                 <span class="movie__meta--genre">
                                                                     <template v-for="(genre, idx) in item.genres" :key="idx">
                                                                         <span v-if="idx > 0">, </span>
-                                                                        <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag" tabindex="0">{{ genre.name }}</NuxtLink>
+                                                                        <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag" tabindex="0">
+                                                                            <span v-html="genre.name"></span>
+                                                                        </NuxtLink>
                                                                     </template>
                                                                 </span>
                                                             </div>

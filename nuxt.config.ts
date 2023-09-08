@@ -1,6 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  modules: [
+    'nuxt-lazy-load',
+    '@nuxtjs/device'
+  ],
+  lazyLoad: {
+    images: true,
+    appendClass: 'lazyload',
+    loadedClass: 'lazyloaded'
+  },
   css: [
     '~/assets/css/style1.css',
     '~/assets/css/style2.css',
@@ -14,7 +23,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png', sizes: '32x32' },
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png', sizes: '192x192' },
@@ -33,17 +41,22 @@ export default defineNuxtConfig({
         },
         {
           src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
+        },
+        {
+          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/scrollup.min.js?ver=1.2.7'
+        },
+        {
+          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/jquery.easing.min.js?ver=1.2.7'
         }
         // {
-        //   src: "_nuxt/assets/js/ads.js"
+        //   children: 'window.__ITGS_started = Date.now();'
         // },
         // {
-        //   src: "_nuxt/assets/js/header_ads.js",
+        //   src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
         //   async: true
         // },
         // {
-        //   src: "_nuxt/assets/js/footer_ads.js",
-        //   body: true
+        //   children: '!function(t,e){t.setAttribute("async","async"),t.setAttribute("type","text/javascript"),t.setAttribute("src","//scripts.kiosked.com/loader/kiosked-loader.js?site=17622"),e.document.body.appendChild(t)}(window.top.document.createElement("script"),window.top);',
         // }
       ]
     }

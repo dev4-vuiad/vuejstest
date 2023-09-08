@@ -2,6 +2,7 @@
     import { onBeforeUpdate } from 'vue'
 
     const props = defineProps(['link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
+    const renderCount = ref(0)
     let year = props.year
     let title = props.title
     let originalTitle = props.originalTitle
@@ -16,18 +17,19 @@
         genres = props.genres
         src = props.src
         srcSet = props.srcSet
+        renderCount.value ++
     })
 </script>
 
 <template>
     <div class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
         <div class="movie__poster">
-            <NuxtLink :to="'/movie/' + title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img
                     width="300" height="450"
                     :src="src"
                     :srcset="srcSet"
-                    class="movie__poster--image" alt="" loading="lazy"
+                    class="movie__poster--image" alt="" :key="renderCount"
                     sizes="(max-width: 300px) 100vw, 300px">
             </NuxtLink>
         </div>
@@ -41,11 +43,11 @@
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, index) in genres" :key="index">
                                     <span v-if="index > 0">, </span>
-                                    <NuxtLink :to="'/movie-genre/' + genre.link" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                    <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                 </template>
                             </span>
                     </div>
-                    <NuxtLink :to="'/movie/' + title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                    <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
                     </NuxtLink>
                 </div>

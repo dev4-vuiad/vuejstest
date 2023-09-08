@@ -1,12 +1,12 @@
 <script setup>
-    import { ref, onBeforeUpdate } from 'vue'
-    const props = defineProps(['data', 'title', 'tvshowTitle'])
+    import { ref } from 'vue'
+    const props = defineProps(['data', 'title'])
+    const renderCount = ref(0)
     let data = props.data
     let title = props.title
-    let tvshowTitle = props.tvshowTitle
 
     const type = ref('tv-show')
-    const { data: loadItems } = await useAsyncData(
+    const { data: loadItems, refresh } = await useAsyncData(
         'tv-shows' + type,
         () => $fetch('https://backendnew.takitv.net/api/tvshows', {
             params: {
@@ -14,6 +14,7 @@
                 limit: 12
             }
         }).then(data => {
+            renderCount.value ++
             return data.data.items
         }), {
             watch: [type]
@@ -46,10 +47,16 @@
     }
 </script>
 
+<style scoped>
+    .nav-tabs a {
+        cursor: pointer;
+    }
+</style>
+
 <template>
     <ul class="nav nav-tabs">
         <li v-for="(item, index) in data.menu" :key="index" class="nav-item lamlamlama">
-            <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" to="#" @click.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
+            <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" @click.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
         </li>
     </ul>
     <div class="home-tv-show-section-aside-header__inner">
@@ -64,16 +71,19 @@
                     </header>
                     <div v-for="(item, index) in items" :key="index" class="tv-show post-202541 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-213">
                         <div class="tv-show__poster">
-                            <div class="box-tv-channel"><img loading="lazy" class="tv-channel"
+                            <div class="box-tv-channel"><img class="tv-channel"
                                     :src="item.chanelImage" alt=""
-                                    width="83" height="31"></div>
-                                    <NuxtLink :to="'/' + item.link"
-                                class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img
-                                    width="300" height="450"
-                                    :src="item.src"
-                                    :srcset="item.srcSet"
-                                    class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
-                                    sizes="(max-width: 300px) 100vw, 300px"></NuxtLink>
+                                    width="83" height="31">
+                            </div>
+                            <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                                <img
+                                width="300" height="450"
+                                :src="item.src"
+                                :srcset="item.srcSet"
+                                class="tv-show__poster--image tv_show__poster--image" alt=""
+                                sizes="(max-width: 300px) 100vw, 300px"
+                                :key="renderCount" />
+                            </NuxtLink>
                         </div>
                         <div class="tv-show__body">
                             <div class="tv-show__info">

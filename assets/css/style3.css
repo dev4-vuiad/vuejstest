@@ -4297,49 +4297,49 @@ font-weight: 700; }
 .page-template-template-landingpage-v2 .site-header,
 .page-template-template-comingsoon .site-header {
 margin-bottom: 0; }
-body.sidebar-right .content-area,
-body.sidebar-left .content-area {
+.sidebar-right .content-area,
+.sidebar-left .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 100%;
 max-width: 100%; }
 @media (min-width: 1200px) {
-body.sidebar-right .content-area,
-body.sidebar-left .content-area {
+.sidebar-right .content-area,
+.sidebar-left .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 66.6666666667%;
 max-width: 66.6666666667%; } }
 @media (min-width: 1440px) {
-body.sidebar-right .content-area,
-body.sidebar-left .content-area {
+.sidebar-right .content-area,
+.sidebar-left .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 70.8333333333%;
 max-width: 70.8333333333%; } }
-body.sidebar-right .sidebar-area,
-body.sidebar-left .sidebar-area {
+.sidebar-right .sidebar-area,
+.sidebar-left .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 100%;
 max-width: 100%; }
 @media (min-width: 1200px) {
-body.sidebar-right .sidebar-area,
-body.sidebar-left .sidebar-area {
+.sidebar-right .sidebar-area,
+.sidebar-left .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 33.3333333333%;
 max-width: 33.3333333333%; } }
 @media (min-width: 1440px) {
-body.sidebar-right .sidebar-area,
-body.sidebar-left .sidebar-area {
+.sidebar-right .sidebar-area,
+.sidebar-left .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 29.1666666667%;
 max-width: 29.1666666667%; } }
 @media (min-width: 1440px) {
-body.sidebar-right.archive .content-area,
-body.sidebar-left.archive .content-area {
+.sidebar-right.archive .content-area,
+.sidebar-left.archive .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 75.5555555556%;
 max-width: 75.5555555556%; } }
 @media (min-width: 1440px) {
-body.sidebar-right.archive .sidebar-area,
-body.sidebar-left.archive .sidebar-area {
+.sidebar-right.archive .sidebar-area,
+.sidebar-left.archive .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 24.4444444444%;
 max-width: 24.4444444444%; } }
@@ -12815,41 +12815,41 @@ color: #e7e7e7; }
 .home-archive.dark .sidebar-area a {
 color: #e8e7e7; }
 @media (min-width: 1200px) {
-body.home-archive.sidebar-right .content-area, body.home-archive.sidebar-left .content-area {
+.home-archive.sidebar-right .content-area, .home-archive.sidebar-left .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 77.8688525%;
 max-width: 77.8688525%; }
-body.home-archive.sidebar-right .sidebar-area, body.home-archive.sidebar-left .sidebar-area {
+.home-archive.sidebar-right .sidebar-area, .home-archive.sidebar-left .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 22.1311475%;
 max-width: 22.1311475%; } }
 @media (min-width: 1200px) {
-body.home-archive.sidebar-right.light .content-area, body.home-archive.sidebar-right.dark .content-area, body.home-archive.sidebar-left.light .content-area, body.home-archive.sidebar-left.dark .content-area {
+.home-archive.sidebar-right.light .content-area, .home-archive.sidebar-right.dark .content-area, .home-archive.sidebar-left.light .content-area, .home-archive.sidebar-left.dark .content-area {
 padding-top: 42px;
 padding-bottom: 42px; } }
 @media (min-width: 1400px) {
-body.home-archive.sidebar-right .content-area, body.home-archive.sidebar-left .content-area {
+.home-archive.sidebar-right .content-area, .home-archive.sidebar-left .content-area {
 -webkit-box-flex: 0;
 flex: 0 0 81.25%;
 max-width: 81.25%; }
-body.home-archive.sidebar-right .sidebar-area, body.home-archive.sidebar-left .sidebar-area {
+.home-archive.sidebar-right .sidebar-area, .home-archive.sidebar-left .sidebar-area {
 -webkit-box-flex: 0;
 flex: 0 0 18.75%;
 max-width: 18.75%; } }
-body.home-archive .tv-shows__jumbotron--top .tv-shows-sliders,
-body.home-archive .tv-shows__jumbotron--top .videos-sliders,
-body.home-archive .videos__jumbotron--top .tv-shows-sliders,
-body.home-archive .videos__jumbotron--top .videos-sliders {
+.home-archive .tv-shows__jumbotron--top .tv-shows-sliders,
+.home-archive .tv-shows__jumbotron--top .videos-sliders,
+.home-archive .videos__jumbotron--top .tv-shows-sliders,
+.home-archive .videos__jumbotron--top .videos-sliders {
 margin-bottom: 18px; }
-body.home-archive .tv-shows__jumbotron--top .home-tv-show-section,
-body.home-archive .tv-shows__jumbotron--top .home-video-section,
-body.home-archive .videos__jumbotron--top .home-tv-show-section,
-body.home-archive .videos__jumbotron--top .home-video-section {
+.home-archive .tv-shows__jumbotron--top .home-tv-show-section,
+.home-archive .tv-shows__jumbotron--top .home-video-section,
+.home-archive .videos__jumbotron--top .home-tv-show-section,
+.home-archive .videos__jumbotron--top .home-video-section {
 padding: 17px 0 0; }
-body.home-archive .tv-shows__jumbotron--top .tv-shows__inner > .tv-show,
-body.home-archive .tv-shows__jumbotron--top .videos__inner > .video,
-body.home-archive .videos__jumbotron--top .tv-shows__inner > .tv-show,
-body.home-archive .videos__jumbotron--top .videos__inner > .video {
+.home-archive .tv-shows__jumbotron--top .tv-shows__inner > .tv-show,
+.home-archive .tv-shows__jumbotron--top .videos__inner > .video,
+.home-archive .videos__jumbotron--top .tv-shows__inner > .tv-show,
+.home-archive .videos__jumbotron--top .videos__inner > .video {
 margin-bottom: 22px; }
 .post-type-archive-tv_show.home-archive .site-content__inner,
 .post-type-archive-video.home-archive .site-content__inner {

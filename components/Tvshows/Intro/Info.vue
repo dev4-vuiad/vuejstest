@@ -1,4 +1,5 @@
 <script setup>
+    const expanded = ref(false)
     const props = defineProps(['postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
     const postDate = props.postDate
     const postDateGmt = props.postDateGmt
@@ -16,9 +17,18 @@
     }
 
     const onReadMoreClick = (event) => {
-        let ele = $(event.target)
-        ele.prev().toggleClass('expanded')
-        ele.text(ele.prev().hasClass('expanded') ? 'Show Less' : 'Read More')
+        expanded.value = !expanded.value
+        let ele = $(event.target), h
+        if (expanded.value) {
+            let div = ele.parent().clone()
+            div.children('div').css('max-height', 'fit-content')
+            div.css('display', 'none').appendTo(ele.parent().parent())
+            h = div.height()
+            div.remove()
+        } else {
+            h = 50
+        }
+        ele.prev().css('max-height', h + 'px')
     }
 </script>
 
@@ -27,10 +37,7 @@
         height: auto;
         transition: max-height 600ms ease-in-out;
         overflow: hidden;
-        max-height: 47px;
-    }
-    .episode__description > div.expanded {
-        max-height: 200px;
+        max-height: 50px;
     }
 </style>
 
@@ -47,7 +54,7 @@
                     class="span_sea_ep_title">158화</span>
                     <img width="220" height="312"
                     :src="src"
-                    class="tv-show__poster--image tv_show__poster--image" alt="" decoding="async" loading="lazy"></a>
+                    class="tv-show__poster--image tv_show__poster--image" alt=""></a>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">
@@ -71,7 +78,7 @@
                     </div>
                     <div class="episode__description">
                         <div v-html="description"></div>
-                        <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">Read More</a>
+                        <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">{{ expanded ? 'Show Less' : 'Read More' }}</a>
                     </div>
                 </div>
             </div>
