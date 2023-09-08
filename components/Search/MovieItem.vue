@@ -1,6 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'; 
     const props = defineProps(['title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
+    const renderCount = ref(0)
     let postType = props.postType
     let title = props.title
     let originalTitle = props.originalTitle
@@ -19,6 +20,7 @@
         seasonNumber = props.seasonNumber
         episodeNumber = props.episodeNumber
         link = props.link
+        renderCount.value ++
     })
 </script>
 
@@ -31,7 +33,7 @@
         </div>
         <div class="tv-show__poster box-phim">
                 <NuxtLink :to="'/episode/' + encodeURIComponent(link.replace('episode/', ''))" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                    <img :src="src" :srcset="srcSet" class="tv-show__poster--image tv_show__poster--image">		                                                     
+                    <img :src="src" class="tv-show__poster--image tv_show__poster--image" :key="renderCount">		                                                     
                 <span style="display:none" class="span_sea_ep_title box-ep">{{ seasonNumber + ' - ' + episodeNumber }} 화</span></NuxtLink>
                 <div class="box-tv_show">예능</div>
         </div>
@@ -56,7 +58,7 @@
     <div v-else class="movie type-movie status-publish has-post-thumbnail hentry">
         <div class="movie__poster box-phim">
             <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img :src="src" :srcset="srcSet" class="movie__poster--image">
+                <img :src="src" :srcset="srcSet" class="movie__poster--image" :key="renderCount">
             </NuxtLink>
             <div class="box-movie">영화</div>
         </div>
