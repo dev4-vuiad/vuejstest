@@ -106,7 +106,7 @@
                         <section class="movie__related">
                             <div class="movie__related--inner">
                                 <h2 class="movie__related--title">관련 컨텐츠</h2>
-                                <MovieIntroRelatedList v-if="data && data.relateds" :data="data.relateds" />
+                                <MovieIntroRelatedList v-if="data && data.relateds" :data="data.relateds" :isMobile="isMobile" />
                             </div>
                         </section>
                         <div style="text-align: center;margin-top: 10px;"></div>

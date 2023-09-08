@@ -1,11 +1,15 @@
 <script setup>
-    const props = defineProps(['data'])
-    const data = props.data
+    const props = defineProps(['data', 'isMobile'])
+    let data = props.data
+    const isMobile = props.isMobile
+    if (isMobile) {
+        data = data.slice(0, 6)
+    }
 </script>
 
 <template>
     <div class="masvideos masvideos-movies ">
-        <div class="movies columns-8">
+        <div :class="'movies ' + isMobile ? 'columns-7' : 'columns-8'">
             <div class="movies__inner">
                 <div v-for="(item, index) in data" :key="index" class="post-84871 movie type-movie status-publish has-post-thumbnail hentry movie_genre-209 movie_genre-221 movie_genre-kmovie">
                     <div class="movie__poster">
