@@ -8,24 +8,6 @@
     let total = props.total * 1
     let currentPage = props.currentPage * 1
     let { pages, start, end, totalPages } = calPages(props.total, currentPage)
-    // let totalPages = Math.ceil(props.total / perPage);
-    // let start = (currentPage - 1) * perPage + 1
-    // let end = start + perPage - 1
-    // let pages = [
-    //     1, 
-    //     2,
-    //     currentPage - 2,
-    //     currentPage - 1,
-    //     currentPage - 2,
-    //     currentPage - 1,
-    //     currentPage,
-    //     currentPage + 1,
-    //     currentPage + 2,
-    //     totalPages - 2,
-    //     totalPages - 1,
-    //     totalPages
-    // ].filter(p => p > 0 && p <= totalPages && ((p >= currentPage - 2 && p <= currentPage + 2) || p <= 2 || p >= totalPages - 2))
-    // pages = [...new Set(pages)]
 
     const selectPage = (val) => {
         currentPage = val

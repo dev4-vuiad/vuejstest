@@ -64,6 +64,10 @@
         }
     )
 
+    onMounted(() => {
+        $('#scrollUp').trigger('click')
+    })
+
     useHead({
         title: 'TV Shows – 코코아티비 :: KOKOA.TV'
     });
@@ -84,6 +88,7 @@
         query.page = val
         router.push({query: query})
         page.value = val
+        $('#scrollUp').trigger('click')
     }
 </script>
 

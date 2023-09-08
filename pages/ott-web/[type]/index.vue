@@ -100,6 +100,7 @@
         query.page = val
         router.push({query: query})
         page.value = val
+        $('#scrollUp').trigger('click')
     }
 </script>
 

@@ -59,6 +59,12 @@
         })
     )
 
+    onMounted(() => {
+        if ($('#scrollUp').css('display') == 'block') {
+            $('#scrollUp').trigger('click')
+        }
+    })
+
     useHead({
         title: title + ' – 코코아티비 :: KOKOA.TV'
     });
