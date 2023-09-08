@@ -19,6 +19,10 @@
         width: 110px;
         height: auto;
     }
+
+    .embla__slide__img1 {
+        min-height: 100% !important;
+    }
 </style>
 <template>
     <div class="ott_logo">
