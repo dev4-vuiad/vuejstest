@@ -10,7 +10,7 @@
                 <div class="embla__slide" v-for="(item, index) in data" :key="index">
                     <div class="embla__slide__inner">
                         <NuxtLink class="movie__link" :to="'/' + item.link">
-                            <img class="embla__slide__img" :src="item.src" />
+                            <img class="embla__slide__img" :src="item.src" :srcset="item.srcSet" />
                         </NuxtLink>
                     </div>
                     <div class="box_meta">
