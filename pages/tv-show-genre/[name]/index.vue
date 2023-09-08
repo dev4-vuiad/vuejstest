@@ -1,5 +1,6 @@
 <script setup>
     import { nextTick } from 'vue'
+    import { apiBaseUrl } from '/constants';
     const route = useRoute();
     const router = useRouter();
 
@@ -54,7 +55,7 @@
     const genre = route.params.name
 
     const { data }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/tvshows', {
+        () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value,

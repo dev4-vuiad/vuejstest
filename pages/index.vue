@@ -1,5 +1,6 @@
 <script setup>
     import { onMounted } from 'vue'
+    import { apiBaseUrl } from '/constants';
 
     definePageMeta({
         layout: 'home',
@@ -140,7 +141,7 @@
         }
     })
 
-    let { data } = await useFetch('https://backendnew.takitv.net/api/homepage')
+    let { data } = await useFetch(apiBaseUrl + '/homepage')
 
     useHead({
         title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'

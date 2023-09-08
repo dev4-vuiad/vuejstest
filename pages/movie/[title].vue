@@ -1,4 +1,5 @@
 <script setup>
+    import { apiBaseUrl } from '/constants';
     const route = useRoute()
     const title = route.params.title
 
@@ -52,7 +53,7 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/movies/' + encodeURIComponent(title), {
+        () => $fetch(apiBaseUrl + '/movies/' + encodeURIComponent(title), {
             params: {
                 title: title
             }

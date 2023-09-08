@@ -1,0 +1,1 @@
+export const apiBaseUrl = 'https://backendnew.takitv.net/api'

@@ -1,4 +1,5 @@
 <script setup>
+    import { apiBaseUrl } from '/constants';
     const route = useRoute();
     const router = useRouter();
 
@@ -54,7 +55,7 @@
     const page = ref(route.query.page || 1)
 
     const { data, refresh }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/movies', {
+        () => $fetch(apiBaseUrl + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
                 year: year.value || undefined,

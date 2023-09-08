@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    import { apiBaseUrl } from '/constants';
     const props = defineProps(['data', 'title'])
     const renderCount = ref(0)
     let data = props.data
@@ -8,7 +9,7 @@
     const type = ref('tv-show')
     const { data: loadItems, refresh } = await useAsyncData(
         'tv-shows' + type,
-        () => $fetch('https://backendnew.takitv.net/api/tvshows', {
+        () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 type: (type.value == 'tv-show' ? '' : type.value),
                 limit: 12

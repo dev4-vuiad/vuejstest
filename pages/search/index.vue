@@ -1,6 +1,7 @@
 <script setup>
     import { nextTick, ref } from 'vue'
     import { onBeforeRouteUpdate } from "vue-router"
+    import { apiBaseUrl } from '/constants';
     const route = useRoute();
     const router = useRouter();
     const s = ref(route.query.s)
@@ -54,7 +55,7 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch('https://backendnew.takitv.net/api/search', {
+        () => $fetch(apiBaseUrl + '/search', {
             params: {
                 title: s.value,
                 orderBy: orderBy.value || undefined,
@@ -72,6 +73,8 @@
 
     onBeforeRouteUpdate ((newRoute) => {
         s.value = newRoute.query.s
+        page.value = 1
+        nextTick()
     })
 
     const onChangeOrderBy = (event) => {
@@ -185,7 +188,7 @@
                     role="complementary">
                     <div class="widget-area-inner">
                         <SearchTopWeek title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
-                            :data="data.data.topWeeks" type="tv-show" base="tv-show-genre" />
+                            :data="data.data.topWeeks" />
                     </div>
                 </div>
             </div>
