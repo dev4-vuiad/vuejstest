@@ -14,7 +14,7 @@
                 <div v-for="(item, index) in data" :key="index" class="post-84871 movie type-movie status-publish has-post-thumbnail hentry movie_genre-209 movie_genre-221 movie_genre-kmovie">
                     <div class="movie__poster">
                         <NuxtLink :to="'/movie/' + encodeURIComponent(item.title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                            <img width="220" height="310" :src="item.src" class="movie__poster--image" alt="" loading="lazy">
+                            <img width="220" height="310" :src="item.src" class="movie__poster--image" alt="">
                         </NuxtLink>
                     </div>
                     <div class="movie__body">
@@ -32,7 +32,7 @@
                                         </template>
                                     </span>
                                 </div>
-                                <NuxtLink :to="item.link" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                <NuxtLink :to="'/movie/' + encodeURIComponent(item.title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                     <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title }}</h3>
                                 </NuxtLink>
                             </div>
