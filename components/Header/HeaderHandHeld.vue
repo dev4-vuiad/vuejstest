@@ -45,7 +45,7 @@
                                                         <li itemscope="itemscope"
                                                             itemtype="https://www.schema.org/SiteNavigationElement"
                                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-161947 nav-item show">
-                                                            <NuxtLink title="TV" to="#" data-toggle="dropdown"
+                                                            <NuxtLink title="TV" to="/tv-shows/" data-toggle="dropdown"
                                                                 aria-haspopup="true" aria-expanded="false"
                                                                 class="dropdown-toggle nav-link">
                                                                 <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
