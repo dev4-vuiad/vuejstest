@@ -65,14 +65,15 @@
                     <div class="original-title__single">
                         {{ originalTitle }} 
                     </div>
-                    <div class="movie__meta"><span class="movie__meta--release-year">{{ year }}</span><span
-                            class="movie__meta--movie-run-time">{{ duration }}</span>
-                            <span class="movie__meta--genre">
-                                <template v-for="(genre, idx) in genres" :key="idx">
-                                    <span v-if="idx > 0">, </span>
-                                    <a :href="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></a>
-                                </template>
-                            </span>
+                    <div v-if="year" class="movie__meta">
+                        <span v-if="year" class="movie__meta--release-year">{{ year }}</span>
+                        <span v-if="duration" class="movie__meta--movie-run-time">{{ duration }}</span>
+                        <span class="movie__meta--genre">
+                            <template v-for="(genre, idx) in genres" :key="idx">
+                                <span v-if="idx > 0">, </span>
+                                <a :href="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></a>
+                            </template>
+                        </span>
                     </div>
                 </div>
             </div>
