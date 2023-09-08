@@ -15,7 +15,6 @@
     onBeforeUpdate(() => {
         postDate = props.postDate
         postDateGmt = props.postDateGmt
-        title = props.title
         tvshowTitle = props.tvshowTitle
         src = props.src
         srcSet = props.srcSet
