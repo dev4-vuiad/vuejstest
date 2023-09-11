@@ -72,9 +72,11 @@
     });
 
     onBeforeRouteUpdate ((newRoute) => {
-        s.value = newRoute.query.s
-        page.value = 1
-        nextTick()
+        if (s.value != newRoute.query.s) {
+            s.value = newRoute.query.s
+            page.value = 1
+            nextTick()
+        }
     })
 
     const onChangeOrderBy = (event) => {
