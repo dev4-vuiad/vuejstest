@@ -1,16 +1,25 @@
 <script setup>
     import { apiBaseUrl } from '/constants';
     const route = useRoute()
-    const title = ref(route.params.title)
+    const title = route.params.title
 
     definePageMeta({
         layout: 'episode',
         scrollToTop: false,
+        pageTransition: {
+            name: 'page', 
+            mode: 'out-in',
+            onBeforeEnter: () => {
+                window.scrollTo({top:0})
+            }
+        },
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
+            onBeforeEnter: () => {
+                window.scrollTo({top:0})
+            },
             onAfterEnter: () => {
-                $('#scrollUp').trigger('click')
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
                     var e = $(this)
@@ -52,24 +61,15 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch(apiBaseUrl + '/episode/' + encodeURIComponent(title.value), {
+        () => $fetch(apiBaseUrl + '/episode/details', {
             params: {
-                title: title.value
+                title: title
             }
-        }),
-        {
-            watch: [title]
-        }
+        })
     )
 
-    onMounted(() => {
-        if ($('#scrollUp').css('display') == 'block') {
-            $('#scrollUp').trigger('click')
-        }
-    })
-
     useHead({
-        title: title.value + ' – 코코아티비 :: KOKOA.TV'
+        title: title + ' – 코코아티비 :: KOKOA.TV'
     });
 
     const findNextEp = (title, seasons) => {
@@ -119,8 +119,8 @@
         <div class="container">
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
-                    <div id="episode-202016" class="post-202016 episode type-episode status-publish hentry">
-                        <TvshowsIntroBreadScrumb v-if="data && data.title"
+                    <div class="episode type-episode status-publish hentry">
+                        <TvshowsIntroBreadScrumb v-if="data && data.genres && data.genres.length"
                             :title="data.title"
                             :tvshowTitle="data.tvshowTitle"
                             :seasonName="data.seasonName"
@@ -128,8 +128,7 @@
                         />
                         <div class="single-episode__content column">
                             <!-- ads top -->
-                            <div class="ads-episode-top" style="text-align: center;margin-bottom: 10px;">
-                            </div>
+                            <div class="ads-episode-top"></div>
                             <div class="single-episode__row row">
                                 <div class="single-episode__sidebar column1 single-episode-custom">
                                     <TvshowsIntroInfo v-if="data && data.id"
@@ -181,8 +180,8 @@
                         </div>
                         <TvshowsIntroSeasonList v-if="data && data.seasons" :data="data.seasons" />
                     </div>
-                </div><!-- /.content-area -->
-            </div><!-- /.site-content-inner -->
-        </div><!-- /.container -->
-    </div><!-- #content -->
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

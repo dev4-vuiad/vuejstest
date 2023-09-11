@@ -5,6 +5,7 @@
 
     definePageMeta({
         layout: 'movies',
+        scrollToTop: false,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',

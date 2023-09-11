@@ -13,6 +13,13 @@
     opacity: 0;
   }
 
+  .page-enter-active, .page-leave-active {
+    transition: opacity .3s;
+  }
+  .page-enter-from, .page-leave-to {
+    opacity: 0;
+  }
+
   body {
     background-color: rgb(19, 23, 34);
   }

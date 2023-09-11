@@ -8,9 +8,19 @@
     definePageMeta({
         layout: 'movie',
         scrollToTop: false,
+        pageTransition: {
+            name: 'page', 
+            mode: 'out-in',
+            onBeforeEnter: () => {
+                window.scrollTo({top:0})
+            }
+        },
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
+            onBeforeEnter: () => {
+                window.scrollTo({top:0})
+            },
             onAfterEnter: () => {
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
@@ -53,18 +63,12 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch(apiBaseUrl + '/movies/' + encodeURIComponent(title), {
+        () => $fetch(apiBaseUrl + '/movies/details', {
             params: {
                 title: title
             }
         })
     )
-
-    onMounted(() => {
-        if ($('#scrollUp').css('display') == 'block') {
-            $('#scrollUp').trigger('click')
-        }
-    })
 
     useHead({
         title: title + ' – 코코아티비 :: KOKOA.TV'
@@ -76,8 +80,7 @@
         <div class="container">
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
-                    <div id="movie-202135"
-                        class="post-202135 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
+                    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
                         <div class="single-movie__player-container stretch-full-width">
                             <div class="single-movie__player-container--inner container">
                                 <MovieBreadScrumb v-if="data && data.genres && data.genres.length" :genre="data.genres[data.genres.length - 1]" :title="data.title" />
