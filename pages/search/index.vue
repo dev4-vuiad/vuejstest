@@ -187,7 +187,7 @@
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                     role="complementary">
                     <div class="widget-area-inner">
-                        <SearchTopWeek title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
+                        <SearchTopWeek v-once title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
                             :data="data.data.topWeeks" />
                     </div>
                 </div>

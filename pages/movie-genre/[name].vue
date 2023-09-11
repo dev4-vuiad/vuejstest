@@ -139,7 +139,7 @@
                         <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                             <div class="movies columns-6">
                                 <div class="movies__inner">
-                                    <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" 
+                                    <MoviePopularItem v-once v-if="data" v-for="(item, index) in data.data.populars" 
                                         :key="index" 
                                         :link="item.link" 
                                         :year="item.year" 
@@ -215,7 +215,7 @@
                                 <div class="widget-header"><span class="widget-title">장르</span></div>
                                 <MovieSidebarType :base="'/movie-genre/' + genre" :selected="genres" :year="year" :exclude="genre" />
                             </div> -->
-                            <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
+                            <MovieSidebarListYear v-once :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                         </div>
                     </div>
                 </div>

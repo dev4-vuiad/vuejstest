@@ -140,7 +140,7 @@
                         </header>
                         <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                             <div class="movies columns-6">
-                                <div class="movies__inner">
+                                <div class="movies__inner" v-once>
                                     <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index" 
                                         :link="item.link" 
                                         :year="item.year" 
@@ -207,7 +207,7 @@
                             <div class="textwidget">
                             </div>
                         </div>
-                        <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                        <MovieSidebarPopularContents v-once v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <div id="masvideos_movies_filter_widget-1"
                                 class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
