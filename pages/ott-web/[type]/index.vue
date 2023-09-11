@@ -188,11 +188,11 @@
                         </div>
                     </div>
                     <Pagination v-if="data && data.total > data.perPage" base="/tv-shows" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
-                </div><!-- /.content-area -->
+                </div>
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                     <TvshowsPopularContents v-once v-if="data" :title="'주간 ' + mapTypeTtitle[type] + ' 인기컨텐츠'" :data="data.data.topWeeks" />
-                </div><!-- #secondary -->
-            </div><!-- /.site-content-inner -->
-        </div><!-- /.container -->
-    </div><!-- #content -->
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

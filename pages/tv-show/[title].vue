@@ -249,9 +249,9 @@
                         </div>
                     </div>
 
-                </div><!-- /.content-area -->
-            </div><!-- /.site-content-inner -->
+                </div>
+            </div>
 
-        </div><!-- /.container -->
-    </div><!-- #content -->
+        </div>
+    </div>
 </template>

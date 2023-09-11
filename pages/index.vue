@@ -293,17 +293,15 @@
                                         </div>
                                     </div>
                                 </section>
-                                <!-- add ads  home-section home-ads-bt-feature1 ads-footer Kiosked -->
                                 <section class="home-section home-ads-bt-feature ads-footer"
                                     style="background-color:#2E3037;padding: 10px 0px;text-align: center;min-height: 135px">
-                                    <!-- <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div> -->
                                 </section>
                                 <p></p>
-                            </div><!-- .entry-content -->
-                        </article><!-- #post-## -->
-                    </main><!-- #main -->
-                </div><!-- #primary -->
-            </div><!-- /.site-content-inner -->
-        </div><!-- /.container -->
-    </div><!-- #content -->
+                            </div>
+                        </article>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
