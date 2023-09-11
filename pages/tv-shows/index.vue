@@ -6,6 +6,7 @@
 
     definePageMeta({
         layout: 'tvshows',
+        scrollToTop: false,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -64,10 +65,6 @@
             watch: [orderBy, page]
         }
     )
-
-    onMounted(() => {
-        $('#scrollUp').trigger('click')
-    })
 
     useHead({
         title: 'TV Shows – 코코아티비 :: KOKOA.TV'

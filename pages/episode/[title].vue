@@ -120,7 +120,7 @@
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
                     <div class="episode type-episode status-publish hentry">
-                        <TvshowsIntroBreadScrumb v-if="data && data.genres && data.genres.length"
+                        <TvshowsIntroBreadScrumb v-if="data && data.genres"
                             :title="data.title"
                             :tvshowTitle="data.tvshowTitle"
                             :seasonName="data.seasonName"
