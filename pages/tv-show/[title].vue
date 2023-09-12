@@ -1,7 +1,7 @@
 <script setup>
     import { apiBaseUrl } from '/constants';
     const route = useRoute()
-    const title = ref(route.params.title)
+    const title = route.params.title
 
     definePageMeta({
         layout: 'tvshow',
@@ -66,15 +66,16 @@
         }
     })
 
-    const { data }  = await useAsyncData(
-        () => $fetch(apiBaseUrl + '/tvshows/' + title.value),
-        {
-            watch: [title]
-        }
+    const { data }  = useLazyAsyncData(
+        () => $fetch(apiBaseUrl + '/tvshows/details', {
+            params: {
+                title: title
+            }
+        })
     )
 
     useHead({
-        title: title.value + ' – 코코아티비 :: KOKOA.TV'
+        title: title + ' – 코코아티비 :: KOKOA.TV'
     });
 
     onMounted(() => {
