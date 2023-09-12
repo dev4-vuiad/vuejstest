@@ -32,19 +32,19 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/_nuxt/assets/css/style1.css'
+          href: '/css/style1.css'
         },
         {
           rel: 'stylesheet',
-          href: '/_nuxt/assets/css/style2.css'
+          href: '/css/style2.css'
         },
         {
           rel: 'stylesheet',
-          href: '/_nuxt/assets/css/style3.css'
+          href: '/css/style3.css'
         },
         {
           rel: 'stylesheet',
-          href: '/_nuxt/assets/css/style.css'
+          href: '/css/style.css'
         },
       ],
       script: [
