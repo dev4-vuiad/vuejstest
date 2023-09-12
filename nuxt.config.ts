@@ -10,16 +10,15 @@ export default defineNuxtConfig({
     appendClass: 'lazyload',
     loadedClass: 'lazyloaded'
   },
-  css: [
-    '~/assets/css/style1.css',
-    '~/assets/css/style2.css',
-    '~/assets/css/style3.css',
-    '~/assets/css/style.css'
-  ],
   nitro: {
+    publicAssets: [
+      {
+        maxAge: 60 * 60 * 24 * 365
+      }
+    ],
     prerender: {
       failOnError: false, 
-    },
+    }
   },
   app: {
     head: {
@@ -30,7 +29,23 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800%7cOpen+Sans:400,600,700&#038;subset=latin%2Clatin-ext'
-        }
+        },
+        {
+          rel: 'stylesheet',
+          href: '/_nuxt/assets/css/style1.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/_nuxt/assets/css/style2.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/_nuxt/assets/css/style3.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/_nuxt/assets/css/style.css'
+        },
       ],
       script: [
         {
