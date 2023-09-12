@@ -253,7 +253,7 @@
             <div class="site-content__inner">
                 <div id="primary" v-if="data" class="content-area">
                     <main id="main" class="site-main" role="main">
-                        <article id="post-7782" class="post-7782 page type-page status-publish hentry">
+                        <article class="page type-page status-publish hentry">
                             <div class="page__content">
                                 <section id="section-home-slider-custom-64d31949b2fcb"
                                         class="home-section more-dark">
