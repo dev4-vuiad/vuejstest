@@ -1,1 +1,1 @@
-export const apiBaseUrl = 'https://backendnew.takitv.net/api'
+export const apiBaseUrl = 'https://backend.kokoatv.net/api'
