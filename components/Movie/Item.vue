@@ -32,8 +32,7 @@
                     width="300" height="450"
                     :src="src"
                     :srcset="srcSet"
-                    class="movie__poster--image" alt="" :key="renderCount"
-                    sizes="(max-width: 300px) 100vw, 300px">
+                    class="movie__poster--image" alt="" :key="renderCount" />
             </NuxtLink>
         </div>
         <div class="movie__body">

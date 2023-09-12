@@ -202,13 +202,8 @@
                         :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                     />
                 </div>
-                <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
-                    role="complementary" v-if="data">
+                <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie" role="complementary" v-if="data">
                     <div class="widget-area-inner">
-                        <div id="text-4" class="widget widget_text">
-                            <div class="textwidget">
-                            </div>
-                        </div>
                         <MovieSidebarPopularContents title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <MovieSidebarListYear v-once :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />

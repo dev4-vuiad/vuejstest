@@ -55,7 +55,7 @@
                 <img width="600" height="900"
                 :src="src"
                 :srcset="srcSet"
-                class="tv-show__poster--image tv_show__poster--image" alt="" :key="renderCount">
+                class="tv-show__poster--image tv_show__poster--image" alt="" :key="renderCount" />
             </NuxtLink>
         </div>
         <div class="tv-show__body">
