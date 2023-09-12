@@ -53,7 +53,7 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -95,7 +95,7 @@
         <div class="container">
             <TvshowsBreadScrumb base="/k-sisa" title="시사, 다큐" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">
-                <div id="primary" class="content-area"> <!-- ads tv-show top -->
+                <div id="primary" class="content-area" v-if="data"> <!-- ads tv-show top -->
                     <div class="ads-achive-tvshow-top" style="text-align: center;">
                     </div>
                     <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
@@ -174,8 +174,8 @@
                     </div>
                     <Pagination v-if="data && data.total > data.perPage" base="/k-sisa" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                 </div>
-                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                    <TvshowsPopularContents v-once v-if="data" title="주간 시사, 다큐 인기컨텐츠" :data="data.data.topWeeks" />
+                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
+                    <TvshowsPopularContents v-once title="주간 시사, 다큐 인기컨텐츠" :data="data.data.topWeeks" />
                 </div>
             </div>
         </div>

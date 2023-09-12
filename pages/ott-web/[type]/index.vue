@@ -6,6 +6,7 @@
 
     definePageMeta({
         layout: 'ott-web-type',
+        keepalive: true,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -68,7 +69,7 @@
     const page = ref(route.query.page || 1)
     const type  = route.params.type
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -110,7 +111,7 @@
         <div class="container">
             <OttWebBreadScrumb :page="page" :type="type" :title="mapTypeTtitle[type]" />
             <div class="site-content__inner">
-                <div id="primary" class="content-area"> <!-- ads tv-show top -->
+                <div id="primary" class="content-area" v-if="data"> <!-- ads tv-show top -->
                     <div class="ads-achive-tvshow-top" style="text-align: center;">
                     </div>
                     <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
@@ -189,8 +190,8 @@
                     </div>
                     <Pagination v-if="data && data.total > data.perPage" base="/tv-shows" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                 </div>
-                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                    <TvshowsPopularContents v-once v-if="data" :title="'주간 ' + mapTypeTtitle[type] + ' 인기컨텐츠'" :data="data.data.topWeeks" />
+                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
+                    <TvshowsPopularContents v-once :title="'주간 ' + mapTypeTtitle[type] + ' 인기컨텐츠'" :data="data.data.topWeeks" />
                 </div>
             </div>
         </div>

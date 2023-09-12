@@ -54,7 +54,7 @@
         }
     })
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/search', {
             params: {
                 title: s.value,
@@ -117,11 +117,7 @@
             <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler" type="button"><i
                         class="fas fa-sliders-h"></i><span>Filters</span></button></div>
             <div class="site-content__inner">
-                <div id="primary" class="content-area">
-
-                    <center>
-                    </center>
-
+                <div id="primary" class="content-area" v-if="data">
                     <main id="main" class="site-main" role="main">
 
                         <div class="vodi-control-bar">
@@ -188,9 +184,8 @@
                 </div>
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                     role="complementary">
-                    <div class="widget-area-inner">
-                        <SearchTopWeek v-once title="주간 TVShows 인기컨텐츠" v-if="data && data.data"
-                            :data="data.data.topWeeks" />
+                    <div class="widget-area-inner" v-if="data && data.data">
+                        <SearchTopWeek v-once title="주간 TVShows 인기컨텐츠" :data="data.data.topWeeks" />
                     </div>
                 </div>
             </div>

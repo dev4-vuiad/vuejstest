@@ -6,6 +6,7 @@
 
     definePageMeta({
         layout: 'k-drama',
+        keepalive: true,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -53,7 +54,7 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -96,9 +97,8 @@
         <div class="container">
             <TvshowsBreadScrumb base="/k-drama" title="드라마" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">
-                <div id="primary" class="content-area"> <!-- ads tv-show top -->
-                    <div class="ads-achive-tvshow-top" style="text-align: center;">
-                    </div>
+                <div id="primary" class="content-area" v-if="data"> <!-- ads tv-show top -->
+                    <div class="ads-achive-tvshow-top" style="text-align: center;"></div>
                     <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
                         <header class="page-header" style="margin-bottom:15px;">
                             <h1 class="page-title">실시간 드라마 인기컨텐츠</h1>

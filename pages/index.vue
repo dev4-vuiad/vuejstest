@@ -4,6 +4,7 @@
 
     definePageMeta({
         layout: 'home',
+        keepalive: true,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -141,7 +142,7 @@
         }
     })
 
-    let { data } = await useFetch(apiBaseUrl + '/homepage')
+    let { data } = useLazyFetch(apiBaseUrl + '/homepage')
 
     useHead({
         title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
@@ -234,7 +235,7 @@
     <div id="content" class="site-content " tabindex="-1">
         <div class="container">
             <div class="site-content__inner">
-                <div id="primary" class="content-area">
+                <div id="primary" v-if="data" class="content-area">
                     <main id="main" class="site-main" role="main">
                         <article id="post-7782" class="post-7782 page type-page status-publish hentry">
                             <div class="page__content">

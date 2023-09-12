@@ -7,7 +7,7 @@
     let title = props.title
 
     const type = ref('tv-show')
-    const { data: loadItems, refresh } = await useAsyncData(
+    const { data: loadItems } = useLazyAsyncData(
         'tv-shows' + type,
         () => $fetch(apiBaseUrl + '/tvshows', {
             params: {

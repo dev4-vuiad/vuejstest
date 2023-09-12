@@ -6,6 +6,7 @@
     definePageMeta({
         layout: 'movies',
         scrollToTop: false,
+        keepalive: true,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -55,7 +56,7 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    const { data, refresh }  = await useAsyncData(
+    const { data, refresh }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
@@ -134,7 +135,7 @@
                 </span>영화
             </nav>
             <div class="site-content__inner">
-                <div id="primary" class="content-area"> <!-- ads movies top -->
+                <div id="primary" v-if="data" class="content-area">
                     <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
                         <header class="page-header" style="margin-bottom:15px;">
                             <h1 class="page-title">실시간 영화 인기컨텐츠</h1>

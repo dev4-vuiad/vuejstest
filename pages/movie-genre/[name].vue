@@ -12,6 +12,7 @@
 
     definePageMeta({
         layout: 'movies-genre',
+        keepalive: true,
         layoutTransition: {
             name: 'layout', 
             mode: 'out-in',
@@ -56,7 +57,7 @@
         }
     })
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
@@ -129,7 +130,7 @@
                 <span v-if="data && data.data.items[0]">{{ getGenreTitle(name, data.data.items[0].genres) }}</span>
             </nav>
             <div class="site-content__inner">
-                <div id="primary" class="content-area"> <!-- ads movies top -->
+                <div id="primary" class="content-area" v-if="data"> <!-- ads movies top -->
                     <div class="ads-achive-movies-top" style="text-align: center;">
                     </div>
                     <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
@@ -202,19 +203,14 @@
                     />
                 </div>
                 <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
-                    role="complementary">
+                    role="complementary" v-if="data">
                     <div class="widget-area-inner">
                         <div id="text-4" class="widget widget_text">
                             <div class="textwidget">
                             </div>
                         </div>
-                        <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                        <MovieSidebarPopularContents title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
-                            <!-- <div id="masvideos_movies_filter_widget-1"
-                                class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
-                                <div class="widget-header"><span class="widget-title">장르</span></div>
-                                <MovieSidebarType :base="'/movie-genre/' + genre" :selected="genres" :year="year" :exclude="genre" />
-                            </div> -->
                             <MovieSidebarListYear v-once :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                         </div>
                     </div>
