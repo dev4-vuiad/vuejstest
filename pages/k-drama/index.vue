@@ -175,8 +175,8 @@
                     </div>
                     <Pagination v-if="data && data.total > data.perPage" base="/k-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                 </div>
-                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
-                    <TvshowsPopularContents v-once v-if="data" title="주간 드라마 인기컨텐츠" :data="data.data.topWeeks" />
+                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
+                    <TvshowsPopularContents v-once title="주간 드라마 인기컨텐츠" :data="data.data.topWeeks" />
                 </div>
             </div>
         </div>

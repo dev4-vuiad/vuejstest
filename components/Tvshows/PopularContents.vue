@@ -6,6 +6,7 @@
 
 <template>
     <div class="widget-area-inner">
+        <div class="kskdDiv ksdkCls"></div>
         <div id="masvideos_tv_shows_widget-1" class="widget masvideos masvideos_tv_shows_widget masvideos-tv-shows-widget">
             <div class="widget-header"><span class="widget-title">{{ title }}</span></div>
             <div class="masvideos masvideos-tv-shows ">

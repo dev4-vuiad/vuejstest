@@ -138,6 +138,14 @@
                 $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
                     slider.slick('slickPrev')
                 })
+
+                //Put ads
+                (function(s, w) {
+                    s.setAttribute("async", "async");
+                    s.setAttribute("type", "text/javascript");
+                    s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+                    w.document.body.appendChild(s);
+                })(window.top.document.createElement("script"), window.top)
             }   
         }
     })
@@ -228,6 +236,14 @@
                 });
             });
         }
+
+        //Put ads
+        (function(s, w) {
+            s.setAttribute("async", "async");
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+            w.document.body.appendChild(s);
+        })(window.top.document.createElement("script"), window.top)
     })
 </script>
 
@@ -249,9 +265,8 @@
                                     </div>
                                     <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
                                 </section>
-                                <section class="home-section  ads-top"
-                                    style="background-color:#2E3037;padding-top: 10px; padding-bottom: 10px;text-align: center;">
-                                    <div class="kskdCustomElement" style=" margin: 0 auto; padding: 0 15px;"></div>
+                                <section class="home-section ads-top">
+                                    <div class="kskdCustomElement"></div>
                                 </section>
                                 <section id="section-home-slider-custom-ott-64d31949c9733"
                                     class="home-section home-slider-custom-ott">
@@ -269,18 +284,14 @@
                                     </div>
                                 </section>
                                 <section
-                                    class="home-section home-movie-section-aside-header has-bg-color dark more-dark"
-                                    style="padding-bottom: 13px; padding-top: 35px; ">
+                                    class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                     <div class="container">
                                         <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
                                     </div>
                                 </section>
-                                <section class="home-section home-ads-bt-feature ads-bottom"
-                                    style="background-color:#1B212D;padding: 25px 0px;text-align: center;">
-                                </section>
+                                <section class="home-section home-ads-bt-feature ads-bottom"></section>
                                 <section id="section-movies-carousel-aside-header-64d3194c4e219"
-                                    class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right"
-                                    style="padding-bottom: 11px; ">
+                                    class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
                                     <div class="container">
                                         <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
                                     </div>
@@ -294,10 +305,8 @@
                                         </div>
                                     </div>
                                 </section>
-                                <section class="home-section home-ads-bt-feature ads-footer"
-                                    style="background-color:#2E3037;padding: 10px 0px;text-align: center;min-height: 135px">
+                                <section class="home-section home-ads-bt-feature ads-footer">
                                 </section>
-                                <p></p>
                             </div>
                         </article>
                     </main>

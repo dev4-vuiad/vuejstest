@@ -47,10 +47,10 @@ export default defineNuxtConfig({
         },
         {
           src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/jquery.easing.min.js?ver=1.2.7'
-        }
-        // {
-        //   children: 'window.__ITGS_started = Date.now();'
-        // },
+        },
+        {
+          children: 'window.__ITGS_started = Date.now();'
+        },
         // {
         //   src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
         //   async: true

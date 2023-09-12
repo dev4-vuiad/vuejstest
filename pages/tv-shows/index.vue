@@ -89,6 +89,16 @@
         page.value = val
         $('#scrollUp').trigger('click')
     }
+
+    onMounted(() => {
+        (function(s, w) {
+            s.setAttribute("async", "async");
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+            w.document.body.appendChild(s);
+        })(window.top.document.createElement("script"), window.top)
+    })
+    
 </script>
 
 <template>
@@ -123,7 +133,7 @@
                                 </div>
                             </div>
                         </div>
-                        <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
+                        <center class="ads_cate_top"></center>
                     </div>
                     <header class="page-header">
                         <h1 class="page-title">TV Shows</h1>

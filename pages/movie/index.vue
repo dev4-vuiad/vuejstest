@@ -47,6 +47,14 @@
                 $(document).on("click", function(e) {
                     $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
                 })
+
+                //Put ads
+                (function(s, w) {
+                    s.setAttribute("async", "async");
+                    s.setAttribute("type", "text/javascript");
+                    s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+                    w.document.body.appendChild(s);
+                })(window.top.document.createElement("script"), window.top)
             }
         }
     })
@@ -119,6 +127,16 @@
         refresh()
         $('#scrollUp').trigger('click')
     }
+
+    onMounted(() => {
+        (function(s, w) {
+            s.setAttribute("async", "async");
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+            w.document.body.appendChild(s);
+        })(window.top.document.createElement("script"), window.top)
+    })
+    
 </script>
 
 <template>
@@ -203,13 +221,14 @@
                     />
                 </div>
                 <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
-                    role="complementary">
+                    role="complementary" v-if="data">
                     <div class="widget-area-inner">
                         <div id="text-4" class="widget widget_text">
                             <div class="textwidget">
                             </div>
                         </div>
-                        <MovieSidebarPopularContents v-once v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                        <div class="kskdDiv ksdkCls"></div>
+                        <MovieSidebarPopularContents v-once title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <div id="masvideos_movies_filter_widget-1"
                                 class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
