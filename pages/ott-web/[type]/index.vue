@@ -121,7 +121,7 @@
                         </header>
                         <div class="masvideos masvideos-tv-shows ">
                             <div class="tv-shows columns-5">
-                                <div class="tv-shows__inner" v-once v-if="data && data.data && data.data.populars">
+                                <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
                                     <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx" 
                                     :id="item.id"
                                     :link="item.link"
