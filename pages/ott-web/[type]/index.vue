@@ -56,6 +56,7 @@
         disney: 'Disney +',
         'apple-tv': 'Apple TV',
         wavve: 'wavve',
+        tving: 'Tving',
         'amazon-prime-video': 'Amazon Prime Video'
     }
 
