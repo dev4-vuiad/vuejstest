@@ -66,7 +66,7 @@
         }
     })
 
-    const { data }  = useLazyAsyncData(
+    const { data }  = await useAsyncData(
         () => $fetch(apiBaseUrl + '/tvshows/details', {
             params: {
                 title: title
@@ -115,7 +115,7 @@
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
                     <div id="tv-show-203734"
-                        class="tv-show post-203734 tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-k-drama tv_show_genre-214">
+                        class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-k-drama tv_show_genre-214">
                         <TvshowInfo v-if="data"
                             :title="data.title"
                             :originalTitle="data.originalTitle"
