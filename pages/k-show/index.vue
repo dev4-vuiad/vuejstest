@@ -176,7 +176,7 @@
                     <Pagination v-if="data && data.total > data.perPage" base="/k-show" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                 </div>
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
-                    <TvshowsPopularContents v-once title="주간 예능 인기컨텐츠" :data="data.data.topWeeks" />
+                    <TvshowsPopularContents title="주간 예능 인기컨텐츠" :data="data.data.topWeeks" />
                 </div>
             </div>
         </div>
