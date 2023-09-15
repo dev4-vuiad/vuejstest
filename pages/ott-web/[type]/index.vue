@@ -64,7 +64,7 @@
     const page = ref(route.query.page || 1)
     const type  = route.params.type
 
-    const { data }  = useLazyAsyncData(
+    const { data }  = await useAsyncData(
         () => $fetch(apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
