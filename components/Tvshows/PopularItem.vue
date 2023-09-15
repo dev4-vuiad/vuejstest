@@ -49,7 +49,7 @@
     <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126'">
         <div class="tv-show__poster">
             <div class="box-tv-channel">
-                <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel">
+                <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel" :key="renderCount">
             </div>
             <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
