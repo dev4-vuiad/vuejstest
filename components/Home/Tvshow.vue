@@ -95,7 +95,7 @@
                                     </div>
                                     <NuxtLink :to="'/' + item.link"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                            style="display:none" class="span_sea_ep_title">{{ item.episodeNumber }}화</span>
+                                            style="display:none" class="span_sea_ep_title">{{ (item.seasonNumber != '시즌 1' ? item.seasonNumber + ' - ' : '') + item.episodeNumber }}화</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                 </div>
