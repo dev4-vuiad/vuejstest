@@ -150,6 +150,10 @@
         }
     })
 
+    useRouteCache((helper) => {
+        helper.setMaxAge(43600).setCacheable();
+    })
+
     let { data } = useLazyFetch(apiBaseUrl + '/homepage')
 
     useHead({

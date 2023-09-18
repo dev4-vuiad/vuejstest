@@ -8,14 +8,13 @@ export default defineNuxtConfig({
   ],
   multiCache: {
     route: {
-      enabled: true,
+      enabled: true
     },
-    cdn: {
+    api: {
       enabled: true,
-      cacheControlHeader: 'Cache-Control',
-      cacheTagHeader: 'Cache-Tag'
-    },
-    debug: true
+      prefix: '/__nuxt_multi_cache',
+      authorization: 'O5ilxqx5k1ZzFMjEVr'
+    }
   },
   lazyLoad: {
     images: true,
