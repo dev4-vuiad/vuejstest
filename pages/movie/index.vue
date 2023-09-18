@@ -2,6 +2,16 @@
     import { apiBaseUrl } from '/constants';
     const route = useRoute();
     const router = useRouter();
+    useRouteCache((helper) => {
+        helper.setCacheable().addTags(['page:1'])
+    })
+
+    useCDNHeaders((helper) => {
+        helper
+            .public()
+            .set('mustRevalidate', true)
+            .setNumeric('maxAge', 60)
+    })
 
     definePageMeta({
         layout: 'movies',

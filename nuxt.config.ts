@@ -3,8 +3,20 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
     'nuxt-lazy-load',
-    '@nuxtjs/device'
+    '@nuxtjs/device',
+    'nuxt-multi-cache'
   ],
+  multiCache: {
+    route: {
+      enabled: true,
+    },
+    cdn: {
+      enabled: true,
+      cacheControlHeader: 'Cache-Control',
+      cacheTagHeader: 'Cache-Tag'
+    },
+    debug: true
+  },
   lazyLoad: {
     images: true,
     appendClass: 'lazyload',
