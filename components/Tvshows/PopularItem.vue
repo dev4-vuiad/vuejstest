@@ -61,7 +61,7 @@
         <div class="tv-show__body">
             <span class="tv-show__meta--release-year">{{ toTimeAgo(postDate) }}</span>
             <NuxtLink :to="'/' + link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                <span style="display:none;" class="span_sea_ep_title">{{ (seasonNumber != '시즌 1' ? seasonNumber + ' - ' : '') + episodeNumber }}화</span>
+                <span style="display:none;" class="span_sea_ep_title">{{ (!['시즌 1', 'Season 1'].includes(seasonNumber) ? seasonNumber + ' - ' : '') + episodeNumber }}화</span>
                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ tvshowTitle }}</h3>
             </NuxtLink>
         </div>
