@@ -1,30 +1,44 @@
 <script setup>
     import { ref } from 'vue'
     import { apiBaseUrl } from '/constants';
-    const props = defineProps(['data', 'title'])
     const renderCount = ref(0)
-    let data = props.data
-    let title = props.title
-
-    const type = ref('tv-show')
-    const { data: loadItems } = useLazyAsyncData(
-        'tv-shows' + type,
-        () => $fetch(apiBaseUrl + '/tvshows', {
+    const props = defineProps(['data', 'title'])
+    const title = props.title
+    const data = props.data
+    let type = 'tv-show'
+    let allItems = {
+        'tv-show': data.items['tv-show']
+    }
+    const items = ref(data.items['tv-show'])
+    
+    const { refresh } = useLazyAsyncData(
+        () => $fetch(apiBaseUrl + '/tvShowHomepage', {
             params: {
-                type: (type.value == 'tv-show' ? '' : type.value),
-                limit: 12
+                type: (type == 'tv-show' ? '' : type)
             }
         }).then(data => {
             renderCount.value ++
-            return data.data.items
+            allItems[type] = data
+            items.value = data
         }), {
-            watch: [type]
+            immediate: false
         }
     )
+
+    onMounted(() => {
+        if (typeof allItems[type] == 'undefined') {
+            refresh()
+        }
+    })
     
-    let items = loadItems
     const selectType = (val) => {
-        type.value = val
+        type = val
+        if (typeof allItems[type] == 'undefined') {
+            refresh()
+        } else {
+            renderCount.value ++
+            items.value = allItems[type]
+        }
     }
 
     const toTimeAgo = (d) => {
@@ -56,7 +70,7 @@
 
 <template>
     <ul class="nav nav-tabs">
-        <li v-for="(item, index) in data.menu" :key="index" class="nav-item lamlamlama">
+        <li v-for="(item, index) in data.menu" :key="index" class="nav-item">
             <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" @click.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
         </li>
     </ul>
