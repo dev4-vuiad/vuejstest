@@ -59,7 +59,7 @@
         }
     })
     
-    const genres = (route.query.filter_genre || '').split(',').filter(v => v.length)
+    const genres = ref((route.query.filter_genre || '').split(',').filter(v => v.length))
     const year = ref(route.query.year_filter || '')
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
@@ -74,7 +74,7 @@
     const { data, refresh }  = useLazyAsyncData(
         () => $fetch(apiBaseUrl + '/movies', {
             params: {
-                genre: genres.length ? genres.join(',') : undefined,
+                genre: genres.value.length ? genres.value.join(',') : undefined,
                 year: year.value || undefined,
                 orderBy: orderBy.value || undefined,
                 page: page.value
@@ -121,7 +121,7 @@
         }
 
         router.push({query: query})
-        genres = val
+        genres.value = val
         page.value = 1
         refresh()
     }
