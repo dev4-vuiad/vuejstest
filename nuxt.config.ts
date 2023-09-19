@@ -37,8 +37,17 @@ export default defineNuxtConfig({
       failOnError: false, 
     }
   },
-  appConfig: {
-    apiBaseUrl: 'https://backend.kokoatv.net/api'
+  $development: {
+    appConfig: {
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
+    }
+  },
+  $production: {
+    appConfig: {
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'http://localhost/api'
+    }
   },
   app: {
     head: {

@@ -2,6 +2,7 @@
     const config = useAppConfig()
     const route = useRoute();
     const router = useRouter();
+    const { $apiBaseUrl } = useNuxtApp()
 
     definePageMeta({
         layout: 'movies',
@@ -64,15 +65,15 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    useRouteCache((helper) => {
-        helper.setMaxAge(43600)
-        if(page.value == 1 && orderBy.value == 'date' && year.value == '' && !genres.length) {
-            helper.setCacheable()
-        }
-    })
+    // useRouteCache((helper) => {
+    //     helper.setMaxAge(43600)
+    //     if(page.value == 1 && orderBy.value == 'date' && year.value == '' && !genres.length) {
+    //         helper.setCacheable()
+    //     }
+    // })
 
     const { data, refresh }  = useLazyAsyncData(
-        () => $fetch(config.apiBaseUrl + '/movies', {
+        () => $fetch($apiBaseUrl() + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
                 year: year.value || undefined,
