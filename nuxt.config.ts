@@ -22,6 +22,12 @@ export default defineNuxtConfig({
     loadedClass: 'lazyloaded'
   },
   nitro: {
+    storage: {
+      fs: {
+        driver: 'fs',
+        base: './temp'
+      }
+    },
     publicAssets: [
       {
         maxAge: 60 * 60 * 24 * 365
