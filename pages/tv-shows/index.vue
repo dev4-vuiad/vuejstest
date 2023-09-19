@@ -1,5 +1,5 @@
 <script setup>
-    const config = useAppConfig()
+    const { $apiBaseUrl } = useNuxtApp()
     import { nextTick } from 'vue'
     const route = useRoute();
     const router = useRouter();
@@ -56,7 +56,7 @@
     const page = ref(route.query.page || 1)
 
     const { data }  = useLazyAsyncData(
-        () => $fetch(config.apiBaseUrl + '/tvshows', {
+        () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value

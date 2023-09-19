@@ -1,8 +1,7 @@
 <script setup>
-    const config = useAppConfig()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute();
     const router = useRouter();
-    const { $apiBaseUrl } = useNuxtApp()
 
     definePageMeta({
         layout: 'movies',

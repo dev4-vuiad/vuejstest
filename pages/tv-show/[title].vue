@@ -1,5 +1,5 @@
 <script setup>
-    const config = useAppConfig()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
@@ -67,7 +67,7 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch(config.apiBaseUrl + '/tvshows/details', {
+        () => $fetch($apiBaseUrl() + '/tvshows/details', {
             params: {
                 title: title
             }

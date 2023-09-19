@@ -1,6 +1,6 @@
 <script setup>
     import { nextTick } from 'vue'
-    const config = useAppConfig()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute();
     const router = useRouter();
     const name = route.params.name
@@ -58,7 +58,7 @@
     })
 
     const { data }  = useLazyAsyncData(
-        () => $fetch(config.apiBaseUrl + '/movies', {
+        () => $fetch($apiBaseUrl() + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
                 year: year.value || undefined,
