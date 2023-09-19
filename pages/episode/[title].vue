@@ -1,5 +1,5 @@
 <script setup>
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
     const route = useRoute()
     const title = route.params.title
 
@@ -69,7 +69,7 @@
     })
 
     const { data }  = await useAsyncData(
-        () => $fetch(apiBaseUrl + '/episode/details', {
+        () => $fetch(config.apiBaseUrl + '/episode/details', {
             params: {
                 title: title
             }

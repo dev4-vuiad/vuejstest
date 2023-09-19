@@ -1,6 +1,6 @@
 <script setup>
     import { onMounted } from 'vue'
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
 
     definePageMeta({
         layout: 'home',
@@ -154,7 +154,7 @@
         helper.setMaxAge(43600).setCacheable();
     })
 
-    let { data } = useLazyFetch(apiBaseUrl + '/homepage')
+    let { data } = useLazyFetch(config.apiBaseUrl + '/homepage')
 
     useHead({
         title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'

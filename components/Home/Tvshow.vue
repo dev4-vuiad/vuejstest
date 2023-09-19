@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
     const renderCount = ref(0)
     const props = defineProps(['data', 'title'])
     const title = props.title
@@ -12,7 +12,7 @@
     const items = ref(data.items['tv-show'])
     
     const { refresh } = useLazyAsyncData(
-        () => $fetch(apiBaseUrl + '/tvShowHomepage', {
+        () => $fetch(config.apiBaseUrl + '/tvShowHomepage', {
             params: {
                 type: (type == 'tv-show' ? '' : type)
             }

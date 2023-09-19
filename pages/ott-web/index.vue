@@ -1,6 +1,6 @@
 <script setup>
     import { nextTick } from 'vue'
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
     const route = useRoute();
     const router = useRouter();
 
@@ -55,7 +55,7 @@
     const page = ref(route.query.page || 1)
 
     const { data }  = useLazyAsyncData(
-        () => $fetch(apiBaseUrl + '/tvshows', {
+        () => $fetch(config.apiBaseUrl + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value,

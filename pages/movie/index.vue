@@ -1,5 +1,5 @@
 <script setup>
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
     const route = useRoute();
     const router = useRouter();
 
@@ -72,7 +72,7 @@
     })
 
     const { data, refresh }  = useLazyAsyncData(
-        () => $fetch(apiBaseUrl + '/movies', {
+        () => $fetch(config.apiBaseUrl + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
                 year: year.value || undefined,

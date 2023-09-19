@@ -1,7 +1,7 @@
 <script setup>
     import { nextTick, ref } from 'vue'
     import { onBeforeRouteUpdate } from "vue-router"
-    import { apiBaseUrl } from '/constants';
+    const config = useAppConfig()
     const route = useRoute();
     const router = useRouter();
     const s = ref(route.query.s)
@@ -55,7 +55,7 @@
     })
 
     const { data }  = useLazyAsyncData(
-        () => $fetch(apiBaseUrl + '/search', {
+        () => $fetch(config.apiBaseUrl + '/search', {
             params: {
                 title: s.value,
                 orderBy: orderBy.value || undefined,
