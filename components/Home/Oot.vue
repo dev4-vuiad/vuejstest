@@ -3,6 +3,48 @@
     let channels = props.channels
     let title = props.title
     let sliders = props.sliders
+
+    onMounted(() => {
+        const setupPrevNextBtns1 = (prevBtn1, nextBtn1, embla1) => {
+            prevBtn1.addEventListener('click', embla1.scrollPrev, false);
+            nextBtn1.addEventListener('click', embla1.scrollNext, false);
+        };
+        const disablePrevNextBtns1 = (prevBtn1, nextBtn1, embla1) => {
+            return () => {
+                if (embla1.canScrollPrev()) prevBtn1.removeAttribute('disabled');
+                else prevBtn1.setAttribute('disabled', 'disabled');
+                if (embla1.canScrollNext()) nextBtn1.removeAttribute('disabled');
+                else nextBtn1.setAttribute('disabled', 'disabled');
+            };
+        };
+        const wrap1 = document.querySelector('.embla1');
+        if (wrap1) {
+            const viewPort1 = wrap1.querySelector('.embla__viewport1');
+            const prevBtn1 = wrap1.querySelector('.embla__button--prev1');
+            const nextBtn1 = wrap1.querySelector('.embla__button--next1');
+            const embla1 = EmblaCarousel(viewPort1, { dragFree: true, containScroll: 'trimSnaps', align: 0.08, skipSnaps: true });
+            const disablePrevAndNextBtns1 = disablePrevNextBtns1(prevBtn1, nextBtn1, embla1);
+            setupPrevNextBtns1(prevBtn1, nextBtn1, embla1);
+            embla1.on('select', disablePrevAndNextBtns1);
+            embla1.on('init', disablePrevAndNextBtns1);
+            jQuery(document).ready(function () {
+                var wr = jQuery('.embla__slide__inner1').width();
+                if (wr < 220) {
+                    jQuery('.embla__slide__img1').each(function () {
+                        jQuery(this).css('width', wr);
+                    });
+                }
+                jQuery(window).resize(function () {
+                    var wr = jQuery('.embla__slide__inner1').width();
+                    if (wr < 220) {
+                        jQuery('.embla__slide__img1').each(function () {
+                            jQuery(this).css('width', wr);
+                        });
+                    }
+                });
+            });
+        }
+    })
 </script>
 
 <style scoped>

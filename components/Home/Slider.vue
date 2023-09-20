@@ -1,6 +1,49 @@
 <script setup>
     const props = defineProps(['data'])
     let data = props.data
+
+    onMounted(() => {
+        const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
+            prevBtn.addEventListener('click', embla.scrollPrev, false);
+            nextBtn.addEventListener('click', embla.scrollNext, false);
+        };
+        const disablePrevNextBtns = (prevBtn, nextBtn, embla) => {
+            return () => {
+                if (embla.canScrollPrev()) prevBtn.removeAttribute('disabled');
+                else prevBtn.setAttribute('disabled', 'disabled');
+                if (embla.canScrollNext()) nextBtn.removeAttribute('disabled');
+                else nextBtn.setAttribute('disabled', 'disabled');
+            };
+        };
+        EmblaCarousel.defaultOptions = { loop: true };
+        const wrap = document.querySelector('.embla');
+        if (wrap) {
+            const viewPort = wrap.querySelector('.embla__viewport');
+            const prevBtn = wrap.querySelector('.embla__button--prev');
+            const nextBtn = wrap.querySelector('.embla__button--next');
+            const embla = EmblaCarousel(viewPort, { dragFree: true, containScroll: 'trimSnaps', align: 0.08, skipSnaps: true });
+            const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
+            setupPrevNextBtns(prevBtn, nextBtn, embla);
+            embla.on('select', disablePrevAndNextBtns);
+            embla.on('init', disablePrevAndNextBtns);
+            jQuery(document).ready(function () {
+                var wr = jQuery('.embla__slide__inner').width();
+                if (wr < 220) {
+                    jQuery('.embla__slide__img').each(function () {
+                        jQuery(this).css('width', wr);
+                    });
+                }
+                jQuery(window).resize(function () {
+                    var wr = jQuery('.embla__slide__inner').width();
+                    if (wr < 220) {
+                        jQuery('.embla__slide__img').each(function () {
+                            jQuery(this).css('width', wr);
+                        });
+                    }
+                });
+            });
+        }
+    })
 </script>
 
 <template>
