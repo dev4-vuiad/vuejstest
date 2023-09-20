@@ -20,9 +20,9 @@
 
 <template>
     <div class="post-202135 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
-        <div class="movie__poster">
+        <div class="movie__poster loading-bg">
             <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img width="300" height="450" :src="src" :srcset="srcSet" class="movie__poster--image" alt="" :key="renderCount">
+                <img width="300" height="450" :src="src" :srcset="srcSet" class="movie__poster--image lazyload" alt="" :key="renderCount">
             </NuxtLink>
         </div>
         <div class="movie__body"><span class="movie__meta--release-year">{{ year }}</span>

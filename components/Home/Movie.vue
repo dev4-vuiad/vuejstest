@@ -15,14 +15,14 @@
                         </div>
                     </header>
                     <div v-for="(item, index) in data" :key="index" class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
-                        <div class="movie__poster">
+                        <div class="movie__poster loading-bg">
                             <NuxtLink :to="'/movie/' + item.title"
                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <img width="300"
                                     height="450"
                                     :src="item.src"
                                     :srcset="item.srcSet"
-                                    class="movie__poster--image" alt="" loading="lazy"
+                                    class="movie__poster--image lazyload" alt="" 
                                     sizes="(max-width: 300px) 100vw, 300px">
                             </NuxtLink>
                         </div>

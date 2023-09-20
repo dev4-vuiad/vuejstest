@@ -69,7 +69,7 @@
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <NuxtLink class="tv-show__link" :to="'/' + item.link">
-                            <img class="embla__slide__img1" :src="item.src" />
+                            <img class="embla__slide__img1 lazyload" :src="item.src" />
                         </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>

@@ -63,3 +63,7 @@ body {
 .search.movie__title:hover{
   color: #0f9ed1
 }
+
+.loading-bg {
+  background-color: #202124;
+}

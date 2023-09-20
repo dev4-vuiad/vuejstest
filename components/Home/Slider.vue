@@ -49,11 +49,11 @@
 <template>
     <div class="embla">
         <div class="embla__viewport">
-            <div class="embla__container" style="transform: translate3d(0%, 0px, 0px);">
+            <div class="embla__container">
                 <div class="embla__slide" v-for="(item, index) in data" :key="index">
-                    <div class="embla__slide__inner">
+                    <div class="embla__slide__inner loading-bg">
                         <NuxtLink class="movie__link" :to="'/' + item.link">
-                            <img class="embla__slide__img" :src="item.src" :srcset="item.srcSet" />
+                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" />
                         </NuxtLink>
                     </div>
                     <div class="box_meta">

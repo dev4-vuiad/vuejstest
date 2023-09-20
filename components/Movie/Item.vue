@@ -26,13 +26,13 @@
 
 <template>
     <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie">
-        <div class="movie__poster">
+        <div class="movie__poster loading-bg">
             <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img
                     width="300" height="450"
                     :src="src"
                     :srcset="srcSet"
-                    class="movie__poster--image" alt="" :key="renderCount" />
+                    class="movie__poster--image lazyload" alt="" :key="renderCount" />
             </NuxtLink>
         </div>
         <div class="movie__body">

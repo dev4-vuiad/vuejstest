@@ -18,12 +18,14 @@
                                 <div class="movie-list">
                                     <div class="movie-list__poster">
                                         <NuxtLink :to="'/movie/' + item.title"
-                                            class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"><img
+                                            class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                            <img
                                                 width="150" height="225"
                                                 :src="item.src"
                                                 :srcset="item.srcSet"
-                                                class="movie__poster--image" alt="" loading="lazy"
-                                                sizes="(max-width: 150px) 100vw, 150px"></NuxtLink>
+                                                class="movie__poster--image lazyload" alt=""
+                                                sizes="(max-width: 150px) 100vw, 150px">
+                                        </NuxtLink>
                                     </div>
                                     <div class="movie-list__body">
                                         <span class="movie-list__year">{{ item.year }}</span>

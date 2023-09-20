@@ -64,6 +64,13 @@
     const page = ref(route.query.page || 1)
     const type  = route.params.type
 
+    useRouteCache((helper) => {
+        helper.setMaxAge(43600)
+        if(page.value == 1 && orderBy.value == 'date') {
+            helper.setCacheable()
+        }
+    })
+
     const { data }  = await useAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
