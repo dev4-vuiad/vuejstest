@@ -154,7 +154,6 @@
         helper.setMaxAge(43600).setCacheable();
     })
 
-    console.log($apiBaseUrl())
     const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/homepage')
     )
