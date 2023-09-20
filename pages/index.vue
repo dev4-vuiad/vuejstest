@@ -154,7 +154,10 @@
         helper.setMaxAge(43600).setCacheable();
     })
 
-    let { data } = useLazyFetch($apiBaseUrl() + '/homepage')
+    console.log($apiBaseUrl())
+    const { data }  = useLazyAsyncData(
+        () => $fetch($apiBaseUrl() + '/homepage')
+    )
 
     useHead({
         title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
