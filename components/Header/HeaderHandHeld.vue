@@ -4,12 +4,6 @@
     }
 </script>
 
-<style scoped>
-    .dropdown-menu {
-        right: 0 !important;
-    }
-</style>
-
 <template>
     <header class="handheld-header site-header handheld-stick-this light">
         <div class="container-fluid">

@@ -47,25 +47,6 @@
     })
 </script>
 
-<style scoped>
-    .ott_logo {
-        max-width: 790px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding-right: 30px;
-    }
-
-    .ott_home_item img {
-        width: 110px;
-        height: auto;
-    }
-
-    .embla__slide__img1 {
-        min-height: 100% !important;
-    }
-</style>
 <template>
     <div class="ott_logo">
         <div class="ott_home_item" v-for="(item, index) in channels" :key="index">

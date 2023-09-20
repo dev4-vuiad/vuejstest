@@ -12,19 +12,6 @@
     }
 </script>
 
-<style scoped>
-    .tv-show__short-description > div {
-        height: auto;
-        transition: max-height 600ms ease-in-out;
-        overflow: hidden;
-        max-height: 47px;
-
-    }
-    .tv-show__short-description > div.expanded {
-        max-height: 200px;
-    }
-</style>
-
 <template>
     <div class="single-tv-show tv-show column poster-column">
         <div class="tv-show__poster_head">
@@ -49,7 +36,7 @@
             </div>
         </div>
         <div class="tv-show__info--body">
-            <div class="tv-show__short-description">
+            <div class="tv-show__short-description modified">
                 <div v-html="description"></div>
                 <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">Read More</a>
             </div>

@@ -32,15 +32,6 @@
     }
 </script>
 
-<style scoped>
-    .episode__description > div {
-        height: auto;
-        transition: max-height 600ms ease-in-out;
-        overflow: hidden;
-        max-height: 50px;
-    }
-</style>
-
 <template>
     <div class="vodi-single-episode__sidebar--tv-show">
         <div class="tv-show__poster">
@@ -76,7 +67,7 @@
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle }}
                     </div>
-                    <div class="episode__description">
+                    <div class="episode__description modified">
                         <div v-html="description"></div>
                         <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">{{ expanded ? 'Show Less' : 'Read More' }}</a>
                     </div>

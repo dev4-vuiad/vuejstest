@@ -10,13 +10,6 @@
     }
 </script>
 
-<style scoped>
-    .episodes__inner {
-        width: 100%;
-        margin-right: 0;
-    }
-</style>
-
 <template>
     <div class="tv_show__season-tabs-wrap">
         <div class="masvideos-tabs">

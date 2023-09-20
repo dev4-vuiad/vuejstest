@@ -39,16 +39,6 @@
     }
 </script>
 
-<style scoped>
-    .movie__description > div {
-        height: auto;
-        transition: max-height 600ms ease-in-out;
-        overflow: hidden;
-        max-height: 50px;
-
-    }
-</style>
-
 <template>
     <div class="single-movie__sidebar column ">
         <div class="summary entry-summary">

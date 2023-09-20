@@ -39,21 +39,6 @@
     }
 </script>
 
-<style scoped>
-    .movie__description > div {
-        height: auto;
-        transition: max-height 600ms ease-in-out;
-        overflow: hidden;
-        max-height: 50px;
-
-    }
-
-    .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-</style>
-
 <template>
     <div class="single-movie__sidebar column poster-custom">
         <div class="movie__poster">
@@ -62,7 +47,7 @@
         </div>
         <div class="summary entry-summary">
             <div class="single-movie__sidebar--head-info">
-                <div class="movie__body">
+                <div class="movie__body desktop">
                     <h3 class="masvideos-loop-movie__title  movie__title"> {{ title }} </h3>
                     <div class="original-title__single">
                         {{ originalTitle }}

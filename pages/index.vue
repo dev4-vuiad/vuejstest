@@ -157,7 +157,8 @@
     let { data } = useLazyFetch($apiBaseUrl() + '/homepage')
 
     useHead({
-        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
+        link: [{rel: 'stylesheet', href: '/css/home.css' }]
     });
 
     onMounted(() => {

@@ -1,0 +1,6 @@
+.episode__description.modified > div {
+    height: auto;
+    transition: max-height 600ms ease-in-out;
+    overflow: hidden;
+    max-height: 50px;
+}

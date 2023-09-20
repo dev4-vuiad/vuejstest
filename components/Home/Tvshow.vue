@@ -62,16 +62,10 @@
     }
 </script>
 
-<style scoped>
-    .nav-tabs a {
-        cursor: pointer;
-    }
-</style>
-
 <template>
     <ul class="nav nav-tabs">
         <li v-for="(item, index) in data.menu" :key="index" class="nav-item">
-            <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" @click.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
+            <NuxtLink :class="'nav-link' + (type == item.link ? ' active' : '')" @click.stop.prevent="selectType(item.link)">{{ item.title }}</NuxtLink>
         </li>
     </ul>
     <div class="home-tv-show-section-aside-header__inner">
