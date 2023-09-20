@@ -11526,7 +11526,8 @@ color: transparent; }
 content: '';
 width: 8px;
 height: 14px;
-background: url(//kokoatv.net/wp-content/themes/vodi/assets/css/data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAArCAQAAAA5m9v9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCAUBOjHlQx+uAAABbklEQVQ4y43SP0tWYRgH4HsSjd6iHJwDC5EMGiSchILClqBoSLAv0CAIEhE0hYFDFH2CaGuqIAjDIaJP0OCQWRFC5mD+IRXNq0Hl1dfn9dyc5ZznXL/nHO7nF+6YMSxyV3gORrK8wycwmuOhfSdwN8dDu4/gXo6HEzuB+zkeTvpQHdj7cNwkeJDj4VhVoHGhZgI8zPFQ8755oLRHzTswluPhqLfgUY6HI+VA8xm3eQPGczy0eQ0e53ho9Qo8yfEDgcrKavUSPMvx0FIPZHho8cIWnuZ46LSMlRw+5TM23c7hKfwzlPn3TlPYMJSZzGlfsGEwM/czprG5iw/nXaax7lamM12+Yt3NTCO7fcOaG/vXy/is71hzvfFNCff4gdWDuMTP+YlV10rfLeO/ZdzIz5vFiqvN5lXCA83Pon7b6xeWXTnsnOt4rhrv8gvmsORyVT+38TwWXaosc4Q+v/HHxWoswiwW9GewCJNmslj8B07gY6Pn0yzYAAAAAElFTkSuQmCC) no-repeat; }
+background-repeat: no-repeat;
+}
 @font-face {
 font-family: dashicons;
 src: url(https://image002.modooup.com/wp-content/themes/vodi/assets/fonts/dashicons.eot); }
