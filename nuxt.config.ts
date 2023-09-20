@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     storage: {
       fs: {
         driver: 'fs',
-        base: './data/cache'
+        base: './.data/cache'
       }
     },
     publicAssets: [
