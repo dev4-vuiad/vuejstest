@@ -64,12 +64,12 @@
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
 
-    // useRouteCache((helper) => {
-    //     helper.setMaxAge(43600)
-    //     if(page.value == 1 && orderBy.value == 'date' && year.value == '' && !genres.length) {
-    //         helper.setCacheable()
-    //     }
-    // })
+    useRouteCache((helper) => {
+        helper.setMaxAge(43600)
+        if(page.value == 1 && orderBy.value == 'date' && year.value == '' && !genres.length) {
+            helper.setCacheable()
+        }
+    })
 
     const { data, refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies', {
