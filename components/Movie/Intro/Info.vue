@@ -1,8 +1,8 @@
 <script setup>
     const expanded = ref(false)
-    import { onBeforeUpdate } from 'vue'; 
-    const props = defineProps(['year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
-
+    const renderCount = ref(0)
+    const props = defineProps(['id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+    let id = props.id
     let year = props.year
     let duration = props.duration
     let title = props.title
@@ -12,16 +12,37 @@
     let description = props.description
     let outlink = props.outlink
 
-    onBeforeUpdate(() => {
-        year = props.year
-        duration = props.duration
-        title = props.title
-        originalTitle = props.originalTitle
-        genres = props.genres
-        src = props.src
-        description = props.description
-        outlink = props.outlink
-    });
+    onBeforeMount(() => {
+        renderCount.value ++
+        id = undefined
+        year = undefined
+        duration = undefined
+        title = undefined
+        originalTitle = undefined
+        genres = undefined
+        src = undefined
+        description = undefined
+        outlink = undefined
+    })
+
+    watch(
+        [
+            () => props.id,
+            () => props.src,
+        ],
+        () => {
+            renderCount.value ++
+            id = props.id
+            year = props.year
+            duration = props.duration
+            title = props.title
+            originalTitle = props.originalTitle
+            genres = props.genres
+            src = props.src
+            description = props.description
+            outlink = props.outlink
+        }
+    )
 
     const onReadMoreClick = (event) => {
         expanded.value = !expanded.value
@@ -40,10 +61,17 @@
 </script>
 
 <template>
-    <div class="single-movie__sidebar column poster-custom">
-        <div class="movie__poster">
-            <img width="300" height="450" :src="src" class="movie__poster--image" alt="" loading="lazy"
-                sizes="(max-width: 300px) 100vw, 300px">
+    <div class="single-movie__sidebar column poster-custom" :postid="id">
+        <div class="movie__poster loading-bg">
+            <img 
+                width="300" 
+                height="450" 
+                :src="src" 
+                class="movie__poster--image lazyload" 
+                alt="" 
+                sizes="(max-width: 300px) 100vw, 300px"
+                :key="renderCount"
+            />
         </div>
         <div class="summary entry-summary">
             <div class="single-movie__sidebar--head-info">

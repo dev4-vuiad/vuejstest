@@ -150,9 +150,9 @@
         }
     })
 
-    // useRouteCache((helper) => {
-    //     helper.setMaxAge(43600).setCacheable();
-    // })
+    useRouteCache((helper) => {
+        helper.setMaxAge(43600).setCacheable();
+    })
 
     const defaultData = {
         sliders: Array.from(Array(10), (_, index) => ({})),
