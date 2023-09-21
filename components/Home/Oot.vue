@@ -1,8 +1,23 @@
 <script setup>
+    const renderCount = ref(0)
     const props = defineProps(['title', 'channels', 'sliders'])
     let channels = props.channels
     let title = props.title
     let sliders = props.sliders
+
+    watch(
+        [
+            () => props.title,
+            () => props.channels,
+            () => props.sliders
+        ],
+        () => {
+            renderCount.value ++
+            title = props.title
+            channels = props.channels
+            sliders = props.sliders
+        }
+    )
 
     onMounted(() => {
         const setupPrevNextBtns1 = (prevBtn1, nextBtn1, embla1) => {
@@ -65,11 +80,11 @@
     <div class="embla1">
         <div class="embla__viewport1">
             <div class="embla__container1" style="transform: translate3d(0%, 0px, 0px);">
-                <div class="embla__slide1" v-for="(item, index) in sliders" :key="index">
+                <div class="embla__slide1" v-for="(item, index) in sliders" :key="index" :postid="item.id">
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <NuxtLink class="tv-show__link" :to="'/' + item.link">
-                            <img class="embla__slide__img1 lazyload" :src="item.src" />
+                            <img class="embla__slide__img1 lazyload" :src="item.src" :key="renderCount" />
                         </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>

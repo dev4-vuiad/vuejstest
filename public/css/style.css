@@ -67,3 +67,7 @@ body {
 .loading-bg {
   background-color: #202124;
 }
+
+.pointer {
+  cursor: pointer;
+}

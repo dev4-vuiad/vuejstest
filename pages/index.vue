@@ -150,12 +150,42 @@
         }
     })
 
-    useRouteCache((helper) => {
-        helper.setMaxAge(43600).setCacheable();
-    })
+    // useRouteCache((helper) => {
+    //     helper.setMaxAge(43600).setCacheable();
+    // })
 
+    const defaultData = {
+        sliders: Array.from(Array(10), (_, index) => ({})),
+        otts: {
+            ottChanels: Array.from(Array(6), (_, index) => ({})),
+            ottSliders: Array.from(Array(10), (_, index) => ({})),
+            ottTitle: ''
+        },
+        tvshows: {
+            categories: {
+                items: {
+                    'tv-show': Array.from(Array(12), (_, index) => ({})),
+
+                },
+                menu: Array.from(Array(5), (_, index) => ({}))
+            },
+            title: ''
+        },
+        movies: {
+            items: Array.from(Array(12), (_, index) => ({})),
+            title: ''
+        },
+        moviesCarousel: Array.from(Array(8), (_, index) => ({})),
+        movieNewests: {
+            topWeeks: Array.from(Array(5), (_, index) => ({})),
+            movieNewests: Array.from(Array(8), (_, index) => ({}))
+        }
+    }
     const { data }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/homepage')
+        () => $fetch($apiBaseUrl() + '/homepage'),
+        {
+            default: () => defaultData
+        }
     )
 
     useHead({
@@ -207,7 +237,7 @@
                                 <section
                                     class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                     <div class="container">
-                                        <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :data="data.tvshows.categories" />
+                                        <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                     </div>
                                 </section>
                                 <section

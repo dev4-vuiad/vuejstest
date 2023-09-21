@@ -1,6 +1,14 @@
 <script setup>
+    const renderCount = ref(0)
     const props = defineProps(['data'])
     let data = props.data
+
+    watch(
+        () => props.data,
+        () => {
+            data = props.data
+        }
+    )
 </script>
 
 <template>
@@ -14,7 +22,7 @@
                     <div class="movies columns-1">
                         <div class="movies__inner">
                             <div v-for="(item, index) in data" :key="index"
-                                class="post-202538 movie type-movie status-publish has-post-thumbnail hentry movie_genre-222 movie_genre-224 movie_genre-wmovie movie_genre-220 movie_genre-221">
+                                class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="item.id">
                                 <div class="movie-list">
                                     <div class="movie-list__poster">
                                         <NuxtLink :to="'/movie/' + item.title"
@@ -24,14 +32,16 @@
                                                 :src="item.src"
                                                 :srcset="item.srcSet"
                                                 class="movie__poster--image lazyload" alt=""
-                                                sizes="(max-width: 150px) 100vw, 150px">
+                                                sizes="(max-width: 150px) 100vw, 150px"
+                                                :key="renderCount"
+                                            />
                                         </NuxtLink>
                                     </div>
                                     <div class="movie-list__body">
-                                        <span class="movie-list__year">{{ item.year }}</span>
+                                        <span class="movie-list__year">{{ item.year || ' ' }}</span>
                                         <NuxtLink :to="'/movie/' + item.title"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                                            <h3 class="movie-list__name">{{ item.title }}</h3>
+                                            <h3 class="movie-list__name">{{ item.title || ' ' }}</h3>
                                         </NuxtLink>
                                         <span class="movie-list__genre">
                                             <template v-for="(genre, idx) in item.genres" :key="idx">

@@ -1,7 +1,15 @@
 <script setup>
-    import { onMounted } from 'vue'
+    const renderCount = ref(0)
     const props = defineProps(['data'])
     let data = props.data
+
+    watch(
+        () => props.data,
+        () => {
+            renderCount.value ++
+            data = props.data
+        }
+    )
 
     onMounted(() => {
         // Bottom slider
@@ -42,9 +50,10 @@
                                     style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
                                     <div class="slick-slide slick-current slick-active" data-slick-index="0" v-for="(item, index) in data" :key="index" aria-hidden="false">
                                         <div>
-                                            <div class="post-202504 movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-kmovie"
-                                                style="width: 100%; display: inline-block;">
-                                                <div class="movie__poster"><NuxtLink
+                                            <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie"
+                                                style="width: 100%; display: inline-block;" :postid="item.id">
+                                                <div class="movie__poster">
+                                                    <NuxtLink
                                                         :to="'/movie/' + item.title"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
@@ -52,14 +61,17 @@
                                                             :src="item.src"
                                                             :srcset="item.srcSet"
                                                             class="movie__poster--image lazyload" alt=""
-                                                            sizes="(max-width: 300px) 100vw, 300px"></NuxtLink>
+                                                            sizes="(max-width: 300px) 100vw, 300px"
+                                                            :key="renderCount"
+                                                        />
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="movie__body">
                                                     <div class="movie__info">
                                                         <div class="movie__info--head">
-                                                            <div class="original-title__single">{{ item.originalTitle }}</div>
+                                                            <div class="original-title__single">{{ item.originalTitle || ' ' }}</div>
                                                             <div class="movie__meta">
-                                                                <span class="movie__meta--release-year">{{ item.year }}</span>
+                                                                <span class="movie__meta--release-year">{{ item.year || ' ' }}</span>
                                                                 <span class="movie__meta--genre">
                                                                     <template v-for="(genre, idx) in item.genres" :key="idx">
                                                                         <span v-if="idx > 0">, </span>
@@ -73,10 +85,11 @@
                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                 tabindex="0">
                                                                 <h3 class="masvideos-loop-movie__title  movie__title">
-                                                                    사랑의 고고학</h3>
+                                                                    {{ item.title || ' ' }}
+                                                                </h3>
                                                             </NuxtLink>
                                                         </div>
-                                                        <div class="original-title">{{ item.originalTitle }}</div>
+                                                        <div class="original-title">{{ item.originalTitle || ' ' }}</div>
                                                     </div>
                                                 </div>
                                             </div>

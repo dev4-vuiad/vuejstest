@@ -61,6 +61,15 @@
         }
     })
 
+    const defaultData = {
+        total: 0,
+        perPage: 30,
+        data: {
+            topWeeks: [{}, {}, {}, {}, {}],
+            populars: [{}, {}, {}, {}, {}],
+            items: Array.from(Array(30), (_, index) => ({}))
+        }
+    }
     const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
@@ -70,6 +79,7 @@
             }
         }),
         {
+            default: () => defaultData,
             watch: [orderBy, page]
         }
     )
@@ -113,7 +123,7 @@
                         <div class="masvideos masvideos-tv-shows ">
                             <div class="tv-shows columns-5">
                                 <div class="tv-shows__inner">
-                                    <TvshowsPopularItem v-if="data && data.data && data.data.populars" v-for="(item, idx) in data.data.populars" :key="idx" 
+                                    <TvshowsPopularItem v-if="data" v-for="(item, idx) in data.data.populars" :key="idx" 
                                         :id="item.id"
                                         :link="item.link"
                                         :year="item.year"
@@ -183,7 +193,7 @@
                     <Pagination v-if="data && data.total > data.perPage" base="/k-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                 </div>
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
-                    <TvshowsPopularContents title="주간 드라마 인기컨텐츠" :data="data.data.topWeeks" />
+                    <TvshowsPopularContents title="주간 드라마 인기컨텐츠" v-if="data" :data="data.data.topWeeks" />
                 </div>
             </div>
         </div>

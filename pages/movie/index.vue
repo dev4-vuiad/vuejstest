@@ -71,6 +71,15 @@
         }
     })
 
+    const defaultData = {
+        total: 0,
+        perPage: 30,
+        data: {
+            topWeeks: [{}, {}, {}, {}, {}],
+            populars: [{}, {}, {}, {}, {}, {}],
+            items: Array.from(Array(30), (_, index) => ({}))
+        }
+    }
     const { data, refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies', {
             params: {
@@ -81,6 +90,7 @@
             }
         }),
         {
+            default: () => defaultData,
             watch: [year, orderBy]
         }
     )
@@ -167,8 +177,9 @@
                         </header>
                         <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                             <div class="movies columns-6">
-                                <div class="movies__inner" v-once>
-                                    <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index" 
+                                <div class="movies__inner">
+                                    <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars" :key="index"
+                                        :id="item.id"
                                         :link="item.link" 
                                         :year="item.year" 
                                         :title="item.title" 
@@ -211,7 +222,8 @@
                     <div class="vodi-archive-wrapper" data-view="grid">
                         <div class="movies columns-6">
                             <div class="movies__inner">
-                                <MovieItem v-if="data" v-for="(item, index) in data.data.items" :key="index" 
+                                <MovieItem v-if="data" v-for="(item, index) in data.data.items" :key="index"
+                                    :id="item.id" 
                                     :link="item.link" 
                                     :year="item.year" 
                                     :title="item.title" 
@@ -235,7 +247,7 @@
                             </div>
                         </div>
                         <div class="kskdDiv ksdkCls"></div>
-                        <MovieSidebarPopularContents v-once title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                        <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <div id="masvideos_movies_filter_widget-1"
                                 class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">

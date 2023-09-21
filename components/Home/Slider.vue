@@ -1,6 +1,15 @@
 <script setup>
     const props = defineProps(['data'])
+    const renderCount = ref(0)
     let data = props.data
+
+    watch(
+        () => props.data,
+        () => {
+            renderCount.value ++
+            data = props.data
+        }
+    )
 
     onMounted(() => {
         const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
@@ -50,10 +59,10 @@
     <div class="embla">
         <div class="embla__viewport">
             <div class="embla__container">
-                <div class="embla__slide" v-for="(item, index) in data" :key="index">
+                <div class="embla__slide" v-for="(item, index) in data" :key="index" :postid="item.id">
                     <div class="embla__slide__inner loading-bg">
                         <NuxtLink class="movie__link" :to="'/' + item.link">
-                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" />
+                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" :key="renderCount" />
                         </NuxtLink>
                     </div>
                     <div class="box_meta">

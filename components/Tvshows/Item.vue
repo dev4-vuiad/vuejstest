@@ -47,7 +47,7 @@
         <div class="tv-show__body">
             <div class="tv-show__info">
                 <div class="tv-show__info--head">
-                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">{{ $toTimeAgo(postDate) }}</span></div>
+                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">{{ postDate ? $toTimeAgo(postDate) : '' }}</span></div>
                     <div v-if="originalTitle" class="original-title-tvshow">
                         {{ originalTitle }}
                     </div>

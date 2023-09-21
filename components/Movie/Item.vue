@@ -1,8 +1,9 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
 
-    const props = defineProps(['link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
+    const props = defineProps(['id', 'link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
     const renderCount = ref(0)
+    let id = props.id
     let year = props.year
     let title = props.title
     let originalTitle = props.originalTitle
@@ -11,21 +12,22 @@
     let srcSet = props.srcSet
 
     onBeforeUpdate(() => {
-        const newSrc = src
+        const oldId = id
+        id = props.id
         year = props.year
         title = props.title
         originalTitle = props.originalTitle
         genres = props.genres
         src = props.src
         srcSet = props.srcSet
-        if (newSrc != src) {
+        if (oldId !== id) {
             renderCount.value ++
         }
     })
 </script>
 
 <template>
-    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie">
+    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="id">
         <div class="movie__poster loading-bg">
             <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img

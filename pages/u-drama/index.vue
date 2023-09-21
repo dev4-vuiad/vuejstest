@@ -61,6 +61,15 @@
         }
     })
 
+    const defaultData = {
+        total: 0,
+        perPage: 30,
+        data: {
+            topWeeks: [{}, {}, {}, {}, {}],
+            populars: [{}, {}, {}, {}, {}],
+            items: Array.from(Array(30), (_, index) => ({}))
+        }
+    }
     const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
@@ -70,6 +79,7 @@
             }
         }),
         {
+            default: () => defaultData,
             watch: [orderBy, page]
         }
     )
@@ -112,7 +122,7 @@
                         </header>
                         <div class="masvideos masvideos-tv-shows ">
                             <div class="tv-shows columns-5">
-                                <div class="tv-shows__inner" v-once>
+                                <div class="tv-shows__inner">
                                     <TvshowsPopularItem v-if="data && data.data && data.data.populars" v-for="(item, idx) in data.data.populars" :key="idx"
                                     :id="item.id" 
                                     :link="item.link"

@@ -1,6 +1,13 @@
 <script setup>
     const props = defineProps(['data'])
     let data = props.data
+
+    watch(
+        () => props.data,
+        () => {
+            data = props.data
+        }
+    )
 </script>
 
 <template>
@@ -12,7 +19,7 @@
             <div class="masvideos masvideos-movies ">
                 <div class="movies columns-1">
                     <div class="movies__inner">
-                        <div v-for="(item, index) in data" :key="index" class="post-201925 movie type-movie status-publish has-post-thumbnail hentry movie_genre-231 movie_genre-kmovie">
+                        <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
                             <div class="movie-list">
                                 <div class="movie-list__body">
                                     <span class="movie-list__year">{{ item.year }}</span>
