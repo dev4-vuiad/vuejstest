@@ -5,6 +5,13 @@
     let title = props.title
     let sliders = props.sliders
 
+    onBeforeMount(() => {
+        renderCount.value ++
+        channels = Array.from(Array(6), (_, index) => ({}))
+        sliders = Array.from(Array(10), (_, index) => ({}))
+        title = ''
+    })
+
     watch(
         [
             () => props.title,
@@ -16,7 +23,7 @@
             title = props.title
             channels = props.channels
             sliders = props.sliders
-            if (sliders[0].id && oldId !== sliders[0].id) {
+            if (oldId !== sliders[0].id) {
                 renderCount.value ++
             }
         }
