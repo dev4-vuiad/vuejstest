@@ -12,10 +12,13 @@
             () => props.sliders
         ],
         () => {
-            renderCount.value ++
+            const oldId = sliders[0].id
             title = props.title
             channels = props.channels
             sliders = props.sliders
+            if (sliders[0].id && oldId !== sliders[0].id) {
+                renderCount.value ++
+            }
         }
     )
 
@@ -64,7 +67,7 @@
 
 <template>
     <div class="ott_logo">
-        <div class="ott_home_item" v-for="(item, index) in channels" :key="index">
+        <div class="ott_home_item" v-for="(item, index) in channels">
             <NuxtLink :to="'/' + item.link">
                 <img :src="item.src" />
             </NuxtLink>
@@ -80,7 +83,7 @@
     <div class="embla1">
         <div class="embla__viewport1">
             <div class="embla__container1" style="transform: translate3d(0%, 0px, 0px);">
-                <div class="embla__slide1" v-for="(item, index) in sliders" :key="index" :postid="item.id">
+                <div class="embla__slide1" v-for="(item, index) in sliders" :postid="item.id">
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <NuxtLink class="tv-show__link" :to="'/' + item.link">

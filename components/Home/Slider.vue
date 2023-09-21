@@ -6,8 +6,11 @@
     watch(
         () => props.data,
         () => {
-            renderCount.value ++
+            const oldId = data[0].id
             data = props.data
+            if (data[0].id && oldId !== data[0].id) {
+                renderCount.value ++
+            }   
         }
     )
 
