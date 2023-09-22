@@ -76,11 +76,6 @@
         }),
         {
             default: () => ({
-                seasons: {
-                    0: {
-                        episodes: []
-                    }
-                }
             })
         }
     )
@@ -205,7 +200,7 @@
                             <div class="episode__season-tabs-wrap stretch-full-width"></div>
                             <TvshowsIntroDescriptionSection v-if="data" :data="data.description" />
                         </div>
-                        <TvshowsIntroSeasonList v-if="data" :data="data.seasons" />
+                        <TvshowsIntroSeasonList v-if="data && data.seasons" :data="data.seasons" />
                     </div>
                 </div>
             </div>
