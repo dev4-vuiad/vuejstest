@@ -7,7 +7,6 @@
 
     onBeforeMount(() => {
         renderCount.value ++
-        channels = Array.from(Array(6), (_, index) => ({}))
         sliders = Array.from(Array(10), (_, index) => ({}))
         title = ''
     })

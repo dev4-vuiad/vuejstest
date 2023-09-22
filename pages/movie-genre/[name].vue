@@ -57,6 +57,15 @@
         }
     })
 
+    const defaultData = {
+        total: 0,
+        perPage: 30,
+        data: {
+            topWeeks: [{}, {}, {}, {}, {}],
+            populars: [{}, {}, {}, {}, {}, {}],
+            items: Array.from(Array(30), (_, index) => ({}))
+        }
+    }
     const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies', {
             params: {
@@ -67,6 +76,7 @@
             }
         }),
         {
+            default: () => defaultData,
             watch: [genres, year, orderBy, page]
         }
     )
@@ -105,6 +115,9 @@
     }
 
     const getGenreTitle = (link, genres) => {
+        if (!genres) {
+            return ''
+        }
         let v = genres.filter(v => v.link == link || decodeURI(v.link) == link)
         return v[0] ? v[0].name : ''
     }
@@ -127,7 +140,7 @@
                         <path fill-rule="evenodd" d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z"></path>
                     </svg>
                 </span>
-                <span v-if="data && data.data.items[0]">{{ getGenreTitle(name, data.data.items[0].genres) }}</span>
+                <span v-if="data && data.data.items[0] && data.data.items[0].genres">{{ getGenreTitle(name, data.data.items[0].genres) }}</span>
             </nav>
             <div class="site-content__inner">
                 <div id="primary" class="content-area" v-if="data"> <!-- ads movies top -->
@@ -140,7 +153,8 @@
                         <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                             <div class="movies columns-6">
                                 <div class="movies__inner">
-                                    <MoviePopularItem v-once v-if="data" v-for="(item, index) in data.data.populars" 
+                                    <MoviePopularItem v-if="data" v-for="(item, index) in data.data.populars"
+                                        :id="item.id" 
                                         :key="index" 
                                         :link="item.link" 
                                         :year="item.year" 
@@ -186,7 +200,8 @@
                     <div class="vodi-archive-wrapper" data-view="grid">
                         <div class="movies columns-6">
                             <div class="movies__inner">
-                                <MovieItem v-if="data" v-for="(item, index) in data.data.items" :key="index" 
+                                <MovieItem v-if="data" v-for="(item, index) in data.data.items" :key="index"
+                                    :id="item.id" 
                                     :link="item.link" 
                                     :year="item.year" 
                                     :title="item.title" 
@@ -206,7 +221,7 @@
                     <div class="widget-area-inner">
                         <MovieSidebarPopularContents title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
-                            <MovieSidebarListYear v-once :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
+                            <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                         </div>
                     </div>
                 </div>

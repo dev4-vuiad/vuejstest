@@ -71,7 +71,16 @@
         }
     })
 
-    const { data }  = await useAsyncData(
+    const defaultData = {
+        total: 0,
+        perPage: 30,
+        data: {
+            topWeeks: [{}, {}, {}, {}, {}],
+            populars: [{}, {}, {}, {}, {}],
+            items: Array.from(Array(30), (_, index) => ({}))
+        }
+    }
+    const { data }  = useAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -80,6 +89,7 @@
             }
         }),
         {
+            default: () => defaultData,
             watch: [orderBy, page]
         }
     )
@@ -122,21 +132,21 @@
                         </header>
                         <div class="masvideos masvideos-tv-shows ">
                             <div class="tv-shows columns-5">
-                                <div class="tv-shows__inner" v-if="data && data.data && data.data.populars">
+                                <div class="tv-shows__inner" v-if="data">
                                     <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx" 
-                                    :id="item.id"
-                                    :link="item.link"
-                                    :year="item.year"
-                                    :title="item.title"
-                                    :tvshowTitle="item.tvshowTitle"
-                                    :src="item.src"
-                                    :srcSet="item.srcSet"
-                                    :episodeNumber="item.episodeNumber" 
-                                    :seasonNumber="item.seasonNumber"
-                                    :postDate="item.postDate" 
-                                    :postDateGmt="item.postDateGmt"
-                                    :chanelImage="item.chanelImage"
-                                />
+                                        :id="item.id"
+                                        :link="item.link"
+                                        :year="item.year"
+                                        :title="item.title"
+                                        :tvshowTitle="item.tvshowTitle"
+                                        :src="item.src"
+                                        :srcSet="item.srcSet"
+                                        :episodeNumber="item.episodeNumber" 
+                                        :seasonNumber="item.seasonNumber"
+                                        :postDate="item.postDate" 
+                                        :postDateGmt="item.postDateGmt"
+                                        :chanelImage="item.chanelImage"
+                                    />
                                 </div>
                             </div>
                         </div>

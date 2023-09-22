@@ -254,7 +254,7 @@
                                 <div class="widget-header"><span class="widget-title">장르</span></div>
                                 <MovieSidebarType :selected="genres" :year="year" @on-select-genres="onSelectGenres" />
                             </div>
-                            <MovieSidebarListYear v-once :selected="year" :genres="genres" @on-select-year="onSelectYear" />
+                            <MovieSidebarListYear :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                         </div>
                     </div>
                 </div>
