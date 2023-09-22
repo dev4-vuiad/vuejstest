@@ -2,11 +2,18 @@
     import { reactive } from 'vue'
     const { $toTimeAgo } = useNuxtApp()
     const props = defineProps(['data'])
-    const data = props.data
+    let data = props.data
     let currentSeason = ref(0)
     const state = reactive({
         showIdx: setShowIdx(data)
     })
+
+    watch(
+        () => props.data,
+        () => {
+            data = props.data
+        }
+    )
 
     function setShowIdx(data) {
         let results = {}

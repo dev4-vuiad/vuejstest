@@ -228,7 +228,7 @@
                                 <section id="section-home-slider-custom-ott-64d31949c9733"
                                     class="home-section home-slider-custom-ott">
                                     <div class="bg_opacity"></div>
-                                    <HomeOot v-if="data && data.otts" 
+                                    <HomeOot v-if="data" 
                                         :channels="data.otts.ottChanels"
                                         :title="data.otts.ottTitle"
                                         :sliders="data.otts.ottSliders"

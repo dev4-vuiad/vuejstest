@@ -9,10 +9,7 @@
     }
 
     watch(
-        [
-            () => props.topWeeks,
-            () => props.topMonths
-        ],
+        () => props.topWeeks,
         () => {
             topWeeks = props.topWeeks
             topMonths = props.topMonths
@@ -51,14 +48,12 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: none;" class="lamtest-top">
-                </div>
             </div>
             <div id="phimbo_month" :class="'ott-tab tab-pane' + (tabIdx == 1 ? ' active' : '')">
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">
-                            <div v-for="(item, index) in topMonths" :key="index" class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
+                            <div v-for="(item, index) in topMonths" :key="index" class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure">
                                 <div class="tv-show__body">
                                     <NuxtLink
                                         :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
