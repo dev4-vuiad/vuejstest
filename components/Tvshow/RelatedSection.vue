@@ -20,7 +20,7 @@
 
 <template>
     <section class="tv-show-related" id="tv-show-related">
-        <h2 class="tv-show-related__title">You may also like after: {{ title }}</h2>
+        <h2 class="tv-show-related__title" v-if="data && data.length">You may also like after: {{ title }}</h2>
         <div class="tv-show-related__carousel">
             <div class="tv-show-related__carousel--inner">
                 <div class="masvideos masvideos-tv-shows">
