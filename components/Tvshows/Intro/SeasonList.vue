@@ -50,7 +50,7 @@
                                 <div class="episodes__inner">
                                     <template v-for="(episode, idx) in season.episodes" :key="idx">
                                         <div v-if="idx < state.showIdx[index]" class="episode type-episode status-publish hentry">
-                                            <NuxtLink :to="'/episode/' + episode.title"
+                                            <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)"
                                                 class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                                 <span class="masvideos-loop-episode__number episode__number">{{ $toTimeAgo(episode.postDate) }}</span>
                                                 <h3 class="masvideos-loop-episode__title episode__title">{{ episode.title }}</h3>
