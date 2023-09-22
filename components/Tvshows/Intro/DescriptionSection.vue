@@ -1,13 +1,19 @@
 <script setup>
-    import { ref } from 'vue'
     const props = defineProps(['data'])
     let data = props.data
-    let showTabIdx = ref(0)
+    const showTabIdx = ref(0)
+
+    watch(
+        () => props.data,
+        () => {
+            data = props.data
+        }
+    )
 </script>
 
 <template>
     <div class="masvideos-tabs episode-tabs">
-        <ul class="nav" pos="0">
+        <ul class="nav">
             <li class="nav-item">
                 <a data-toggle="tab" :class="'nav-link' + (showTabIdx == 0 ? '  active show' : '')" @click.prevent="showTabIdx = 0">
                     Description </a>

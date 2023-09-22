@@ -1,8 +1,20 @@
 <script setup>
-
+    const renderCount = ref(0)
     const props = defineProps(['data', 'title'])
-    const data = props.data
-    const title = props.title
+    let data = props.data
+    let title = props.title
+
+    watch(
+        [
+            () => props.data
+        ],
+        () => {
+            renderCount.value ++
+            title = props.title
+            data = props.data
+        }
+        
+    )
 
 </script>
 
@@ -15,14 +27,17 @@
                     <div class="tv-shows columns-5">
                         <div class="tv-shows__inner">
                             <div v-for="(item, index) in data" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-sbs category-wavve category-k-drama">
-                                <div class="tv-show__poster">
+                                <div class="tv-show__poster loading-bg">
                                     <div class="box-tv-channel">
-                                        <img class="tv-channel" :src="item.chanelImage" alt="" width="68" height="31">
+                                        <img class="tv-channel lazyload" :src="item.chanelImage" alt="" width="68" height="31" :key="renderCount" />
                                     </div>
-                                    <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link" tabindex="-1"><img width="220" height="314"
-                                    :src="item.src"
-                                    class="tv-show__poster--image tv_show__poster--image" alt=""
-                                    decoding="async" loading="lazy">
+                                    <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link" tabindex="-1">
+                                        <img width="220" height="314"
+                                            :src="item.src"
+                                            class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
+                                            decoding="async"
+                                            :key="renderCount"
+                                        >
                                     </NuxtLink>
                                 </div>
                                 <div class="tv-show__body">

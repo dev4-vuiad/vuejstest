@@ -68,12 +68,21 @@
         }
     })
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
             }
-        })
+        }),
+        {
+            default: () => ({
+                seasons: {
+                    0: {
+                        episodes: []
+                    }
+                }
+            })
+        }
     )
 
     useHead({
@@ -149,7 +158,8 @@
                             <div class="ads-episode-top"></div>
                             <div class="single-episode__row row">
                                 <div class="single-episode__sidebar column1 single-episode-custom">
-                                    <TvshowsIntroInfo v-if="data && data.id"
+                                    <TvshowsIntroInfo v-if="data"
+                                        :id="data.id"
                                         :postDate="data.postDate"
                                         :postDateGmt="data.postDateGmt"
                                         :title="data.title"
@@ -193,10 +203,9 @@
                                 </div>
                             </div>
                             <div class="episode__season-tabs-wrap stretch-full-width"></div>
-                            <TvshowsIntroDescriptionSection v-if="data && data.description"
-                                :data="data.description" />
+                            <TvshowsIntroDescriptionSection v-if="data" :data="data.description" />
                         </div>
-                        <TvshowsIntroSeasonList v-if="data && data.seasons" :data="data.seasons" />
+                        <TvshowsIntroSeasonList v-if="data" :data="data.seasons" />
                     </div>
                 </div>
             </div>

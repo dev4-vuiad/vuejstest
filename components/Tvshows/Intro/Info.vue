@@ -1,15 +1,42 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
-    const postDate = props.postDate
-    const postDateGmt = props.postDateGmt
-    const title = props.title
-    const originalTitle = props.originalTitle
-    const genres = props.genres
-    const src = props.src
-    const description = props.description
-    const outlink = props.outlink
-    const tvshowTitle = props.tvshowTitle
+    const renderCount = ref(0)
+    const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
+    let id = props.id
+    let postDate = props.postDate
+    let title = props.title
+    let originalTitle = props.originalTitle
+    let genres = props.genres
+    let src = props.src
+    let description = props.description
+    let tvshowTitle = props.tvshowTitle
+
+    onBeforeMount(() => {
+        renderCount.value ++
+        id = undefined
+        postDate = undefined
+        title = undefined
+        originalTitle = undefined
+        genres = undefined
+        src = undefined
+        description = undefined
+        tvshowTitle = undefined
+    })
+
+    watch(
+        () => props.id,
+        () => {
+            renderCount.value ++
+            id = props.id
+            postDate = props.postDate
+            title = props.title
+            originalTitle = props.originalTitle
+            genres = props.genres
+            src = props.src
+            description = props.description
+            tvshowTitle = props.tvshowTitle
+        }
+    )
 
     const format = (d) => {
         d = new Date(d.replace(' ', 'T') + '.000Z')
@@ -33,19 +60,22 @@
 </script>
 
 <template>
-    <div class="vodi-single-episode__sidebar--tv-show">
-        <div class="tv-show__poster">
+    <div class="vodi-single-episode__sidebar--tv-show" :postid="id">
+        <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
-                <img class="tv-channel"
+                <img class="tv-channel lazyload"
                     :src="src" alt="" width="68"
-                    height="31">
+                    height="31"
+                    :key="renderCount"
+                />
             </div>
             <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                <span style="display:none"
-                    class="span_sea_ep_title">158화</span>
-                    <img width="220" height="312"
+                <img width="220" height="312"
                     :src="src"
-                    class="tv-show__poster--image tv_show__poster--image" alt=""></a>
+                    class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
+                    :key="renderCount"
+                />
+            </a>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">
@@ -57,7 +87,7 @@
                         </template>
                     </span>
                     <div class="episode__meta">
-                        <span class="episode__meta--release-date">Added: {{ format(postDate) }}</span>
+                        <span class="episode__meta--release-date">Added: {{ postDate ? format(postDate) : ' ' }}</span>
                         <div class="vodi-views-likes"></div>
                     </div><a
                         :href="'/tv-show/' + tvshowTitle"

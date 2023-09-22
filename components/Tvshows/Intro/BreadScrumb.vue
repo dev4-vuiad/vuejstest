@@ -1,9 +1,19 @@
 <script setup>
     const props = defineProps(['title', 'tvshowTitle', 'seasonName', 'genre'])
-    const title = props.title
-    const genre = props.genre
-    const tvshowTitle = props.tvshowTitle
-    const seasonName = props.seasonName
+    let title = props.title
+    let genre = props.genre
+    let tvshowTitle = props.tvshowTitle
+    let seasonName = props.seasonName
+
+    watch(
+        () => props.title,
+        () => {
+            title = props.title
+            genre = props.genre
+            tvshowTitle = props.tvshowTitle
+            seasonName = props.seasonName
+        }
+    )
 </script>
 
 <template>

@@ -66,12 +66,18 @@
         }
     })
 
-    const { data }  = await useAsyncData(
+    const { data }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows/details', {
             params: {
                 title: title
             }
-        })
+        }),
+        {
+            default: () => ({
+                topWeeks: Array.from(Array(5), (_, index) => ({})),
+                topMonths: Array.from(Array(5), (_, index) => ({}))
+            })
+        }
     )
 
     useHead({
@@ -115,16 +121,16 @@
                     </svg></span>마스크걸</nav>
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
-                    <div id="tv-show-203734"
-                        class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-k-drama tv_show_genre-214">
+                    <div class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-k-drama">
                         <TvshowInfo v-if="data"
+                            :id="data.id"
                             :title="data.title"
                             :originalTitle="data.originalTitle"
                             :src="data.src"
                             :description="data.description"
                         />
-                        <TvshowSeasonSection v-if="data && data.seasons" :data="data.seasons" :src="data.src" />
-                        <TvshowRelatedSection v-if="data && data.relateds.length" :data="data.relateds" :title="data.title" />
+                        <TvshowSeasonSection v-if="data" :data="data.seasons" :src="data.src" />
+                        <TvshowRelatedSection v-if="data" :data="data.relateds" :title="data.title" />
                         <div class="masvideos-tabs tv-show-tabs">
                             <ul class="nav" pos="0">
                                 <li class="nav-item">
@@ -239,10 +245,7 @@
                     <!-- add sidebar single tv_show -->
                     <div class="single_tv_show__sidebar tv-show-sidebar column">
                         <div class="widget-area-inner">
-                            <TvshowTopWeekMonth v-if="data && data.topWeeks && data.topMonths"
-                                :topWeeks="data.topWeeks"
-                                :topMonths="data.topMonths"
-                            />
+                            <TvshowTopWeekMonth v-if="data" :topWeeks="data.topWeeks" :topMonths="data.topMonths" />
                             <div class="widget widget_text">
                                 <div class="textwidget">
                                     <div class="widget-box-ads-tvshow"></div>

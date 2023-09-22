@@ -5,8 +5,6 @@
 
     const { isMobile } = useDevice()
 
-    console.log(isMobile)
-
     definePageMeta({
         layout: 'movie',
         scrollToTop: false,

@@ -1,13 +1,23 @@
 <script setup>
-    import { ref } from 'vue'
     const props = defineProps(['topWeeks', 'topMonths'])
-    const topWeeks = props.topWeeks
-    const topMonths = props.topMonths
+    let topWeeks = props.topWeeks
+    let topMonths = props.topMonths
     const tabIdx = ref(0)
 
     const showTab = (tab) => {
         tabIdx.value = tab
     }
+
+    watch(
+        [
+            () => props.topWeeks,
+            () => props.topMonths
+        ],
+        () => {
+            topWeeks = props.topWeeks
+            topMonths = props.topMonths
+        }
+    )
 </script>
 
 <template>
@@ -24,7 +34,7 @@
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">
-                            <div v-for="(item, index) in topWeeks" :key="index" class="tv-show post-202574 tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure tv_show_genre-214 tv_show_genre-218 tv_show_tag-1126">
+                            <div v-for="(item, index) in topWeeks" :key="index" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure">
                                 <div class="tv-show__body">
                                     <NuxtLink
                                         :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
