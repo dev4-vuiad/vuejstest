@@ -145,14 +145,14 @@
         $('#scrollUp').trigger('click')
     }
 
-    // onMounted(() => {
-    //     (function(s, w) {
-    //         s.setAttribute("async", "async");
-    //         s.setAttribute("type", "text/javascript");
-    //         s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //         w.document.body.appendChild(s);
-    //     })(window.top.document.createElement("script"), window.top)
-    // })
+    onMounted(() => {
+        (function(s, w) {
+            s.setAttribute("async", "async");
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+            w.document.body.appendChild(s);
+        })(window.top.document.createElement("script"), window.top)
+    })
     
 </script>
 
@@ -242,11 +242,6 @@
                 <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                     role="complementary" v-if="data">
                     <div class="widget-area-inner">
-                        <div id="text-4" class="widget widget_text">
-                            <div class="textwidget">
-                            </div>
-                        </div>
-                        <div class="kskdDiv ksdkCls"></div>
                         <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <div id="masvideos_movies_filter_widget-1"
