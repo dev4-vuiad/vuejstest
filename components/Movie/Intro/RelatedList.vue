@@ -1,19 +1,22 @@
 <script setup>
     const renderCount = ref(0)
-    const props = defineProps(['data', 'isMobile'])
+    const props = defineProps(['pending', 'data', 'isMobile'])
+    let pending = props.pending
     let data = props.data
     const isMobile = props.isMobile
+    
     if (isMobile) {
         data = data.slice(0, 6)
     }
 
     onBeforeMount(() => {
-        renderCount.value ++
-        data = Array.from(Array(isMobile ? 6 : 8), (_, index) => ({}))
+        if (pending) {
+            data = Array.from(Array(isMobile ? 6 : 8), (_, index) => ({}))
+        }
     })
 
     watch(
-        () => props.data,
+        () => props.pending,
         () => {
             renderCount.value ++
             data = props.data
@@ -31,7 +34,7 @@
                 <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
                     <div class="movie__poster loading-bg">
                         <NuxtLink :to="'/movie/' + encodeURIComponent(item.title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                            <img width="220" height="310" :src="item.src" class="movie__poster--image lazyload" alt="" :key="renderCount" />
+                            <img width="220" height="310" :src="item.src" class="movie__poster--image lazyload" alt="" :key="item.id" />
                         </NuxtLink>
                     </div>
                     <div class="movie__body">

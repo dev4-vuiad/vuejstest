@@ -70,7 +70,7 @@
         }
     })
 
-    const { data }  = useLazyAsyncData(
+    const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 title: title
@@ -109,7 +109,8 @@
                                 <MovieBreadScrumb v-if="data && data.genres && data.genres.length" :genre="data.genres[data.genres.length - 1]" :title="data.title" />
                                 <div class="ads-movie-top"></div>
                                 <div class="single-movie__row row">
-                                    <MovieIntroInfoMobile v-if="data && isMobile"
+                                    <MovieIntroInfoMobile v-if="isMobile"
+                                        :pending = "pending"
                                         :id="data.id"
                                         :year="data.year"
                                         :duration="data.duration"
@@ -120,7 +121,8 @@
                                         :description="data.description"
                                         :outlink="data.outlink"
                                     />
-                                    <MovieIntroInfo v-if="data && !isMobile"
+                                    <MovieIntroInfo v-if="!isMobile"
+                                        :pending = "pending"
                                         :id="data.id"
                                         :year="data.year"
                                         :duration="data.duration"
@@ -141,7 +143,7 @@
                         <section class="movie__related">
                             <div class="movie__related--inner">
                                 <h2 class="movie__related--title">관련 컨텐츠</h2>
-                                <MovieIntroRelatedList v-if="data" :data="data.relateds" :isMobile="isMobile" />
+                                <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
                             </div>
                         </section>
                         <div style="text-align: center;margin-top: 10px;"></div>

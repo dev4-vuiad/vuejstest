@@ -5,7 +5,7 @@ export default defineMultiCacheOptions({
         buildCacheKey(event) {
           const path = event.path
           // Handle specific routes that need query strings.
-          if (path.startsWith('/movie')) {
+          if (path === '/movie' || path === '/movie/') {
             const { page, orderBy, filter_genre, year_filter } = getQuery(event)
             if ((page == 1 || typeof page == 'undefined') && (orderBy == 'date' || typeof orderBy == 'undefined') && !Boolean(filter_genre) && !Boolean(year_filter)) {
                 return 'movie_page_1'

@@ -1,7 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const renderCount = ref(0)
-    const props = defineProps(['id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
     let id = props.id
     let year = props.year
     let duration = props.duration
@@ -11,27 +10,27 @@
     let src = props.src
     let description = props.description
     let outlink = props.outlink
+    let pending = props.pending
 
     onBeforeMount(() => {
-        renderCount.value ++
-        id = undefined
-        year = undefined
-        duration = undefined
-        title = undefined
-        originalTitle = undefined
-        genres = undefined
-        src = undefined
-        description = undefined
-        outlink = undefined
+        if (pending) {
+            id = undefined
+            year = undefined
+            duration = undefined
+            title = undefined
+            originalTitle = undefined
+            genres = undefined
+            src = undefined
+            description = undefined
+            outlink = undefined
+        }
     })
 
     watch(
         [
-            () => props.id,
-            () => props.src,
+            () => props.pending
         ],
         () => {
-            renderCount.value ++
             id = props.id
             year = props.year
             duration = props.duration
@@ -70,7 +69,7 @@
                 class="movie__poster--image lazyload" 
                 alt="" 
                 sizes="(max-width: 300px) 100vw, 300px"
-                :key="renderCount"
+                :key="id"
             />
         </div>
         <div class="summary entry-summary">
