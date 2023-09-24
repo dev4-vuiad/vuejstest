@@ -9,8 +9,3 @@
 .tv-show__short-description.modified>div.expanded {
     max-height: 200px;
 }
-
-.episodes__inner {
-    width: 100%;
-    margin-right: 0;
-}

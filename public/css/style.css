@@ -71,3 +71,27 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.episodes__inner {
+  width: 100%;
+  margin-right: 0
+}
+
+.episode__description.modified > div {
+  height: auto;
+  transition: max-height 600ms ease-in-out;
+  overflow: hidden;
+  max-height: 50px;
+}
+
+.tv-show__short-description.modified>div {
+  height: auto;
+  transition: max-height 600ms ease-in-out;
+  overflow: hidden;
+  max-height: 47px;
+
+}
+
+.tv-show__short-description.modified>div.expanded {
+  max-height: 200px;
+}

@@ -181,7 +181,7 @@
             movieNewests: Array.from(Array(8), (_, index) => ({}))
         }
     }
-    const { data }  = useLazyAsyncData(
+    const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/homepage'),
         {
             default: () => defaultData
@@ -189,8 +189,7 @@
     )
 
     useHead({
-        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
-        link: [{rel: 'stylesheet', href: '/css/home.css' }]
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
     });
 
     onMounted(() => {
@@ -214,7 +213,7 @@
                             <div class="page__content">
                                 <section id="section-home-slider-custom-64d31949b2fcb"
                                         class="home-section more-dark">
-                                    <HomeSlider v-if="data && data.sliders" :data="data.sliders" />
+                                    <HomeSlider v-if="data" :data="data.sliders" />
                                 </section>
                                 <section class="home-section ads-top">
                                     <div class="kskdCustomElement"></div>
@@ -222,7 +221,7 @@
                                 <section id="section-home-slider-custom-ott-64d31949c9733"
                                     class="home-section home-slider-custom-ott">
                                     <div class="bg_opacity"></div>
-                                    <HomeOot v-if="data" 
+                                    <HomeOot :pending="pending" 
                                         :channels="data.otts.ottChanels"
                                         :title="data.otts.ottTitle"
                                         :sliders="data.otts.ottSliders"

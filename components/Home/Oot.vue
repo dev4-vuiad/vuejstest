@@ -1,30 +1,24 @@
 <script setup>
-    const renderCount = ref(0)
-    const props = defineProps(['title', 'channels', 'sliders'])
+    const props = defineProps(['pending', 'title', 'channels', 'sliders'])
+    let pending = props.pending
     let channels = props.channels
     let title = props.title
     let sliders = props.sliders
 
     onBeforeMount(() => {
-        renderCount.value ++
-        sliders = Array.from(Array(10), (_, index) => ({}))
-        title = ''
+        if (pending) {
+            sliders = Array.from(Array(10), (_, index) => ({}))
+            title = ''
+            
+        }
     })
 
     watch(
-        [
-            () => props.title,
-            () => props.channels,
-            () => props.sliders
-        ],
+        () => props.pending,
         () => {
-            const oldId = sliders[0].id
             title = props.title
             channels = props.channels
             sliders = props.sliders
-            if (oldId !== sliders[0].id) {
-                renderCount.value ++
-            }
         }
     )
 
@@ -75,7 +69,7 @@
     <div class="ott_logo">
         <div class="ott_home_item" v-for="(item, index) in channels">
             <NuxtLink :to="'/' + item.link">
-                <img :src="item.src" />
+                <img :src="item.src" :key="item.link" />
             </NuxtLink>
         </div>
     </div>
@@ -93,7 +87,7 @@
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <NuxtLink class="tv-show__link" :to="'/' + item.link">
-                            <img class="embla__slide__img1 lazyload" :src="item.src" :key="renderCount" />
+                            <img class="embla__slide__img1 lazyload" :src="item.src" :key="item.id" />
                         </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>

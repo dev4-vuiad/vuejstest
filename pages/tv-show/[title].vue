@@ -81,8 +81,7 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV',
-        link: [{rel: 'stylesheet', href: '/css/tvshow.css' }]
+        title: title + ' – 코코아티비 :: KOKOA.TV'
     });
 
     onMounted(() => {
@@ -131,7 +130,7 @@
                             :description="data.description"
                         />
                         <TvshowSeasonSection :data="data.seasons" :src="data.src" :pending="pending" />
-                        <TvshowRelatedSection v-if="data" :data="data.relateds" :title="data.title" />
+                        <TvshowRelatedSection v-if="data && data.relateds && data.relateds.length" :data="data.relateds" :title="data.title" />
                         <div class="masvideos-tabs tv-show-tabs">
                             <ul class="nav" pos="0">
                                 <li class="nav-item">
@@ -246,7 +245,7 @@
                     <!-- add sidebar single tv_show -->
                     <div class="single_tv_show__sidebar tv-show-sidebar column">
                         <div class="widget-area-inner">
-                            <TvshowTopWeekMonth v-if="data" :topWeeks="data.topWeeks" :topMonths="data.topMonths" />
+                            <TvshowTopWeekMonth :pending="pending" :topWeeks="data.topWeeks" :topMonths="data.topMonths" />
                             <div class="widget widget_text">
                                 <div class="textwidget">
                                     <div class="widget-box-ads-tvshow"></div>
