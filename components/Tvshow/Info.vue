@@ -1,16 +1,25 @@
 <script setup>
-    const renderCount = ref(0)
-    const props = defineProps(['id', 'title', 'originalTitle', 'src', 'description'])
+    const props = defineProps(['pending', 'id', 'title', 'originalTitle', 'src', 'description'])
+    let pending = props.pending
     let id = props.id
     let title = props.title
     let originalTitle = props.originalTitle
     let src = props.src
     let description = props.description
 
+    onBeforeMount(() => {
+        if (pending) {
+            id = undefined
+            title = undefined
+            originalTitle = undefined
+            src = undefined
+            description = undefined
+        }
+    })
+
     watch(
-        () => props.id,
+        () => props.pending,
         () => {
-            renderCount.value ++
             id = props.id
             title = props.title
             originalTitle = props.originalTitle
@@ -30,7 +39,7 @@
     <div class="single-tv-show tv-show column poster-column" :postid="id">
         <div class="tv-show__poster_head loading-bg">
             <img width="220" height="330" :src="src" class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
-                decoding="async" sizes="(max-width: 220px) 100vw, 220px" :key="renderCount"
+                decoding="async" sizes="(max-width: 220px) 100vw, 220px" :key="id"
             />
         </div>
     </div>

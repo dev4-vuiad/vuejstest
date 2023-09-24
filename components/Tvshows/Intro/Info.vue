@@ -1,7 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const renderCount = ref(0)
-    const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
+    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
     let id = props.id
     let postDate = props.postDate
     let title = props.title
@@ -10,23 +9,24 @@
     let src = props.src
     let description = props.description
     let tvshowTitle = props.tvshowTitle
+    let pending = props.pending
 
     onBeforeMount(() => {
-        renderCount.value ++
-        id = undefined
-        postDate = undefined
-        title = undefined
-        originalTitle = undefined
-        genres = undefined
-        src = undefined
-        description = undefined
-        tvshowTitle = undefined
+        if (pending) {
+            id = undefined
+            postDate = undefined
+            title = undefined
+            originalTitle = undefined
+            genres = undefined
+            src = undefined
+            description = undefined
+            tvshowTitle = undefined
+        }
     })
 
     watch(
-        () => props.id,
+        () => props.pending,
         () => {
-            renderCount.value ++
             id = props.id
             postDate = props.postDate
             title = props.title
@@ -66,14 +66,14 @@
                 <img class="tv-channel lazyload"
                     :src="src" alt="" width="68"
                     height="31"
-                    :key="renderCount"
+                    :key="id"
                 />
             </div>
             <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="220" height="312"
                     :src="src"
                     class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
-                    :key="renderCount"
+                    :key="id"
                 />
             </a>
         </div>
@@ -92,10 +92,10 @@
                     </div><a
                         :href="'/tv-show/' + tvshowTitle"
                         class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
-                        <h1 class="episode_title entry-title">{{ title }}</h1>
+                        <h1 class="episode_title entry-title">{{ title || ' ' }}</h1>
                     </a>
                     <div class="title-orginal__tvshow_single">
-                        {{ originalTitle }}
+                        {{ originalTitle || ' ' }}
                     </div>
                     <div class="episode__description modified">
                         <div v-html="description"></div>

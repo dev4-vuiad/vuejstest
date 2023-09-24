@@ -1,11 +1,21 @@
 <script setup>
-    const props = defineProps(['data'])
+    const props = defineProps(['pending', 'id', 'data'])
     let data = props.data
+    let id = props.id
+    let pending = props.pending
     const showTabIdx = ref(0)
 
+    onBeforeMount(() => {
+        if (pending) {
+            id = undefined
+            data = undefined
+        }
+    })
+
     watch(
-        () => props.data,
+        () => props.id,
         () => {
+            id = props.id
             data = props.data
         }
     )
@@ -26,7 +36,7 @@
         <div class="tab-content">
             <div :class="'tab-pane' + (showTabIdx == 0 ? '  active show' : '')">
                 <div class="episode__description">
-                    <div v-html="data"></div>
+                    <div v-html="data" :key="id"></div>
                 </div>
             </div>
             <div :class="'tab-pane' + (showTabIdx == 1 ? '  active show' : '')">

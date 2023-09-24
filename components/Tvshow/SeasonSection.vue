@@ -1,26 +1,30 @@
 <script setup>
-    const renderCount = ref(0)
-    const props = defineProps(['data', 'src', ])
+    const props = defineProps(['pending', 'data', 'src', ])
+    let pending = props.pending
     let data = props.data
     let src = props.src
     const seasonIdx = ref(0)
 
-    const showSeason = (idx) => {
-        seasonIdx.value = idx
-    }
+    onBeforeMount(() => {
+        if (pending) {
+            src = undefined
+            data = []
+        }
+    })
 
     watch(
         [
-            () => props.data,
-            () => props.src
+            () => props.pending
         ],
         () => {
-            renderCount.value ++
             src = props.src
             data = props.data
         }
-        
     )
+
+    const showSeason = (idx) => {
+        seasonIdx.value = idx
+    }
 </script>
 
 <template>
@@ -43,7 +47,7 @@
                                                 width="220" height="330"
                                                 :src="src"
                                                 class="episode__poster--image lazyload" alt="" 
-                                                :key="renderCount"
+                                                :key="episode.id"
                                             />
                                         </NuxtLink>
                                     </div>

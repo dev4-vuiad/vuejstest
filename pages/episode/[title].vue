@@ -68,7 +68,7 @@
         }
     })
 
-    const { data }  = useLazyAsyncData(
+    const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
@@ -153,7 +153,8 @@
                             <div class="ads-episode-top"></div>
                             <div class="single-episode__row row">
                                 <div class="single-episode__sidebar column1 single-episode-custom">
-                                    <TvshowsIntroInfo v-if="data"
+                                    <TvshowsIntroInfo
+                                        :pending="pending" 
                                         :id="data.id"
                                         :postDate="data.postDate"
                                         :postDateGmt="data.postDateGmt"
@@ -198,9 +199,9 @@
                                 </div>
                             </div>
                             <div class="episode__season-tabs-wrap stretch-full-width"></div>
-                            <TvshowsIntroDescriptionSection v-if="data" :data="data.description" />
+                            <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                         </div>
-                        <TvshowsIntroSeasonList v-if="data && data.seasons" :data="data.seasons" />
+                        <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" />
                     </div>
                 </div>
             </div>

@@ -1,17 +1,25 @@
 <script setup>
     import { reactive } from 'vue'
     const { $toTimeAgo } = useNuxtApp()
-    const props = defineProps(['data'])
+    const props = defineProps(['data', 'pending'])
+    let pending = props.pending
     let data = props.data
     let currentSeason = ref(0)
     const state = reactive({
         showIdx: setShowIdx(data)
     })
 
+    onBeforeMount(() => {
+        if (pending) {
+            data = undefined
+        }
+    })
+
     watch(
-        () => props.data,
+        () => props.pending,
         () => {
             data = props.data
+            state.showIdx = setShowIdx(data)
         }
     )
 
@@ -41,7 +49,7 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div v-for="(season, index) in data" :key="index" :class="'tab-pane' + (currentSeason == index ? ' active show' : '')">
+                    <div v-for="(season, index) in data" :class="'tab-pane' + (currentSeason == index ? ' active show' : '')">
                         <h3 class="vodi-single-episode__sidebar--seasons-episode__seson-title">
                             Episodes of {{ season.name }}
                         </h3>
@@ -63,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <a v-if="state.showIdx[currentSeason] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showIdx[currentSeason] += 10">더보기</a>
+            <a v-if="data && state.showIdx[currentSeason] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showIdx[currentSeason] += 10">더보기</a>
         </div>
     </div>
 </template>
