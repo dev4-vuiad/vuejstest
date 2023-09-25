@@ -139,7 +139,7 @@
 
     onMounted(() => {
         // Put ads
-        if ($isProdEnv()) { 
+        if ($isProdEnv() && !window.adsLoaded) { 
             (function(s, w) {
                 s.setAttribute("async", "async");
                 s.setAttribute("type", "text/javascript");
