@@ -78,6 +78,7 @@
         }),
         {
             default: () => ({
+                genres: [],
                 relateds: Array.from(Array(isMobile ? 6 : 8), (_, index) => ({}))
             })
         }
@@ -88,14 +89,14 @@
         link: [{rel: 'stylesheet', href: '/css/movie.css' }]
     });
 
-    // onMounted(() => {
-    //     (function(s, w) {
-    //         s.setAttribute("async", "async");
-    //         s.setAttribute("type", "text/javascript");
-    //         s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //         w.document.body.appendChild(s);
-    //     })(window.top.document.createElement("script"), window.top)
-    // })
+    onMounted(() => {
+        (function(s, w) {
+            s.setAttribute("async", "async");
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+            w.document.body.appendChild(s);
+        })(window.top.document.createElement("script"), window.top)
+    })
 
 </script>
 <template>
@@ -106,7 +107,7 @@
                     <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-230 movie_genre-238 movie_genre-wmovie">
                         <div class="single-movie__player-container stretch-full-width">
                             <div class="single-movie__player-container--inner container">
-                                <MovieBreadScrumb v-if="data && data.genres && data.genres.length" :genre="data.genres[data.genres.length - 1]" :title="data.title" />
+                                <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                 <div class="ads-movie-top"></div>
                                 <div class="single-movie__row row">
                                     <MovieIntroInfoMobile v-if="isMobile"
