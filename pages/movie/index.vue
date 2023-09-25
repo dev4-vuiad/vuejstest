@@ -244,7 +244,6 @@
                 <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
                     role="complementary" v-if="data">
                     <div class="widget-area-inner">
-                        <div class="kskdDiv kskdCls"></div>
                         <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
                         <div class="widget widget_vodi_movies_filter">
                             <div id="masvideos_movies_filter_widget-1"
