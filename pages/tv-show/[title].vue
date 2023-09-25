@@ -1,5 +1,5 @@
 <script setup>
-    const { $apiBaseUrl } = useNuxtApp()
+    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
@@ -99,6 +99,16 @@
         $('#tv-show-related').find('button.slick-prev').on('click', function() {
             slider.slick('slickPrev')
         })
+
+        // Ad ads
+        if ($isProdEnv()) {
+            (function(s, w) {
+                s.setAttribute("async", "async");
+                s.setAttribute("type", "text/javascript");
+                s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+                w.document.body.appendChild(s);
+            })(window.top.document.createElement("script"), window.top)
+        }
     })
     
 </script>
