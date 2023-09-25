@@ -85,7 +85,13 @@
     )
 
     useHead({
-        title: 'TV Shows – 코코아티비 :: KOKOA.TV'
+        title: 'TV Shows – 코코아티비 :: KOKOA.TV',
+        script: [
+            {
+                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
+                async: true
+            }
+        ]
     });
 
     const onChangeOrderBy = (event) => {
@@ -107,16 +113,16 @@
         $('#scrollUp').trigger('click')
     }
 
-    onMounted(() => {
-        if ($isProdEnv()) {
-            (function(s, w) {
-                s.setAttribute("async", "async");
-                s.setAttribute("type", "text/javascript");
-                s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-                w.document.body.appendChild(s);
-            })(window.top.document.createElement("script"), window.top)
-        }
-    })
+    // onMounted(() => {
+    //     if ($isProdEnv()) {
+    //         (function(s, w) {
+    //             s.setAttribute("async", "async");
+    //             s.setAttribute("type", "text/javascript");
+    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+    //             w.document.body.appendChild(s);
+    //         })(window.top.document.createElement("script"), window.top)
+    //     }
+    // })
     
 </script>
 
