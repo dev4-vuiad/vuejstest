@@ -1,6 +1,6 @@
 <script setup>
     import { onMounted } from 'vue'
-    const { $apiBaseUrl } = useNuxtApp()
+    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
 
     definePageMeta({
         layout: 'home',
@@ -194,12 +194,14 @@
 
     onMounted(() => {
         //Put ads
-        (function(s, w) {
-            s.setAttribute("async", "async");
-            s.setAttribute("type", "text/javascript");
-            s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-            w.document.body.appendChild(s);
-        })(window.top.document.createElement("script"), window.top)
+        if ($isProdEnv()) { 
+            (function(s, w) {
+                s.setAttribute("async", "async");
+                s.setAttribute("type", "text/javascript");
+                s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+                w.document.body.appendChild(s);
+            })(window.top.document.createElement("script"), window.top)
+        }
     })
 </script>
 

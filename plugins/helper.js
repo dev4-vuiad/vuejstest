@@ -23,6 +23,9 @@ export default defineNuxtPlugin(() => {
           } else {
               return disTs + '초 전'
           }
+        },
+        isProdEnv: () => {
+          return process.env.NODE_ENV == 'production'
         }
       }
     }
