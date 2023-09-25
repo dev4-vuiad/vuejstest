@@ -26,6 +26,12 @@ export default defineNuxtPlugin(() => {
         },
         isProdEnv: () => {
           return process.env.NODE_ENV == 'production'
+        },
+        getEpTxt: (seasonNumber, episodeNumber) => {
+          if (!seasonNumber || !episodeNumber) {
+            return ' ';
+          }
+          return (!['시즌 1', 'Season 1'].includes(seasonNumber) ? seasonNumber + ' - ' : '') + episodeNumber + '화'
         }
       }
     }

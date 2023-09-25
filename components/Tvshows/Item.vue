@@ -2,7 +2,7 @@
 <script setup>
 
     import { onBeforeUpdate } from 'vue';
-    const { $toTimeAgo } = useNuxtApp()
+    const { $toTimeAgo, $getEpTxt } = useNuxtApp()
     const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage'])
     const renderCount = ref(0)
     let id = props.id
@@ -52,7 +52,7 @@
                         {{ originalTitle }}
                     </div>
                     <NuxtLink :to="'/episode/' + encodeURIComponent(title)" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                        <span style="display:none" class="span_sea_ep_title">{{ (seasonNumber != '시즌 1' ? seasonNumber + ' - ' : '') + episodeNumber }}화</span>
+                        <span style="display:none" class="span_sea_ep_title">{{ $getEpTxt(seasonNumber, episodeNumber) }}</span>
                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ tvshowTitle }}</h3>
                     </NuxtLink>
                 </div>
