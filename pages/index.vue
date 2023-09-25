@@ -181,21 +181,27 @@
     )
 
     useHead({
-        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
+        script: [
+            {
+                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
+                async: true
+            }
+        ]
     });
 
-    onMounted(() => {
-        //Put ads
-        if ($isProdEnv() && !window.adsLoaded) { 
-            (function(s, w) {
-                s.setAttribute("async", "async");
-                s.setAttribute("type", "text/javascript");
-                s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-                w.document.body.appendChild(s);
-            })(window.top.document.createElement("script"), window.top)
-            window.adsLoaded = true
-        }
-    })
+    // onMounted(() => {
+    //     //Put ads
+    //     if ($isProdEnv() && !window.adsLoaded) { 
+    //         (function(s, w) {
+    //             s.setAttribute("async", "async");
+    //             s.setAttribute("type", "text/javascript");
+    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
+    //             w.document.body.appendChild(s);
+    //         })(window.top.document.createElement("script"), window.top)
+    //         window.adsLoaded = true
+    //     }
+    // })
 </script>
 
 <template>
