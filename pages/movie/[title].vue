@@ -133,6 +133,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="center"></div>
                             </div>
                         </div>
                         <section class="movie__related">
