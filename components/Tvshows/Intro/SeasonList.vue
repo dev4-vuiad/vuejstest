@@ -72,6 +72,7 @@
                 </div>
             </div>
             <a v-if="data && state.showIdx[currentSeason] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showIdx[currentSeason] += 10">더보기</a>
+            <div class="kskdDiv kskdCls"></div>
         </div>
     </div>
 </template>
