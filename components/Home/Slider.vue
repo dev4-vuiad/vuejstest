@@ -70,7 +70,7 @@
                     </div>
                     <div class="box_meta">
                         <NuxtLink :to="'/' + item.link">
-                            <span class="s_e_title_1" v-if="item.episodeNumber">{{ item.episodeNumber }}화</span>
+                            <span class="s_e_title_1" v-if="item.episodeNumber">{{ item.episodeNumber.includes('.') ? '스페셜화' : item.episodeNumber + '화' }}</span>
                             <h2 class="title_1">{{ item.title }}</h2>
                         </NuxtLink>
                     </div>
