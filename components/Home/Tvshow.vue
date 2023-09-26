@@ -1,7 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-    const { $toTimeAgo } = useNuxtApp()
-    const { $apiBaseUrl } = useNuxtApp()
+    const { $toTimeAgo, $apiBaseUrl, $getEpTxt } = useNuxtApp()
     const renderCount = ref(0)
     const props = defineProps(['menu', 'items', 'title'])
     const title = props.title
@@ -88,13 +87,13 @@
                         <div class="tv-show__body">
                             <div class="tv-show__info">
                                 <div class="tv-show__info--head">
-                                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">{{ postDate ? $toTimeAgo(item.postDate) : ' ' }}</span></div>
+                                    <div class="tv-show__meta"><span class="tv-show__meta--release-year">{{ item.postDate ? $toTimeAgo(item.postDate) : ' ' }}</span></div>
                                     <div class="original-title-tvshow">
                                         {{ item.originalTitle || ' ' }}
                                     </div>
                                     <NuxtLink :to="'/' + item.link"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
-                                            style="display:none" class="span_sea_ep_title">{{ item.titleid ? (item.seasonNumber && item.seasonNumber != '시즌 1' ? item.seasonNumber + ' - ' : '') + (item.episodeNumber || '') + '화' : ' ' }}</span>
+                                            style="display:none" class="span_sea_ep_title">{{ item.titleid ? $getEpTxt(item.seasonNumber, $episodeNumber) : ' ' }}</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                 </div>

@@ -1,5 +1,6 @@
 <script setup>
-    import { onBeforeUpdate } from 'vue'; 
+    import { onBeforeUpdate } from 'vue';
+    const { $getEpTxt } = useNuxtApp() 
     const props = defineProps(['title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
     const renderCount = ref(0)
     let postType = props.postType
@@ -34,7 +35,7 @@
         <div class="tv-show__poster box-phim">
                 <NuxtLink :to="'/episode/' + encodeURIComponent(link.replace('episode/', ''))" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                     <img :src="src" class="tv-show__poster--image tv_show__poster--image" :key="renderCount">		                                                     
-                <span style="display:none" class="span_sea_ep_title box-ep">{{ (seasonNumber && seasonNumber != '시즌 1' ? seasonNumber + ' - ' : '') + (episodeNumber || '') + '화' }}</span></NuxtLink>
+                <span style="display:none" class="span_sea_ep_title box-ep">{{ $getEpTxt(seasonNumber, episodeNumber) }}</span></NuxtLink>
                 <div class="box-tv_show">예능</div>
         </div>
         <div class="tv-show__body">
