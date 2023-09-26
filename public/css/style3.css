@@ -15057,8 +15057,8 @@ p.stars.selected a:not(.active):before {
 
 .columns-1 .movies__inner>.movie {
   -webkit-box-flex: 0;
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 1440px) {
