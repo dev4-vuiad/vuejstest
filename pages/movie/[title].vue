@@ -78,13 +78,7 @@
 
     useHead({
         title: title + ' – 코코아티비 :: KOKOA.TV',
-        link: [{rel: 'stylesheet', href: '/css/movie.css' }],
-        script: [
-            {
-                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-                async: true
-            }
-        ]
+        link: [{rel: 'stylesheet', href: '/css/movie.css' }]
     });
 
     // onMounted(() => {

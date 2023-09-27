@@ -68,13 +68,7 @@
     )
 
     useHead({
-        title: 'Search Results for “' + s.value + '” – 코코아티비 :: KOKOA.TV',
-        script: [
-            {
-                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-                async: true
-            }
-        ]
+        title: 'Search Results for “' + s.value + '” – 코코아티비 :: KOKOA.TV'
     });
 
     onBeforeRouteUpdate ((newRoute) => {

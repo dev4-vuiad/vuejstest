@@ -106,13 +106,7 @@
     }
 
     useHead({
-        title: data && data.data && data.data.items.length && data.data.items[0].genres ? getGenreTitle(genre, data.data.items[0].genres) + ' – 코코아티비 :: KOKOA.TV' : '',
-        script: [
-            {
-                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-                async: true
-            }
-        ]
+        title: data && data.data && data.data.items.length && data.data.items[0].genres ? getGenreTitle(genre, data.data.items[0].genres) + ' – 코코아티비 :: KOKOA.TV' : ''
     });
 
     onMounted(() => {

@@ -95,13 +95,7 @@
     )
 
     useHead({
-        title: type + ' – 코코아티비 :: KOKOA.TV',
-        script: [
-            {
-                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-                async: true
-            }
-        ]
+        title: type + ' – 코코아티비 :: KOKOA.TV'
     });
 
     const onChangeOrderBy = (event) => {

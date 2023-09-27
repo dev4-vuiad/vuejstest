@@ -37,18 +37,6 @@ export default defineNuxtConfig({
       failOnError: false, 
     }
   },
-  $development: {
-    appConfig: {
-      apiBaseUrl: 'https://backend.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
-    }
-  },
-  $production: {
-    appConfig: {
-      apiBaseUrl: 'https://backend.kokoatv.net/api',
-      apiBaseUrlSsr: 'http://localhost/api'
-    }
-  },
   app: {
     head: {
       link: [
@@ -69,7 +57,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?vsdfsd'
+          href: '/css/style3.min.css?fsafasfsa'
         },
         {
           rel: 'stylesheet',
@@ -78,24 +66,46 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "https://code.jquery.com/jquery-3.7.0.min.js"
+          src: "/js/jquery-3.7.0.min.js"
         },
         {
-          src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/embla-carousel.umd.js?ver=1692290764"
+          src: "/js/embla-carousel.umd.js"
         },
         {
-          src: "https://image002.modooup.com/wp-content/themes/vodi/assets/js/slick.min.js?ver=1.2.7"
+          src: "/js/slick.min.js?ver=1.2.7"
         },
         {
-          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/scrollup.min.js?ver=1.2.7'
+          src: '/js/scrollup.min.js?ver=1.2.7'
         },
         {
-          src: 'https://image002.modooup.com/wp-content/themes/vodi/assets/js/jquery.easing.min.js?ver=1.2.7'
-        },
-        {
-          children: 'window.__ITGS_started = Date.now();'
+          src: '/js/jquery.easing.min.js'
         }
       ]
+    }
+  },
+  $development: {
+    appConfig: {
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
+    }
+  },
+  $production: {
+    appConfig: {
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'http://localhost/api'
+    },
+    app: {
+      head: {
+        script: [
+          {
+            children: 'window.__ITGS_started = Date.now();'
+          },
+          {
+            src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
+            async: true
+          }
+        ]
+      }
     }
   }
 })

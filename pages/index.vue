@@ -181,13 +181,7 @@
     )
 
     useHead({
-        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
-        script: [
-            {
-                src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
-                async: true
-            }
-        ]
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
     });
 
     // onMounted(() => {
