@@ -27,11 +27,40 @@
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118282">
                 <NuxtLink to="/u-drama/" key="u-drama">미드</NuxtLink>
             </li>
-            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8098">
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
                 <NuxtLink title="OTT/Web" to="/ott-web/" key="ott-web">
                     <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">OTT</span>
                 </NuxtLink>
+                <ul class="sub-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Amazon Prime Video" to="/ott-web/amazon-prime-video/" key="k-drama">Amazon Prime Video</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Apple TV" to="/ott-web/apple-tv/" key="apple-tv">Apple TV</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Disney +" to="/ott-web/disney/" key="disney">Disney +</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="HBO max" to="/ott-web/hbo-max/" key="hbo-max">HBO max</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Netflix" to="/ott-web/netflix/" key="netflix">Netflix</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Peacock" to="/ott-web/peacock/" key="peacock">Peacock</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="Tving" to="/ott-web/tving/" key="tving">Tving</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve">wavve</NuxtLink>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha">watcha</NuxtLink>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
