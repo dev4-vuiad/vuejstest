@@ -73,6 +73,35 @@
                                                 <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                                                 <span class="menu-image-title-after menu-image-title">OTT</span>
                                             </NuxtLink>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Amazon Prime Video" to="/ott-web/amazon-prime-video/" key="k-drama">Amazon Prime Video</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Apple TV" to="/ott-web/apple-tv/" key="apple-tv">Apple TV</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Disney +" to="/ott-web/disney/" key="disney">Disney +</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="HBO max" to="/ott-web/hbo-max/" key="hbo-max">HBO max</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Netflix" to="/ott-web/netflix/" key="netflix">Netflix</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Peacock" to="/ott-web/peacock/" key="peacock">Peacock</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="Tving" to="/ott-web/tving/" key="tving">Tving</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve">wavve</NuxtLink>
+                                                </li>
+                                                <li itemscope="itemscope" class="menu-item nav-item show">
+                                                    <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha">watcha</NuxtLink>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
