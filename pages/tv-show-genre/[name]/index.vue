@@ -138,8 +138,8 @@
                         <div class="masvideos masvideos-tv-shows ">
                             <div class="tv-shows columns-5">
                                 <div class="tv-shows__inner" v-if="data">
-                                    <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx"
-                                    :id="item.idx" 
+                                    <TvshowsPopularItem v-if="data" v-for="(item, idx) in data.data.populars" :key="idx"
+                                    :id="item.id" 
                                     :link="item.link"
                                     :year="item.year"
                                     :title="item.title"
