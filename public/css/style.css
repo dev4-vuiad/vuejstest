@@ -47,13 +47,17 @@ body {
 
 .dashicons::before {
   display: inline-block;
-  vertical-align: top;
-  line-height: 1;
+  vertical-align: bottom;
+  line-height: 18px;
 }
 
 .dashicons-laptop:before {
   font-family: dashicons;
   content: "\f547";
+}
+
+.dashicons-laptop.icon-hide:before {
+  content: "";
 }
 
 .dropdown-menu {
