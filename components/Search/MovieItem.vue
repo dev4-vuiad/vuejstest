@@ -58,7 +58,7 @@
     </div>
     <div v-else class="movie type-movie status-publish has-post-thumbnail hentry">
         <div class="movie__poster box-phim">
-            <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <NuxtLink :to="link" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img :src="src" :srcset="srcSet" class="movie__poster--image" :key="renderCount">
             </NuxtLink>
             <div class="box-movie">영화</div>
@@ -66,7 +66,7 @@
         <div class="movie__body">
             <div class="movie__info">
                 <div class="movie__info--head">
-                    <NuxtLink :to="'/movie/' + encodeURIComponent(title)"
+                    <NuxtLink :to="link"
                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
                     </NuxtLink>
