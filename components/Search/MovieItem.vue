@@ -1,8 +1,9 @@
 <script setup>
     import { onBeforeUpdate } from 'vue';
     const { $getEpTxt } = useNuxtApp() 
-    const props = defineProps(['title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
+    const props = defineProps(['id', 'title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
     const renderCount = ref(0)
+    let id = props.id
     let postType = props.postType
     let title = props.title
     let originalTitle = props.originalTitle
@@ -13,6 +14,7 @@
     let link = props.link
 
     onBeforeUpdate(() => {
+        id = props.id
         postType = props.postType
         title = props.title
         originalTitle = props.originalTitle
@@ -56,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div v-else class="movie type-movie status-publish has-post-thumbnail hentry">
+    <div v-else class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster box-phim">
             <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img :src="src" :srcset="srcSet" class="movie__poster--image" :key="renderCount">

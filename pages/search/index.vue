@@ -163,6 +163,7 @@
                             <div class="tv-shows columns-6 movies columns-6">
                                 <div class="tv-shows__inner movies__inner" v-if="data && data.data && data.data.items.length">
                                     <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
+                                        :id="item.id"
                                         :title="item.title" 
                                         :originalTitle="item.originalTitle" 
                                         :src="item.src"
