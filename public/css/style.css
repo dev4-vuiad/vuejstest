@@ -99,3 +99,7 @@ body {
 .tv-show__short-description.modified>div.expanded {
   max-height: 200px;
 }
+
+.embla__slide__inner1 img{
+  height: 100%;
+}

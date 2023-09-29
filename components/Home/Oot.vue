@@ -67,9 +67,34 @@
 
 <template>
     <div class="ott_logo">
-        <div class="ott_home_item" v-for="(item, index) in channels">
-            <NuxtLink :to="'/' + item.link">
-                <img :src="item.src" :key="item.link" />
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/netflix/">
+                <img src="/images/netflix.png" alt="netflix" />
+            </NuxtLink>
+        </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/disney/">
+                <img src="/images/disney_plus.png" alt="disney plus" />
+            </NuxtLink>
+        </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/apple-tv/">
+                <img src="/images/appletv.png" alt="apple tv" />
+            </NuxtLink>
+        </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/tving/">
+                <img src="/images/tving.png" alt="tving" />
+            </NuxtLink>
+        </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/wavve/">
+                <img src="/images/wavve.png" alt="wavve" />
+            </NuxtLink>
+        </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/amazon-prime-video/">
+                <img src="/images/prime.png" alt="prime" />
             </NuxtLink>
         </div>
     </div>
