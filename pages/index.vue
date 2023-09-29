@@ -216,7 +216,6 @@
                                     class="home-section home-slider-custom-ott">
                                     <div class="bg_opacity"></div>
                                     <HomeOot :pending="pending" 
-                                        :channels="data.otts.ottChanels"
                                         :title="data.otts.ottTitle"
                                         :sliders="data.otts.ottSliders"
                                     />

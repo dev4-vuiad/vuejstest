@@ -1,7 +1,6 @@
 <script setup>
-    const props = defineProps(['pending', 'title', 'channels', 'sliders'])
+    const props = defineProps(['pending', 'title', 'sliders'])
     let pending = props.pending
-    let channels = props.channels
     let title = props.title
     let sliders = props.sliders
 
@@ -17,7 +16,6 @@
         () => props.pending,
         () => {
             title = props.title
-            channels = props.channels
             sliders = props.sliders
         }
     )
