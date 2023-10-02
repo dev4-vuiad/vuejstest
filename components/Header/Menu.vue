@@ -26,7 +26,7 @@
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
                 <NuxtLink to="/u-drama/" key="u-drama">
-                    <span class="dashicons dashicons-laptop after-menu-image-icons icon-hide"></span>
+                    <span class="dashicons dashicons-admin-site-alt3 after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">미드</span>
                 </NuxtLink>
             </li>

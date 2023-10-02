@@ -48,7 +48,7 @@ body {
 .dashicons::before {
   display: inline-block;
   vertical-align: bottom;
-  line-height: 18px;
+  line-height: 20px;
 }
 
 .dashicons-laptop:before {
@@ -56,8 +56,9 @@ body {
   content: "\f547";
 }
 
-.dashicons-laptop.icon-hide:before {
-  content: "";
+.dashicons-admin-site-alt3:before {
+  font-family: dashicons;
+  content: "\f11f"
 }
 
 .dropdown-menu {
