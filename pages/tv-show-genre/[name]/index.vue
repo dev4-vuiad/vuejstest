@@ -166,7 +166,7 @@
                         <div class="vodi-control-bar__right">
                             <div class="tv-shows-ordering">
                                 <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler"
-                                        type="button"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+                                        type="button"><i class="fas fa-sliders-h"></i><span>Popular content</span></button>
                                 </div><svg class="svg-icon svg-icon__sort" aria-hidden="true" role="img"
                                     focusable="false" width="17px" height="14px">
                                     <path fill-rule="evenodd"
