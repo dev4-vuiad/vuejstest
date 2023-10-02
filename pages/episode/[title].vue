@@ -157,6 +157,7 @@
                                         :description="data.description" 
                                         :outlink="data.outlink"
                                         :tvshowTitle="data.tvshowTitle"
+                                        :casting="[{name: 'Jennie', link: 'jennie'}]"
                                     />
                                     <div style="margin-bottom:15px;">
                                         <a :href="data.outlink" class="a_btn_out">

@@ -116,3 +116,20 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
+.tv-show__meta--genre.casting {
+  margin-top: 10px;
+}
+
+.person-thumbnail {
+  width: 100%;
+}
+
+.person-thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+#content[name=person] .vodi-control-bar, #content[name=person] .tv-shows-ordering {
+  justify-content: flex-end;
+}
