@@ -1,3 +1,9 @@
+<script setup>
+    const onToggleSubmenu = (event) => {
+        $(event.target).parent().toggleClass('show')
+    }
+</script>
+
 <template>
     <div class="site-header__offcanvas">
         <button class="site-header__offcanvas--toggler navbar-toggler" data-toggle="offcanvas"><svg
@@ -23,8 +29,7 @@
                                             </NuxtLink>
                                         </li>
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
-                                            <NuxtLink to="/tv-shows" title="TV" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" class="dropdown-toggle nav-link">
+                                            <NuxtLink title="TV" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
                                                 <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
                                                 <span class="menu-image-title-after menu-image-title">TV</span>
                                             </NuxtLink>
@@ -52,8 +57,8 @@
                                                 <span class="menu-image-title-after menu-image-title">미드</span>
                                             </NuxtLink>
                                         </li>
-                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
-                                            <NuxtLink title="OTT/Web" to="/ott-web/" class="nav-link show">
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
+                                            <NuxtLink title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
                                                 <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                                                 <span class="menu-image-title-after menu-image-title">OTT</span>
                                             </NuxtLink>

@@ -2,6 +2,10 @@
     const onClickSearchBtn = (event) => {
         $('.dropdown-menu').toggleClass('show')
     }
+
+    const onToggleSubmenu = (event) => {
+        $(event.target).parent().toggleClass('show')
+    }
 </script>
 
 <template>
@@ -34,11 +38,10 @@
                                                                 <span class="menu-image-title-after menu-image-title">영화</span>
                                                             </NuxtLink>
                                                         </li>
-                                                        <li itemtype="https://www.schema.org/SiteNavigationElement"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
-                                                            <NuxtLink title="TV" to="/tv-shows/" data-toggle="dropdown"
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
+                                                            <NuxtLink title="TV" data-toggle="dropdown"
                                                                 aria-haspopup="true" aria-expanded="false"
-                                                                class="dropdown-toggle nav-link">
+                                                                class="dropdown-toggle nav-link" @click="onToggleSubmenu">
                                                                 <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">TV</span>    
                                                             </NuxtLink>
@@ -64,8 +67,7 @@
                                                             </NuxtLink>
                                                         </li>
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
-                                                            <NuxtLink title="OTT/Web" to="/ott-web/"
-                                                                class="nav-link show">
+                                                            <NuxtLink title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link" @click="onToggleSubmenu">
                                                                 <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">OTT</span>
                                                             </NuxtLink>
