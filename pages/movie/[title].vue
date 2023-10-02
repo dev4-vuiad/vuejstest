@@ -77,8 +77,7 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV',
-        link: [{rel: 'stylesheet', href: '/css/movie.css' }]
+        title: title + ' – 코코아티비 :: KOKOA.TV'
     });
 
     // onMounted(() => {

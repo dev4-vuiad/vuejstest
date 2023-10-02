@@ -104,3 +104,15 @@ body {
 .embla__slide__inner1 img{
   height: 100%;
 }
+
+.movie__description>div {
+  height: auto;
+  transition: max-height 600ms ease-in-out;
+  overflow: hidden;
+  max-height: 50px;
+}
+
+.single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body.desktop {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
