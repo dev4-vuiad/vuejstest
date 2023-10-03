@@ -57,7 +57,10 @@
         'apple-tv': 'Apple TV',
         wavve: 'wavve',
         tving: 'Tving',
-        'amazon-prime-video': 'Amazon Prime Video'
+        'amazon-prime-video': 'Amazon Prime Video',
+        peacock: 'Peacock',
+        'hbo-max': 'HBO max',
+        watcha: 'watcha'
     }
     
     const orderBy = ref(route.query.orderBy || 'date')
