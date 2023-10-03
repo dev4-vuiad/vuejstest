@@ -252,7 +252,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- add sidebar single tv_show -->
                     <div class="single_tv_show__sidebar tv-show-sidebar column">
                         <div class="widget-area-inner">
                             <TvshowTopWeekMonth :pending="pending" :topWeeks="data.topWeeks" :topMonths="data.topMonths" />
