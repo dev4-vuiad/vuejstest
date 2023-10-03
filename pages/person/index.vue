@@ -3,7 +3,6 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute();
     const router = useRouter();
-    const pageTitle = ref(route.params.name)
 
     definePageMeta({
         layout: 'person',
@@ -51,9 +50,12 @@
         }
     })
 
+    useHead({
+        title: 'Person – 코코아티비 :: KOKOA.TV'
+    });
+
     const orderBy = ref(route.query.orderBy || 'date')
     const page = ref(route.query.page || 1)
-    const name = route.params.name
 
     const defaultData = {
         total: 0,
@@ -63,17 +65,11 @@
         }
     }
     const { data, pending }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/search', {
+        () => $fetch($apiBaseUrl() + '/movies', {
             params: {
-                title: 'love',
                 orderBy: orderBy.value || undefined,
                 page: page.value
             }
-        }).then(data => {
-            data.src = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z4nKqXw9RRaPLFZJknlolv4CBE3.jpg'
-            data.name = 'Jennie'
-            pageTitle.value = 'Jennie'
-            return data
         }),
         {
             default: () => defaultData,
@@ -102,8 +98,7 @@
 </script>
 
 <template>
-    <Title>{{ pageTitle }} – 코코아티비 :: KOKOA.TV'</Title>
-    <div id="content" class="site-content " name="person" tabindex="-1">
+    <div id="content" class="site-content " name="person-list" tabindex="-1">
         <div class="container">
             <nav class="masvideos-breadcrumb">
                 <NuxtLink to="/">Home</NuxtLink>
@@ -113,21 +108,13 @@
                             d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
                         </path>
                     </svg>
-                </span>
-                <NuxtLink to="/person">Person</NuxtLink>
-                <span class="delimiter">
-                    <svg width="4px" height="7px">
-                        <path fill-rule="evenodd"
-                            d="M3.978,3.702 C3.986,3.785 3.966,3.868 3.903,3.934 L1.038,6.901 C0.920,7.022 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.010,6.203 0.127,6.082 L2.190,3.945 C2.276,3.829 2.355,3.690 2.355,3.548 C2.355,3.214 1.947,2.884 1.947,2.884 L1.963,2.877 L0.080,0.905 C-0.037,0.783 -0.029,0.593 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.866,-0.039 0.983,0.083 L3.823,3.056 C3.866,3.102 3.875,3.161 3.885,3.218 C3.945,3.267 3.988,3.333 3.988,3.415 L3.988,3.681 C3.988,3.689 3.979,3.694 3.978,3.702 Z">
-                        </path>
-                    </svg>
-                </span>{{ data.name }}
+                </span>Person
             </nav>
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main" role="main">
                         <header class="page-header">
-                            <h1 class="page-title">{{ data.name }}</h1>
+                            <h1 class="page-title">Person</h1>
                         </header>
                         <div class="vodi-control-bar">
                             <div class="vodi-control-bar__right">
@@ -142,9 +129,6 @@
                                         <select @change="onChangeOrderBy" class="orderby">
                                             <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                             <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
-                                            <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
-                                            <option value="menuOrder" v-bind:selected="orderBy == 'menuOrder'">Menu Order</option>
-                                            <option value="rating" v-bind:selected="orderBy == 'rating'">별점순</option>
                                         </select>
                                     </form>
                                 </div>
@@ -153,16 +137,12 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6 movies columns-6">
                                 <div class="tv-shows__inner movies__inner">
-                                    <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
+                                    <PersonItem v-for="(item, index) in data.data.items" :key="index"
                                         :id="item.id"
-                                        :title="item.title" 
-                                        :originalTitle="item.originalTitle" 
+                                        :name="item.title" 
                                         :src="item.src"
-                                        :srcSet="item.srcSet"
-                                        :seasonNumber="item.seasonNumber"
-                                        :episodeNumber="item.episodeNumber"
                                         :link="item.link"
-                                        :postType="item.postType"
+                                        :pending="pending"
                                     />
                                 </div>
                             </div>
@@ -176,12 +156,9 @@
                         />
                     </main>
                 </div>
-                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
-                    role="complementary">
+                <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                     <div class="widget-area-inner">
-                        <div class="person-thumbnail loading-bg">
-                            <img class="lazyload" :src="data.src" :key="data.src" :alt="name"  />
-                        </div>
+                        <!-- <PersonTopWeek :data="data.data.topWeeks" :pending="pending" /> -->
                     </div>
                 </div>
             </div>
