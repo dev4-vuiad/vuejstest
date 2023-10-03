@@ -1,5 +1,5 @@
 <template>
-    <div id="page" class="archive post-type-archive post-type-archive-tv_show wp-custom-logo masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark">
+    <div id="page" class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark">
         <Header />
         <HeaderHandHeld />
         <slot />

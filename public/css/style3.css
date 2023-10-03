@@ -2920,16 +2920,6 @@ a:focus {
   border-radius: 5px;
 }
 
-.blog:not(.masvideos-js) .sidebar-area {
-  padding-top: 20px;
-}
-
-@media (min-width: 1200px) {
-  .blog:not(.masvideos-js) .sidebar-area {
-    padding-top: 0;
-  }
-}
-
 .page__content blockquote {
   background-color: #f5f5f5;
   font-family: "Montserrat", "Open Sans", sans-serif;
