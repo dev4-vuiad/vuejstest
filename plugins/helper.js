@@ -32,6 +32,14 @@ export default defineNuxtPlugin(() => {
             return ' ';
           }
           return (!['시즌 1', 'Season 1'].includes(seasonNumber) ? seasonNumber + ' - ' : '') + (episodeNumber.includes('.') ? '스페셜화' : (episodeNumber + '화'))
+        },
+        getEpTitle: (title) => {
+          let m = title.match(/[0-9.]+화/g)
+          if (m && m.length && m[m.length - 1].includes('.')) {
+            return title.replace(m[m.length - 1], '스페셜화', title)
+          }
+  
+          return title
         }
       }
     }
