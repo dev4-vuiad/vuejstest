@@ -1,24 +1,13 @@
 <script setup>
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
     definePageMeta({
-        layout: 'episode',
-        scrollToTop: false,
+        scrollToTop: true,
         pageTransition: {
             name: 'page', 
             mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            }
-        },
-        layoutTransition: {
-            name: 'layout', 
-            mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            },
             onAfterEnter: () => {
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
@@ -116,85 +105,76 @@
 
         return null
     }
-
-    // onMounted(() => {
-    //     if ($isProdEnv()) { 
-    //         (function(s, w) {
-    //             s.setAttribute("async", "async");
-    //             s.setAttribute("type", "text/javascript");
-    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //             w.document.body.appendChild(s);
-    //         })(window.top.document.createElement("script"), window.top)
-    //     }
-    // })
 </script>
 
 <template>
-    <div class="site-content " tabindex="-1">
-        <div class="container">
-            <div class="site-content__inner">
-                <div id="primary" class="content-area">
-                    <div class="episode type-episode status-publish hentry">
-                        <TvshowsIntroBreadScrumb v-if="data && data.genres"
-                            :title="data.title"
-                            :tvshowTitle="data.tvshowTitle"
-                            :seasonName="data.seasonName"
-                            :genre="data.genres[data.genres.length - 1]"
-                        />
-                        <div class="single-episode__content column">
-                            <!-- ads top -->
-                            <div class="ads-episode-top"></div>
-                            <div class="single-episode__row row">
-                                <div class="single-episode__sidebar column1 single-episode-custom">
-                                    <TvshowsIntroInfo
-                                        :pending="pending" 
-                                        :id="data.id"
-                                        :postDate="data.postDate"
-                                        :postDateGmt="data.postDateGmt"
-                                        :title="data.title"
-                                        :originalTitle="data.originalTitle" 
-                                        :genres="data.genres" :src="data.src"
-                                        :description="data.description" 
-                                        :outlink="data.outlink"
-                                        :tvshowTitle="data.tvshowTitle"
-                                    />
-                                    <div style="margin-bottom:15px;">
-                                        <a :href="data.outlink" class="a_btn_out">
-                                            <button class="btn-outlink">바로보기</button>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-episode-ads-box">
-                                    <div class="ads-box-child">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="episode__head">
-                            </div>
-                            <div class="summary entry-summary episode__summary">
-                                <div class="episode__title-with-nav">
-                                    <div class="episode__player--arrows">
-                                        <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
-                                            <NuxtLink
-                                                :to="'/episode/' + findPrevEp(data.title, data.seasons)"
-                                                class="episode__player--prev-episode__link">
-                                                <span class="episode__player--prev-episode__label"> Previous Episode </span>
-                                            </NuxtLink>
+    <div class="single-episode masvideos single-episode-v3 full-width dark">
+        <div class="site-content " tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" class="content-area">
+                        <div class="episode type-episode status-publish hentry">
+                            <TvshowsIntroBreadScrumb v-if="data && data.genres"
+                                :title="data.title"
+                                :tvshowTitle="data.tvshowTitle"
+                                :seasonName="data.seasonName"
+                                :genre="data.genres[data.genres.length - 1]"
+                            />
+                            <div class="single-episode__content column">
+                                <!-- ads top -->
+                                <div class="ads-episode-top"></div>
+                                <div class="single-episode__row row">
+                                    <div class="single-episode__sidebar column1 single-episode-custom">
+                                        <TvshowsIntroInfo
+                                            :pending="pending" 
+                                            :id="data.id"
+                                            :postDate="data.postDate"
+                                            :postDateGmt="data.postDateGmt"
+                                            :title="data.title"
+                                            :originalTitle="data.originalTitle" 
+                                            :genres="data.genres" :src="data.src"
+                                            :description="data.description" 
+                                            :outlink="data.outlink"
+                                            :tvshowTitle="data.tvshowTitle"
+                                        />
+                                        <div style="margin-bottom:15px;">
+                                            <a :href="data.outlink" class="a_btn_out">
+                                                <button class="btn-outlink">바로보기</button>
+                                            </a>
                                         </div>
-                                        <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
-                                            <NuxtLink
-                                                :to="'/episode/' + findNextEp(data.title, data.seasons)"
-                                                class="episode__player--next-episode__link">
-                                                <span class="episode__player--next-episode__label"> Next Episode </span>
-                                            </NuxtLink>
+                                    </div>
+                                    <div class="single-episode-ads-box">
+                                        <div class="ads-box-child">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="episode__head">
+                                </div>
+                                <div class="summary entry-summary episode__summary">
+                                    <div class="episode__title-with-nav">
+                                        <div class="episode__player--arrows">
+                                            <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
+                                                <NuxtLink
+                                                    :to="'/episode/' + findPrevEp(data.title, data.seasons)"
+                                                    class="episode__player--prev-episode__link">
+                                                    <span class="episode__player--prev-episode__label"> Previous Episode </span>
+                                                </NuxtLink>
+                                            </div>
+                                            <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
+                                                <NuxtLink
+                                                    :to="'/episode/' + findNextEp(data.title, data.seasons)"
+                                                    class="episode__player--next-episode__link">
+                                                    <span class="episode__player--next-episode__label"> Next Episode </span>
+                                                </NuxtLink>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="episode__season-tabs-wrap stretch-full-width"></div>
+                                <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                             </div>
-                            <div class="episode__season-tabs-wrap stretch-full-width"></div>
-                            <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
+                            <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" />
                         </div>
-                        <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" />
                     </div>
                 </div>
             </div>

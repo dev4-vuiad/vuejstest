@@ -1,12 +1,9 @@
 <script setup>
-    import { onMounted } from 'vue'
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
 
     definePageMeta({
-        layout: 'home',
-        keepalive: true,
-        layoutTransition: {
-            name: 'layout', 
+        pageTransition: {
+            name: 'page', 
             mode: 'out-in',
             onAfterEnter: () => {
                 //animated drop down submenu

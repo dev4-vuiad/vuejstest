@@ -1,26 +1,15 @@
 <script setup>
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
     const { isMobile } = useDevice()
 
     definePageMeta({
-        layout: 'movie',
-        scrollToTop: false,
+        scrollToTop: true,
         pageTransition: {
             name: 'page', 
             mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            }
-        },
-        layoutTransition: {
-            name: 'layout', 
-            mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            },
             onAfterEnter: () => {
                 //animated drop down submenu
                 $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
@@ -80,68 +69,59 @@
         title: title + ' – 코코아티비 :: KOKOA.TV'
     });
 
-    // onMounted(() => {
-    //     if ($isProdEnv) {
-    //         (function(s, w) {
-    //             s.setAttribute("async", "async");
-    //             s.setAttribute("type", "text/javascript");
-    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //             w.document.body.appendChild(s);
-    //         })(window.top.document.createElement("script"), window.top)
-    //     }
-    // })
-
 </script>
 <template>
-    <div class="site-content " tabindex="-1">
-        <div class="container">
-            <div class="site-content__inner">
-                <div id="primary" class="content-area">
-                    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie">
-                        <div class="single-movie__player-container stretch-full-width">
-                            <div class="single-movie__player-container--inner container">
-                                <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
-                                <div class="ads-movie-top"></div>
-                                <div class="single-movie__row row">
-                                    <MovieIntroInfoMobile v-if="isMobile"
-                                        :pending = "pending"
-                                        :id="data.id"
-                                        :year="data.year"
-                                        :duration="data.duration"
-                                        :title="data.title"
-                                        :originalTitle="data.originalTitle"
-                                        :genres="data.genres"
-                                        :src="data.src"
-                                        :description="data.description"
-                                        :outlink="data.outlink"
-                                    />
-                                    <MovieIntroInfo v-if="!isMobile"
-                                        :pending = "pending"
-                                        :id="data.id"
-                                        :year="data.year"
-                                        :duration="data.duration"
-                                        :title="data.title"
-                                        :originalTitle="data.originalTitle"
-                                        :genres="data.genres"
-                                        :src="data.src"
-                                        :description="data.description"
-                                        :outlink="data.outlink"
-                                    />
-                                    <div class="single-movie-ads-box">
-                                        <div class="ads-box-child">
+    <div class="movie-template-default single-movie masvideos single-movie-v2 full-width dark">
+        <div class="site-content " tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" class="content-area">
+                        <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie">
+                            <div class="single-movie__player-container stretch-full-width">
+                                <div class="single-movie__player-container--inner container">
+                                    <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
+                                    <div class="ads-movie-top"></div>
+                                    <div class="single-movie__row row">
+                                        <MovieIntroInfoMobile v-if="isMobile"
+                                            :pending = "pending"
+                                            :id="data.id"
+                                            :year="data.year"
+                                            :duration="data.duration"
+                                            :title="data.title"
+                                            :originalTitle="data.originalTitle"
+                                            :genres="data.genres"
+                                            :src="data.src"
+                                            :description="data.description"
+                                            :outlink="data.outlink"
+                                        />
+                                        <MovieIntroInfo v-if="!isMobile"
+                                            :pending = "pending"
+                                            :id="data.id"
+                                            :year="data.year"
+                                            :duration="data.duration"
+                                            :title="data.title"
+                                            :originalTitle="data.originalTitle"
+                                            :genres="data.genres"
+                                            :src="data.src"
+                                            :description="data.description"
+                                            :outlink="data.outlink"
+                                        />
+                                        <div class="single-movie-ads-box">
+                                            <div class="ads-box-child">
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="center"></div>
                                 </div>
-                                <div class="center"></div>
                             </div>
+                            <section class="movie__related">
+                                <div class="movie__related--inner">
+                                    <h2 class="movie__related--title">관련 컨텐츠</h2>
+                                    <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
+                                </div>
+                            </section>
+                            <div style="text-align: center;margin-top: 10px;"></div>
                         </div>
-                        <section class="movie__related">
-                            <div class="movie__related--inner">
-                                <h2 class="movie__related--title">관련 컨텐츠</h2>
-                                <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
-                            </div>
-                        </section>
-                        <div style="text-align: center;margin-top: 10px;"></div>
                     </div>
                 </div>
             </div>

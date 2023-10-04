@@ -1,9 +1,9 @@
+
 <template>
-    <div class="archive post-type-archive-movie masvideos masvideos-archive sidebar-left dark">
+    <div>
         <Header />
         <HeaderHandHeld />
         <slot />
         <Footer />
-        
     </div>
 </template>
