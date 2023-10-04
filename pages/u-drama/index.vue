@@ -121,7 +121,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <TvshowsBreadScrumb base="/u-drama" title="미드" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">

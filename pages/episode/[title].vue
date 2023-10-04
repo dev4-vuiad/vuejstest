@@ -130,7 +130,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <div class="site-content__inner">
                 <div id="primary" class="content-area">

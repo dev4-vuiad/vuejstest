@@ -1,6 +1,6 @@
 
 <template>
-    <div id="page" class="home page-template-default">
+    <div class="home">
         <Header />
         <HeaderHandHeld />
         <slot />

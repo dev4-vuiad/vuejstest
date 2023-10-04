@@ -1,6 +1,6 @@
 
 <template>
-    <div id="page" class="archive post-type-archive-movie masvideos masvideos-archive sidebar-left dark">
+    <div class="archive post-type-archive-movie masvideos masvideos-archive sidebar-left dark">
         <Header />
         <HeaderHandHeld />
         <slot />

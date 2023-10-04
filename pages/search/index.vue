@@ -112,7 +112,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <nav class="masvideos-breadcrumb">
                 <NuxtLink to="/">Home</NuxtLink>

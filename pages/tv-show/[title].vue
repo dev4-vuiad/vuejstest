@@ -114,7 +114,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <nav class="masvideos-breadcrumb"><a href="/">Home</a><span class="delimiter"><svg
                         width="4px" height="7px">

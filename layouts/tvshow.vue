@@ -1,5 +1,5 @@
 <template>
-    <div id="page" class="single-tv_show masvideos full-width dark">
+    <div class="single-tv_show masvideos full-width dark">
         <Header />
         <HeaderHandHeld />
         <slot />

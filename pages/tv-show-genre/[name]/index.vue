@@ -124,7 +124,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <TvshowsBreadScrumb base="tv-show-genre" v-if="data && data.data && data.data.items[0].genres" :title="getGenreTitle(genre, data.data.items[0].genres) || genre" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">

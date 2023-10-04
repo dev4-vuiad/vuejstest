@@ -121,7 +121,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <TvshowsBreadScrumb base="/ott-web" title="OTT/Web" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">

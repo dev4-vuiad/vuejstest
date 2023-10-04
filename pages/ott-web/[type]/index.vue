@@ -134,7 +134,7 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
+    <div class="site-content " tabindex="-1">
         <div class="container">
             <OttWebBreadScrumb :page="page" :type="type" :title="mapTypeTtitle[type]" />
             <div class="site-content__inner">

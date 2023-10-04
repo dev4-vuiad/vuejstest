@@ -1,5 +1,5 @@
 <template>
-    <div id="page" class="movie-template-default single-movie masvideos single-movie-v2 full-width dark">
+    <div class="movie-template-default single-movie masvideos single-movie-v2 full-width dark">
         <Header />
         <HeaderHandHeld />
         <slot />

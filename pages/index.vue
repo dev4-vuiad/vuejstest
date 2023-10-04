@@ -198,61 +198,63 @@
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
-        <div class="container">
-            <div class="site-content__inner">
-                <div id="primary" v-if="data" class="content-area">
-                    <main id="main" class="site-main" role="main">
-                        <article class="page type-page status-publish hentry">
-                            <div class="page__content">
-                                <section id="section-home-slider-custom-64d31949b2fcb"
-                                        class="home-section more-dark">
-                                    <HomeSlider v-if="data" :data="data.sliders" />
-                                </section>
-                                <section class="home-section ads-top">
-                                    <div class="kskdCustomElement"></div>
-                                </section>
-                                <section id="section-home-slider-custom-ott-64d31949c9733"
-                                    class="home-section home-slider-custom-ott">
-                                    <div class="bg_opacity"></div>
-                                    <HomeOot :pending="pending" 
-                                        :title="data.otts.ottTitle"
-                                        :sliders="data.otts.ottSliders"
-                                    />
-                                </section>
-                                <section
-                                    class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
-                                    <div class="container">
-                                        <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
-                                    </div>
-                                </section>
-                                <section
-                                    class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
-                                    <div class="container">
-                                        <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
-                                    </div>
-                                </section>
-                                <section class="home-section home-ads-bt-feature ads-bottom"></section>
-                                <section id="section-movies-carousel-aside-header-64d3194c4e219"
-                                    class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
-                                    <div class="container">
-                                        <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
-                                    </div>
-                                </section>
-                                <section id="section-movies-list-64d3194c644bd"
-                                    class="home-section section-movies-list">
-                                    <div class="container">
-                                        <div class="section-movies-list__inner">
-                                            <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
-                                            <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
+    <div class="home">
+        <div class="site-content" tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" v-if="data" class="content-area">
+                        <main id="main" class="site-main" role="main">
+                            <article class="page type-page status-publish hentry">
+                                <div class="page__content">
+                                    <section id="section-home-slider-custom-64d31949b2fcb"
+                                            class="home-section more-dark">
+                                        <HomeSlider v-if="data" :data="data.sliders" />
+                                    </section>
+                                    <section class="home-section ads-top">
+                                        <div class="kskdCustomElement"></div>
+                                    </section>
+                                    <section id="section-home-slider-custom-ott-64d31949c9733"
+                                        class="home-section home-slider-custom-ott">
+                                        <div class="bg_opacity"></div>
+                                        <HomeOot :pending="pending" 
+                                            :title="data.otts.ottTitle"
+                                            :sliders="data.otts.ottSliders"
+                                        />
+                                    </section>
+                                    <section
+                                        class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
+                                        <div class="container">
+                                            <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
-                                    </div>
-                                </section>
-                                <section class="home-section home-ads-bt-feature ads-footer">
-                                </section>
-                            </div>
-                        </article>
-                    </main>
+                                    </section>
+                                    <section
+                                        class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
+                                        <div class="container">
+                                            <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
+                                        </div>
+                                    </section>
+                                    <section class="home-section home-ads-bt-feature ads-bottom"></section>
+                                    <section id="section-movies-carousel-aside-header-64d3194c4e219"
+                                        class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
+                                        <div class="container">
+                                            <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
+                                        </div>
+                                    </section>
+                                    <section id="section-movies-list-64d3194c644bd"
+                                        class="home-section section-movies-list">
+                                        <div class="container">
+                                            <div class="section-movies-list__inner">
+                                                <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
+                                                <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="home-section home-ads-bt-feature ads-footer">
+                                    </section>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
                 </div>
             </div>
         </div>
