@@ -114,11 +114,12 @@
         $('#scrollUp').trigger('click')
     }
 
-    const getGenreTitle = (link, genres) => {
+    const getGenreTitle = (name, genres) => {
         if (!genres) {
             return ''
         }
-        let v = genres.filter(v => v.link == link || decodeURI(v.link) == link)
+        
+        let v = genres.filter(v => v.name == name || decodeURI(v.link) == name)
         return v[0] ? v[0].name : ''
     }
 
@@ -180,7 +181,7 @@
                         <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                     </div>
                     <header class="page-header">
-                        <h1 class="page-title">영화</h1>
+                        <h1 v-if="data && data.data.items[0] && data.data.items[0].genres" class="page-title">{{ getGenreTitle(name, data.data.items[0].genres) }}</h1>
                     </header>
                     <div class="vodi-control-bar">
                         <div class="vodi-control-bar__left">

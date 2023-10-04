@@ -139,3 +139,6 @@ body {
 }
 
 
+#content.page-episode .episode.active * {
+  color: #FFF;
+}

@@ -57,7 +57,10 @@
         'apple-tv': 'Apple TV',
         wavve: 'wavve',
         tving: 'Tving',
-        'amazon-prime-video': 'Amazon Prime Video'
+        'amazon-prime-video': 'Amazon Prime Video',
+        peacock: 'Peacock',
+        'hbo-max': 'HBO max',
+        watcha: 'watcha'
     }
     
     const orderBy = ref(route.query.orderBy || 'date')
@@ -173,7 +176,7 @@
                         <div class="vodi-control-bar__right">
                             <div class="tv-shows-ordering">
                                 <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler"
-                                        type="button"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+                                        type="button"><i class="fas fa-sliders-h"></i><span>Popular content</span></button>
                                 </div><svg class="svg-icon svg-icon__sort" aria-hidden="true" role="img"
                                     focusable="false" width="17px" height="14px">
                                     <path fill-rule="evenodd"

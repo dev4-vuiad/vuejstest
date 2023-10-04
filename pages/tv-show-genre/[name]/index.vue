@@ -99,14 +99,14 @@
     
     const getGenreTitle = (link, genres) => {
         if (!genres) {
-            return ''
+            return undefined
         }
         let v = genres.filter(v => v.link == link || decodeURI(v.link) == link)
-        return v[0] ? v[0].name : ''
+        return v[0] ? v[0].name : undefined
     }
 
     useHead({
-        title: data && data.data && data.data.items.length && data.data.items[0].genres ? getGenreTitle(genre, data.data.items[0].genres) + ' – 코코아티비 :: KOKOA.TV' : ''
+        title: data && data.data && data.data.items.length && data.data.items[0].genres ? (getGenreTitle(genre, data.data.items[0].genres) || genre) + ' – 코코아티비 :: KOKOA.TV' : ''
     });
 
     onMounted(() => {
@@ -126,7 +126,7 @@
 <template>
     <div id="content" class="site-content " tabindex="-1">
         <div class="container">
-            <TvshowsBreadScrumb base="tv-show-genre" v-if="data && data.data && data.data.items[0].genres" :title="getGenreTitle(genre, data.data.items[0].genres)" :page="page * 1 > 1 ? page : undefined" />
+            <TvshowsBreadScrumb base="tv-show-genre" v-if="data && data.data && data.data.items[0].genres" :title="getGenreTitle(genre, data.data.items[0].genres) || genre" :page="page * 1 > 1 ? page : undefined" />
             <div class="site-content__inner">
                 <div id="primary" class="content-area" v-if="data"> <!-- ads tv-show top -->
                     <div class="ads-achive-tvshow-top" style="text-align: center;">
@@ -158,7 +158,7 @@
                         <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                     </div>
                     <header class="page-header">
-                        <h1 class="page-title" v-if="data && data.data && data.data.items[0].genres" v-html="getGenreTitle(genre, data.data.items[0].genres)"></h1>
+                        <h1 class="page-title" v-if="data && data.data && data.data.items[0].genres" v-html="getGenreTitle(genre, data.data.items[0].genres) || genre"></h1>
                     </header>
                     <div class="masvideos-tv-show-control-bar1 vodi-control-bar">
                         <div class="vodi-control-bar__left">
@@ -166,7 +166,7 @@
                         <div class="vodi-control-bar__right">
                             <div class="tv-shows-ordering">
                                 <div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler"
-                                        type="button"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+                                        type="button"><i class="fas fa-sliders-h"></i><span>Popular content</span></button>
                                 </div><svg class="svg-icon svg-icon__sort" aria-hidden="true" role="img"
                                     focusable="false" width="17px" height="14px">
                                     <path fill-rule="evenodd"
