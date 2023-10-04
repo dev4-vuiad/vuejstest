@@ -1,6 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casting'])
+    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casts'])
     let id = props.id
     let postDate = props.postDate
     let title = props.title
@@ -9,7 +9,7 @@
     let src = props.src
     let description = props.description
     let tvshowTitle = props.tvshowTitle
-    let casting = props.casting || []
+    let casts = props.casts || []
     let pending = props.pending
 
     onBeforeMount(() => {
@@ -22,7 +22,7 @@
             src = undefined
             description = undefined
             tvshowTitle = undefined
-            casting = []
+            casts = []
         }
     })
 
@@ -34,7 +34,7 @@
             title = props.title
             originalTitle = props.originalTitle
             genres = props.genres
-            casting = props.casting
+            casts = props.casts
             src = props.src
             description = props.description
             tvshowTitle = props.tvshowTitle
@@ -93,16 +93,15 @@
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle || ' ' }}
                     </div>
-                    <span class="tv-show__meta--genre casting">
-                        <template v-if="casting.length">
-                            <NuxtLink :to="'/person/' + casting[0].link" rel="tag"><span v-html="casting[0].name"></span></NuxtLink>
-                        </template>
-                        <template v-for="(item, idx) in genres" :key="idx">
-                            <span>, </span>
-                            <NuxtLink v-if="idx < 3" :to="'/tv-show-genre/' + item.link" rel="tag"><span v-html="item.name"></span></NuxtLink>
-                        </template>
-                        <span v-if="(casting.length ? 1 : 0) + genres.length > 4"> ...</span>
-                    </span>
+                    <div class="casts-list">
+                        <span class="tv-show__meta--genre">
+                            <template v-for="(item, idx) in casts">
+                                <span v-if="idx > 0 && idx < 4">, </span>
+                                <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
+                            </template>
+                            <span v-if="casts.length > 4"> ...</span>
+                        </span>
+                    </div>
                     <div class="episode__description modified">
                         <div v-html="description"></div>
                         <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">{{ expanded ? 'Show Less' : 'Read More' }}</a>

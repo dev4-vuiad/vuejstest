@@ -110,6 +110,7 @@ body {
   transition: max-height 600ms ease-in-out;
   overflow: hidden;
   max-height: 50px;
+  color: #949cb0;
 }
 
 .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__body.desktop {
@@ -117,7 +118,7 @@ body {
   max-width: 100%;
 }
 
-.tv-show__meta--genre.casting {
+.casts-list {
   margin-top: 10px;
 }
 
@@ -136,3 +137,5 @@ body {
 #content[name="person-list"] .tv-shows-ordering {
   justify-content: flex-end;
 }
+
+

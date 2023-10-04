@@ -1,5 +1,5 @@
 <script setup>
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
@@ -117,16 +117,6 @@
         return null
     }
 
-    // onMounted(() => {
-    //     if ($isProdEnv()) { 
-    //         (function(s, w) {
-    //             s.setAttribute("async", "async");
-    //             s.setAttribute("type", "text/javascript");
-    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //             w.document.body.appendChild(s);
-    //         })(window.top.document.createElement("script"), window.top)
-    //     }
-    // })
 </script>
 
 <template>
@@ -157,7 +147,7 @@
                                         :description="data.description" 
                                         :outlink="data.outlink"
                                         :tvshowTitle="data.tvshowTitle"
-                                        :casting="[{name: 'Jennie', link: 'jennie'}]"
+                                        :casts="data.casts"
                                     />
                                     <div style="margin-bottom:15px;">
                                         <a :href="data.outlink" class="a_btn_out">
