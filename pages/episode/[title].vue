@@ -1,5 +1,5 @@
 <script setup>
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
 
@@ -116,17 +116,6 @@
 
         return null
     }
-
-    // onMounted(() => {
-    //     if ($isProdEnv()) { 
-    //         (function(s, w) {
-    //             s.setAttribute("async", "async");
-    //             s.setAttribute("type", "text/javascript");
-    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //             w.document.body.appendChild(s);
-    //         })(window.top.document.createElement("script"), window.top)
-    //     }
-    // })
 </script>
 
 <template>
@@ -135,11 +124,12 @@
             <div class="site-content__inner">
                 <div id="primary" class="content-area">
                     <div class="episode type-episode status-publish hentry">
-                        <TvshowsIntroBreadScrumb v-if="data && data.genres"
+                        <TvshowsIntroBreadScrumb
+                            :pending="pending" 
                             :title="data.title"
                             :tvshowTitle="data.tvshowTitle"
                             :seasonName="data.seasonName"
-                            :genre="data.genres[data.genres.length - 1]"
+                            :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                         />
                         <div class="single-episode__content column">
                             <!-- ads top -->
