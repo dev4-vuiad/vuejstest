@@ -116,3 +116,7 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
+#content.page-episode .episode.active * {
+  color: #FFF;
+}

@@ -40,7 +40,7 @@
                     <div class="masvideos masvideos-episodes ">
                         <div class="episodes columns-6">
                             <div class="episodes__inner">
-                                <div v-for="(episode, idx) in item.episodes" :key="idx" class="episode type-episode status-publish hentry">
+                                <div v-for="(episode, idx) in item.episodes" :key="idx" class="episode status-publish hentry">
                                     <div class="episode__poster loading-bg">
                                         <NuxtLink :to="'/episode/' + episode.title" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img

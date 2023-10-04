@@ -1,32 +1,50 @@
 <script setup>
     import { reactive } from 'vue'
     const { $toTimeAgo, $getEpTitle } = useNuxtApp()
-    const props = defineProps(['data', 'pending'])
+    const props = defineProps(['data', 'pending', 'id', 'seasonName'])
     let pending = props.pending
     let data = props.data
-    let currentSeason = ref(0)
+    let id = props.id
+    let seasonName = props.seasonName
+    let seasonIdx = data && data.length ? data.findIndex(v => v.name === seasonName) : 0;
+    const currentSeason = ref(seasonIdx == -1 ? 0 : seasonIdx)
     const state = reactive({
-        showIdx: setShowIdx(data)
+        showIdx: setShowIdx(data, id, seasonIdx)
     })
 
     onBeforeMount(() => {
         if (pending) {
             data = undefined
+            currentSeason.value = 0
+            id = undefined
         }
     })
 
     watch(
         () => props.pending,
         () => {
+            seasonName = props.seasonName
+            id = props.id
             data = props.data
-            state.showIdx = setShowIdx(data)
+            let seasonIdx = data && data.length ? data.findIndex(v => v.name === seasonName) : 0;
+            currentSeason.value = seasonIdx == -1 ? 0 : seasonIdx
+            state.showIdx = setShowIdx(data, id, seasonIdx)
         }
     )
 
-    function setShowIdx(data) {
+    function setShowIdx(data, id, seasonIdx) {
         let results = {}
         for (let k in data) {
-            results[k] = 10
+            if (seasonIdx == k) {
+                results[k] = data[k].episodes.findIndex(v => v.id == id)
+                if (results[k] < 0) {
+                    results[k] = 10;
+                } else {
+                    results[k] += (10 - results[k] % 10)
+                }
+            } else {
+                results[k] = 10
+            }
         }
 
         return results
@@ -68,8 +86,8 @@
                         <div class="masvideos masvideos-episodes ">
                             <div class="episodes columns-6">
                                 <div class="episodes__inner">
-                                    <template v-for="(episode, idx) in sortEpisodes(season.episodes)" :key="idx">
-                                        <div v-if="idx < state.showIdx[index]" class="episode type-episode status-publish hentry" :postid="episode.id">
+                                    <template v-for="(episode, idx) in sortEpisodes(season.episodes)">
+                                        <div v-if="idx < state.showIdx[index]" :class="'episode status-publish hentry' + (id == episode.id ? ' active' : '')" :postid="episode.id">
                                             <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)"
                                                 class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                                 <span class="masvideos-loop-episode__number episode__number">{{ $toTimeAgo(episode.postDate) }}</span>
