@@ -54,7 +54,7 @@
         title: 'Person – 코코아티비 :: KOKOA.TV'
     });
 
-    const orderBy = ref(route.query.orderBy || 'date')
+    const orderBy = ref(route.query.orderBy || 'nameAsc')
     const page = ref(route.query.page || 1)
 
     const defaultData = {
@@ -65,7 +65,7 @@
         }
     }
     const { data, pending }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/movies', {
+        () => $fetch($apiBaseUrl() + '/casts', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value
@@ -127,8 +127,8 @@
                                     </svg>
                                     <form method="get">
                                         <select @change="onChangeOrderBy" class="orderby">
-                                            <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
-                                            <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
+                                            <option value="nameAsc" v-bind:selected="orderBy == 'nameAsc'">A 부터 Z</option>
+                                            <option value="nameDesc" v-bind:selected="orderBy == 'nameDesc'">Z 부터 A</option>
                                         </select>
                                     </form>
                                 </div>
@@ -139,9 +139,9 @@
                                 <div class="tv-shows__inner movies__inner">
                                     <PersonItem v-for="(item, index) in data.data.items" :key="index"
                                         :id="item.id"
-                                        :name="item.title" 
+                                        :name="item.name" 
                                         :src="item.src"
-                                        :link="item.link"
+                                        :slug="item.slug"
                                         :pending="pending"
                                     />
                                 </div>
@@ -158,7 +158,7 @@
                 </div>
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
                     <div class="widget-area-inner">
-                        <!-- <PersonTopWeek :data="data.data.topWeeks" :pending="pending" /> -->
+                        <PersonTopWeek :data="data.data.topWeeks" :pending="pending" />
                     </div>
                 </div>
             </div>

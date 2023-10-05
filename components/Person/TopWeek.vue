@@ -13,7 +13,7 @@
     <div id="masvideos_movies_widget-2" class="widget masvideos masvideos_movies_widget masvideos-movies-widget">
         <div class="masvideos masvideos-movies ">
             <div class="movies columns-1">
-                <div class="movies__inner">
+                <!-- <div class="movies__inner">
                     <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.postDate.substr(0, 10) }}</span>
@@ -28,7 +28,7 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
