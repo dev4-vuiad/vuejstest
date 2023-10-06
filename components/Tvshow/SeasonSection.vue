@@ -42,7 +42,7 @@
                             <div class="episodes__inner">
                                 <div v-for="(episode, idx) in item.episodes" :key="idx" class="episode status-publish hentry">
                                     <div class="episode__poster loading-bg">
-                                        <NuxtLink :to="'/episode/' + episode.title" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                                        <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img
                                                 width="220" height="330"
                                                 :src="src"
@@ -52,7 +52,7 @@
                                         </NuxtLink>
                                     </div>
                                     <div class="episode__body">
-                                        <NuxtLink :to="'/episode/' + episode.title"
+                                        <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)"
                                             class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <span class="masvideos-loop-episode__number episode__number">{{ episode.postDateGmt.substr(0,10) }}</span>
                                             <h3 class="masvideos-loop-episode__title  episode__title">{{ episode.title }}</h3>
