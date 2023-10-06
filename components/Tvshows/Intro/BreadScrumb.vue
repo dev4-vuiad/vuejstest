@@ -44,7 +44,7 @@
                     </path>
                 </svg>
             </span>
-        <NuxtLink :to="'/tv-show/' + tvshowTitle + '/'">{{ tvshowTitle }}</NuxtLink>
+        <NuxtLink :to="'/tv-show/' + encodeURIComponent(tvshowTitle) + '/'">{{ tvshowTitle }}</NuxtLink>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
@@ -52,7 +52,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink :to="'/tv-show/' + tvshowTitle + '/?season-position=0'">{{ seasonName }}</NuxtLink>
+        <NuxtLink :to="'/tv-show/' + encodeURIComponent(tvshowTitle) + '/?season-position=0'">{{ seasonName }}</NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"
