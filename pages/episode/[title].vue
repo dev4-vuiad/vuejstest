@@ -85,16 +85,17 @@
 
 <template>
     <div class="single-episode masvideos single-episode-v3 full-width dark">
-        <div class="site-content " tabindex="-1">
+        <div class="site-content page-episode" tabindex="-1">
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div class="episode type-episode status-publish hentry">
-                            <TvshowsIntroBreadScrumb v-if="data && data.genres"
+                        <div class="episode status-publish hentry">
+                            <TvshowsIntroBreadScrumb 
+                                :pending="pending"
                                 :title="data.title"
                                 :tvshowTitle="data.tvshowTitle"
                                 :seasonName="data.seasonName"
-                                :genre="data.genres[data.genres.length - 1]"
+                                :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                             />
                             <div class="single-episode__content column">
                                 <!-- ads top -->
@@ -149,7 +150,7 @@
                                 <div class="episode__season-tabs-wrap stretch-full-width"></div>
                                 <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                             </div>
-                            <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" />
+                            <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                         </div>
                     </div>
                 </div>
