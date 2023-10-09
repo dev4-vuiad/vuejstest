@@ -88,13 +88,13 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'https://backend.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
+      apiBaseUrl: 'https://backend.bmytv.com/api',
+      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
     }
   },
   $production: {
     appConfig: {
-      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrl: 'https://backend.bmytv.com/api',
       apiBaseUrlSsr: 'http://localhost/api'
     },
     app: {

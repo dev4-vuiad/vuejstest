@@ -8,7 +8,7 @@ npm install
 npm run build
 
 #run delete pm2
-pm2 delete takitv
+pm2 delete korean
 
 #run start pm2
 pm2 start ecosystem.config.js
