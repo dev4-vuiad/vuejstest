@@ -17,10 +17,10 @@
 </script>
 
 <template>
-    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :objectid="id">
-        <div class="movie__poster loading-bg">
+    <div class="movie type-movie status-publish has-post-thumbnail hentry" :objectid="id">
+        <div class="movie__poster cast loading-bg">
             <NuxtLink :to="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img width="300" height="450" :src="src" class="movie__poster--image lazyload" alt="" :key="id">
+                <img v-if="src.length" :src="src" class="movie__poster--image lazyload" alt="" :key="id">
             </NuxtLink>
         </div>
         <div class="movie__body">

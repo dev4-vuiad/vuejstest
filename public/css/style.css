@@ -142,3 +142,16 @@ body {
 #content.page-episode .episode.active * {
   color: #FFF;
 }
+
+.movie__poster.cast::before {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/cast_no_thumnbnail.svg);
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    background-position-y: center;
+    opacity: .2;
+}

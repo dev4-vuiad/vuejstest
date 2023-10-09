@@ -56,24 +56,14 @@
     const name = route.params.name
 
     const defaultData = {
-        total: 0,
-        perPage: 30,
-        data: {
-            items: Array.from(Array(30), (_, index) => ({}))
-        }
+        movie: Array.from(Array(15), (_, index) => ({})),
+        tv_show: Array.from(Array(15), (_, index) => ({}))
     }
     const { data, pending }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/search', {
+        () => $fetch($apiBaseUrl() + '/cast/detail', {
             params: {
-                title: 'love',
-                orderBy: orderBy.value || undefined,
-                page: page.value
+                slug: name
             }
-        }).then(data => {
-            data.src = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z4nKqXw9RRaPLFZJknlolv4CBE3.jpg'
-            data.name = 'Jennie'
-            pageTitle.value = 'Jennie'
-            return data
         }),
         {
             default: () => defaultData,
@@ -103,7 +93,7 @@
 
 <template>
     <Title>{{ pageTitle }} – 코코아티비 :: KOKOA.TV'</Title>
-    <div id="content" class="site-content " name="person" tabindex="-1">
+    <div id="content" class="site-content" name="person" tabindex="-1">
         <div class="container">
             <nav class="masvideos-breadcrumb">
                 <NuxtLink to="/">Home</NuxtLink>
@@ -153,7 +143,8 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6 movies columns-6">
                                 <div class="tv-shows__inner movies__inner">
-                                    <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
+                                    <SearchMovieItem v-for="(item, index) in [...data.movie, ...data.tv_show].sort((a,b) => a.id - b.id)" :key="index"
+                                        :pending="pending"
                                         :id="item.id"
                                         :title="item.title" 
                                         :originalTitle="item.originalTitle" 
