@@ -54,7 +54,7 @@
                                                 style="width: 100%; display: inline-block;" :postid="item.id">
                                                 <div class="movie__poster">
                                                     <NuxtLink
-                                                        :to="'/movie/' + item.title"
+                                                        :to="'/movie/' + item.slug"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
                                                         <img width="300" height="450"
@@ -81,7 +81,7 @@
                                                                     </template>
                                                                 </span>
                                                             </div>
-                                                            <NuxtLink to="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                            <NuxtLink :to="'/movie/' + item.slug"
                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                 tabindex="0">
                                                                 <h3 class="masvideos-loop-movie__title  movie__title">

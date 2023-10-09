@@ -109,13 +109,13 @@
                 <div class="embla__slide1" v-for="(item, index) in sliders" :postid="item.id">
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
-                        <NuxtLink class="tv-show__link" :to="'/' + item.link">
+                        <NuxtLink class="tv-show__link" :to="'/' + (item.seasonNumber && item.seasonNumber.length ? item.link : 'movie/' + item.slug)">
                             <img class="embla__slide__img1 lazyload" :src="item.src" :key="item.id" />
                         </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>
                     <div class="box_meta">
-                        <NuxtLink :to="'/' + item.link">
+                        <NuxtLink :to="'/' + (item.seasonNumber && item.seasonNumber.length ? item.link : 'movie/' + item.slug)">
                             <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span><br>
                             <h2 class="title_1">{{ item.title }}</h2>
                         </NuxtLink>

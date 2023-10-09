@@ -1,11 +1,12 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
 
-    const props = defineProps(['id', 'link', 'year', 'title', 'originalTitle', 'genres', 'src', 'srcSet'])
+    const props = defineProps(['id', 'link', 'year', 'title', 'slug', 'originalTitle', 'genres', 'src', 'srcSet'])
     const renderCount = ref(0)
     let id = props.id
     let year = props.year
     let title = props.title
+    let slug = props.slug
     let originalTitle = props.originalTitle
     let genres = props.genres
     let src = props.src
@@ -16,6 +17,7 @@
         id = props.id
         year = props.year
         title = props.title
+        slug = props.slug
         originalTitle = props.originalTitle
         genres = props.genres
         src = props.src
@@ -29,7 +31,7 @@
 <template>
     <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="id">
         <div class="movie__poster loading-bg">
-            <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img
                     width="300" height="450"
                     :src="src"
@@ -51,7 +53,7 @@
                                 </template>
                             </span>
                     </div>
-                    <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                    <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
                     </NuxtLink>
                 </div>

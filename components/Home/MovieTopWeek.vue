@@ -23,7 +23,7 @@
                             <div class="movie-list">
                                 <div class="movie-list__body">
                                     <span class="movie-list__year">{{ item.year }}</span>
-                                    <NuxtLink :to="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                         <h3 class="movie-list__name">{{ item.title }}</h3>
                                     </NuxtLink>
                                     <span class="movie-list__genre">

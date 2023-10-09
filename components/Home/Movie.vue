@@ -29,7 +29,7 @@
                     </header>
                     <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="item.id">
                         <div class="movie__poster loading-bg">
-                            <NuxtLink :to="'/movie/' + item.title"
+                            <NuxtLink :to="'/movie/' + item.slug"
                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <img width="300"
                                     height="450"
@@ -55,7 +55,7 @@
                                             </template>
                                         </span>
                                     </div>
-                                    <NuxtLink :to="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                         <h3 class="masvideos-loop-movie__title movie__title">
                                             {{ item.title || ' ' }}
                                         </h3>

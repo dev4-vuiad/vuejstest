@@ -30,7 +30,7 @@
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
-                title: title
+                slug: title
             }
         }),
         {

@@ -128,7 +128,8 @@
                                     <div class="tv-shows__inner movies__inner" v-if="data && data.data && data.data.items.length">
                                         <SearchMovieItem v-for="(item, index) in data.data.items" :key="index"
                                             :id="item.id"
-                                            :title="item.title" 
+                                            :title="item.title"
+                                            :slug="item.slug" 
                                             :originalTitle="item.originalTitle" 
                                             :src="item.src"
                                             :srcSet="item.srcSet"

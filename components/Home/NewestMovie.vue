@@ -25,7 +25,7 @@
                                 class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="item.id">
                                 <div class="movie-list">
                                     <div class="movie-list__poster">
-                                        <NuxtLink :to="'/movie/' + item.title"
+                                        <NuxtLink :to="'/movie/' + item.slug"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <img
                                                 width="150" height="225"
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="movie-list__body">
                                         <span class="movie-list__year">{{ item.year || ' ' }}</span>
-                                        <NuxtLink :to="'/movie/' + item.title"
+                                        <NuxtLink :to="'/movie/' + item.slug"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <h3 class="movie-list__name">{{ item.title || ' ' }}</h3>
                                         </NuxtLink>
