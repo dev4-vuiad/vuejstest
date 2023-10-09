@@ -118,6 +118,6 @@ body {
   max-width: 100%;
 }
 
-#content.page-episode .episode.active * {
-  color: #FFF;
+.page-episode .episode.active a> * {
+  color: #FFF !important;
 }
