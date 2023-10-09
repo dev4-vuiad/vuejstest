@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie">
+                        <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
                                 <div class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />

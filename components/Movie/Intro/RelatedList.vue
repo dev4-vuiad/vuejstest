@@ -31,7 +31,7 @@
     <div class="masvideos masvideos-movies ">
         <div :class="'movies ' + (isMobile ? 'columns-7' : 'columns-8')">
             <div class="movies__inner">
-                <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
+                <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                     <div class="movie__poster loading-bg">
                         <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                             <img width="220" height="310" :src="item.src" class="movie__poster--image lazyload" alt="" :key="item.id" />

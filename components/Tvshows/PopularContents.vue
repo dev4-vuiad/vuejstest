@@ -17,7 +17,7 @@
                 <div class="tv-shows columns-1">
                     <div class="tv-shows__inner">
                         <div v-for="(item, index) in data" :key="index"
-                            class="tv-show post-197303 tv_show type-tv_show status-publish has-post-thumbnail hentry category-jtbc category-k-drama tv_show_genre-214 tv_show_genre-213 tv_show_tag-1086">
+                            class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-jtbc category-k-drama">
                             <div class="tv-show__body">
                                 <span class="tv-show__meta--release-year">{{ item.postDate ? item.postDate.substr(0, 10) : '' }}</span>
                                 <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">

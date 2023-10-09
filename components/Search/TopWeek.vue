@@ -11,7 +11,7 @@
             <div class="movies columns-1">
                 <div class="movies__inner">
                     <div v-for="(item, index) in data" :key="index"
-                        class="post-201925 movie type-movie status-publish has-post-thumbnail hentry movie_genre-231 movie_genre-kmovie">
+                        class="movie type-movie status-publish has-post-thumbnail hentry">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.postDate.substr(0, 10) }}</span>
                             <NuxtLink :to="'/tv-show/' + encodeURIComponent(item.tvshowTitle)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">

@@ -19,7 +19,7 @@
             <div class="masvideos masvideos-movies ">
                 <div class="movies columns-1">
                     <div class="movies__inner">
-                        <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
+                        <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                             <div class="movie-list">
                                 <div class="movie-list__body">
                                     <span class="movie-list__year">{{ item.year }}</span>

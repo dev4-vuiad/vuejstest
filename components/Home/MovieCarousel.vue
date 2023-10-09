@@ -50,7 +50,7 @@
                                     style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
                                     <div class="slick-slide slick-current slick-active" data-slick-index="0" v-for="(item, index) in data" :key="index" aria-hidden="false">
                                         <div>
-                                            <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie"
+                                            <div class="movie type-movie status-publish has-post-thumbnail hentry"
                                                 style="width: 100%; display: inline-block;" :postid="item.id">
                                                 <div class="movie__poster">
                                                     <NuxtLink

@@ -9,7 +9,7 @@ const thumbnail = props.thumbnail
 </script>
 
 <template>
-    <div class="tv-show post-198529 tv_show type-tv_show status-publish has-post-thumbnail hentry category-apple-tv category-u-drama tv_show_genre-214">
+    <div class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-apple-tv category-u-drama">
         <div class="tv-show__poster">
             <div class="box-tv-channel">
                 <img src="https://image002.modooup.com/wp-content/uploads/2022/05/appletv.png" alt="" width="60" height="31" class="tv-channel">

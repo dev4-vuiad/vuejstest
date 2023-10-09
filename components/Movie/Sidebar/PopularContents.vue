@@ -17,7 +17,7 @@
             <div class="movies columns-1">
                 <div class="movies__inner">
                     <div v-for="(item, index) in data" :key="index"
-                        class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
+                        class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.year }}</span>
                             <NuxtLink :to="'/' + type + '/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">

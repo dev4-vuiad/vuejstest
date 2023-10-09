@@ -26,7 +26,7 @@
 </script>
 
 <template>
-    <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-wmovie" :postid="id">
+    <div class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster loading-bg">
             <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img width="300" height="450" :src="src" :srcset="srcSet" class="movie__poster--image lazyload" alt="" :key="renderCount">

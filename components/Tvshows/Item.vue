@@ -35,7 +35,7 @@
 
 <template>
     <div
-        :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama tv_show_genre-234'">
+        :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama'">
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
                 <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31" :key="renderCount">

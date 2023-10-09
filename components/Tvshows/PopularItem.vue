@@ -31,7 +31,7 @@
 </script>
 
 <template>
-    <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure'" :postid="id">
+    <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama'" :postid="id">
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel" :key="renderCount">
