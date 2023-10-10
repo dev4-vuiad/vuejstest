@@ -31,7 +31,7 @@
                 </path>
             </svg>
         </span>
-        <template v-if="genre.name">
+        <template v-if="genre && genre.name">
             <NuxtLink :to="'/tv-show-genre/' + genre.link"><span v-html="genre.name"></span></NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
