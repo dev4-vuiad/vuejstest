@@ -60,8 +60,8 @@
                                                         <img width="300" height="450"
                                                             :src="item.src"
                                                             :srcset="item.srcSet"
+                                                            decoding="async"
                                                             class="movie__poster--image lazyload" alt=""
-                                                            sizes="(max-width: 300px) 100vw, 300px"
                                                             :key="renderCount"
                                                         />
                                                     </NuxtLink>
