@@ -3,7 +3,7 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute();
     const router = useRouter();
-    const pageTitle = ref(route.params.name)
+    const pageTitle = ref('코코아티비 :: KOKOA.TV')
 
     definePageMeta({
         layout: 'person',
@@ -57,13 +57,17 @@
 
     const defaultData = {
         movie: Array.from(Array(15), (_, index) => ({})),
-        tv_show: Array.from(Array(15), (_, index) => ({}))
+        tv_show: Array.from(Array(15), (_, index) => ({})),
+        src: '/images/cast_no_thumnbnail.svg'
     }
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/cast/detail', {
             params: {
                 slug: name
             }
+        }).then(data => {
+            pageTitle.value = data.name + '– 코코아티비 :: KOKOA.TV'
+            return data
         }),
         {
             default: () => defaultData,
@@ -92,7 +96,7 @@
 </script>
 
 <template>
-    <Title>{{ pageTitle }} – 코코아티비 :: KOKOA.TV'</Title>
+    <Title>{{ pageTitle }}</Title>
     <div id="content" class="site-content" name="person" tabindex="-1">
         <div class="container">
             <nav class="masvideos-breadcrumb">
@@ -143,7 +147,7 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6 movies columns-6">
                                 <div class="tv-shows__inner movies__inner">
-                                    <SearchMovieItem v-for="(item, index) in [...data.movie, ...data.tv_show].sort((a,b) => a.id - b.id)" :key="index"
+                                    <PersonMediaItem v-for="(item, index) in [...data.movie, ...data.tv_show].sort((a,b) => a.id - b.id)" :key="index"
                                         :pending="pending"
                                         :id="item.id"
                                         :title="item.title" 
@@ -153,7 +157,7 @@
                                         :seasonNumber="item.seasonNumber"
                                         :episodeNumber="item.episodeNumber"
                                         :link="item.link"
-                                        :postType="item.postType"
+                                        :postType="data.movie.find(v => v.id == item.id) ? 'movie' : 'tv_show'"
                                     />
                                 </div>
                             </div>
@@ -170,9 +174,7 @@
                 <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
                     role="complementary">
                     <div class="widget-area-inner">
-                        <div class="person-thumbnail loading-bg">
-                            <img class="lazyload" :src="data.src" :key="data.src" :alt="name"  />
-                        </div>
+                        <PersonThumbnail :pending="pending" :id="data.id" :name="data.name" :src="data.src" />
                     </div>
                 </div>
             </div>

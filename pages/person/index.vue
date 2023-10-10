@@ -54,7 +54,7 @@
         title: 'Person – 코코아티비 :: KOKOA.TV'
     });
 
-    const orderBy = ref(route.query.orderBy || 'nameAsc')
+    const orderBy = ref(route.query.orderBy || '')
     const page = ref(route.query.page || 1)
 
     const defaultData = {
@@ -127,6 +127,7 @@
                                     </svg>
                                     <form method="get">
                                         <select @change="onChangeOrderBy" class="orderby">
+                                            <option value="" v-bind:selected="orderBy == ''">기본</option>
                                             <option value="nameAsc" v-bind:selected="orderBy == 'nameAsc'">A 부터 Z</option>
                                             <option value="nameDesc" v-bind:selected="orderBy == 'nameDesc'">Z 부터 A</option>
                                         </select>

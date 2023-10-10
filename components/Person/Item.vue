@@ -1,9 +1,19 @@
 <script setup>
     const props = defineProps(['id', 'src', 'name', 'slug', 'pending'])
+    let pending = props.pending
     let id = props.id
     let src = props.src
     let name = props.name
     let slug = props.slug
+
+    onBeforeMount(() => {
+        if (pending) {
+            id = undefined
+            src = undefined
+            name = ''
+            slug = ''
+        }
+    })
 
     watch(
         () => props.pending,
@@ -20,7 +30,7 @@
     <div class="movie type-movie status-publish has-post-thumbnail hentry" :objectid="id">
         <div class="movie__poster cast loading-bg">
             <NuxtLink :to="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img v-if="src.length" :src="src" class="movie__poster--image lazyload" alt="" :key="id">
+                <img :src="src" class="movie__poster--image lazyload" alt="" :key="id">
             </NuxtLink>
         </div>
         <div class="movie__body">

@@ -123,12 +123,21 @@ body {
 }
 
 .person-thumbnail {
-  width: 100%;
+  width: 100%
+}
+
+.person-thumbnail.empty {
+  aspect-ratio: 3 / 4;
+  display: flex;
+}
+
+.person-thumbnail.empty {
+  opacity: .2;
 }
 
 .person-thumbnail img {
   width: 100%;
-  height: auto;
+  height: auto
 }
 
 #content[name=person] .vodi-control-bar, 
