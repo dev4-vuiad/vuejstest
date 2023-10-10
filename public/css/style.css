@@ -12,6 +12,11 @@
     color: #FFF !important;
 }
 
+.movie__description pre {
+  white-space: normal;
+  background-color: none;
+}
+
 .layout-enter-active, .layout-leave-active {
     transition: opacity .3s;
   }
@@ -81,6 +86,11 @@ body {
 .episodes__inner {
   width: 100%;
   margin-right: 0
+}
+
+.episode__description pre {
+  white-space: normal;
+  background-color: none;
 }
 
 .episode__description.modified > div {

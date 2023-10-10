@@ -92,10 +92,14 @@
         page.value = val
         $('#scrollUp').trigger('click')
     }
+
+    useHead({
+        title: pageTitle
+    })
+
 </script>
 
 <template>
-    <Title>{{ pageTitle }}</Title>
     <div class="hfeed site archive post-type-archive post-type-archive-tv_show wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark">
         <div id="content" class="site-content" name="person" tabindex="-1">
             <div class="container">
