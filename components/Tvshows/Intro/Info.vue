@@ -1,14 +1,15 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle'])
+    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casts'])
     let id = props.id
     let postDate = props.postDate
     let title = props.title
     let originalTitle = props.originalTitle
-    let genres = props.genres
+    let genres = props.genres || []
     let src = props.src
     let description = props.description
     let tvshowTitle = props.tvshowTitle
+    let casts = props.casts || []
     let pending = props.pending
 
     onBeforeMount(() => {
@@ -17,10 +18,11 @@
             postDate = undefined
             title = undefined
             originalTitle = undefined
-            genres = undefined
+            genres = []
             src = undefined
             description = undefined
             tvshowTitle = undefined
+            casts = []
         }
     })
 
@@ -32,6 +34,7 @@
             title = props.title
             originalTitle = props.originalTitle
             genres = props.genres
+            casts = props.casts
             src = props.src
             description = props.description
             tvshowTitle = props.tvshowTitle
@@ -80,22 +83,24 @@
         <div class="tv-show__body">
             <div class="tv-show__info">
                 <div class="tv-show__info--head">
-                    <span class="tv-show__meta--genre">
-                        <template v-for="(genre, idx) in genres" :key="idx">
-                            <span v-if="idx > 0">, </span>
-                            <a :href="'/tv-show-genre/' + genre.link" rel="tag" v-html="genre.name"></a>
-                        </template>
-                    </span>
                     <div class="episode__meta">
-                        <span class="episode__meta--release-date">Added: {{ postDate ? format(postDate) : ' ' }}</span>
+                        <span class="episode__meta--release-date">{{ postDate ? format(postDate) : ' ' }}</span>
                         <div class="vodi-views-likes"></div>
-                    </div><a
-                        :href="'/tv-show/' + tvshowTitle"
-                        class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                    </div>
+                    <a :href="'/tv-show/' + tvshowTitle" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                         <h1 class="episode_title entry-title">{{ title || ' ' }}</h1>
                     </a>
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle || ' ' }}
+                    </div>
+                    <div class="casts-list">
+                        <span class="tv-show__meta--genre">
+                            <template v-for="(item, idx) in casts">
+                                <span v-if="idx > 0 && idx < 4">, </span>
+                                <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
+                            </template>
+                            <span v-if="casts.length > 4"> ...</span>
+                        </span>
                     </div>
                     <div class="episode__description modified">
                         <div v-html="description"></div>

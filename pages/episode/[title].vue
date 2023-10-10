@@ -113,6 +113,7 @@
                                             :description="data.description" 
                                             :outlink="data.outlink"
                                             :tvshowTitle="data.tvshowTitle"
+                                            :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
                                             <a :href="data.outlink" class="a_btn_out">

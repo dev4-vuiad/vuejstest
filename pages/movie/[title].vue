@@ -69,6 +69,7 @@
                                             :src="data.src"
                                             :description="data.description"
                                             :outlink="data.outlink"
+                                            :casts="data.casts"
                                         />
                                         <MovieIntroInfo v-if="!isMobile"
                                             :pending = "pending"
@@ -81,6 +82,7 @@
                                             :src="data.src"
                                             :description="data.description"
                                             :outlink="data.outlink"
+                                            :casts="data.casts"
                                         />
                                         <div class="single-movie-ads-box">
                                             <div class="ads-box-child">
