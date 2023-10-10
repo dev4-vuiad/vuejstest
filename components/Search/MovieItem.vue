@@ -1,7 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue';
     const { $getEpTxt } = useNuxtApp() 
-    const props = defineProps(['pending', 'id', 'title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
+    const props = defineProps(['pending', 'id', 'title', 'slug', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
     const renderCount = ref(0)
     let pending = props.pending
     let id = props.id
