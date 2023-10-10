@@ -37,7 +37,7 @@
                                     :srcset="item.srcSet"
                                     class="movie__poster--image lazyload" alt=""
                                     :key="renderCount" 
-                                    sizes="(max-width: 300px) 100vw, 300px">
+                                />
                             </NuxtLink>
                         </div>
                         <div class="movie__body">
