@@ -35,6 +35,7 @@
                                     height="450"
                                     :src="item.src"
                                     :srcset="item.srcSet"
+                                    decoding="async"
                                     class="movie__poster--image lazyload" alt=""
                                     :key="renderCount" 
                                 />
