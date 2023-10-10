@@ -164,6 +164,20 @@ body {
   justify-content: flex-end;
 }
 
+#content[name="person-list"] .page-header {
+  border-bottom: 1px solid #2a2e3c;
+  display: flex;
+  justify-content: space-between;
+}
+
+#content[name="person-list"] .page-header h1 {
+  border-bottom: 0
+}
+
+#content[name="person-list"] .page-header .search {
+  margin-top: 15px;
+}
+
 
 #content.page-episode .episode.active * {
   color: #FFF;
