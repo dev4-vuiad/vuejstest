@@ -94,6 +94,7 @@
                                 :pending="pending"
                                 :title="data.title"
                                 :tvshowTitle="data.tvshowTitle"
+                                :tvshowSlug="data.tvshowSlug"
                                 :seasonName="data.seasonName"
                                 :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                             />

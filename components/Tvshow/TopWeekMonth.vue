@@ -42,7 +42,7 @@
                             <div v-for="(item, index) in topWeeks" :key="index" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama">
                                 <div class="tv-show__body">
                                     <NuxtLink
-                                        :to="'/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                                        :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                         <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                     <span class="tv-show__meta--genre">
@@ -64,7 +64,7 @@
                             <div v-for="(item, index) in topMonths" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama">
                                 <div class="tv-show__body">
                                     <NuxtLink
-                                        :to="'/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                                        :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                     <span class="tv-show__meta--genre">
