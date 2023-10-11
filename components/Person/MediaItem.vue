@@ -35,6 +35,7 @@
             id = props.id
             postType = props.postType
             title = props.title
+            slug = props.slug
             originalTitle = props.originalTitle
             src = props.src
             srcSet = props.srcSet
