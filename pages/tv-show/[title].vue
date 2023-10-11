@@ -45,7 +45,7 @@
         () => $fetch($apiBaseUrl() + '/tvshows/details', {
             params: {
                 title: title,
-                slug: slug
+                slug: title
             }
         }),
         {
