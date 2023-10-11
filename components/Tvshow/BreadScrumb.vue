@@ -22,7 +22,7 @@
 
 <template>
     <nav class="masvideos-breadcrumb">
-        <a href="/">Home</a>
+        <NuxtLink to="/">Home</NuxtLink>
         <span class="delimiter">
             <svg
                 width="4px" height="7px">
@@ -32,7 +32,7 @@
             </svg>
         </span>
         <template v-if="genre && genre.name">
-            <NuxtLink :to="'/tv-show-genre/' + genre.link"><span v-html="genre.name"></span></NuxtLink>
+            <NuxtLink :to="'/tv-show-genre/' + genre.slug"><span v-html="genre.name"></span></NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"
