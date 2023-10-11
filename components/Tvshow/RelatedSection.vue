@@ -31,7 +31,7 @@
                                     <div class="box-tv-channel">
                                         <img class="tv-channel lazyload" :src="item.chanelImage" alt="" width="68" height="31" :key="renderCount" />
                                     </div>
-                                    <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link" tabindex="-1">
+                                    <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link" tabindex="-1">
                                         <img width="220" height="314"
                                             :src="item.src"
                                             class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
@@ -47,7 +47,7 @@
                                                     class="tv-show__meta--release-year">{{ item.year }}</span>
                                             </div>
                                             <div class="original-title-tvshow"> {{ item.originalTitle }} </div>
-                                            <NuxtLink :to="'/' + item.link"
+                                            <NuxtLink :to="'/episode/' + item.slug"
                                                 class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"
                                                 tabindex="-1">
                                                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.tvshowTitle }}</h3>

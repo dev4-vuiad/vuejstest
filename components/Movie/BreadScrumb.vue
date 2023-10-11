@@ -38,7 +38,7 @@
             </svg>
         </span>
         <template v-if="genre">
-            <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)"><span v-html="genre.name"></span></NuxtLink>
+            <NuxtLink :to="'/movie-genre/' + genre.slug"><span v-html="genre.name"></span></NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"

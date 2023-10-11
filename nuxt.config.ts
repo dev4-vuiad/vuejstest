@@ -88,14 +88,14 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'https://backend-test.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend-test.kokoatv.net/api'
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
     }
   },
   $production: {
     appConfig: {
-      apiBaseUrl: 'https://backend-test.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend-test.kokoatv.net/api'
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
     },
     app: {
       head: {

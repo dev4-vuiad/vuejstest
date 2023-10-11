@@ -20,7 +20,7 @@
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <NuxtLink :to="'/tv-show-genre/' + genre.link" class="tv-show__meta--genre" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                    <NuxtLink :to="'/tv-show-genre/' + genre.slug" class="tv-show__meta--genre" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                 </template>
                             </span>
                         </div>

@@ -85,7 +85,7 @@
                         <span class="movie__meta--genre">
                             <template v-for="(genre, idx) in genres" :key="idx">
                                 <span v-if="idx > 0">, </span>
-                                <a :href="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></a>
+                                <a :href="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></a>
                             </template>
                         </span>
                     </div>

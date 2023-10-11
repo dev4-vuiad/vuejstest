@@ -39,7 +39,7 @@
             </span>
         </div>
         <div class="tv-show__poster box-phim">
-                <NuxtLink :to="'/episode/' + encodeURIComponent(link.replace('episode/', ''))" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                     <img :src="src" class="tv-show__poster--image tv_show__poster--image" :key="renderCount">		                                                     
                 <span style="display:none" class="span_sea_ep_title box-ep">{{ $getEpTxt(seasonNumber, episodeNumber) }}</span></NuxtLink>
                 <div class="box-tv_show">예능</div>
@@ -52,7 +52,7 @@
                         
                         </div>
                     </div>
-                    <NuxtLink :to="'/episode/' + encodeURIComponent(link.replace('episode/', ''))" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                    <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">
                             {{ title }}		                                                                
                         </h3>
