@@ -31,8 +31,7 @@
                         <div class="movie__poster loading-bg">
                             <NuxtLink :to="'/movie/' + item.slug"
                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                                <img width="300"
-                                    height="450"
+                                <img 
                                     :src="item.src"
                                     :srcset="item.srcSet"
                                     decoding="async"

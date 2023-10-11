@@ -1,12 +1,13 @@
 <script setup>
     import { onBeforeUpdate } from 'vue';
     const { $getEpTxt } = useNuxtApp() 
-    const props = defineProps(['pending', 'id', 'title', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
+    const props = defineProps(['pending', 'id', 'title', 'slug', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
     const renderCount = ref(0)
     let pending = props.pending
     let id = props.id
     let postType = props.postType
     let title = props.title
+    let slug = props.slug
     let originalTitle = props.originalTitle
     let src = props.src
     let srcSet = props.srcSet
@@ -19,6 +20,7 @@
             id = undefined
             postType = undefined
             title = ''
+            slug = ''
             originalTitle = ''
             src = undefined
             srcSet = undefined
@@ -76,7 +78,7 @@
     </div>
     <div v-else class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster box-phim">
-            <NuxtLink :to="'/movie/' + encodeURIComponent(title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img :src="src" :srcset="srcSet" class="movie__poster--image" :key="id">
             </NuxtLink>
             <div class="box-movie" v-if="postType == 'movie'">영화</div>
@@ -84,7 +86,7 @@
         <div class="movie__body">
             <div class="movie__info">
                 <div class="movie__info--head">
-                    <NuxtLink :to="'/movie/' + encodeURIComponent(title)"
+                    <NuxtLink :to="'/movie/' + slug"
                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
                     </NuxtLink>

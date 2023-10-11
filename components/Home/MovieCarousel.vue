@@ -57,7 +57,7 @@
                                                         :to="'/movie/' + item.slug"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
-                                                        <img width="300" height="450"
+                                                        <img 
                                                             :src="item.src"
                                                             :srcset="item.srcSet"
                                                             decoding="async"
