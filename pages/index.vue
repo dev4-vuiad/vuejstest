@@ -174,6 +174,7 @@
                                     </section>
                                     <section class="home-section ads-top">
                                         <div class="kskdCustomElement"></div>
+                                        <div class="kskdDiv kskdCls"></div>
                                     </section>
                                     <section id="section-home-slider-custom-ott-64d31949c9733"
                                         class="home-section home-slider-custom-ott">
