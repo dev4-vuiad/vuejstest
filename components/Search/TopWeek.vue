@@ -14,7 +14,7 @@
                         class="movie type-movie status-publish has-post-thumbnail hentry">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.postDate.substr(0, 10) }}</span>
-                            <NuxtLink :to="'/tv-show/' + item.tvshowSlug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                            <NuxtLink :to="'/tv-show/' + item.tvShowSlug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <h3 class="masvideos-loop-movie__title movie__title search">{{ item.tvshowTitle }}</h3>
                             </NuxtLink>
                             <span class="movie__meta--genre">
