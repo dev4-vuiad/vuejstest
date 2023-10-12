@@ -84,6 +84,10 @@
                                             :outlink="data.outlink"
                                             :casts="data.casts"
                                         />
+                                        <div class="single-movie-ads-box">
+                                            <div class="ads-box-child">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="center"></div>
                                 </div>

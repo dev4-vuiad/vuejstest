@@ -113,4 +113,8 @@
             <div class="movie__info--head"></div>
         </div>
     </div>
+    <div class="single-movie-ads-box">
+        <div class="ads-box-child">
+        </div>
+    </div>
 </template>
