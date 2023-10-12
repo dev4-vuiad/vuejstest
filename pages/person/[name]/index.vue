@@ -41,7 +41,7 @@
                 slug: name
             }
         }).then(data => {
-            pageTitle.value = data.name + '– 코코아티비 :: KOKOA.TV'
+            pageTitle.value = data.name + ' – 코코아티비 :: KOKOA.TV'
             return data
         }),
         {
