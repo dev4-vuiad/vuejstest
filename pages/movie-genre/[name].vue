@@ -165,7 +165,6 @@
                                             <option value="titleAsc" v-bind:selected="orderBy == 'titleAsc'">A 부터 Z</option>
                                             <option value="titleDesc" v-bind:selected="orderBy == 'titleDesc'">Z 부터 A</option>
                                             <option value="date" v-bind:selected="orderBy == 'date'">시간순</option>
-                                            <option value="menuOrder" v-bind:selected="orderBy == 'menuOrder'">Menu Order</option>
                                             <option value="rating" v-bind:selected="orderBy == 'rating'">별점순</option>
                                         </select>
                                         <input type="hidden" name="paged" value="1">
