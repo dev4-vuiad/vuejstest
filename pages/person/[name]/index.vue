@@ -31,8 +31,7 @@
     const name = route.params.name
 
     const defaultData = {
-        movie: Array.from(Array(15), (_, index) => ({})),
-        tv_show: Array.from(Array(15), (_, index) => ({})),
+        items: Array.from(Array(30), (_, index) => ({})),
         src: '/images/cast_no_thumnbnail.svg'
     }
     const { data, pending }  = useLazyAsyncData(
@@ -128,7 +127,7 @@
                             <div class="vodi-archive-wrapper" data-view="grid">
                                 <div class="tv-shows columns-6 movies columns-6">
                                     <div class="tv-shows__inner movies__inner">
-                                        <PersonMediaItem v-for="(item, index) in [...data.movie, ...data.tv_show].sort((a,b) => a.id - b.id)" :key="index"
+                                        <PersonMediaItem v-for="(item, index) in data.items" :key="index"
                                             :pending="pending"
                                             :id="item.id"
                                             :title="item.title"
@@ -139,7 +138,7 @@
                                             :seasonNumber="item.seasonNumber"
                                             :episodeNumber="item.episodeNumber"
                                             :link="item.link"
-                                            :postType="data.movie.find(v => v.id == item.id) ? 'movie' : 'tv_show'"
+                                            :postType="item.postType"
                                         />
                                     </div>
                                 </div>
