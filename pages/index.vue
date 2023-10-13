@@ -190,12 +190,14 @@
                                             <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
                                     </section>
-                                    <section
-                                        class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
+                                    <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                         <div class="container">
                                             <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
                                         </div>
                                     </section>
+                                    <div class="kskdDiv kskdCls">
+                                        <div class="kskdDiv"></div>
+                                    </div>
                                     <section class="home-section home-ads-bt-feature ads-bottom"></section>
                                     <section id="section-movies-carousel-aside-header-64d3194c4e219"
                                         class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
@@ -213,6 +215,7 @@
                                         </div>
                                     </section>
                                     <section class="home-section home-ads-bt-feature ads-footer">
+                                        <div class="kskdCustomElement"></div>
                                     </section>
                                 </div>
                             </article>
