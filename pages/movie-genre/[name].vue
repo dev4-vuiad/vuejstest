@@ -93,8 +93,8 @@
             return ''
         }
         
-        let v = genres.filter(v => decodeURI(v.slug) == slug)
-        return v[0] ? v[0].name : ''
+        let v = genres.find(v => decodeURI(v.slug) == slug)
+        return v ? v.name : ''
     }
 </script>
 
@@ -125,7 +125,7 @@
                         </div>
                         <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
                             <header class="page-header" style="margin-bottom:15px;">
-                                <h1 class="page-title">실시간 영화 인기컨텐츠</h1>
+                                <h1 class="page-title">실시간 {{ getGenreName(name, data.data.items[0].genres) + (getGenreName(name, data.data.items[0].genres).includes('영화') ? '' : '영화') }} 인기컨텐츠</h1>
                             </header>
                             <div class="masvideos masvideos-movies vodi-archive-wrapper" data-view="grid">
                                 <div class="movies columns-6">
@@ -197,7 +197,7 @@
                     </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie" role="complementary" v-if="data">
                         <div class="widget-area-inner">
-                            <MovieSidebarPopularContents title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                            <MovieSidebarPopularContents :title="'주간 ' + getGenreName(name, data.data.items[0].genres) + (getGenreName(name, data.data.items[0].genres).includes('영화') ? '' : '영화') + ' 인기컨텐츠'" :data="data.data.topWeeks" />
                             <div class="widget widget_vodi_movies_filter">
                                 <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>
