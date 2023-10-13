@@ -38,7 +38,9 @@
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/cast/detail', {
             params: {
-                slug: name
+                slug: name,
+                orderBy: orderBy.value || undefined,
+                page: page.value
             }
         }).then(data => {
             pageTitle.value = data.name + ' – 코코아티비 :: KOKOA.TV'
