@@ -2,10 +2,11 @@
     const props = defineProps(['data', 'title', 'base', 'type'])
     const base = props.base || 'movie-genre'
     let data = props.data
-    const title = props.title
+    let title = props.title
     const type = props.type || 'movie'
     
     onBeforeUpdate(() => {
+        title = props.title
         data = props.data
     })
 </script>
