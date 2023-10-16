@@ -80,7 +80,12 @@
     }
 
     useHead({
-        title: data && data.data && data.data.items.length && data.data.items[0].genres ? (getGenreName(genre, data.data.items[0].genres) || genre) + ' – 코코아티비 :: KOKOA.TV' : ''
+        title: data && data.data && data.data.items.length && data.data.items[0].genres ? (getGenreName(genre, data.data.items[0].genres) || genre) + ' – 코코아티비 :: KOKOA.TV' : '',
+        script: [
+            {
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
+            }
+        ]
     });
     
 </script>
