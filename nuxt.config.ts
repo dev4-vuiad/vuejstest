@@ -105,6 +105,10 @@ export default defineNuxtConfig({
         script: [
           {
             children: 'window.__ITGS_started = Date.now();'
+          },
+          {
+            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
+            async: true
           }
         ]
       }
