@@ -70,18 +70,16 @@
                             <div class="box-tv-channel">
                                 <img class="tv-channel lazyload"
                                     :src="item.chanelImage" alt=""
-                                    width="83" height="31"
                                     :key="renderCount"
                                 />
                             </div>
-                            <NuxtLink :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                            <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                 <img
-                                width="300" height="450"
-                                :src="item.src"
-                                :srcset="item.srcSet"
-                                class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
-                                sizes="(max-width: 300px) 100vw, 300px"
-                                :key="renderCount" />
+                                    :src="item.src"
+                                    :srcset="item.srcSet"
+                                    class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
+                                    :key="renderCount"
+                                />
                             </NuxtLink>
                         </div>
                         <div class="tv-show__body">
@@ -91,7 +89,7 @@
                                     <div class="original-title-tvshow">
                                         {{ item.originalTitle || ' ' }}
                                     </div>
-                                    <NuxtLink :to="'/' + item.link"
+                                    <NuxtLink :to="'/episode/' + item.slug"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                             style="display:none" class="span_sea_ep_title">{{ $getEpTxt(item.seasonNumber, item.episodeNumber) }}</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>

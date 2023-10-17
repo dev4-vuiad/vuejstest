@@ -4,46 +4,11 @@
     const title = route.params.title
 
     definePageMeta({
-        layout: 'episode',
-        scrollToTop: false,
+        scrollToTop: true,
         pageTransition: {
             name: 'page', 
             mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            }
-        },
-        layoutTransition: {
-            name: 'layout', 
-            mode: 'out-in',
-            onBeforeEnter: () => {
-                window.scrollTo({top:0})
-            },
             onAfterEnter: () => {
-                //animated drop down submenu
-                $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
-                    var e = $(this)
-                    , t = e.parents(".site_header__primary-nav, .site_header__secondary-nav, .site_header__secondary-nav-v3, .site_header__navbar-primary")
-                    , a = e.parents(".vodi-animate-dropdown");
-                    if (0 < t.length && (a = t),
-                    e.hasClass("menu-item-has-children"))
-                        a.hasClass("animated-dropdown") || setTimeout(function() {
-                            a.addClass("animated-dropdown")
-                        }, 200);
-                    else if (a.hasClass("animated-dropdown")) {
-                        e.parents(".menu-item-has-children").length <= 0 && a.removeClass("animated-dropdown")
-                    }
-                })
-
-                //Sidebar menu
-                $(".site-header__offcanvas .navbar-toggler").on("click", function() {
-                    0 < $(this).parents(".stuck").length && $("html, body").animate({
-                        scrollTop: $("body")
-                    }, 0),
-                    $(this).closest(".site-header__offcanvas").toggleClass("toggled"),
-                    $("body").toggleClass("off-canvas-active")
-                })
-                
                 $(document).on("click", function(e) {
                     $(".site-header__offcanvas").hasClass("toggled") && ($(".navbar-toggler").is(e.target) || 0 !== $(".navbar-toggler").has(e.target).length || $(".offcanvas-collapse").is(e.target) || 0 !== $(".offcanvas-collapse").has(e.target).length || ($(".site-header__offcanvas").removeClass("toggled"),
                     $("body").removeClass("off-canvas-active")))
@@ -73,7 +38,12 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV'
+        title: title + ' – 코코아티비 :: KOKOA.TV',
+        script: [
+            {
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
+            }
+        ]
     });
 
     const findNextEp = (title, seasons) => {
@@ -119,72 +89,76 @@
 </script>
 
 <template>
-    <div id="content" class="site-content page-episode" tabindex="-1">
-        <div class="container">
-            <div class="site-content__inner">
-                <div id="primary" class="content-area">
-                    <div class="episode status-publish hentry">
-                        <TvshowsIntroBreadScrumb
-                            :pending="pending" 
-                            :title="data.title"
-                            :tvshowTitle="data.tvshowTitle"
-                            :seasonName="data.seasonName"
-                            :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
-                        />
-                        <div class="single-episode__content column">
-                            <!-- ads top -->
-                            <div class="ads-episode-top"></div>
-                            <div class="single-episode__row row">
-                                <div class="single-episode__sidebar column1 single-episode-custom">
-                                    <TvshowsIntroInfo
-                                        :pending="pending" 
-                                        :id="data.id"
-                                        :postDate="data.postDate"
-                                        :postDateGmt="data.postDateGmt"
-                                        :title="data.title"
-                                        :originalTitle="data.originalTitle" 
-                                        :genres="data.genres" :src="data.src"
-                                        :description="data.description" 
-                                        :outlink="data.outlink"
-                                        :tvshowTitle="data.tvshowTitle"
-                                    />
-                                    <div style="margin-bottom:15px;">
-                                        <a :href="data.outlink" class="a_btn_out">
-                                            <button class="btn-outlink">바로보기</button>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-episode-ads-box">
-                                    <div class="ads-box-child">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="episode__head">
-                            </div>
-                            <div class="summary entry-summary episode__summary">
-                                <div class="episode__title-with-nav">
-                                    <div class="episode__player--arrows">
-                                        <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
-                                            <NuxtLink
-                                                :to="'/episode/' + findPrevEp(data.title, data.seasons)"
-                                                class="episode__player--prev-episode__link">
-                                                <span class="episode__player--prev-episode__label"> Previous Episode </span>
-                                            </NuxtLink>
+    <div class="single-episode masvideos single-episode-v3 full-width dark">
+        <div class="site-content page-episode" tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" class="content-area">
+                        <div class="episode status-publish hentry">
+                            <TvshowsIntroBreadScrumb 
+                                :pending="pending"
+                                :title="data.title"
+                                :tvshowTitle="data.tvshowTitle"
+                                :tvshowSlug="data.tvshowSlug"
+                                :seasonName="data.seasonName"
+                                :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
+                            />
+                            <div class="single-episode__content column">
+                                <!-- ads top -->
+                                <div class="ads-episode-top"></div>
+                                <div class="single-episode__row row">
+                                    <div class="single-episode__sidebar column1 single-episode-custom">
+                                        <TvshowsIntroInfo
+                                            :pending="pending" 
+                                            :id="data.id"
+                                            :postDate="data.postDate"
+                                            :postDateGmt="data.postDateGmt"
+                                            :title="data.title"
+                                            :originalTitle="data.originalTitle" 
+                                            :genres="data.genres" :src="data.src"
+                                            :description="data.description" 
+                                            :outlink="data.outlink"
+                                            :tvshowTitle="data.tvshowTitle"
+                                            :casts="data.casts"
+                                        />
+                                        <div style="margin-bottom:15px;">
+                                            <a :href="data.outlink" class="a_btn_out">
+                                                <button class="btn-outlink">바로보기</button>
+                                            </a>
                                         </div>
-                                        <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
-                                            <NuxtLink
-                                                :to="'/episode/' + findNextEp(data.title, data.seasons)"
-                                                class="episode__player--next-episode__link">
-                                                <span class="episode__player--next-episode__label"> Next Episode </span>
-                                            </NuxtLink>
+                                    </div>
+                                    <div class="single-episode-ads-box">
+                                        <div class="ads-box-child">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="episode__head">
+                                </div>
+                                <div class="summary entry-summary episode__summary">
+                                    <div class="episode__title-with-nav">
+                                        <div class="episode__player--arrows">
+                                            <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
+                                                <NuxtLink
+                                                    :to="'/episode/' + findPrevEp(data.title, data.seasons)"
+                                                    class="episode__player--prev-episode__link">
+                                                    <span class="episode__player--prev-episode__label"> Previous Episode </span>
+                                                </NuxtLink>
+                                            </div>
+                                            <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
+                                                <NuxtLink
+                                                    :to="'/episode/' + findNextEp(data.title, data.seasons)"
+                                                    class="episode__player--next-episode__link">
+                                                    <span class="episode__player--next-episode__label"> Next Episode </span>
+                                                </NuxtLink>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="episode__season-tabs-wrap stretch-full-width"></div>
+                                <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                             </div>
-                            <div class="episode__season-tabs-wrap stretch-full-width"></div>
-                            <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
+                            <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                         </div>
-                        <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                     </div>
                 </div>
             </div>

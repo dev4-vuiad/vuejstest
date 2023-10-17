@@ -52,7 +52,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style1.css?sfagwertgw'
+          href: '/css/style1.css?hhhh'
         },
         {
           rel: 'stylesheet',
@@ -60,11 +60,11 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.min.css?nbfve'
+          href: '/css/style3.css?hhhh'
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?fsaag'
+          href: '/css/style.css?hrhyee'
         },
       ],
       script: [
@@ -82,6 +82,9 @@ export default defineNuxtConfig({
         },
         {
           src: '/js/jquery.easing.min.js'
+        },
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=UA-160268616-2'
         }
       ]
     }
@@ -104,7 +107,7 @@ export default defineNuxtConfig({
             children: 'window.__ITGS_started = Date.now();'
           },
           {
-            src: "https://scripts.kiosked.com/loader/kiosked-loader.js?site=17622",
+            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
             async: true
           }
         ]

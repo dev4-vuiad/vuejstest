@@ -1,8 +1,9 @@
 <script setup>
-    const props = defineProps(['pending', 'title', 'tvshowTitle', 'seasonName', 'genre'])
+    const props = defineProps(['pending', 'title', 'tvshowSlug', 'tvshowTitle', 'seasonName', 'genre'])
     let pending = props.pending
     let title = props.title
     let genre = props.genre
+    let tvshowSlug = props.tvshowSlug
     let tvshowTitle = props.tvshowTitle
     let seasonName = props.seasonName
 
@@ -10,6 +11,7 @@
         if (pending) {
             title = ''
             genre = null
+            tvshowSlug = ''
             tvshowTitle = ''
             seasonName = ''
         }
@@ -20,6 +22,7 @@
         () => {
             title = props.title
             genre = props.genre
+            tvshowSlug = props.tvshowSlug
             tvshowTitle = props.tvshowTitle
             seasonName = props.seasonName
         }
@@ -36,7 +39,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink v-if="genre" :to="'/tv-show-genre/' + genre.link"><span v-html="genre.name"></span></NuxtLink>
+        <NuxtLink v-if="genre" :to="'/tv-show-genre/' + genre.slug"><span v-html="genre.name"></span></NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"
@@ -44,7 +47,7 @@
                     </path>
                 </svg>
             </span>
-        <NuxtLink :to="'/tv-show/' + encodeURIComponent(tvshowTitle) + '/'">{{ tvshowTitle }}</NuxtLink>
+        <NuxtLink :to="'/tv-show/' + tvshowSlug + '/'">{{ tvshowTitle }}</NuxtLink>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
@@ -52,7 +55,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink :to="'/tv-show/' + encodeURIComponent(tvshowTitle) + '/?season-position=0'">{{ seasonName }}</NuxtLink>
+        <NuxtLink :to="'/tv-show/' + tvshowSlug + '/?season-position=0'">{{ seasonName }}</NuxtLink>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"

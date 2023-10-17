@@ -1,37 +1,11 @@
 <script setup>
-    import { onMounted } from 'vue'
-    const { $apiBaseUrl, $isProdEnv } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
 
     definePageMeta({
-        layout: 'home',
-        keepalive: true,
-        layoutTransition: {
-            name: 'layout', 
+        pageTransition: {
+            name: 'page', 
             mode: 'out-in',
             onAfterEnter: () => {
-                //animated drop down submenu
-                $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
-                    var e = $(this)
-                    , t = e.parents(".site_header__primary-nav, .site_header__secondary-nav, .site_header__secondary-nav-v3, .site_header__navbar-primary")
-                    , a = e.parents(".vodi-animate-dropdown");
-                    if (0 < t.length && (a = t),
-                    e.hasClass("menu-item-has-children"))
-                        a.hasClass("animated-dropdown") || setTimeout(function() {
-                            a.addClass("animated-dropdown")
-                        }, 200);
-                    else if (a.hasClass("animated-dropdown")) {
-                        e.parents(".menu-item-has-children").length <= 0 && a.removeClass("animated-dropdown")
-                    }
-                })
-
-                //Sidebar menu
-                $(".site-header__offcanvas .navbar-toggler").on("click", function() {
-                    0 < $(this).parents(".stuck").length && $("html, body").animate({
-                        scrollTop: $("body")
-                    }, 0),
-                    $(this).closest(".site-header__offcanvas").toggleClass("toggled"),
-                    $("body").toggleClass("off-canvas-active")
-                })
                 
                 $(document).on("click", function(e) {
                     $(".site-header__offcanvas").hasClass("toggled") && ($(".navbar-toggler").is(e.target) || 0 !== $(".navbar-toggler").has(e.target).length || $(".offcanvas-collapse").is(e.target) || 0 !== $(".offcanvas-collapse").has(e.target).length || ($(".site-header__offcanvas").removeClass("toggled"),
@@ -181,78 +155,76 @@
     )
 
     useHead({
-        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비'
+        title: '코코아티비 :: KOKOA.TV &#8211; 최신영화,드라마,예능 무료 다시보기사이트 :: 코코아티비',
+        script: [
+            {
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
+            }
+        ]
     });
-
-    // onMounted(() => {
-    //     //Put ads
-    //     if ($isProdEnv()) { 
-    //         (function(s, w) {
-    //             s.setAttribute("async", "async");
-    //             s.setAttribute("type", "text/javascript");
-    //             s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-    //             w.document.body.appendChild(s);
-    //         })(window.top.document.createElement("script"), window.top)
-    //     }
-    // })
 </script>
 
 <template>
-    <div id="content" class="site-content " tabindex="-1">
-        <div class="container">
-            <div class="site-content__inner">
-                <div id="primary" v-if="data" class="content-area">
-                    <main id="main" class="site-main" role="main">
-                        <article class="page type-page status-publish hentry">
-                            <div class="page__content">
-                                <section id="section-home-slider-custom-64d31949b2fcb"
-                                        class="home-section more-dark">
-                                    <HomeSlider v-if="data" :data="data.sliders" />
-                                </section>
-                                <section class="home-section ads-top">
-                                    <div class="kskdCustomElement"></div>
-                                </section>
-                                <section id="section-home-slider-custom-ott-64d31949c9733"
-                                    class="home-section home-slider-custom-ott">
-                                    <div class="bg_opacity"></div>
-                                    <HomeOot :pending="pending" 
-                                        :title="data.otts.ottTitle"
-                                        :sliders="data.otts.ottSliders"
-                                    />
-                                </section>
-                                <section
-                                    class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
-                                    <div class="container">
-                                        <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
-                                    </div>
-                                </section>
-                                <section
-                                    class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
-                                    <div class="container">
-                                        <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
-                                    </div>
-                                </section>
-                                <section class="home-section home-ads-bt-feature ads-bottom"></section>
-                                <section id="section-movies-carousel-aside-header-64d3194c4e219"
-                                    class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
-                                    <div class="container">
-                                        <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
-                                    </div>
-                                </section>
-                                <section id="section-movies-list-64d3194c644bd"
-                                    class="home-section section-movies-list">
-                                    <div class="container">
-                                        <div class="section-movies-list__inner">
-                                            <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
-                                            <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
+    <div class="home">
+        <div class="site-content" tabindex="-1">
+            <div class="container">
+                <div class="site-content__inner">
+                    <div id="primary" v-if="data" class="content-area">
+                        <main id="main" class="site-main" role="main">
+                            <article class="page type-page status-publish hentry">
+                                <div class="page__content">
+                                    <section id="section-home-slider-custom-64d31949b2fcb"
+                                            class="home-section more-dark">
+                                        <HomeSlider v-if="data" :data="data.sliders" />
+                                    </section>
+                                    <section class="home-section ads-top">
+                                        <div class="kskdCustomElement">d</div>
+                                    </section>
+                                    <section id="section-home-slider-custom-ott-64d31949c9733"
+                                        class="home-section home-slider-custom-ott">
+                                        <div class="bg_opacity"></div>
+                                        <HomeOot :pending="pending" 
+                                            :title="data.otts.ottTitle"
+                                            :sliders="data.otts.ottSliders"
+                                        />
+                                    </section>
+                                    <section
+                                        class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
+                                        <div class="container">
+                                            <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
+                                    </section>
+                                    <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
+                                        <div class="container">
+                                            <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
+                                        </div>
+                                    </section>
+                                    <div class="kskdDiv kskdCls">
+                                        <div class="kskdDiv"></div>
                                     </div>
-                                </section>
-                                <section class="home-section home-ads-bt-feature ads-footer">
-                                </section>
-                            </div>
-                        </article>
-                    </main>
+                                    <section class="home-section home-ads-bt-feature ads-bottom"></section>
+                                    <section id="section-movies-carousel-aside-header-64d3194c4e219"
+                                        class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
+                                        <div class="container">
+                                            <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
+                                        </div>
+                                    </section>
+                                    <section id="section-movies-list-64d3194c644bd"
+                                        class="home-section section-movies-list">
+                                        <div class="container">
+                                            <div class="section-movies-list__inner">
+                                                <HomeMovieTopWeek v-if="data && data.movieNewests && data.movieNewests.topWeeks" :data="data.movieNewests.topWeeks" />
+                                                <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="home-section home-ads-bt-feature ads-footer">
+                                        <div class="kskdCustomElement"></div>
+                                    </section>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
                 </div>
             </div>
         </div>

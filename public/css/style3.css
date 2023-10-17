@@ -2733,7 +2733,6 @@ a:focus {
 
 .site-header {
   box-shadow: 0 0 8px rgba(51, 51, 51, 0.3);
-  margin-bottom: 37px;
   position: relative;
   z-index: 3;
   display: none;
@@ -2813,10 +2812,6 @@ a:focus {
 
 .site-header .highlight {
   font-weight: 700;
-}
-
-.page-template-default .site-header {
-  margin-bottom: 0;
 }
 
 .sidebar-right .content-area,
@@ -2918,16 +2913,6 @@ a:focus {
   letter-spacing: -0.01em;
   padding: 12px 20px;
   border-radius: 5px;
-}
-
-.blog:not(.masvideos-js) .sidebar-area {
-  padding-top: 20px;
-}
-
-@media (min-width: 1200px) {
-  .blog:not(.masvideos-js) .sidebar-area {
-    padding-top: 0;
-  }
 }
 
 .page__content blockquote {
@@ -3072,7 +3057,7 @@ a:focus {
 }
 
 .page__content {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .page__content::after {
@@ -3120,10 +3105,6 @@ a:focus {
   font-weight: 600;
 }
 
-.page-template-default.home .page__content{
-  margin-bottom: 0;
-}
-
 .page__header {
   background-color: #f6f7f9;
   text-align: center;
@@ -3149,10 +3130,6 @@ a:focus {
   .archive .site-content {
     padding-top: 37px;
   }
-}
-
-.archive .site-header {
-  margin-bottom: 0;
 }
 
 .movie-search-results.search .site-header,
@@ -9011,7 +8988,6 @@ input[type="checkbox"]+label {
   font-weight: 900
 }
 
-.dark #page,
 .dark .site-content {
   background-color: #131722;
   color: #949cb0;

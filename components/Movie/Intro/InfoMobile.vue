@@ -1,7 +1,8 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink'])
+    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
     let id = props.id
+    let casts = props.casts || []
     let year = props.year
     let duration = props.duration
     let title = props.title
@@ -15,6 +16,7 @@
     onBeforeMount(() => {
         if (pending) {
             id = undefined
+            casts = []
             year = undefined
             duration = undefined
             title = undefined
@@ -32,6 +34,7 @@
         ],
         () => {
             id = props.id
+            casts = props.casts
             year = props.year
             duration = props.duration
             title = props.title
@@ -82,8 +85,17 @@
                         <span class="movie__meta--genre">
                             <template v-for="(genre, idx) in genres" :key="idx">
                                 <span v-if="idx > 0">, </span>
-                                <a :href="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></a>
+                                <a :href="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></a>
                             </template>
+                        </span>
+                    </div>
+                    <div class="casts-list">
+                        <span class="tv-show__meta--genre">
+                            <template v-for="(item, idx) in casts">
+                                <span v-if="idx > 0 && idx < 4">, </span>
+                                <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
+                            </template>
+                            <span v-if="casts.length > 4"> ...</span>
                         </span>
                     </div>
                 </div>

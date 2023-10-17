@@ -19,17 +19,17 @@
             <div class="masvideos masvideos-movies ">
                 <div class="movies columns-1">
                     <div class="movies__inner">
-                        <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
+                        <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                             <div class="movie-list">
                                 <div class="movie-list__body">
                                     <span class="movie-list__year">{{ item.year }}</span>
-                                    <NuxtLink :to="'/movie/' + item.title" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                         <h3 class="movie-list__name">{{ item.title }}</h3>
                                     </NuxtLink>
                                     <span class="movie-list__genre">
                                         <template v-for="(genre, idx) in item.genres" :key="idx">
                                             <span v-if="idx > 0">, </span>
-                                            <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                            <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                         </template>
                                     </span>
                                 </div>

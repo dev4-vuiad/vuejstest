@@ -2,10 +2,11 @@
     const props = defineProps(['data', 'title', 'base', 'type'])
     const base = props.base || 'movie-genre'
     let data = props.data
-    const title = props.title
+    let title = props.title
     const type = props.type || 'movie'
     
     onBeforeUpdate(() => {
+        title = props.title
         data = props.data
     })
 </script>
@@ -17,16 +18,16 @@
             <div class="movies columns-1">
                 <div class="movies__inner">
                     <div v-for="(item, index) in data" :key="index"
-                        class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie" :postid="item.id">
+                        class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.year }}</span>
-                            <NuxtLink :to="'/' + type + '/' + encodeURIComponent(item.title)" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                            <NuxtLink :to="'/' + type + '/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <h3 class="masvideos-loop-movie__title  movie__title">{{ item.tvshowTitle || item.title }}</h3>
                             </NuxtLink>
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <NuxtLink :to="'/' + base + '/' + encodeURIComponent(genre.name)" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                    <NuxtLink :to="'/' + base + '/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                 </template>
                             </span>
                         </div>

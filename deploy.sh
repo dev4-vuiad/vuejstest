@@ -12,3 +12,9 @@ pm2 delete korean
 
 #run start pm2
 pm2 start ecosystem.config.js
+
+#kil current process
+fuser -k 3000/tcp
+
+#clear frontend cache
+curl -X POST -i -H "x-nuxt-multi-cache-token: O5ilxqx5k1ZzFMjEVr" http://localhost:3000/__nuxt_multi_cache/purge/all

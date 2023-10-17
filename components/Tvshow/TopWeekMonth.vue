@@ -39,16 +39,16 @@
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">
-                            <div v-for="(item, index) in topWeeks" :key="index" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure">
+                            <div v-for="(item, index) in topWeeks" :key="index" class="tv-show  tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama">
                                 <div class="tv-show__body">
                                     <NuxtLink
-                                        :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                                        :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                         <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                     <span class="tv-show__meta--genre">
                                         <template v-for="(genre, idx) in item.genres" :key="idx">
                                             <span v-if="idx > 0">, </span>
-                                            <NuxtLink :to="'/tv-show-genre/' + genre.link" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                            <NuxtLink :to="'/tv-show-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                         </template>
                                     </span>
                                 </div>
@@ -61,16 +61,16 @@
                 <div class="masvideos masvideos-tv-shows ">
                     <div class="tv-shows columns-1">
                         <div class="tv-shows__inner">
-                            <div v-for="(item, index) in topMonths" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama tv_show_genre-action-adventure">
+                            <div v-for="(item, index) in topMonths" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama">
                                 <div class="tv-show__body">
                                     <NuxtLink
-                                        :to="'/' + item.link" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                                        :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
                                     </NuxtLink>
                                     <span class="tv-show__meta--genre">
                                         <template v-for="(genre, idx) in item.genres" :key="idx">
                                             <span v-if="idx > 0">, </span>
-                                            <NuxtLink :to="'/tv-show-genre/' + genre.link" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                            <NuxtLink :to="'/tv-show-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
                                         </template>
                                     </span>
                                 </div>

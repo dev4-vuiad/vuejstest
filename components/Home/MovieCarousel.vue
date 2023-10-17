@@ -50,18 +50,18 @@
                                     style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
                                     <div class="slick-slide slick-current slick-active" data-slick-index="0" v-for="(item, index) in data" :key="index" aria-hidden="false">
                                         <div>
-                                            <div class="movie type-movie status-publish has-post-thumbnail hentry movie_genre-kmovie"
+                                            <div class="movie type-movie status-publish has-post-thumbnail hentry"
                                                 style="width: 100%; display: inline-block;" :postid="item.id">
                                                 <div class="movie__poster">
                                                     <NuxtLink
-                                                        :to="'/movie/' + item.title"
+                                                        :to="'/movie/' + item.slug"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
-                                                        <img width="300" height="450"
+                                                        <img 
                                                             :src="item.src"
                                                             :srcset="item.srcSet"
+                                                            decoding="async"
                                                             class="movie__poster--image lazyload" alt=""
-                                                            sizes="(max-width: 300px) 100vw, 300px"
                                                             :key="renderCount"
                                                         />
                                                     </NuxtLink>
@@ -75,13 +75,13 @@
                                                                 <span class="movie__meta--genre">
                                                                     <template v-for="(genre, idx) in item.genres" :key="idx">
                                                                         <span v-if="idx > 0">, </span>
-                                                                        <NuxtLink :to="'/movie-genre/' + encodeURIComponent(genre.name)" rel="tag" tabindex="0">
+                                                                        <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag" tabindex="0">
                                                                             <span v-html="genre.name"></span>
                                                                         </NuxtLink>
                                                                     </template>
                                                                 </span>
                                                             </div>
-                                                            <NuxtLink to="/movie/%ec%82%ac%eb%9e%91%ec%9d%98-%ea%b3%a0%ea%b3%a0%ed%95%99/"
+                                                            <NuxtLink :to="'/movie/' + item.slug"
                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                 tabindex="0">
                                                                 <h3 class="masvideos-loop-movie__title  movie__title">

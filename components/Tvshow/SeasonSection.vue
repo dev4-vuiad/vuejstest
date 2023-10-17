@@ -1,13 +1,15 @@
 <script setup>
-    const props = defineProps(['pending', 'data', 'src', ])
+    const props = defineProps(['pending', 'data', 'src', 'srcSet'])
     let pending = props.pending
     let data = props.data
     let src = props.src
+    let srcSet = props.srcSet
     const seasonIdx = ref(0)
 
     onBeforeMount(() => {
         if (pending) {
             src = undefined
+            srcSet = undefined
             data = []
         }
     })
@@ -18,6 +20,7 @@
         ],
         () => {
             src = props.src
+            srcSet = props.srcSet
             data = props.data
         }
     )
@@ -42,17 +45,17 @@
                             <div class="episodes__inner">
                                 <div v-for="(episode, idx) in item.episodes" :key="idx" class="episode status-publish hentry">
                                     <div class="episode__poster loading-bg">
-                                        <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                                        <NuxtLink :to="'/episode/' + episode.slug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img
-                                                width="220" height="330"
-                                                :src="src"
+                                                :src="episode.src.length ? episode.src : src"
+                                                :srcset="episode.srcSet.length ? episode.srcSet : srcSet"
                                                 class="episode__poster--image lazyload" alt="" 
                                                 :key="episode.id"
                                             />
                                         </NuxtLink>
                                     </div>
                                     <div class="episode__body">
-                                        <NuxtLink :to="'/episode/' + encodeURIComponent(episode.title)"
+                                        <NuxtLink :to="'/episode/' + episode.slug"
                                             class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <span class="masvideos-loop-episode__number episode__number">{{ episode.postDateGmt.substr(0,10) }}</span>
                                             <h3 class="masvideos-loop-episode__title  episode__title">{{ episode.title }}</h3>
