@@ -1,5 +1,5 @@
 #run git pull
-git pull https://dev4.vuiad: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@github.com/dev4-vuiad/vuejstest.git
+git pull
 
 #run git pull
 npm install
