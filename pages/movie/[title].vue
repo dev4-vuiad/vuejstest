@@ -2,7 +2,6 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
-    let watchId = undefined
     const { isMobile } = useDevice()
 
     definePageMeta({
@@ -25,40 +24,35 @@
                 })
             }
         }
-    })
-
-    const { data:watchLinks, refresh }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/movies/details', {
-            params: {
-                watch: watchId
-            }
-        }).then(result => {
-            if (result.watchLinks) {
-                return result.watchLinks
-            }
-            return result.watchLinks
-        }),
-        {
-            immediate: false
-        }
-    ) 
+    }) 
 
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 slug: title
             }
-        }).then(result => {
-            if (result.id) {
-                watchId = result.id
-            }
-            return result
         }),
         {
             default: () => ({
                 genres: [],
                 relateds: Array.from(Array(isMobile ? 6 : 8), (_, index) => ({}))
             })
+        }
+    )
+
+    const { refresh }  = useLazyAsyncData(
+        () => $fetch($apiBaseUrl() + '/movies/details', {
+            params: {
+                watch: data.value.id
+            }
+        }).then(result => {
+            if (result.watchLinks) {
+                data.value.watchLinks = result.watchLinks
+            }
+            return result
+        }),
+        {
+            immediate: false
         }
     )
 
@@ -84,8 +78,8 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch v-if="watchLinks && watchLinks.length" :links="watchLinks" />
-                                <div v-else class="single-movie__player-container--inner container">
+                                <Watch v-if="data.watchLinks && data.watchLinks.length" :links="watchLinks" />
+                                <div class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
