@@ -103,9 +103,6 @@ export default defineNuxtConfig({
     app: {
       head: {
         script: [
-          {
-            children: 'window.__ITGS_started = Date.now();'
-          }
         ]
       }
     }
