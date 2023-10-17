@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['pending', 'data', 'src', ])
+    const props = defineProps(['pending', 'data', 'src'])
     let pending = props.pending
     let data = props.data
     let src = props.src
@@ -45,8 +45,8 @@
                                         <NuxtLink :to="'/episode/' + episode.slug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img
                                                 width="220" height="330"
-                                                :src="episode.src"
-                                                :srcset="episode.srcSet"
+                                                :src="episode.src.length ? episode.src : src"
+                                                :srcset="episode.srcSet.length ? episode.srcSet : src"
                                                 class="episode__poster--image lazyload" alt="" 
                                                 :key="episode.id"
                                             />
