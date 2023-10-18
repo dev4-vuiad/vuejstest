@@ -1,0 +1,46 @@
+{
+    "background_color": "#ffffff",
+    "description": "코코아티비 :: BMYTV.COM 최신, 한국영화, 드라마, 예능, 미드 등을 무료 스트리밍 다시보기로 즐길 수 있습니다. 넷플릭스(Netflix), 와차, 디즈니플러스, 웨이브 등 각종 OTT 컨텐츠 또한 링크 제공합니다.",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "BMYTV",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "BMYTV",
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "categories": [
+      "entertainment"
+    ],
+    "icons": [
+      {
+        "src": "https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png",
+        "type": "image/png",
+        "sizes": "36x36"
+      },
+      {
+        "src": "https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png",
+        "type": "image/png",
+        "sizes": "300x300"
+      },
+      {
+        "src": "https://kokoatv.net/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png",
+        "type": "image/png",
+        "sizes": "36x36"
+      }
+    ],
+    "screenshots" : [
+      {
+        "src": "https://kokoatv.net/screenshot.jpg",
+        "sizes": "1280x720",
+        "type": "image/jpg",
+        "platform": "wide"
+      }
+    ]
+  }
+  

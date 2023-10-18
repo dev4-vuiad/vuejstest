@@ -4,8 +4,18 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-lazy-load',
     '@nuxtjs/device',
-    'nuxt-multi-cache'
+    'nuxt-multi-cache',
+    '@kevinmarrec/nuxt-pwa'
   ],
+  pwa: {
+    meta: {
+      title: 'BMYTV.COM APP',
+      ogSiteName: 'BMYTV.COM APP',
+      mobileAppIOS: true,
+      mobileApp: true,
+      appleStatusBarStyle: 'black-translucent'
+    }
+  },
   multiCache: {
     route: {
       enabled: true
