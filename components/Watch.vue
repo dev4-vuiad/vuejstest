@@ -1,120 +1,105 @@
 <script setup>
-    const props = defineProps(['pending', 'links'])
-    let pending = props.pending
-    let links = props.links
+const props = defineProps(['pending', 'links'])
+let links = props.links || []
 
-    watch(
-        () => props.pending,
-        () => {
-            links = props.links
-        }
-    )
+watch(
+    () => props.pending,
+    () => {
+        links = props.links
+    }
+)
 </script>
 
+<style scoped>
+.backlink-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+button.btn.btn-back {
+    background: none;
+    padding: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.flex-btn-hq button.btn.btn-play {
+    margin: 0 20px;
+    border-radius: 20px;
+}
+
+.flex-btn-hq button.btn.btn-play {
+    margin: 0 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 14px;
+    width: 125px;
+}
+
+.flex-btn-hq {
+    width: 100%;
+    text-align: center;
+}
+
+@media(max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .backlink-btn {
+
+        padding: 0 20px;
+    }
+
+    .flex-btn-hq button.btn.btn-play {
+        margin: 0 2px;
+        border-radius: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 0.5rem;
+        width: 70px;
+        padding: 5px 10px;
+    }
+
+}
+
+@media(max-width: 768px) {
+    .flex-btn-hq button.btn.btn-play {
+        margin: 0 2px;
+        border-radius: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 0.5rem;
+        width: 70px;
+        padding: 5px 10px;
+    }
+}
+</style>
+
 <template>
-    <!-- <div class="col-md-12 video-full" align="center" style="margin-bottom:10px;">
-        <div class="row">
-            <div class="col-md-12" id="video_content">
-                <div id="playVideoUl">
-                    <iframe :src="links[0] + '?ref=kokoatv.net'" class="test" width="100%" height="430"
-                        frameborder="0" scrolling="no" type="application/x-shockwave-flash" allowscriptaccess="always"
-                        allowfullscreen="true" name="video_player" id="video_player"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top:10px;">
-            <div class="" style="padding:0" id="div_content_button">
-                <div class="col-md-2" style="text-align:left;" id="box_back_btn_pc">
-
-                    <?php if( $backlink != "" ){
-                                ?>
-                    <a href="<?php echo $backlink;?>"><button class="btn btn-back"><i class="fas fa-arrow-left"></i>
-                            돌아가기</button></a>
-                    <?php 
-                            }?>
-                </div>
-                <div class="col-md-10" id="row_contain_link">
-                    <div style="float:left;" id="box_back_btn_mobile">
-                        <a href="<?php echo $backlink;?>"><button class="btn btn-back"><i class="fas fa-arrow-left"></i>
-                                돌아가기</button></a>
+    <div class="container" v-if="links && links.length">
+        <div class="video-ads">
+            <div class="video">
+                <div class="video_content">
+                    <div id="playVideoUl">
+                        <iframe :src="links[0] + '?ref=kokoatv.net'" class="test" width="100%" height="430" frameborder="0" scrolling="no"
+                            type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"
+                            name="video_player" id="video_player"></iframe>
                     </div>
+                </div>
+                <div class="backlink-btn">
+                    <a href=""><button class="btn btn-back"><i class="fas fa-arrow-left"></i> 돌아가기</button></a>
                     <div class="flex-btn-hq">
-                        <?php
-                            $arr_check = array();
-                            $num_link = 3;
-                            foreach ($link as $k => $l) {
-                                $l = str_replace("\r","",$l);
-                                $l = str_replace("'","",$l);
-                                $l = str_replace('"','',$l);
-                                $part = "";
-                                if( strpos($l, ">") !== false ){
-                                    $exp_l = explode(">",$l);
-                                    $part = str_replace("<", "", $exp_l[0]);
-                                    $l = $exp_l[1];
-                                    $num_link++;
-                                }
-                                $l_n = str_replace("https://","",$l);
-                                $l_n = explode("/",$l_n);
-                                $l_n = $l_n[0];
-                                $l_n = explode(".",$l_n);
-                                $name = "";
-                                if( count($l_n) > 2 ){
-                                    $name = $l_n[1];
-                                }else $name = $l_n[0];
-
-                                if( strpos($backlink , "episode") !== false ){
-                                    if($name != "youtube" && ( in_array($name,$arr_check) || count($arr_check) == $num_link) ){
-                                        continue;
-                                    }else $arr_check[] = $name;
-                                }else if($k > $num_link) break;
-                            
-                                $name = ucfirst($name);
-                                if( $name == 'Vidground' ) $name = "HQ Plus";
-                                if( $name == 'Short' ) $name = "Hydrax";
-                                if( $name == 'Asianembed' || $name == 'Dembed1' || $name == 'Asianplay' ) $name = "K-Vid";
-                                if( $part != "" ){
-                                    $name .= " - ".$part;
-                                }
-                                ?>
-                        <?php
-                                    
-
-                                        if (strpos($l, "https://videojs.vidground.com") !== false) {
-                                            ?>
-                        <button class="btn btn-play btn-hqplus <?php echo $k==0?'active':''; ?>"
-                            onclick="playback(this,'<?php echo $l;?>')"> <i class="fas fa-play"></i>
-                            <?php echo $name;?>
-                        </button>
-                        <?php
-                                        } else if(strpos($l, "https://asianhdplay.pro") !== false){
-                                            $count_asia = strlen($l);
-                                            if ($count_asia > 80) {
-                                            ?>
-                        <button class="btn btn-play btn-asia-show <?php echo $k==0?'active':''; ?>"
-                            onclick="playback(this,'<?php echo $l;?>')"> <i class="fas fa-play"></i>
-                            <?php echo $name;?>
-                        </button>
-                        <?php  } ?>
-
-                        <button class="btn btn-play btn-asia <?php echo $k==0?'active':''; ?>"
-                            onclick="playback(this,'<?php echo $l;?>')"> <i class="fas fa-play"></i>
-                            <?php echo $name;?>
-                        </button>
-                        <?php }else {
-                                            ?>
-                    <button class="btn btn-play <?php echo $k==0?'active':''; ?>"
-                        onclick="playback(this,'<?php echo $l;?>')"> <i class="fas fa-play"></i>
-                        <?php echo $name;?>
-                    </button>
-                    <?php
-                                    }
-                                ?>
-                    <!--  <button class="btn btn-play <?php //echo $k==0?'active':''; ?>" onclick="playback(this,'<?php //echo $l;?>')"> <i class="fas fa-play"></i> <?php //echo $name;?></button> -->
-                    <?php
-                        }
-                        ?>
+                        <button class="btn btn-play btn-hqplus "> <i class="fas fa-play"></i> Hqplus</button>
+                        <button class="btn btn-play btn-hydrax "> <i class="fas fa-play"></i> Hydrax</button>
+                        <button class="btn btn-play btn-asia"> <i class="fas fa-play"></i> Asia</button>
+                    </div>
                 </div>
             </div>
+            <div id="ads_box_S"></div>
         </div>
-    </div> -->
-</div></template>
+    </div>
+</template>

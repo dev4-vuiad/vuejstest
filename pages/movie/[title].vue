@@ -40,7 +40,7 @@
         }
     )
 
-    const { refresh }  = useLazyAsyncData(
+    const { refresh, pending: pendingWatch }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 watch: data.value.id
@@ -69,6 +69,10 @@
         refresh()
     }
 
+    const hideComponentForWatching = () => {
+        
+    }
+
 </script>
 <template>
     <div class="movie-template-default single-movie masvideos single-movie-v2 full-width dark">
@@ -78,8 +82,8 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch v-if="data.watchLinks && data.watchLinks.length" :links="watchLinks" />
-                                <div class="single-movie__player-container--inner container">
+                                <Watch :links="data.watchLinks" :pending="pendingWatch" />
+                                <div v-if="!data.watchLinks || !data.watchLinks.length" class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
@@ -118,7 +122,7 @@
                                     <div class="center"></div>
                                 </div>
                             </div>
-                            <section class="movie__related">
+                            <section class="movie__related" v-if="!data.watchLinks || !data.watchLinks.length">
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
