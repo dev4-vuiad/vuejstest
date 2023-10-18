@@ -3,6 +3,7 @@
     const route = useRoute()
     const title = route.params.title
     const { isMobile } = useDevice()
+    const isWatching = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -47,8 +48,11 @@
             }
         }).then(result => {
             if (result.watchLinks) {
-                hideComponentForWatching()
+                isWatching.value = true
                 data.value.watchLinks = result.watchLinks
+                toggleComponents()
+            } else {
+                result.watchLinks = []
             }
             return result
         }),
@@ -67,16 +71,22 @@
     });
 
     const onWatching = () => {
-        refresh()
+        if (!data.value.watchLinks) {
+            refresh()
+        } else if (data.value.watchLinks.length) {
+            isWatching.value = true;
+            toggleComponents()
+        }
     }
 
     const onStopWatching = () => {
-        data.value.watchLinks = []
+        isWatching.value = false;
+        toggleComponents()
     }
 
-    const hideComponentForWatching = () => {
-        $('#site-header').toggle()
-        $('#colophon').toggle()
+    const toggleComponents = () => {
+        $('#site-header').toggle(!isWatching.value)
+        $('#colophon').toggle(!isWatching.value)
     }
 
 </script>
@@ -88,8 +98,8 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch :links="data.watchLinks" :pending="pendingWatch" @on-stop-watching="onStopWatching" />
-                                <div v-if="!data.watchLinks || !data.watchLinks.length" class="single-movie__player-container--inner container">
+                                <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+                                <div v-if="!isWatching" class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
@@ -105,6 +115,7 @@
                                             :description="data.description"
                                             :outlink="data.outlink"
                                             :casts="data.casts"
+                                            @on-watching="onWatching"
                                         />
                                         <MovieIntroInfo v-if="!isMobile"
                                             :pending = "pending"
@@ -128,7 +139,7 @@
                                     <div class="center"></div>
                                 </div>
                             </div>
-                            <section class="movie__related" v-if="!data.watchLinks || !data.watchLinks.length">
+                            <section class="movie__related" v-if="!isWatching">
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />

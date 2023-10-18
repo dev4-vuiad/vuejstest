@@ -1,5 +1,6 @@
 <script setup>
     const expanded = ref(false)
+    const emit = defineEmits(['onWatching'])
     const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
     let id = props.id
     let casts = props.casts || []
@@ -60,6 +61,13 @@
         }
         ele.prev().css('max-height', h + 'px')
     }
+
+    const onWatching = (event) => {
+        if (!outlink.includes('https')) {
+            event.preventDefault()
+            emit('onWatching')
+        }
+    }
 </script>
 
 <template>
@@ -101,7 +109,7 @@
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <a :href="outlink" class="a_btn_out">
+                <a :href="outlink" class="a_btn_out" @click="onWatching">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>

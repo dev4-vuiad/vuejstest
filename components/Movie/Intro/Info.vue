@@ -62,8 +62,11 @@
         ele.prev().css('max-height', h + 'px')
     }
 
-    const onWatching = () => {
-        emit('onWatching')
+    const onWatching = (event) => {
+        if (!outlink.includes('https')) {
+            event.preventDefault()
+            emit('onWatching')
+        }
     }
 </script>
 
@@ -112,7 +115,7 @@
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <a :href="outlink" class="a_btn_out" @click.prevent="onWatching">
+                <a :href="outlink" class="a_btn_out" @click="onWatching">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>

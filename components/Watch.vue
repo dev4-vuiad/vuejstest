@@ -1,18 +1,35 @@
 <script setup>
     const emit = defineEmits(['onStopWatching'])
-    const props = defineProps(['pending', 'links'])
+    const props = defineProps(['isWatching', 'links'])
     let links = props.links || []
+    let linkIdx = 0
+    const link = ref('')
 
     watch(
-        () => props.pending,
+        () => props.isWatching,
         () => {
             links = props.links
+            link.value = links[linkIdx]
         }
     )
 
+    const getLinkName = (l) => {
+        if (l.includes('videojs.vidground.com')) {
+            return 'HQ Plus'
+        } else if (l.includes('short.ink')) {
+            return 'Hydrax'
+        } else {
+            return 'Asia'
+        }
+    }
+
     const onStopWatching = () => {
-        links = [];
         emit('onStopWatching')
+    }
+
+    const playback = (idx) => {
+        linkIdx = idx
+        link.value = links[linkIdx]
     }
 </script>
 
@@ -86,12 +103,12 @@ button.btn.btn-back {
 </style>
 
 <template>
-    <div class="container" v-if="links && links.length">
+    <div class="container" v-if="isWatching">
         <div class="video-ads">
             <div class="video">
                 <div class="video_content">
                     <div id="playVideoUl">
-                        <iframe :src="links[0] + '?ref=kokoatv.net'" class="test" width="100%" height="430" frameborder="0" scrolling="no"
+                        <iframe :src="link" class="test" width="100%" height="430" frameborder="0" scrolling="no" :key="linkIdx"
                             type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"
                             name="video_player" id="video_player"></iframe>
                     </div>
@@ -99,9 +116,7 @@ button.btn.btn-back {
                 <div class="backlink-btn">
                     <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
                     <div class="flex-btn-hq">
-                        <button class="btn btn-play btn-hqplus "> <i class="fas fa-play"></i> Hqplus</button>
-                        <button class="btn btn-play btn-hydrax "> <i class="fas fa-play"></i> Hydrax</button>
-                        <button class="btn btn-play btn-asia"> <i class="fas fa-play"></i> Asia</button>
+                        <button v-for="(link, idx) in links" :class="'btn btn-play' + (idx == linkIdx ? ' active' : '')" @click="playback(idx)"><i class="fas fa-play"></i> {{ getLinkName(link) }}</button>
                     </div>
                 </div>
             </div>
