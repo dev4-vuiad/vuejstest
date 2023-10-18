@@ -47,6 +47,7 @@
             }
         }).then(result => {
             if (result.watchLinks) {
+                hideComponentForWatching()
                 data.value.watchLinks = result.watchLinks
             }
             return result
@@ -65,12 +66,17 @@
         ]
     });
 
-    const onWatch = () => {
+    const onWatching = () => {
         refresh()
     }
 
+    const onStopWatching = () => {
+        data.value.watchLinks = []
+    }
+
     const hideComponentForWatching = () => {
-        
+        $('#site-header').toggle()
+        $('#colophon').toggle()
     }
 
 </script>
@@ -82,7 +88,7 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch :links="data.watchLinks" :pending="pendingWatch" />
+                                <Watch :links="data.watchLinks" :pending="pendingWatch" @on-stop-watching="onStopWatching" />
                                 <div v-if="!data.watchLinks || !data.watchLinks.length" class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
@@ -112,7 +118,7 @@
                                             :description="data.description"
                                             :outlink="data.outlink"
                                             :casts="data.casts"
-                                            @on-watch="onWatch"
+                                            @on-watching="onWatching"
                                         />
                                         <div class="single-movie-ads-box">
                                             <div class="ads-box-child">

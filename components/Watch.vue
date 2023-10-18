@@ -1,13 +1,19 @@
 <script setup>
-const props = defineProps(['pending', 'links'])
-let links = props.links || []
+    const emit = defineEmits(['onStopWatching'])
+    const props = defineProps(['pending', 'links'])
+    let links = props.links || []
 
-watch(
-    () => props.pending,
-    () => {
-        links = props.links
+    watch(
+        () => props.pending,
+        () => {
+            links = props.links
+        }
+    )
+
+    const onStopWatching = () => {
+        links = [];
+        emit('onStopWatching')
     }
-)
 </script>
 
 <style scoped>
@@ -91,7 +97,7 @@ button.btn.btn-back {
                     </div>
                 </div>
                 <div class="backlink-btn">
-                    <a href=""><button class="btn btn-back"><i class="fas fa-arrow-left"></i> 돌아가기</button></a>
+                    <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
                     <div class="flex-btn-hq">
                         <button class="btn btn-play btn-hqplus "> <i class="fas fa-play"></i> Hqplus</button>
                         <button class="btn btn-play btn-hydrax "> <i class="fas fa-play"></i> Hydrax</button>

@@ -1,6 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const emit = defineEmits(['onWatch'])
+    const emit = defineEmits(['onWatching'])
     const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
     let id = props.id
     let casts = props.casts || []
@@ -62,8 +62,8 @@
         ele.prev().css('max-height', h + 'px')
     }
 
-    const onWatch = () => {
-        emit('onWatch')
+    const onWatching = () => {
+        emit('onWatching')
     }
 </script>
 
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <a :href="outlink" class="a_btn_out" @click.prevent="onWatch">
+                <a :href="outlink" class="a_btn_out" @click.prevent="onWatching">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>
