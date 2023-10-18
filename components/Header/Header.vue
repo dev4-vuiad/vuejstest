@@ -47,6 +47,31 @@
         //         w.document.body.appendChild(s);
         //     })(window.top.document.createElement("script"), window.top)
         // }, 500)
+
+        // Check if the device is iOS
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Check if the manifest is supported
+        const supportsManifest = typeof document.createElement('link').relList.supports === 'function' && document.createElement('link').relList.supports('manifest');
+
+        // Show the install banner if it's an iOS device and manifest is supported
+        if (isIOS && supportsManifest) {
+        const installBanner = document.getElementById('install-banner');
+        installBanner.style.display = 'block';
+
+        const installButton = document.getElementById('install-button');
+        installButton.addEventListener('click', () => {
+            // Prompt the user to add the web app to the home screen
+            // This API is only available in Safari on iOS
+            if ('standalone' in window.navigator && window.navigator.standalone) {
+            // The app is already installed
+            } else if (window.navigator.standalone !== undefined) {
+            // Show a prompt to add to the home screen
+            // You can customize this prompt to your liking
+            alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
+            }
+        });
+        }
     })
 </script>
 <template>
@@ -58,4 +83,7 @@
             </div>
         </div>
     </header>
+    <div id="install-banner" style="display: none;">
+        <button id="install-button">Install</button>
+    </div>
 </template>

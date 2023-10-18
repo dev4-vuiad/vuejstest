@@ -14,7 +14,12 @@ export default defineNuxtConfig({
       mobileAppIOS: true,
       mobileApp: true,
       appleStatusBarStyle: 'black-translucent'
-    }
+    },
+    manifest: {
+      display: 'standalone',
+      name: 'BMYTV.COM APP',
+      short_name: 'BMYTV APP',
+    },
   },
   multiCache: {
     route: {
