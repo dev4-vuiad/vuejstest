@@ -31,7 +31,7 @@
         'apple-tv': 'Apple TV',
         wavve: 'wavve',
         tving: 'Tving',
-        'amazon-prime-video': 'Amazon Prime Video',
+        'amazon-prime-video': 'Prime Video',
         peacock: 'Peacock',
         'hbo-max': 'HBO max',
         watcha: 'watcha'
