@@ -64,6 +64,7 @@
                 // This API is only available in Safari on iOS
                 if ('standalone' in window.navigator && window.navigator.standalone) {
                     // The app is already installed
+                    installBanner.style.display = 'none';
                 } else if (window.navigator.standalone !== undefined) {
                     // Show a prompt to add to the home screen
                     // You can customize this prompt to your liking
