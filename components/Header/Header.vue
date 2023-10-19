@@ -56,19 +56,16 @@
         // Show the install banner if it's an iOS device and manifest is supported
         if (isIOS && supportsManifest) {
             const installBanner = document.getElementById('install-banner');
-            installBanner.style.display = 'block';
-
+            if ('standalone' in window.navigator && window.navigator.standalone) {
+                installBanner.style.display = 'none';
+            } else {
+                installBanner.style.display = 'block';
+            }
+            
             const installButton = document.getElementById('install-button');
             installButton.addEventListener('click', () => {
-                // Prompt the user to add the web app to the home screen
-                // This API is only available in Safari on iOS
-                if ('standalone' in window.navigator && window.navigator.standalone) {
-                    // The app is already installed
-                    installBanner.style.display = 'none';
-                } else if (window.navigator.standalone !== undefined) {
-                    // Show a prompt to add to the home screen
-                    // You can customize this prompt to your liking
-                    //alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
+                if (window.navigator.standalone !== undefined) {
+                    alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
                 }
             });
 
