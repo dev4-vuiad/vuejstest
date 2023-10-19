@@ -104,7 +104,7 @@
                                 :src="data.src"
                                 :description="data.description"
                             />
-                            <TvshowSeasonSection :data="data.seasons" :src="data.src" :pending="pending" />
+                            <TvshowSeasonSection :data="data.seasons" :src="data.src" :srcSet="data.srcSet" :pending="pending" />
                             <TvshowRelatedSection v-if="data && data.relateds && data.relateds.length" :data="data.relateds" :title="data.title" />
                             <div class="masvideos-tabs tv-show-tabs">
                                 <ul class="nav" pos="0">

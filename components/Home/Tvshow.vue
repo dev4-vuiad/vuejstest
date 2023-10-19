@@ -62,7 +62,7 @@
                     <header class="home-section__header">
                         <h2 class="home-section__title">{{ title || ' ' }}</h2>
                         <div class="home-section__action">
-                            <NuxtLink to="/tv-shows" class="tv-show-box home-section__action-link">전체보기</NuxtLink>
+                            <NuxtLink :to="'/' + (type == 'tv-show' ? 'tv-shows' : type)" class="tv-show-box home-section__action-link">전체보기</NuxtLink>
                         </div>
                     </header>
                     <div v-for="(item, index) in items" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama" :postid="item.id">

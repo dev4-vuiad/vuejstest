@@ -47,6 +47,10 @@ body {
     opacity: 1;
 }
 
+#section-home-slider-custom-64d31949b2fcb .lazyloaded {
+  min-height: 100%;
+}
+
 .dashicons {
   font-size: 20px;
 }

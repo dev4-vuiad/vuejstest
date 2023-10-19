@@ -175,6 +175,9 @@
                                 <div class="page__content">
                                     <section id="section-home-slider-custom-64d31949b2fcb"
                                             class="home-section more-dark">
+                                        <div class="container">
+                                            <header class="home-section__header"><h2 class="home-section__title slider-title"></h2><div class="home-section__action"></div></header>
+                                        </div>
                                         <HomeSlider v-if="data" :data="data.sliders" />
                                     </section>
                                     <section class="home-section ads-top">
