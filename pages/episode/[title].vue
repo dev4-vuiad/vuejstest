@@ -2,6 +2,7 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
+    const isWatching = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -34,6 +35,26 @@
         {
             default: () => ({
             })
+        }
+    )
+
+    const { refresh }  = useLazyAsyncData(
+        () => $fetch($apiBaseUrl() + '/movies/details', {
+            params: {
+                watch: data.value.id
+            }
+        }).then(result => {
+            if (result.watchLinks) {
+                isWatching.value = true
+                data.value.watchLinks = result.watchLinks
+                $('.site-header, .site-footer').addClass('watching')
+            } else {
+                result.watchLinks = []
+            }
+            return result
+        }),
+        {
+            immediate: false
         }
     )
 
@@ -86,6 +107,23 @@
 
         return null
     }
+
+    const onWatching = (event) => {
+        if (data.value.outlink.includes('https://kokoatv.net/')) {
+            event.preventDefault()
+            if (!data.value.watchLinks) {
+                refresh()
+            } else if (data.value.watchLinks.length) {
+                isWatching.value = true;
+                $('.site-header, .site-footer').addClass('watching')
+            }
+        }
+    }
+
+    const onStopWatching = () => {
+        isWatching.value = false;
+        $('.site-header, .site-footer').removeClass('watching')
+    }
 </script>
 
 <template>
@@ -94,7 +132,10 @@
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div class="episode status-publish hentry">
+                        <div class="stretch-full-width">
+                            <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+                        </div>
+                        <div v-if="!isWatching" class="episode status-publish hentry">
                             <TvshowsIntroBreadScrumb 
                                 :pending="pending"
                                 :title="data.title"
@@ -122,7 +163,7 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <a :href="data.outlink" class="a_btn_out">
+                                            <a :href="data.outlink" class="a_btn_out" @click="onWatching">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>

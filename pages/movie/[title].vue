@@ -41,7 +41,7 @@
         }
     )
 
-    const { refresh, pending: pendingWatch }  = useLazyAsyncData(
+    const { refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 watch: data.value.id
