@@ -37,7 +37,7 @@
                     aria-disabled="true" style="">Previous</button><button class="slick-next slick-arrow" aria-label="Next"
                     type="button" style="" aria-disabled="false">Next</button>
             </div>
-            <div class="home-section__action"><NuxtLink to="/movie-genre/kmovie" class="home-section__action-link">View All</NuxtLink>
+            <div class="home-section__action"><NuxtLink to="/movie-genre/한국영화/" class="home-section__action-link">View All</NuxtLink>
             </div>
         </header>
         <div class="section-movies-carousel__carousel">
