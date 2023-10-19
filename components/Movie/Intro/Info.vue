@@ -63,7 +63,7 @@
     }
 
     const onWatching = (event) => {
-        if (!outlink.includes('https://kokoatv.net/')) {
+        if (outlink.includes('https://kokoatv.net/')) {
             event.preventDefault()
             emit('onWatching')
         }
