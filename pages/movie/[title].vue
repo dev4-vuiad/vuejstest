@@ -85,8 +85,8 @@
     }
 
     const toggleComponents = () => {
-        $('#site-header').toggle(!isWatching.value)
-        $('#colophon').toggle(!isWatching.value)
+        $('.site-header').toggle(!isWatching.value)
+        $('.site-footer').toggle(!isWatching.value)
     }
 
 </script>

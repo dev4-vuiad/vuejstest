@@ -39,6 +39,15 @@
     justify-content: space-between;
 }
 
+.ads-middle {
+    display: flex;
+    flex-direction: row;
+}
+
+center{
+    margin: 5px 0;
+}
+
 button.btn.btn-back {
     background: none;
     padding: 0;
@@ -63,6 +72,19 @@ button.btn.btn-back {
 .flex-btn-hq {
     width: 100%;
     text-align: center;
+}
+
+.backlink-btn .btn-play i{
+        color: #000000 !important; 
+}
+
+.ads-top,.ads-bottom,.ads-middle {
+    display: flex;
+    justify-content: center;
+}
+
+button.btn.btn-play.active {
+    background: #B6BBCA;
 }
 
 @media(max-width: 768px) {
@@ -99,6 +121,10 @@ button.btn.btn-back {
         width: 70px;
         padding: 5px 10px;
     }
+
+    #playVideoUl iframe{
+        height: 260px;
+    }
 }
 </style>
 
@@ -108,7 +134,7 @@ button.btn.btn-back {
             <div class="video">
                 <div class="video_content">
                     <div id="playVideoUl">
-                        <iframe :src="link" class="test" width="100%" height="430" frameborder="0" scrolling="no" :key="linkIdx"
+                        <iframe :src="link" class="test" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx"
                             type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"
                             name="video_player" id="video_player"></iframe>
                     </div>
@@ -120,7 +146,31 @@ button.btn.btn-back {
                     </div>
                 </div>
             </div>
-            <div id="ads_box_S"></div>
+            <div id="ads_box_S">
+                <div class="ads-top">
+                    <center>
+                        <div class="home-section home-movie-section-aside-header">
+                        </div>
+                    </center>
+                     
+                </div>
+                <div class="ads-middle">
+                    <div class="ads-left">
+                        <center><div class="ads-box-child"></div></center>
+                    </div>
+                    <div class="ads-right">
+                        <center><div class="single-tv-show-ads"></div></center>
+                    </div>
+                </div>
+                <div class="ads-bottom">
+                    <center>
+                        <div class="home-section home-ads-bt-feature">
+                            <div></div>
+                                       
+                        </div>
+                    </center>
+                </div>
+            </div>
         </div>
     </div>
 </template>
