@@ -1,6 +1,5 @@
 <script setup>
     import { onMounted } from 'vue'
-
     onMounted(() => {
         //animated drop down submenu
         $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
@@ -56,21 +55,26 @@
 
         // Show the install banner if it's an iOS device and manifest is supported
         if (isIOS && supportsManifest) {
-        const installBanner = document.getElementById('install-banner');
-        installBanner.style.display = 'block';
+            const installBanner = document.getElementById('install-banner');
+            installBanner.style.display = 'block';
 
-        const installButton = document.getElementById('install-button');
-        installButton.addEventListener('click', () => {
-            // Prompt the user to add the web app to the home screen
-            // This API is only available in Safari on iOS
-            if ('standalone' in window.navigator && window.navigator.standalone) {
-            // The app is already installed
-            } else if (window.navigator.standalone !== undefined) {
-            // Show a prompt to add to the home screen
-            // You can customize this prompt to your liking
-            alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
-            }
-        });
+            const installButton = document.getElementById('install-button');
+            installButton.addEventListener('click', () => {
+                // Prompt the user to add the web app to the home screen
+                // This API is only available in Safari on iOS
+                if ('standalone' in window.navigator && window.navigator.standalone) {
+                    // The app is already installed
+                } else if (window.navigator.standalone !== undefined) {
+                    // Show a prompt to add to the home screen
+                    // You can customize this prompt to your liking
+                    alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
+                }
+            });
+
+            installBanner.addEventListener('outerclick', () => {
+                installBanner.style.display = 'none';
+            });
+
         }
     })
 </script>
@@ -83,7 +87,16 @@
             </div>
         </div>
     </header>
-    <div id="install-banner" style="display: none;">
-        <button id="install-button">Install</button>
+    <div id="install-app">
+        <div id="install-banner" style="display: none;">
+            <img src="https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png" alt="icon bmytv" />
+            <div class="info">
+                <p class="header">Install BMYTV APP</p>
+                <p class="content">bmytv.com</p>
+            </div>
+            <button id="install-button">  
+                Install
+            </button>
+        </div>
     </div>
 </template>
