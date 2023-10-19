@@ -68,7 +68,6 @@
                     // Show a prompt to add to the home screen
                     // You can customize this prompt to your liking
                     //alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
-                    this.setState({ showInstallMessage: true });
                 }
             });
 
