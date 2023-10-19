@@ -31,6 +31,37 @@
         linkIdx = idx
         link.value = links[linkIdx]
     }
+
+    onMounted(() => {
+        var w = $("#video_content").width();
+        if( w > 500 ){
+            w = w*0.8;
+            $("#div_content_button").css("width",w);
+        }else $("#div_content_button").css("width","auto");
+
+        var h = w/1.7;
+        if( h < 260 ){
+            h = 260;
+        }
+        $("#video_player").attr("style","width:"+w+"px !important;height:"+h+"px !important;");
+        $(window).resize(function(){
+            var wr = $("#video_content").width();
+            if( wr > 500 ){
+                wr = wr*0.8;
+                $("#div_content_button").css("width",wr);
+            }else $("#div_content_button").css("width","auto");
+
+            var hr = wr/1.7; 
+            if( hr < 260 ){
+                hr = 260;
+            }
+            $("#video_player").attr("style","width:"+wr+"px !important;height:"+hr+"px !important;");
+        });
+    })
+
+    onBeforeUnmount(() => {
+        emit('onStopWatching')
+    })
 </script>
 
 <style scoped>

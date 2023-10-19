@@ -50,7 +50,7 @@
             if (result.watchLinks) {
                 isWatching.value = true
                 data.value.watchLinks = result.watchLinks
-                toggleComponents()
+                $('.site-header, .site-footer').addClass('watching')
             } else {
                 result.watchLinks = []
             }
@@ -75,18 +75,13 @@
             refresh()
         } else if (data.value.watchLinks.length) {
             isWatching.value = true;
-            toggleComponents()
+            $('.site-header, .site-footer').addClass('watching')
         }
     }
 
     const onStopWatching = () => {
         isWatching.value = false;
-        toggleComponents()
-    }
-
-    const toggleComponents = () => {
-        $('.site-header').toggle(!isWatching.value)
-        $('.site-footer').toggle(!isWatching.value)
+        $('.site-header, .site-footer').removeClass('watching')
     }
 
 </script>
