@@ -71,7 +71,7 @@
                 }
             });
 
-            installBanner.addEventListener('outerclick', () => {
+            window.addEventListener('click', () => {
                 installBanner.style.display = 'none';
             });
 
