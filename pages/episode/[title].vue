@@ -200,8 +200,8 @@
                             </div>
                             <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                         </div>
+                        <div class="kokoads TV_Post_Bottom_728_90"></div>
                     </div>
-                    <div class="kokoads TV_Post_Bottom_728_90"></div>
                 </div>
             </div>
         </div>
