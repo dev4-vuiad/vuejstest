@@ -62,11 +62,8 @@
         ele.prev().css('max-height', h + 'px')
     }
 
-    const onWatching = (event) => {
-        if (outlink.includes('https://kokoatv.net/')) {
-            event.preventDefault()
-            emit('onWatching')
-        }
+    const onWatching = () => {
+        emit('onWatching')
     }
 </script>
 
@@ -115,7 +112,8 @@
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <a :href="outlink" class="a_btn_out" @click="onWatching">
+                <button v-if="outlink && outlink.includes('https://kokoatv.net/')" class="btn-outlink" @click="onWatching">바로보기</button>
+                <a v-else :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>

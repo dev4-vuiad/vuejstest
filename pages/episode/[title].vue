@@ -108,15 +108,12 @@
         return null
     }
 
-    const onWatching = (event) => {
-        if (data.value.outlink.includes('https://kokoatv.net/')) {
-            event.preventDefault()
-            if (!data.value.watchLinks) {
-                refresh()
-            } else if (data.value.watchLinks.length) {
-                isWatching.value = true;
-                $('.site-header, .site-footer').addClass('watching')
-            }
+    const onWatching = () => {
+        if (!data.value.watchLinks) {
+            refresh()
+        } else if (data.value.watchLinks.length) {
+            isWatching.value = true;
+            $('.site-header, .site-footer').addClass('watching')
         }
     }
 
@@ -163,7 +160,8 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <a :href="data.outlink" class="a_btn_out" @click="onWatching">
+                                            <button v-if="data.outlink && data.outlink.includes('https://kokoatv.net/')" class="btn-outlink" @click="onWatching">바로보기</button>
+                                            <a v-else :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>
