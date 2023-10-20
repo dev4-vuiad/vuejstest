@@ -199,3 +199,8 @@ body {
     background-position-y: center;
     opacity: .2;
 }
+
+.kokoads {
+  min-height: 1px;
+  width: 100%;
+}

@@ -106,6 +106,7 @@
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main" role="main">
+                            <div class="kokoads Actor_Top_728_90"></div>
                             <header class="page-header">
                                 <h1 class="page-title">{{ data.name }}</h1>
                             </header>
@@ -155,13 +156,15 @@
                                 :orderBy="orderBy"
                                 @on-select-page="onSelectPage"
                             />
+                            <div class="kokoads Actor_Bottom_728_90"></div>
                         </main>
                     </div>
-                    <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
-                        role="complementary">
+                    <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
+                        <div class="kokoads Actor_Sidebar_Top_336_280"></div>
                         <div class="widget-area-inner">
                             <PersonThumbnail :pending="pending" :id="data.id" :name="data.name" :src="data.src" />
                         </div>
+                        <div class="kokoads Actor_Sidebar_Bottom_336_280"></div>
                     </div>
                 </div>
             </div>

@@ -96,7 +96,7 @@
                 <div class="site-content__inner">
                     <div id="primary" class="content-area" v-if="data">
                         <main id="main" class="site-main" role="main">
-
+                            <div class="kokoads Search_Top_728_90"></div>
                             <div class="vodi-control-bar">
 
                                 <div class="vodi-control-bar__left">
@@ -153,13 +153,15 @@
                                 :orderBy="orderBy"
                                 @on-select-page="onSelectPage"
                             />
+                            <div class="kokoads Search_Bottom_728_90"></div>
                         </main>
                     </div>
-                    <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom"
-                        role="complementary">
+                    <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">
+                        <div class="kokoads Search_Sidebar_Top_336_280"></div>
                         <div class="widget-area-inner" v-if="data && data.data">
                             <SearchTopWeek v-once title="주간 TVShows 인기컨텐츠" :data="data.data.topWeeks" />
                         </div>
+                        <div class="kokoads Search_Sidebar_Bottom_336_280"></div>
                     </div>
                 </div>
             </div>

@@ -169,6 +169,7 @@
                                         </div>
                                     </div>
                                     <div class="single-episode-ads-box">
+                                        <div class="kokoads TV_Post_Top_336_280"></div>
                                         <div class="ads-box-child">
                                         </div>
                                     </div>
@@ -195,12 +196,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="kokoads TV_Post_Middle_728_90"></div>
                                 <div class="episode__season-tabs-wrap stretch-full-width"></div>
                                 <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                             </div>
                             <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                         </div>
                     </div>
+                    <div class="kokoads TV_Post_Bottom_728_90"></div>
                 </div>
             </div>
         </div>

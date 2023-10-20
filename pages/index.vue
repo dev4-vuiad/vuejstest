@@ -180,6 +180,7 @@
                                         </div>
                                         <HomeSlider v-if="data" :data="data.sliders" />
                                     </section>
+                                    <div class="kokoads Main_Top_728_90"></div>
                                     <section class="home-section ads-top">
                                         <div class="kskdCustomElement">d</div>
                                     </section>
@@ -191,12 +192,14 @@
                                             :sliders="data.otts.ottSliders"
                                         />
                                     </section>
+                                    <div class="kokoads Main_Middle_01_728_90"></div>
                                     <section
                                         class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                         <div class="container">
                                             <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
                                     </section>
+                                    <div class="kokoads Main_Middle_02_728_90"></div>
                                     <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                         <div class="container">
                                             <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
@@ -206,6 +209,7 @@
                                         <div class="kskdDiv"></div>
                                     </div>
                                     <section class="home-section home-ads-bt-feature ads-bottom"></section>
+                                    <div class="kokoads Main_Middle_03_728_90"></div>
                                     <section id="section-movies-carousel-aside-header-64d3194c4e219"
                                         class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
                                         <div class="container">
@@ -221,6 +225,7 @@
                                             </div>
                                         </div>
                                     </section>
+                                    <div class="kokoads Main_Bottom_728_90"></div>
                                     <section class="home-section home-ads-bt-feature ads-footer">
                                         <div class="kskdCustomElement"></div>
                                     </section>
