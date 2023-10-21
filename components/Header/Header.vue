@@ -46,34 +46,77 @@
         //         w.document.body.appendChild(s);
         //     })(window.top.document.createElement("script"), window.top)
         // }, 500)
-
-        // Check if the device is iOS
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-        // Check if the manifest is supported
-        const supportsManifest = typeof document.createElement('link').relList.supports === 'function' && document.createElement('link').relList.supports('manifest');
-
-        // Show the install banner if it's an iOS device and manifest is supported
-        if (isIOS && supportsManifest) {
-            const installBanner = document.getElementById('install-banner');
-            if ('standalone' in window.navigator && window.navigator.standalone) {
-                installBanner.style.display = 'none';
-            } else {
-                installBanner.style.display = 'block';
-            }
-            
-            const installButton = document.getElementById('install-button');
-            installButton.addEventListener('click', () => {
-                if (window.navigator.standalone !== undefined) {
-                    alert('Tap the Share icon and select "Add to Home Screen" to install the app.');
-                }
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
+                //work
+            }).catch(function(error) {
+                console.log('Error service worker:', error);
             });
 
-            window.addEventListener('click', () => {
-                installBanner.style.display = 'none';
-            });
+            window.addEventListener('beforeinstallprompt', function(e) {
+                const pwaAppInstallBtn = document.querySelector('#install-button');
+                pwaAppInstallBtn.addEventListener('click', (e) => {
+                    console.log("abc: ");
+                    if (beforeInstallPrompt) beforeInstallPrompt.prompt();
+                });
 
+            });
+        } else {
+            console.log('serviceWorker not in navigator');
         }
+
+        // var beforeInstallPrompt = null;
+
+        // window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
+
+        // function eventHandler(event) {
+        //     beforeInstallPrompt = event;
+        //     console.log("event: " + event);
+        // }
+
+        // function errorHandler(event) {
+        //     console.log("error: " + event);
+        // }
+        // const pwaAppInstallBtn = document.querySelector('#install-button');
+        // pwaAppInstallBtn.addEventListener('click', (e) => {
+        //     console.log("abc: ");
+        //     if (beforeInstallPrompt) beforeInstallPrompt.prompt();
+        // });
+
+        // console.log('load');
+        // let deferredPrompt = null;
+
+        // window.addEventListener('beforeinstallprompt', (e) => {
+        //     // Prevent the mini-infobar from appearing on mobile
+        //     e.preventDefault();
+        //     // Stash the event so it can be triggered later.
+        //     deferredPrompt = e;
+        // });
+
+        // const pwaAppInstallBtn = document.querySelector('#install-button');
+        // const installDiv = document.querySelector('#install-app');
+        
+        // pwaAppInstallBtn.addEventListener('click', (e) => {
+        //     alert('click');
+        //     e.preventDefault();
+            
+        //     if (deferredPrompt !== null) {
+        //         deferredPrompt.prompt();
+        //         const { outcome } = deferredPrompt.userChoice;
+        //         if (outcome === 'accepted') {
+        //             deferredPrompt = null;
+        //         }
+        //     } else {
+        //         console.log("deferred prompt is null [Website cannot be installed]")
+        //     }
+        // });
+
+        // window.addEventListener('click', () => {
+        //     console.log('aaa');
+        //     installDiv.style.display = 'none';
+        // });
+
+        
     })
 </script>
 <template>
@@ -85,8 +128,8 @@
             </div>
         </div>
     </header>
-    <div id="install-app">
-        <div id="install-banner" style="display: none;">
+    <div id="install-app" style="display:block">
+        <div id="install-banner">
             <img src="https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png" alt="icon bmytv" />
             <div class="info">
                 <p class="header">Install BMYTV APP</p>

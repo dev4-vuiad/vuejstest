@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       display: 'standalone',
       name: 'BMYTV.COM APP',
       short_name: 'BMYTV APP',
+      start_url: '.'
     },
   },
   multiCache: {
