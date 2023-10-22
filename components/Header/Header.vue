@@ -46,77 +46,45 @@
         //         w.document.body.appendChild(s);
         //     })(window.top.document.createElement("script"), window.top)
         // }, 500)
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').then(function(registration) {
-                //work
-            }).catch(function(error) {
-                console.log('Error service worker:', error);
-            });
+        var beforeInstallPrompt = null;
+        window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
 
-            window.addEventListener('beforeinstallprompt', function(e) {
-                const pwaAppInstallBtn = document.querySelector('#install-button');
-                pwaAppInstallBtn.addEventListener('click', (e) => {
-                    console.log("abc: ");
-                    if (beforeInstallPrompt) beforeInstallPrompt.prompt();
-                });
-
-            });
-        } else {
-            console.log('serviceWorker not in navigator');
+        function eventHandler(event) {
+            beforeInstallPrompt = event;
+            console.log("event: " + event);
+        }
+        function errorHandler(event) {
+            console.log("error: " + event);
         }
 
-        // var beforeInstallPrompt = null;
+        const installDiv = document.querySelector('#install-app');
+        installDiv.style.display = 'block';
 
-        // window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
+        const pwaAppInstallBtn = document.querySelector('#install-button');
+        pwaAppInstallBtn.addEventListener('click', (e) => {
+            if (beforeInstallPrompt) {
+                beforeInstallPrompt.prompt();
+                installDiv.style.display = 'none';
+            }
+        });
 
-        // function eventHandler(event) {
-        //     beforeInstallPrompt = event;
-        //     console.log("event: " + event);
-        // }
+        window.addEventListener('click', () => {
+            installDiv.style.display = 'none';
+        });
 
-        // function errorHandler(event) {
-        //     console.log("error: " + event);
-        // }
-        // const pwaAppInstallBtn = document.querySelector('#install-button');
-        // pwaAppInstallBtn.addEventListener('click', (e) => {
-        //     console.log("abc: ");
-        //     if (beforeInstallPrompt) beforeInstallPrompt.prompt();
-        // });
+        // Detects if device is on iOS 
+        const isIos = () => {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test( userAgent );
+        }
+        // Detects if device is in standalone mode
+        const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-        // console.log('load');
-        // let deferredPrompt = null;
-
-        // window.addEventListener('beforeinstallprompt', (e) => {
-        //     // Prevent the mini-infobar from appearing on mobile
-        //     e.preventDefault();
-        //     // Stash the event so it can be triggered later.
-        //     deferredPrompt = e;
-        // });
-
-        // const pwaAppInstallBtn = document.querySelector('#install-button');
-        // const installDiv = document.querySelector('#install-app');
-        
-        // pwaAppInstallBtn.addEventListener('click', (e) => {
-        //     alert('click');
-        //     e.preventDefault();
-            
-        //     if (deferredPrompt !== null) {
-        //         deferredPrompt.prompt();
-        //         const { outcome } = deferredPrompt.userChoice;
-        //         if (outcome === 'accepted') {
-        //             deferredPrompt = null;
-        //         }
-        //     } else {
-        //         console.log("deferred prompt is null [Website cannot be installed]")
-        //     }
-        // });
-
-        // window.addEventListener('click', () => {
-        //     console.log('aaa');
-        //     installDiv.style.display = 'none';
-        // });
-
-        
+        // Checks if should display install popup notification:
+        if (isIos() && !isInStandaloneMode()) {
+            console.log("abc");
+            this.setState({ showInstallMessage: true });
+        }
     })
 </script>
 <template>
