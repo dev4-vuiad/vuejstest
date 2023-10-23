@@ -39,7 +39,7 @@
     )
 
     const { refresh }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/movies/details', {
+        () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 watch: data.value.id
             }
