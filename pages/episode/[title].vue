@@ -27,7 +27,7 @@
     })
 
     const { data, pending }  = useLazyAsyncData(
-        () => $fetch('https://backend.kokoatv.net/api/episode/details', {
+        () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
             }
@@ -39,7 +39,7 @@
     )
 
     const { refresh }  = useLazyAsyncData(
-        () => $fetch('https://backend.kokoatv.net/api/episode/details', {
+        () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 watch: data.value.id
             }
