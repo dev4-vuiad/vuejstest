@@ -35,7 +35,7 @@
         ],
         () => {
             id = props.id
-            casts = props.casts
+            casts = props.casts || []
             year = props.year
             duration = props.duration
             title = props.title

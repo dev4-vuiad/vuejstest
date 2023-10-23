@@ -27,7 +27,7 @@
         }
     }) 
 
-    const { data, pending }  = useLazyAsyncData(
+    const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 slug: title
@@ -83,6 +83,12 @@
         isWatching.value = false;
         $('.site-header, .site-footer').removeClass('watching')
     }
+
+    onMounted(() => {
+        if (status.value == 'error') {
+            navigateTo({path: '/'})
+        }
+    })
 
 </script>
 <template>

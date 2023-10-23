@@ -26,7 +26,7 @@
         }
     })
 
-    const { data, pending }  = useLazyAsyncData(
+    const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
@@ -121,6 +121,12 @@
         isWatching.value = false;
         $('.site-header, .site-footer').removeClass('watching')
     }
+
+    onMounted(() => {
+        if (status.value == 'error') {
+            navigateTo({path: '/'})
+        }
+    })
 </script>
 
 <template>
