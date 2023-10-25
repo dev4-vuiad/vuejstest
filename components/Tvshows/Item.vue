@@ -3,12 +3,9 @@
 
     import { onBeforeUpdate } from 'vue';
     const { $toTimeAgo, $getEpTxt } = useNuxtApp()
-    const props = defineProps(['id', 'postDate', 'postDateGmt', 'title', 'slug', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage'])
+    const props = defineProps(['postDate', 'slug', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage'])
     const renderCount = ref(0)
-    let id = props.id
     let postDate = props.postDate
-    let postDateGmt = props.postDateGmt
-    let title = props.title
     let slug = props.slug
     let tvshowTitle = props.tvshowTitle
     let episodeNumber = props.episodeNumber
@@ -19,10 +16,7 @@
     let chanelImage = props.chanelImage
 
     onBeforeUpdate(() => {
-        id = props.id
         postDate = props.postDate
-        postDateGmt = props.postDateGmt
-        title = props.title
         slug = props.slug
         tvshowTitle = props.tvshowTitle
         episodeNumber = props.episodeNumber

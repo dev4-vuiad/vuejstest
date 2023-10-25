@@ -119,8 +119,6 @@
                                     <div class="tv-shows__inner" v-if="data">
                                         <TvshowsPopularItem v-for="(item, idx) in data.data.populars" :key="idx" 
                                             :id="item.id"
-                                            :link="item.link"
-                                            :year="item.year"
                                             :title="item.title"
                                             :slug="item.slug"
                                             :tvshowTitle="item.tvshowTitle"
@@ -129,7 +127,6 @@
                                             :episodeNumber="item.episodeNumber" 
                                             :seasonNumber="item.seasonNumber"
                                             :postDate="item.postDate" 
-                                            :postDateGmt="item.postDateGmt"
                                             :chanelImage="item.chanelImage"
                                         />
                                     </div>
@@ -169,8 +166,7 @@
                             <div class="tv-shows columns-6">
                                 <div class="tv-shows__inner">
                                     <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index" 
-                                        :id="item.id"
-                                        :year="item.year" 
+                                        :postid="item.id"
                                         :title="item.title"
                                         :slug="item.slug" 
                                         :tvshowTitle="item.tvshowTitle"
@@ -178,7 +174,6 @@
                                         :episodeNumber="item.episodeNumber" 
                                         :seasonNumber="item.seasonNumber"
                                         :postDate="item.postDate" 
-                                        :postDateGmt="item.postDateGmt" 
                                         :src="item.src" 
                                         :srcSet="item.srcSet" 
                                         :chanelImage="item.chanelImage" 

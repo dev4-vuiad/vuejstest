@@ -1,12 +1,11 @@
 <script setup>
     import { onBeforeUpdate } from 'vue'
     const { $toTimeAgo, $getEpTxt } = useNuxtApp()
-    const props = defineProps(['id', 'link', 'slug', 'postDate', 'postDateGmt', 'tvshowTitle', 'src', 'srcSet', 'episodeNumber', 'seasonNumber', 'chanelImage'])
+    const props = defineProps(['id', 'slug', 'postDate', 'tvshowTitle', 'src', 'srcSet', 'episodeNumber', 'seasonNumber', 'chanelImage'])
     const renderCount = ref(0)
     let id = props.id
     let slug = props.slug
     let postDate = props.postDate
-    let postDateGmt = props.postDateGmt
     let tvshowTitle = props.tvshowTitle
     let src = props.src
     let srcSet = props.srcSet
@@ -19,7 +18,6 @@
         id = props.id
         slug = props.slug
         postDate = props.postDate
-        postDateGmt = props.postDateGmt
         tvshowTitle = props.tvshowTitle
         src = props.src
         srcSet = props.srcSet
@@ -33,7 +31,7 @@
 </script>
 
 <template>
-    <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama'" :postid="id">
+    <div class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama" :postid="id">
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel" :key="renderCount">
