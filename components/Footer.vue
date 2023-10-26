@@ -5,7 +5,7 @@
                 <div class="site-footer__logo footer-logo"><a href="/" class="custom-logo-link"
                         rel="home"><img width="653" height="152"
                             src="/images/bmytv_logo.png"
-                            class="custom-logo" alt="코코아티비 :: KOKOA.TV"
+                            class="custom-logo" alt="코코아티비 :: bmytv.com"
                             sizes="(max-width: 653px) 100vw, 653px"></a></div>
                 <div class="site-footer__social-icons footer-social-icons">
                     <ul id="menu-footer-social-menu" class="social-icons">
@@ -52,12 +52,12 @@
                 </div>
             </div><!-- /.footer-v4-bar -->
             <div class="site-footer__info site-info">
-                Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                Copyright © 2023, bmytv.com. All Rights Reserved </div><!-- .site-info -->
         </div><!-- .container -->
     </footer><!-- #colophon -->
     <footer class="site-footer handheld-footer dark">
         <div class="container">
             <div class="site-footer__info site-info">
-                Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                Copyright © 2023, bmytv.com. All Rights Reserved </div><!-- .site-info -->
     </div><!-- /.container -->
 </footer></template>
