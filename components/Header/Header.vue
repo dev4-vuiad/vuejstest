@@ -46,45 +46,6 @@
         //         w.document.body.appendChild(s);
         //     })(window.top.document.createElement("script"), window.top)
         // }, 500)
-        var beforeInstallPrompt = null;
-        window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
-
-        function eventHandler(event) {
-            beforeInstallPrompt = event;
-            console.log("event: " + event);
-        }
-        function errorHandler(event) {
-            console.log("error: " + event);
-        }
-
-        const installDiv = document.querySelector('#install-app');
-        installDiv.style.display = 'block';
-
-        const pwaAppInstallBtn = document.querySelector('#install-button');
-        pwaAppInstallBtn.addEventListener('click', (e) => {
-            if (beforeInstallPrompt) {
-                beforeInstallPrompt.prompt();
-                installDiv.style.display = 'none';
-            }
-        });
-
-        window.addEventListener('click', () => {
-            installDiv.style.display = 'none';
-        });
-
-        // Detects if device is on iOS 
-        const isIos = () => {
-            const userAgent = window.navigator.userAgent.toLowerCase();
-            return /iphone|ipad|ipod/.test( userAgent );
-        }
-        // Detects if device is in standalone mode
-        const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-        // Checks if should display install popup notification:
-        if (isIos() && !isInStandaloneMode()) {
-            console.log("abc");
-            this.setState({ showInstallMessage: true });
-        }
     })
 </script>
 <template>
@@ -96,16 +57,4 @@
             </div>
         </div>
     </header>
-    <div id="install-app" style="display:block">
-        <div id="install-banner">
-            <img src="https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png" alt="icon bmytv" />
-            <div class="info">
-                <p class="header">Install BMYTV APP</p>
-                <p class="content">bmytv.com</p>
-            </div>
-            <button id="install-button">  
-                Install
-            </button>
-        </div>
-    </div>
 </template>

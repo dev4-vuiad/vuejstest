@@ -4,24 +4,8 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-lazy-load',
     '@nuxtjs/device',
-    'nuxt-multi-cache',
-    '@kevinmarrec/nuxt-pwa'
+    'nuxt-multi-cache'
   ],
-  pwa: {
-    meta: {
-      title: 'BMYTV.COM APP',
-      ogSiteName: 'BMYTV.COM APP',
-      mobileAppIOS: true,
-      mobileApp: true,
-      appleStatusBarStyle: 'black-translucent'
-    },
-    manifest: {
-      display: 'standalone',
-      name: 'BMYTV.COM APP',
-      short_name: 'BMYTV APP',
-      start_url: '.'
-    },
-  },
   multiCache: {
     route: {
       enabled: true
@@ -80,7 +64,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?hrhyee'
+          href: '/css/style.css?hrhyeet'
         },
       ],
       script: [
@@ -118,15 +102,7 @@ export default defineNuxtConfig({
     },
     app: {
       head: {
-        script: [
-          {
-            children: 'window.__ITGS_started = Date.now();'
-          },
-          {
-            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
-            async: true
-          }
-        ]
+        
       }
     }
   }
