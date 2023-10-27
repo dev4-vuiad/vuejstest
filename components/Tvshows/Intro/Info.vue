@@ -1,6 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casts'])
+    const props = defineProps(['pending', 'id', 'postDate', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casts'])
     let id = props.id
     let postDate = props.postDate
     let title = props.title
