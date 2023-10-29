@@ -1,7 +1,7 @@
 <script setup>
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
-    const title = route.params.title
+    const slug = route.params.title
 
     definePageMeta({
         pageTransition: {
@@ -44,8 +44,7 @@
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows/details', {
             params: {
-                title: title,
-                slug: title
+                slug: slug
             }
         }),
         {
@@ -57,7 +56,7 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV',
+        title: slug + ' – 코코아티비 :: KOKOA.TV',
         script: [
             {
                 children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
