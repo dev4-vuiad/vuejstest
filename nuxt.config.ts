@@ -64,7 +64,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?faaaafsff'
+          href: '/css/style.css?hrhyeet'
         },
         {
           rel: 'stylesheet',
@@ -95,26 +95,18 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'http://127.0.0.1:8000/api',
-      apiBaseUrlSsr: 'http://127.0.0.1:8000/api'
+      apiBaseUrl: 'https://backend.bmytv.com/api',
+      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
     }
   },
   $production: {
     appConfig: {
-      apiBaseUrl: 'https://backend.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
+      apiBaseUrl: 'https://backend.bmytv.com/api',
+      apiBaseUrlSsr: 'http://localhost/api'
     },
     app: {
       head: {
-        script: [
-          {
-            children: 'window.__ITGS_started = Date.now();'
-          },
-          {
-            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
-            async: true
-          }
-        ]
+        
       }
     }
   }
