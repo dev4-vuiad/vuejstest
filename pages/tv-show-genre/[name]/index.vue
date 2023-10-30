@@ -80,21 +80,12 @@
     }
 
     useHead({
-        title: data && data.value.data && data.value.data.items.length && data.value.data.items[0].genres ? (getGenreName(genre, data.value.data.items[0].genres) || genre) + ' – 코코아티비 :: KOKOATV.NET' : '',
+        title: '드라마(TV Show) 무료 다시보기 - 코코아티비 :: KOKOATV.NET',
         meta: [
             {
                 hid: 'description',
                 name: 'description',
-                content: data && data.value.data && data.value.data.items.length && data.value.data.items[0].genres ? (getGenreName(genre, data.value.data.items[0].genres) || genre) + 
-                '코코아티비 :: KOKOATV.NET 최신,한국영화,드라마,예능,미드 등을 무료 스트리밍 다시보기로 즐길 수 있습니다. 넷플릭스(Netflix),와차,디즈니플러스,웨이브 등 각종 OTT 컨텐츠 또한 링크 제공합니다.' : ''
-            }
-        ],
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content:  data && data.data && data.data.items.length && data.data.items[0].genres ? (getGenreName(genre, data.data.items[0].genres) || genre) 
-                + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.' : ''
+                content: '드라마(TV Show) - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
             }
         ],
         script: [
