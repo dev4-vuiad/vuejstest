@@ -60,7 +60,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?htryhger'
+          href: '/css/style3.css?afsasgw'
         },
         {
           rel: 'stylesheet',
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?fdsdsfsd'
+          href: '/css/watch.css?rewtewtw'
         }
       ],
       script: [
@@ -95,8 +95,8 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'http://127.0.0.1:8000/api',
-      apiBaseUrlSsr: 'http://127.0.0.1:8000/api'
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
     }
   },
   $production: {

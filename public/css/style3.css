@@ -19851,7 +19851,7 @@ ul.page-numbers li {
   max-width: 790px;
   height: 90px;
   text-align: center;
-  padding: 25px 0px 0px 30px;
+  padding: 25px 0px 25px 0;
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -19901,6 +19901,10 @@ ul.page-numbers li {
 
   .ott_disney img {
     width: 110px;
+  }
+
+  .ott_logo .ott_home_item:nth-child(n+4) {
+    display: none;
   }
 }
 
@@ -19953,6 +19957,6 @@ ul.page-numbers li {
 }
 
 .ott_home_item img {
-  width: 110px;
+  width: 90px;
   height: auto;
 }
