@@ -91,7 +91,6 @@
                 <TvshowBreadScrumb 
                     :pending="pending"
                     :title="data.title"
-                    :genre="data && data.genres ? data.genres[data.genres.length - 1] : {}"
                 />
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">

@@ -101,7 +101,7 @@
                             <div class="single-movie__player-container stretch-full-width">
                                 <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
                                 <div v-if="!isWatching" class="single-movie__player-container--inner container">
-                                    <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
+                                    <MovieBreadScrumb :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
                                         <MovieIntroInfoMobile v-if="isMobile"
