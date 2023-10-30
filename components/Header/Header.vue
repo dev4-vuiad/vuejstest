@@ -1,5 +1,6 @@
 <script setup>
     import { onMounted } from 'vue'
+
     onMounted(() => {
         //animated drop down submenu
         $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {

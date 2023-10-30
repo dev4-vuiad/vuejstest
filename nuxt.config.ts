@@ -39,9 +39,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      meta: [
-        { name: 'google', content: 'notranslate' }
-      ],
+      htmlAttrs: {
+        translate: 'no'
+      },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png', sizes: '32x32' },
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png', sizes: '192x192' },
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?hrhyeet'
+          href: '/css/style.css?faaaafsff'
         },
         {
           rel: 'stylesheet',
@@ -95,18 +95,26 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'https://backend.bmytv.com/api',
-      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
+      apiBaseUrl: 'http://127.0.0.1:8000/api',
+      apiBaseUrlSsr: 'http://127.0.0.1:8000/api'
     }
   },
   $production: {
     appConfig: {
-      apiBaseUrl: 'https://backend.bmytv.com/api',
-      apiBaseUrlSsr: 'http://localhost/api'
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
     },
     app: {
       head: {
-        
+        script: [
+          {
+            children: 'window.__ITGS_started = Date.now();'
+          },
+          {
+            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
+            async: true
+          }
+        ]
       }
     }
   }

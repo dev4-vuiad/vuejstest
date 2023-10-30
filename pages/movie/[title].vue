@@ -62,7 +62,14 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV',
+        title: title + ' – 코코아티비 :: KOKOA.TV',
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: title + ' - 코코아티비 :: KOKOA.TV 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
+            }
+        ],
         script: [
             {
                 children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
@@ -101,7 +108,7 @@
                             <div class="single-movie__player-container stretch-full-width">
                                 <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
                                 <div v-if="!isWatching" class="single-movie__player-container--inner container">
-                                    <MovieBreadScrumb :title="data.title" :pending="pending" />
+                                    <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
                                         <MovieIntroInfoMobile v-if="isMobile"

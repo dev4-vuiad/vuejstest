@@ -1,5 +1,5 @@
 {
-  "name": "BMYTV.COM APP",
+  "name": "nuxt-app",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "@nuxt/devtools": "latest",
     "@nuxtjs/device": "^3.1.0",
     "@types/node": "^18.17.3",

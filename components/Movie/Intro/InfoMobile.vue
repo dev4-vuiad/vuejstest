@@ -105,8 +105,9 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-bottom:15px; display:none">
-                <a :href="outlink" class="a_btn_out">
+            <div style="margin-bottom:15px;">
+                <button v-if="outlink && outlink.includes('https://kokoatv.net/')" class="btn-outlink" @click="onWatching">바로보기</button>
+                <a v-else :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>

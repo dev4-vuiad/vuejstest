@@ -59,7 +59,14 @@
     )
 
     useHead({
-        title: title + ' – 코코아티비 :: KOKOA.TV',
+        title: title + ' 코코아티비 :: KOKOATV.NET',
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: title + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
+            }
+        ],
         script: [
             {
                 children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");'
@@ -145,6 +152,7 @@
                                 :tvshowTitle="data.tvshowTitle"
                                 :tvshowSlug="data.tvshowSlug"
                                 :seasonName="data.seasonName"
+                                :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                             />
                             <div class="single-episode__content column">
                                 <!-- ads top -->
@@ -164,8 +172,9 @@
                                             :tvshowTitle="data.tvshowTitle"
                                             :casts="data.casts"
                                         />
-                                        <div style="margin-bottom:15px; display:none">
-                                            <a :href="data.outlink" class="a_btn_out">
+                                        <div style="margin-bottom:15px;">
+                                            <button v-if="data.outlink && data.outlink.includes('https://kokoatv.net/')" class="btn-outlink" @click="onWatching">바로보기</button>
+                                            <a v-else :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>
