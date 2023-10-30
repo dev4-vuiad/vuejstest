@@ -59,7 +59,7 @@
     )
 
     useHead({
-        title: title + ' 코코아티비 :: KOKOATV.NET',
+        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' 코코아티비 :: KOKOATV.NET',
         meta: [
             {
                 hid: 'description',
@@ -152,7 +152,6 @@
                                 :tvshowTitle="data.tvshowTitle"
                                 :tvshowSlug="data.tvshowSlug"
                                 :seasonName="data.seasonName"
-                                :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                             />
                             <div class="single-episode__content column">
                                 <!-- ads top -->
