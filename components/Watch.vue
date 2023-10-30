@@ -21,6 +21,11 @@
                 })
             }
             link.value = links[linkIdx]
+            if (props.isWatching) {
+                setTimeout(function() {
+                    setPlayerSize()
+                }, 100)
+            }
         }
     )
 
@@ -44,7 +49,6 @@
     }
 
     onMounted(() => {
-        setPlayerSize()
         $(window).resize(function(){
             setPlayerSize()
         });
@@ -73,7 +77,7 @@
     <div class="watch-container" v-if="isWatching">
         <div class="video-container">
             <div id="video_content">
-                <iframe :src="link" class="test" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
+                <iframe :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
             </div>
             <div class="backlink-btn">
                 <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
