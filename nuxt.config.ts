@@ -64,11 +64,11 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?faaaafsff'
+          href: '/css/style.css?gasgsagwq'
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?fagwqrqw'
+          href: '/css/watch.css?fdsdsfsd'
         }
       ],
       script: [

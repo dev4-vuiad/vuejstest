@@ -24,7 +24,7 @@
             if (props.isWatching) {
                 setTimeout(function() {
                     setPlayerSize()
-                }, 100)
+                }, 200)
             }
         }
     )
@@ -46,6 +46,9 @@
     const playback = (idx) => {
         linkIdx = idx
         link.value = links[linkIdx]
+        setTimeout(function() {
+            setPlayerSize()
+        }, 200)
     }
 
     onMounted(() => {
@@ -88,7 +91,7 @@
         </div>
         <div class="ads-box-s">
             <div class="ads-top">
-                <div class="kskdCustomElement">d</div>
+                <div class="kskdCustomElement"></div>
             </div>
             <div class="ads-middle">
                 <div class="ads-left">

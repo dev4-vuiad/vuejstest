@@ -48,8 +48,9 @@
     color: #000;
 }
 
-.watch-container #video_content iframe {
-    margin: 0 auto;
+.watch-container #video_content {
+    display: flex;
+    justify-content: center;
 }
 
 .ads-box-s {
@@ -81,9 +82,6 @@
 
 
 @media(max-width: 768px) {
-    .video-container {
-        width: 750px;
-    }
 
     .watch-container .backlink-btn {
         padding: 0 20px;
