@@ -80,12 +80,12 @@
     }
 
     useHead({
-        title: '드라마(TV Show) 무료 다시보기 - 코코아티비 :: KOKOATV.NET',
+        title: genre + '(TV Show) 무료 다시보기 - 코코아티비 :: KOKOATV.NET',
         meta: [
             {
                 hid: 'description',
                 name: 'description',
-                content: '드라마(TV Show) - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
+                content: genre + '(TV Show) - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
             }
         ],
         script: [
