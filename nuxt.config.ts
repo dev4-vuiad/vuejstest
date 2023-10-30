@@ -39,9 +39,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      htmlAttrs: {
-        translate: 'no'
-      },
+      meta: [
+        { name: 'google', content: 'notranslate' }
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png', sizes: '32x32' },
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png', sizes: '192x192' },
@@ -60,12 +60,16 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?hhhh'
+          href: '/css/style3.css?htryhger'
         },
         {
           rel: 'stylesheet',
           href: '/css/style.css?hrhyeet'
         },
+        {
+          rel: 'stylesheet',
+          href: '/css/watch.css?gsagagawe'
+        }
       ],
       script: [
         {

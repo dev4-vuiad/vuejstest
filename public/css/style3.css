@@ -2738,6 +2738,14 @@ a:focus {
   display: none;
 }
 
+.site-header.watching {
+  display: none !important;
+}
+
+.site-footer.watching {
+  display: none !important;
+}
+
 @media (min-width: 1200px) {
   .site-header {
     display: block;
@@ -19696,7 +19704,7 @@ ul.page-numbers li {
 .embla__slide__inner2 {
   position: relative;
   overflow: hidden;
-  height: 280px;
+  height: 320px;
 }
 
 .embla__slide__inner1 {

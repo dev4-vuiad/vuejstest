@@ -1,0 +1,105 @@
+<script setup>
+    const emit = defineEmits(['onStopWatching'])
+    const props = defineProps(['isWatching', 'links'])
+    let links = props.links || []
+    let linkIdx = 0
+    const link = ref('')
+
+    watch(
+        () => props.isWatching,
+        () => {
+            links = props.links
+            if (links && links.length) {
+                // sort links order: HQ Plus, Hydrax
+                links = links.sort((a,b) => {
+                    if (a.includes('videojs.vidground.com')) {
+                        return -1
+                    } else if (a.includes('short.ink') && !b.includes('videojs.vidground.com')) {
+                        return -1
+                    }
+                    return 0
+                })
+            }
+            link.value = links[linkIdx]
+        }
+    )
+
+    const getLinkName = (l) => {
+        if (l.includes('videojs.vidground.com')) {
+            return 'HQ Plus'
+        } else if (l.includes('short.ink')) {
+            return 'Hydrax'
+        } else {
+            return 'Asia'
+        }
+    }
+
+    const onStopWatching = () => {
+        emit('onStopWatching')
+    }
+
+    const playback = (idx) => {
+        linkIdx = idx
+        link.value = links[linkIdx]
+    }
+
+    onMounted(() => {
+        setPlayerSize()
+        $(window).resize(function(){
+            setPlayerSize()
+        });
+    })
+
+    onBeforeUnmount(() => {
+        emit('onStopWatching')
+    })
+
+    const setPlayerSize = () => {
+        let w = $("#video_content").width();
+        if ( w > 500 ) {
+            w = w*0.8;
+        }
+
+        let h = w/1.7;
+        if ( h < 260 ) {
+            h = 260;
+        }
+
+        $("#player").attr("style","width:"+w+"px !important;height:"+h+"px !important;");
+    }
+</script>
+
+<template>
+    <div class="watch-container" v-if="isWatching">
+        <div class="video-container">
+            <div id="video_content">
+                <iframe :src="link" class="test" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
+            </div>
+            <div class="backlink-btn">
+                <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
+                <div class="flex-btn-hq">
+                    <button v-for="(link, idx) in links" :class="'btn btn-play' + (idx == linkIdx ? ' active' : '')" @click="playback(idx)"><i class="fas fa-play"></i> {{ getLinkName(link) }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="ads-box-s">
+            <div class="ads-top">
+                <div class="kskdCustomElement">d</div>
+            </div>
+            <div class="ads-middle">
+                <div class="ads-left">
+                    <div class="ads-box-child"></div>
+                </div>
+                <div class="ads-right">
+                    <div class="single-tv-show-ads"></div>
+                </div>
+            </div>
+            <div class="kskdDiv kskdCls">
+                <div class="kskdDiv"></div>
+            </div>
+            <div class="ads-bottom">
+                
+            </div>
+        </div>
+    </div>
+</template>

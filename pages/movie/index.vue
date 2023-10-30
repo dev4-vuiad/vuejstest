@@ -132,6 +132,7 @@
                 </nav>
                 <div class="site-content__inner">
                     <div id="primary" v-if="data" class="content-area">
+                        <div class="kokoads Movie_Top_728_90"></div>
                         <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
                             <header class="page-header" style="margin-bottom:15px;">
                                 <h1 class="page-title">실시간 영화 인기컨텐츠</h1>
@@ -153,6 +154,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="kokoads Movie_Middle_728_90"></div>
                         <header class="page-header">
                             <h1 class="page-title">영화</h1>
                         </header>
@@ -200,16 +202,19 @@
                         <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" :currentPage="page"
                             :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
+                        <div class="kokoads Movie_Bottom_728_90"></div>
                     </div>
-                    <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie"
-                        role="complementary" v-if="data">
+                    <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie" role="complementary" v-if="data">
+                        <div class="kokoads Movie_Sidebar_Top_336_280"></div>
                         <div class="widget-area-inner">
                             <MovieSidebarPopularContents v-if="data" title="주간 영화 인기컨텐츠" :data="data.data.topWeeks" />
+                            <div class="kokoads Movie_Sidebar_Middle_336_280_01"></div>
                             <div class="widget widget_vodi_movies_filter">
                                 <div id="masvideos_movies_filter_widget-1"
                                     class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
                                     <div class="widget-header"><span class="widget-title">장르</span></div>
                                     <MovieSidebarType :selected="genres" :year="year" @on-select-genres="onSelectGenres" />
+                                    <div class="kokoads Movie_Sidebar_Middle_336_280_02"></div>
                                 </div>
                                 <MovieSidebarListYear :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>

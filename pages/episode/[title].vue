@@ -2,6 +2,7 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
+    const isWatching = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -25,7 +26,7 @@
         }
     })
 
-    const { data, pending }  = useLazyAsyncData(
+    const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
@@ -34,6 +35,26 @@
         {
             default: () => ({
             })
+        }
+    )
+
+    const { refresh }  = useLazyAsyncData(
+        () => $fetch($apiBaseUrl() + '/episode/details', {
+            params: {
+                watch: data.value.id
+            }
+        }).then(result => {
+            if (result.watchLinks) {
+                isWatching.value = true
+                data.value.watchLinks = result.watchLinks
+                $('.site-header, .site-footer').addClass('watching')
+            } else {
+                result.watchLinks = []
+            }
+            return result
+        }),
+        {
+            immediate: false
         }
     )
 
@@ -86,6 +107,26 @@
 
         return null
     }
+
+    const onWatching = () => {
+        if (!data.value.watchLinks) {
+            refresh()
+        } else if (data.value.watchLinks.length) {
+            isWatching.value = true;
+            $('.site-header, .site-footer').addClass('watching')
+        }
+    }
+
+    const onStopWatching = () => {
+        isWatching.value = false;
+        $('.site-header, .site-footer').removeClass('watching')
+    }
+
+    onMounted(() => {
+        if (status.value == 'error') {
+            navigateTo({path: '/'})
+        }
+    })
 </script>
 
 <template>
@@ -94,14 +135,16 @@
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div class="episode status-publish hentry">
+                        <div class="stretch-full-width">
+                            <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+                        </div>
+                        <div v-if="!isWatching" class="episode status-publish hentry">
                             <TvshowsIntroBreadScrumb 
                                 :pending="pending"
                                 :title="data.title"
                                 :tvshowTitle="data.tvshowTitle"
                                 :tvshowSlug="data.tvshowSlug"
                                 :seasonName="data.seasonName"
-                                :genre="data && data.genres ? data.genres[data.genres.length - 1] : null"
                             />
                             <div class="single-episode__content column">
                                 <!-- ads top -->
@@ -128,6 +171,7 @@
                                         </div>
                                     </div>
                                     <div class="single-episode-ads-box">
+                                        <div class="kokoads TV_Post_Top_336_280"></div>
                                         <div class="ads-box-child">
                                         </div>
                                     </div>
@@ -154,11 +198,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="kokoads TV_Post_Middle_728_90"></div>
                                 <div class="episode__season-tabs-wrap stretch-full-width"></div>
                                 <TvshowsIntroDescriptionSection :data="data.description" :id="data.id" :pending="pending" />
                             </div>
                             <TvshowsIntroSeasonList :data="data.seasons" :pending="pending" :id="data.id" :seasonName="data.seasonName" />
                         </div>
+                        <div class="kokoads TV_Post_Bottom_728_90"></div>
                     </div>
                 </div>
             </div>

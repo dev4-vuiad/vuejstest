@@ -126,6 +126,7 @@
                 </nav>
                 <div class="site-content__inner">
                     <div id="primary" class="content-area" v-if="data"> <!-- ads movies top -->
+                        <div class="kokoads Movie_Top_728_90"></div>
                         <div class="ads-achive-movies-top" style="text-align: center;">
                         </div>
                         <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
@@ -151,6 +152,7 @@
                             </div>
                             <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                         </div>
+                        <div class="kokoads Movie_Middle_728_90"></div>
                         <header class="page-header">
                             <h1 v-if="data && data.data.items[0] && data.data.items[0].genres" class="page-title">{{ getGenreName(name, data.data.items[0].genres) }}</h1>
                         </header>
@@ -199,10 +201,14 @@
                         <Pagination v-if="data && data.total > data.perPage" :base="'/movie-genre/' + genre" :total="data.total" :perPage="data.perPage" :currentPage="page" 
                             :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
+                        <div class="kokoads Movie_Bottom_728_90"></div>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie" role="complementary" v-if="data">
+                        <div class="kokoads Movie_Sidebar_Top_336_280"></div>
                         <div class="widget-area-inner">
                             <MovieSidebarPopularContents :title="'주간 ' + getGenreName(name, data.data.items[0].genres) + (getGenreName(name, data.data.items[0].genres).includes('영화') ? '' : ' 영화') + ' 인기컨텐츠'" :data="data.data.topWeeks" />
+                            <div class="kokoads Movie_Sidebar_Middle_336_280_01"></div>
+                            <div class="kokoads Movie_Sidebar_Middle_336_280_02"></div>
                             <div class="widget widget_vodi_movies_filter">
                                 <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>

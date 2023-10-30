@@ -91,7 +91,6 @@
                 <TvshowBreadScrumb 
                     :pending="pending"
                     :title="data.title"
-                    :genre="data && data.genres ? data.genres[data.genres.length - 1] : {}"
                 />
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
@@ -105,7 +104,9 @@
                                 :description="data.description"
                             />
                             <TvshowSeasonSection :data="data.seasons" :src="data.src" :srcSet="data.srcSet" :pending="pending" />
+                            <div class="kokoads Season_Middle_728_90"></div>
                             <TvshowRelatedSection v-if="data && data.relateds && data.relateds.length" :data="data.relateds" :title="data.title" />
+                            <div class="kokoads Season_Bottom_728_90"></div>
                             <div class="masvideos-tabs tv-show-tabs">
                                 <ul class="nav" pos="0">
                                     <li class="nav-item">
@@ -220,6 +221,7 @@
                         <div class="single_tv_show__sidebar tv-show-sidebar column">
                             <div class="widget-area-inner">
                                 <TvshowTopWeekMonth :pending="pending" :topWeeks="data.topWeeks" :topMonths="data.topMonths" />
+                                <div class="kokoads Season_Sidebar_Bottom_336_280"></div>
                                 <div class="widget widget_text">
                                     <div class="textwidget">
                                         <div class="widget-box-ads-tvshow"></div>

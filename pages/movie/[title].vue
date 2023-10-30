@@ -2,8 +2,8 @@
     const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
-
     const { isMobile } = useDevice()
+    const isWatching = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -25,9 +25,9 @@
                 })
             }
         }
-    })
+    }) 
 
-    const { data, pending }  = useLazyAsyncData(
+    const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 slug: title
@@ -41,6 +41,26 @@
         }
     )
 
+    const { refresh }  = useLazyAsyncData(
+        () => $fetch($apiBaseUrl() + '/movies/details', {
+            params: {
+                watch: data.value.id
+            }
+        }).then(result => {
+            if (result.watchLinks) {
+                isWatching.value = true
+                data.value.watchLinks = result.watchLinks
+                $('.site-header, .site-footer').addClass('watching')
+            } else {
+                result.watchLinks = []
+            }
+            return result
+        }),
+        {
+            immediate: false
+        }
+    )
+
     useHead({
         title: title + ' – 코코아티비 :: KOKOA.TV',
         script: [
@@ -49,6 +69,26 @@
             }
         ]
     });
+
+    const onWatching = () => {
+        if (!data.value.watchLinks) {
+            refresh()
+        } else if (data.value.watchLinks.length) {
+            isWatching.value = true;
+            $('.site-header, .site-footer').addClass('watching')
+        }
+    }
+
+    const onStopWatching = () => {
+        isWatching.value = false;
+        $('.site-header, .site-footer').removeClass('watching')
+    }
+
+    onMounted(() => {
+        if (status.value == 'error') {
+            navigateTo({path: '/'})
+        }
+    })
 
 </script>
 <template>
@@ -59,8 +99,9 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <div class="single-movie__player-container--inner container">
-                                    <MovieBreadScrumb :genre="data.genres.length ? data.genres[data.genres.length - 1] : undefined" :title="data.title" :pending="pending" />
+                                <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+                                <div v-if="!isWatching" class="single-movie__player-container--inner container">
+                                    <MovieBreadScrumb :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
                                         <MovieIntroInfoMobile v-if="isMobile"
@@ -75,6 +116,7 @@
                                             :description="data.description"
                                             :outlink="data.outlink"
                                             :casts="data.casts"
+                                            @on-watching="onWatching"
                                         />
                                         <MovieIntroInfo v-if="!isMobile"
                                             :pending = "pending"
@@ -88,19 +130,23 @@
                                             :description="data.description"
                                             :outlink="data.outlink"
                                             :casts="data.casts"
+                                            @on-watching="onWatching"
                                         />
                                         <div class="single-movie-ads-box">
+                                            <div class="kokoads Movie_Post_Top_336_280"></div>
                                             <div class="ads-box-child">
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="kokoads Movie_Post_Middle_728_90"></div>
                                     <div class="center"></div>
                                 </div>
                             </div>
-                            <section class="movie__related">
+                            <section class="movie__related" v-if="!isWatching">
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
+                                    <div class="kokoads Movie_Post_Bottom_728_90"></div>
                                 </div>
                             </section>
                             <div style="text-align: center;margin-top: 10px;"></div>

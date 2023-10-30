@@ -1,5 +1,6 @@
 <script setup>
     const expanded = ref(false)
+    const emit = defineEmits(['onWatching'])
     const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
     let id = props.id
     let casts = props.casts || []
@@ -59,6 +60,10 @@
             h = 50
         }
         ele.prev().css('max-height', h + 'px')
+    }
+
+    const onWatching = () => {
+        emit('onWatching')
     }
 </script>
 
