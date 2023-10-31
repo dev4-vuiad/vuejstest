@@ -40,8 +40,13 @@
 .watch-container .flex-btn-hq .btn-play {
     font-weight: 500;
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
     width: 125px;
+    min-width: 140px;
+    text-align: center;
+    margin-right: 10px;
+    padding: 15px;
+    border-radius: 40px;
 }
 
 .watch-container .btn-play i {
@@ -56,11 +61,6 @@
 .ads-box-s {
     width: 100%;
     background-color: #1c222e;
-}
-
-.ads-box-S > {
-    display: flex;
-    justify-content: center;
 }
 
 .watch-container .btn-play.active {
