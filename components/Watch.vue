@@ -100,12 +100,11 @@
                 <div class="ads-right">
                     <div class="single-tv-show-ads"></div>
                 </div>
-                <div class="col-md-1 col-sm-1 col-12"></div>
             </div>
             <div class="ads-bottom">
-                <div class="home-section home-ads-bt-feature">
-                    <div></div>
-                </div> 
+                <section class="home-section home-ads-bt-feature ads-footer">
+                    <div class="kskdCustomElement"></div>
+                </section>
             </div>
         </div>
     </div>

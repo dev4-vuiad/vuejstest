@@ -60,7 +60,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?afsasgw'
+          href: '/css/style3.css?ewtewywe'
         },
         {
           rel: 'stylesheet',
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?dfsagrfwewer'
+          href: '/css/watch.css?fgsafagasg'
         }
       ],
       script: [
