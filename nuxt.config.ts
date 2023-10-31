@@ -68,7 +68,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?rewtewtw'
+          href: '/css/watch.css?dfsagrfwewer'
         }
       ],
       script: [

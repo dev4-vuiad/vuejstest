@@ -91,7 +91,7 @@
         </div>
         <div class="ads-box-s">
             <div class="ads-top">
-                <div class="kskdCustomElement"></div>
+                <div class="home-section home-movie-section-aside-header"></div>                   
             </div>
             <div class="ads-middle">
                 <div class="ads-left">
@@ -100,12 +100,12 @@
                 <div class="ads-right">
                     <div class="single-tv-show-ads"></div>
                 </div>
-            </div>
-            <div class="kskdDiv kskdCls">
-                <div class="kskdDiv"></div>
+                <div class="col-md-1 col-sm-1 col-12"></div>
             </div>
             <div class="ads-bottom">
-                
+                <div class="home-section home-ads-bt-feature">
+                    <div></div>
+                </div> 
             </div>
         </div>
     </div>
