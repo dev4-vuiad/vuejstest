@@ -24,7 +24,7 @@
                     <header class="home-section__header">
                         <h2 class="home-section__title">{{ title }}</h2>
                         <div class="home-section__action">
-                            <NuxtLink to="/movie/" class="home-section__action-link link-movie">View all</NuxtLink>
+                            <NuxtLink to="/movie/" class="home-section__action-link link-movie">전체보기</NuxtLink>
                         </div>
                     </header>
                     <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
