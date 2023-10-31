@@ -70,7 +70,7 @@
 <template>
     <div class="single-movie__sidebar column ">
         <div class="summary entry-summary">
-            <div class="single-movie__sidebar--head-info">
+            <div class="single-movie__sidebar--head-info mobile">
                 <div class="movie__poster loading-bg">
                     <img width="300" height="450"
                         :src="src"

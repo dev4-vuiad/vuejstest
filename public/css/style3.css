@@ -15555,12 +15555,21 @@ p.stars.selected a:not(.active):before {
   margin-bottom: 38px;
 }
 
+.single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info.mobile {
+  align-items: normal;
+}
+
 .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__poster {
   -webkit-box-flex: 0;
   flex: 0 0 17.6%;
   max-width: 17.6%;
   margin-right: 21px;
   margin-bottom: 0;
+}
+
+.single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info.mobile .movie__poster {
+  background: none;
+  margin-right: 15px;
 }
 
 .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__title {
