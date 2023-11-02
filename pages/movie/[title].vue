@@ -146,7 +146,9 @@
                                         </div>
                                     </div>
                                     <div class="kokoads Movie_Post_Middle_728_90"></div>
-                                    <div class="center"></div>
+                                    <center>
+                                        <div class="home-movie-section-aside-header"></div>
+                                    </center>
                                 </div>
                             </div>
                             <section class="movie__related" v-if="!isWatching">
