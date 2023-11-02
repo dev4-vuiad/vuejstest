@@ -49,13 +49,13 @@
 }
 
 .ads-box-s {
+    padding: 10px 4%;
     width: 100%;
     background-color: #1c222e;
 }
 
-.ads-box-S > {
-    display: flex;
-    justify-content: center;
+.ads-box-s > * {
+    margin-bottom: 10px;
 }
 
 .ads-box-s .ads-left:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
@@ -63,9 +63,17 @@
     min-height: 0 !important;
 }
 
-.ads-box-s .ads-right:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .single-tv-show-ads {
-    height: 0 !important;
-    min-height: 0 !important;
+.ads-box-s>*>.home-section {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+.ads-box-s .single-tv-show-ads, .ads-box-s .ads-box-child {
+    float: none;
+    height: 280px;
+    width: 336px;
+    margin: 0;
 }
 
 .watch-container .btn-play.active {
@@ -108,8 +116,6 @@
     #playVideoUl iframe{
         height: 260px;
     }
-<<<<<<< HEAD
-=======
     
     .ads-box-s .ads-middle {
         flex-direction: column;
@@ -119,5 +125,14 @@
         width: 100%;
         padding: 0;
     }
->>>>>>> 90055112... change css
+
+    .ads-box-s .ads-left:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
+        height: 0 !important;
+        min-height: 0 !important;
+    }
+    
+    .ads-box-s .ads-right:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .single-tv-show-ads {
+        height: 0 !important;
+        min-height: 0 !important;
+    }
 }
