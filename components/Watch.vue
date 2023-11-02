@@ -24,6 +24,8 @@
             if (props.isWatching) {
                 setTimeout(function() {
                     setPlayerSize()
+                    removeAds()
+                    putAds()
                 }, 200)
             }
         }
@@ -40,6 +42,7 @@
     }
 
     const onStopWatching = () => {
+        removeAds()
         emit('onStopWatching')
     }
 
@@ -58,6 +61,7 @@
     })
 
     onBeforeUnmount(() => {
+        removeAds()
         emit('onStopWatching')
     })
 
@@ -74,6 +78,15 @@
 
         $("#player").attr("style","width:"+w+"px !important;height:"+h+"px !important;");
     }
+
+    const putAds = () => {
+        const adsHtml = '<div class=ads-box-s><div class=ads-top><div class="home-section home-movie-section-aside-header"></div></div><div class=ads-middle><div class=ads-left><div class=ads-box-child></div></div><div class=ads-right><div class=single-tv-show-ads></div></div></div><div class=ads-bottom><div class="home-ads-bt-feature home-section"></div></div></div>'
+        $('.watch-container').append(adsHtml)
+    }
+
+    const removeAds = () => {
+        $('.watch-container .ads-box-s').remove()
+    }
 </script>
 
 <template>
@@ -87,24 +100,6 @@
                 <div class="flex-btn-hq">
                     <button v-for="(link, idx) in links" :class="'btn btn-play' + (idx == linkIdx ? ' active' : '')" @click="playback(idx)"><i class="fas fa-play"></i> {{ getLinkName(link) }}</button>
                 </div>
-            </div>
-        </div>
-        <div class="ads-box-s">
-            <div class="ads-top">
-                <div class="home-section home-movie-section-aside-header"></div>                   
-            </div>
-            <div class="ads-middle">
-                <div class="ads-left">
-                    <div class="ads-box-child"></div>
-                </div>
-                <div class="ads-right">
-                    <div class="single-tv-show-ads"></div>
-                </div>
-            </div>
-            <div class="ads-bottom">
-                <section class="home-section home-ads-bt-feature ads-footer">
-                    <div class="kskdCustomElement"></div>
-                </section>
             </div>
         </div>
     </div>
