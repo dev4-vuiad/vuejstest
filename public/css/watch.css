@@ -58,6 +58,16 @@
     justify-content: center;
 }
 
+.ads-box-s .ads-left:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+.ads-box-s .ads-right:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .single-tv-show-ads {
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
 .watch-container .btn-play.active {
     background-color: #B6BBCA;
 }
@@ -98,4 +108,16 @@
     #playVideoUl iframe{
         height: 260px;
     }
+<<<<<<< HEAD
+=======
+    
+    .ads-box-s .ads-middle {
+        flex-direction: column;
+    }
+
+    .ads-box-s .ads-middle .ads-left, .ads-box-s .ads-middle .ads-right {
+        width: 100%;
+        padding: 0;
+    }
+>>>>>>> 90055112... change css
 }
