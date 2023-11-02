@@ -100,16 +100,16 @@
 
 
                 // Bottom slider
-                let slider = $('#section-movies-carousel-aside-header-64d3194c4e219').find('.slick-track').slick({
+                let slider = $('#moviesCarousel').find('.slick-track').slick({
                     slidesToShow: 6,
                     slidesToScroll: 2,
                     infinite: false,
                     responsive: [{"breakpoint":768,"settings":{"slidesToShow":2,"slidesToScroll":1}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":1}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":1}}]
                 })
-                $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-next').on('click', function() {
+                $('#moviesCarousel').find('button.slick-next').on('click', function() {
                     slider.slick('slickNext')
                 })
-                $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
+                $('#moviesCarousel').find('button.slick-prev').on('click', function() {
                     slider.slick('slickPrev')
                 })
             }   
@@ -203,13 +203,13 @@
                                     <section
                                         class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                         <div class="container">
-                                            <HomeTvshow v-if="data && data.tvshows" :title="data.tvshows.title" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
+                                            <HomeTvshow v-if="data && data.tvshows" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
                                     </section>
                                     <div class="kokoads Main_Middle_02_728_90"></div>
                                     <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                         <div class="container">
-                                            <HomeMovie v-if="data && data.movies" :data="data.movies.items" :title="data.movies.title" />
+                                            <HomeMovie v-if="data && data.movies" :data="data.movies.items" />
                                         </div>
                                     </section>
                                     <div class="kskdDiv kskdCls">
@@ -217,8 +217,7 @@
                                     </div>
                                     <section class="home-section home-ads-bt-feature ads-bottom"></section>
                                     <div class="kokoads Main_Middle_03_728_90"></div>
-                                    <section id="section-movies-carousel-aside-header-64d3194c4e219"
-                                        class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
+                                    <section id="moviesCarousel" class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
                                         <div class="container">
                                             <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
                                         </div>

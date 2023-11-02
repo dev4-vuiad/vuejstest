@@ -13,18 +13,20 @@
 
     onMounted(() => {
         // Bottom slider
-        let slider = $('#section-movies-carousel-aside-header-64d3194c4e219').find('.slick-track').slick({
-            slidesToShow: 6,
-            slidesToScroll: 2,
-            infinite: false,
-            responsive: [{"breakpoint":768,"settings":{"slidesToShow":2,"slidesToScroll":1}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":1}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":1}}]
-        })
-        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-next').on('click', function() {
-            slider.slick('slickNext')
-        })
-        $('#section-movies-carousel-aside-header-64d3194c4e219').find('button.slick-prev').on('click', function() {
-            slider.slick('slickPrev')
-        })
+        setInterval(() => {
+            let slider = $('#moviesCarousel').find('.slick-track').slick({
+                slidesToShow: 6,
+                slidesToScroll: 2,
+                infinite: false,
+                responsive: [{"breakpoint":768,"settings":{"slidesToShow":2,"slidesToScroll":1}},{"breakpoint":992,"settings":{"slidesToShow":3,"slidesToScroll":1}},{"breakpoint":1200,"settings":{"slidesToShow":4,"slidesToScroll":1}}]
+            })
+            $('#moviesCarousel').find('button.slick-next').on('click', function() {
+                slider.slick('slickNext')
+            })
+            $('#moviesCarousel').find('button.slick-prev').on('click', function() {
+                slider.slick('slickPrev')
+            })
+        }, 100)
     })
 </script>
 

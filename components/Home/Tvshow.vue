@@ -2,8 +2,7 @@
     import { ref } from 'vue'
     const { $toTimeAgo, $apiBaseUrl, $getEpTxt } = useNuxtApp()
     const renderCount = ref(0)
-    const props = defineProps(['menu', 'items', 'title'])
-    const title = props.title
+    const props = defineProps(['menu', 'items'])
     let menu = props.menu
     let type = 'tv-show'
     const allItems = {
@@ -60,7 +59,7 @@
             <div class="tv-shows columns-7">
                 <div class="tv-shows__inner">
                     <header class="home-section__header">
-                        <h2 class="home-section__title">{{ title || ' ' }}</h2>
+                        <h2 class="home-section__title">최신등록 방송</h2>
                         <div class="home-section__action">
                             <NuxtLink :to="'/' + (type == 'tv-show' ? 'tv-shows' : type)" class="tv-show-box home-section__action-link">전체보기</NuxtLink>
                         </div>
