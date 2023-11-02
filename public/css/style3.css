@@ -4025,6 +4025,10 @@ input[type="checkbox"]+label {
   width: 100%;
 }
 
+.slick-slide img.lazyloaded {
+  min-height: 100%;
+}
+
 .slick-slide figure {
   margin: 0;
 }
@@ -13917,10 +13921,6 @@ ul.ui-autocomplete .ui-menu-item+.ui-menu-item {
 
 [dir="rtl"] .slick-slide {
   float: right;
-}
-
-.slick-slide img {
-  display: block;
 }
 
 .slick-slide figure {
