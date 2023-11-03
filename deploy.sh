@@ -1,8 +1,8 @@
 #run git pull
-git pull
+#git pull
 
 #run git pull
-npm install
+#npm install
 
 #run npm build
 npm run build
