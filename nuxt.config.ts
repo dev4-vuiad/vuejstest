@@ -102,7 +102,7 @@ export default defineNuxtConfig({
   $production: {
     appConfig: {
       apiBaseUrl: 'https://backend.bmytv.com/api',
-      apiBaseUrlSsr: 'http://localhost/api'
+      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
     },
     app: {
       head: {
