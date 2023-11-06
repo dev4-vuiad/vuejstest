@@ -172,7 +172,8 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <a :href="data.outlink" class="a_btn_out">
+                                            <button v-if="outlink && outlink.includes('t01.bmytv.com')" class="btn-outlink" @click="onWatching">바로보기</button>
+                                            <a v-else :href="outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>
