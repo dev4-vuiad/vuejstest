@@ -171,7 +171,7 @@
                                             :tvshowTitle="data.tvshowTitle"
                                             :casts="data.casts"
                                         />
-                                        <div style="margin-bottom:15px; display:none">
+                                        <div style="margin-bottom:15px;">
                                             <a :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>

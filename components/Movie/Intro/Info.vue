@@ -111,7 +111,7 @@
                     <div class="vodi-views-likes"></div>
                 </div>
             </div>
-            <div style="margin-bottom:15px; display:none">
+            <div style="margin-bottom:15px;">
                 <a :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>
