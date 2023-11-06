@@ -172,7 +172,7 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <button v-if="data.outlink && data.outlink.includes('https://kokoatv.net/')" class="btn-outlink" @click="onWatching">바로보기</button>
+                                            <button v-if="!data.outlink || !data.outlink.includes('https://')" class="btn-outlink" @click="onWatching">바로보기</button>
                                             <a v-else :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
