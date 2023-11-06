@@ -68,11 +68,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-<<<<<<< HEAD
-          href: '/css/watch.css?gsagagawe'
-=======
-          href: '/css/watch.css?dedede'
->>>>>>> 90055112... change css
+          href: '/css/watch.css?gsdgdwsgfs'
         }
       ],
       script: [
