@@ -1,4 +1,5 @@
 <script setup>
+    import { onBeforeRouteLeave } from 'vue-router';
     const emit = defineEmits(['onStopWatching'])
     const props = defineProps(['isWatching', 'links'])
     let links = props.links || []
@@ -53,6 +54,15 @@
             setPlayerSize()
         }, 200)
     }
+
+    onBeforeRouteLeave((to, from, next) => {
+        if(props.isWatching) {
+            next(false);
+            onStopWatching()
+        } else {
+            next();
+        }
+    })
 
     onMounted(() => {
         $(window).resize(function(){
