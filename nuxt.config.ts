@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-lazy-load',
     '@nuxtjs/device',
-    'nuxt-multi-cache'
+    'nuxt-multi-cache',
+    ['@nuxtjs/robots', { configPath: "~/robots.config" }]
   ],
   multiCache: {
     route: {
