@@ -1,4 +1,5 @@
 import { defineMultiCacheOptions } from "nuxt-multi-cache/dist/runtime/serverOptions";
+import redisDriver from 'unstorage/drivers/redis'
 
 export default defineMultiCacheOptions({
     route: {
@@ -22,6 +23,12 @@ export default defineMultiCacheOptions({
           }
     
           return path.split('?')[0]
+        },
+        storage: {
+          driver: redisDriver({
+            base: 'kokoatv_frontend:',
+            db: 2
+          })
         },
       },
 })
