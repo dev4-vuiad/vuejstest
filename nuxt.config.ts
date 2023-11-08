@@ -109,8 +109,12 @@ export default defineNuxtConfig({
         script: [
           {
             children: 'window.__ITGS_started = Date.now();'
+          },
+          {
+            src: 'https://cdn.jsdelivr.net/npm/disable-devtool/disable-devtool.min.js',
+            "disable-devtool-auto": true
           }
-        ]
+        ],
       }
     }
   }
