@@ -94,18 +94,23 @@
     background-color: #B6BBCA;
 }
 
-@media(min-width: 1200px){
-    
+@media (min-width: 768px) {
     .video-container {
-        width: 1170px;
+        width: 765px;
     }
 }
-/* 
+
 @media (min-width: 992px) {
     .video-container {
-      width: 970px;
+      width: 940px;
     }
-} */
+}
+
+@media(min-width: 1200px){
+    .video-container {
+        width: 1140px;
+    }
+}
 
 @media(max-width: 1000px){
     .watch-container .flex-btn-hq {

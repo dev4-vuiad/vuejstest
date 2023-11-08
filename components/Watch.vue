@@ -77,11 +77,11 @@
 
     const setPlayerSize = () => {
         let w = $("#video_content").width();
-        if ( w - 217 > 500 ) {
+        if ( w > 500 ) {
             w = w*0.8;
         }
 
-        let h = (w - 217) / 1.7;
+        let h = w / 1.7;
         if ( h < 260 ) {
             h = 260;
         }
@@ -103,7 +103,7 @@
     <div class="watch-container" v-if="isWatching">
         <div class="video-container">
             <div id="video_content">
-                <iframe :src="link" width="100%" height="430" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
+                <iframe :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
             </div>
             <div class="backlink-btn">
                 <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
