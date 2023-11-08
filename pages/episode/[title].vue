@@ -169,6 +169,7 @@
                                             :description="data.description" 
                                             :outlink="data.outlink"
                                             :tvshowTitle="data.tvshowTitle"
+                                            :tvshowSlug="data.tvshowSlug"
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
