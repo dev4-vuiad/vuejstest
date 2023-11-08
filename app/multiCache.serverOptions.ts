@@ -20,6 +20,8 @@ export default defineMultiCacheOptions({
             } else {
                 return 'no_cache_key'
             }
+          } else if (path === '/') {
+            return 'home_page'
           }
     
           return path.split('?')[0]
