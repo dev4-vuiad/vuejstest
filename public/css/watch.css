@@ -100,12 +100,12 @@
         width: 1170px;
     }
 }
-
+/* 
 @media (min-width: 992px) {
     .video-container {
       width: 970px;
     }
-}
+} */
 
 @media(max-width: 1000px){
     .watch-container .flex-btn-hq {
