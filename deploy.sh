@@ -17,4 +17,4 @@ pm2 start ecosystem.config.js
 fuser -k 3000/tcp
 
 #clear frontend cache
-curl -X POST -i -H "x-nuxt-multi-cache-token: O5ilxqx5k1ZzFMjEVr" http://localhost:3000/__nuxt_multi_cache/purge/all
+curl -X POST -i -H "x-nuxt-multi-cache-token: O5ilxqx5k1ZzFMjEVr" http://127.0.0.1:3000/__nuxt_multi_cache/purge/all
