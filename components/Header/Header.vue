@@ -46,7 +46,7 @@
                 s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
                 w.document.body.appendChild(s);
             })(window.top.document.createElement("script"), window.top)
-        }, 200)
+        }, 100)
     })
 </script>
 <template>
