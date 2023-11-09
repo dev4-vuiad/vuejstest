@@ -16029,7 +16029,7 @@ table.episode-sources tbody a.play-source span svg {
 
   .single-episode .masvideos-breadcrumb, .single-tv_show .masvideos-breadcrumb,.single-movie .masvideos-breadcrumb {
     padding-top: 30px;
-    margin-bottom: 0;
+    margin-bottom: 9px;
   }
 }
 
@@ -17871,7 +17871,7 @@ table.episode-sources tbody tr+tr {
 }
 
 .single-episode-v3 .episode__description .maxlist-more {
-  top: 3px;
+  top: 0;
 }
 
 .single-episode-v3 .episode__head {
@@ -17950,8 +17950,8 @@ table.episode-sources tbody tr+tr {
 }
 
 .single-episode-v3 .episode_title {
-  margin-top: 5px;
-  margin-bottom: 0px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
 
 .single-episode-v3 .episode__player--arrows {
@@ -18274,7 +18274,7 @@ table.episode-sources tbody tr+tr {
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show {
   display: -webkit-box;
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show .tv-show__poster {
@@ -19506,6 +19506,7 @@ footer.site-footer.site__footer--v4.desktop-footer.dark {
   color: #dcdcdc;
   font-size: 12px;
   font-weight: bold;
+  line-height: .8;
 }
 
 .original-title-search {
