@@ -31,6 +31,11 @@
             params: {
                 title: title
             }
+        }).then(result => {
+            if (result.title) {
+                document.title = result.title + ' 코코아티비 :: KOKOATV.NET'
+            }
+            return result
         }),
         {
             default: () => ({

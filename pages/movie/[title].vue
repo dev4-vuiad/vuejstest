@@ -32,6 +32,11 @@
             params: {
                 slug: title
             }
+        }).then(result => {
+            if (result.title) {
+                document.title = result.title + ' – 코코아티비 :: KOKOA.TV'
+            }
+            return result
         }),
         {
             default: () => ({
@@ -62,7 +67,7 @@
     )
 
     useHead({
-        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' – 코코아티비 :: KOKOA.TV',
+        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' – 코코아티비 :: KOKOATV.NET',
         meta: [
             {
                 hid: 'description',
