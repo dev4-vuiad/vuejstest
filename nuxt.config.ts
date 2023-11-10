@@ -60,7 +60,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?gewywey'
+          href: '/css/style3.css?eyeyer'
         },
         {
           rel: 'stylesheet',

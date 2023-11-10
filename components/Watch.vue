@@ -1,10 +1,13 @@
 <script setup>
+    import { nextTick } from 'vue';
     import { onBeforeRouteLeave } from 'vue-router';
     const emit = defineEmits(['onStopWatching'])
     const props = defineProps(['isWatching', 'links'])
     let links = props.links || []
     let linkIdx = 0
     const link = ref('')
+    const playerW = ref(null)
+    const playerH = ref(null)
 
     watch(
         () => props.isWatching,
@@ -24,10 +27,10 @@
             link.value = links[linkIdx]
             if (props.isWatching) {
                 setTimeout(function() {
-                    setPlayerSize()
                     removeAds()
                     putAds()
-                }, 200)
+                    setPlayerSize()
+                }, 50)
             }
         }
     )
@@ -65,28 +68,26 @@
     })
 
     onMounted(() => {
-        $(window).resize(function(){
-            setPlayerSize()
-        });
+        window.addEventListener('resize', setPlayerSize());
     })
 
     onBeforeUnmount(() => {
         removeAds()
+        window.removeEventListener('resize', setPlayerSize());
         emit('onStopWatching')
     })
 
     const setPlayerSize = () => {
-        let w = $("#video_content").width();
-        if ( w > 500 ) {
-            w = w*0.8;
+        playerW.value = $("#video_content").width();
+        if ( playerW.value > 500 ) {
+            playerW.value *= 0.8;
         }
 
-        let h = w / 1.7;
-        if ( h < 260 ) {
-            h = 260;
+        playerH.value = playerW.value / 1.7;
+        if ( playerH.value < 260 ) {
+            playerH.value = 260;
         }
-
-        $("#player").attr("style","width:"+w+"px !important;height:"+h+"px !important;");
+        nextTick()
     }
 
     const putAds = () => {
@@ -103,7 +104,7 @@
     <div class="watch-container" v-if="isWatching">
         <div class="video-container">
             <div id="video_content">
-                <iframe :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="linkIdx" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" id="player"></iframe>
+                <iframe :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="link" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" :style="'background-color: #000' + (playerW && playerH ? ';width:' + playerW + 'px !important;height:' + playerH + 'px !important' : '')" ></iframe>
             </div>
             <div class="backlink-btn">
                 <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>

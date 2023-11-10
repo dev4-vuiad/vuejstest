@@ -17874,6 +17874,10 @@ table.episode-sources tbody tr+tr {
   top: 1px;
 }
 
+.maxlist-less+.masvideos-episodes {
+  margin-top: 6px;
+}
+
 .single-episode-v3 .episode__head {
   -webkit-box-pack: start;
   justify-content: flex-start;

@@ -3,6 +3,8 @@
     const route = useRoute()
     const title = route.params.title
     const isWatching = ref(false)
+    const wantToPlay = ref(false)
+    const watchId = ref('')
 
     definePageMeta({
         scrollToTop: true,
@@ -31,6 +33,11 @@
             params: {
                 title: title
             }
+        }).then(result => {
+            if (result.id) {
+                watchId.value = result.id
+            }
+            return result
         }),
         {
             default: () => ({
@@ -41,19 +48,22 @@
     const { refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
-                watch: data.value.id
+                watch: watchId.value
             }
         }).then(result => {
             if (result.watchLinks) {
-                isWatching.value = true
                 data.value.watchLinks = result.watchLinks
-                $('.site-header, .site-footer').addClass('watching')
-            } else {
-                result.watchLinks = []
+                if (wantToPlay.value) {
+                    isWatching.value = true
+                    $('.site-header, .site-footer').addClass('watching')
+                    wantToPlay.value = false;
+                }
             }
+            
             return result
         }),
         {
+            watch: [watchId],
             immediate: false
         }
     )
@@ -117,11 +127,15 @@
     }
 
     const onWatching = () => {
-        if (!data.value.watchLinks) {
-            refresh()
-        } else if (data.value.watchLinks.length) {
-            isWatching.value = true;
-            $('.site-header, .site-footer').addClass('watching')
+        if (!wantToPlay.value) {
+            wantToPlay.value = true;
+            if (!data.value.watchLinks) {
+                refresh()
+            } else if (data.value.watchLinks.length) {
+                $('.site-header, .site-footer').addClass('watching')
+                isWatching.value = true;
+                wantToPlay.value = false
+            }
         }
     }
 
@@ -131,6 +145,9 @@
     }
 
     onMounted(() => {
+        if (!watchId.value) {
+            watchId.value = data.value.id
+        }
         if (status.value == 'error') {
             navigateTo({path: '/'})
         }
