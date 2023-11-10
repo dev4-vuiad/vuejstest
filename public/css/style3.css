@@ -17871,7 +17871,7 @@ table.episode-sources tbody tr+tr {
 }
 
 .single-episode-v3 .episode__description .maxlist-more {
-  top: 0;
+  top: 1px;
 }
 
 .single-episode-v3 .episode__head {
@@ -18274,7 +18274,7 @@ table.episode-sources tbody tr+tr {
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show {
   display: -webkit-box;
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show .tv-show__poster {
@@ -18622,6 +18622,10 @@ input[type="submit"]:not(:disabled):not(.disabled).active:focus,
 
   .home-movie-section-aside-header__inner .masvideos-movies .type-movie:nth-child(n + 11) {
     display: none;
+  }
+
+  .single-episode__sidebar .vodi-single-episode__sidebar--tv-show {
+    margin-bottom: 17px;
   }
 }
 
@@ -19397,6 +19401,18 @@ a.episode__link:hover {
     max-width: 90px !important;
     height: 135px;
   }
+
+  .single-episode .single-episode__sidebar .tv-show__body {
+    width: calc(100% - 105px);
+  }
+
+  .single-episode .single-episode__sidebar .casts-list .tv-show__meta--genre {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(36, 186, 239);
+  }
 }
 
 @media (max-width: 990px) {
@@ -19506,7 +19522,7 @@ footer.site-footer.site__footer--v4.desktop-footer.dark {
   color: #dcdcdc;
   font-size: 12px;
   font-weight: bold;
-  line-height: .8;
+  line-height: 1;
 }
 
 .original-title-search {
