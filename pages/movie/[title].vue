@@ -4,6 +4,7 @@
     const title = route.params.title
     const { isMobile } = useDevice()
     const isWatching = ref(false)
+    const startedWatch = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -32,6 +33,11 @@
             params: {
                 slug: title
             }
+        }).then(result => {
+            if (!process.server && result.title) {
+                document.title = result.title + ' – 코코아티비 :: KOKOATV.NET'
+            }
+            return result
         }),
         {
             default: () => ({
@@ -41,16 +47,18 @@
         }
     )
 
-    const { refresh }  = useLazyAsyncData(
+    const { refresh, pending: pendingLinks }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 watch: data.value.id
             }
         }).then(result => {
             if (result.watchLinks) {
-                isWatching.value = true
                 data.value.watchLinks = result.watchLinks
-                $('.site-header, .site-footer').addClass('watching')
+                if (startedWatch.value) {
+                    $('.site-header, .site-footer').addClass('watching')
+                    isWatching.value = true
+                }
             } else {
                 result.watchLinks = []
             }
@@ -79,11 +87,14 @@
     });
 
     const onWatching = () => {
+        startedWatch.value = true
         if (!data.value.watchLinks) {
-            refresh()
+            if (!pending && !pendingLinks) {
+                refresh()
+            }
         } else if (data.value.watchLinks.length) {
-            isWatching.value = true;
             $('.site-header, .site-footer').addClass('watching')
+            isWatching.value = true;
         }
     }
 
@@ -92,9 +103,20 @@
         $('.site-header, .site-footer').removeClass('watching')
     }
 
+    watch(
+        () => data.value.id,
+        () => {
+            refresh()
+        }
+    )
+
     onMounted(() => {
         if (status.value == 'error') {
             navigateTo({path: '/'})
+        }
+        if (!window.firstPageLoad) {
+            window.firstPageLoad = true
+            refresh()
         }
     })
 

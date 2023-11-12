@@ -190,7 +190,7 @@
                                     </section>
                                     <div class="kokoads Main_Top_728_90"></div>
                                     <section class="home-section ads-top">
-                                        <div class="kskdCustomElement">d</div>
+                                        <div class="kskdCustomElement"></div>
                                     </section>
                                     <section id="section-home-slider-custom-ott-64d31949c9733"
                                         class="home-section home-slider-custom-ott">

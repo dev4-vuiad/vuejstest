@@ -3,8 +3,7 @@
     const route = useRoute()
     const title = route.params.title
     const isWatching = ref(false)
-    const wantToPlay = ref(false)
-    const watchId = ref('')
+    const startedWatch = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -34,8 +33,8 @@
                 title: title
             }
         }).then(result => {
-            if (result.id) {
-                watchId.value = result.id
+            if (!process.server && result.title) {
+                document.title = result.title + ' – 코코아티비 :: KOKOA.TV'
             }
             return result
         }),
@@ -45,27 +44,22 @@
         }
     )
 
-    const { refresh }  = useLazyAsyncData(
+    const { refresh, pending: pendingLinks } = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
-                watch: watchId.value
+                watch: data.value.id
             }
         }).then(result => {
             if (result.watchLinks) {
                 data.value.watchLinks = result.watchLinks
-                if (wantToPlay.value) {
-                    isWatching.value = true
+                if (startedWatch.value) {
                     $('.site-header, .site-footer').addClass('watching')
-                    wantToPlay.value = false;
+                    isWatching.value = true;
                 }
             }
-            
             return result
         }),
-        {
-            watch: [watchId],
-            immediate: false
-        }
+        {immediate: false}
     )
 
     useHead({
@@ -127,15 +121,14 @@
     }
 
     const onWatching = () => {
-        if (!wantToPlay.value) {
-            wantToPlay.value = true;
-            if (!data.value.watchLinks) {
+        startedWatch.value = true
+        if (!data.value.watchLinks) {
+            if (!pending && !pendingLinks) {
                 refresh()
-            } else if (data.value.watchLinks.length) {
-                $('.site-header, .site-footer').addClass('watching')
-                isWatching.value = true;
-                wantToPlay.value = false
             }
+        } else if (data.value.watchLinks.length) {
+            $('.site-header, .site-footer').addClass('watching')
+            isWatching.value = true;
         }
     }
 
@@ -144,12 +137,20 @@
         $('.site-header, .site-footer').removeClass('watching')
     }
 
-    onMounted(() => {
-        if (!watchId.value) {
-            watchId.value = data.value.id
+    watch(
+        () => data.value.id,
+        () => {
+            refresh()
         }
+    )
+
+    onMounted(() => {
         if (status.value == 'error') {
             navigateTo({path: '/'})
+        }
+        if (!window.firstPageLoad) {
+            window.firstPageLoad = true
+            refresh()
         }
     })
 </script>

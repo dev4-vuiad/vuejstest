@@ -91,7 +91,7 @@
     }
 
     const putAds = () => {
-        const adsHtml = '<div class=ads-box-s><div class=ads-top><div class="home-section home-movie-section-aside-header"></div></div><div class=ads-middle><div class=ads-left><div class=ads-box-child></div></div><div class=ads-right><div class=single-tv-show-ads></div></div></div><div class=ads-bottom><div class="home-ads-bt-feature home-section"></div></div></div>'
+        const adsHtml = '<div class=ads-box-s><div class=ads-top><div class="home-section home-movie-section-aside-header"></div></div><div class=ads-middle><div class=ads-left><div class=ads-box-child></div></div><div class=ads-right><div class=single-tv-show-ads></div></div></div><div class=ads-bottom><section class="home-section home-ads-bt-feature ads-footer"><div class="kskdCustomElement"></div></section></div></div>'
         $('.watch-container').append(adsHtml)
     }
 

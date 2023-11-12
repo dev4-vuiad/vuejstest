@@ -105,7 +105,6 @@
                                     <span v-html="item.name"></span>
                                 </NuxtLink>
                             </template>
-                            <span v-if="casts.length > 4"> ...</span>
                         </span>
                     </div>
                     <div class="vodi-views-likes"></div>

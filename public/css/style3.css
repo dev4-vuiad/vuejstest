@@ -19393,10 +19393,30 @@ a.episode__link:hover {
   margin-top: 13px;
 }
 
+.single-episode .single-episode__sidebar .casts-list .tv-show__meta--genre {
+  color: rgb(36, 186, 239);
+}
+
+.casts-list .tv-show__meta--genre {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.single-movie__sidebar .casts-list .tv-show__meta--genre {
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   .single-episode .single-episode__row .single-episode__sidebar .vodi-single-episode__sidebar--tv-show .tv-show__poster {
     max-width: 165px !important;
     height: 248px;
+  }
+
+  .single-episode .single-episode__sidebar .tv-show__body {
+    width: calc(100% - 180px);
   }
 }
 
@@ -19408,14 +19428,6 @@ a.episode__link:hover {
 
   .single-episode .single-episode__sidebar .tv-show__body {
     width: calc(100% - 105px);
-  }
-
-  .single-episode .single-episode__sidebar .casts-list .tv-show__meta--genre {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: rgb(36, 186, 239);
   }
 }
 
