@@ -45,7 +45,7 @@
             items: Array.from(Array(30), (_, index) => ({}))
         }
     }
-    const { data }  = useLazyAsyncData(
+    const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -112,10 +112,9 @@
                             <div class="masvideos masvideos-tv-shows ">
                                 <div class="tv-shows columns-5">
                                     <div class="tv-shows__inner">
-                                        <TvshowsPopularItem v-if="data" v-for="(item, idx) in data.data.populars" :key="idx" 
+                                        <TvshowsPopularItem v-for="item in data.data.populars" 
+                                            :pending="pending" 
                                             :id="item.id"
-                                            :link="item.link"
-                                            :year="item.year"
                                             :title="item.title"
                                             :slug="item.slug"
                                             :tvshowTitle="item.tvshowTitle"
@@ -124,7 +123,6 @@
                                             :episodeNumber="item.episodeNumber" 
                                             :seasonNumber="item.seasonNumber"
                                             :postDate="item.postDate"
-                                            :postDateGmt="item.postDateGmt"
                                             :chanelImage="item.chanelImage"
                                         />
                                     </div>
@@ -163,17 +161,15 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6">
                                 <div class="tv-shows__inner">
-                                    <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index"
+                                    <TvshowsItem v-for="item in data.data.items"
+                                        :pending="pending"
                                         :id="item.id" 
-                                        :year="item.year" 
-                                        :title="item.title"
-                                        :slug="item.slug" 
-                                        :tvshowTitle="item.tvshowTitle" 
-                                        :originalTitle="item.originalTitle" 
+                                        :slug="item.slug"
+                                        :tvshowTitle="item.tvshowTitle"
+                                        :originalTitle="item.originalTitle"
                                         :episodeNumber="item.episodeNumber" 
                                         :seasonNumber="item.seasonNumber"
                                         :postDate="item.postDate" 
-                                        :postDateGmt="item.postDateGmt" 
                                         :src="item.src" 
                                         :srcSet="item.srcSet" 
                                         :chanelImage="item.chanelImage" 
