@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     'nuxt-lazy-load',
     '@nuxtjs/device',
     'nuxt-multi-cache',
-    ['@nuxtjs/robots', { configPath: "~/robots.config" }]
+    ['@nuxtjs/robots', { configPath: "~/robots.config" }],
+    'nuxt-simple-sitemap'
   ],
   multiCache: {
     route: {
@@ -61,7 +62,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?ppppppppppp'
+          href: '/css/style3.css?fasaqrqw'
         },
         {
           rel: 'stylesheet',
