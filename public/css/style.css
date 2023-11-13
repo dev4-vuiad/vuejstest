@@ -138,7 +138,17 @@ body {
 }
 
 .casts-list {
-  margin-top: 10px;
+  line-height: 16px;
+  margin-top: 13px;
+}
+
+.casts-list .tv-show__meta--genre span {
+  color: rgb(36, 186, 239);
+}
+
+.episode__meta--release-date {
+  display: block;
+  line-height: .9;
 }
 
 .person-thumbnail {
