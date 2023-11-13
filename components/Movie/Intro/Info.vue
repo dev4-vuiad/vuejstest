@@ -105,14 +105,13 @@
                                     <span v-html="item.name"></span>
                                 </NuxtLink>
                             </template>
-                            <span v-if="casts.length > 4"> ...</span>
                         </span>
                     </div>
                     <div class="vodi-views-likes"></div>
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('bmytv.com')" class="btn-outlink" @click="onWatching">바로보기</button>
+                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
                 <a v-else :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>

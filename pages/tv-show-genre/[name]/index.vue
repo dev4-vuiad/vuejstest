@@ -38,7 +38,7 @@
             items: Array.from(Array(30), (_, index) => ({}))
         }
     }
-    const { data }  = useLazyAsyncData(
+    const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvshows', {
             params: {
                 orderBy: orderBy.value || undefined,
@@ -75,7 +75,7 @@
         if (!genres) {
             return undefined
         }
-        let v = genres.filter(v => decodeURI(v.link) == slug)
+        let v = genres.filter(v => decodeURI(v.slug) == slug)
         return v[0] ? v[0].name : undefined
     }
 
@@ -99,7 +99,8 @@
         ],
         script: [
             {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");'
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");',
+                body: true
             }
         ]
     });
@@ -123,21 +124,19 @@
                             <div class="masvideos masvideos-tv-shows ">
                                 <div class="tv-shows columns-5">
                                     <div class="tv-shows__inner" v-if="data">
-                                        <TvshowsPopularItem v-if="data" v-for="(item, idx) in data.data.populars" :key="idx"
-                                        :id="item.id" 
-                                        :link="item.link"
-                                        :year="item.year"
-                                        :title="item.title"
-                                        :slug="item.slug"
-                                        :tvshowTitle="item.tvshowTitle"
-                                        :src="item.src"
-                                        :srcSet="item.srcSet"
-                                        :episodeNumber="item.episodeNumber" 
-                                        :seasonNumber="item.seasonNumber"
-                                        :postDate="item.postDate" 
-                                        :postDateGmt="item.postDateGmt"
-                                        :chanelImage="item.chanelImage"
-                                    />
+                                        <TvshowsPopularItem v-for="item in data.data.populars"
+                                            :pending="pending" 
+                                            :id="item.id"
+                                            :title="item.title"
+                                            :slug="item.slug"
+                                            :tvshowTitle="item.tvshowTitle"
+                                            :src="item.src"
+                                            :srcSet="item.srcSet"
+                                            :episodeNumber="item.episodeNumber" 
+                                            :seasonNumber="item.seasonNumber"
+                                            :postDate="item.postDate" 
+                                            :chanelImage="item.chanelImage"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -174,17 +173,15 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6">
                                 <div class="tv-shows__inner">
-                                    <TvshowsItem v-if="data" v-for="(item, index) in data.data.items" :key="index"
+                                    <TvshowsItem v-for="item in data.data.items"
+                                        :pending="pending"
                                         :id="item.id" 
-                                        :year="item.year" 
-                                        :title="item.title"
-                                        :slug="item.slug" 
+                                        :slug="item.slug"
                                         :tvshowTitle="item.tvshowTitle"
-                                        :originalTitle="item.originalTitle" 
+                                        :originalTitle="item.originalTitle"
                                         :episodeNumber="item.episodeNumber" 
                                         :seasonNumber="item.seasonNumber"
                                         :postDate="item.postDate" 
-                                        :postDateGmt="item.postDateGmt" 
                                         :src="item.src" 
                                         :srcSet="item.srcSet" 
                                         :chanelImage="item.chanelImage" 

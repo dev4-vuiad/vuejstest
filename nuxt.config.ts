@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { name: 'google', content: 'notranslate' }
+        { name: 'google', content: 'notranslate' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-36x36.png', sizes: '32x32' },
@@ -62,15 +62,15 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?fasaqrqw'
+          href: '/css/style3.css?dshweyhwgdg'
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?hrhyeet'
+          href: '/css/style.css?gretweywhj'
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?gdshdshdfgewr'
+          href: '/css/watch.css?fgewtwgdshssw'
         }
       ],
       script: [
@@ -97,8 +97,8 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'https://backend.bmytv.com/api',
-      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
+      apiBaseUrl: 'https://backend.kokoatv.net/api',
+      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
     }
   },
   $production: {

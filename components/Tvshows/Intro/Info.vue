@@ -1,6 +1,6 @@
 <script setup>
     const expanded = ref(false)
-    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'casts'])
+    const props = defineProps(['pending', 'id', 'postDate', 'postDateGmt', 'title', 'originalTitle', 'genres', 'src', 'description', 'tvshowTitle', 'tvshowSlug', 'casts'])
     let id = props.id
     let postDate = props.postDate
     let title = props.title
@@ -9,6 +9,7 @@
     let src = props.src
     let description = props.description
     let tvshowTitle = props.tvshowTitle
+    let tvshowSlug = props.tvshowSlug
     let casts = props.casts || []
     let pending = props.pending
 
@@ -22,6 +23,7 @@
             src = undefined
             description = undefined
             tvshowTitle = undefined
+            tvshowSlug = undefined
             casts = []
         }
     })
@@ -38,6 +40,7 @@
             src = props.src
             description = props.description
             tvshowTitle = props.tvshowTitle
+            tvshowSlug = props.tvshowSlug
         }
     )
 
@@ -87,19 +90,18 @@
                         <span class="episode__meta--release-date">{{ postDate ? format(postDate) : ' ' }}</span>
                         <div class="vodi-views-likes"></div>
                     </div>
-                    <a :href="'/tv-show/' + tvshowTitle" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                    <NuxtLink :to="'/tv-show/' + tvshowSlug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                         <h1 class="episode_title entry-title">{{ title || ' ' }}</h1>
-                    </a>
+                    </NuxtLink>
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle || ' ' }}
                     </div>
-                    <div class="casts-list">
+                    <div class="casts-list" v-if="casts && casts.length">
                         <span class="tv-show__meta--genre">
                             <template v-for="(item, idx) in casts">
                                 <span v-if="idx > 0 && idx < 4">, </span>
                                 <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
                             </template>
-                            <span v-if="casts.length > 4"> ...</span>
                         </span>
                     </div>
                     <div class="episode__description modified">

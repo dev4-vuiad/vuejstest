@@ -9,7 +9,7 @@
     let seasonIdx = data && data.length ? data.findIndex(v => v.name === seasonName) : 0;
     const currentSeason = ref(seasonIdx == -1 ? 0 : seasonIdx)
     const state = reactive({
-        showIdx: setShowIdx(data, id, seasonIdx)
+        showRangeIdx: setShowRangeIdx(data, id, seasonIdx)
     })
 
     onBeforeMount(() => {
@@ -28,22 +28,22 @@
             data = props.data
             let seasonIdx = data && data.length ? data.findIndex(v => v.name === seasonName) : 0;
             currentSeason.value = seasonIdx == -1 ? 0 : seasonIdx
-            state.showIdx = setShowIdx(data, id, seasonIdx)
+            state.showRangeIdx = setShowRangeIdx(data, id, seasonIdx)
         }
     )
 
-    function setShowIdx(data, id, seasonIdx) {
+    function setShowRangeIdx(data, id, seasonIdx) {
         let results = {}
         for (let k in data) {
             if (seasonIdx == k) {
-                results[k] = data[k].episodes.findIndex(v => v.id == id)
-                if (results[k] < 0) {
-                    results[k] = 10;
+                let idxFound = data[k].episodes.findIndex(v => v.id == id)
+                if (idxFound < 0) { //not found
+                    results[k] = [0, 7]
                 } else {
-                    results[k] += (10 - results[k] % 10)
+                    results[k] = [Math.max(0, idxFound - 3), idxFound + 4];
                 }
             } else {
-                results[k] = 10
+                results[k] = [0, 7]
             }
         }
 
@@ -83,11 +83,12 @@
                         <h3 class="vodi-single-episode__sidebar--seasons-episode__seson-title">
                             Episodes of {{ season.name }}
                         </h3>
+                        <a v-if="data && state.showRangeIdx[currentSeason][0] > 0" class="maxlist-less list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showRangeIdx[currentSeason][0] -= 10">더보기</a>
                         <div class="masvideos masvideos-episodes ">
                             <div class="episodes columns-6">
                                 <div class="episodes__inner">
                                     <template v-for="(episode, idx) in sortEpisodes(season.episodes)">
-                                        <div v-if="idx < state.showIdx[index]" :class="'episode status-publish hentry' + (id == episode.id ? ' active' : '')" :postid="episode.id">
+                                        <div v-if="idx >= state.showRangeIdx[index][0] && idx < state.showRangeIdx[index][1]" :class="'episode status-publish hentry' + (id == episode.id ? ' active' : '')" :postid="episode.id">
                                             <NuxtLink :to="'/episode/' + episode.slug"
                                                 class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                                 <span class="masvideos-loop-episode__number episode__number">{{ $toTimeAgo(episode.postDate) }}</span>
@@ -101,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <a v-if="data && state.showIdx[currentSeason] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showIdx[currentSeason] += 10">더보기</a>
+            <a v-if="data && state.showRangeIdx[currentSeason][1] < data[currentSeason].episodes.length" class="maxlist-more list-episode-show-more" href="#" style="display: inline;" @click.prevent="state.showRangeIdx[currentSeason][1] += 10">더보기</a>
             <div class="kskdDiv kskdCls"></div>
         </div>
         <div class="kokoads TV_Post_Sidebar_Bottom_336_280"></div>

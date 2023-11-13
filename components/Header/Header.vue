@@ -1,5 +1,6 @@
 <script setup>
     import { onMounted } from 'vue'
+
     onMounted(() => {
         //animated drop down submenu
         $(".site_header__primary-nav .menu-item, .site_header__secondary-nav .menu-item, .site_header__secondary-nav-v3 .menu-item, .site_header__navbar-primary .menu-item").on("mouseenter", function() {
@@ -37,15 +38,6 @@
         $(document).on("click", function(e) {
             $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
         })
-
-        // setTimeout(() => {
-        //     (function(s, w) {
-        //         s.setAttribute("async", "async");
-        //         s.setAttribute("type", "text/javascript");
-        //         s.setAttribute("src", "//scripts.kiosked.com/loader/kiosked-loader.js?site=17622");
-        //         w.document.body.appendChild(s);
-        //     })(window.top.document.createElement("script"), window.top)
-        // }, 200)
     })
 </script>
 <template>

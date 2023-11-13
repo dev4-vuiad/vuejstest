@@ -1,8 +1,7 @@
 <script setup>
     const renderCount = ref(0)
-    const props = defineProps(['data', 'title'])
+    const props = defineProps(['data'])
     let data = props.data
-    let title = props.title
 
     watch(
         [
@@ -12,7 +11,6 @@
         () => {
             renderCount.value ++
             data = props.data
-            title = props.title
         }
     )
 </script>
@@ -22,9 +20,9 @@
             <div class="movies columns-7">
                 <div class="movies__inner">
                     <header class="home-section__header">
-                        <h2 class="home-section__title">{{ title }}</h2>
+                        <h2 class="home-section__title">최신등록영화</h2>
                         <div class="home-section__action">
-                            <NuxtLink to="/movie/" class="home-section__action-link link-movie">View all</NuxtLink>
+                            <NuxtLink to="/movie/" class="home-section__action-link link-movie">전체보기</NuxtLink>
                         </div>
                     </header>
                     <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">

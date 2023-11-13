@@ -15555,12 +15555,21 @@ p.stars.selected a:not(.active):before {
   margin-bottom: 38px;
 }
 
+.single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info.mobile {
+  align-items: normal;
+}
+
 .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__poster {
   -webkit-box-flex: 0;
   flex: 0 0 17.6%;
   max-width: 17.6%;
   margin-right: 21px;
   margin-bottom: 0;
+}
+
+.single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info.mobile .movie__poster {
+  background: none;
+  margin-right: 15px;
 }
 
 .single-movie-v2 .single-movie__player-container--inner .single-movie__sidebar--head-info .movie__title {
@@ -16016,6 +16025,11 @@ table.episode-sources tbody a.play-source span svg {
 
   table.episode-sources tbody a.play-source span svg {
     display: none;
+  }
+
+  .single-episode .masvideos-breadcrumb, .single-tv_show .masvideos-breadcrumb,.single-movie .masvideos-breadcrumb {
+    padding-top: 30px;
+    margin-bottom: 9px;
   }
 }
 
@@ -17857,7 +17871,11 @@ table.episode-sources tbody tr+tr {
 }
 
 .single-episode-v3 .episode__description .maxlist-more {
-  top: 8px;
+  top: 1px;
+}
+
+.maxlist-less+.masvideos-episodes {
+  margin-top: 6px;
 }
 
 .single-episode-v3 .episode__head {
@@ -17923,7 +17941,6 @@ table.episode-sources tbody tr+tr {
   -webkit-box-flex: 0;
   flex: 0 0 100%;
   max-width: 100%;
-  margin-top: 30px;
 }
 
 @media (min-width: 992px) {
@@ -17938,7 +17955,7 @@ table.episode-sources tbody tr+tr {
 
 .single-episode-v3 .episode_title {
   margin-top: 6px;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
 }
 
 .single-episode-v3 .episode__player--arrows {
@@ -18261,7 +18278,7 @@ table.episode-sources tbody tr+tr {
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show {
   display: -webkit-box;
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .single-episode__sidebar .vodi-single-episode__sidebar--tv-show .tv-show__poster {
@@ -18609,6 +18626,10 @@ input[type="submit"]:not(:disabled):not(.disabled).active:focus,
 
   .home-movie-section-aside-header__inner .masvideos-movies .type-movie:nth-child(n + 11) {
     display: none;
+  }
+
+  .single-episode__sidebar .vodi-single-episode__sidebar--tv-show {
+    margin-bottom: 17px;
   }
 }
 
@@ -19369,7 +19390,23 @@ a.episode__link:hover {
 }
 
 .single-episode .episode__description {
-  margin-top: 15px;
+  margin-top: 13px;
+}
+
+.single-episode .single-episode__sidebar .casts-list .tv-show__meta--genre {
+  color: rgb(36, 186, 239);
+}
+
+.casts-list .tv-show__meta--genre {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.single-movie__sidebar .casts-list .tv-show__meta--genre {
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -19377,12 +19414,20 @@ a.episode__link:hover {
     max-width: 165px !important;
     height: 248px;
   }
+
+  .single-episode .single-episode__sidebar .tv-show__body {
+    width: calc(100% - 180px);
+  }
 }
 
 @media (max-width: 991px) {
   .single-episode .single-episode__row .single-episode__sidebar .vodi-single-episode__sidebar--tv-show .tv-show__poster {
     max-width: 90px !important;
     height: 135px;
+  }
+
+  .single-episode .single-episode__sidebar .tv-show__body {
+    width: calc(100% - 105px);
   }
 }
 
@@ -19493,6 +19538,7 @@ footer.site-footer.site__footer--v4.desktop-footer.dark {
   color: #dcdcdc;
   font-size: 12px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .original-title-search {
@@ -19851,7 +19897,7 @@ ul.page-numbers li {
   max-width: 790px;
   height: 90px;
   text-align: center;
-  padding: 25px 0px 0px 30px;
+  padding: 25px 0px 25px 0;
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -19901,6 +19947,10 @@ ul.page-numbers li {
 
   .ott_disney img {
     width: 110px;
+  }
+
+  .ott_logo .ott_home_item:nth-child(n+4) {
+    display: none;
   }
 }
 
@@ -19953,6 +20003,6 @@ ul.page-numbers li {
 }
 
 .ott_home_item img {
-  width: 110px;
+  width: 90px;
   height: auto;
 }

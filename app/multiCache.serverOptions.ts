@@ -1,4 +1,5 @@
 import { defineMultiCacheOptions } from "nuxt-multi-cache/dist/runtime/serverOptions";
+import redisDriver from 'unstorage/drivers/redis'
 
 export default defineMultiCacheOptions({
     route: {
@@ -19,9 +20,17 @@ export default defineMultiCacheOptions({
             } else {
                 return 'no_cache_key'
             }
+          } else if (path === '/') {
+            return 'home_page'
           }
     
           return path.split('?')[0]
+        },
+        storage: {
+          driver: redisDriver({
+            base: 'bmytv_frontend:',
+            db: 2
+          })
         },
       },
 })

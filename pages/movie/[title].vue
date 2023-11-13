@@ -4,6 +4,7 @@
     const title = route.params.title
     const { isMobile } = useDevice()
     const isWatching = ref(false)
+    const startedWatch = ref(false)
 
     definePageMeta({
         scrollToTop: true,
@@ -32,6 +33,11 @@
             params: {
                 slug: title
             }
+        }).then(result => {
+            if (!process.server && result.title) {
+                document.title = 'Full HD ' + result.title + ' 다시보기 - BMyTV.com (비마이티비) 최신 영화, 드라마, 예능, 미드를 초고화질 링크를 제공하는 무료 다시보기'
+            }
+            return result
         }),
         {
             default: () => ({
@@ -41,16 +47,18 @@
         }
     )
 
-    const { refresh }  = useLazyAsyncData(
+    const { refresh, pending: pendingLinks }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 watch: data.value.id
             }
         }).then(result => {
             if (result.watchLinks) {
-                isWatching.value = true
                 data.value.watchLinks = result.watchLinks
-                $('.site-header, .site-footer').addClass('watching')
+                if (startedWatch.value) {
+                    $('.site-header, .site-footer').addClass('watching')
+                    isWatching.value = true
+                }
             } else {
                 result.watchLinks = []
             }
@@ -72,17 +80,21 @@
         ],
         script: [
             {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");'
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");',
+                body: true
             }
         ]
     });
 
     const onWatching = () => {
+        startedWatch.value = true
         if (!data.value.watchLinks) {
-            refresh()
+            if (!pending && !pendingLinks) {
+                refresh()
+            }
         } else if (data.value.watchLinks.length) {
-            isWatching.value = true;
             $('.site-header, .site-footer').addClass('watching')
+            isWatching.value = true;
         }
     }
 
@@ -91,9 +103,20 @@
         $('.site-header, .site-footer').removeClass('watching')
     }
 
+    watch(
+        () => data.value.id,
+        () => {
+            refresh()
+        }
+    )
+
     onMounted(() => {
         if (status.value == 'error') {
             navigateTo({path: '/'})
+        }
+        if (!window.firstPageLoad) {
+            window.firstPageLoad = true
+            refresh()
         }
     })
 

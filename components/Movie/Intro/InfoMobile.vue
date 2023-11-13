@@ -70,7 +70,7 @@
 <template>
     <div class="single-movie__sidebar column ">
         <div class="summary entry-summary">
-            <div class="single-movie__sidebar--head-info">
+            <div class="single-movie__sidebar--head-info mobile">
                 <div class="movie__poster loading-bg">
                     <img width="300" height="450"
                         :src="src"
@@ -100,13 +100,12 @@
                                 <span v-if="idx > 0 && idx < 4">, </span>
                                 <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
                             </template>
-                            <span v-if="casts.length > 4"> ...</span>
                         </span>
                     </div>
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('bmytv.com')" class="btn-outlink" @click="onWatching">바로보기</button>
+                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
                 <a v-else :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>

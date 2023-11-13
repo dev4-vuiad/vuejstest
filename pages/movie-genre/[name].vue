@@ -55,6 +55,7 @@
         }
     )
 
+    const titleHead = name.match('영화') ? name : name + '(영화)' ;
     useHead({
         title: 'Full HD ' + name + ' 다시보기 - BMyTV.com (비마이티비) 최신 영화, 드라마, 예능, 미드를 초고화질 링크를 제공하는 무료 다시보기',
         meta: [
@@ -66,7 +67,8 @@
         ],
         script: [
             {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");'
+                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");',
+                body: true
             }
         ]
     });

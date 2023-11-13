@@ -14,7 +14,7 @@
 <template>
     <div class="featured-with-list-view-movies-list">
         <header class="featured-with-list-view-movies-list__header">
-            <h2 class="section-movies-list__title">Newest Movies</h2>
+            <h2 class="section-movies-list__title">최신 등록 영화</h2>
         </header>
         <div class="featured-with-list-view-movies-list__info">
             <div class="list-view-movies-list">
