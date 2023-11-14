@@ -69,10 +69,8 @@
 
 <template>
     <div class="single-movie__sidebar column poster-custom" :postid="id">
-        <div class="movie__poster loading-bg">
+        <div class="movie__poster">
             <img 
-                width="300" 
-                height="450" 
                 :src="src" 
                 class="movie__poster--image lazyload" 
                 alt="" 
