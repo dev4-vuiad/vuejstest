@@ -104,6 +104,8 @@
     top: 100%;
     position: fixed;
     left: 0;
+    background-color: rgb(19, 23, 34);
+    z-index: 1000;
 }
 
 #__nuxt>div.modal-open .modal {
