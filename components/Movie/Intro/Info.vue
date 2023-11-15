@@ -91,7 +91,7 @@
                         <span class="movie__meta--genre">
                             <template v-for="(genre, idx) in genres" :key="idx">
                                 <span v-if="idx > 0">, </span>
-                                <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag" ><span v-html="genre.name"></span></NuxtLink>
+                                <a :href="'/movie-genre/' + genre.slug" rel="tag" ><span v-html="genre.name"></span></a>
                             </template>
                         </span>
                     </div>
@@ -99,9 +99,9 @@
                         <span class="tv-show__meta--genre">
                             <template v-for="(item, idx) in casts">
                                 <span v-if="idx > 0 && idx < 4">, </span>
-                                <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag">
+                                <a v-if="idx < 4" :href="'/person/' + item.slug" rel="tag">
                                     <span v-html="item.name"></span>
-                                </NuxtLink>
+                                </a>
                             </template>
                         </span>
                     </div>

@@ -33,9 +33,9 @@
             <div class="movies__inner">
                 <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                     <div class="movie__poster loading-bg">
-                        <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                        <a :href="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                             <img width="220" height="310" :src="item.src" class="movie__poster--image lazyload" alt="" :key="item.id" />
-                        </NuxtLink>
+                        </a>
                     </div>
                     <div class="movie__body">
                         <div class="movie__info">
@@ -48,13 +48,13 @@
                                     <span class="movie__meta--genre">
                                         <template v-for="(genre, idx) in item.genres">
                                             <span v-if="idx > 0">, </span>
-                                            <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                            <a :href="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></a>
                                         </template>
                                     </span>
                                 </div>
-                                <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                <a :href="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                     <h3 class="masvideos-loop-movie__title  movie__title">{{ item.title || ' ' }}</h3>
-                                </NuxtLink>
+                                </a>
                             </div>
                             <div class="original-title">
                                 {{ item.originalTitle || ' ' }}

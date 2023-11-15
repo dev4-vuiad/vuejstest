@@ -51,7 +51,7 @@
 <template>
     <ul class="nav nav-tabs">
         <li v-for="(item, index) in menu" :key="index" class="nav-item">
-            <NuxtLink :class="'pointer nav-link' + (type == item.link ? ' active' : '')" @click.prevent="selectType(item.link)">{{ item.title || '' }}</NuxtLink>
+            <a :class="'pointer nav-link' + (type == item.link ? ' active' : '')" @click.prevent="selectType(item.link)">{{ item.title || '' }}</a>
         </li>
     </ul>
     <div class="home-tv-show-section-aside-header__inner">
@@ -61,7 +61,7 @@
                     <header class="home-section__header">
                         <h2 class="home-section__title">최신등록 방송</h2>
                         <div class="home-section__action">
-                            <NuxtLink :to="'/' + (type == 'tv-show' ? 'tv-shows' : type)" class="tv-show-box home-section__action-link">전체보기</NuxtLink>
+                            <a :href="'/' + (type == 'tv-show' ? 'tv-shows' : type)" class="tv-show-box home-section__action-link">전체보기</a>
                         </div>
                     </header>
                     <div v-for="(item, index) in items" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama" :postid="item.id">
@@ -72,14 +72,14 @@
                                     :key="renderCount"
                                 />
                             </div>
-                            <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                            <a :href="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                 <img
                                     :src="item.src"
                                     :srcset="item.srcSet"
                                     class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
                                     :key="renderCount"
                                 />
-                            </NuxtLink>
+                            </a>
                         </div>
                         <div class="tv-show__body">
                             <div class="tv-show__info">
@@ -88,11 +88,11 @@
                                     <div class="original-title-tvshow">
                                         {{ item.originalTitle || ' ' }}
                                     </div>
-                                    <NuxtLink :to="'/episode/' + item.slug"
+                                    <a :href="'/episode/' + item.slug"
                                         class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
                                             style="display:none" class="span_sea_ep_title">{{ $getEpTxt(item.seasonNumber, item.episodeNumber) }}</span>
                                         <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
-                                    </NuxtLink>
+                                    </a>
                                 </div>
                             </div>
                         </div>

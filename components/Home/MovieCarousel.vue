@@ -13,7 +13,7 @@
 
     onMounted(() => {
         // Bottom slider
-        setInterval(() => {
+        setTimeout(() => {
             let slider = $('#moviesCarousel').find('.slick-track').slick({
                 slidesToShow: 6,
                 slidesToScroll: 2,
@@ -39,7 +39,7 @@
                     aria-disabled="true" style="">Previous</button><button class="slick-next slick-arrow" aria-label="Next"
                     type="button" style="" aria-disabled="false">Next</button>
             </div>
-            <div class="home-section__action"><NuxtLink to="/movie-genre/한국영화/" class="home-section__action-link">전체보기</NuxtLink>
+            <div class="home-section__action"><a href="/movie-genre/한국영화/" class="home-section__action-link">전체보기</a>
             </div>
         </header>
         <div class="section-movies-carousel__carousel">
@@ -55,8 +55,8 @@
                                             <div class="movie type-movie status-publish has-post-thumbnail hentry"
                                                 style="width: 100%; display: inline-block;" :postid="item.id">
                                                 <div class="movie__poster">
-                                                    <NuxtLink
-                                                        :to="'/movie/' + item.slug"
+                                                    <a
+                                                        :href="'/movie/' + item.slug"
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
                                                         <img 
@@ -66,7 +66,7 @@
                                                             class="movie__poster--image lazyload" alt=""
                                                             :key="renderCount"
                                                         />
-                                                    </NuxtLink>
+                                                    </a>
                                                 </div>
                                                 <div class="movie__body">
                                                     <div class="movie__info">
@@ -77,19 +77,19 @@
                                                                 <span class="movie__meta--genre">
                                                                     <template v-for="(genre, idx) in item.genres" :key="idx">
                                                                         <span v-if="idx > 0">, </span>
-                                                                        <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag" tabindex="0">
+                                                                        <a :href="'/movie-genre/' + genre.slug" rel="tag" tabindex="0">
                                                                             <span v-html="genre.name"></span>
-                                                                        </NuxtLink>
+                                                                        </a>
                                                                     </template>
                                                                 </span>
                                                             </div>
-                                                            <NuxtLink :to="'/movie/' + item.slug"
+                                                            <a :href="'/movie/' + item.slug"
                                                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                                 tabindex="0">
                                                                 <h3 class="masvideos-loop-movie__title  movie__title">
                                                                     {{ item.title || ' ' }}
                                                                 </h3>
-                                                            </NuxtLink>
+                                                            </a>
                                                         </div>
                                                         <div class="original-title">{{ item.originalTitle || ' ' }}</div>
                                                     </div>

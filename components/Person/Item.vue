@@ -29,14 +29,14 @@
 <template>
     <div class="movie type-movie status-publish has-post-thumbnail hentry" :objectid="id">
         <div class="movie__poster cast loading-bg">
-            <NuxtLink :to="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <a :href="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img :src="src" class="movie__poster--image lazyload" alt="" :key="id">
-            </NuxtLink>
+            </a>
         </div>
         <div class="movie__body">
-            <NuxtLink :to="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <a :href="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <h3 class="masvideos-loop-movie__title movie__title">{{ name }}</h3>
-            </NuxtLink>
+            </a>
         </div>
     </div>
 </template>

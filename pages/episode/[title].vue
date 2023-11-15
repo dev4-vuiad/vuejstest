@@ -210,18 +210,18 @@
                                     <div class="episode__title-with-nav">
                                         <div class="episode__player--arrows">
                                             <div class="episode__player--prev-episode" v-if="data && findPrevEp(data.title, data.seasons)">
-                                                <NuxtLink
-                                                    :to="'/episode/' + findPrevEp(data.title, data.seasons)"
+                                                <a
+                                                    :href="'/episode/' + findPrevEp(data.title, data.seasons)"
                                                     class="episode__player--prev-episode__link">
                                                     <span class="episode__player--prev-episode__label"> Previous Episode </span>
-                                                </NuxtLink>
+                                                </a>
                                             </div>
                                             <div class="episode__player--next-episode" v-if="data && findNextEp(data.title, data.seasons)">
-                                                <NuxtLink
-                                                    :to="'/episode/' + findNextEp(data.title, data.seasons)"
+                                                <a
+                                                    :href="'/episode/' + findNextEp(data.title, data.seasons)"
                                                     class="episode__player--next-episode__link">
                                                     <span class="episode__player--next-episode__label"> Next Episode </span>
-                                                </NuxtLink>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

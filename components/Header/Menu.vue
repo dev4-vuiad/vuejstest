@@ -2,66 +2,66 @@
     <div class="site_header__primary-nav">
         <ul id="menu-main-menu-1" class="nav yamm">
             <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                <NuxtLink title="영화" to="/movie">
+                <a title="영화" href="/movie">
                     <span class="dashicons fas fa-film after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">영화</span>
-                </NuxtLink>
+                </a>
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <NuxtLink to="/tv-shows/" key="tv-shows">
+                <a href="/tv-shows/" key="tv-shows">
                     <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">TV</span>
-                </NuxtLink>
+                </a>
                 <ul class="sub-menu">
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="드라마" to="/k-drama/" key="k-drama">드라마</NuxtLink>
+                        <a title="드라마" href="/k-drama/" key="k-drama">드라마</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="예능" to="/k-show/" key="k-show">예능</NuxtLink>
+                        <a title="예능" href="/k-show/" key="k-show">예능</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="시사다큐" to="/k-sisa/" key="k-sisa">시사</NuxtLink>
+                        <a title="시사다큐" href="/k-sisa/" key="k-sisa">시사</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                <NuxtLink to="/u-drama/" key="u-drama">
+                <a href="/u-drama/" key="u-drama">
                     <span class="dashicons dashicons-admin-site-alt3 after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">미드</span>
-                </NuxtLink>
+                </a>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
-                <NuxtLink title="OTT/Web" to="/ott-web/" key="ott-web">
+                <a title="OTT/Web" href="/ott-web/" key="ott-web">
                     <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                     <span class="menu-image-title-after menu-image-title">OTT</span>
-                </NuxtLink>
+                </a>
                 <ul class="sub-menu">
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Amazon Prime Video" to="/ott-web/amazon-prime-video/" key="k-drama">Amazon Prime Video</NuxtLink>
+                        <a title="Amazon Prime Video" href="/ott-web/amazon-prime-video/" key="k-drama">Amazon Prime Video</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Apple TV" to="/ott-web/apple-tv/" key="apple-tv">Apple TV</NuxtLink>
+                        <a title="Apple TV" href="/ott-web/apple-tv/" key="apple-tv">Apple TV</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Disney +" to="/ott-web/disney/" key="disney">Disney +</NuxtLink>
+                        <a title="Disney +" href="/ott-web/disney/" key="disney">Disney +</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="HBO max" to="/ott-web/hbo-max/" key="hbo-max">HBO max</NuxtLink>
+                        <a title="HBO max" href="/ott-web/hbo-max/" key="hbo-max">HBO max</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Netflix" to="/ott-web/netflix/" key="netflix">Netflix</NuxtLink>
+                        <a title="Netflix" href="/ott-web/netflix/" key="netflix">Netflix</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Peacock" to="/ott-web/peacock/" key="peacock">Peacock</NuxtLink>
+                        <a title="Peacock" href="/ott-web/peacock/" key="peacock">Peacock</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="Tving" to="/ott-web/tving/" key="tving">Tving</NuxtLink>
+                        <a title="Tving" href="/ott-web/tving/" key="tving">Tving</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve">wavve</NuxtLink>
+                        <a title="wavve" href="/ott-web/wavve/" key="wavve">wavve</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha">watcha</NuxtLink>
+                        <a title="watcha" href="/ott-web/watcha/" key="watcha">watcha</a>
                     </li>
                 </ul>
             </li>

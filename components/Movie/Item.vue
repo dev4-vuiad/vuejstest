@@ -31,13 +31,13 @@
 <template>
     <div class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster loading-bg">
-            <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+            <a :href="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img
                     width="300" height="450"
                     :src="src"
                     :srcset="srcSet"
                     class="movie__poster--image lazyload" alt="" :key="renderCount" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="movie__body">
             <div class="movie__info">
@@ -49,13 +49,13 @@
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, index) in genres" :key="index">
                                     <span v-if="index > 0">, </span>
-                                    <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                    <a :href="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></a>
                                 </template>
                             </span>
                     </div>
-                    <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                    <a :href="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                         <h3 class="masvideos-loop-movie__title  movie__title">{{ title }}</h3>
-                    </NuxtLink>
+                    </a>
                 </div>
                 <div class="original-title">
                     {{ originalTitle }}

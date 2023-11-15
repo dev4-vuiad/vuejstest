@@ -98,7 +98,7 @@
         <div id="content" class="site-content " name="person-list" tabindex="-1">
             <div class="container">
                 <nav class="masvideos-breadcrumb">
-                    <NuxtLink to="/">Home</NuxtLink>
+                    <a href="/">Home</a>
                     <span class="delimiter">
                         <svg width="4px" height="7px">
                             <path fill-rule="evenodd"

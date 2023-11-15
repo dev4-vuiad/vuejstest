@@ -28,7 +28,7 @@
 
 <template>
     <nav class="masvideos-breadcrumb">
-        <NuxtLink to="/">Home</NuxtLink>
+        <a href="/">Home</a>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
@@ -36,7 +36,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink :to="'/tv-show/' + tvshowSlug + '/'">{{ tvshowTitle }}</NuxtLink>
+        <a :href="'/tv-show/' + tvshowSlug + '/'">{{ tvshowTitle }}</a>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
@@ -44,7 +44,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink :to="'/tv-show/' + tvshowSlug + '/?season-position=0'">{{ seasonName }}</NuxtLink>
+        <a :href="'/tv-show/' + tvshowSlug + '/?season-position=0'">{{ seasonName }}</a>
             <span class="delimiter">
                 <svg width="4px" height="7px">
                     <path fill-rule="evenodd"

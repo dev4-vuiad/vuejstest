@@ -90,9 +90,9 @@
                         <span class="episode__meta--release-date">{{ postDate ? format(postDate) : ' ' }}</span>
                         <div class="vodi-views-likes"></div>
                     </div>
-                    <NuxtLink :to="'/tv-show/' + tvshowSlug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                    <a :href="'/tv-show/' + tvshowSlug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                         <h1 class="episode_title entry-title">{{ title || ' ' }}</h1>
-                    </NuxtLink>
+                    </a>
                     <div class="title-orginal__tvshow_single">
                         {{ originalTitle || ' ' }}
                     </div>
@@ -100,7 +100,7 @@
                         <span class="tv-show__meta--genre">
                             <template v-for="(item, idx) in casts">
                                 <span v-if="idx > 0 && idx < 4">, </span>
-                                <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></NuxtLink>
+                                <a v-if="idx < 4" :href="'/person/' + item.slug" rel="tag"><span v-html="item.name"></span></a>
                             </template>
                         </span>
                     </div>

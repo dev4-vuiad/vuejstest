@@ -66,34 +66,34 @@
 <template>
     <div class="ott_logo">
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/netflix/">
+            <a href="/ott-web/netflix/">
                 <img src="/images/netflix.png" alt="netflix" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/disney/">
+            <a href="/ott-web/disney/">
                 <img src="/images/disney_plus.png" alt="disney plus" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/apple-tv/">
+            <a href="/ott-web/apple-tv/">
                 <img src="/images/appletv.png" alt="apple tv" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/tving/">
+            <a href="/ott-web/tving/">
                 <img src="/images/tving.png" alt="tving" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/wavve/">
+            <a href="/ott-web/wavve/">
                 <img src="/images/wavve.png" alt="wavve" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/amazon-prime-video/">
+            <a href="/ott-web/amazon-prime-video/">
                 <img src="/images/prime.png" alt="prime" />
-            </NuxtLink>
+            </a>
         </div>
     </div>
     <div class="slider-title-netflix">
@@ -109,16 +109,16 @@
                 <div class="embla__slide1" v-for="(item, index) in sliders" :postid="item.id">
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
-                        <NuxtLink class="tv-show__link" :to="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
+                        <a class="tv-show__link" :href="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
                             <img class="embla__slide__img1 lazyload" decoding="async" :src="item.src" :key="item.id" />
-                        </NuxtLink>
+                        </a>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>
                     <div class="box_meta">
-                        <NuxtLink :to="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
+                        <a :href="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
                             <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span><br>
                             <h2 class="title_1">{{ item.title }}</h2>
-                        </NuxtLink>
+                        </a>
                     </div>
                 </div>
             </div>

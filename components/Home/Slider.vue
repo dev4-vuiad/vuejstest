@@ -64,15 +64,15 @@
             <div class="embla__container">
                 <div class="embla__slide" v-for="(item, index) in data" :key="index" :postid="item.id">
                     <div class="embla__slide__inner loading-bg">
-                        <NuxtLink class="movie__link" :to="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
+                        <a class="movie__link" :href="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
                             <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" :key="renderCount" decoding="async" />
-                        </NuxtLink>
+                        </a>
                     </div>
                     <div class="box_meta">
-                        <NuxtLink :to="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
+                        <a :href="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
                             <span class="s_e_title_1" v-if="item.postType == 'tv_show' && item.episodeNumber">{{ item.episodeNumber.includes('.') ? '스페셜화' : item.episodeNumber + '화' }}</span>
                             <h2 class="title_1">{{ item.title }}</h2>
-                        </NuxtLink>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -22,12 +22,12 @@
                     <header class="home-section__header">
                         <h2 class="home-section__title">최신등록영화</h2>
                         <div class="home-section__action">
-                            <NuxtLink to="/movie/" class="home-section__action-link link-movie">전체보기</NuxtLink>
+                            <a href="/movie/" class="home-section__action-link link-movie">전체보기</a>
                         </div>
                     </header>
                     <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                         <div class="movie__poster loading-bg">
-                            <NuxtLink :to="'/movie/' + item.slug"
+                            <a :href="'/movie/' + item.slug"
                                 class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <img 
                                     :src="item.src"
@@ -36,7 +36,7 @@
                                     class="movie__poster--image lazyload" alt=""
                                     :key="renderCount" 
                                 />
-                            </NuxtLink>
+                            </a>
                         </div>
                         <div class="movie__body">
                             <div class="movie__info">
@@ -49,15 +49,15 @@
                                         <span class="movie__meta--genre">
                                             <template v-for="(genre, idx) in item.genres" :key="idx">
                                                 <span v-if="idx > 0">, </span>
-                                                <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                                <a :href="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></a>
                                             </template>
                                         </span>
                                     </div>
-                                    <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <a :href="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                         <h3 class="masvideos-loop-movie__title movie__title">
                                             {{ item.title || ' ' }}
                                         </h3>
-                                    </NuxtLink>
+                                    </a>
                                 </div>
                                 <div class="original-title">
                                     {{ item.originalTitle || ' ' }}

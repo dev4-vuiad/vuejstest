@@ -11,7 +11,7 @@
 </script>
 <template>
     <nav class="masvideos-breadcrumb">
-        <NuxtLink to="/">Home</NuxtLink>
+        <a href="/">Home</a>
         <span class="delimiter">
             <svg width="4px"
                 height="7px">
@@ -20,7 +20,7 @@
             </path>
             </svg>
         </span>
-        <NuxtLink v-if="page" :to="base"><span v-html="title"></span></NuxtLink>
+        <a v-if="page" :href="base"><span v-html="title"></span></a>
         <template v-else><span v-html="title"></span></template>
         <template v-if="page">
             <span class="delimiter">

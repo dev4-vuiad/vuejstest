@@ -24,9 +24,9 @@
                 <div class="widget-header"><span class="widget-title">연도별</span></div>
                 <ul>
                         <li v-for="(year, idx) in years" :key="idx" :class="'masvideos-layered-nav-movies-year' + (selected == year ? ' chosen' : '')">
-                                <NuxtLink href="#" @click.prevent="selectYear(year)">
+                                <a href="#" @click.prevent="selectYear(year)">
                                         <span>{{ year }}</span>
-                                </NuxtLink>
+                                </a>
                         </li>
                 </ul>
         </div>

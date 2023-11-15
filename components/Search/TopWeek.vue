@@ -14,13 +14,13 @@
                         class="movie type-movie status-publish has-post-thumbnail hentry">
                         <div class="movie__body">
                             <span class="movie__meta--release-year">{{ item.postDate.substr(0, 10) }}</span>
-                            <NuxtLink :to="'/tv-show/' + item.tvShowSlug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                            <a :href="'/tv-show/' + item.tvShowSlug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                 <h3 class="masvideos-loop-movie__title movie__title search">{{ item.tvshowTitle }}</h3>
-                            </NuxtLink>
+                            </a>
                             <span class="movie__meta--genre">
                                 <template v-for="(genre, idx) in item.genres" :key="genre">
                                     <span v-if="idx > 0">, </span>
-                                    <NuxtLink :to="'/tv-show-genre/' + genre.slug" class="tv-show__meta--genre" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                    <a :href="'/tv-show-genre/' + genre.slug" class="tv-show__meta--genre" rel="tag"><span v-html="genre.name"></span></a>
                                 </template>
                             </span>
                         </div>

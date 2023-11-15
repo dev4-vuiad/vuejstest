@@ -59,7 +59,7 @@
         <nav class="masvideos-pagination masvideos-tv-shows-pagination">
             <ul class="page-numbers">
                 <li v-if="currentPage - 1 >= 1">
-                    <NuxtLink class="prev page-numbers" to="#" @click.prevent="selectPage(currentPage -1)">←&nbsp;&nbsp;&nbsp; 이전 페이지</NuxtLink>
+                    <a class="prev page-numbers" href="#" @click.prevent="selectPage(currentPage -1)">←&nbsp;&nbsp;&nbsp; 이전 페이지</a>
                 </li>
                 <template v-for="(page, index) in pages" :key="index">
                     <li v-if="page > 2 && page < totalPages && page > pages[index - 1] + 1">
@@ -71,7 +71,7 @@
                     </li>
                 </template>
                 <li v-if="currentPage + 1 <= totalPages">
-                    <NuxtLink class="next page-numbers" to="#" @click.prevent="selectPage(currentPage + 1)">다음 페이지 &nbsp;&nbsp;&nbsp;→</NuxtLink>
+                    <a class="next page-numbers" href="#" @click.prevent="selectPage(currentPage + 1)">다음 페이지 &nbsp;&nbsp;&nbsp;→</a>
                 </li>
             </ul>
         </nav>

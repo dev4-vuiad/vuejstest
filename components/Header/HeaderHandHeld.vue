@@ -37,71 +37,71 @@
                                                 <div class="site_header__offcanvas-nav">
                                                     <ul id="menu-main-menu-2" class="offcanvas-nav yamm">
                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item show">
-                                                            <NuxtLink title="영화" to="/movie/" class="nav-link show" @click="onClickMenuItem">
+                                                            <a title="영화" href="/movie/" class="nav-link show" @click="onClickMenuItem">
                                                                 <span class="dashicons fas fa-film after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">영화</span>
-                                                            </NuxtLink>
+                                                            </a>
                                                         </li>
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
-                                                            <NuxtLink title="TV" data-toggle="dropdown"
+                                                            <a title="TV" data-toggle="dropdown"
                                                                 aria-haspopup="true" aria-expanded="false"
                                                                 class="dropdown-toggle nav-link" @click="onToggleSubmenu">
                                                                 <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">TV</span>    
-                                                            </NuxtLink>
+                                                            </a>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
-                                                                    <NuxtLink title="드라마" to="/k-drama/"
-                                                                        class="dropdown-item show" @click="onClickMenuItem">드라마</NuxtLink>
+                                                                    <a title="드라마" href="/k-drama/"
+                                                                        class="dropdown-item show" @click="onClickMenuItem">드라마</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
-                                                                    <NuxtLink title="예능" to="/k-show/"
-                                                                        class="dropdown-item show" @click="onClickMenuItem">예능</NuxtLink>
+                                                                    <a title="예능" href="/k-show/"
+                                                                        class="dropdown-item show" @click="onClickMenuItem">예능</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
-                                                                    <NuxtLink title="시사다큐" to="/k-sisa/"
-                                                                        class="dropdown-item show" @click="onClickMenuItem">시사</NuxtLink>
+                                                                    <a title="시사다큐" href="/k-sisa/"
+                                                                        class="dropdown-item show" @click="onClickMenuItem">시사</a>
                                                                 </li>
                                                             </ul>
                                                         </li>
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item show">
-                                                            <NuxtLink title="미드" to="/u-drama/" class="nav-link show" @click="onClickMenuItem">
+                                                            <a title="미드" href="/u-drama/" class="nav-link show" @click="onClickMenuItem">
                                                                 <span class="dashicons dashicons-admin-site-alt3 after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">미드</span>
-                                                            </NuxtLink>
+                                                            </a>
                                                         </li>
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
-                                                            <NuxtLink title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link" @click="onToggleSubmenu">
+                                                            <a title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link" @click="onToggleSubmenu">
                                                                 <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                                                                 <span class="menu-image-title-after menu-image-title">OTT</span>
-                                                            </NuxtLink>
+                                                            </a>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Amazon Prime Video" to="/ott-web/amazon-prime-video/" key="k-drama" @click="onClickMenuItem">Amazon Prime Video</NuxtLink>
+                                                                    <a title="Amazon Prime Video" href="/ott-web/amazon-prime-video/" key="k-drama" @click="onClickMenuItem">Amazon Prime Video</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Apple TV" to="/ott-web/apple-tv/" key="apple-tv" @click="onClickMenuItem">Apple TV</NuxtLink>
+                                                                    <a title="Apple TV" href="/ott-web/apple-tv/" key="apple-tv" @click="onClickMenuItem">Apple TV</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Disney +" to="/ott-web/disney/" key="disney" @click="onClickMenuItem">Disney +</NuxtLink>
+                                                                    <a title="Disney +" href="/ott-web/disney/" key="disney" @click="onClickMenuItem">Disney +</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="HBO max" to="/ott-web/hbo-max/" key="hbo-max" @click="onClickMenuItem">HBO max</NuxtLink>
+                                                                    <a title="HBO max" href="/ott-web/hbo-max/" key="hbo-max" @click="onClickMenuItem">HBO max</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Netflix" to="/ott-web/netflix/" key="netflix" @click="onClickMenuItem">Netflix</NuxtLink>
+                                                                    <a title="Netflix" href="/ott-web/netflix/" key="netflix" @click="onClickMenuItem">Netflix</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Peacock" to="/ott-web/peacock/" key="peacock" @click="onClickMenuItem">Peacock</NuxtLink>
+                                                                    <a title="Peacock" href="/ott-web/peacock/" key="peacock" @click="onClickMenuItem">Peacock</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="Tving" to="/ott-web/tving/" key="tving" @click="onClickMenuItem">Tving</NuxtLink>
+                                                                    <a title="Tving" href="/ott-web/tving/" key="tving" @click="onClickMenuItem">Tving</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve" @click="onClickMenuItem">wavve</NuxtLink>
+                                                                    <a title="wavve" href="/ott-web/wavve/" key="wavve" @click="onClickMenuItem">wavve</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</NuxtLink>
+                                                                    <a title="watcha" href="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</a>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -124,12 +124,12 @@
                         </div>
                     </div>
                     <div class="site-header__logo">
-                        <NuxtLink to="/" class="custom-logo-link" rel="home" aria-current="page">
+                        <a href="/" class="custom-logo-link" rel="home" aria-current="page">
                             <img width="653" height="152"
                                 src="/images/kokoatv_logo.png"
                                 class="custom-logo lazyload" alt="코코아티비 :: KOKOA.TV"
                                 sizes="(max-width: 653px) 100vw, 653px">
-                            </NuxtLink>
+                            </a>
                     </div>
                 </div>
                 <div class="site-header__right">

@@ -45,21 +45,21 @@
                             <div class="episodes__inner">
                                 <div v-for="(episode, idx) in item.episodes" :key="idx" class="episode status-publish hentry">
                                     <div class="episode__poster loading-bg">
-                                        <NuxtLink :to="'/episode/' + episode.slug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
+                                        <a :href="'/episode/' + episode.slug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img
                                                 :src="episode.src.length ? episode.src : src"
                                                 :srcset="episode.srcSet.length ? episode.srcSet : srcSet"
                                                 class="episode__poster--image lazyload" alt="" 
                                                 :key="episode.id"
                                             />
-                                        </NuxtLink>
+                                        </a>
                                     </div>
                                     <div class="episode__body">
-                                        <NuxtLink :to="'/episode/' + episode.slug"
+                                        <a :href="'/episode/' + episode.slug"
                                             class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <span class="masvideos-loop-episode__number episode__number">{{ episode.postDateGmt.substr(0,10) }}</span>
                                             <h3 class="masvideos-loop-episode__title  episode__title">{{ episode.title }}</h3>
-                                        </NuxtLink>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -25,7 +25,7 @@
                                 class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                                 <div class="movie-list">
                                     <div class="movie-list__poster">
-                                        <NuxtLink :to="'/movie/' + item.slug"
+                                        <a :href="'/movie/' + item.slug"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <img
                                                 :src="item.src"
@@ -33,20 +33,20 @@
                                                 class="movie__poster--image lazyload" alt=""
                                                 :key="item.id"
                                             />
-                                        </NuxtLink>
+                                        </a>
                                     </div>
                                     <div class="movie-list__body">
                                         <span class="movie-list__year">{{ item.year || ' ' }}</span>
-                                        <NuxtLink :to="'/movie/' + item.slug"
+                                        <a :href="'/movie/' + item.slug"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <h3 class="movie-list__name">{{ item.title || ' ' }}</h3>
-                                        </NuxtLink>
+                                        </a>
                                         <span class="movie-list__genre">
                                             <template v-for="(genre, idx) in item.genres" :key="idx">
                                                 <span v-if="idx > 0">, </span>
-                                                <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag">
+                                                <a :href="'/movie-genre/' + genre.slug" rel="tag">
                                                     <span v-html="genre.name"></span>
-                                                </NuxtLink>
+                                                </a>
                                             </template>
                                         </span>
                                     </div>

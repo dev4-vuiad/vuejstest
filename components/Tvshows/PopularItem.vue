@@ -48,19 +48,19 @@
             <div class="box-tv-channel">
                 <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel" :key="id" />
             </div>
-            <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
                 :src="src"
                 :srcset="srcSet"
                 class="tv-show__poster--image tv_show__poster--image lazyload" alt="" :key="id" />
-            </NuxtLink>
+            </a>
         </div>
         <div class="tv-show__body">
             <span class="tv-show__meta--release-year">{{ postDate ? $toTimeAgo(postDate) : ' ' }}</span>
-            <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+            <a :href="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <span style="display:none;" class="span_sea_ep_title">{{ $getEpTxt(seasonNumber, episodeNumber) }}</span>
                 <h3 class="masvideos-loop-tv-show__title tv-show__title">{{ tvshowTitle }}</h3>
-            </NuxtLink>
+            </a>
         </div>
     </div>
 </template>

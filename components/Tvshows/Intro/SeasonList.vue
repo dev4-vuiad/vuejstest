@@ -89,11 +89,11 @@
                                 <div class="episodes__inner">
                                     <template v-for="(episode, idx) in sortEpisodes(season.episodes)">
                                         <div v-if="idx >= state.showRangeIdx[index][0] && idx < state.showRangeIdx[index][1]" :class="'episode status-publish hentry' + (id == episode.id ? ' active' : '')" :postid="episode.id">
-                                            <NuxtLink :to="'/episode/' + episode.slug"
+                                            <a :href="'/episode/' + episode.slug"
                                                 class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                                 <span class="masvideos-loop-episode__number episode__number">{{ $toTimeAgo(episode.postDate) }}</span>
                                                 <h3 class="masvideos-loop-episode__title episode__title">{{ $getEpTitle(episode.title) }}</h3>
-                                            </NuxtLink> 
+                                            </a> 
                                         </div>
                                     </template>
                                 </div>

@@ -8,15 +8,15 @@ const props = defineProps(['id', 'name'])
 
 <template>
     <div class="cast-item">
-        <NuxtLink to="#">
+        <a href="#">
             <img 
                 class="lazyload"
                 src="https://www.themoviedb.org/t/p/w138_and_h175_face/l8ywp387rfdAS7mOExe3cEZnsk0.jpg"
             />
-        </NuxtLink>
-        <NuxtLink to="#">
+        </a>
+        <a href="#">
             {{ name }}
-        </NuxtLink>
+        </a>
     </div>
 </template>
 

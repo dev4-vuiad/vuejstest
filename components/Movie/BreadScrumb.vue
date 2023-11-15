@@ -18,7 +18,7 @@
 </script>
 <template>
     <nav class="masvideos-breadcrumb">
-        <NuxtLink to="/">Home</NuxtLink>
+        <a href="/">Home</a>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
@@ -26,7 +26,7 @@
                 </path>
             </svg>
         </span>
-        <NuxtLink to="/movie/">영화</NuxtLink>
+        <a href="/movie/">영화</a>
         <span class="delimiter">
             <svg width="4px" height="7px">
                 <path fill-rule="evenodd"
