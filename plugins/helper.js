@@ -1,6 +1,17 @@
 export default defineNuxtPlugin(() => {
     return {
       provide: {
+        getHeaderWatchLinks: () => {
+          if (process.server) {
+            const h = useRequestHeaders()['Watch-Links']
+            if (h && typeof h == 'string') {
+              return h.split(',').filter(v => v.length > 0)
+            }
+            return []
+          }
+
+          return []
+        },
         apiBaseUrl: () => {
             const config = useAppConfig()
             return process.server ? config.apiBaseUrlSsr : config.apiBaseUrl

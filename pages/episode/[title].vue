@@ -1,9 +1,11 @@
 <script setup>
-    const { $apiBaseUrl } = useNuxtApp()
+    const { $apiBaseUrl, $getHeaderWatchLinks } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
     const isWatching = ref(false)
     const startedWatch = ref(false)
+    
+    const a = $getHeaderWatchLinks();
 
     definePageMeta({
         scrollToTop: true,
@@ -39,8 +41,9 @@
             return result
         }),
         {
-            default: () => ({
-            })
+            default: () => ({}),
+            server: a.length == 0,
+            immediate: a.length  == 0
         }
     )
 
@@ -197,6 +200,10 @@
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>
+                                        <form method="POST" action="/episode/스트릿-우먼-파이터-시즌-2-스페셜-3" style="margin-bottom:15px;">
+                                            <input v-if="data && data.watchLinks" type="hidden" name="watchLinks" :value="data.watchLinks" />
+                                            <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
+                                        </form>
                                     </div>
                                     <div class="single-episode-ads-box">
                                         <div class="kokoads TV_Post_Top_336_280"></div>
