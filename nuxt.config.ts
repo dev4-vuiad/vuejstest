@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     storage: {
       redis: {
         driver: 'redis',
-        db: 2,
+        db: 10,
         base: 'kokoatv_frontend_'
       }
     },

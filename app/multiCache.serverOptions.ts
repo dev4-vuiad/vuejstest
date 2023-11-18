@@ -29,7 +29,7 @@ export default defineMultiCacheOptions({
         storage: {
           driver: redisDriver({
             base: 'kokoatv_frontend:',
-            db: 2
+            db: 10
           })
         },
       },
