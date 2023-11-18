@@ -1,7 +1,7 @@
 <script setup>
     const expanded = ref(false)
     const emit = defineEmits(['onWatching'])
-    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
+    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'slug', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'watchLinks', 'casts'])
     let id = props.id
     let casts = props.casts || []
     let year = props.year
@@ -12,6 +12,7 @@
     let src = props.src
     let description = props.description
     let outlink = props.outlink
+    let watchLinks = props.watchLinks || []
     let pending = props.pending
 
     onBeforeMount(() => {
@@ -26,12 +27,14 @@
             src = undefined
             description = undefined
             outlink = undefined
+            watchLinks = []
         }
     })
 
     watch(
         [
-            () => props.pending
+            () => props.pending,
+            () => props.watchLinks
         ],
         () => {
             id = props.id
@@ -43,7 +46,8 @@
             genres = props.genres
             src = props.src
             description = props.description
-            outlink = props.outlink
+            outlink = props.outlink,
+            watchLinks = props.watchLinks
         }
     )
 
@@ -62,9 +66,6 @@
         ele.prev().css('max-height', h + 'px')
     }
 
-    const onWatching = () => {
-        emit('onWatching')
-    }
 </script>
 
 <template>
@@ -104,9 +105,13 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-bottom:15px;">
-                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
-                <a v-else :href="outlink" class="a_btn_out">
+            <form v-if="(watchLinks && watchLinks.length) || !outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" method="POST" :action="'/movie/' + slug" style="margin-bottom:15px;">
+                <input v-if="watchLinks" type="hidden" name="watchLinks" :value="watchLinks" />
+                <input type="hidden" name="slug" :value="slug" />
+                <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
+            </form>
+            <div v-else style="margin-bottom:15px;">
+                <a :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>

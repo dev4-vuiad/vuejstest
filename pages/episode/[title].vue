@@ -3,28 +3,6 @@
     const route = useRoute()
     const title = route.params.title
 
-    definePageMeta({
-        scrollToTop: true,
-        pageTransition: {
-            name: 'page', 
-            mode: 'out-in',
-            onAfterEnter: () => {
-                $(document).on("click", function(e) {
-                    $(".site-header__offcanvas").hasClass("toggled") && ($(".navbar-toggler").is(e.target) || 0 !== $(".navbar-toggler").has(e.target).length || $(".offcanvas-collapse").is(e.target) || 0 !== $(".offcanvas-collapse").has(e.target).length || ($(".site-header__offcanvas").removeClass("toggled"),
-                    $("body").removeClass("off-canvas-active")))
-                })
-
-                //Movie sidebar filter
-                $(".handheld-sidebar-toggle .sidebar-toggler").on("click", function() {
-                    $(this).closest(".site-content").toggleClass("active-hh-sidebar")
-                }),
-                $(document).on("click", function(e) {
-                    $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
-                })
-            }
-        }
-    })
-
     const { data: watchLinks } = await useFetch('/api/outlink/' + title);
     const { data, pending, status } = useAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {

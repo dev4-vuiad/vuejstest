@@ -38,6 +38,7 @@
     }
 
     onMounted(() => {
+        $('.site-header, .site-footer').addClass('watching')
         window.addEventListener('resize', setPlayerSize());
         setTimeout(function() {
             setPlayerSize()

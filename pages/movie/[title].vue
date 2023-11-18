@@ -3,31 +3,8 @@
     const route = useRoute()
     const title = route.params.title
     const { isMobile } = useDevice()
-    const isWatching = ref(false)
-    const startedWatch = ref(false)
 
-    definePageMeta({
-        scrollToTop: true,
-        pageTransition: {
-            name: 'page', 
-            mode: 'out-in',
-            onAfterEnter: () => {                
-                $(document).on("click", function(e) {
-                    $(".site-header__offcanvas").hasClass("toggled") && ($(".navbar-toggler").is(e.target) || 0 !== $(".navbar-toggler").has(e.target).length || $(".offcanvas-collapse").is(e.target) || 0 !== $(".offcanvas-collapse").has(e.target).length || ($(".site-header__offcanvas").removeClass("toggled"),
-                    $("body").removeClass("off-canvas-active")))
-                })
-
-                //Movie sidebar filter
-                $(".handheld-sidebar-toggle .sidebar-toggler").on("click", function() {
-                    $(this).closest(".site-content").toggleClass("active-hh-sidebar")
-                }),
-                $(document).on("click", function(e) {
-                    $(".site-content").hasClass("active-hh-sidebar") && ($(".handheld-sidebar-toggle").is(e.target) || 0 !== $(".handheld-sidebar-toggle").has(e.target).length || $("#secondary").is(e.target) || 0 !== $("#secondary").has(e.target).length || $(".site-content").toggleClass("active-hh-sidebar"))
-                })
-            }
-        }
-    }) 
-
+    const { data: watchLinks } = await useFetch('/api/outlink/' + title);
     const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
@@ -47,7 +24,7 @@
         }
     )
 
-    const { refresh, pending: pendingLinks }  = useLazyAsyncData(
+    const { refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
             params: {
                 watch: data.value.id
@@ -55,12 +32,6 @@
         }).then(result => {
             if (result.watchLinks) {
                 data.value.watchLinks = result.watchLinks
-                if (startedWatch.value) {
-                    $('.site-header, .site-footer').addClass('watching')
-                    isWatching.value = true
-                }
-            } else {
-                result.watchLinks = []
             }
             return result
         }),
@@ -86,36 +57,12 @@
         ]
     });
 
-    const onWatching = () => {
-        startedWatch.value = true
-        if (!data.value.watchLinks) {
-            if (!pending && !pendingLinks) {
-                refresh()
-            }
-        } else if (data.value.watchLinks.length) {
-            $('.site-header, .site-footer').addClass('watching')
-            isWatching.value = true;
-        }
-    }
-
-    const onStopWatching = () => {
-        isWatching.value = false;
-        $('.site-header, .site-footer').removeClass('watching')
-    }
-
-    watch(
-        () => data.value.id,
-        () => {
-            refresh()
-        }
-    )
 
     onMounted(() => {
         if (status.value == 'error') {
             navigateTo({path: '/'})
         }
-        if (!window.firstPageLoad) {
-            window.firstPageLoad = true
+        if (!watchLinks.length && data.value.id) {
             refresh()
         }
     })
@@ -129,8 +76,8 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
-                                <div v-if="!isWatching" class="single-movie__player-container--inner container">
+                                <Watch :links="watchLinks" v-if="watchLinks.length" />
+                                <div v-if="!watchLinks.length" class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
@@ -140,13 +87,14 @@
                                             :year="data.year"
                                             :duration="data.duration"
                                             :title="data.title"
+                                            :slug="title"
                                             :originalTitle="data.originalTitle"
                                             :genres="data.genres"
                                             :src="data.src"
                                             :description="data.description"
                                             :outlink="data.outlink"
+                                            :watchLinks="data.watchLinks"
                                             :casts="data.casts"
-                                            @on-watching="onWatching"
                                         />
                                         <MovieIntroInfo v-if="!isMobile"
                                             :pending = "pending"
@@ -154,13 +102,14 @@
                                             :year="data.year"
                                             :duration="data.duration"
                                             :title="data.title"
+                                            :slug="title"
                                             :originalTitle="data.originalTitle"
                                             :genres="data.genres"
                                             :src="data.src"
                                             :description="data.description"
                                             :outlink="data.outlink"
+                                            :watchLinks="data.watchLinks"
                                             :casts="data.casts"
-                                            @on-watching="onWatching"
                                         />
                                         <div class="single-movie-ads-box">
                                             <div class="kokoads Movie_Post_Top_336_280"></div>
@@ -174,7 +123,7 @@
                                     </center>
                                 </div>
                             </div>
-                            <section class="movie__related" v-if="!isWatching">
+                            <section class="movie__related" v-if="!watchLinks.length">
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />

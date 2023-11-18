@@ -1,17 +1,18 @@
 <script setup>
     const expanded = ref(false)
-    const emit = defineEmits(['onWatching'])
-    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'casts'])
+    const props = defineProps(['pending', 'id', 'year', 'duration', 'title', 'slug', 'originalTitle', 'genres', 'src', 'description', 'outlink', 'watchLinks', 'casts'])
     let id = props.id
     let casts = props.casts || []
     let year = props.year
     let duration = props.duration
     let title = props.title
+    let slug = props.slug
     let originalTitle = props.originalTitle
     let genres = props.genres
     let src = props.src
     let description = props.description
     let outlink = props.outlink
+    let watchLinks = props.watchLinks || []
     let pending = props.pending
 
     onBeforeMount(() => {
@@ -21,17 +22,20 @@
             year = undefined
             duration = undefined
             title = undefined
+            slug = undefined
             originalTitle = undefined
             genres = undefined
             src = undefined
             description = undefined
             outlink = undefined
+            watchLinks = []
         }
     })
 
     watch(
         [
-            () => props.pending
+            () => props.pending,
+            () => props.watchLinks
         ],
         () => {
             id = props.id
@@ -39,11 +43,13 @@
             year = props.year
             duration = props.duration
             title = props.title
+            slug = props.slug
             originalTitle = props.originalTitle
             genres = props.genres
             src = props.src
             description = props.description
             outlink = props.outlink
+            watchLinks = props.watchLinks
         }
     )
 
@@ -60,10 +66,6 @@
             h = 50
         }
         ele.prev().css('max-height', h + 'px')
-    }
-
-    const onWatching = () => {
-        emit('onWatching')
     }
 </script>
 
@@ -108,9 +110,13 @@
                     <div class="vodi-views-likes"></div>
                 </div>
             </div>
-            <div style="margin-bottom:15px;">
-                <button v-if="!outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
-                <a v-else :href="outlink" class="a_btn_out">
+            <form v-if="(watchLinks && watchLinks.length) || !outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" method="POST" :action="'/movie/' + slug" style="margin-bottom:15px;">
+                <input v-if="watchLinks" type="hidden" name="watchLinks" :value="watchLinks" />
+                <input type="hidden" name="slug" :value="slug" />
+                <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
+            </form>
+            <div v-else style="margin-bottom:15px;">
+                <a :href="outlink" class="a_btn_out">
                     <button class="btn-outlink">바로보기</button>
                 </a>
             </div>
