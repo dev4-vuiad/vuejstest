@@ -1,11 +1,7 @@
 <script setup>
-    const { $apiBaseUrl, $getHeaderWatchLinks } = useNuxtApp()
+    const { $apiBaseUrl } = useNuxtApp()
     const route = useRoute()
     const title = route.params.title
-    const isWatching = ref(false)
-    const startedWatch = ref(false)
-    
-    const a = $getHeaderWatchLinks();
 
     definePageMeta({
         scrollToTop: true,
@@ -29,7 +25,8 @@
         }
     })
 
-    const { data, pending, status }  = useLazyAsyncData(
+    const { data: watchLinks } = await useFetch('/api/outlink/' + title);
+    const { data, pending, status } = useAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 title: title
@@ -41,13 +38,11 @@
             return result
         }),
         {
-            default: () => ({}),
-            server: a.length == 0,
-            immediate: a.length  == 0
+            default: () => ({})
         }
     )
 
-    const { refresh, pending: pendingLinks } = useLazyAsyncData(
+    const { refresh } = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/episode/details', {
             params: {
                 watch: data.value.id
@@ -55,14 +50,12 @@
         }).then(result => {
             if (result.watchLinks) {
                 data.value.watchLinks = result.watchLinks
-                if (startedWatch.value) {
-                    $('.site-header, .site-footer').addClass('watching')
-                    isWatching.value = true;
-                }
             }
             return result
         }),
-        {immediate: false}
+        {
+            immediate: false
+        }
     )
 
     useHead({
@@ -123,36 +116,11 @@
         return null
     }
 
-    const onWatching = () => {
-        startedWatch.value = true
-        if (!data.value.watchLinks) {
-            if (!pending && !pendingLinks) {
-                refresh()
-            }
-        } else if (data.value.watchLinks.length) {
-            $('.site-header, .site-footer').addClass('watching')
-            isWatching.value = true;
-        }
-    }
-
-    const onStopWatching = () => {
-        isWatching.value = false;
-        $('.site-header, .site-footer').removeClass('watching')
-    }
-
-    watch(
-        () => data.value.id,
-        () => {
-            refresh()
-        }
-    )
-
     onMounted(() => {
         if (status.value == 'error') {
             navigateTo({path: '/'})
         }
-        if (!window.firstPageLoad) {
-            window.firstPageLoad = true
+        if (!watchLinks.length && data.value.id) {
             refresh()
         }
     })
@@ -165,10 +133,10 @@
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
                         <div class="stretch-full-width">
-                            <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+                            <Watch :links="watchLinks" v-if="watchLinks.length" />
                         </div>
-                        <div v-if="!isWatching" class="episode status-publish hentry">
-                            <TvshowsIntroBreadScrumb 
+                        <div v-if="!watchLinks.length" class="episode status-publish hentry">
+                            <TvshowsIntroBreadScrumb
                                 :pending="pending"
                                 :title="data.title"
                                 :tvshowTitle="data.tvshowTitle"
@@ -180,7 +148,7 @@
                                 <div class="ads-episode-top"></div>
                                 <div class="single-episode__row row">
                                     <div class="single-episode__sidebar column1 single-episode-custom">
-                                        <TvshowsIntroInfo
+                                        <TvshowsIntroInfo 
                                             :pending="pending" 
                                             :id="data.id"
                                             :postDate="data.postDate"
@@ -194,16 +162,17 @@
                                             :tvshowSlug="data.tvshowSlug"
                                             :casts="data.casts"
                                         />
-                                        <div style="margin-bottom:15px;">
-                                            <button v-if="!data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
-                                            <a v-else :href="data.outlink" class="a_btn_out">
+                                        <form v-if="(data.watchLinks && data.watchLinks.length) || !data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://kokoatv.net')" method="POST" :action="'/episode/' + title" style="margin-bottom:15px;">
+                                            <input v-if="data && data.watchLinks" type="hidden" name="watchLinks" :value="data.watchLinks" />
+                                            <input type="hidden" name="slug" :value="title" />
+                                            <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
+                                        </form>
+                                        <div v-else style="margin-bottom:15px;">
+                                            <a :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>
                                         </div>
-                                        <form method="POST" action="/episode/스트릿-우먼-파이터-시즌-2-스페셜-3" style="margin-bottom:15px;">
-                                            <input v-if="data && data.watchLinks" type="hidden" name="watchLinks" :value="data.watchLinks" />
-                                            <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
-                                        </form>
+                                        
                                     </div>
                                     <div class="single-episode-ads-box">
                                         <div class="kokoads TV_Post_Top_336_280"></div>

@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devServer: {
-    host: '0.0.0.0'
-  },
   devtools: { enabled: false },
   modules: [
     'nuxt-lazy-load',
@@ -26,9 +23,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     storage: {
-      fs: {
-        driver: 'fs',
-        base: './.data/cache'
+      redis: {
+        driver: 'redis',
+        db: 2,
+        base: 'kokoatv_frontend_'
       }
     },
     publicAssets: [
