@@ -110,7 +110,7 @@
                     <div class="vodi-views-likes"></div>
                 </div>
             </div>
-            <form v-if="(watchLinks && watchLinks.length) || !outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" method="POST" :action="'/movie/' + slug" style="margin-bottom:15px;">
+            <form v-if="!outlink || !outlink.includes('https://') || outlink.includes('https://kokoatv.net')" method="POST" :action="'/movie/' + slug" style="margin-bottom:15px;">
                 <input v-if="watchLinks" type="hidden" name="watchLinks" :value="watchLinks" />
                 <input type="hidden" name="slug" :value="slug" />
                 <input type="submit" class="btn-outlink" name="submit" value="바로보기" />

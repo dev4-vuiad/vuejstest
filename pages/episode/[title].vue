@@ -140,7 +140,7 @@
                                             :tvshowSlug="data.tvshowSlug"
                                             :casts="data.casts"
                                         />
-                                        <form v-if="(data.watchLinks && data.watchLinks.length) || !data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://kokoatv.net')" method="POST" :action="'/episode/' + title" style="margin-bottom:15px;">
+                                        <form v-if="!data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://kokoatv.net')" method="POST" :action="'/episode/' + title" style="margin-bottom:15px;">
                                             <input v-if="data && data.watchLinks" type="hidden" name="watchLinks" :value="data.watchLinks" />
                                             <input type="hidden" name="slug" :value="title" />
                                             <input type="submit" class="btn-outlink" name="submit" value="바로보기" />
