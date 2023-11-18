@@ -75,6 +75,9 @@ export default defineNuxtConfig({
       ],
       script: [
         {
+          children: 'window.__ITGS_started = Date.now();'
+        },
+        {
           src: "/js/jquery-3.7.0.min.js"
         },
         {
@@ -104,20 +107,7 @@ export default defineNuxtConfig({
   $production: {
     appConfig: {
       apiBaseUrl: 'https://backend.kokoatv.net/api',
-      apiBaseUrlSsr: 'https://backend.kokoatv.net/api'
-    },
-    app: {
-      head: {
-        script: [
-          {
-            children: 'window.__ITGS_started = Date.now();'
-          },
-          {
-            src: '//scripts.kiosked.com/loader/kiosked-loader.js?site=17622',
-            async: true
-          }
-        ],
-      }
+      apiBaseUrlSsr: 'http://localhost/api'
     }
   }
 })
