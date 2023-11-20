@@ -61,8 +61,11 @@
         </div>
         <div class="ads-box-s">
             <div class="ads-top">
-                <div class="home-section home-movie-section-aside-header"></div>
-            </div>
+                                    <div class="home-section home-movie-section-aside-header">
+                
+                                    </div>
+                                   
+                                </div>
             <div class="ads-middle">
                 <div class="ads-left">
                     <div class="ads-box-child"></div>
