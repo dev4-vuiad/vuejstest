@@ -65,12 +65,6 @@
                 name: 'description',
                 content: 'TV Shows 무료 다시보기 – 코코아티비 :: KOKOATV.NET 최신,한국영화,드라마,예능,미드 등을 무료 스트리밍 다시보기로 즐길 수 있습니다. 넷플릭스(Netflix),와차,디즈니플러스,웨이브 등 각종 OTT 컨텐츠 또한 링크 제공합니다.'
             }
-        ],
-        script: [
-            {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NL156SRJ6P"),gtag("config","UA-160268616-2");',
-                body: true
-            }
         ]
     });
 
