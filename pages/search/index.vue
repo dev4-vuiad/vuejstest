@@ -88,7 +88,7 @@
 </script>
 
 <template>
-    <div class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark">
+    <div class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark height-responsive">
         <div class="site-content " tabindex="-1">
             <div class="container">
                 <nav class="masvideos-breadcrumb">

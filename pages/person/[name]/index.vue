@@ -83,7 +83,7 @@
 </script>
 
 <template>
-    <div class="hfeed site archive post-type-archive post-type-archive-tv_show wp-custom-logo wp-embed-responsive masvideos masvideos-page masvideos-archive masvideos-js sidebar-left dark">
+    <div class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark height-responsive">
         <div id="content" class="site-content" name="person" tabindex="-1">
             <div class="container">
                 <nav class="masvideos-breadcrumb">
