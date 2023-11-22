@@ -62,7 +62,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?dshweyhwgdg'
+          href: '/css/style3.css?fasgagwtew'
         },
         {
           rel: 'stylesheet',
