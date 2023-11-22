@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', type: 'image/x-icon', href: 'https://image002.modooup.com/wp-content/uploads/2023/03/ms-icon-310x310-1-300x300.png' },
         {
           rel: 'stylesheet',
-          href: '/css/fonts.css?bgwtgew'
+          href: '/css/fonts.css?dsklhg'
         },
         {
           rel: 'stylesheet',
