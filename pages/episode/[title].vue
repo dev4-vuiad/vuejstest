@@ -53,8 +53,10 @@
             if (result.watchLinks) {
                 data.value.watchLinks = result.watchLinks
                 if (startedWatch.value) {
-                    $('.site-header, .site-footer').addClass('watching')
-                    isWatching.value = true;
+                    $('#__nuxt').find('>div').addClass('modal-open')
+                    setTimeout(() => {
+                        isWatching.value = true;
+                    }, 600)
                 }
             }
             return result
@@ -127,14 +129,16 @@
                 refresh()
             }
         } else if (data.value.watchLinks.length) {
-            $('.site-header, .site-footer').addClass('watching')
-            isWatching.value = true;
+            $('#__nuxt').find('>div').addClass('modal-open')
+            setTimeout(() => {
+                isWatching.value = true;
+            }, 600)
         }
     }
 
     const onStopWatching = () => {
         isWatching.value = false;
-        $('.site-header, .site-footer').removeClass('watching')
+        $('#__nuxt').find('>div').removeClass('modal-open')
     }
 
     watch(
@@ -161,9 +165,6 @@
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div class="stretch-full-width">
-                            <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
-                        </div>
                         <div v-if="!isWatching" class="episode status-publish hentry">
                             <TvshowsIntroBreadScrumb 
                                 :pending="pending"
@@ -237,5 +238,6 @@
                 </div>
             </div>
         </div>
+        <WatchModal :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
     </div>
 </template>

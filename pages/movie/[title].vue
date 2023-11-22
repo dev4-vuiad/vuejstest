@@ -56,8 +56,10 @@
             if (result.watchLinks) {
                 data.value.watchLinks = result.watchLinks
                 if (startedWatch.value) {
-                    $('.site-header, .site-footer').addClass('watching')
-                    isWatching.value = true
+                    $('#__nuxt').find('>div').addClass('modal-open')
+                    setTimeout(() => {
+                        isWatching.value = true;
+                    }, 600)
                 }
             } else {
                 result.watchLinks = []
@@ -93,14 +95,16 @@
                 refresh()
             }
         } else if (data.value.watchLinks.length) {
-            $('.site-header, .site-footer').addClass('watching')
-            isWatching.value = true;
+            $('#__nuxt').find('>div').addClass('modal-open')
+            setTimeout(() => {
+                isWatching.value = true;
+            }, 600)
         }
     }
 
     const onStopWatching = () => {
         isWatching.value = false;
-        $('.site-header, .site-footer').removeClass('watching')
+        $('#__nuxt').find('>div').removeClass('modal-open')
     }
 
     watch(
@@ -129,7 +133,6 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <Watch :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
                                 <div v-if="!isWatching" class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
@@ -187,5 +190,6 @@
                 </div>
             </div>
         </div>
+        <WatchModal :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
     </div>
 </template>
