@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  devServer: {
+    host: '0.0.0.0'
+  },
   modules: [
     'nuxt-lazy-load',
     '@nuxtjs/device',
@@ -60,7 +63,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?dshweyhwgdg'
+          href: '/css/style3.css?dsjhdhdge'
         },
         {
           rel: 'stylesheet',

@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                        <Pagination v-if="data && data.total > data.perPage" base="/u-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
+                        <Pagination v-if="data && data.total * 1 > data.perPage * 1" base="/u-drama" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
                         <div class="kokoads TV_Bottom_728_90"></div>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">

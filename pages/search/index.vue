@@ -88,7 +88,7 @@
 </script>
 
 <template>
-    <div class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark">
+    <div class="archive post-type-archive-tv_show masvideos masvideos-archive sidebar-left dark height-responsive">
         <div class="site-content " tabindex="-1">
             <div class="container">
                 <nav class="masvideos-breadcrumb">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <Pagination v-if="data && data.total > data.perPage" 
+                            <Pagination v-if="data && data.total * 1 > data.perPage * 1" 
                                 :total="data.total" 
                                 :perPage="data.perPage" 
                                 :currentPage="page" 
