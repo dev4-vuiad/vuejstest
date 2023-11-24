@@ -218,3 +218,14 @@ body {
 .home-movie-section-aside-header__inner .has-post-thumbnail .lazyloaded {
   min-height: 100%;
 }
+
+@media (max-width: 1198px) {
+  .single-tv-show-ads.ads-category-tvshow, .single-tv-show-ads.ads-category-tvshow .ads-box-child {
+    height: 0 !important;
+    min-height: 0 !important;
+  }
+  .single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]), .single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
+    height: 0 !important;
+    min-height: 0 !important;
+  }
+}
