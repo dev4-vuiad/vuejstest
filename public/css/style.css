@@ -221,5 +221,7 @@ body {
 
 .single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]), .single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
   height: 0 !important;
-  min-height: 0 !important;
+  min-height: 1px !important;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
