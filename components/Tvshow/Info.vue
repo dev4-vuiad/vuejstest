@@ -65,7 +65,7 @@
                 <a class="maxlist-more" href="#" @click.prevent="onReadMoreClick">Read More</a>
             </div>
         </div>
-        <div class="single-tv-show-ads ads-category-tvshow">
+        <div class="single-tv-show-ads ads-category-tvshow ads-responsive-height">
             <div class="kokoads Season_Top_336_280"></div>
             <div class="ads-box-child"></div>
         </div>

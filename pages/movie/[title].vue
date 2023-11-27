@@ -105,7 +105,7 @@
                                             :watchLinks="data.watchLinks"
                                             :casts="data.casts"
                                         />
-                                        <div class="single-movie-ads-box">
+                                        <div class="single-movie-ads-box ads-responsive-height">
                                             <div class="kokoads Movie_Post_Top_336_280"></div>
                                             <div class="ads-box-child">
                                             </div>
