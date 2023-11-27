@@ -198,7 +198,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="single-episode-ads-box">
+                                    <div class="single-episode-ads-box ads-responsive-height">
                                         <div class="kokoads TV_Post_Top_336_280"></div>
                                         <div class="ads-box-child">
                                         </div>

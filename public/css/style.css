@@ -219,7 +219,7 @@ body {
   min-height: 100%;
 }
 
-.single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]), .single-tv-show-ads.ads-category-tvshow:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
+.ads-responsive-height:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]), .ads-responsive-height:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
   height: 0 !important;
   min-height: 1px !important;
   margin-top: 1px;
