@@ -139,7 +139,7 @@
                         </div>
                         <div class="kokoads TV_Middle_728_90"></div>
                         <header class="page-header">
-                            <h1 class="page-title">{{ mapTypeTtitle[type] }}</h1>
+                            <h1 class="page-title">{{ mapTypeTtitle[type] == 'Prime Video' ? 'Amazon Prime Video' : mapTypeTtitle[type] }}</h1>
                         </header>
                         <div class="masvideos-tv-show-control-bar1 vodi-control-bar">
                             <div class="vodi-control-bar__left">
