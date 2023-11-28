@@ -10,8 +10,9 @@
 <template>
     <div class="site-header__left">
         <div class="site-header__search">
-            <form role="search" method="get" class="search-form masvideos-search masvideos-search-tv_show" action="/search" @submit.prevent="onSubmit"><label class="screen-reader-text" for="masvideos-search-field-0">Search for:</label>
-                <input type="search" id="masvideos-search-field-0" v-model="s" class="search-field ui-autocomplete-input" placeholder="검색 ..." autocomplete="off" />
+            <form role="search" method="get" class="search-form masvideos-search masvideos-search-tv_show" action="/search">
+                <label class="screen-reader-text" for="masvideos-search-field-0">Search for:</label>
+                <input type="search" id="masvideos-search-field-0" name="s" v-model="s" class="search-field ui-autocomplete-input" placeholder="검색 ..." autocomplete="off" />
                 <button type="submit" class="search-submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                         <path
