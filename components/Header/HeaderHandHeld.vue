@@ -1,6 +1,7 @@
 <script setup>
     const onClickSearchBtn = (event) => {
         $('.dropdown-menu').toggleClass('show')
+        $('.dropdown-menu').find('input').focus()
     }
 
     const onToggleSubmenu = (event) => {
