@@ -58,9 +58,6 @@
                         <NuxtLink title="Tving" to="/ott-web/tving/" key="tving">Tving</NuxtLink>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve">wavve</NuxtLink>
-                    </li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
                         <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha">watcha</NuxtLink>
                     </li>
                 </ul>

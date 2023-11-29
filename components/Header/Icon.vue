@@ -89,9 +89,6 @@
                                                     <NuxtLink title="Tving" to="/ott-web/tving/" key="tving" @click="onClickMenuItem">Tving</NuxtLink>
                                                 </li>
                                                 <li class="menu-item nav-item show">
-                                                    <NuxtLink title="wavve" to="/ott-web/wavve/" key="wavve" @click="onClickMenuItem">wavve</NuxtLink>
-                                                </li>
-                                                <li class="menu-item nav-item show">
                                                     <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</NuxtLink>
                                                 </li>
                                             </ul>
