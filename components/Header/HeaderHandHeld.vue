@@ -99,9 +99,6 @@
                                                                     <a title="Tving" href="/ott-web/tving/" key="tving" @click="onClickMenuItem">Tving</a>
                                                                 </li>
                                                                 <li class="menu-item">
-                                                                    <a title="wavve" href="/ott-web/wavve/" key="wavve" @click="onClickMenuItem">wavve</a>
-                                                                </li>
-                                                                <li class="menu-item">
                                                                     <a title="watcha" href="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</a>
                                                                 </li>
                                                             </ul>

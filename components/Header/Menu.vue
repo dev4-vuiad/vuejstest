@@ -58,9 +58,6 @@
                         <a title="Tving" href="/ott-web/tving/" key="tving">Tving</a>
                     </li>
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-                        <a title="wavve" href="/ott-web/wavve/" key="wavve">wavve</a>
-                    </li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
                         <a title="watcha" href="/ott-web/watcha/" key="watcha">watcha</a>
                     </li>
                 </ul>
