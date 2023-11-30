@@ -86,11 +86,6 @@
             </a>
         </div>
         <div class="ott_home_item">
-            <a href="/ott-web/wavve/">
-                <img src="/images/wavve.png" alt="wavve" />
-            </a>
-        </div>
-        <div class="ott_home_item">
             <a href="/ott-web/amazon-prime-video/">
                 <img src="/images/prime.png" alt="prime" />
             </a>
