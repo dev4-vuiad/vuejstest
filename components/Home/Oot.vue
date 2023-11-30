@@ -86,11 +86,6 @@
             </NuxtLink>
         </div>
         <div class="ott_home_item">
-            <NuxtLink to="/ott-web/wavve/">
-                <img src="/images/wavve.png" alt="wavve" />
-            </NuxtLink>
-        </div>
-        <div class="ott_home_item">
             <NuxtLink to="/ott-web/amazon-prime-video/">
                 <img src="/images/prime.png" alt="prime" />
             </NuxtLink>
