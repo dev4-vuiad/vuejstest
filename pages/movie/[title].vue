@@ -48,9 +48,9 @@
     )
 
     const { refresh, pending: pendingLinks }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/movies/details', {
+        () => $fetch($apiBaseUrl() + '/outlink', {
             params: {
-                watch: data.value.id
+                postId: data.value.id
             }
         }).then(result => {
             if (result.watchLinks) {
