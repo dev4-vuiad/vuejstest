@@ -26,7 +26,7 @@
                 })
             }
         }
-    }) 
+    })
 
     const { data, pending, status }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies/details', {
@@ -71,6 +71,13 @@
         }
     )
 
+    const { refresh:refreshViewCount } = useLazyAsyncData(
+        () => $fetch('https://kokoatv.net/rest-api/popular/movie/' + data.value.id + '/'),
+        {
+            immediate: false
+        }
+    )
+
     useHead({
         title: 'Full HD ' + title + ' 다시보기 - BMyTV.com (비마이티비) 최신 영화, 드라마, 예능, 미드를 초고화질 링크를 제공하는 무료 다시보기',
         meta: [
@@ -110,7 +117,8 @@
     watch(
         () => data.value.id,
         () => {
-            refresh()
+            refresh(),
+            refreshViewCount()
         }
     )
 
