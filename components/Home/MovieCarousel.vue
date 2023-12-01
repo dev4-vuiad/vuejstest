@@ -13,7 +13,7 @@
 
     onMounted(() => {
         // Bottom slider
-        setInterval(() => {
+        setTimeout(() => {
             let slider = $('#moviesCarousel').find('.slick-track').slick({
                 slidesToShow: 6,
                 slidesToScroll: 2,
