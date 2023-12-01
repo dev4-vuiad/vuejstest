@@ -72,7 +72,11 @@
     )
 
     const { refresh:refreshViewCount } = useLazyAsyncData(
-        () => $fetch('https://kokoatv.net/rest-api/popular/movie/' + data.value.id + '/'),
+        () => $fetch($apiBaseUrl() + '/movies/details', {
+            params: {
+                countViewId: data.value.id
+            }
+        }),
         {
             immediate: false
         }
