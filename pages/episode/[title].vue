@@ -62,6 +62,17 @@
         {immediate: false}
     )
 
+    const { refresh: refreshCountView } = useAsyncData(
+        () => $fetch($apiBaseUrl() + '/episode/details', {
+            params: {
+                countViewId: data.value.id
+            }
+        }),
+        {
+            immediate: false
+        }
+    )
+
     useHead({
         title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' 코코아티비 :: KOKOATV.NET',
         meta: [
@@ -140,7 +151,8 @@
     watch(
         () => data.value.id,
         () => {
-            refresh()
+            refresh(),
+            refreshCountView()
         }
     )
 
@@ -151,6 +163,7 @@
         if (!window.firstPageLoad) {
             window.firstPageLoad = true
             refresh()
+            refreshCountView()
         }
     })
 </script>
