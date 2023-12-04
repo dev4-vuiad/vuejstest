@@ -167,6 +167,7 @@
         if (!window.firstPageLoad) {
             window.firstPageLoad = true
             refresh()
+            refreshViewCount()
         }
     })
 </script>
