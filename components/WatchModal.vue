@@ -108,7 +108,7 @@
         <div class="watch-container">
             <div class="video-container">
                 <div id="video_content">
-                    <iframe id="videoIframe" :src="link" allow="autoplay" width="100%" height="550" frameborder="0" scrolling="no" :key="link" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" :style="'background-color: #000' + (playerW && playerH ? ';width:' + playerW + 'px !important;height:' + playerH + 'px !important' : '')" ></iframe>
+                    <iframe id="videoIframe" :src="link + '?auto=0'" allow="autoplay" width="100%" height="550" frameborder="0" scrolling="no" :key="link" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" :style="'background-color: #000' + (playerW && playerH ? ';width:' + playerW + 'px !important;height:' + playerH + 'px !important' : '')" ></iframe>
                 </div>
                 <div class="backlink-btn">
                     <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
