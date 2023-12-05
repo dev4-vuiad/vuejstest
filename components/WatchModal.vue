@@ -10,7 +10,10 @@
     const playerH = ref(null)
 
     watch(
-        () => props.isWatching,
+        [
+            () => props.isWatching,
+            () => props.links
+        ],
         () => {
             links = props.links
             if (links && links.length) {
@@ -23,13 +26,15 @@
                     }
                     return 0
                 })
-            }
-
-            if (props.isWatching) {
                 link.value = links[linkIdx]
-                setTimeout(() => {
-                    setPlayerSize()
-                }, 200)
+                if (props.isWatching) {
+                    play()
+                    setTimeout(() => {
+                        setPlayerSize()
+                    }, 200)
+                } else {
+                    pause()
+                }
             } else {
                 link.value = ''
             }
@@ -47,6 +52,7 @@
     }
 
     const onStopWatching = () => {
+        pause()
         emit('onStopWatching')
     }
 
@@ -87,6 +93,14 @@
         }
         nextTick()
     }
+
+    const pause = () => {
+        document.getElementById('videoIframe').contentWindow.postMessage('pause_video', 'https://videojs.vidground.com')
+    }
+
+    const play = () => {
+        document.getElementById('videoIframe').contentWindow.postMessage('play_video', 'https://videojs.vidground.com')
+    }
 </script>
 
 <template>
@@ -94,7 +108,7 @@
         <div class="watch-container">
             <div class="video-container">
                 <div id="video_content">
-                    <iframe :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="link" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" :style="'background-color: #000' + (playerW && playerH ? ';width:' + playerW + 'px !important;height:' + playerH + 'px !important' : '')" ></iframe>
+                    <iframe id="videoIframe" :src="link" width="100%" height="550" frameborder="0" scrolling="no" :key="link" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" :style="'background-color: #000' + (playerW && playerH ? ';width:' + playerW + 'px !important;height:' + playerH + 'px !important' : '')" ></iframe>
                 </div>
                 <div class="backlink-btn">
                     <button class="btn btn-back" @click="onStopWatching"><i class="fas fa-arrow-left"></i> 돌아가기</button>
