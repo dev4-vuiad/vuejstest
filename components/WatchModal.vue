@@ -28,6 +28,7 @@
                 })
                 link.value = links[linkIdx]
                 if (props.isWatching) {
+                    putAds();
                     play()
                     setTimeout(() => {
                         setPlayerSize()
@@ -53,6 +54,7 @@
 
     const onStopWatching = () => {
         pause()
+        removeAds()
         emit('onStopWatching')
     }
 
@@ -100,6 +102,15 @@
 
     const play = () => {
         document.getElementById('videoIframe').contentWindow.postMessage('play_video', 'https://videojs.vidground.com')
+    }
+
+    const putAds = () => {
+        const adsHtml = '<div class="ads-box-s"><div class="ads-top"><div class="kokoads Main_Top_728_90 kokoads-rect"></div></div><div class="ads-middle"><div class="ads-left"><div class="kokoads TV_Post_Top_336_280"></div></div><div class="ads-right"><div class="kokoads Movie_Post_Top_336_280"></div></div></div><div class="ads-bottom"><div class="kokoads Main_Bottom_728_90 kokoads-rect"></div></div></div>'
+        $('.watch-container').append(adsHtml)
+    }
+
+    const removeAds = () => {
+        $('.watch-container .ads-box-s').remove()
     }
 </script>
 
