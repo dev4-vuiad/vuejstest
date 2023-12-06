@@ -140,7 +140,7 @@
                 </nav>
                 <div class="site-content__inner">
                     <div id="primary" v-if="data" class="content-area">
-                        <div class="kokoads Movie_Top_728_90"></div>
+                        <div class="kokoads Movie_Top_728_90 kokoads-rect"></div>
                         <div id="feature-cate-page" style="display:block; margin-bottom: 10px;">
                             <header class="page-header" style="margin-bottom:15px;">
                                 <h1 class="page-title">실시간 영화 인기컨텐츠</h1>
@@ -162,7 +162,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="kokoads Movie_Middle_728_90"></div>
+                        <div class="kokoads Movie_Middle_728_90 kokoads-rect"></div>
                         <header class="page-header">
                             <h1 class="page-title">영화</h1>
                         </header>
@@ -210,7 +210,7 @@
                         <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" :currentPage="page"
                             :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
-                        <div class="kokoads Movie_Bottom_728_90"></div>
+                        <div class="kokoads Movie_Bottom_728_90 kokoads-rect"></div>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area movie-sidebar sidebar-custom-movie" role="complementary" v-if="data">
                         <div class="kokoads Movie_Sidebar_Top_336_280"></div>

@@ -95,9 +95,9 @@
                                 :description="data.description"
                             />
                             <TvshowSeasonSection :data="data.seasons" :src="data.src" :srcSet="data.srcSet" :pending="pending" />
-                            <div class="kokoads Season_Middle_728_90"></div>
+                            <div class="kokoads Season_Middle_728_90 kokoads-rect"></div>
                             <TvshowRelatedSection v-if="data && data.relateds && data.relateds.length" :data="data.relateds" :title="data.title" />
-                            <div class="kokoads Season_Bottom_728_90"></div>
+                            <div class="kokoads Season_Bottom_728_90 kokoads-rect"></div>
                             <div class="masvideos-tabs tv-show-tabs">
                                 <ul class="nav" pos="0">
                                     <li class="nav-item">

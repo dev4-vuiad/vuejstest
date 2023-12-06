@@ -104,7 +104,7 @@
                 <div class="site-content__inner">
                     <div id="primary" class="content-area" v-if="data">
                         <main id="main" class="site-main" role="main">
-                            <div class="kokoads Search_Top_728_90"></div>
+                            <div class="kokoads Search_Top_728_90 kokoads-rect"></div>
                             <div class="vodi-control-bar">
 
                                 <div class="vodi-control-bar__left">
@@ -161,7 +161,7 @@
                                 :orderBy="orderBy"
                                 @on-select-page="onSelectPage"
                             />
-                            <div class="kokoads Search_Bottom_728_90"></div>
+                            <div class="kokoads Search_Bottom_728_90 kokoads-rect"></div>
                         </main>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">

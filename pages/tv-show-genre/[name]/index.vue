@@ -114,7 +114,7 @@
                 <TvshowsBreadScrumb base="tv-show-genre" v-if="data && data.data && data.data.items[0].genres" :title="getGenreName(genre, data.data.items[0].genres) || genre" :page="page * 1 > 1 ? page : undefined" />
                 <div class="site-content__inner">
                     <div id="primary" class="content-area" v-if="data"> <!-- ads tv-show top -->
-                        <div class="kokoads TV_Top_728_90"></div>
+                        <div class="kokoads TV_Top_728_90 kokoads-rect"></div>
                         <div class="ads-achive-tvshow-top" style="text-align: center;">
                         </div>
                         <div id="feature-cate-page" style="display:block; margin-bottom:10px;">
@@ -142,7 +142,7 @@
                             </div>
                             <center style="margin-top:10px;margin-bottom:10px;" class="ads_cate_top"></center>
                         </div>
-                        <div class="kokoads TV_Middle_728_90"></div>
+                        <div class="kokoads TV_Middle_728_90 kokoads-rect"></div>
                         <header class="page-header">
                             <h1 class="page-title" v-if="data && data.data && data.data.items[0].genres" v-html="getGenreName(genre, data.data.items[0].genres) || genre"></h1>
                         </header>
@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <Pagination v-if="data && data.total > data.perPage" :base="'/tv-show-genre/' + genre" :perPage="data.perPage" :currentPage="page" :total="data.total" @on-select-page="onSelectPage" />
-                        <div class="kokoads TV_Bottom_728_90"></div>
+                        <div class="kokoads TV_Bottom_728_90 kokoads-rect"></div>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary" v-if="data">
                         <div class="kokoads TV_Sidebar_Top_336_280"></div>

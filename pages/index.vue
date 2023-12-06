@@ -188,7 +188,7 @@
                                         </div>
                                         <HomeSlider v-if="data" :data="data.sliders" />
                                     </section>
-                                    <div class="kokoads Main_Top_728_90"></div>
+                                    <div class="kokoads Main_Top_728_90 kokoads-rect"></div>
                                     <section class="home-section ads-top">
                                         <div class="kskdCustomElement"></div>
                                     </section>
@@ -200,14 +200,14 @@
                                             :sliders="data.otts.ottSliders"
                                         />
                                     </section>
-                                    <div class="kokoads Main_Middle_01_728_90"></div>
+                                    <div class="kokoads Main_Middle_01_728_90 kokoads-rect"></div>
                                     <section
                                         class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                         <div class="container">
                                             <HomeTvshow v-if="data && data.tvshows" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
                                     </section>
-                                    <div class="kokoads Main_Middle_02_728_90"></div>
+                                    <div class="kokoads Main_Middle_02_728_90 kokoads-rect"></div>
                                     <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                         <div class="container">
                                             <HomeMovie v-if="data && data.movies" :data="data.movies.items" />
@@ -217,7 +217,7 @@
                                         <div class="kskdDiv"></div>
                                     </div>
                                     <section class="home-section home-ads-bt-feature ads-bottom"></section>
-                                    <div class="kokoads Main_Middle_03_728_90"></div>
+                                    <div class="kokoads Main_Middle_03_728_90 kokoads-rect"></div>
                                     <section id="moviesCarousel" class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
                                         <div class="container">
                                             <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
@@ -232,7 +232,7 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <div class="kokoads Main_Bottom_728_90"></div>
+                                    <div class="kokoads Main_Bottom_728_90 kokoads-rect"></div>
                                     <section class="home-section home-ads-bt-feature ads-footer">
                                         <div class="kskdCustomElement"></div>
                                     </section>

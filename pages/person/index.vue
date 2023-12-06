@@ -110,7 +110,7 @@
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main" role="main">
-                            <div class="kokoads Person_Top_728_90"></div>
+                            <div class="kokoads Person_Top_728_90 kokoads-rect"></div>
                             <header class="page-header">
                                 <h1 class="page-title">Person</h1>
                                 <div class="search">
@@ -159,7 +159,7 @@
                                 :orderBy="orderBy"
                                 @on-select-page="onSelectPage"
                             />
-                            <div class="kokoads Person_Bottom_728_90"></div>
+                            <div class="kokoads Person_Bottom_728_90 kokoads"></div>
                         </main>
                     </div>
                     <div id="secondary" class="widget-area sidebar-area tv-show-sidebar sidebar-custom" role="complementary">

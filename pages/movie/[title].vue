@@ -184,7 +184,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="kokoads Movie_Post_Middle_728_90"></div>
+                                    <div class="kokoads Movie_Post_Middle_728_90 kokoads-rect"></div>
                                     <center>
                                         <div class="home-movie-section-aside-header"></div>
                                     </center>
@@ -194,7 +194,7 @@
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
-                                    <div class="kokoads Movie_Post_Bottom_728_90"></div>
+                                    <div class="kokoads Movie_Post_Bottom_728_90 kokoads-rect"></div>
                                 </div>
                             </section>
                             <div style="text-align: center;margin-top: 10px;"></div>
