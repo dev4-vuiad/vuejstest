@@ -1,7 +1,7 @@
 <script setup>
     import { onBeforeUpdate } from 'vue';
     const { $getEpTxt } = useNuxtApp() 
-    const props = defineProps(['pending', 'id', 'title', 'slug', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'link', 'postType'])
+    const props = defineProps(['pending', 'id', 'title', 'slug', 'originalTitle', 'src', 'srcSet', 'seasonNumber', 'episodeNumber', 'category', 'postType'])
     const renderCount = ref(0)
     let pending = props.pending
     let id = props.id
@@ -13,7 +13,7 @@
     let srcSet = props.srcSet
     let seasonNumber = props.seasonNumber
     let episodeNumber = props.episodeNumber
-    let link = props.link
+    let category = props.category
 
     onBeforeMount(() => {
         if (pending) {
@@ -26,7 +26,7 @@
             srcSet = undefined
             seasonNumber = ''
             episodeNumber = ''
-            link = ''
+            category = ''
         }
     })
     watch(
@@ -41,7 +41,7 @@
             srcSet = props.srcSet
             seasonNumber = props.seasonNumber
             episodeNumber = props.episodeNumber
-            link = props.link
+            category = props.category
         }
     )
 </script>
@@ -57,7 +57,7 @@
                 <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                     <img :src="src" class="tv-show__poster--image tv_show__poster--image" :key="id">		                                                     
                 <span style="display:none" class="span_sea_ep_title box-ep">{{ $getEpTxt(seasonNumber, episodeNumber) }}</span></NuxtLink>
-                <div class="box-tv_show" v-if="postType == 'tv_show'">예능</div>
+                <div class="box-tv_show" v-if="postType == 'tv_show'">{{ category }}</div>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">
