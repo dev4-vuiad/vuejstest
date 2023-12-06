@@ -144,7 +144,7 @@
                                             :srcSet="item.srcSet"
                                             :seasonNumber="item.seasonNumber"
                                             :episodeNumber="item.episodeNumber"
-                                            :link="item.link"
+                                            :category="item.category"
                                             :postType="item.postType"
                                         />
                                     </div>
