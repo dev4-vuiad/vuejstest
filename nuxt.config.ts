@@ -63,15 +63,15 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?faqwgwqr'
+          href: '/css/style3.css?jjjjjjjjjjjj'
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?fsdgwsgsa'
+          href: '/css/style.css?vasgvdsgd'
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?asgwtwewe'
+          href: '/css/watch.css?fgewtwgdshssw'
         }
       ],
       script: [
