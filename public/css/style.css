@@ -220,3 +220,12 @@ body {
   margin-right: auto;
   max-width: 970px;
 }
+
+@media (max-width: 991.98px) {
+  
+  .ads-responsive-height:has(>.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) {
+    height: 1px !important;
+    min-height: 1px !important;
+    margin-top: 0;
+  }
+}

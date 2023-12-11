@@ -60,15 +60,15 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?fasgagwtew'
+          href: '/css/style3.css?htrwrfw'
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?ewfywehsdf'
+          href: '/css/style.css?fedshttwqj'
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?sagsaheye'
+          href: '/css/watch.css?dsgwetw'
         }
       ],
       script: [

@@ -73,6 +73,10 @@
     width: 100%
 }
 
+.ads-box-s .ads-middle .ads-left, .ads-box-s .ads-middle .ads-right {
+    min-width: 50%;
+}
+
 .ads-box-s .single-tv-show-ads, .ads-box-s .ads-box-child {
     float: none;
     height: 280px;
@@ -158,6 +162,7 @@
 
     .ads-box-s .ads-middle .ads-left, .ads-box-s .ads-middle .ads-right {
         padding: 0;
+        width: 100%;
     }
 
     .watch-container .btn-back {
