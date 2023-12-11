@@ -67,7 +67,6 @@
         </div>
         <div class="single-tv-show-ads ads-category-tvshow ads-responsive-height">
             <div class="kokoads Season_Top_336_280"></div>
-            <div class="ads-box-child"></div>
         </div>
     </div>
 </template>

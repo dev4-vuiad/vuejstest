@@ -67,6 +67,10 @@
     gap: 20px
 }
 
+.ads-box-s .ads-middle .ads-left, .ads-box-s .ads-middle .ads-right {
+    min-width: 50%;
+}
+
 .ads-box-s>*>.home-section {
     margin: 0;
     padding: 0;
@@ -140,6 +144,7 @@
 
     .ads-box-s .ads-middle .ads-left, .ads-box-s .ads-middle .ads-right {
         padding: 0;
+        width: 100%;
     }
 
     .watch-container .btn-back {

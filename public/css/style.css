@@ -220,13 +220,8 @@ body {
 }
 
 @media (max-width: 991.98px) {
-  .ads-responsive-height:has(>.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) > .ads-box-child {
-    height: 1px !important;
-    min-height: 1px !important;
-    margin-top: 0;
-  }
   
-  .single-tv_show .entry-summary:has(.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) .ads-responsive-height:has(>.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) {
+  .ads-responsive-height:has(>.kskdDiv.kskdCls[data-kiosked-state="destroyed"]) {
     height: 1px !important;
     min-height: 1px !important;
     margin-top: 0;
