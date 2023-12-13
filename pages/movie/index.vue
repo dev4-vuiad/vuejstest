@@ -207,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-                        <Pagination v-if="data && data.total > data.perPage" :total="data.total" :perPage="data.perPage" :currentPage="page"
+                        <Pagination v-if="data && data.total * 1 > data.perPage * 1" :total="data.total" :perPage="data.perPage" :currentPage="page"
                             :year="year" :genres="genres" :orderBy="orderBy" @on-select-page="onSelectPage"
                         />
                         <div class="kokoads Movie_Bottom_728_90 kokoads-rect"></div>

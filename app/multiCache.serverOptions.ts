@@ -28,7 +28,7 @@ export default defineMultiCacheOptions({
         },
         storage: {
           driver: redisDriver({
-            base: 'bmytv_frontend:',
+            base: 'bmytv_root_frontend:',
             db: 2
           })
         },
