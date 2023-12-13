@@ -164,6 +164,7 @@
                                     <TvshowsItem v-for="item in data.data.items"
                                         :pending="pending"
                                         :id="item.id" 
+                                        :postType = "item.postType"
                                         :slug="item.slug"
                                         :tvshowTitle="item.tvshowTitle"
                                         :originalTitle="item.originalTitle"
