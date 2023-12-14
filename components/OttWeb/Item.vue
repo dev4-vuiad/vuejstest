@@ -1,7 +1,7 @@
 
 <script setup>
     const { $toTimeAgo, $getEpTxt } = useNuxtApp()
-    const props = defineProps(['pending', 'id', 'postDate', 'slug', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage', 'postType'])
+    const props = defineProps(['pending', 'id', 'postDate', 'slug', 'tvshowTitle', 'originalTitle', 'episodeNumber', 'seasonNumber', 'src', 'srcSet', 'chanelImage', 'postType', 'category'])
     let pending = props.pending
     let id = props.id
     let postDate = props.postDate
@@ -61,7 +61,7 @@
             <NuxtLink :to="(postType == 'movie' ? '/movie/' : '/episode/') + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img :src="src" :srcset="srcSet" class="tv-show__poster--image tv_show__poster--image lazyload" :key="id" alt="" />
             </NuxtLink>
-            <div :class="postType == 'movie' ? 'box-movie' : 'box-tv_show'">{{ postType == 'movie' ? '영화' : category }}</div>
+            <div :class="postType == 'movie' ? 'box-movie' : 'box-tv_show'">{{ category }}</div>
         </div>
         <div class="tv-show__body">
             <div class="tv-show__info">
