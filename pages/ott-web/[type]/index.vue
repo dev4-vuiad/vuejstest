@@ -58,7 +58,7 @@
         }
     }
     const { data, pending }  = useAsyncData(
-        () => $fetch($apiBaseUrl() + '/tvshows', {
+        () => $fetch($apiBaseUrl() + '/ott', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value,
