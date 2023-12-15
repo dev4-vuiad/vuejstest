@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     script: './.output/server/index.mjs',
-    name: 'test-ssr-mode',
+    name: 'takitv-ssr',
     port: '3006'
   }]
 };
