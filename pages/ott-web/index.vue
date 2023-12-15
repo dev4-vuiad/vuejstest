@@ -45,7 +45,7 @@
         }
     }
     const { data, pending }  = useLazyAsyncData(
-        () => $fetch($apiBaseUrl() + '/tvshows', {
+        () => $fetch($apiBaseUrl() + '/ott', {
             params: {
                 orderBy: orderBy.value || undefined,
                 page: page.value,
@@ -155,7 +155,7 @@
                         <div class="vodi-archive-wrapper" data-view="grid">
                             <div class="tv-shows columns-6">
                                 <div class="tv-shows__inner">
-                                    <TvshowsItem v-for="item in data.data.items"
+                                    <OttWebItem v-for="item in data.data.items"
                                         :pending="pending"
                                         :id="item.id" 
                                         :slug="item.slug"
@@ -166,7 +166,9 @@
                                         :postDate="item.postDate" 
                                         :src="item.src" 
                                         :srcSet="item.srcSet" 
-                                        :chanelImage="item.chanelImage" 
+                                        :chanelImage="item.chanelImage"
+                                        :postType="item.postType"
+                                        :category="item.category"
                                     />
                                 </div>
                             </div>
