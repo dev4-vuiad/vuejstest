@@ -4,7 +4,7 @@
             <div class="footer-v4-bar">
                 <div class="site-footer__logo footer-logo"><a href="/" class="custom-logo-link"
                         rel="home"><img width="653" height="152"
-                            src="/images/bmytv_logo_1.png"
+                            src="/images/bmytv_logo_2.png"
                             class="custom-logo" alt="코코아티비 :: bmytv.com"
                             sizes="(max-width: 653px) 100vw, 653px"></a></div>
                 <div class="site-footer__social-icons footer-social-icons">
