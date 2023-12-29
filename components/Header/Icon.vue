@@ -91,6 +91,9 @@
                                                 <li class="menu-item nav-item show">
                                                     <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</NuxtLink>
                                                 </li>
+                                                <li class="menu-item nav-item show">
+                                                    <NuxtLink title="Coupang play" to="/ott-web/coupang-play/" key="coupang-play" @click="onClickMenuItem">Coupang play</NuxtLink>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>

@@ -90,6 +90,11 @@
                 <img src="/images/prime.png" alt="prime" />
             </NuxtLink>
         </div>
+        <div class="ott_home_item">
+            <NuxtLink to="/ott-web/coupang-play/">
+                <img src="/images/coupang_play.png" alt="Coupang play" />
+            </NuxtLink>
+        </div>
     </div>
     <div class="slider-title-netflix">
         <div class="container">

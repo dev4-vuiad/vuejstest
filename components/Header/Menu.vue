@@ -60,6 +60,9 @@
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
                         <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha">watcha</NuxtLink>
                     </li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <NuxtLink title="watcha" to="/ott-web/coupang-play/" key="Coupang play">Coupang play</NuxtLink>
+                    </li>
                 </ul>
             </li>
         </ul>

@@ -34,7 +34,8 @@
         'amazon-prime-video': 'Prime Video',
         peacock: 'Peacock',
         'hbo-max': 'HBO max',
-        watcha: 'watcha'
+        watcha: 'watcha',
+        'coupang-play': 'Coupang play',
     }
     
     const orderBy = ref(route.query.orderBy || 'date')
