@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <div class="site-header__offcanvas">
+    <div class="site-header__offcanvas toggled">
         <button class="site-header__offcanvas--toggler navbar-toggler" data-toggle="offcanvas"><svg
                 xmlns="http://www.w3.org/2000/svg" width="16" height="13">
                 <path d="M0 13L0 11.4 16 11.4 16 13 0 13ZM0 5.7L16 5.7 16 7.3 0 7.3 0 5.7ZM0 0L16 0 16 1.6 0 1.6 0 0Z">
@@ -26,11 +26,28 @@
                             <div class="simplebar-content" style="padding: 0px 24px; height: 100%; overflow: hidden;">
                                 <div class="site_header__offcanvas-nav">
                                     <ul id="menu-main-menu" class="offcanvas-nav yamm">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item show">
-                                            <NuxtLink title="영화" to="/movie" @click="onClickMenuItem">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item show">
+                                            <NuxtLink title="영화" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
                                                 <span class="dashicons fas fa-film after-menu-image-icons"></span>
                                                 <span class="menu-image-title-after menu-image-title">영화</span>
                                             </NuxtLink>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                                    <NuxtLink title="한국영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                                        한국영화
+                                                    </NuxtLink>
+                                                </li>
+                                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                                    <NuxtLink title="서양영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                                        서양영화
+                                                    </NuxtLink>
+                                                </li>
+                                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                                    <NuxtLink title="동양영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                                        동양영화
+                                                    </NuxtLink>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
                                             <NuxtLink title="TV" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
@@ -61,7 +78,7 @@
                                                 <span class="menu-image-title-after menu-image-title">미드</span>
                                             </NuxtLink>
                                         </li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item">
                                             <NuxtLink title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
                                                 <span class="dashicons fas fa-cube after-menu-image-icons"></span>
                                                 <span class="menu-image-title-after menu-image-title">OTT</span>

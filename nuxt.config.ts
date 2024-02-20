@@ -63,7 +63,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?fqwggdgdss'
+          href: '/css/style3.css?uuuuuuutuytr'
         },
         {
           rel: 'stylesheet',
@@ -98,8 +98,8 @@ export default defineNuxtConfig({
   },
   $development: {
     appConfig: {
-      apiBaseUrl: 'https://backend.bmytv.com/api',
-      apiBaseUrlSsr: 'https://backend.bmytv.com/api'
+      apiBaseUrl: 'http://127.0.0.1:8000/api',
+      apiBaseUrlSsr: 'http://127.0.0.1:8000/api'
     }
   },
   $production: {

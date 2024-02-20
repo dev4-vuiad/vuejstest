@@ -156,6 +156,9 @@
 
     useHead({
         title: 'BMyTV.com (비마이티비) 최신 영화, 드라마, 예능, 미드를 초고화질 링크를 제공하는 무료 다시보기',
+        bodyAttrs: {
+            class: 'off-canvas-active'
+        },
         meta: [
             {
                 hid: 'description',
@@ -184,39 +187,41 @@
                                     <section id="section-home-slider-custom-64d31949b2fcb"
                                             class="home-section more-dark">
                                         <div class="container">
-                                            <header class="home-section__header"><h2 class="home-section__title slider-title"></h2><div class="home-section__action"></div></header>
+                                            <header class="home-section__header"><h2 class="home-section__title slider-title"></h2></header>
                                         </div>
                                         <HomeSlider v-if="data" :data="data.sliders" />
                                     </section>
-                                    <div class="kokoads Main_Top_728_90 kokoads-rect"></div>
-                                    <section id="section-home-slider-custom-ott-64d31949c9733"
-                                        class="home-section home-slider-custom-ott">
-                                        <div class="bg_opacity"></div>
-                                        <HomeOot :pending="pending" 
-                                            :title="data.otts.ottTitle"
-                                            :sliders="data.otts.ottSliders"
-                                        />
+                                    <section class="home-section home-movie-section-aside-header">
+                                        <HomeCategoryMovie v-if="data && data.movies" :data="data.movies.items" />
                                     </section>
-                                    <div class="kokoads Main_Middle_01_728_90 kokoads-rect"></div>
-                                    <section
-                                        class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
+                                    <section class="home-section home-tv-show-section-aside-header">
+                                        <HomeCategoryKDrama />
+                                    </section>
+                                    <section class="home-section home-tv-show-section-aside-header">
+                                        <HomeCategoryKShow />
+                                    </section>
+                                    <section class="home-section home-tv-show-section-aside-header">
+                                        <HomeCategoryKSisa />
+                                    </section>
+                                    <section class="home-section home-tv-show-section-aside-header">
+                                        <HomeCategoryUDrama />
+                                    </section>
+                                    <!-- <section class="home-section home-tv-show-section-aside-header has-section-header has-bg-color dark less-dark">
                                         <div class="container">
                                             <HomeTvshow v-if="data && data.tvshows" :menu="data.tvshows.categories.menu" :items="data.tvshows.categories.items" />
                                         </div>
                                     </section>
-                                    <div class="kokoads Main_Middle_02_728_90 kokoads-rect"></div>
                                     <section class="home-section home-movie-section-aside-header has-bg-color dark more-dark">
                                         <div class="container">
                                             <HomeMovie v-if="data && data.movies" :data="data.movies.items" />
                                         </div>
-                                    </section>
-                                    <div class="kokoads Main_Middle_03_728_90 kokoads-rect"></div>
-                                    <section id="moviesCarousel" class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
+                                    </section> -->
+                                    <!-- <section id="moviesCarousel" class="home-section section-movies-carousel-aside-header has-section-header has-bg-color light header-right">
                                         <div class="container">
                                             <HomeMovieCarousel v-if="data && data.moviesCarousel" :data="data.moviesCarousel" />
                                         </div>
-                                    </section>
-                                    <section id="section-movies-list-64d3194c644bd"
+                                    </section> -->
+                                    <!-- <section id="section-movies-list-64d3194c644bd"
                                         class="home-section section-movies-list">
                                         <div class="container">
                                             <div class="section-movies-list__inner">
@@ -224,8 +229,7 @@
                                                 <HomeNewestMovie v-if="data && data.movieNewests && data.movieNewests.movieNewests" :data="data.movieNewests.movieNewests"  />
                                             </div>
                                         </div>
-                                    </section>
-                                    <div class="kokoads Main_Bottom_728_90 kokoads-rect"></div>
+                                    </section> -->
                                 </div>
                             </article>
                         </main>
