@@ -62,6 +62,9 @@
 
     useHead({
         title: 'Movies - BMyTV.com (비마이티비) 최신 영화, 드라마, 예능, 미드를 초고화질 링크를 제공하는 무료 다시보기',
+        bodyAttrs: {
+            class: 'newui'
+        },
         meta: [
             {
                 hid: 'description',

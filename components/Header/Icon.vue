@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <div class="site-header__offcanvas toggled">
+    <div class="site-header__offcanvas">
         <button class="site-header__offcanvas--toggler navbar-toggler" data-toggle="offcanvas"><svg
                 xmlns="http://www.w3.org/2000/svg" width="16" height="13">
                 <path d="M0 13L0 11.4 16 11.4 16 13 0 13ZM0 5.7L16 5.7 16 7.3 0 7.3 0 5.7ZM0 0L16 0 16 1.6 0 1.6 0 0Z">

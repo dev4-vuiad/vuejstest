@@ -1,5 +1,6 @@
 <script setup>
     const { $apiBaseUrl } = useNuxtApp()
+    const { $getEpTxt } = useNuxtApp()
     
     const { data: items } = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/tvShowHomepage', {
@@ -33,18 +34,18 @@
             setupPrevNextBtns(prevBtn, nextBtn, embla);
             embla.on('select', disablePrevAndNextBtns);
             embla.on('init', disablePrevAndNextBtns);
-            $(document).ready(function () {
-                var wr = wrap.find('.embla__slide__inner').width();
+            jQuery(document).ready(function () {
+                var wr = jQuery('.embla.k-drama .embla__slide__inner').width();
                 if (wr < 220) {
-                    wrap.find('.embla__slide__img').each(function () {
-                        $(this).css('width', wr);
+                    jQuery('.embla.k-drama .embla__slide__img').each(function () {
+                        jQuery(this).css('width', wr);
                     });
                 }
                 $(window).resize(function () {
-                    var wr = wrap.find('.embla__slide__inner').width();
+                    var wr = jQuery('.embla.k-drama .embla__slide__inner').width();
                     if (wr < 220) {
-                        wrap.find('.embla__slide__img').each(function () {
-                            $(this).css('width', wr);
+                        jQuery('.embla.k-drama .embla__slide__img').each(function () {
+                            jQuery(this).css('width', wr);
                         });
                     }
                 });
@@ -57,20 +58,32 @@
 
 <template>
     <div class="embla seven k-drama">
-        <div class="embla__viewport">
-            <p>K-Drama List</p>
+        <div class="embla__viewport home-tv-show-section-aside-header__inner">
+            <p>영화 드라마</p>
             <div class="embla__container">
-                <div class="embla__slide" v-for="item in items" :postid="item.id">
-                    <div class="embla__slide__inner loading-bg">
-                        <NuxtLink class="movie__link" :to="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
-                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" decoding="async" />
+                <div class="embla__slide" v-for="item in items">
+                    <div class="embla__slide__inner tv-show__poster loading-bg">
+                        <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
+                            <img
+                                :src="item.src"
+                                :srcset="item.srcSet"
+                                class="embla__slide__img lazyload" alt=""
+                            />
                         </NuxtLink>
                     </div>
-                    <div class="box_meta">
-                        <NuxtLink :to="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
-                            <span class="s_e_title_1" v-if="item.postType == 'tv_show' && item.episodeNumber">{{ item.episodeNumber.includes('.') ? '스페셜화' : item.episodeNumber + '화' }}</span>
-                            <h2 class="title_1">{{ item.title }}</h2>
-                        </NuxtLink>
+                    <div class="tv-show__body">
+                        <div class="tv-show__info">
+                            <div class="tv-show__info--head">
+                                <div class="original-title-tvshow">
+                                    {{ item.originalTitle || ' ' }}
+                                </div>
+                                <NuxtLink :to="'/episode/' + item.slug"
+                                    class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><span
+                                        class="span_sea_ep_title">{{ $getEpTxt(item.seasonNumber, item.episodeNumber) }}</span>
+                                    <h3 class="masvideos-loop-tv-show__title  tv-show__title">{{ item.tvshowTitle }}</h3>
+                                </NuxtLink>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

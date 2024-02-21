@@ -1,0 +1,144 @@
+.home .embla,
+.home .embla1,
+.home .embla2 {
+    background-color: transparent;
+}
+
+body.newui {
+    background-color: #212326;
+}
+
+body.newui .site-header.light {
+    background-color: transparent;
+}
+
+body.newui .site-header.light .site-header__offcanvas--toggler svg {
+    fill: #FFF;
+}
+
+body.newui #menu-main-menu a:hover {
+    color: white;
+}
+
+body.newui .yamm>.menu-item:hover>a {
+    color: white;
+}
+
+body.newui .movie__title {
+    color: #FFF;
+}
+
+body.newui .tv-show__title {
+    color: #FFF;
+}
+
+body.newui .home-tv-show-section-aside-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.embla.seven {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.embla.seven .embla__slide__inner {
+    height: auto;
+}
+
+.embla__viewport>p {
+    color: white;
+    margin-bottom: 0;
+    margin-bottom: 8px;
+}
+
+#fixedsidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: #000;
+    display: none;
+}
+
+#fixedsidebar .simplebar-mask {
+    margin-top: 20px;
+}
+
+#fixedsidebar .simplebar-content {
+    overflow: auto !important;
+}
+
+#fixedsidebar .nav, #fixedsidebar.sub-menu, #fixedsidebar .dropdown-menu {
+    background-color: transparent;
+    color: #FFF;
+}
+
+#fixedsidebar .nav .sub-menu>li>a:hover, #fixedsidebar .nav .sub-menu>li>a:focus, #fixedsidebar .dropdown-menu>li>a:hover, #fixedsidebar .dropdown-menu>li>a:focus {
+    color: #FFF;
+    background-color: transparent;
+}
+
+#fixedsidebar .nav .sub-menu>li>a.active,
+#fixedsidebar .nav .sub-menu>li>a:active,
+#fixedsidebar .dropdown-menu>li>a.active,
+#fixedsidebar .dropdown-menu>li>a:active {
+    color: #fff;
+    background-color: transparent;
+}
+
+#fixedsidebar .sub-menu .menu-item>a,
+#fixedsidebar .offcanvas-nav .menu-item>a {
+    color: white;
+    font-weight: bold;
+}
+
+#fixedsidebar .sub-menu .menu-item>a:hover,
+#fixedsidebar .sub-menu .menu-item>a:focus,
+#fixedsidebar .menu-item>a:hover,
+#fixedsidebar .menu-item>a:focus {
+  background-color: transparent;
+}
+
+#fixedsidebar .yamm>.menu-item:hover>a,
+#fixedsidebar .yamm>.menu-item:focus>a {
+  color: #FFF;
+}
+
+@media (min-width: 768px) {
+    .embla.seven .embla__slide {
+        min-width: calc(100% / 4.5);
+        max-width: calc(100% / 4.5);
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body.newui section {
+        padding-left: 240px;
+    }
+
+    body.newui .site-header__offcanvas--toggler {
+        display: none;
+    }
+    
+    #fixedsidebar {
+        display: block;
+    }
+
+    .embla.seven .embla__slide {
+        min-width: calc(100% / 7);
+        max-width: calc(100% / 7);
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 441px) {
+    .embla.seven .embla__slide {
+        min-width: calc(100% / 3.5);
+        max-width: calc(100% / 3.5);
+        padding-left: 10px;
+    }
+}

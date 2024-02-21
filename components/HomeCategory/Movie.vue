@@ -48,10 +48,38 @@
 <template>
     <div class="embla seven movie">
         <div class="embla__viewport">
-            <p>Movie List</p>
+            <p>최신 영화</p>
             <div class="embla__container">
                 <div class="embla__slide" v-for="item in data">
-                    <div class="embla__slide__inner loading-bg">
+                    <div class="embla__slide__inner movie__poster loading-bg">
+                        <NuxtLink :to="'/movie/' + item.slug"
+                            class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" decoding="async" />
+                        </NuxtLink>
+                    </div>
+                    <div class="movie__body">
+                        <div class="movie__info">
+                            <div class="movie__info--head">
+                                <div class="original-title__single">{{ item.originalTitle || ' ' }}</div>
+                                <div class="movie__meta">
+                                    <span class="movie__meta--release-year">{{ item.year }}</span>
+                                    <span class="movie__meta--genre">
+                                        <template v-for="(genre, idx) in item.genres" :key="idx">
+                                            <span v-if="idx > 0">, </span>
+                                            <NuxtLink :to="'/movie-genre/' + genre.slug" rel="tag"><span v-html="genre.name"></span></NuxtLink>
+                                        </template>
+                                    </span>
+                                </div>
+                                <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
+                                    <h3 class="masvideos-loop-movie__title movie__title">
+                                        {{ item.title || ' ' }}
+                                    </h3>
+                                </NuxtLink>
+                            </div>
+                            <div class="original-title">{{ item.originalTitle || ' ' }}</div>
+                        </div>
+                    </div>
+                    <!-- <div class="embla__slide__inner loading-bg">
                         <NuxtLink class="movie__link" :to="'/movie/' + item.slug">
                             <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" decoding="async" />
                         </NuxtLink>
@@ -60,7 +88,7 @@
                         <NuxtLink :to="'/movie/' + item.slug">
                             <h2 class="title_1">{{ item.title }}</h2>
                         </NuxtLink>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

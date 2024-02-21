@@ -550,8 +550,10 @@ pre code {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 15px;
+  color: #212529;
   text-align: left;
   list-style: none;
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -573,6 +575,24 @@ pre code {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+}
+
+.nav .sub-menu>li>a:hover,
+.nav .sub-menu>li>a:focus,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+.nav .sub-menu>li>a.active,
+.nav .sub-menu>li>a:active,
+.dropdown-menu>li>a.active,
+.dropdown-menu>li>a:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
 }
 
 .nav .sub-menu>li>a.disabled,
@@ -2043,7 +2063,7 @@ table .table {
   height: 100%;
   width: auto;
   visibility: visible;
-  overflow: auto !important;
+  overflow: scroll !important;
   max-width: 100%;
   max-height: 100%;
 }
@@ -2460,7 +2480,7 @@ a:focus {
 
 .offcanvas-collapse {
   position: fixed;
-  top: 85px;
+  top: 0;
   bottom: 0;
   height: 100vh;
   width: 240px;
@@ -2491,8 +2511,14 @@ a:focus {
   padding: 8px 24px;
   display: block;
   white-space: unset;
-  color: white;
-  font-weight: bold;
+}
+
+.offcanvas-nav .sub-menu .menu-item>a:hover,
+.offcanvas-nav .sub-menu .menu-item>a:focus,
+.offcanvas-nav .menu-item>a:hover,
+.offcanvas-nav .menu-item>a:focus {
+  background-color: #eee;
+  text-decoration: none;
 }
 
 .offcanvas-nav .menu-item-has-children {
@@ -2557,8 +2583,9 @@ a:focus {
 .offcanvas-drawer {
   position: fixed;
   z-index: 2000;
+  background: rgba(0, 0, 0, 0.5);
   right: 0;
-  top: 85px;
+  top: 0;
   bottom: 0;
   left: 0;
   -webkit-transition: all .2s ease;
@@ -2567,7 +2594,6 @@ a:focus {
   -webkit-transition: opacity .25s ease, visibility 0s ease .25s;
   transition: opacity .25s ease, visibility 0s ease .25s;
   visibility: hidden;
-  width: 240px;
 }
 
 .site-header__offcanvas.toggled .offcanvas-drawer {
@@ -2583,6 +2609,11 @@ a:focus {
   transform: none;
   z-index: 2000;
   overflow: visible;
+}
+
+.site_header__offcanvas-nav .yamm>.menu-item:hover>a,
+.site_header__offcanvas-nav .yamm>.menu-item:focus>a {
+  color: #121a21;
 }
 
 @media (min-width: 1200px) {
@@ -9503,12 +9534,12 @@ input[type="checkbox"]+label {
 }
 
 .site-header.light .offcanvas-collapse {
-  background-color: transparent;
+  background-color: #fff;
 }
 
 .site-header.light .offcanvas-nav .sub-menu .menu-item>a,
 .site-header.light .offcanvas-nav .menu-item>a {
-  color: white;
+  color: #121a21;
 }
 
 .site-header.light .offcanvas-nav .sub-menu .menu-item:hover>a,
@@ -14456,8 +14487,16 @@ p.stars.selected a:not(.active):before {
   display: block;
 }
 
+.home-section.dark {
+  background-color: #131722;
+}
+
 .home-section.more-dark {
-  background-color: #0a0a0b;
+  background-color: #0e0d12;
+}
+
+.home-section.less-dark {
+  background-color: #1c212e;
 }
 
 .home-section.light {
@@ -14468,11 +14507,15 @@ p.stars.selected a:not(.active):before {
   background-color: #ededf5;
 }
 
-.home-section.more-dark .home-section__title {
+.home-section.dark .home-section__title,
+.home-section.more-dark .home-section__title,
+.home-section.less-dark .home-section__title {
   color: #fff;
 }
 
-.home-section.more-dark .home-section__action-link::after {
+.home-section.dark .home-section__action-link::after,
+.home-section.more-dark .home-section__action-link::after,
+.home-section.less-dark .home-section__action-link::after {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="7"><path d="M3.979,3.703 C3.987,3.785 3.966,3.869 3.903,3.934 L1.038,6.901 C0.921,7.023 0.724,7.029 0.598,6.916 L0.143,6.506 C0.017,6.393 0.011,6.203 0.128,6.082 L2.190,3.946 C2.276,3.829 2.356,3.691 2.356,3.548 C2.356,3.214 1.947,2.885 1.947,2.885 L1.963,2.877 L0.080,0.905 C-0.036,0.784 -0.029,0.592 0.095,0.479 L0.547,0.068 C0.671,-0.045 0.867,-0.039 0.983,0.083 L3.823,3.057 C3.867,3.102 3.876,3.161 3.885,3.218 C3.945,3.267 3.988,3.334 3.988,3.416 L3.988,3.681 C3.988,3.690 3.979,3.694 3.979,3.703 Z" fill="rgb(148, 156, 176)"/></svg>');
 }
 
@@ -19866,46 +19909,4 @@ ul.page-numbers li {
 .ott_home_item img {
   width: 90px;
   height: auto;
-}
-
-body.off-canvas-active section {
-  padding-left: 240px;
-}
-
-.home .embla,
-.home .embla1,
-.home .embla2 {
-  background-color: transparent;
-}
-
-body.off-canvas-active {
-  background-color: #212326;
-}
-
-body.off-canvas-active .site-header svg {
-  fill: white
-}
-
-body.off-canvas-active #menu-main-menu a:hover {
-  color: white;
-}
-
-body.off-canvas-active .yamm>.menu-item:hover>a  {
-  color: white;
-}
-
-.embla.seven .embla__slide {
-  min-width: 13.5%;
-  max-width: 13.5%;
-  padding-left: 10px;
-}
-
-.embla.seven .embla__slide__inner {
-  height: 224px;
-}
-
-.embla__viewport > p {
-  color: white;
-  margin-bottom: 0;
-  margin-bottom: 8px;
 }

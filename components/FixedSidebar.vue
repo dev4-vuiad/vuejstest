@@ -1,0 +1,110 @@
+<script setup>
+    const onToggleSubmenu = (event) => {
+        $(event.target).parent().toggleClass('show')
+    }
+
+    const onClickMenuItem = () => {
+        $(".site-header__offcanvas .navbar-toggler").trigger("click")
+    }
+</script>
+<template>
+    <div id="fixedsidebar">
+        <div class="simplebar-mask">
+            <div class="simplebar-offset" style="right:0px;bottom:0px;">
+                <div class="simplebar-content" style="padding:0px 24px;height:100%;overflow:hidden;">
+                    <div class="site_header__offcanvas-nav">
+                        <ul id="menu-main-menu" class="offcanvas-nav yamm">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item show">
+                                <NuxtLink title="영화" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
+                                    <span class="dashicons fas fa-film after-menu-image-icons"></span>
+                                    <span class="menu-image-title-after menu-image-title">영화</span>
+                                </NuxtLink>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="한국영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                            한국영화
+                                        </NuxtLink>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="서양영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                            서양영화
+                                        </NuxtLink>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="동양영화" to="/movie/" class="dropdown-item show" @click="onClickMenuItem">
+                                            동양영화
+                                        </NuxtLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item show">
+                                <NuxtLink title="TV" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
+                                    <span class="dashicons dashicons-laptop after-menu-image-icons"></span>
+                                    <span class="menu-image-title-after menu-image-title">TV</span>
+                                </NuxtLink>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="드라마" to="/k-drama/" class="dropdown-item show" @click="onClickMenuItem">
+                                            드라마
+                                        </NuxtLink>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="예능" to="/k-show/" class="dropdown-item show" @click="onClickMenuItem">
+                                            예능
+                                        </NuxtLink>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                        <NuxtLink title="시사다큐" to="/k-sisa/" class="dropdown-item show" @click="onClickMenuItem">
+                                            시사
+                                        </NuxtLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item show">
+                                <NuxtLink title="미드" to="/u-drama/" class="nav-link show" @click="onClickMenuItem">
+                                    <span class="dashicons dashicons-admin-site-alt3 after-menu-image-icons"></span>
+                                    <span class="menu-image-title-after menu-image-title">미드</span>
+                                </NuxtLink>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item">
+                                <NuxtLink title="OTT/Web" data-toggle="dropdown" class="dropdown-toggle nav-link pointer" @click="onToggleSubmenu">
+                                    <span class="dashicons fas fa-cube after-menu-image-icons"></span>
+                                    <span class="menu-image-title-after menu-image-title">OTT</span>
+                                </NuxtLink>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Amazon Prime Video" to="/ott-web/amazon-prime-video/" key="k-drama" @click="onClickMenuItem">Amazon Prime Video</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Apple TV" to="/ott-web/apple-tv/" key="apple-tv" @click="onClickMenuItem">Apple TV</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Disney +" to="/ott-web/disney/" key="disney" @click="onClickMenuItem">Disney +</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="HBO max" to="/ott-web/hbo-max/" key="hbo-max" @click="onClickMenuItem">HBO max</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Netflix" to="/ott-web/netflix/" key="netflix" @click="onClickMenuItem">Netflix</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Peacock" to="/ott-web/peacock/" key="peacock" @click="onClickMenuItem">Peacock</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Tving" to="/ott-web/tving/" key="tving" @click="onClickMenuItem">Tving</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="watcha" to="/ott-web/watcha/" key="watcha" @click="onClickMenuItem">watcha</NuxtLink>
+                                    </li>
+                                    <li class="menu-item nav-item show">
+                                        <NuxtLink title="Coupang play" to="/ott-web/coupang-play/" key="coupang-play" @click="onClickMenuItem">Coupang play</NuxtLink>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -63,7 +63,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?uuuuuuutuytr'
+          href: '/css/style3.css?frfwqhga'
         },
         {
           rel: 'stylesheet',
@@ -71,7 +71,11 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/watch.css?dsgwetw'
+          href: '/css/watch.css?ftgwetwe'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/css/style-newui.css?fqweqwtq'
         }
       ],
       script: [
