@@ -146,7 +146,7 @@
                     <div id="primary" class="content-area">
                         <div class="movie type-movie status-publish has-post-thumbnail hentry">
                             <div class="single-movie__player-container stretch-full-width">
-                                <div v-if="!isWatching" class="single-movie__player-container--inner container">
+                                <div class="single-movie__player-container--inner container">
                                     <MovieBreadScrumb :title="data.title" :pending="pending" />
                                     <div class="ads-movie-top"></div>
                                     <div class="single-movie__row row">
@@ -186,7 +186,7 @@
                                     <div class="kokoads Main_Middle_02_728_90 kokoads-rect"></div>
                                 </div>
                             </div>
-                            <section class="movie__related" v-if="!isWatching">
+                            <section class="movie__related">
                                 <div class="movie__related--inner">
                                     <h2 class="movie__related--title">관련 컨텐츠</h2>
                                     <MovieIntroRelatedList :data="data.relateds" :isMobile="isMobile" :pending="pending" />
@@ -199,6 +199,6 @@
                 </div>
             </div>
         </div>
-        <WatchModal :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+        <WatchModal :outlink="data.outlink" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
     </div>
 </template>

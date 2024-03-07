@@ -1,18 +1,15 @@
 kiosked.com, 12399, DIRECT
 appnexus.com, 2721, DIRECT, f5ab79cb980f11d1
 xandr.com, 2721, RESELLER, f5ab79cb980f11d1
-indexexchange.com, 190818, DIRECT, 50b1c356f2c5c8fc
-openx.com, 537142881, DIRECT, 6a698e2ec38604c6
+openx.com, 537142881, RESELLER, 6a698e2ec38604c6
 yahoo.com, 56848, DIRECT
-pubmatic.com, 156195, DIRECT, 5d62403b186f2ace
-sovrn.com, 254001, DIRECT, fafdf38b16bf6b2b
-lijit.com, 254001, DIRECT, fafdf38b16bf6b2b
-criteo.net, 145673, DIRECT
-criteo.net, 138122, DIRECT
+pubmatic.com, 156195, RESELLER, 5d62403b186f2ace
+sovrn.com, 254001, RESELLER, fafdf38b16bf6b2b
+lijit.com, 254001, RESELLER, fafdf38b16bf6b2b
 criteo.com, B-060792, DIRECT, 9fac4a4a87c2a44f
-google.com, pub-9042063282075774, RESELLER, f08c47fec0942fa0
-rubiconproject.com, 17558, DIRECT, 0bfd66d529a55807
 themediagrid.com, NI5YX2, DIRECT, 35d5010d7789b49d
+google.com, pub-9042063282075774, RESELLER, f08c47fec0942fa0
+rubiconproject.com, 17558, RESELLER, 0bfd66d529a55807
 aps.amazon.com,0aa5f97c-34d0-438e-a448-1fd311575d67,DIRECT
 pubmatic.com,160006,RESELLER,5d62403b186f2ace
 pubmatic.com,160096,RESELLER,5d62403b186f2ace
@@ -74,11 +71,9 @@ appads.in, 107606, RESELLER  #Loopme
 rubiconproject.com, 24600, RESELLER, 0bfd66d529a55807 #Smaato
 pubmatic.com, 156177, RESELLER, 5d62403b186f2ace #Smaato
 rubiconproject.com, 17328, RESELLER, 0bfd66d529a55807 #Verve
-indexexchange.com, 189070, DIRECT, 50b1c356f2c5c8fc
-openx.com, 540310763, DIRECT, 6a698e2ec38604c6
-pubmatic.com, 157619, DIRECT, 5d62403b186f2ace
-rubiconproject.com, 19760, DIRECT, 0bfd66d529a55807
-rhythmone.com, 2023183204, DIRECT, a670c89d4a324e47
+openx.com, 540310763, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 157619, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 19760, RESELLER, 0bfd66d529a55807
 yahoo.com, 59053, DIRECT, e1a5b5b6e3255540
 lijit.com, 254001-eb, DIRECT, fafdf38b16bf6b2b
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1
@@ -86,8 +81,20 @@ gumgum.com, 11645, RESELLER, ffdef49475d318a9
 openx.com, 538959099, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 137711, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156212, RESELLER, 5d62403b186f2ace
-rubiconproject.com, 17758, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 17758, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807
 appnexus.com, 1019, RESELLER, f5ab79cb980f11d1
 152media.info,152M706,RESELLER
 appnexus.com, 11924, RESELLER, f5ab79cb980f11d1
+e-planning.net,5e50b896c6c9bc22,DIRECT,c1ba615865ed87b2
+pubmatic.com,156631,RESELLER,5d62403b186f2ace
+rubiconproject.com,12186,RESELLER,0bfd66d529a55807
+mgid.com,833178,RESELLER,d4c29acad76ce94f
+sharethrough.com,23830661,RESELLER,d53b998a7bd4ecd2
+indexexchange.com,190243,RESELLER
+nextmillennium.io,16425,RESELLER,65bd090fa4a1e3d6
+supply.colossusssp.com,601,RESELLER,6c5b49d96ec1b458
+zetaglobal.net, 891, RESELLER
+admanmedia.com, 1074, RESELLER
+onetag.com,5927d926323dc2c,RESELLER
+video.unrulymedia.com, 851532539, RESELLER

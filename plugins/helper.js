@@ -1,3 +1,5 @@
+import CryptoJS from 'crypto-js'
+
 export default defineNuxtPlugin(() => {
     return {
       provide: {
@@ -40,6 +42,18 @@ export default defineNuxtPlugin(() => {
           }
   
           return title
+        },
+        a: (data) => {
+          let key = CryptoJS.enc.Utf8.parse("hWANwj8qlxLkDh9QNNB6kuNFYzizSe3m");
+          let iv = CryptoJS.enc.Utf8.parse("fdfhqoruw32trlrw");
+          let a =  CryptoJS.AES.encrypt(data, key, { iv: iv})
+          return a.toString()
+        },
+        b: (data) => {
+          let key = CryptoJS.enc.Utf8.parse("hWANwj8qlxLkDh9QNNB6kuNFYzizSe3m");
+          let iv = CryptoJS.enc.Utf8.parse("fdfhqoruw32trlrw");
+          let decrypted = CryptoJS.AES.decrypt(data, key, { iv: iv });        
+          return CryptoJS.enc.Utf8.stringify(decrypted);
         }
       }
     }

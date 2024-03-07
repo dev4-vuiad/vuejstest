@@ -178,7 +178,7 @@
             <div class="container">
                 <div class="site-content__inner">
                     <div id="primary" class="content-area">
-                        <div v-if="!isWatching" class="episode status-publish hentry">
+                        <div class="episode status-publish hentry">
                             <TvshowsIntroBreadScrumb 
                                 :pending="pending"
                                 :title="data.title"
@@ -206,10 +206,7 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <button v-if="!data.outlink || !data.outlink.includes('https://') || data.outlink.includes('bmytv.com')" class="btn-outlink" @click="onWatching">바로보기</button>
-                                            <a v-else :href="data.outlink" class="a_btn_out">
-                                                <button class="btn-outlink">바로보기</button>
-                                            </a>
+                                            <button class="btn-outlink" @click="onWatching">바로보기</button>
                                         </div>
                                     </div>
                                     <div class="single-episode-ads-box">
@@ -249,6 +246,6 @@
                 </div>
             </div>
         </div>
-        <WatchModal :links="data.watchLinks" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
+        <WatchModal :outlink="data.outlink" :isWatching="isWatching" @on-stop-watching="onStopWatching" />
     </div>
 </template>
