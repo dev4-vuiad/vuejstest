@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     script: './.output/server/index.mjs',
-    name: 'tvchamp-test',
+    name: 'test-bmytv',
     port: '3011'
   }]
 };
