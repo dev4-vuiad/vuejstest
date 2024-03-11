@@ -2,7 +2,6 @@
     import { onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router';
     const emit = defineEmits(['onStopWatching'])
     const props = defineProps(['isWatching', 'outlink'])
-    const iFrameHtml = ref('')
 
     watch(
         [
@@ -11,16 +10,14 @@
         ],
         () => {
             if (props.isWatching && props.outlink && props.outlink.length) {
-                setTimeout(() => {
-                    $('.modal>div').html('<iframe src="' + props.outlink + '" allow="autoplay" width="100%" height="100%" frameborder="0" scrolling="auto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></iframe>')
-                }, 1000)
-                
+                $('#modal-container').html('<iframe allow="autoplay" width="100%" height="100%" frameborder="0" scrolling="auto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="" src=""></iframe>')
+                $('#modal-container').find('iframe').attr('src', props.outlink);
             }
         }
     )
 
     const onStopWatching = () => {
-        iFrameHtml.value = ''
+        $('.modal>div').html('')
         emit('onStopWatching')
     }
 
@@ -33,7 +30,7 @@
         }
     })
 
-    onBeforeRouteUpdate((tos, from, next) => {
+    onBeforeRouteUpdate((to, from, next) => {
         if(props.isWatching) {
             next(false);
             onStopWatching()
@@ -50,8 +47,6 @@
 
 <template>
     <div class="modal">
-        <div style="position: relative;width: 100%;height: 100%;">
-
-        </div>
+        <div style="position: relative;width: 100%;height: 100%;" id="modal-container"></div>
     </div>
 </template>
