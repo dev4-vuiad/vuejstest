@@ -7,7 +7,8 @@
 
     watch(
         [
-            () => props.isWatching
+            () => props.isWatching,
+            () => props.outlink
         ],
         () => {
             outlink = props.outlink
@@ -16,6 +17,7 @@
     )
 
     const onStopWatching = () => {
+        outlink = ''
         emit('onStopWatching')
     }
 
@@ -28,7 +30,7 @@
         }
     })
 
-    onBeforeRouteUpdate((to, from, next) => {
+    onBeforeRouteUpdate((tos, from, next) => {
         if(props.isWatching) {
             next(false);
             onStopWatching()
