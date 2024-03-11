@@ -2,8 +2,7 @@
     import { onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router';
     const emit = defineEmits(['onStopWatching'])
     const props = defineProps(['isWatching', 'outlink'])
-    let outlink = props.outlink
-    const renderCount = ref(0)
+    const iFrameHtml = ref('')
 
     watch(
         [
@@ -11,13 +10,17 @@
             () => props.outlink
         ],
         () => {
-            outlink = props.outlink
-            renderCount.value ++
+            if (props.isWatching && props.outlink && props.outlink.length) {
+                setTimeout(() => {
+                    $('.modal>div').html('<iframe src="' + props.outlink + '" allow="autoplay" width="100%" height="100%" frameborder="0" scrolling="auto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></iframe>')
+                }, 1000)
+                
+            }
         }
     )
 
     const onStopWatching = () => {
-        outlink = ''
+        iFrameHtml.value = ''
         emit('onStopWatching')
     }
 
@@ -48,8 +51,7 @@
 <template>
     <div class="modal">
         <div style="position: relative;width: 100%;height: 100%;">
-            <iframe id="videoIframe" :src="outlink + '&auto=0'" allow="autoplay" width="100%" height="100%" frameborder="0" scrolling="auto" :key="renderCount" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true">
-            </iframe>
+
         </div>
     </div>
 </template>
