@@ -89,9 +89,6 @@ export default defineNuxtConfig({
         },
         {
           src: '/js/jquery.easing.min.js'
-        },
-        {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-SHE23J6734'
         }
       ]
     }
