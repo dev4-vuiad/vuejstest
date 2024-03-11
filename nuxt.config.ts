@@ -45,10 +45,10 @@ export default defineNuxtConfig({
         { name: 'google', content: 'notranslate' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/images/favicon-32x32.png', sizes: '32x32' },
-        { rel: 'icon', type: 'image/x-icon', href: '/images/favicon-16x16.png', sizes: '16x16' },
-        { rel: 'icon', type: 'image/x-icon', href: '/images/android-chrome-192x192.png', sizes: '192x192' },
-        { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/images/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/bmytv-images/favicon-32x32.png', sizes: '32x32' },
+        { rel: 'icon', type: 'image/x-icon', href: '/bmytv-images/favicon-16x16.png', sizes: '16x16' },
+        { rel: 'icon', type: 'image/x-icon', href: '/bmytv-images/android-chrome-192x192.png', sizes: '192x192' },
+        { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/bmytv-images/apple-touch-icon.png' },
         {
           rel: 'stylesheet',
           href: '/css/fonts.css?dsgsh'
@@ -63,11 +63,11 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: '/css/style3.css?fqwggdgdss'
+          href: '/css/style3.css?sbdhsdgw'
         },
         {
           rel: 'stylesheet',
-          href: '/css/style.css?fedshttwqj'
+          href: '/css/style.css?sbdhsdgw'
         },
         {
           rel: 'stylesheet',
