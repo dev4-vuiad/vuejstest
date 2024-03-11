@@ -32,7 +32,7 @@
 
     const defaultData = {
         items: Array.from(Array(30), (_, index) => ({})),
-        src: '/bmytv-images/cast_no_thumnbnail.svg'
+        src: 'https://image-cdn.imedia10.com/bmytv-images/cast_no_thumnbnail.svg'
     }
     const { data, pending }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/cast/detail', {

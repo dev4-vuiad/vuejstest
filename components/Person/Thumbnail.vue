@@ -24,6 +24,6 @@
 </script>
 <template>
     <div :class="'person-thumbnail loading-bg' + (src && src.length ? '' : ' empty')" :postid="id">
-        <img class="lazyload" :src="src && src.length ? src : '/bmytv-images/cast_no_thumnbnail.svg'" :alt="name" :key="src" />
+        <img class="lazyload" :src="src && src.length ? src : 'https://image-cdn.imedia10.com/bmytv-images/cast_no_thumnbnail.svg'" :alt="name" :key="src" />
     </div>
 </template>

@@ -67,32 +67,32 @@
     <div class="ott_logo">
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/netflix/">
-                <img src="/bmytv-images/netflix.png" alt="netflix" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/netflix.png" alt="netflix" />
             </NuxtLink>
         </div>
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/disney/">
-                <img src="/bmytv-images/disney_plus.png" alt="disney plus" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/disney_plus.png" alt="disney plus" />
             </NuxtLink>
         </div>
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/apple-tv/">
-                <img src="/bmytv-images/appletv.png" alt="apple tv" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/appletv.png" alt="apple tv" />
             </NuxtLink>
         </div>
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/tving/">
-                <img src="/bmytv-images/tving.png" alt="tving" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/tving.png" alt="tving" />
             </NuxtLink>
         </div>
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/amazon-prime-video/">
-                <img src="/bmytv-images/prime.png" alt="prime" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/prime.png" alt="prime" />
             </NuxtLink>
         </div>
         <div class="ott_home_item">
             <NuxtLink to="/ott-web/coupang-play/">
-                <img src="/bmytv-images/coupang_play.png" alt="Coupang play" />
+                <img src="https://image-cdn.imedia10.com/bmytv-images/coupang_play.png" alt="Coupang play" />
             </NuxtLink>
         </div>
     </div>
