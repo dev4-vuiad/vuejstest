@@ -102,7 +102,7 @@ export default defineNuxtConfig({
   $production: {
     appConfig: {
       apiBaseUrl: 'https://backend.imedia10.com/api',
-      apiBaseUrlSsr: 'http://backend.imedia10.com/api'
+      apiBaseUrlSsr: 'https://backend.imedia10.com/api'
     },
     app: {
       head: {
