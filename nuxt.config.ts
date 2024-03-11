@@ -112,6 +112,13 @@ export default defineNuxtConfig({
         script: [
           {
             children: 'window.__ITGS_started = Date.now();'
+          },
+          {
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-RBNNDYDZS1',
+            async: true
+          },
+          {
+            children: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}; gtag('js', new Date());gtag('config', 'G-RBNNDYDZS1');"
           }
         ]
       }

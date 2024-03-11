@@ -68,12 +68,6 @@
                 name: 'description',
                 content: 'Movies - BMyTV.com (비마이티비) 최신 한국영화, 서양영화, 동양영화, 한국드라마, 예능, 시사, 미드, 일드 OTT (넷플릭스, 와챠, 디즈니플러스, 애플티비, 아마존 프라임 비디오, 티빙 등) | 컨텐츠를 초고화질(Full HD) 링크로 제공.'
             }
-        ],
-        script: [
-            {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");',
-                body: true
-            }
         ]
     });
 

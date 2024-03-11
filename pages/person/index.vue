@@ -26,13 +26,7 @@
     })
 
     useHead({
-        title: 'Person – 코코아티비 :: KOKOA.TV',
-        script: [
-            {
-                children: 'function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-SHE23J6734"),gtag("config","UA-160268616-5");',
-                body: true
-            }
-        ]
+        title: 'Person – 코코아티비 :: KOKOA.TV'
     });
 
     const orderBy = ref(route.query.orderBy || '')
