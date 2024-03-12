@@ -116,7 +116,7 @@
                     </div>
                     <div class="box_meta">
                         <NuxtLink :to="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
-                            <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span><br>
+                            <span class="s_e_title_1">{{ item.seasonNumber ? '시즌 ' + item.seasonNumber + ' –' : '' }} {{ item.episodeNumber ? item.episodeNumber + '화' : '' }}</span>
                             <h2 class="title_1">{{ item.title }}</h2>
                         </NuxtLink>
                     </div>
