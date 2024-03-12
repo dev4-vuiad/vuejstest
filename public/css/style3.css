@@ -16494,6 +16494,12 @@ table.episode-sources tbody tr+tr {
   font-weight: 400;
 }
 
+.tv-show__meta--release-year {
+  display: inline-block;
+  width: 10px;
+  white-space: nowrap;
+}
+
 .tv-show__episode {
   font-size: 12px;
 }
