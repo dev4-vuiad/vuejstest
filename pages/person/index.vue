@@ -26,7 +26,7 @@
     })
 
     useHead({
-        title: 'Person – 코코아티비 :: KOKOA.TV'
+        title: 'Person – 비마이티비 :: BMYTV.COM'
     });
 
     const orderBy = ref(route.query.orderBy || '')

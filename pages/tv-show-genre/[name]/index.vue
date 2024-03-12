@@ -94,7 +94,7 @@
                 hid: 'description',
                 name: 'description',
                 content:  data && data.data && data.data.items.length && data.data.items[0].genres ? (getGenreName(genre, data.data.items[0].genres) || genre) 
-                + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.' : ''
+                + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 비마이티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.' : ''
             }
         ]
     });
