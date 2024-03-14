@@ -60,7 +60,7 @@
     <div v-else class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster box-phim">
             <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img :src="src" :srcset="srcSet" class="movie__poster--image lazyload" :key="renderCount">
+                <img :src="src" class="movie__poster--image lazyload" :key="renderCount">
             </NuxtLink>
             <div class="box-movie">영화</div>
         </div>

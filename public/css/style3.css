@@ -19921,6 +19921,11 @@ ul.page-numbers li {
   min-height: 100%;
 }
 
+.search-movie .type-movie.status-publish {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 @media (hover: hover) {
   .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover {
     color: #24baef;
