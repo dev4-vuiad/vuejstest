@@ -102,7 +102,7 @@
                             <template v-for="(item, idx) in casts">
                                 <span v-if="idx > 0 && idx < 4">, </span>
                                 <NuxtLink v-if="idx < 4" :to="'/person/' + item.slug" rel="tag">
-                                    <span v-html="item.name"></span>
+                                    <span v-html="item.name_korea ? item.name_korea : item.name"></span>
                                 </NuxtLink>
                             </template>
                         </span>
