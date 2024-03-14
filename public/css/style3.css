@@ -19917,6 +19917,10 @@ ul.page-numbers li {
   height: auto;
 }
 
+.search-movie .tv-show__poster--image.lazyloaded, .search-movie .movie__poster--image {
+  min-height: 100%;
+}
+
 @media (hover: hover) {
   .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover {
     color: #24baef;
