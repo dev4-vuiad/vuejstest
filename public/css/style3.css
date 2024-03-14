@@ -18263,7 +18263,6 @@ form.comment-form .logged-in-as a,
 .section-featured-movies-carousel ul.nav .nav-item .nav-link:hover,
 .section-movies-list ul.nav li a.active,
 .masvideos-widget_movies_year_filter ul li a,
-.widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover,
 .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item.chosen,
 .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item.chosen a
 .episode .nav .nav-item a.active,
@@ -18471,7 +18470,6 @@ input[type="submit"]:not(:disabled):not(.disabled).active:focus,
 
 .vodi-control-bar .masvideos-widget-movies-layered-nav-list__item.chosen a:after,
 .vodi-control-bar .masvideos-widget-movies-layered-nav-list a:hover:after,
-.sidebar-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover:before,
 .sidebar-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item.chosen a:before {
   background-image: url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='18px'%3e%3cpath fill='%2324baef' d='M-0.000,18.000 L-0.000,-0.000 L18.000,-0.000 L18.000,18.000 L-0.000,18.000 ZM13.387,5.216 C13.312,5.136 13.272,5.039 13.158,4.999 C11.202,7.087 9.246,9.176 7.291,11.263 C6.661,10.603 6.032,9.943 5.403,9.284 C5.249,9.121 5.098,8.958 4.944,8.796 C4.913,8.764 4.862,8.637 4.791,8.660 C4.722,8.742 4.654,8.823 4.586,8.904 C4.391,9.103 4.195,9.302 4.000,9.501 C4.073,9.726 4.708,10.281 4.893,10.477 C5.411,11.028 5.930,11.580 6.449,12.131 C6.709,12.408 6.949,12.758 7.265,12.972 C7.265,12.981 7.265,12.990 7.265,12.999 C7.273,12.999 7.282,12.999 7.291,12.999 C9.527,10.631 11.764,8.262 14.000,5.894 C13.932,5.679 13.542,5.380 13.387,5.216 Z'/%3e%3c/svg%3e");
 }
@@ -19917,4 +19915,13 @@ ul.page-numbers li {
 .ott_home_item img {
   width: 90px;
   height: auto;
+}
+
+@media (hover: hover) {
+  .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover {
+    color: #24baef;
+  }
+  .sidebar-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover:before {
+    background-image: url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='18px'%3e%3cpath fill='%2324baef' d='M-0.000,18.000 L-0.000,-0.000 L18.000,-0.000 L18.000,18.000 L-0.000,18.000 ZM13.387,5.216 C13.312,5.136 13.272,5.039 13.158,4.999 C11.202,7.087 9.246,9.176 7.291,11.263 C6.661,10.603 6.032,9.943 5.403,9.284 C5.249,9.121 5.098,8.958 4.944,8.796 C4.913,8.764 4.862,8.637 4.791,8.660 C4.722,8.742 4.654,8.823 4.586,8.904 C4.391,9.103 4.195,9.302 4.000,9.501 C4.073,9.726 4.708,10.281 4.893,10.477 C5.411,11.028 5.930,11.580 6.449,12.131 C6.709,12.408 6.949,12.758 7.265,12.972 C7.265,12.981 7.265,12.990 7.265,12.999 C7.273,12.999 7.282,12.999 7.291,12.999 C9.527,10.631 11.764,8.262 14.000,5.894 C13.932,5.679 13.542,5.380 13.387,5.216 Z'/%3e%3c/svg%3e");
+  }
 }

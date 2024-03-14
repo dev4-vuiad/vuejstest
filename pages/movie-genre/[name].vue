@@ -40,7 +40,7 @@
             items: Array.from(Array(30), (_, index) => ({}))
         }
     }
-    const { data }  = useLazyAsyncData(
+    const { data, refresh }  = useLazyAsyncData(
         () => $fetch($apiBaseUrl() + '/movies', {
             params: {
                 genre: genres.value.length ? genres.value.join(',') : undefined,
@@ -86,6 +86,24 @@
         year.value = val
         page.value = 1
         nextTick()
+    }
+
+    const onSelectGenres = function(val) {
+        let query = Object.assign({}, route.query)
+        if (val.length) {
+            query.filter_genre = val.join(',')
+            query.query_type_genre = 'or'
+            query.page = 1
+        } else {
+            query.filter_genre = undefined
+            query.query_type_genre = undefined
+            query.page = 1
+        }
+
+        router.push({query: query})
+        genres.value = val
+        page.value = 1
+        refresh()
     }
 
     const onSelectPage = function(val) {
@@ -213,6 +231,13 @@
                             <div class="kokoads Movie_Sidebar_Middle_336_280_01"></div>
                             <div class="kokoads Movie_Sidebar_Middle_336_280_02"></div>
                             <div class="widget widget_vodi_movies_filter">
+                                <div id="masvideos_movies_filter_widget-1" class="widget masvideos widget_layered_nav masvideos-movies-filter-widget">
+                                    <div class="widget-header">
+                                        <span class="widget-title">장르</span>
+                                    </div>
+                                    <MovieSidebarType :selected="genres" :year="year" @on-select-genres="onSelectGenres" />
+                                    <div class="kokoads Movie_Sidebar_Middle_336_280_02"></div>
+                                </div>
                                 <MovieSidebarListYear :base="'/movie-genre/' + genre" :selected="year" :genres="genres" @on-select-year="onSelectYear" />
                             </div>
                         </div>
