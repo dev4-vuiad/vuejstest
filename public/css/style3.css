@@ -19926,6 +19926,11 @@ ul.page-numbers li {
   padding-right: 8px;
 }
 
+h3.masvideos-loop-tv-show__title.tv-show__title:hover, h3.masvideos-loop-movie__title.movie__title:hover, h3.movie-list__name:hover, h2.title_1:hover {
+  color: #24baef;
+}
+
+
 @media (hover: hover) {
   .widget-area .masvideos-movies-filter-widget .masvideos-widget-movies-layered-nav-list__item a:hover {
     color: #24baef;
