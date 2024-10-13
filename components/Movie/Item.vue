@@ -34,8 +34,7 @@
             <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                 <img
                     width="300" height="450"
-                    :src="src"
-                    :srcset="srcSet"
+                    :src="`images/14733859921126.png`"
                     class="movie__poster--image lazyload" alt="" :key="renderCount" />
             </NuxtLink>
         </div>

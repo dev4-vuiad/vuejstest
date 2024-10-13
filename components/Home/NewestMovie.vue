@@ -28,8 +28,7 @@
                                         <NuxtLink :to="'/movie/' + item.slug"
                                             class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                             <img
-                                                :src="item.src"
-                                                :srcset="item.srcSet"
+                                                :src="`images/14733859921126.png`"
                                                 class="movie__poster--image lazyload" alt=""
                                                 :key="item.id"
                                             />

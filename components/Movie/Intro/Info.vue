@@ -71,7 +71,7 @@
     <div class="single-movie__sidebar column poster-custom" :postid="id">
         <div class="movie__poster">
             <img 
-                :src="src" 
+                :src="`images/14733859921126.png`"
                 class="movie__poster--image lazyload" 
                 alt="" 
                 sizes="(max-width: 300px) 100vw, 300px"

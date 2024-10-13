@@ -56,10 +56,10 @@
     <div class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-netflix category-u-drama">
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
-                <img v-if="chanelImage" class="tv-channel" :src="chanelImage" alt="" width="83" height="31" :key="id" />
+                <img v-if="chanelImage" class="tv-channel" :src="`../images/14733859921126.png`" alt="" width="83" height="31" :key="id" />
             </div>
             <NuxtLink :to="(postType == 'movie' ? '/movie/' : '/episode/') + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
-                <img :src="src" :srcset="srcSet" class="tv-show__poster--image tv_show__poster--image lazyload" :key="id" alt="" />
+                <img :src="`../images/14733859921126.png`"  class="tv-show__poster--image tv_show__poster--image lazyload" :key="id" alt="" />
             </NuxtLink>
             <div :class="postType == 'movie' ? 'box-movie' : 'box-tv_show'">{{ category }}</div>
         </div>

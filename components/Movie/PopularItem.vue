@@ -29,7 +29,7 @@
     <div class="movie type-movie status-publish has-post-thumbnail hentry" :postid="id">
         <div class="movie__poster loading-bg">
             <NuxtLink :to="'/movie/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img width="300" height="450" :src="src" :srcset="srcSet" class="movie__poster--image lazyload" alt="" :key="renderCount">
+                <img :src="`images/14733859921126.png`" width="300" height="450"   class="movie__poster--image lazyload" alt="" :key="renderCount">
             </NuxtLink>
         </div>
         <div class="movie__body"><span class="movie__meta--release-year">{{ year }}</span>

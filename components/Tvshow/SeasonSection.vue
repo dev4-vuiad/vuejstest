@@ -47,8 +47,7 @@
                                     <div class="episode__poster loading-bg">
                                         <NuxtLink :to="'/episode/' + episode.slug" class="masvideos-LoopEpisode-link masvideos-loop-episode__link episode__link">
                                             <img
-                                                :src="episode.src.length ? episode.src : src"
-                                                :srcset="episode.srcSet.length ? episode.srcSet : srcSet"
+                                                :src="`images/14733859921126.png`"
                                                 class="episode__poster--image lazyload" alt="" 
                                                 :key="episode.id"
                                             />

@@ -30,7 +30,7 @@
     <div class="movie type-movie status-publish has-post-thumbnail hentry" :objectid="id">
         <div class="movie__poster cast loading-bg">
             <NuxtLink :to="'/person/' + slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                <img :src="src" class="movie__poster--image lazyload" alt="" :key="id">
+                <img :src="`../images/14733859921126.png`" class="movie__poster--image lazyload" alt="" :key="id">
             </NuxtLink>
         </div>
         <div class="movie__body">

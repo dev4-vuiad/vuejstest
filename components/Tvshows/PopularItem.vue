@@ -46,13 +46,12 @@
     <div :class="'tv-show post-' + id + ' tv_show type-tv_show status-publish has-post-thumbnail hentry category-disney category-k-drama'" :postid="id">
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
-                <img :src="chanelImage" alt="" width="62" height="31" class="tv-channel" :key="id" />
+                <img :src="`images/14733859921126.png`" alt="" width="62" height="31" class="tv-channel" :key="id" />
             </div>
             <NuxtLink :to="'/episode/' + slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="600" height="900"
-                :src="src"
-                :srcset="srcSet"
-                class="tv-show__poster--image tv_show__poster--image lazyload" alt="" :key="id" />
+                    :src="`../images/14733859921126.png`"
+                    class="tv-show__poster--image tv_show__poster--image lazyload" alt="" :key="id" />
             </NuxtLink>
         </div>
         <div class="tv-show__body">

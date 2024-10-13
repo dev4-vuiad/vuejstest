@@ -73,7 +73,7 @@
             <div class="single-movie__sidebar--head-info mobile">
                 <div class="movie__poster loading-bg">
                     <img width="300" height="450"
-                        :src="src"
+                        :src="`images/14733859921126.png`"
                         class="movie__poster--image lazyload" alt="" decoding="async"
                         sizes="(max-width: 300px) 100vw, 300px"
                         :key="id"

@@ -46,11 +46,11 @@
                             <div v-for="(item, index) in data" :key="index" class="tv-show tv_show type-tv_show status-publish has-post-thumbnail hentry category-sbs category-wavve category-k-drama">
                                 <div class="tv-show__poster loading-bg">
                                     <div class="box-tv-channel">
-                                        <img class="tv-channel lazyload" :src="item.chanelImage" alt="" width="68" height="31" :key="renderCount" />
+                                        <img class="tv-channel lazyload" :src="`../images/14733859921126.png`" alt="" width="68" height="31" :key="renderCount" />
                                     </div>
                                     <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link" tabindex="-1">
                                         <img width="220" height="314"
-                                            :src="item.src"
+                                            :src="`../images/14733859921126.png`"
                                             class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
                                             decoding="async"
                                             :key="renderCount"

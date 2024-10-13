@@ -60,8 +60,7 @@
                                                         class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link"
                                                         tabindex="0">
                                                         <img 
-                                                            :src="item.src"
-                                                            :srcset="item.srcSet"
+                                                            :src="`images/14733859921126.png`"
                                                             decoding="async"
                                                             class="movie__poster--image lazyload" alt=""
                                                             :key="renderCount"

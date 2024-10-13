@@ -68,14 +68,14 @@
                         <div class="tv-show__poster loading-bg">
                             <div class="box-tv-channel">
                                 <img class="tv-channel lazyload"
-                                    :src="item.chanelImage" alt=""
-                                    :key="renderCount"
+                                :src="`../images/14733859921126.png`" 
+                                alt=""
+                                :key="renderCount"
                                 />
                             </div>
                             <NuxtLink :to="'/episode/' + item.slug" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                                 <img
-                                    :src="item.src"
-                                    :srcset="item.srcSet"
+                                    :src="`../images/14733859921126.png`"
                                     class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
                                     :key="renderCount"
                                 />

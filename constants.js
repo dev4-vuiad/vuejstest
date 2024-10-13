@@ -1,1 +1,1 @@
-export const apiBaseUrl = 'https://backend.bmytv.com/api'
+export const apiBaseUrl = 'https://backend.moviehqu.com/api'

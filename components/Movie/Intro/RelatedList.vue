@@ -34,7 +34,7 @@
                 <div v-for="(item, index) in data" :key="index" class="movie type-movie status-publish has-post-thumbnail hentry" :postid="item.id">
                     <div class="movie__poster loading-bg">
                         <NuxtLink :to="'/movie/' + item.slug" class="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
-                            <img width="220" height="310" :src="item.src" class="movie__poster--image lazyload" alt="" :key="item.id" />
+                            <img width="220" height="310" :src="`images/14733859921126.png`" class="movie__poster--image lazyload" alt="" :key="item.id" />
                         </NuxtLink>
                     </div>
                     <div class="movie__body">

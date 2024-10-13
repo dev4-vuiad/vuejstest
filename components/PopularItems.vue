@@ -16,9 +16,8 @@ const thumbnail = props.thumbnail
             </div>
             <a :href="{path: '/episode/' + id}" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link"><img width="300"
                 height="450"
-                :src="thumbnail.src"
+                :src="`images/14733859921126.png`"
                 class="tv-show__poster--image tv_show__poster--image" alt="" loading="lazy"
-                :srcset="thumbnail.srcset"
                 sizes="(max-width: 300px) 100vw, 300px">
             </a>
         </div>

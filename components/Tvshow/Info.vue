@@ -38,7 +38,7 @@
 <template>
     <div class="single-tv-show tv-show column poster-column" :postid="id">
         <div class="tv-show__poster_head loading-bg">
-            <img width="220" height="330" :src="src" class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
+            <img width="220" height="330"  class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
                 decoding="async" sizes="(max-width: 220px) 100vw, 220px" :key="id"
             />
         </div>

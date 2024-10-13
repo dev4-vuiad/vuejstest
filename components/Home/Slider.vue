@@ -65,7 +65,7 @@
                 <div class="embla__slide" v-for="(item, index) in data" :key="index" :postid="item.id">
                     <div class="embla__slide__inner loading-bg">
                         <NuxtLink class="movie__link" :to="(item.postType == 'movie' ? '/movie/' : '/episode/') + item.slug">
-                            <img class="embla__slide__img lazyload" :src="item.src" :srcset="item.srcSet" :key="renderCount" decoding="async" />
+                            <img class="embla__slide__img lazyload" :src="`images/14733859921126.png`" :key="renderCount" decoding="async" />
                         </NuxtLink>
                     </div>
                     <div class="box_meta">

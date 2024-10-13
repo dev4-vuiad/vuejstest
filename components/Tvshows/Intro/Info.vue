@@ -70,14 +70,15 @@
         <div class="tv-show__poster loading-bg">
             <div class="box-tv-channel">
                 <img class="tv-channel lazyload"
-                    :src="src" alt="" width="68"
+                    alt="" width="68"
+                    :src="`../images/14733859921126.png`"
                     height="31"
                     :key="id"
                 />
             </div>
             <a :href="'/episode/' + title" class="masvideos-LoopTvShow-link masvideos-loop-tv-show__link tv-show__link">
                 <img width="220" height="312"
-                    :src="src"
+                    :src="`../images/14733859921126.png`"
                     class="tv-show__poster--image tv_show__poster--image lazyload" alt=""
                     :key="id"
                 />

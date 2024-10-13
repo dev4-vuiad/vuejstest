@@ -105,7 +105,7 @@
                     <span class="tv-show__meta--release-year" style="z-index:999">{{ item.year || '&nbsp;' }}</span>
                     <div class="embla__slide__inner1">
                         <NuxtLink class="tv-show__link" :to="'/' + (item.seasonNumber && item.seasonNumber.length ? 'episode/' + item.slug : 'movie/' + item.slug)">
-                            <img class="embla__slide__img1 lazyload" decoding="async" :src="item.src" :key="item.id" />
+                            <img class="embla__slide__img1 lazyload" decoding="async" :src="`images/14733859921126.png`" :key="item.id" />
                         </NuxtLink>
                         <div class="slide-box-number">{{ index + 1 }}</div>
                     </div>
