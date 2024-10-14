@@ -51,15 +51,12 @@
             }, 100)
         }
     })
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MEED1Y93D3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-MEED1Y93D3');
+    gtag('config', 'G-MEED1Y93D3');
 </script>
 <template>
     <header id="site-header" class="site-header header-v1 desktop-header stick-this light" role="banner" style="">
