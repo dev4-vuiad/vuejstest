@@ -34,7 +34,7 @@
             }
         }).then(result => {
             if (!process.server && result.title) {
-                document.title = result.title + ' – 코코아티비 :: KOKOATV.NET'
+                document.title = result.title + ' – 코코아티비 :: moviehqu.com'
             }
             return result
         }),
@@ -74,12 +74,12 @@
     )
 
     useHead({
-        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' 코코아티비 :: KOKOATV.NET',
+        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' 코코아티비 :: moviehqu.com',
         meta: [
             {
                 hid: 'description',
                 name: 'description',
-                content: title + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: KOKOATV.NET 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
+                content: title + ' - 최신 한국드라마,미드, 예능,시사 스트리밍 다시보기 사이트 : 코코아티비 :: moviehqu.com 에서 무료로 즐기세요, 넷플릭스, 와차, 디즈니 플러스등 각종 OTT 컨텐츠를 감상하실 수 있습니다.'
             }
         ],
         script: [
@@ -205,7 +205,7 @@
                                             :casts="data.casts"
                                         />
                                         <div style="margin-bottom:15px;">
-                                            <button v-if="!data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://kokoatv.net')" class="btn-outlink" @click="onWatching">바로보기</button>
+                                            <button v-if="!data.outlink || !data.outlink.includes('https://') || data.outlink.includes('https://moviehqu.com')" class="btn-outlink" @click="onWatching">바로보기</button>
                                             <a v-else :href="data.outlink" class="a_btn_out">
                                                 <button class="btn-outlink">바로보기</button>
                                             </a>

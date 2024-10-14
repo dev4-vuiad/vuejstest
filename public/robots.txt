@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kokoatv.net/sitemap.xml
+Sitemap: https://moviehqu.com/sitemap.xml

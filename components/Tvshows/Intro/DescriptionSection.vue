@@ -50,7 +50,7 @@
                                             href="/episode/%ec%9a%94%ec%a6%98-%ec%9c%a1%ec%95%84-%ea%b8%88%ec%aa%bd%ea%b0%99%ec%9d%80-%eb%82%b4%ec%83%88%eb%81%bc-158%ed%99%94/#respond"
                                             style="display:none;">Cancel
                                             reply</a></small></span>
-                                <form action="https://kokoatv.net/wp-comments-post.php" method="post" id="commentform"
+                                <form action="https://moviehqu.com/wp-comments-post.php" method="post" id="commentform"
                                     class="comment-form" novalidate="">
                                     <p class="comment-notes"><span id="email-notes">Your
                                             email address will not be published.</span>

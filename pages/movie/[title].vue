@@ -35,7 +35,7 @@
             }
         }).then(result => {
             if (!process.server && result.title) {
-                document.title = result.title + ' – 코코아티비 :: KOKOATV.NET'
+                document.title = result.title + ' – 코코아티비 :: moviehqu.com'
             }
             return result
         }),
@@ -81,7 +81,7 @@
     )
 
     useHead({
-        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' – 코코아티비 :: KOKOATV.NET',
+        title: (data && data.value.title && data.value.title.length ? data.value.title : title) + ' – 코코아티비 :: moviehqu.com',
         meta: [
             {
                 hid: 'description',

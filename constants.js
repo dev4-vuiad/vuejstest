@@ -1,1 +1,1 @@
-export const apiBaseUrl = 'https://backend.moviehqu.com/api'
+export const apiBaseUrl = 'http://127.0.0.1:8000/api'

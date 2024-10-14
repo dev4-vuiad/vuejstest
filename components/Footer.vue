@@ -53,12 +53,12 @@
                 </div>
             </div><!-- /.footer-v4-bar -->
             <div class="site-footer__info site-info">
-                Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                Copyright © 2022, moviehqu.com. All Rights Reserved </div><!-- .site-info -->
         </div><!-- .container -->
     </footer><!-- #colophon -->
     <footer class="site-footer handheld-footer dark">
         <div class="container">
             <div class="site-footer__info site-info">
-                Copyright © 2022, kokoatv.net. All Rights Reserved </div><!-- .site-info -->
+                Copyright © 2022, moviehqu.com. All Rights Reserved </div><!-- .site-info -->
     </div><!-- /.container -->
 </footer></template>
